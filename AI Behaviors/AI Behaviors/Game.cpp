@@ -9,11 +9,9 @@ Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
 	m_exitGame{false}
 {
-	/*sf::VideoMode desktopMode = sf::VideoMode::getDesktopMode();
-	sf::Vector2u windowSize(desktopMode.width / 2, desktopMode.height / 2);
-	m_window.create(sf::VideoMode(windowSize.x, windowSize.y, 32U), "Gills & Glory");*/
-
-	//setupSprite();
+	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
+	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_window.setView(gameView);
 }
 
 /// <summary>
@@ -100,6 +98,10 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+
+	//updateView();
+	m_headquaters.update(t_deltaTime);
+	m_gui.update();
 }
 
 /// <summary>
@@ -109,21 +111,37 @@ void Game::render()
 {
 	m_window.clear(sf::Color::Black);
 
+	m_window.setView(gameView);
 	m_gui.render(m_window);
-	m_window.draw(m_logoSprite);
+	m_headquaters.render(m_window);
 
 	m_window.display();
 }
 
 /// <summary>
-/// load the texture and setup the sprite for the logo
+/// Update the screen view position
 /// </summary>
-void Game::setupSprite()
+void Game::updateView()
 {
-	if (!m_logoTexture.loadFromFile("ASSETS\\IMAGES\\SFML-LOGO.png"))
+	sf::Vector2f viewCenter = gameView.getCenter();
+	sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(m_window));
+
+	if (mousePosition.x < Global::S_WIDTH * 0.1 && viewCenter.x - viewMoveSpeed > minX) 
 	{
-		std::cout << "problem loading logo" << std::endl;
+		viewCenter.x -= viewMoveSpeed;
 	}
-	m_logoSprite.setTexture(m_logoTexture);
-	m_logoSprite.setPosition(300.0f, 180.0f);
+	if (mousePosition.x > Global::S_WIDTH * 0.9 && viewCenter.x + viewMoveSpeed < maxX) 
+	{
+		viewCenter.x += viewMoveSpeed;
+	}
+	if (mousePosition.y < Global::S_HEIGHT * 0.1 && viewCenter.y - viewMoveSpeed > minY) 
+	{
+		viewCenter.y -= viewMoveSpeed;
+	}
+	if (mousePosition.y > Global::S_HEIGHT * 0.9 && viewCenter.y + viewMoveSpeed < maxY)
+	{
+		viewCenter.y += viewMoveSpeed;
+	}
+
+	gameView.setCenter(viewCenter);
 }

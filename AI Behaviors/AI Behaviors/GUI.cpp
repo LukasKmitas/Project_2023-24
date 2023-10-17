@@ -11,17 +11,29 @@ GUI::~GUI()
 
 void GUI::update()
 {
+	std::cout << m_headquarters.getPosition().x << " " << m_headquarters.getPosition().y << std::endl;
 }
 
 void GUI::render(sf::RenderWindow& m_window)
 {
 	m_window.draw(m_welcomeMessage);
+
+	/*if (m_selectedBuildingType == BuildingType::Headquarters) 
+	{
+		std::cout << "Headquarters Slide" << std::endl;
+	}*/
 }
 
 void GUI::handleMouseClick(sf::Vector2i mousePosition)
 {
 	//Testing purposes
 	std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
+
+	/*if ()
+	{
+		m_selectedBuildingType = BuildingType::Headquarters;
+		std::cout << "Headquarters Selected" << std::endl;
+	}*/
 }
 
 void GUI::setupFontAndText()
@@ -33,16 +45,11 @@ void GUI::setupFontAndText()
 	m_welcomeMessage.setFont(m_ArialBlackfont);
 	m_welcomeMessage.setString("Gills & Glory");
 	m_welcomeMessage.setStyle(sf::Text::Italic | sf::Text::Bold);
-	m_welcomeMessage.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 5);
+	m_welcomeMessage.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 10);
 	m_welcomeMessage.setCharacterSize(80U);
 	m_welcomeMessage.setOutlineColor(sf::Color::Blue);
 	m_welcomeMessage.setFillColor(sf::Color::White);
-	m_welcomeMessage.setOutlineThickness(3.0f);
+	m_welcomeMessage.setOutlineThickness(1.0f);
 	sf::FloatRect textBounds = m_welcomeMessage.getLocalBounds();
 	m_welcomeMessage.setOrigin(textBounds.width / 2, textBounds.height / 2);
-}
-
-void GUI::setupSprite()
-{
-
 }
