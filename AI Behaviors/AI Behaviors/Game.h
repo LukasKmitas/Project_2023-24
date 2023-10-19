@@ -5,7 +5,7 @@
 #include "GUI.h"
 #include "Global.h"
 //#include "BuildingType.h"
-
+#include "Grid.h"
 #include "Headquarters.h"
 
 class Game
@@ -18,8 +18,8 @@ public:
 
 private:
 	GUI m_gui;
-	Headquarters m_headquaters;
-	//BuildingType m_selectedBuildingType = BuildingType::Headquarters;
+	Grid m_grid;
+	Headquarters* m_headquaters;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -32,11 +32,12 @@ private:
 	sf::View gameView;
 	sf::Font m_ArialBlackfont;
 
+	sf::Vector2f cameraVelocity;
 	float viewMoveSpeed = 5.0f;
-	float minX = -500;
-	float minY = -500;
-	float maxX = 500;
-	float maxY = 500;
+	float minX = 950;
+	float minY = 530;
+	float maxX = 2000;
+	float maxY = 2500;
 
 	bool m_exitGame;
 

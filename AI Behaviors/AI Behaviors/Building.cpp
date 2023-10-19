@@ -37,5 +37,5 @@ void Building::applyDamage(int damage)
 
 sf::Vector2f Building::getPosition()
 {
-	return m_position;
+	return m_buildingSprite.getPosition();
 }

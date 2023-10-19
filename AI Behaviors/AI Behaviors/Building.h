@@ -18,6 +18,11 @@ public:
 
     sf::Vector2f getPosition();
 
+    const sf::Sprite& getBuildingSprite() const 
+    {
+        return m_buildingSprite;
+    }
+
 protected:
 
     sf::Vector2f m_position;

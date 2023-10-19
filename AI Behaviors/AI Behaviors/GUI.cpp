@@ -11,29 +11,31 @@ GUI::~GUI()
 
 void GUI::update()
 {
-	std::cout << m_headquarters.getPosition().x << " " << m_headquarters.getPosition().y << std::endl;
+	
 }
 
 void GUI::render(sf::RenderWindow& m_window)
 {
 	m_window.draw(m_welcomeMessage);
 
-	/*if (m_selectedBuildingType == BuildingType::Headquarters) 
+	if (m_selectedBuildingType == BuildingType::Headquarters) 
 	{
 		std::cout << "Headquarters Slide" << std::endl;
-	}*/
+	}
 }
 
-void GUI::handleMouseClick(sf::Vector2i mousePosition)
+void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window)
 {
 	//Testing purposes
 	std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
 
-	/*if ()
+	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
+
+	if (m_headquarters->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
 	{
 		m_selectedBuildingType = BuildingType::Headquarters;
 		std::cout << "Headquarters Selected" << std::endl;
-	}*/
+	}
 }
 
 void GUI::setupFontAndText()

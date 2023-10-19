@@ -2,6 +2,7 @@
 
 enum class BuildingType 
 {
+    None,
     Headquarters,
     Infantry,
     Heavy,

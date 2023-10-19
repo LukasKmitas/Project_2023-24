@@ -7,11 +7,15 @@
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
-	m_exitGame{false}
+	m_exitGame{false},
+	m_grid(50,50,100),
+	m_headquaters{new Headquarters()}
 {
+	m_gui.m_headquarters = m_headquaters;
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
+
 }
 
 /// <summary>
@@ -69,7 +73,7 @@ void Game::processEvents()
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-				m_gui.handleMouseClick(mousePosition);
+				m_gui.handleMouseClick(mousePosition, m_window);
 			}
 		}
 	}
@@ -86,6 +90,30 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+
+	cameraVelocity = sf::Vector2f(0.0f, 0.0f);
+	float speed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? 2.0f * viewMoveSpeed : viewMoveSpeed;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		cameraVelocity.y -= speed;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		cameraVelocity.x -= speed;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		cameraVelocity.y += speed;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		cameraVelocity.x += speed;
+	}
+	sf::Vector2f viewCenter = gameView.getCenter();
+	viewCenter.x = std::max(minX, std::min(maxX, viewCenter.x + cameraVelocity.x));
+	viewCenter.y = std::max(minY, std::min(maxY, viewCenter.y + cameraVelocity.y));
+	gameView.setCenter(viewCenter);
 }
 
 /// <summary>
@@ -99,8 +127,8 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 
-	//updateView();
-	m_headquaters.update(t_deltaTime);
+	updateView();
+	m_headquaters->update(t_deltaTime);
 	m_gui.update();
 }
 
@@ -111,10 +139,12 @@ void Game::render()
 {
 	m_window.clear(sf::Color::Black);
 
+	m_grid.draw(m_window);
+
 	m_window.setView(gameView);
 	m_gui.render(m_window);
-	m_headquaters.render(m_window);
-
+	m_headquaters->render(m_window);
+	
 	m_window.display();
 }
 

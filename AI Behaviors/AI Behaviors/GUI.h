@@ -8,15 +8,16 @@
 class GUI
 {
 public:
-    Headquarters m_headquarters;
-    BuildingType m_selectedBuildingType = BuildingType::Headquarters;
+
+    Headquarters* m_headquarters = nullptr;
+    BuildingType m_selectedBuildingType = BuildingType::None;
 
     GUI();
     ~GUI();
 
     void update();
     void render(sf::RenderWindow& m_window);
-    void handleMouseClick(sf::Vector2i mousePosition);
+    void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window);
 
 private:
 

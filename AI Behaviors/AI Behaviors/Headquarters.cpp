@@ -2,8 +2,8 @@
 
 Headquarters::Headquarters()
 {
+	m_position = sf::Vector2f(500.0f, 500.0f);
 	setupSprite();
-	m_position = sf::Vector2f(0.0f, 0.0f);
 }
 
 Headquarters::~Headquarters()
@@ -12,8 +12,8 @@ Headquarters::~Headquarters()
 
 void Headquarters::update(sf::Time deltaTime)
 {
-	m_position += sf::Vector2f(0.1, 0);
-	m_buildingSprite.setPosition(m_position);
+	//m_position += sf::Vector2f(0.1, 0);
+	//m_buildingSprite.setPosition(m_position);
 	//std::cout << m_position.x << " " << m_position.y << std::endl;
 	//std::cout << getPosition().x << " " << getPosition().y << std::endl;
 }
