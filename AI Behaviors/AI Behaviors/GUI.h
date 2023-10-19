@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Global.h"
 #include "BuildingType.h"
+#include "SideBar.h"
 #include "Headquarters.h"
 
 class GUI
@@ -20,6 +21,9 @@ public:
     void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window);
 
 private:
+
+    bool m_showSlider = false;
+    SideBar m_sideBar;
 
     void setupFontAndText();
 

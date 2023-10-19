@@ -21,6 +21,10 @@ void GUI::render(sf::RenderWindow& m_window)
 	if (m_selectedBuildingType == BuildingType::Headquarters) 
 	{
 		std::cout << "Headquarters Slide" << std::endl;
+		if (m_showSlider) 
+		{
+			m_sideBar.render(m_window);
+		}
 	}
 }
 

@@ -25,6 +25,7 @@
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="Headquarters.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SideBar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
@@ -34,6 +35,7 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="Headquarters.h" />
+    <ClInclude Include="SideBar.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="ASSETS\IMAGES\SFML-LOGO.png">

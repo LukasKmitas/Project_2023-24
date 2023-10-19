@@ -8,14 +8,13 @@
 Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
 	m_exitGame{false},
-	m_grid(50,50,100),
+	m_grid(50,50,100), // Only for visual aid
 	m_headquaters{new Headquarters()}
 {
 	m_gui.m_headquarters = m_headquaters;
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
-
 }
 
 /// <summary>
