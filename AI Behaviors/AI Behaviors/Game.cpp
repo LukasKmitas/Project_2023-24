@@ -8,7 +8,7 @@
 Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
 	m_exitGame{false},
-	m_grid(50,50,100), // Only for visual aid
+	m_grid(50,50,50), // Only for visual aid
 	m_headquaters{new Headquarters()}
 {
 	m_gui.m_headquarters = m_headquaters;

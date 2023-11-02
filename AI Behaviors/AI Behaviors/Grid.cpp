@@ -24,7 +24,7 @@ void Grid::createGrid()
             cell.setPosition(j * cellSize, i * cellSize);
             cell.setOutlineThickness(1.0f);
             cell.setFillColor(sf::Color::Black);
-            cell.setOutlineColor(sf::Color::White);
+            cell.setOutlineColor(sf::Color(255,255,255,150));
             cells.push_back(cell);
         }
     }

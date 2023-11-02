@@ -36,6 +36,7 @@
     <ClInclude Include="GUI.h" />
     <ClInclude Include="Headquarters.h" />
     <ClInclude Include="SideBar.h" />
+    <ClInclude Include="UnitType.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="ASSETS\IMAGES\SFML-LOGO.png">

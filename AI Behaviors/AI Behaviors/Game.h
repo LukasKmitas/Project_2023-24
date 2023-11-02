@@ -4,7 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "GUI.h"
 #include "Global.h"
-//#include "BuildingType.h"
 #include "Grid.h"
 #include "Headquarters.h"
 
@@ -36,8 +35,8 @@ private:
 	float viewMoveSpeed = 5.0f;
 	float minX = 950;
 	float minY = 530;
-	float maxX = 2000;
-	float maxY = 2500;
+	float maxX = 1550;
+	float maxY = 1970;
 
 	bool m_exitGame;
 

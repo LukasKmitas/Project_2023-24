@@ -3,6 +3,16 @@
 GUI::GUI()
 {
 	setupFontAndText();
+	setupTopBar();
+
+	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	{
+		std::cout << "problem loading arial black font" << std::endl;
+	}
+	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	{
+		std::cout << "problem loading arial black font" << std::endl;
+	}
 }
 
 GUI::~GUI()
@@ -17,14 +27,11 @@ void GUI::update()
 void GUI::render(sf::RenderWindow& m_window)
 {
 	m_window.draw(m_welcomeMessage);
-
-	if (m_selectedBuildingType == BuildingType::Headquarters) 
+	m_window.draw(m_topBar);
+	
+	if (m_showSlider) 
 	{
-		std::cout << "Headquarters Slide" << std::endl;
-		if (m_showSlider) 
-		{
-			m_sideBar.render(m_window);
-		}
+		m_sideBar.render(m_window);
 	}
 }
 
@@ -37,8 +44,23 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 
 	if (m_headquarters->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
 	{
+		m_showSlider = true;
 		m_selectedBuildingType = BuildingType::Headquarters;
-		std::cout << "Headquarters Selected" << std::endl;
+
+		if (m_selectedBuildingType == BuildingType::Headquarters)
+		{
+			/*m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Harvester);
+			m_sideBar.addBuildingButton(m_BuildingTexture2, BuildingType::Infantry);*/
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Harvester, 0, 0);
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Infantry, 1, 0);
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Heavy, 2, 0);
+		}
+
+	}
+	else
+	{
+		m_showSlider = false;
+		m_selectedBuildingType = BuildingType::None;
 	}
 }
 
@@ -59,3 +81,13 @@ void GUI::setupFontAndText()
 	sf::FloatRect textBounds = m_welcomeMessage.getLocalBounds();
 	m_welcomeMessage.setOrigin(textBounds.width / 2, textBounds.height / 2);
 }
+
+void GUI::setupTopBar()
+{
+	m_topBar.setSize(sf::Vector2f(400, 20));
+	m_topBar.setFillColor(sf::Color(135, 135, 135, 255));
+	m_topBar.setOutlineColor(sf::Color(200, 100, 100, 200));
+	m_topBar.setOutlineThickness(3);
+	m_topBar.setPosition(Global::S_WIDTH - 400, 0);
+}
+

@@ -26,8 +26,14 @@ private:
     SideBar m_sideBar;
 
     void setupFontAndText();
+    void setupTopBar();
+
+    sf::RectangleShape m_topBar;
 
     sf::Font m_ArialBlackfont;
     sf::Text m_welcomeMessage;
+
+    sf::Texture m_BuildingTexture1;
+    sf::Texture m_BuildingTexture2;
 
 };
