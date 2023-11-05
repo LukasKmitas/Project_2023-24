@@ -1,10 +1,10 @@
 #pragma once
 
-enum class UnitType
+enum class InfantryType
 {
     None,
     RifleSquad,
+    GrenadeSquad,
     RocketSquad,
-    Tank,
-    Air
+    MedicUnit
 };

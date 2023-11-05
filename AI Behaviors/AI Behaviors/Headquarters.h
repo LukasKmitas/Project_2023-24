@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Building.h"
 
 class Headquarters : public Building
@@ -10,7 +9,6 @@ public:
 
     void update(sf::Time deltaTime) override;
     void render(sf::RenderWindow& m_window) const override;
-
 
 private:
     

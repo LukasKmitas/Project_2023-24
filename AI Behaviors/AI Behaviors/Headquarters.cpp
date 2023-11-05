@@ -25,7 +25,7 @@ void Headquarters::render(sf::RenderWindow& m_window) const
 
 void Headquarters::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Temp\\Command Center.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Command Center.png"))
 	{
 		std::cout << "Error - Loading Building Sprite" << std::endl;
 	}
@@ -35,5 +35,3 @@ void Headquarters::setupSprite()
 	m_buildingSprite.setOrigin(m_buildingSprite.getLocalBounds().width / 2, m_buildingSprite.getLocalBounds().height / 2);
 	m_buildingSprite.setScale(1, 1);
 }
-
-

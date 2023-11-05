@@ -3,9 +3,9 @@
 enum class BuildingType 
 {
     None,
-    Harvester,
+    Refinery,
     Headquarters,
-    Infantry,
-    Heavy,
-    Air
+    Barracks,
+    Vehicle,
+    AirCraft
 };

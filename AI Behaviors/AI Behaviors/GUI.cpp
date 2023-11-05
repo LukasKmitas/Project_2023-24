@@ -5,14 +5,17 @@ GUI::GUI()
 	setupFontAndText();
 	setupTopBar();
 
-	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
 	{
 		std::cout << "problem loading arial black font" << std::endl;
 	}
-	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\VehicleIcon.png"))
 	{
 		std::cout << "problem loading arial black font" << std::endl;
 	}
+	m_guiView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
+	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	Global::currency = 1000;
 }
 
 GUI::~GUI()
@@ -21,14 +24,17 @@ GUI::~GUI()
 
 void GUI::update()
 {
-	
+	updateCurrency();
 }
 
 void GUI::render(sf::RenderWindow& m_window)
 {
+	m_window.setView(m_guiView);
+
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_topBar);
-	
+	m_window.draw(m_currencyText);
+
 	if (m_showSlider) 
 	{
 		m_sideBar.render(m_window);
@@ -44,31 +50,45 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 
 	if (m_headquarters->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
 	{
-		m_showSlider = true;
-		m_selectedBuildingType = BuildingType::Headquarters;
+		m_showSlider = !m_showSlider;
 
-		if (m_selectedBuildingType == BuildingType::Headquarters)
+		if (m_showSlider)
 		{
-			/*m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Harvester);
-			m_sideBar.addBuildingButton(m_BuildingTexture2, BuildingType::Infantry);*/
-			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Harvester, 0, 0);
-			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Infantry, 1, 0);
-			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Heavy, 2, 0);
+			m_selectedBuildingType = BuildingType::Headquarters;
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Refinery, 0, 0, "");
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Barracks, 1, 0, "");
+			m_sideBar.addBuildingButton(m_BuildingTexture2, BuildingType::Vehicle, 2, 0, "Vehicle");
+			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::AirCraft, 0, 1, "");
 		}
-
 	}
 	else
 	{
-		m_showSlider = false;
 		m_selectedBuildingType = BuildingType::None;
 	}
+
+	if (m_showSlider)
+	{
+		sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
+		sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
+		if (refineryIconBounds.contains(worldMousePosition))
+		{
+			std::cout << "Refinery Clicked" << std::endl;
+			m_buildingToPlace = BuildingType::Refinery;
+		}
+	}
+}
+
+void GUI::updateCurrency()
+{
+	Global::currency = std::min(Global::currency, 5000);
+	m_currencyText.setString("Currency: " + std::to_string(Global::currency));
 }
 
 void GUI::setupFontAndText()
 {
 	if (!m_ArialBlackfont.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
 	{
-		std::cout << "problem loading arial black font" << std::endl;
+		std::cout << "problem loading font" << std::endl;
 	}
 	m_welcomeMessage.setFont(m_ArialBlackfont);
 	m_welcomeMessage.setString("Gills & Glory");
@@ -89,5 +109,17 @@ void GUI::setupTopBar()
 	m_topBar.setOutlineColor(sf::Color(200, 100, 100, 200));
 	m_topBar.setOutlineThickness(3);
 	m_topBar.setPosition(Global::S_WIDTH - 400, 0);
+
+	m_currencyFont.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf");
+	m_currencyText.setFont(m_currencyFont);
+	m_currencyText.setCharacterSize(16);
+	m_currencyText.setFillColor(sf::Color::White);
+	m_currencyText.setOutlineColor(sf::Color::Black);
+	m_currencyText.setOutlineThickness(1);
+	m_currencyText.setStyle(sf::Text::Bold);
+	m_currencyText.setString("Currency: " + std::to_string(Global::currency));
+	sf::FloatRect textBounds = m_currencyText.getLocalBounds();
+	m_currencyText.setOrigin(textBounds.width / 2, 0);
+	m_currencyText.setPosition(Global::S_WIDTH - 200, 0);
 }
 

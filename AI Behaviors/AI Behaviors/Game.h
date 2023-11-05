@@ -6,6 +6,7 @@
 #include "Global.h"
 #include "Grid.h"
 #include "Headquarters.h"
+#include "Refinery.h"
 
 class Game
 {
@@ -19,6 +20,9 @@ private:
 	GUI m_gui;
 	Grid m_grid;
 	Headquarters* m_headquaters;
+	Refinery* m_refinery;
+
+	std::vector<Building*> buildings;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
