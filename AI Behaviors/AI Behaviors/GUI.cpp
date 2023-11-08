@@ -16,19 +16,30 @@ GUI::GUI()
 	m_guiView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
 	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	Global::currency = 1000;
+	m_refinery = new Refinery();
 }
 
 GUI::~GUI()
 {
+	delete m_headquarters;
 }
 
-void GUI::update()
+void GUI::update(sf::Time t_deltaTime)
 {
 	updateCurrency();
+	for (Building* building : placedBuildings)
+	{
+		building->update(t_deltaTime);
+	}
 }
 
 void GUI::render(sf::RenderWindow& m_window)
 {
+	for (Building* building : placedBuildings)
+	{
+		building->render(m_window);
+	}
+
 	m_window.setView(m_guiView);
 
 	m_window.draw(m_welcomeMessage);
@@ -39,12 +50,16 @@ void GUI::render(sf::RenderWindow& m_window)
 	{
 		m_sideBar.render(m_window);
 	}
+	if (m_selectedBuildingType != BuildingType::None)
+	{
+		m_window.draw(m_buildingPreviewSprite);
+	}
 }
 
 void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window)
 {
 	//Testing purposes
-	std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
+	//std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
 
 	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
 
@@ -70,10 +85,45 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 	{
 		sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
 		sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
-		if (refineryIconBounds.contains(worldMousePosition))
+		sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
+
+		if (refineryIconBounds.contains(guiMousePosition))
 		{
 			std::cout << "Refinery Clicked" << std::endl;
-			m_buildingToPlace = BuildingType::Refinery;
+			m_selectedBuildingType = BuildingType::Refinery;
+			m_confirmationBuilding = true;
+		}
+	}
+}
+
+void GUI::handleBuildingPlacement(sf::RenderWindow& window)
+{
+	if (m_selectedBuildingType == BuildingType::Refinery)
+	{
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
+
+		const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
+		m_buildingPreviewSprite = buildingSprite;
+		m_buildingPreviewSprite.setPosition(worldMousePosition);
+		m_buildingPreviewSprite.setColor(sf::Color(255, 255, 255, 128));
+
+		// Check for left mouse button press to confirm placement
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			bool isValidPlacement = IsPlacementValid(worldMousePosition);
+
+			if (isValidPlacement)
+			{
+				Refinery* newRefinery = new Refinery();
+				newRefinery->setPosition(worldMousePosition);
+
+				placedBuildings.push_back(newRefinery);
+
+				// Reset the building preview
+				m_confirmationBuilding = false;
+				m_buildingPreviewSprite.setPosition(sf::Vector2f(-1000.0f, -1000.0f));
+			}
 		}
 	}
 }

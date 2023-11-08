@@ -15,8 +15,10 @@ public:
     int getHealth() const;
     void setHealth(int health);
     void applyDamage(int damage);
+    void setPosition(const sf::Vector2f& position);
 
     sf::Vector2f getPosition();
+ 
 
     const sf::Sprite& getBuildingSprite() const 
     {

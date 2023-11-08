@@ -22,7 +22,7 @@ private:
 	Headquarters* m_headquaters;
 	Refinery* m_refinery;
 
-	std::vector<Building*> buildings;
+	//std::vector<Building*> placedBuildings;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -30,6 +30,7 @@ private:
 	void render();
 
 	void updateView();
+	//void handleBuildingPlacement(sf::RenderWindow& window);
 
 	sf::RenderWindow m_window;
 	sf::View gameView;

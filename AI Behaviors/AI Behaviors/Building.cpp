@@ -35,6 +35,12 @@ void Building::applyDamage(int damage)
 	}
 }
 
+void Building::setPosition(const sf::Vector2f& position)
+{
+	m_position = position;
+	m_buildingSprite.setPosition(position);
+}
+
 sf::Vector2f Building::getPosition()
 {
 	return m_buildingSprite.getPosition();
