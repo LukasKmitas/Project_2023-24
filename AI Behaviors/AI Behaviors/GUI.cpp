@@ -7,16 +7,20 @@ GUI::GUI()
 
 	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
 	{
-		std::cout << "problem loading arial black font" << std::endl;
+		std::cout << "Error - Problem Loading Building 1 Texture" << std::endl;
 	}
 	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\VehicleIcon.png"))
 	{
-		std::cout << "problem loading arial black font" << std::endl;
+		std::cout << "Error - Problem Loading Building 2 Texture" << std::endl;
+	}
+	if (!m_unitInfantryTexture.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	{
+		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}
 	m_guiView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
 	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
-	Global::currency = 1000;
 	m_refinery = new Refinery();
+	m_barracks = new Barracks();
 }
 
 GUI::~GUI()
@@ -36,7 +40,6 @@ void GUI::render(sf::RenderWindow& m_window)
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_topBar);
 	m_window.draw(m_currencyText);
-
 	if (m_showSlider) 
 	{
 		m_sideBar.render(m_window);
@@ -47,9 +50,8 @@ void GUI::render(sf::RenderWindow& m_window)
 	}
 }
 
-void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window)
+void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window, BuildingType& selectedBuildingType)
 {
-	//Testing purposes
 	//std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
 
 	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
@@ -67,6 +69,18 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::AirCraft, 0, 1, "");
 		}
 	}
+	else if (m_barracks->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
+	{
+		m_showSlider = !m_showSlider;
+		if (m_showSlider)
+		{
+			m_selectedBuildingType = BuildingType::Barracks;
+			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RifleSquad, 0, 0, "");
+			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "");
+			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "");
+			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "");
+		}
+	}
 	else
 	{
 		m_selectedBuildingType = BuildingType::None;
@@ -74,44 +88,70 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 
 	if (m_showSlider)
 	{
+		sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
+		// Refinery
 		sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
 		sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
-		sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
-
 		if (refineryIconBounds.contains(guiMousePosition))
 		{
 			std::cout << "Refinery Clicked" << std::endl;
 			m_selectedBuildingType = BuildingType::Refinery;
+			selectedBuildingType = BuildingType::Refinery;
 			m_confirmBuildingPlacement = true;
 		}
+		// Barracks
+		sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
+		sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
+		if (barrackIconBounds.contains(guiMousePosition))
+		{
+			std::cout << "Barracks Clicked" << std::endl;
+			m_selectedBuildingType = BuildingType::Barracks;
+			selectedBuildingType = BuildingType::Barracks;
+			m_confirmBuildingPlacement = true;
+		}
+		m_buildingPreviewSprite.setPosition(-2000, -2000);
 	}
 }
 
 void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window)
 {
-	if (m_selectedBuildingType == BuildingType::Refinery)
+	
+	if (m_confirmBuildingPlacement)
 	{
-		if (m_confirmBuildingPlacement)
+		sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
+		if (m_selectedBuildingType == BuildingType::Refinery)
 		{
-			sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
 			const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
 			m_buildingPreviewSprite = buildingSprite;
 			m_buildingPreviewSprite.setPosition(guiMousePosition);
 			m_buildingPreviewSprite.setColor(sf::Color(255, 255, 255, 128));
 		}
-
-		// Check for left mouse button press to confirm placement
-		if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
+		else if (m_selectedBuildingType == BuildingType::Barracks)
 		{
-			sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, window.getView());
-			bool isValidPlacement = IsPlacementValid(worldMousePosition);
+			const sf::Sprite& buildingSprite = m_barracks->getBuildingSprite();
+			m_buildingPreviewSprite = buildingSprite;
+			m_buildingPreviewSprite.setPosition(guiMousePosition);
+			m_buildingPreviewSprite.setColor(sf::Color(255, 255, 255, 128));
+		}
+	}
 
-			if (isValidPlacement)
+	if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
+	{
+		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, window.getView());
+		bool isValidPlacement = IsPlacementValid(worldMousePosition);
+
+		if (isValidPlacement)
+		{
+			if (m_selectedBuildingType == BuildingType::Refinery)
 			{
-				m_confirmed = true;
-				m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
-				m_buildingPreviewSprite.setPosition(-2000, -2000);
+				m_refinery->checkAffordability();
 			}
+			else if (m_selectedBuildingType == BuildingType::Barracks)
+			{
+				m_barracks->checkAffordability();
+			}
+			m_confirmed = true;
+			m_buildingPreviewSprite.setPosition(-2000, -2000);
 		}
 	}
 }

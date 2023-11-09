@@ -1,3 +1,3 @@
 #include "Global.h"
 
-int Global::currency = 0;
+int Global::currency = 5000;

@@ -9,8 +9,7 @@ Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
 	m_exitGame{false},
 	m_grid(50,50,50), // Only for visual aid
-	m_headquaters{new Headquarters()},
-	m_refinery{new Refinery()}
+	m_headquaters{new Headquarters()}
 {
 	m_gui.m_headquarters = m_headquaters;
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
@@ -73,7 +72,7 @@ void Game::processEvents()
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-				m_gui.handleMouseClick(mousePosition, m_window);
+				m_gui.handleMouseClick(mousePosition, m_window, m_selectedBuildingType);
 			}
 		}
 	}
@@ -124,13 +123,15 @@ void Game::update(sf::Time t_deltaTime)
 	}
 
 	updateView();
+	createBuilding(m_window);
 	m_headquaters->update(t_deltaTime);
 	m_gui.update(t_deltaTime);
-	createBuilding(m_window);
 	for (Building* building : placedBuildings) 
 	{
 		building->update(t_deltaTime);
 	}
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+	m_gui.handleBuildingPlacement(mousePosition, m_window);
 }
 
 /// <summary>
@@ -141,18 +142,16 @@ void Game::render()
 	m_window.clear(sf::Color::Black);
 
 	m_grid.draw(m_window);
+	for (Building* building : placedBuildings)
+	{
+		building->render(m_window);
+	}
 	m_gui.render(m_window);
 
 	m_window.setView(gameView);
 
 	m_headquaters->render(m_window);
 
-	for (Building* building : placedBuildings) 
-	{
-		building->render(m_window);
-	}
-	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-	m_gui.handleBuildingPlacement(mousePosition, m_window);
 	m_window.display();
 }
 
@@ -186,21 +185,26 @@ void Game::updateView()
 
 void Game::createBuilding(sf::RenderWindow& window)
 {
-	if (m_gui.m_selectedBuildingType == BuildingType::Refinery)
+	if (m_gui.m_confirmed)
 	{
-		if (m_gui.m_confirmed)
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
+		if (m_selectedBuildingType == BuildingType::Refinery)
 		{
-			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-			sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
-
 			Refinery* newRefinery = new Refinery();
 			newRefinery->setPosition(worldMousePosition);
-
 			placedBuildings.push_back(newRefinery);
-			m_gui.m_confirmBuildingPlacement = false;
-			m_gui.m_confirmed = false;
 			std::cout << "Refinery Created" << std::endl;
-
 		}
+		else if (m_selectedBuildingType == BuildingType::Barracks)
+		{
+			Barracks* newBarracks = new Barracks();
+			newBarracks->setPosition(worldMousePosition);
+			placedBuildings.push_back(newBarracks);
+			std::cout << "Barracks Created" << std::endl;
+		}
+
+		m_gui.m_confirmBuildingPlacement = false;
+		m_gui.m_confirmed = false;
 	}
 }

@@ -44,6 +44,7 @@ void SideBar::addBuildingButton(const sf::Texture& texture, BuildingType buildin
     else if (buildingType == BuildingType::Barracks)
     {
         button.m_sprite.setTextureRect(sf::IntRect(250, 649, 120, 92));
+        m_barracksIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else if (buildingType == BuildingType::Vehicle)
     {
@@ -78,6 +79,64 @@ void SideBar::addBuildingButton(const sf::Texture& texture, BuildingType buildin
     button.m_buildingType = buildingType;
 
     m_buttons.push_back(button);
+}
+
+void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftantryType, int gridX, int gridY, const std::string& buttonText)
+{
+    Button button;
+    button.m_sprite.setTexture(texture);
+    button.m_sprite.setScale(3.65, 3.7);
+
+    float buttonWidth = m_bottomBackground.getSize().x / gridCols;
+    float buttonHeight = m_bottomBackground.getSize().y / gridRows;
+    float xPosition = m_bottomBackground.getPosition().x + gridX * buttonWidth;
+    float yPosition = m_bottomBackground.getPosition().y + gridY * buttonHeight;
+
+    if (inftantryType == InfantryType::RifleSquad)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 24));
+    }
+    else if (inftantryType == InfantryType::GrenadeSquad)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(33, 0, 32, 24));
+    }
+    else if (inftantryType == InfantryType::RocketSquad)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(66, 0, 32, 24));
+    }
+    else if (inftantryType == InfantryType::MedicUnit)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 48));
+    }
+    else
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(250, 464, 120, 92));
+    }
+
+    button.m_sprite.setPosition(xPosition, yPosition);
+
+    //Text
+    button.m_text.setFont(m_buttonFont);
+    button.m_text.setString(buttonText);
+    button.m_text.setCharacterSize(16);
+    button.m_text.setFillColor(sf::Color::White);
+    button.m_text.setOutlineColor(sf::Color::Black);
+    button.m_text.setOutlineThickness(1);
+    button.m_text.setStyle(sf::Text::Bold);
+
+    sf::Vector2f textPosition = button.m_sprite.getPosition();
+    textPosition.x += button.m_sprite.getGlobalBounds().width / 2;
+    textPosition.y += button.m_sprite.getGlobalBounds().height - 10;
+    sf::FloatRect textBounds = button.m_text.getLocalBounds();
+    button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
+
+    button.m_text.setPosition(textPosition);
+
+    // Store the building type
+    button.m_infantryType = inftantryType;
+
+    m_buttons.push_back(button);
+
 }
 
 void SideBar::setupSlider()

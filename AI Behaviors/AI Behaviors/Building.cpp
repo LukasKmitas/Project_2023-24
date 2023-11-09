@@ -45,3 +45,25 @@ sf::Vector2f Building::getPosition()
 {
 	return m_buildingSprite.getPosition();
 }
+
+int Building::getCost() const
+{
+	return m_cost;
+}
+
+bool Building::canAfford() const
+{
+	return Global::currency >= m_cost;
+}
+
+void Building::checkAffordability()
+{
+	if (canAfford())
+	{
+		Global::currency -= m_cost;
+	}
+	else
+	{
+		std::cout << "Not enough currency to place the building." << std::endl;
+	}
+}

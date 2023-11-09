@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "Global.h"
 
 class Building
 {
@@ -19,6 +20,9 @@ public:
 
     sf::Vector2f getPosition();
  
+    int getCost() const;
+    bool canAfford() const;
+    void checkAffordability();
 
     const sf::Sprite& getBuildingSprite() const 
     {
@@ -34,5 +38,6 @@ protected:
     sf::Sprite m_buildingSprite;
 
     int m_health = 100;
+    int m_cost = 100;
 
 };

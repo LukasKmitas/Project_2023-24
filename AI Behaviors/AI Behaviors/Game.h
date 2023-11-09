@@ -5,6 +5,7 @@
 #include "GUI.h"
 #include "Global.h"
 #include "Grid.h"
+#include "BuildingType.h"
 #include "Headquarters.h"
 #include "Refinery.h"
 
@@ -20,8 +21,7 @@ private:
 	GUI m_gui;
 	Grid m_grid;
 	Headquarters* m_headquaters;
-	Refinery* m_refinery;
-
+	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
 
 	void processEvents();

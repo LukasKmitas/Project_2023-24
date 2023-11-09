@@ -3,9 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include "Global.h"
 #include "BuildingType.h"
+#include "InfantryType.h"
+
 #include "SideBar.h"
 #include "Headquarters.h"
 #include "Refinery.h"
+#include "Barracks.h"
 
 class GUI
 {
@@ -13,15 +16,16 @@ public:
 
     Headquarters* m_headquarters = nullptr;
     Refinery* m_refinery = nullptr;
+    Barracks* m_barracks = nullptr;
     BuildingType m_selectedBuildingType = BuildingType::None;
-    //std::vector<Building*> placedBuildings;
+    InfantryType m_selectedUnitType = InfantryType::None;
 
     GUI();
     ~GUI();
 
     void update(sf::Time t_deltaTime);
     void render(sf::RenderWindow& m_window);
-    void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window);
+    void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window, BuildingType& selectedBuildingType);
     void handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window);
 
     bool m_confirmBuildingPlacement = false;
@@ -29,13 +33,6 @@ public:
 
     bool IsPlacementValid(const sf::Vector2f& position)
     {
-        /*for (Building* building : placedBuildings)
-        {
-            if (building->getBuildingSprite().getGlobalBounds().intersects(m_refinery->getBuildingSprite().getGlobalBounds()))
-            {
-                return false;
-            }
-        }*/
 
         return true;
     }
@@ -61,9 +58,10 @@ private:
 
     sf::Texture m_BuildingTexture1;
     sf::Texture m_BuildingTexture2;
-
+    sf::Texture m_unitInfantryTexture;
     sf::Sprite m_buildingPreviewSprite;
 
+    
 
     bool m_showSlider = false;
 };

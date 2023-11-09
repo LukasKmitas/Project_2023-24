@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Barracks.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
@@ -31,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirCraftType.h" />
+    <ClInclude Include="Barracks.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
     <ClInclude Include="Game.h" />

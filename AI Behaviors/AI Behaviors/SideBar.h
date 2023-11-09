@@ -25,12 +25,18 @@ public:
     void render(sf::RenderWindow& m_window);
 
     void addBuildingButton(const sf::Texture& texture, BuildingType buildingType, int gridX, int gridY, const std::string& buttonText);
+    void addInfantryButton(const sf::Texture& texture, InfantryType inftantryType, int gridX, int gridY, const std::string& buttonText);
 
     std::vector<Button> m_buttons;
 
     sf::Vector2f getRefineryIconPosition() const 
     {
         return m_refineryIconPosition;
+    }
+
+    sf::Vector2f getBarracksIconPosition() const
+    {
+        return m_barracksIconPosition;
     }
 
 private:
@@ -45,6 +51,7 @@ private:
     sf::RectangleShape m_bottomBackground;
 
     sf::Vector2f m_refineryIconPosition;
+    sf::Vector2f m_barracksIconPosition;
 
     int gridCols = 3;
     int gridRows = 6;
