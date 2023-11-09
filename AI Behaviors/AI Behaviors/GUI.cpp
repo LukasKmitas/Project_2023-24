@@ -27,19 +27,10 @@ GUI::~GUI()
 void GUI::update(sf::Time t_deltaTime)
 {
 	updateCurrency();
-	for (Building* building : placedBuildings)
-	{
-		building->update(t_deltaTime);
-	}
 }
 
 void GUI::render(sf::RenderWindow& m_window)
 {
-	for (Building* building : placedBuildings)
-	{
-		building->render(m_window);
-	}
-
 	m_window.setView(m_guiView);
 
 	m_window.draw(m_welcomeMessage);
@@ -91,38 +82,35 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 		{
 			std::cout << "Refinery Clicked" << std::endl;
 			m_selectedBuildingType = BuildingType::Refinery;
-			m_confirmationBuilding = true;
+			m_confirmBuildingPlacement = true;
 		}
 	}
 }
 
-void GUI::handleBuildingPlacement(sf::RenderWindow& window)
+void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window)
 {
 	if (m_selectedBuildingType == BuildingType::Refinery)
 	{
-		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
-
-		const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
-		m_buildingPreviewSprite = buildingSprite;
-		m_buildingPreviewSprite.setPosition(worldMousePosition);
-		m_buildingPreviewSprite.setColor(sf::Color(255, 255, 255, 128));
+		if (m_confirmBuildingPlacement)
+		{
+			sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
+			const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
+			m_buildingPreviewSprite = buildingSprite;
+			m_buildingPreviewSprite.setPosition(guiMousePosition);
+			m_buildingPreviewSprite.setColor(sf::Color(255, 255, 255, 128));
+		}
 
 		// Check for left mouse button press to confirm placement
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
 		{
+			sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, window.getView());
 			bool isValidPlacement = IsPlacementValid(worldMousePosition);
 
 			if (isValidPlacement)
 			{
-				Refinery* newRefinery = new Refinery();
-				newRefinery->setPosition(worldMousePosition);
-
-				placedBuildings.push_back(newRefinery);
-
-				// Reset the building preview
-				m_confirmationBuilding = false;
-				m_buildingPreviewSprite.setPosition(sf::Vector2f(-1000.0f, -1000.0f));
+				m_confirmed = true;
+				m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+				m_buildingPreviewSprite.setPosition(-2000, -2000);
 			}
 		}
 	}

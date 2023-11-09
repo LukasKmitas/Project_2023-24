@@ -14,7 +14,7 @@ public:
     Headquarters* m_headquarters = nullptr;
     Refinery* m_refinery = nullptr;
     BuildingType m_selectedBuildingType = BuildingType::None;
-    std::vector<Building*> placedBuildings;
+    //std::vector<Building*> placedBuildings;
 
     GUI();
     ~GUI();
@@ -22,19 +22,20 @@ public:
     void update(sf::Time t_deltaTime);
     void render(sf::RenderWindow& m_window);
     void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window);
-    void handleBuildingPlacement(sf::RenderWindow& window);
+    void handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window);
 
-    bool m_confirmationBuilding = false;
+    bool m_confirmBuildingPlacement = false;
     bool m_confirmed = false;
+
     bool IsPlacementValid(const sf::Vector2f& position)
     {
-        for (Building* building : placedBuildings)
+        /*for (Building* building : placedBuildings)
         {
             if (building->getBuildingSprite().getGlobalBounds().intersects(m_refinery->getBuildingSprite().getGlobalBounds()))
             {
                 return false;
             }
-        }
+        }*/
 
         return true;
     }

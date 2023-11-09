@@ -28,6 +28,12 @@
     <Filter Include="Source Files\Buildings">
       <UniqueIdentifier>{1c65d18e-6e76-465b-8107-df7460c220fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{1b09e9b3-221a-4a2f-8341-baa1c8c23a15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{d6cdf539-ef0b-48be-bfe7-2bb337accdce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,13 +42,7 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SideBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Building.cpp">
@@ -57,21 +57,21 @@
     <ClCompile Include="Refinery.cpp">
       <Filter>Source Files\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SideBar.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SideBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BuildingType.h">
@@ -94,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="Refinery.h">
       <Filter>Header Files\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SideBar.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

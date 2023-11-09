@@ -126,11 +126,11 @@ void Game::update(sf::Time t_deltaTime)
 	updateView();
 	m_headquaters->update(t_deltaTime);
 	m_gui.update(t_deltaTime);
-
-	/*for (Building* building : placedBuildings) 
+	createBuilding(m_window);
+	for (Building* building : placedBuildings) 
 	{
 		building->update(t_deltaTime);
-	}*/
+	}
 }
 
 /// <summary>
@@ -147,11 +147,12 @@ void Game::render()
 
 	m_headquaters->render(m_window);
 
-	/*for (Building* building : placedBuildings) 
+	for (Building* building : placedBuildings) 
 	{
 		building->render(m_window);
-	}*/
-	m_gui.handleBuildingPlacement(m_window);
+	}
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+	m_gui.handleBuildingPlacement(mousePosition, m_window);
 	m_window.display();
 }
 
@@ -183,27 +184,23 @@ void Game::updateView()
 	gameView.setCenter(viewCenter);
 }
 
-//void Game::handleBuildingPlacement(sf::RenderWindow& window)
-//{
-//	if (m_gui.m_selectedBuildingType == BuildingType::Refinery)
-//	{
-//		if (m_gui.m_confirmationBuilding && sf::Mouse::isButtonPressed(sf::Mouse::Left))
-//		{
-//			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-//			sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
-//
-//			//Make sure it doesnt collide with other buildings etc.
-//			bool isValidPlacement = true; //for now true
-//
-//			if (isValidPlacement)
-//			{
-//				Refinery* newRefinery = new Refinery();
-//				newRefinery->setPosition(worldMousePosition);
-//
-//				placedBuildings.push_back(newRefinery);
-//				m_gui.m_confirmationBuilding = false;
-//				std::cout << "Refinery Created" << std::endl;
-//			}
-//		}
-//	}
-//}
+void Game::createBuilding(sf::RenderWindow& window)
+{
+	if (m_gui.m_selectedBuildingType == BuildingType::Refinery)
+	{
+		if (m_gui.m_confirmed)
+		{
+			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+			sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
+
+			Refinery* newRefinery = new Refinery();
+			newRefinery->setPosition(worldMousePosition);
+
+			placedBuildings.push_back(newRefinery);
+			m_gui.m_confirmBuildingPlacement = false;
+			m_gui.m_confirmed = false;
+			std::cout << "Refinery Created" << std::endl;
+
+		}
+	}
+}
