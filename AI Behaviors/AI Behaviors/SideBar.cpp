@@ -104,13 +104,9 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
     {
         button.m_sprite.setTextureRect(sf::IntRect(66, 0, 32, 24));
     }
-    else if (inftantryType == InfantryType::MedicUnit)
-    {
-        button.m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 48));
-    }
     else
     {
-        button.m_sprite.setTextureRect(sf::IntRect(250, 464, 120, 92));
+        button.m_sprite.setTextureRect(sf::IntRect(132, 0, 32, 24));
     }
 
     button.m_sprite.setPosition(xPosition, yPosition);

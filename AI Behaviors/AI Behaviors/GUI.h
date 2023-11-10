@@ -19,8 +19,9 @@ public:
     Barracks* m_barracks = nullptr;
     BuildingType m_selectedBuildingType = BuildingType::None;
     InfantryType m_selectedUnitType = InfantryType::None;
+    std::vector<Building*>& placedBuildings;
 
-    GUI();
+    GUI(std::vector<Building*>& buildings);
     ~GUI();
 
     void update(sf::Time t_deltaTime);
@@ -61,7 +62,7 @@ private:
     sf::Texture m_unitInfantryTexture;
     sf::Sprite m_buildingPreviewSprite;
 
-    
+    sf::Vector2f barracksBuildingPosition;
 
     bool m_showSlider = false;
 };

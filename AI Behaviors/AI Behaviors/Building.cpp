@@ -1,7 +1,11 @@
 #include "Building.h"
 
+int Building::buildingCount = 0;
+
 Building::Building()
 {
+	buildingCount++;
+	buildingID = buildingCount;
 }
 
 Building::~Building()

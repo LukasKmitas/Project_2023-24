@@ -28,6 +28,10 @@ public:
     {
         return m_buildingSprite;
     }
+    int getBuildingID() const 
+    {
+        return buildingID;
+    }
 
 protected:
 
@@ -39,5 +43,6 @@ protected:
 
     int m_health = 100;
     int m_cost = 100;
-
+    static int buildingCount;
+    int buildingID = 0;
 };

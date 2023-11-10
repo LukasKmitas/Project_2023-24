@@ -39,6 +39,11 @@ public:
         return m_barracksIconPosition;
     }
 
+    const sf::RectangleShape& getSideBarRect() const
+    {
+        return m_background;
+    }
+
 private:
 
     void setupSlider();

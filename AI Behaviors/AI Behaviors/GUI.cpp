@@ -1,6 +1,6 @@
 #include "GUI.h"
 
-GUI::GUI()
+GUI::GUI(std::vector<Building*>& buildings) : placedBuildings(buildings)
 {
 	setupFontAndText();
 	setupTopBar();
@@ -21,11 +21,15 @@ GUI::GUI()
 	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_refinery = new Refinery();
 	m_barracks = new Barracks();
+	m_refinery->setPosition(sf::Vector2f(-5000, -5000));
+	m_barracks->setPosition(sf::Vector2f(-5000, -5000));
 }
 
 GUI::~GUI()
 {
 	delete m_headquarters;
+	delete m_refinery;
+	delete m_barracks;
 }
 
 void GUI::update(sf::Time t_deltaTime)
@@ -58,8 +62,8 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 
 	if (m_headquarters->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
 	{
+		std::cout << "Headquarters selected" << std::endl;
 		m_showSlider = !m_showSlider;
-
 		if (m_showSlider)
 		{
 			m_selectedBuildingType = BuildingType::Headquarters;
@@ -69,8 +73,9 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 			m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::AirCraft, 0, 1, "");
 		}
 	}
-	else if (m_barracks->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
+	/*else if (m_barracks->getBuildingSprite().getGlobalBounds().contains(worldMousePosition))
 	{
+		std::cout << "Barracks selected" << std::endl;
 		m_showSlider = !m_showSlider;
 		if (m_showSlider)
 		{
@@ -80,35 +85,76 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "");
 			m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "");
 		}
-	}
-	else
+	}*/
+	else if (!m_sideBar.getSideBarRect().getGlobalBounds().contains(worldMousePosition))
 	{
+		std::cout << "BUILDING TYPE NONE" << std::endl;
 		m_selectedBuildingType = BuildingType::None;
+	}
+
+	for (Building* building : placedBuildings) 
+	{
+		if (dynamic_cast<Barracks*>(building) != nullptr) 
+		{
+			if (building->getBuildingSprite().getGlobalBounds().contains(worldMousePosition)) 
+			{
+				std::cout << "You have selected Barracks " << building->getBuildingID() << std::endl;
+				//barracksBuildingPosition = building->getPosition();
+				//m_barracks->setPosition(barracksBuildingPosition);
+				m_showSlider = !m_showSlider;
+				if (m_showSlider)
+				{
+					m_selectedBuildingType = BuildingType::Barracks;
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RifleSquad, 0, 0, "");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "");
+				}
+				break;
+			}
+		}
 	}
 
 	if (m_showSlider)
 	{
 		sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
-		// Refinery
-		sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
-		sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
-		if (refineryIconBounds.contains(guiMousePosition))
+		if (m_selectedBuildingType == BuildingType::Headquarters)
 		{
-			std::cout << "Refinery Clicked" << std::endl;
-			m_selectedBuildingType = BuildingType::Refinery;
-			selectedBuildingType = BuildingType::Refinery;
-			m_confirmBuildingPlacement = true;
+			// Refinery
+			sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
+			sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
+			if (refineryIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Refinery Clicked" << std::endl;
+				m_selectedBuildingType = BuildingType::Refinery;
+				selectedBuildingType = BuildingType::Refinery;
+				m_confirmBuildingPlacement = true;
+			}
+			// Barracks
+			sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
+			sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
+			if (barrackIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Barracks Clicked" << std::endl;
+				m_selectedBuildingType = BuildingType::Barracks;
+				selectedBuildingType = BuildingType::Barracks;
+				m_confirmBuildingPlacement = true;
+			}
 		}
-		// Barracks
-		sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
-		sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
-		if (barrackIconBounds.contains(guiMousePosition))
+		else if (m_selectedBuildingType == BuildingType::Barracks)
 		{
-			std::cout << "Barracks Clicked" << std::endl;
-			m_selectedBuildingType = BuildingType::Barracks;
-			selectedBuildingType = BuildingType::Barracks;
-			m_confirmBuildingPlacement = true;
+			// InfantrySquad
+			/*sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
+			sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
+			if (barrackIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Barracks Clicked" << std::endl;
+				m_selectedBuildingType = BuildingType::Barracks;
+				selectedBuildingType = BuildingType::Barracks;
+				m_confirmBuildingPlacement = true;
+			}*/
 		}
+
 		m_buildingPreviewSprite.setPosition(-2000, -2000);
 	}
 }

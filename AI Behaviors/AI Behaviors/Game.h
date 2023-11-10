@@ -18,7 +18,7 @@ public:
 	void run();
 
 private:
-	GUI m_gui;
+	GUI m_gui{ placedBuildings };
 	Grid m_grid;
 	Headquarters* m_headquaters;
 	BuildingType m_selectedBuildingType = BuildingType::None;
