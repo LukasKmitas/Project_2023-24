@@ -7,14 +7,13 @@
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
-	m_exitGame{false},
-	m_grid(50,50,50), // Only for visual aid
-	m_headquaters{new Headquarters()}
+	m_exitGame{false}
 {
-	m_gui.m_headquarters = m_headquaters;
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
+
+	createBase();
 }
 
 /// <summary>
@@ -72,7 +71,7 @@ void Game::processEvents()
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-				m_gui.handleMouseClick(mousePosition, m_window, m_selectedBuildingType);
+				m_gui.handleMouseClick(mousePosition, m_window);
 			}
 		}
 	}
@@ -124,7 +123,6 @@ void Game::update(sf::Time t_deltaTime)
 
 	updateView();
 	createBuilding(m_window);
-	m_headquaters->update(t_deltaTime);
 	m_gui.update(t_deltaTime);
 	for (Building* building : placedBuildings) 
 	{
@@ -149,9 +147,6 @@ void Game::render()
 	m_gui.render(m_window);
 
 	m_window.setView(gameView);
-
-	m_headquaters->render(m_window);
-
 	m_window.display();
 }
 
@@ -167,7 +162,7 @@ void Game::updateView()
 	{
 		viewCenter.x -= viewMoveSpeed;
 	}
-	if (mousePosition.x > Global::S_WIDTH * 0.9 && viewCenter.x + viewMoveSpeed < maxX) 
+	if (mousePosition.x > Global::S_WIDTH * 0.99 && viewCenter.x + viewMoveSpeed < maxX) 
 	{
 		viewCenter.x += viewMoveSpeed;
 	}
@@ -175,7 +170,7 @@ void Game::updateView()
 	{
 		viewCenter.y -= viewMoveSpeed;
 	}
-	if (mousePosition.y > Global::S_HEIGHT * 0.9 && viewCenter.y + viewMoveSpeed < maxY)
+	if (mousePosition.y > Global::S_HEIGHT * 0.99 && viewCenter.y + viewMoveSpeed < maxY)
 	{
 		viewCenter.y += viewMoveSpeed;
 	}
@@ -203,8 +198,30 @@ void Game::createBuilding(sf::RenderWindow& window)
 			placedBuildings.push_back(newBarracks);
 			std::cout << "Barracks Created" << std::endl;
 		}
-
+		else if (m_selectedBuildingType == BuildingType::Vehicle)
+		{
+			Vehicle* newVehicle = new Vehicle();
+			newVehicle->setPosition(worldMousePosition);
+			placedBuildings.push_back(newVehicle);
+			std::cout << "Vehicle Created" << std::endl;
+		}
+		else if (m_selectedBuildingType == BuildingType::AirCraft)
+		{
+			AirCraft* newAirCraft = new AirCraft();
+			newAirCraft->setPosition(worldMousePosition);
+			placedBuildings.push_back(newAirCraft);
+			std::cout << "AirCraft Created" << std::endl;
+		}
 		m_gui.m_confirmBuildingPlacement = false;
 		m_gui.m_confirmed = false;
+		m_selectedBuildingType = BuildingType::Headquarters;
 	}
+}
+
+void Game::createBase()
+{
+	Headquarters* newHeadquarters = new Headquarters();
+	newHeadquarters->setPosition(sf::Vector2f(800.0f,500.0f));
+	placedBuildings.push_back(newHeadquarters);
+	std::cout << "Base Initilised" << std::endl;
 }

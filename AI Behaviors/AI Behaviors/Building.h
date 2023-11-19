@@ -21,12 +21,15 @@ public:
     sf::Vector2f getPosition();
  
     int getCost() const;
-    bool canAfford() const;
-    void checkAffordability();
+    bool checkAffordability();
 
     const sf::Sprite& getBuildingSprite() const 
     {
         return m_buildingSprite;
+    }
+    const sf::Texture& getBuildingTexture() const
+    {
+        return m_buildingTexture;
     }
     int getBuildingID() const 
     {

@@ -20,12 +20,14 @@ struct Button
 class SideBar
 {
 public:
-    SideBar();
+    SideBar(BuildingType& selectedBuildingType);
 
     void render(sf::RenderWindow& m_window);
 
     void addBuildingButton(const sf::Texture& texture, BuildingType buildingType, int gridX, int gridY, const std::string& buttonText);
     void addInfantryButton(const sf::Texture& texture, InfantryType inftantryType, int gridX, int gridY, const std::string& buttonText);
+    void addVehicleButton(const sf::Texture& texture, VehicleType vehicleType, int gridX, int gridY, const std::string& buttonText);
+    void addAirCraftButton(const sf::Texture& texture, AirCraftType aircraftType, int gridX, int gridY, const std::string& buttonText);
 
     std::vector<Button> m_buttons;
 
@@ -33,10 +35,17 @@ public:
     {
         return m_refineryIconPosition;
     }
-
     sf::Vector2f getBarracksIconPosition() const
     {
         return m_barracksIconPosition;
+    }
+    sf::Vector2f getVehicleIconPosition() const
+    {
+        return m_vehicleIconPosition;
+    }
+    sf::Vector2f getAirCraftIconPosition() const
+    {
+        return m_airCraftIconPosition;
     }
 
     const sf::RectangleShape& getSideBarRect() const
@@ -50,6 +59,8 @@ private:
     void setupFont();
     void drawGrid(sf::RenderWindow& window, int gridCols, int gridRows);
 
+    BuildingType& m_selectedBuildingType;
+
     sf::Font m_buttonFont;
 
     sf::RectangleShape m_background;
@@ -57,6 +68,8 @@ private:
 
     sf::Vector2f m_refineryIconPosition;
     sf::Vector2f m_barracksIconPosition;
+    sf::Vector2f m_vehicleIconPosition;
+    sf::Vector2f m_airCraftIconPosition;
 
     int gridCols = 3;
     int gridRows = 6;

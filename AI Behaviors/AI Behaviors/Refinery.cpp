@@ -23,7 +23,7 @@ void Refinery::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Refinery.png"))
 	{
-		std::cout << "Error - Loading Building Sprite" << std::endl;
+		std::cout << "Error - Loading Refinery Building Sprite" << std::endl;
 	}
 	m_buildingSprite.setTexture(m_buildingTexture);
 	m_buildingSprite.setPosition(m_position);

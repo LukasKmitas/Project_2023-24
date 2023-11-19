@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AirCraft.cpp" />
     <ClCompile Include="Barracks.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -29,8 +30,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Refinery.cpp" />
     <ClCompile Include="SideBar.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AirCraft.h" />
     <ClInclude Include="AirCraftType.h" />
     <ClInclude Include="Barracks.h" />
     <ClInclude Include="Building.h" />
@@ -43,6 +46,8 @@
     <ClInclude Include="InfantryType.h" />
     <ClInclude Include="Refinery.h" />
     <ClInclude Include="SideBar.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehicleType.h" />
   </ItemGroup>
   <ItemGroup>

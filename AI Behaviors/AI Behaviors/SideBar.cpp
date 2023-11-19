@@ -1,14 +1,11 @@
 #include "SideBar.h"
 
-SideBar::SideBar()
+SideBar::SideBar(BuildingType& selectedBuildingType) 
+    :
+    m_selectedBuildingType(selectedBuildingType)
 {
     setupSlider();
     setupFont();
-
-    //button.setTextureRect(sf::IntRect(0, 0, 32, 24));
-    //button.setTextureRect(sf::IntRect(33, 0, 32, 24));
-    //button.setTextureRect(sf::IntRect(66, 0, 32, 24));
-    //button.m_sprite.setScale(3.65, 3.7);
 }
 
 void SideBar::render(sf::RenderWindow& m_window)
@@ -50,10 +47,12 @@ void SideBar::addBuildingButton(const sf::Texture& texture, BuildingType buildin
     {
         button.m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 48));
         button.m_sprite.setScale(1.82, 1.85);
+        m_vehicleIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else
     {
         button.m_sprite.setTextureRect(sf::IntRect(250, 464, 120, 92));
+        m_airCraftIconPosition = sf::Vector2f(xPosition, yPosition);
     }
 
     button.m_sprite.setPosition(xPosition, yPosition);
@@ -132,7 +131,112 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
     button.m_infantryType = inftantryType;
 
     m_buttons.push_back(button);
+}
 
+void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleType, int gridX, int gridY, const std::string& buttonText)
+{
+    Button button;
+    button.m_sprite.setTexture(texture);
+    button.m_sprite.setScale(3.65, 3.7);
+
+    float buttonWidth = m_bottomBackground.getSize().x / gridCols;
+    float buttonHeight = m_bottomBackground.getSize().y / gridRows;
+    float xPosition = m_bottomBackground.getPosition().x + gridX * buttonWidth;
+    float yPosition = m_bottomBackground.getPosition().y + gridY * buttonHeight;
+
+    if (vehicleType == VehicleType::Ranger)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(132, 0, 32, 24));
+    }
+    else if (vehicleType == VehicleType::Tank)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 24));
+    }
+    else if (vehicleType == VehicleType::Artillery)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(0, 25, 32, 24));
+    }
+    else
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(500, 0, 32, 24));
+    }
+
+    button.m_sprite.setPosition(xPosition, yPosition);
+
+    //Text
+    button.m_text.setFont(m_buttonFont);
+    button.m_text.setString(buttonText);
+    button.m_text.setCharacterSize(16);
+    button.m_text.setFillColor(sf::Color::White);
+    button.m_text.setOutlineColor(sf::Color::Black);
+    button.m_text.setOutlineThickness(1);
+    button.m_text.setStyle(sf::Text::Bold);
+
+    sf::Vector2f textPosition = button.m_sprite.getPosition();
+    textPosition.x += button.m_sprite.getGlobalBounds().width / 2;
+    textPosition.y += button.m_sprite.getGlobalBounds().height - 10;
+    sf::FloatRect textBounds = button.m_text.getLocalBounds();
+    button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
+
+    button.m_text.setPosition(textPosition);
+
+    // Store the building type
+    button.m_vehicleType = vehicleType;
+
+    m_buttons.push_back(button);
+}
+
+void SideBar::addAirCraftButton(const sf::Texture& texture, AirCraftType aircraftType, int gridX, int gridY, const std::string& buttonText)
+{
+    Button button;
+    button.m_sprite.setTexture(texture);
+    button.m_sprite.setScale(3.65, 3.7);
+
+    float buttonWidth = m_bottomBackground.getSize().x / gridCols;
+    float buttonHeight = m_bottomBackground.getSize().y / gridRows;
+    float xPosition = m_bottomBackground.getPosition().x + gridX * buttonWidth;
+    float yPosition = m_bottomBackground.getPosition().y + gridY * buttonHeight;
+
+    if (aircraftType == AirCraftType::Orca)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 24));
+    }
+    else if (aircraftType == AirCraftType::HammerHead)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(33, 0, 32, 24));
+    }
+    else if (aircraftType == AirCraftType::Firehawk)
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(99, 0, 32, 24));
+    }
+    else
+    {
+        button.m_sprite.setTextureRect(sf::IntRect(500, 0, 32, 24));
+    }
+
+    button.m_sprite.setPosition(xPosition, yPosition);
+
+    //Text
+    button.m_text.setFont(m_buttonFont);
+    button.m_text.setString(buttonText);
+    button.m_text.setCharacterSize(16);
+    button.m_text.setFillColor(sf::Color::White);
+    button.m_text.setOutlineColor(sf::Color::Black);
+    button.m_text.setOutlineThickness(1);
+    button.m_text.setStyle(sf::Text::Bold);
+
+    sf::Vector2f textPosition = button.m_sprite.getPosition();
+    textPosition.x += button.m_sprite.getGlobalBounds().width / 2;
+    textPosition.y += button.m_sprite.getGlobalBounds().height - 10;
+    sf::FloatRect textBounds = button.m_text.getLocalBounds();
+    button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
+
+    button.m_text.setPosition(textPosition);
+
+    // Store the building type
+    button.m_airCraftType = aircraftType;
+
+    m_buttons.push_back(button);
 }
 
 void SideBar::setupSlider()

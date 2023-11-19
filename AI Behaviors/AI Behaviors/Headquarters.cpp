@@ -2,7 +2,6 @@
 
 Headquarters::Headquarters()
 {
-	m_position = sf::Vector2f(500.0f, 500.0f);
 	setupSprite();
 }
 
@@ -12,10 +11,6 @@ Headquarters::~Headquarters()
 
 void Headquarters::update(sf::Time deltaTime)
 {
-	//m_position += sf::Vector2f(0.1, 0);
-	//m_buildingSprite.setPosition(m_position);
-	//std::cout << m_position.x << " " << m_position.y << std::endl;
-	//std::cout << getPosition().x << " " << getPosition().y << std::endl;
 }
 
 void Headquarters::render(sf::RenderWindow& m_window) const
@@ -27,7 +22,7 @@ void Headquarters::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Command Center.png"))
 	{
-		std::cout << "Error - Loading Building Sprite" << std::endl;
+		std::cout << "Error - Loading Command Center Building Sprite" << std::endl;
 	}
 	m_buildingSprite.setTexture(m_buildingTexture);
 	m_buildingSprite.setPosition(m_position);

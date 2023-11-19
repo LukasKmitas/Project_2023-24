@@ -41,7 +41,6 @@ void Building::applyDamage(int damage)
 
 void Building::setPosition(const sf::Vector2f& position)
 {
-	m_position = position;
 	m_buildingSprite.setPosition(position);
 }
 
@@ -55,19 +54,17 @@ int Building::getCost() const
 	return m_cost;
 }
 
-bool Building::canAfford() const
+bool Building::checkAffordability()
 {
-	return Global::currency >= m_cost;
-}
-
-void Building::checkAffordability()
-{
-	if (canAfford())
+	if (Global::currency >= m_cost) 
 	{
 		Global::currency -= m_cost;
+		std::cout << m_cost << std::endl;
+		return true;
 	}
-	else
+	else 
 	{
 		std::cout << "Not enough currency to place the building." << std::endl;
+		return false;
 	}
 }

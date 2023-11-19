@@ -2,6 +2,7 @@
 
 enum class VehicleType
 {
+    None,
     Ranger,
     Tank,
     Artillery

@@ -6,8 +6,6 @@
 #include "Global.h"
 #include "Grid.h"
 #include "BuildingType.h"
-#include "Headquarters.h"
-#include "Refinery.h"
 
 class Game
 {
@@ -18,9 +16,8 @@ public:
 	void run();
 
 private:
-	GUI m_gui{ placedBuildings };
+	GUI m_gui{ placedBuildings, m_selectedBuildingType };
 	Grid m_grid;
-	Headquarters* m_headquaters;
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
 
@@ -31,6 +28,7 @@ private:
 
 	void updateView();
 	void createBuilding(sf::RenderWindow& window);
+	void createBase();
 
 	sf::RenderWindow m_window;
 	sf::View gameView;

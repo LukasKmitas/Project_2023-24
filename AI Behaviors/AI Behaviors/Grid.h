@@ -1,18 +1,26 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Tile.h"
 
 class Grid
 {
 public:
-    Grid(int rows, int columns, float cellSize);
+    Grid();
 
     void draw(sf::RenderWindow& m_window);
 
 private:
-    int rows;
-    int columns;
-    float cellSize;
-    std::vector<sf::RectangleShape> cells;
 
     void createGrid();
+    void setupSprite();
+
+    int rows = 100;
+    int columns = 100;
+    float cellSize = 25;
+    std::vector<sf::RectangleShape> cells;
+    std::vector<Tile> tiles;
+
+    sf::Texture spriteSheetTexture;
+
 };
