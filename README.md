@@ -1,6 +1,14 @@
-![Title](./readmeAssets/CombatSystem.png)
+![Title](./readmeAssets/Title.png)
 
-# Overview
+# RTS(Kinda) Game
 
-This project is to make RTS game similar games to "Command & Conquer"
+## Overview
+
+This project is to make RTS game similar to "Command & Conquer" series
 its made in Visual Studio using the SFML Library.
+
+### License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE 
+
+[License](LICENSE.txt)
