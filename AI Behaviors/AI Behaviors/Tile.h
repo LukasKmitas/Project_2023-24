@@ -4,8 +4,14 @@
 class Tile
 {
 public:
+    Tile();
 
     sf::RectangleShape m_tile;
-    sf::Sprite m_sprite;
-    bool isTraversable;
+    int tileSize = 50;
+    bool isWall;
+
+private:
+
+    void initTile();
+
 };

@@ -24,12 +24,14 @@
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
-    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="Headquarters.cpp" />
+    <ClCompile Include="LevelEditor.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Refinery.cpp" />
     <ClCompile Include="SideBar.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -39,11 +41,13 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="Grid.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="Headquarters.h" />
     <ClInclude Include="InfantryType.h" />
+    <ClInclude Include="LevelEditor.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Refinery.h" />
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="Tile.h" />

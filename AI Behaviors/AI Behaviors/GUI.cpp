@@ -6,7 +6,6 @@ GUI::GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType)
 	m_selectedBuildingType(selectedBuildingType),
 	m_sideBar(selectedBuildingType)
 {
-	setupFontAndText();
 	setupTopBar();
 
 	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
@@ -49,7 +48,6 @@ void GUI::update(sf::Time t_deltaTime)
 void GUI::render(sf::RenderWindow& m_window)
 {
 	m_window.setView(m_guiView);
-	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_topBar);
 	m_window.draw(m_currencyText);
 	if (m_showSlider) 
@@ -66,8 +64,9 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 {
 	//std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
 	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
+	sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
 
-	if (!m_sideBar.getSideBarRect().getGlobalBounds().contains(worldMousePosition))
+	if (!m_sideBar.getSideBarRect().getGlobalBounds().contains(guiMousePosition))
 	{
 		m_selectedBuildingType = BuildingType::None;
 		m_showSlider = false;
@@ -78,7 +77,6 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 
 	if (m_showSlider)
 	{
-		sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
 		if (m_selectedBuildingType == BuildingType::Headquarters)
 		{
 			// Refinery
@@ -285,24 +283,6 @@ void GUI::updateCurrency()
 {
 	Global::currency = std::min(Global::currency, 5000);
 	m_currencyText.setString("Currency: " + std::to_string(Global::currency));
-}
-
-void GUI::setupFontAndText()
-{
-	if (!m_ArialBlackfont.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
-	{
-		std::cout << "problem loading font" << std::endl;
-	}
-	m_welcomeMessage.setFont(m_ArialBlackfont);
-	m_welcomeMessage.setString("Gills & Glory");
-	m_welcomeMessage.setStyle(sf::Text::Italic | sf::Text::Bold);
-	m_welcomeMessage.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 10);
-	m_welcomeMessage.setCharacterSize(80U);
-	m_welcomeMessage.setOutlineColor(sf::Color::Blue);
-	m_welcomeMessage.setFillColor(sf::Color::White);
-	m_welcomeMessage.setOutlineThickness(1.0f);
-	sf::FloatRect textBounds = m_welcomeMessage.getLocalBounds();
-	m_welcomeMessage.setOrigin(textBounds.width / 2, textBounds.height / 2);
 }
 
 void GUI::setupTopBar()

@@ -57,15 +57,11 @@ private:
     SideBar m_sideBar{m_selectedBuildingType};
 
     void updateCurrency();
-    void setupFontAndText();
     void setupTopBar();
 
     sf::View m_guiView;
 
     sf::RectangleShape m_topBar;
-
-    sf::Font m_ArialBlackfont;
-    sf::Text m_welcomeMessage;
 
     sf::Font m_currencyFont;
     sf::Text m_currencyText;
