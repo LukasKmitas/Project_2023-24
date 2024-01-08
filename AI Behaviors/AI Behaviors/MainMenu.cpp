@@ -21,27 +21,27 @@ void MainMenu::render(sf::RenderWindow& m_window)
     m_window.draw(m_welcomeMessage);
 }
 
-void MainMenu::handleButtonClick(const sf::Vector2f& mousePosition, GameState& gameState)
+void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState& m_gameState)
 {
-    if (m_playButton.getGlobalBounds().contains(mousePosition))
+    if (m_playButton.getGlobalBounds().contains(m_mousePosition))
     {
-        gameState = GameState::PlayGame;
+        m_gameState = GameState::PlayGame;
     }
-    else if (m_editorButton.getGlobalBounds().contains(mousePosition))
+    else if (m_editorButton.getGlobalBounds().contains(m_mousePosition))
     {
-        gameState = GameState::LevelEditor;
+        m_gameState = GameState::LevelEditor;
     }
-    else if (m_exitButton.getGlobalBounds().contains(mousePosition))
+    else if (m_exitButton.getGlobalBounds().contains(m_mousePosition))
     {
-        gameState = GameState::Exit;
+        m_gameState = GameState::Exit;
     }
 }
 
 void MainMenu::initButtons()
 {
-    if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"));
+    if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
     {
-        std::cout << "problem loading font in Main Menu" << std::endl;
+        std::cout << "Error - problem loading font in Main Menu" << std::endl;
     }
 
     // Welcome message

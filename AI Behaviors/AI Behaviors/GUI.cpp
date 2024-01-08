@@ -1,10 +1,11 @@
 #include "GUI.h"
 
-GUI::GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType) 
+GUI::GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType, std::vector<std::vector<Tile>>& tiles)
 	: 
 	placedBuildings(buildings),
 	m_selectedBuildingType(selectedBuildingType),
-	m_sideBar(selectedBuildingType)
+	m_sideBar(selectedBuildingType),
+	m_tilesReference(tiles)
 {
 	setupTopBar();
 
@@ -161,10 +162,10 @@ void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& 
 
 	if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
 	{
-		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, window.getView());
-		bool isValidPlacement = IsPlacementValid(worldMousePosition);
+		sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
+		bool isValidPlacement = IsPlacementValid(guiMousePosition, window);
 
-		if (isValidPlacement)
+		if (isValidPlacement && IsPlacementValidForTiles(guiMousePosition))
 		{
 			switch (m_selectedBuildingType)
 			{
@@ -306,3 +307,53 @@ void GUI::setupTopBar()
 	m_currencyText.setPosition(Global::S_WIDTH - 200, 0);
 }
 
+bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
+{
+	sf::Vector2f worldPosition = m_window.mapPixelToCoords(sf::Vector2i(m_position), m_window.getView());
+	m_ghostBuildingSprite.setPosition(worldPosition);
+	sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
+
+	for (Building* building : placedBuildings)
+	{
+		sf::FloatRect existingBuildingBounds = building->getBuildingSprite().getGlobalBounds();
+		if (newBuildingBounds.intersects(existingBuildingBounds))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+bool GUI::IsPlacementValidForTiles(sf::Vector2f& position)
+{
+	// Convert the GUI position to tile coordinates
+	int tileX = static_cast<int>(position.x) / m_tile.tileSize;
+	int tileY = static_cast<int>(position.y) / m_tile.tileSize;
+
+	if (tileX >= 0 && tileX < levelEditor.numRows && tileY >= 0 && tileY < levelEditor.numCols)
+	{
+		if (m_tilesReference[tileY][tileX].isWall)
+		{
+			return false;
+		}
+
+		// Check for building intersections with the tiles
+		sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
+		for (int i = 0; i < levelEditor.numRows; ++i)
+		{
+			for (int j = 0; j < levelEditor.numCols; ++j)
+			{
+				if (m_tilesReference[i][j].isWall) 
+				{
+					sf::FloatRect tileRect(j * 50, i * 50, 50, 50);
+					if (newBuildingBounds.intersects(tileRect))
+					{
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}

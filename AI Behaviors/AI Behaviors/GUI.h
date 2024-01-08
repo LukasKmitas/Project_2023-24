@@ -11,6 +11,8 @@
 #include "Barracks.h"
 #include "Vehicle.h"
 #include "AirCraft.h"
+#include "Tile.h"
+#include "LevelEditor.h"
 
 class GUI
 {
@@ -21,11 +23,12 @@ public:
     Vehicle* m_vehicle = nullptr;
     AirCraft* m_airCraft = nullptr;
     InfantryType m_selectedUnitType = InfantryType::None;
+    LevelEditor levelEditor;
 
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
 
-    GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType);
+    GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType, std::vector<std::vector<Tile>>& tiles);
     ~GUI();
 
     void update(sf::Time t_deltaTime);
@@ -37,24 +40,15 @@ public:
     bool m_confirmBuildingPlacement = false;
     bool m_confirmed = false;
 
-    bool IsPlacementValid(const sf::Vector2f& position)
-    {
-        sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
-        for (Building* building : placedBuildings)
-        {
-            sf::FloatRect existingBuildingBounds = building->getBuildingSprite().getGlobalBounds();
-            if (newBuildingBounds.intersects(existingBuildingBounds))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
+    bool IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window);
+    bool IsPlacementValidForTiles(sf::Vector2f& position);
 
 private:
 
+    Tile m_tile;
     SideBar m_sideBar{m_selectedBuildingType};
+
+    std::vector<std::vector<Tile>>& m_tilesReference;
 
     void updateCurrency();
     void setupTopBar();

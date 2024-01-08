@@ -11,7 +11,7 @@ public:
 
 	void update(sf::Time t_deltaTime);
 	void render(sf::RenderWindow& m_window);
-    void handleButtonClick(const sf::Vector2f& mousePosition, GameState& gameState);
+    void handleButtonClick(const sf::Vector2f& m_mousePosition, GameState& m_gameState);
 
 private:
 

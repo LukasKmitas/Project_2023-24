@@ -2,7 +2,13 @@
 
 LevelEditor::LevelEditor()
 {
+    if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
+    {
+        std::cout << "Error - problem loading font in Level Editor" << std::endl;
+    }
+
     initBar();
+    initButtons();
     m_tiles.resize(numRows, std::vector<Tile>(numCols));
     randomGenerateLevel();
     m_levelEditorView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
@@ -45,6 +51,8 @@ void LevelEditor::render(sf::RenderWindow& m_window)
     }
     m_window.setView(m_levelEditorView);
     m_window.draw(m_backgroundForTiles);
+    m_window.draw(m_toGoBackButton);
+    m_window.draw(m_toGoBackText);
 }
 
 void LevelEditor::renderLoadedLevel(sf::RenderWindow& m_window)
@@ -55,6 +63,16 @@ void LevelEditor::renderLoadedLevel(sf::RenderWindow& m_window)
         {
             m_window.draw(m_tiles[i][j].m_tile);
         }
+    }
+}
+
+void LevelEditor::handleMouseInput(sf::Vector2i mousePosition, GameState& gameState, sf::RenderWindow& m_window)
+{
+    sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_levelEditorView);
+
+    if (m_toGoBackButton.getGlobalBounds().contains(guiMousePosition))
+    {
+        gameState = GameState::MainMenu;
     }
 }
 
@@ -83,10 +101,28 @@ void LevelEditor::randomGenerateLevel()
 
 void LevelEditor::initBar()
 {
-    m_backgroundForTiles.setFillColor(sf::Color::White);
+    m_backgroundForTiles.setFillColor(sf::Color(255, 255, 255, 200));
     m_backgroundForTiles.setSize(sf::Vector2f(Global::S_WIDTH, 200));
     m_backgroundForTiles.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 + 440);
     m_backgroundForTiles.setOrigin(m_backgroundForTiles.getGlobalBounds().width / 2, m_backgroundForTiles.getGlobalBounds().height / 2);
+}
+
+void LevelEditor::initButtons()
+{
+    m_toGoBackButton.setFillColor(sf::Color(0, 200, 200));
+    m_toGoBackButton.setSize(sf::Vector2f(100, 50));
+    m_toGoBackButton.setPosition(80, 50);
+    m_toGoBackButton.setOrigin(m_toGoBackButton.getGlobalBounds().width / 2, m_toGoBackButton.getGlobalBounds().height / 2);
+
+    m_toGoBackText.setFont(m_font);
+    m_toGoBackText.setString("Back");
+    m_toGoBackText.setPosition(m_toGoBackButton.getPosition().x, m_toGoBackButton.getPosition().y - 5);
+    m_toGoBackText.setCharacterSize(25U);
+    m_toGoBackText.setOutlineColor(sf::Color::Black);
+    m_toGoBackText.setFillColor(sf::Color::White);
+    m_toGoBackText.setOutlineThickness(1.0f);
+    m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
+
 }
 
 void LevelEditor::saveLevelToFile(const std::string& filename)

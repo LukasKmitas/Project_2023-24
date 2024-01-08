@@ -19,9 +19,10 @@ public:
 
 private:
 	GameState m_currentState = GameState::MainMenu;
+	GameState m_previousState;
 	MainMenu m_menu;
 	LevelEditor m_levelEditor;
-	GUI m_gui{ placedBuildings, m_selectedBuildingType };
+	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
 
@@ -35,6 +36,8 @@ private:
 	void createBase();
 	void saveLevel();
 	void loadLevelForPlay();
+
+	void resetView();
 
 	sf::RenderWindow m_window;
 	sf::View gameView;

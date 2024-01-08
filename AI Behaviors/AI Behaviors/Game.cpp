@@ -71,8 +71,22 @@ void Game::processEvents()
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-				m_gui.handleMouseClick(mousePosition, m_window);
-				m_menu.handleButtonClick(m_window.mapPixelToCoords(mousePosition), m_currentState);
+				switch (m_currentState)
+				{
+				case GameState::MainMenu:
+					m_menu.handleButtonClick(m_window.mapPixelToCoords(mousePosition), m_currentState);
+					break;
+				case GameState::PlayGame:
+					m_gui.handleMouseClick(mousePosition, m_window);
+					break;
+				case GameState::LevelEditor:
+					m_levelEditor.handleMouseInput(mousePosition, m_currentState, m_window);
+					break;
+				case GameState::Exit:
+					break;
+				default:
+					break;
+				}
 			}
 		}
 	}
@@ -130,7 +144,10 @@ void Game::update(sf::Time t_deltaTime)
 	switch (m_currentState)
 	{
 	case GameState::MainMenu:
-
+		if (m_currentState != GameState::LevelEditor && m_previousState == GameState::LevelEditor) 
+		{
+			resetView();
+		}
 		break;
 	case GameState::PlayGame:
 		loadLevelForPlay();
@@ -144,10 +161,12 @@ void Game::update(sf::Time t_deltaTime)
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		break;
 	case GameState::LevelEditor:
+		m_previousState = GameState::LevelEditor;
 		updateView();
 		m_levelEditor.update(t_deltaTime);
 		break;
 	case GameState::Exit:
+		m_exitGame = true;
 		break;
 	default:
 		break;
@@ -201,7 +220,7 @@ void Game::updateView()
 		minY = 530;
 		maxX = 1550;
 		maxY = 1970;
-		if (mousePosition.x < Global::S_WIDTH * 0.1 && viewCenter.x - viewMoveSpeed > minX)
+		if (mousePosition.x < Global::S_WIDTH * 0.01 && viewCenter.x - viewMoveSpeed > minX)
 		{
 			viewCenter.x -= viewMoveSpeed;
 		}
@@ -209,7 +228,7 @@ void Game::updateView()
 		{
 			viewCenter.x += viewMoveSpeed;
 		}
-		if (mousePosition.y < Global::S_HEIGHT * 0.1 && viewCenter.y - viewMoveSpeed > minY)
+		if (mousePosition.y < Global::S_HEIGHT * 0.01 && viewCenter.y - viewMoveSpeed > minY)
 		{
 			viewCenter.y -= viewMoveSpeed;
 		}
@@ -223,7 +242,7 @@ void Game::updateView()
 		minY = 200;
 		maxX = 1900;
 		maxY = 2300;
-		if (mousePosition.x < Global::S_WIDTH * 0.1 && viewCenter.x - viewMoveSpeed > minX)
+		if (mousePosition.x < Global::S_WIDTH * 0.01 && viewCenter.x - viewMoveSpeed > minX)
 		{
 			viewCenter.x -= viewMoveSpeed;
 		}
@@ -231,7 +250,7 @@ void Game::updateView()
 		{
 			viewCenter.x += viewMoveSpeed;
 		}
-		if (mousePosition.y < Global::S_HEIGHT * 0.1 && viewCenter.y - viewMoveSpeed > minY)
+		if (mousePosition.y < Global::S_HEIGHT * 0.01 && viewCenter.y - viewMoveSpeed > minY)
 		{
 			viewCenter.y -= viewMoveSpeed;
 		}
@@ -243,7 +262,6 @@ void Game::updateView()
 	default:
 		break;
 	}
-
 	gameView.setCenter(viewCenter);
 }
 
@@ -314,4 +332,11 @@ void Game::loadLevelForPlay()
 		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\level.txt");
 		levelLoaded = true;
 	}
+}
+
+void Game::resetView() 
+{
+	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
+	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_window.setView(gameView);
 }
