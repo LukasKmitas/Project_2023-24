@@ -28,20 +28,20 @@ public:
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
 
-    GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType, std::vector<std::vector<Tile>>& tiles);
+    GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingType, std::vector<std::vector<Tile>>& m_tiles);
     ~GUI();
 
     void update(sf::Time t_deltaTime);
     void render(sf::RenderWindow& m_window);
-    void handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window);
-    void handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window);
-    void handleBuildingSelection(sf::Vector2f mousePosition);
+    void handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_window);
+    void handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow& m_window);
+    void handleBuildingSelection(sf::Vector2f m_mousePosition);
 
     bool m_confirmBuildingPlacement = false;
     bool m_confirmed = false;
 
     bool IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window);
-    bool IsPlacementValidForTiles(sf::Vector2f& position);
+    bool IsPlacementValidForTiles(sf::Vector2f& m_position);
 
 private:
 

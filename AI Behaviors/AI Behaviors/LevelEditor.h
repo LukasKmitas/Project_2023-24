@@ -16,30 +16,55 @@ public:
 	void render(sf::RenderWindow& m_window);
 	void renderLoadedLevel(sf::RenderWindow& m_window);
 
-	void handleMouseInput(sf::Vector2i mousePosition, GameState& gameState, sf::RenderWindow& m_window);
+	void handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_gameState, sf::RenderWindow& m_window);
+	void handleRotationInput(sf::Event event);
 
-	void saveLevelToFile(const std::string& filename);
-	void loadLevelFromFile(const std::string& filename);
+	void saveLevelToFile(const std::string& m_filename);
+	void loadLevelFromFile(const std::string& m_filename);
 
 	std::vector<std::vector<Tile>> m_tiles;
 
 	const int numRows = 50;
 	const int numCols = 50;
+
 private:
 
 	sf::View m_levelEditorView;
 
+	void initGrid();
 	void randomGenerateLevel();
 	void initBar();
-	void initButtons();
+	void initbuttonsForToolEditor();
+	void initBackButton();
 
-	//std::vector<std::vector<Tile>> m_tiles;
+	int selectedButtonIndex = -1;
+	int lastClickedButtonIndex = -1;
+	int selectedTileX;
+	int selectedTileY;
+	float offset = 25.0f;
+	bool isTileSelected = false;
+	bool isOffsetApplied = false;
 
-	sf::RectangleShape m_backgroundForTiles;
+	sf::RectangleShape m_backgroundForTilesTools;
 	sf::RectangleShape m_toGoBackButton;
 
+	sf::RectangleShape m_backgroundForBTF[4];
+
+	sf::Sprite  m_buttonsForWalkable[4];
+
 	sf::Font m_font;
+
 	sf::Text m_toGoBackText;
+
+	sf::Text m_walkableText;
+	sf::Text m_WallText;
+	sf::Text m_ResourceText;
+	sf::Text m_MiscText;
+
+	sf::Texture m_walkable1;
+	sf::Texture m_walkable2;
+	sf::Texture m_walkable3;
+	sf::Texture m_walkable4;
 
 };
 

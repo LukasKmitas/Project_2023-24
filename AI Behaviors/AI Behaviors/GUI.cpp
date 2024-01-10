@@ -1,11 +1,11 @@
 #include "GUI.h"
 
-GUI::GUI(std::vector<Building*>& buildings, BuildingType& selectedBuildingType, std::vector<std::vector<Tile>>& tiles)
+GUI::GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingType, std::vector<std::vector<Tile>>& m_tiles)
 	: 
-	placedBuildings(buildings),
-	m_selectedBuildingType(selectedBuildingType),
-	m_sideBar(selectedBuildingType),
-	m_tilesReference(tiles)
+	placedBuildings(m_buildings),
+	m_selectedBuildingType(m_selectedBuildingType),
+	m_sideBar(m_selectedBuildingType),
+	m_tilesReference(m_tiles)
 {
 	setupTopBar();
 
@@ -61,11 +61,11 @@ void GUI::render(sf::RenderWindow& m_window)
 	}
 }
 
-void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_window)
+void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_window)
 {
 	//std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
-	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
-	sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(mousePosition, m_guiView);
+	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_window.getView());
+	sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_guiView);
 
 	if (!m_sideBar.getSideBarRect().getGlobalBounds().contains(guiMousePosition))
 	{
@@ -125,11 +125,11 @@ void GUI::handleMouseClick(sf::Vector2i mousePosition, sf::RenderWindow& m_windo
 	}
 }
 
-void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& window)
+void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow& window)
 {
 	if (m_confirmBuildingPlacement)
 	{
-		sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
+		sf::Vector2f guiMousePosition = window.mapPixelToCoords(m_mousePosition, m_guiView);
 		if (m_selectedBuildingType == BuildingType::Refinery)
 		{
 			const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
@@ -162,7 +162,7 @@ void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& 
 
 	if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
 	{
-		sf::Vector2f guiMousePosition = window.mapPixelToCoords(mousePosition, m_guiView);
+		sf::Vector2f guiMousePosition = window.mapPixelToCoords(m_mousePosition, m_guiView);
 		bool isValidPlacement = IsPlacementValid(guiMousePosition, window);
 
 		if (isValidPlacement && IsPlacementValidForTiles(guiMousePosition))
@@ -201,13 +201,13 @@ void GUI::handleBuildingPlacement(sf::Vector2i mousePosition, sf::RenderWindow& 
 	}
 }
 
-void GUI::handleBuildingSelection(sf::Vector2f mousePosition)
+void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 {
 	for (Building* building : placedBuildings)
 	{
 		if (dynamic_cast<Headquarters*>(building) != nullptr)
 		{
-			if (building->getBuildingSprite().getGlobalBounds().contains(mousePosition))
+			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Headquarters " << building->getBuildingID() << std::endl;
 				//std::cout << "Headquarters selected" << std::endl;
@@ -225,7 +225,7 @@ void GUI::handleBuildingSelection(sf::Vector2f mousePosition)
 		}
 		else if (dynamic_cast<Barracks*>(building) != nullptr)
 		{
-			if (building->getBuildingSprite().getGlobalBounds().contains(mousePosition))
+			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Barracks " << building->getBuildingID() << std::endl;
 				//std::cout << "Barracks selected" << std::endl;
@@ -243,7 +243,7 @@ void GUI::handleBuildingSelection(sf::Vector2f mousePosition)
 		}
 		else if (dynamic_cast<Vehicle*>(building) != nullptr)
 		{
-			if (building->getBuildingSprite().getGlobalBounds().contains(mousePosition))
+			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Vehicle " << building->getBuildingID() << std::endl;
 				//std::cout << "Vehicle selected" << std::endl;
@@ -261,7 +261,7 @@ void GUI::handleBuildingSelection(sf::Vector2f mousePosition)
 		}
 		else if (dynamic_cast<AirCraft*>(building) != nullptr)
 		{
-			if (building->getBuildingSprite().getGlobalBounds().contains(mousePosition))
+			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Aircraft " << building->getBuildingID() << std::endl;
 				//std::cout << "Aircraft selected" << std::endl;

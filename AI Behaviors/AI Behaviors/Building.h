@@ -10,13 +10,13 @@ public:
     Building();
     virtual ~Building();
 
-    virtual void update(sf::Time deltaTime);
+    virtual void update(sf::Time t_deltaTime);
     virtual void render(sf::RenderWindow& m_window) const;
 
     int getHealth() const;
-    void setHealth(int health);
-    void applyDamage(int damage);
-    void setPosition(const sf::Vector2f& position);
+    void setHealth(int m_health);
+    void applyDamage(int m_damage);
+    void setPosition(const sf::Vector2f& m_position);
 
     sf::Vector2f getPosition();
  

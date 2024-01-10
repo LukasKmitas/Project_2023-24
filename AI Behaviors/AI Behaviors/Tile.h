@@ -9,6 +9,7 @@ public:
     sf::RectangleShape m_tile;
     int tileSize = 50;
     bool isWall;
+    bool isResource;
 
 private:
 

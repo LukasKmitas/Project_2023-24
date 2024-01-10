@@ -20,7 +20,7 @@ struct Button
 class SideBar
 {
 public:
-    SideBar(BuildingType& selectedBuildingType);
+    SideBar(BuildingType& m_selectedBuildingType);
 
     void render(sf::RenderWindow& m_window);
 
@@ -57,7 +57,7 @@ private:
 
     void setupSlider();
     void setupFont();
-    void drawGrid(sf::RenderWindow& window, int gridCols, int gridRows);
+    void drawGrid(sf::RenderWindow& m_window);
 
     BuildingType& m_selectedBuildingType;
 

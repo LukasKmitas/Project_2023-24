@@ -12,7 +12,7 @@ Building::~Building()
 {
 }
 
-void Building::update(sf::Time deltaTime)
+void Building::update(sf::Time t_deltaTime)
 {
 }
 
@@ -25,23 +25,23 @@ int Building::getHealth() const
 	return m_health;
 }
 
-void Building::setHealth(int health)
+void Building::setHealth(int m_health)
 {
-	m_health = health;
+	m_health = m_health;
 }
 
-void Building::applyDamage(int damage)
+void Building::applyDamage(int m_damage)
 {
-	m_health -= damage;
+	m_health -= m_damage;
 	if (m_health < 0) 
 	{
 		m_health = 0;
 	}
 }
 
-void Building::setPosition(const sf::Vector2f& position)
+void Building::setPosition(const sf::Vector2f& m_position)
 {
-	m_buildingSprite.setPosition(position);
+	m_buildingSprite.setPosition(m_position);
 }
 
 sf::Vector2f Building::getPosition()

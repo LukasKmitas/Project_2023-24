@@ -1,8 +1,8 @@
 #include "SideBar.h"
 
-SideBar::SideBar(BuildingType& selectedBuildingType) 
+SideBar::SideBar(BuildingType& m_selectedBuildingType)
     :
-    m_selectedBuildingType(selectedBuildingType)
+    m_selectedBuildingType(m_selectedBuildingType)
 {
     setupSlider();
     setupFont();
@@ -13,7 +13,7 @@ void SideBar::render(sf::RenderWindow& m_window)
     m_window.draw(m_background);
     m_window.draw(m_bottomBackground);
 
-    drawGrid(m_window, gridCols, gridRows);
+    drawGrid(m_window);
 
     for (const auto& buttonData : m_buttons)
     {
@@ -262,7 +262,7 @@ void SideBar::setupFont()
     }
 }
 
-void SideBar::drawGrid(sf::RenderWindow& window, int gridCols, int gridRows)
+void SideBar::drawGrid(sf::RenderWindow& m_window)
 {
     float cellWidth = m_bottomBackground.getSize().x / gridCols;
     float cellHeight = m_bottomBackground.getSize().y / gridRows;
@@ -277,7 +277,7 @@ void SideBar::drawGrid(sf::RenderWindow& window, int gridCols, int gridRows)
             sf::Vertex(sf::Vector2f(m_bottomBackground.getPosition().x + i * cellWidth, m_bottomBackground.getPosition().y), gridColor),
             sf::Vertex(sf::Vector2f(m_bottomBackground.getPosition().x + i * cellWidth, m_bottomBackground.getPosition().y + m_bottomBackground.getSize().y), gridColor)
         };
-        window.draw(line, 2, sf::Lines);
+        m_window.draw(line, 2, sf::Lines);
     }
     for (int i = 1; i < gridRows; ++i) 
     {
@@ -286,6 +286,6 @@ void SideBar::drawGrid(sf::RenderWindow& window, int gridCols, int gridRows)
             sf::Vertex(sf::Vector2f(m_bottomBackground.getPosition().x, m_bottomBackground.getPosition().y + i * cellHeight), gridColor),
             sf::Vertex(sf::Vector2f(m_bottomBackground.getPosition().x + m_bottomBackground.getSize().x, m_bottomBackground.getPosition().y + i * cellHeight), gridColor)
         };
-        window.draw(line, 2, sf::Lines);
+        m_window.draw(line, 2, sf::Lines);
     }
 }

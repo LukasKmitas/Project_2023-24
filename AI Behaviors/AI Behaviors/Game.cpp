@@ -65,6 +65,7 @@ void Game::processEvents()
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
+			m_levelEditor.handleRotationInput(newEvent);
 		}
 		if (sf::Event::MouseButtonPressed == newEvent.type) // Check for mouse button press.
 		{
