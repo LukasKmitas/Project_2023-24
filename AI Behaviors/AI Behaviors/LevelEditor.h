@@ -35,7 +35,13 @@ private:
 	void randomGenerateLevel();
 	void initBar();
 	void initbuttonsForToolEditor();
+	void initButtonsForToolSet();
 	void initBackButton();
+
+	void handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[], int& lastClickedIndex, int& selectedIndex);
+	void handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex);
+
+	static const int numButtons = 9;
 
 	int selectedButtonIndex = -1;
 	int lastClickedButtonIndex = -1;
@@ -47,21 +53,19 @@ private:
 
 	sf::RectangleShape m_backgroundForTilesTools;
 	sf::RectangleShape m_toGoBackButton;
-
 	sf::RectangleShape m_backgroundForBTF[4];
 
-	sf::Sprite  m_buttonsForWalkable[4];
+	sf::Sprite m_buttons[numButtons];
 
 	sf::Font m_font;
 
 	sf::Text m_toGoBackText;
-
 	sf::Text m_walkableText;
 	sf::Text m_WallText;
 	sf::Text m_ResourceText;
 	sf::Text m_MiscText;
 
-	sf::Texture m_walkable1;
+	sf::Texture m_underWaterTexture;
 	sf::Texture m_walkable2;
 	sf::Texture m_walkable3;
 	sf::Texture m_walkable4;

@@ -1,6 +1,6 @@
 #include "LevelEditor.h"
 
-LevelEditor::LevelEditor()
+    LevelEditor::LevelEditor()
 {
     if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
     {
@@ -19,10 +19,10 @@ LevelEditor::LevelEditor()
 
 void LevelEditor::update(sf::Time t_deltaTime)
 {
-   
+
 }
 
-void LevelEditor::render(sf::RenderWindow& m_window)
+void LevelEditor::render(sf::RenderWindow & m_window)
 {
     for (int i = 0; i < numRows; ++i)
     {
@@ -56,7 +56,7 @@ void LevelEditor::render(sf::RenderWindow& m_window)
     m_window.draw(m_toGoBackButton);
     m_window.draw(m_toGoBackText);
 
-    for (int i = 0; i <= 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         m_window.draw(m_backgroundForBTF[i]);
     }
@@ -64,13 +64,14 @@ void LevelEditor::render(sf::RenderWindow& m_window)
     m_window.draw(m_WallText);
     m_window.draw(m_ResourceText);
     m_window.draw(m_MiscText);
-    for (int i = 0; i <= 3; i++)
+
+    for (int i = 0; i < numButtons; i++)
     {
-        m_window.draw(m_buttonsForWalkable[i]);
+        m_window.draw(m_buttons[i]);
     }
 }
 
-void LevelEditor::renderLoadedLevel(sf::RenderWindow& m_window)
+void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
 {
     for (int i = 0; i < numRows; ++i)
     {
@@ -81,7 +82,7 @@ void LevelEditor::renderLoadedLevel(sf::RenderWindow& m_window)
     }
 }
 
-void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_gameState, sf::RenderWindow& m_window)
+void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_gameState, sf::RenderWindow & m_window)
 {
     sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_levelEditorView);
     sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_window.getView());
@@ -91,69 +92,78 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_ga
         m_gameState = GameState::MainMenu;
     }
 
+    handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, lastClickedButtonIndex, selectedButtonIndex);
+
+}
+
+void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
+{
     bool isButtonClicked = false;
-    for (int i = 0; i < 4; ++i)
+
+    for (int i = 0; i < numButtons; ++i)
     {
-        if (m_buttonsForWalkable[i].getGlobalBounds().contains(guiMousePosition))
+        if (buttons[i].getGlobalBounds().contains(guiMousePosition))
         {
-            selectedButtonIndex = i;
-            m_buttonsForWalkable[i].setColor(sf::Color(255, 200, 200));
+            selectedIndex = i;
+            buttons[i].setColor(sf::Color(255, 200, 200));
             isButtonClicked = true;
-            lastClickedButtonIndex = i;
+            lastClickedIndex = i;
         }
-        else 
+        else
         {
-            m_buttonsForWalkable[i].setColor(sf::Color(255, 255, 255));
+            buttons[i].setColor(sf::Color(255, 255, 255));
         }
     }
 
-    if (!isButtonClicked && lastClickedButtonIndex != -1)
+    if (!isButtonClicked && lastClickedIndex != -1)
     {
-        m_buttonsForWalkable[lastClickedButtonIndex].setColor(sf::Color(255, 200, 200));
+        buttons[lastClickedIndex].setColor(sf::Color(255, 200, 200));
 
-        sf::IntRect button1Area(17, 1808, 16, 16); // left, top, width, height
-        sf::IntRect button2Area(33, 1808, 16, 16);
-        sf::IntRect button3Area(49, 1808, 16, 16);
-        sf::IntRect button4Area(49, 1792, 16, 16);
+        handleTilePlacement(worldMousePosition, lastClickedIndex, selectedIndex);
+    }
+}
 
-        for (int i = 0; i < numRows; ++i)
+void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex)
+{
+    sf::IntRect buttonAreas[4] = {
+        {17, 1808, 16, 16},
+        {33, 1808, 16, 16},
+        {49, 1808, 16, 16},
+        {49, 1792, 16, 16}
+    };
+
+    sf::IntRect wallButtonAreas[5] = {
+        {49, 1695, 16, 16},
+        {242, 1808, 16, 16},
+        {257, 1808, 16, 16},
+        {226, 1776, 16, 16},
+        {258, 1792, 16, 16}
+    };
+
+    sf::IntRect* buttonArea = (selectedIndex < 4) ? &buttonAreas[selectedIndex] : &wallButtonAreas[selectedIndex - 4];
+
+    for (int i = 0; i < numRows; ++i)
+    {
+        for (int j = 0; j < numCols; ++j)
         {
-            for (int j = 0; j < numCols; ++j)
+            if (m_tiles[i][j].m_tile.getGlobalBounds().contains(worldMousePosition))
             {
-                if (m_tiles[i][j].m_tile.getGlobalBounds().contains(worldMousePosition))
+                if (!isTileSelected && selectedIndex != -1)
                 {
-                    if (!isTileSelected && selectedButtonIndex != -1)
-                    {
-                        isTileSelected = true;
-                        break;
-                    }
-                    else if (isTileSelected && selectedButtonIndex != -1 && !m_backgroundForTilesTools.getGlobalBounds().contains(guiMousePosition))
-                    {
-                        selectedTileX = i;
-                        selectedTileY = j;
-                        m_tiles[i][j].m_tile.setTexture(&m_walkable1);
-                        m_tiles[i][j].isWall = false;
-                        m_tiles[i][j].isResource = false;
-                        isOffsetApplied = false;
-                        switch (selectedButtonIndex)
-                        {
-                        case 0:
-                            m_tiles[i][j].m_tile.setTextureRect(button1Area);
-                            break;
-                        case 1:
-                            m_tiles[i][j].m_tile.setTextureRect(button2Area);
-                            break;
-                        case 2:
-                            m_tiles[i][j].m_tile.setTextureRect(button3Area);
-                            break;
-                        case 3:
-                            m_tiles[i][j].m_tile.setTextureRect(button4Area);
-                            break;
-                        default:
-                            break;
-                        }
-                        break;
-                    }
+                    isTileSelected = true;
+                    break;
+                }
+                else if (isTileSelected && selectedIndex != -1 && !m_backgroundForTilesTools.getGlobalBounds().contains(worldMousePosition))
+                {
+                    selectedTileX = i;
+                    selectedTileY = j;
+                    m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
+                    m_tiles[i][j].isWall = (selectedIndex >= 4);
+                    m_tiles[i][j].isResource = false;
+                    isOffsetApplied = false;
+
+                    m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
+                    break;
                 }
             }
         }
@@ -174,14 +184,15 @@ void LevelEditor::handleRotationInput(sf::Event event)
             m_tiles[selectedTileX][selectedTileY].m_tile.getPosition().y + offset
         );
 
-        isOffsetApplied = true; 
+        isOffsetApplied = true;
     }
 
     if (isTileSelected && selectedButtonIndex != -1)
     {
         int rotationAngle = 90;
 
-        switch (event.key.code) {
+        switch (event.key.code)
+        {
         case sf::Keyboard::Q:
             m_tiles[selectedTileX][selectedTileY].m_tile.rotate(-rotationAngle); // Rotate counter-clockwise
             break;
@@ -207,9 +218,9 @@ void LevelEditor::initGrid()
 
 void LevelEditor::randomGenerateLevel()
 {
-    for (int i = 0; i < numRows; ++i) 
+    for (int i = 0; i < numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j) 
+        for (int j = 0; j < numCols; ++j)
         {
             // Set random wall probability
             int randomNumber = rand() % 100;
@@ -218,7 +229,7 @@ void LevelEditor::randomGenerateLevel()
                 m_tiles[i][j].isWall = true;
                 m_tiles[i][j].m_tile.setFillColor(sf::Color::Blue); // Wall tiles
             }
-            else 
+            else
             {
                 m_tiles[i][j].isWall = false;
                 m_tiles[i][j].m_tile.setFillColor(sf::Color::Green); // Non-wall tiles
@@ -242,7 +253,7 @@ void LevelEditor::initBar()
     const float startX = (Global::S_WIDTH / 2) - (numRectangles * (rectWidth + spacing) / 2) + 100;
     const float startY = Global::S_HEIGHT - 180;
 
-    for (int i = 0; i < numRectangles; ++i) 
+    for (int i = 0; i < numRectangles; ++i)
     {
         m_backgroundForBTF[i].setFillColor(sf::Color::Cyan);
         m_backgroundForBTF[i].setSize(sf::Vector2f(rectWidth, 40));
@@ -250,7 +261,7 @@ void LevelEditor::initBar()
         m_backgroundForBTF[i].setPosition(xPos, startY);
 
         sf::Text* textPtr = nullptr;
-        switch (i) 
+        switch (i)
         {
         case 0:
             textPtr = &m_walkableText;
@@ -283,36 +294,56 @@ void LevelEditor::initBar()
 
 void LevelEditor::initbuttonsForToolEditor()
 {
-    if (!m_walkable1.loadFromFile("Assets\\Temp\\Labrynna Underwater.png"))
+    if (!m_underWaterTexture.loadFromFile("Assets\\Temp\\Labrynna Underwater.png"))
     {
         std::cout << "Error - problem loading Texture in Level Editor" << std::endl;
     }
-    
-    const int numButtons = 4;
-    const float buttonSize = 80.f;
+    initButtonsForToolSet();
+}
+
+void LevelEditor::initButtonsForToolSet()
+{
+    const float buttonSize = 70.f;
     const float spacing = 20.f;
 
-    const float startX = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 50;
-    const float startY = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+    // Walkable button areas
+    sf::IntRect buttonAreasForWalkable[4] = {
+        {17, 1808, 16, 16},
+        {33, 1808, 16, 16},
+        {49, 1808, 16, 16},
+        {49, 1792, 16, 16}
+    };
 
-    sf::IntRect button1Area(17, 1808, 16, 16); // left, top, width, height
-    sf::IntRect button2Area(33, 1808, 16, 16); 
-    sf::IntRect button3Area(49, 1808, 16, 16);
-    sf::IntRect button4Area(49, 1792, 16, 16);
+    // Wall button areas
+    sf::IntRect buttonAreasForWalls[5] = {
+        {49, 1695, 16, 16},
+        {242, 1808, 16, 16},
+        {257, 1808, 16, 16},
+        {226, 1776, 16, 16},
+        {258, 1792, 16, 16}
+    };
 
-    for (int i = 0; i < numButtons; ++i) 
+    // Calculate starting positions for walkable and wall buttons
+    const float startXForWalkable = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 50;
+    const float startYForWalkable = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+
+    const float startXForWalls = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 530;
+    const float startYForWalls = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+
+    for (int i = 0; i < numButtons; ++i)
     {
-        sf::Sprite& buttonSprite = m_buttonsForWalkable[i];
-        buttonSprite.setTexture(m_walkable1);
-        buttonSprite.setTextureRect(
-            (i == 0) ? button1Area :
-            (i == 1) ? button2Area :
-            (i == 2) ? button3Area :
-            button4Area);
+        m_buttons[i].setTexture(m_underWaterTexture);
 
-        buttonSprite.setScale(buttonSize / buttonSprite.getGlobalBounds().width, buttonSize / buttonSprite.getGlobalBounds().height);
-        float xPos = startX + i * (buttonSize + spacing);
-        buttonSprite.setPosition(xPos, startY);
+        // Determine button area based on index
+        sf::IntRect* buttonArea = (i < 4) ? &buttonAreasForWalkable[i] : &buttonAreasForWalls[i - 4];
+
+        m_buttons[i].setTextureRect(*buttonArea);
+        m_buttons[i].setScale(buttonSize / m_buttons[i].getGlobalBounds().width, buttonSize / m_buttons[i].getGlobalBounds().height);
+
+        // Calculate position based on index and type of button
+        float xPos = (i < 4) ? startXForWalkable + i * (buttonSize + spacing) : startXForWalls + (i - 4) * (buttonSize + spacing);
+        float yPos = (i < 4) ? startYForWalkable : startYForWalls;
+        m_buttons[i].setPosition(xPos, yPos);
     }
 }
 
@@ -331,17 +362,16 @@ void LevelEditor::initBackButton()
     m_toGoBackText.setFillColor(sf::Color::White);
     m_toGoBackText.setOutlineThickness(1.0f);
     m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
-
 }
 
-void LevelEditor::saveLevelToFile(const std::string& m_filename)
+void LevelEditor::saveLevelToFile(const std::string & m_filename)
 {
     std::ofstream file(m_filename, std::ios::out);
-    if (file.is_open()) 
+    if (file.is_open())
     {
-        for (int i = 0; i < numRows; ++i) 
+        for (int i = 0; i < numRows; ++i)
         {
-            for (int j = 0; j < numCols; ++j) 
+            for (int j = 0; j < numCols; ++j)
             {
                 file << m_tiles[i][j].isWall << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().left << " ";
@@ -359,13 +389,13 @@ void LevelEditor::saveLevelToFile(const std::string& m_filename)
         file.close();
         std::cout << "Level saved to " << m_filename << std::endl;
     }
-    else 
+    else
     {
         std::cout << "Unable to save the level to file." << std::endl;
     }
 }
 
-void LevelEditor::loadLevelFromFile(const std::string& m_filename)
+void LevelEditor::loadLevelFromFile(const std::string & m_filename)
 {
     std::ifstream inputFile(m_filename);
 
@@ -385,7 +415,7 @@ void LevelEditor::loadLevelFromFile(const std::string& m_filename)
                 inputFile >> left >> top >> width >> height >> xPos >> yPos >> tileRotation >> originX >> originY;
 
                 sf::IntRect textureRect(left, top, width, height);
-                m_tiles[i][j].m_tile.setTexture(&m_walkable1);
+                m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
                 m_tiles[i][j].m_tile.setTextureRect(textureRect);
                 m_tiles[i][j].m_tile.setPosition(xPos, yPos);
                 m_tiles[i][j].m_tile.setRotation(tileRotation);
