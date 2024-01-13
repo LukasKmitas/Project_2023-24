@@ -19,7 +19,7 @@
 
 void LevelEditor::update(sf::Time t_deltaTime)
 {
-
+    animationForResources();
 }
 
 void LevelEditor::render(sf::RenderWindow & m_window)
@@ -125,14 +125,14 @@ void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f 
 
 void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex)
 {
-    sf::IntRect buttonAreas[4] = {
+    sf::IntRect buttonAreaForWalkable[4] = {
         {17, 1808, 16, 16},
         {33, 1808, 16, 16},
         {49, 1808, 16, 16},
         {49, 1792, 16, 16}
     };
 
-    sf::IntRect wallButtonAreas[5] = {
+    sf::IntRect buttonAreaForWalls[5] = {
         {49, 1695, 16, 16},
         {242, 1808, 16, 16},
         {257, 1808, 16, 16},
@@ -140,7 +140,31 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
         {258, 1792, 16, 16}
     };
 
-    sf::IntRect* buttonArea = (selectedIndex < 4) ? &buttonAreas[selectedIndex] : &wallButtonAreas[selectedIndex - 4];
+    sf::IntRect buttonAreaForResources = { 971, 1798, 16, 16 };
+
+    sf::IntRect buttonAreaForMiscs[2] =
+    {
+        {971, 1764, 16, 16},
+        {854, 1776, 16, 16}
+    };
+
+    sf::IntRect* buttonArea = nullptr;
+    if (selectedIndex < 4)
+    {
+        buttonArea = &buttonAreaForWalkable[selectedIndex];
+    }
+    else if (selectedIndex < 9)
+    {
+        buttonArea = &buttonAreaForWalls[selectedIndex - 4];
+    }
+    else if (selectedIndex < 10)
+    {
+        buttonArea = &buttonAreaForResources;
+    }
+    else
+    {
+        buttonArea = &buttonAreaForMiscs[selectedIndex - 10];
+    }
 
     for (int i = 0; i < numRows; ++i)
     {
@@ -158,8 +182,8 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
                     selectedTileX = i;
                     selectedTileY = j;
                     m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
-                    m_tiles[i][j].isWall = (selectedIndex >= 4);
-                    m_tiles[i][j].isResource = false;
+                    m_tiles[i][j].isWall = (selectedIndex >= 4 && selectedIndex < 9);
+                    m_tiles[i][j].isResource = (selectedIndex == 9);
                     isOffsetApplied = false;
 
                     m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
@@ -303,11 +327,12 @@ void LevelEditor::initbuttonsForToolEditor()
 
 void LevelEditor::initButtonsForToolSet()
 {
-    const float buttonSize = 70.f;
+    const float buttonSize = 60.f;
     const float spacing = 20.f;
 
     // Walkable button areas
-    sf::IntRect buttonAreasForWalkable[4] = {
+    sf::IntRect buttonAreaForWalkable[4] = 
+    {
         {17, 1808, 16, 16},
         {33, 1808, 16, 16},
         {49, 1808, 16, 16},
@@ -315,7 +340,8 @@ void LevelEditor::initButtonsForToolSet()
     };
 
     // Wall button areas
-    sf::IntRect buttonAreasForWalls[5] = {
+    sf::IntRect buttonAreaForWalls[5] = 
+    {
         {49, 1695, 16, 16},
         {242, 1808, 16, 16},
         {257, 1808, 16, 16},
@@ -323,26 +349,75 @@ void LevelEditor::initButtonsForToolSet()
         {258, 1792, 16, 16}
     };
 
-    // Calculate starting positions for walkable and wall buttons
-    const float startXForWalkable = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 50;
+    sf::IntRect buttonAreaForResources = {971, 1798, 16, 16 };
+
+    sf::IntRect buttonAreaForMiscs[2] =
+    {
+        {971, 1764, 16, 16},
+        {854, 1776, 16, 16}
+    };
+
+    // Calculate starting positions for each button type
+    const float startXForWalkable = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 120;
     const float startYForWalkable = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
 
-    const float startXForWalls = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 530;
+    const float startXForWalls = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 520;
     const float startYForWalls = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+
+    const float startXForResource = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1080;
+    const float startYForResource = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+
+    const float startXForMisc = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1430;
+    const float startYForMisc = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
 
     for (int i = 0; i < numButtons; ++i)
     {
         m_buttons[i].setTexture(m_underWaterTexture);
 
         // Determine button area based on index
-        sf::IntRect* buttonArea = (i < 4) ? &buttonAreasForWalkable[i] : &buttonAreasForWalls[i - 4];
+        sf::IntRect* buttonArea = nullptr;
+        if (i < 4)
+        {
+            buttonArea = &buttonAreaForWalkable[i];
+        }
+        else if (i < 9)
+        {
+            buttonArea = &buttonAreaForWalls[i - 4];
+        }
+        else if (i < 10)
+        {
+            buttonArea = &buttonAreaForResources;
+        }
+        else
+        {
+            buttonArea = &buttonAreaForMiscs[i - 10];
+        }
 
         m_buttons[i].setTextureRect(*buttonArea);
         m_buttons[i].setScale(buttonSize / m_buttons[i].getGlobalBounds().width, buttonSize / m_buttons[i].getGlobalBounds().height);
 
         // Calculate position based on index and type of button
-        float xPos = (i < 4) ? startXForWalkable + i * (buttonSize + spacing) : startXForWalls + (i - 4) * (buttonSize + spacing);
-        float yPos = (i < 4) ? startYForWalkable : startYForWalls;
+        float xPos, yPos;
+        if (i < 4)
+        {
+            xPos = startXForWalkable + i * (buttonSize + spacing);
+            yPos = startYForWalkable;
+        }
+        else if (i < 9)
+        {
+            xPos = startXForWalls + (i - 4) * (buttonSize + spacing);
+            yPos = startYForWalls;
+        }
+        else if (i < 10)
+        {
+            xPos = startXForResource + (i - 9) * (buttonSize + spacing);
+            yPos = startYForResource;
+        }
+        else
+        {
+            xPos = startXForMisc + (i - 10) * (buttonSize + spacing);
+            yPos = startYForMisc;
+        }
         m_buttons[i].setPosition(xPos, yPos);
     }
 }
@@ -374,6 +449,7 @@ void LevelEditor::saveLevelToFile(const std::string & m_filename)
             for (int j = 0; j < numCols; ++j)
             {
                 file << m_tiles[i][j].isWall << " ";
+                file << m_tiles[i][j].isResource << " ",
                 file << m_tiles[i][j].m_tile.getTextureRect().left << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().top << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().width << " ";
@@ -405,13 +481,13 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
         {
             for (int j = 0; j < numCols; ++j)
             {
-                int isWallValue;
-                inputFile >> isWallValue;
+                int isWallValue, isResourceValue;
+                inputFile >> isWallValue >> isResourceValue;
 
                 m_tiles[i][j].isWall = (isWallValue == 1);
+                m_tiles[i][j].isResource = (isResourceValue == 1);
 
-                int left, top, width, height;
-                float tileRotation, xPos, yPos, originX, originY;
+                int left, top, width, height, xPos, yPos, tileRotation, originX, originY;
                 inputFile >> left >> top >> width >> height >> xPos >> yPos >> tileRotation >> originX >> originY;
 
                 sf::IntRect textureRect(left, top, width, height);
@@ -428,5 +504,25 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
     else
     {
         std::cout << "Unable to open file: " << m_filename << std::endl;
+    }
+}
+
+void LevelEditor::animationForResources()
+{
+    if (tileAnimationClock.getElapsedTime().asMilliseconds() > 200)
+    {
+        currentTileAnimationFrame = (currentTileAnimationFrame + 1) % numTileFrames;
+
+        for (int i = 0; i < 50; ++i)
+        {
+            for (int j = 0; j < 50; ++j)
+            {
+                if (m_tiles[i][j].isResource == true)
+                {
+                    m_tiles[i][j].m_tile.setTextureRect(tileAnimationFrames[currentTileAnimationFrame]);
+                }
+            }
+        }
+        tileAnimationClock.restart();
     }
 }

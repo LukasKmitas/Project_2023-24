@@ -22,6 +22,8 @@ public:
 	void saveLevelToFile(const std::string& m_filename);
 	void loadLevelFromFile(const std::string& m_filename);
 
+	void animationForResources();
+
 	std::vector<std::vector<Tile>> m_tiles;
 
 	const int numRows = 50;
@@ -41,7 +43,7 @@ private:
 	void handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[], int& lastClickedIndex, int& selectedIndex);
 	void handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex);
 
-	static const int numButtons = 9;
+	static const int numButtons = 12;
 
 	int selectedButtonIndex = -1;
 	int lastClickedButtonIndex = -1;
@@ -66,9 +68,16 @@ private:
 	sf::Text m_MiscText;
 
 	sf::Texture m_underWaterTexture;
-	sf::Texture m_walkable2;
-	sf::Texture m_walkable3;
-	sf::Texture m_walkable4;
+
+	sf::Clock tileAnimationClock;
+	int currentTileAnimationFrame = 0;
+	const int numTileFrames = 4;
+	sf::IntRect tileAnimationFrames[4] = {
+		{971, 1798, 16, 16},
+		{988, 1798, 16, 16},
+		{1005, 1798, 16, 16},
+		{1022, 1798, 16, 16}
+	};
 
 };
 

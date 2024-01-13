@@ -160,6 +160,7 @@ void Game::update(sf::Time t_deltaTime)
 			building->update(t_deltaTime);
 		}
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
+		m_levelEditor.animationForResources();
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
