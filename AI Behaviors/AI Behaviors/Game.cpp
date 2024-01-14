@@ -13,7 +13,15 @@ Game::Game() :
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
 
+	if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
+	{
+		std::cout << "Error - loading font" << std::endl;
+	}
+
 	createBase();
+	initBackgroundImage();
+	initBackButton();
+	initLevelSelectionButtons();
 }
 
 /// <summary>
@@ -82,6 +90,13 @@ void Game::processEvents()
 					break;
 				case GameState::LevelEditor:
 					m_levelEditor.handleMouseInput(mousePosition, m_currentState, m_window);
+					break;
+				case GameState::LevelSelection:
+					if (m_toGoBackButton.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
+					{
+						goToMainMenu();
+					}
+					handleLevelSelectionMouseInput(mousePosition);
 					break;
 				case GameState::Exit:
 					break;
@@ -169,7 +184,7 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		break;
 	case GameState::PlayGame:
-		loadMainLevel();
+		loadLevel(levelFilenames[selectedButtonIndex]);
 		updateView();
 		createBuilding(m_window);
 		m_gui.update(t_deltaTime);
@@ -202,6 +217,7 @@ void Game::render()
 	switch (m_currentState)
 	{
 	case GameState::MainMenu:
+		m_window.draw(m_backGroundSprite);
 		m_menu.render(m_window);
 		break;
 	case GameState::PlayGame:
@@ -218,7 +234,21 @@ void Game::render()
 		m_window.setView(gameView);
 		break;
 	case GameState::LevelSelection:
-		
+		m_window.draw(m_toGoBackButton);
+		m_window.draw(m_toGoBackText);
+		for (const auto& button : levelSelectionButtons)
+		{
+			m_window.draw(button);
+		}
+		for (size_t i = 0; i < levelSelectionButtons.size(); ++i)
+		{
+			m_window.draw(levelSelectionButtons[i]);
+			levelSelectionButtonText.setString(levelFilenames[i]);
+			float textX = levelSelectionButtons[i].getPosition().x + (buttonWidth - levelSelectionButtonText.getGlobalBounds().width) / 2.0f;
+			float textY = levelSelectionButtons[i].getPosition().y + (buttonHeight - levelSelectionButtonText.getGlobalBounds().height) / 2.0f;
+			levelSelectionButtonText.setPosition(textX, textY);
+			m_window.draw(levelSelectionButtonText);
+		}
 		break;
 	case GameState::Exit:
 		break;
@@ -356,15 +386,6 @@ void Game::saveLevel()
 	m_levelEditor.saveLevelToFile("Assets\\SaveFiles\\" + filename);
 }
 
-void Game::loadMainLevel()
-{
-	if (!levelLoaded)
-	{
-		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\level.txt");
-		levelLoaded = true;
-	}
-}
-
 void Game::resetView() 
 {
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
@@ -372,36 +393,115 @@ void Game::resetView()
 	m_window.setView(gameView);
 }
 
+void Game::goToMainMenu()
+{
+	m_currentState = GameState::MainMenu;
+}
+
 void Game::initLevelSelectionButtons()
 {
-	//levelSelectionButtons.clear();
-	//levelFilenames.clear();
+	levelSelectionButtons.clear();
+	levelFilenames.clear();
 
-	//const std::string saveFilesPath = "Assets\\SaveFiles\\";
+	const std::string saveFilesPath = "Assets\\SaveFiles\\";
 
-	//for (const auto& entry : std::filesystem::directory_iterator(saveFilesPath))
-	//{
-	//	if (entry.is_regular_file() && entry.path().extension() == ".txt")
-	//	{
-	//		// Extract filename (without extension)
-	//		std::string filename = entry.path().filename().stem().string();
-	//		levelFilenames.push_back(filename);
+	float buttonSpacing = 30.0f;
 
-	//		// Create button with filename text
-	//		sf::RectangleShape button(sf::Vector2f(200.0f, 50.0f));
-	//		button.setFillColor(sf::Color::Blue);
-	//		button.setPosition(10.0f, static_cast<float>(levelSelectionButtons.size()) * 60.0f);
+	float startX = (Global::S_WIDTH - buttonWidth) / 2.0f;
+	float startY = (Global::S_HEIGHT - (buttonHeight + buttonSpacing) * levelSelectionButtons.size()) / 2.0f - 200;
 
-	//		sf::Text buttonText;
-	//		buttonText.setFont(m_ArialBlackfont);
-	//		buttonText.setString(filename);
-	//		buttonText.setCharacterSize(20);
-	//		buttonText.setFillColor(sf::Color::White);
-	//		buttonText.setPosition(20.0f, static_cast<float>(levelSelectionButtons.size()) * 60.0f + 10.0f);
+	size_t i = 0;
+	for (const auto& entry : std::filesystem::directory_iterator(saveFilesPath))
+	{
+		if (entry.is_regular_file() && entry.path().extension() == ".txt")
+		{
+			// Extract filename (without extension)
+			std::string filename = entry.path().filename().stem().string();
+			levelFilenames.push_back(filename);
 
-	//		levelSelectionButtons.push_back(button);
-	//		m_window.draw(button);
-	//		m_window.draw(buttonText);
-	//	}
-	//}
+			sf::RectangleShape button(sf::Vector2f(buttonWidth, buttonHeight));
+
+			if (i == 0)
+			{
+				button.setFillColor(sf::Color::Red);
+				button.setOutlineColor(sf::Color::White);
+				button.setOutlineThickness(2.0f);
+			}
+			else
+			{
+				button.setFillColor(sf::Color::Blue);
+			}
+
+			button.setPosition(startX, startY + static_cast<float>(i) * (buttonHeight + buttonSpacing));
+
+			levelSelectionButtonText.setFont(m_font);
+			levelSelectionButtonText.setString(filename);
+			levelSelectionButtonText.setCharacterSize(20);
+			levelSelectionButtonText.setFillColor(sf::Color::White);
+
+			float textX = startX + (buttonWidth - levelSelectionButtonText.getGlobalBounds().width) / 2.0f;
+			float textY = startY + static_cast<float>(i) * (buttonHeight + buttonSpacing) + (buttonHeight - levelSelectionButtonText.getGlobalBounds().height) / 2.0f;
+			levelSelectionButtonText.setPosition(textX, textY);
+
+			levelSelectionButtons.push_back(button);
+
+			++i;
+		}
+	}
+	selectedButtonIndex = 0;
+}
+
+void Game::initBackButton()
+{
+	m_toGoBackButton.setFillColor(sf::Color(0, 200, 200));
+	m_toGoBackButton.setSize(sf::Vector2f(100, 50));
+	m_toGoBackButton.setPosition(80, 50);
+	m_toGoBackButton.setOrigin(m_toGoBackButton.getGlobalBounds().width / 2, m_toGoBackButton.getGlobalBounds().height / 2);
+
+	m_toGoBackText.setFont(m_font);
+	m_toGoBackText.setString("Back");
+	m_toGoBackText.setPosition(m_toGoBackButton.getPosition().x, m_toGoBackButton.getPosition().y - 5);
+	m_toGoBackText.setCharacterSize(25U);
+	m_toGoBackText.setOutlineColor(sf::Color::Black);
+	m_toGoBackText.setFillColor(sf::Color::White);
+	m_toGoBackText.setOutlineThickness(1.0f);
+	m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
+}
+
+void Game::initBackgroundImage()
+{
+	if (!m_backgroundTexture.loadFromFile("Assets\\Temp\\Down the Tubes.png"))
+	{
+		std::cout << "Error - Failed to load background image" << std::endl;
+	}
+
+	m_backGroundSprite.setTexture(m_backgroundTexture);
+
+	m_backGroundSprite.setScale(static_cast<float>(Global::S_WIDTH) / m_backGroundSprite.getGlobalBounds().width,
+		static_cast<float>(Global::S_HEIGHT) / m_backGroundSprite.getGlobalBounds().height);
+}
+
+void Game::handleLevelSelectionMouseInput(sf::Vector2i mousePosition)
+{
+	for (size_t i = 0; i < levelSelectionButtons.size(); ++i)
+	{
+		if (levelSelectionButtons[i].getGlobalBounds().contains(static_cast<float>(mousePosition.x), static_cast<float>(mousePosition.y)))
+		{
+			levelSelectionButtons[selectedButtonIndex].setFillColor(sf::Color::Blue);
+			selectedButtonIndex = static_cast<int>(i);
+			levelSelectionButtons[selectedButtonIndex].setFillColor(sf::Color::Red);
+
+			loadLevel(levelFilenames[selectedButtonIndex]);
+			break;
+		}
+	}
+}
+
+void Game::loadLevel(const std::string& filename)
+{
+	if (!levelLoaded)
+	{
+		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + filename + ".txt");
+		levelLoaded = true;
+	}
 }
