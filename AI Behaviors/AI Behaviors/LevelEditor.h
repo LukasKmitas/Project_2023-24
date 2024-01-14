@@ -21,6 +21,7 @@ public:
 
 	void saveLevelToFile(const std::string& m_filename);
 	void loadLevelFromFile(const std::string& m_filename);
+	void loadLevelForLevelEditor();
 
 	void animationForResources();
 

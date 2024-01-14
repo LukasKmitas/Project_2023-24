@@ -14,9 +14,11 @@ void MainMenu::render(sf::RenderWindow& m_window)
 {
     m_window.draw(m_playButton);
     m_window.draw(m_editorButton);
+    m_window.draw(m_selectLevelButton);
     m_window.draw(m_exitButton);
     m_window.draw(m_playText);
     m_window.draw(m_editorText);
+    m_window.draw(m_selectLevelText);
     m_window.draw(m_exitText);
     m_window.draw(m_welcomeMessage);
 }
@@ -30,6 +32,10 @@ void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState&
     else if (m_editorButton.getGlobalBounds().contains(m_mousePosition))
     {
         m_gameState = GameState::LevelEditor;
+    }
+    else if (m_selectLevelButton.getGlobalBounds().contains(m_mousePosition))
+    {
+        m_gameState = GameState::LevelSelection;
     }
     else if (m_exitButton.getGlobalBounds().contains(m_mousePosition))
     {
@@ -59,7 +65,7 @@ void MainMenu::initButtons()
     m_playButton.setSize(sf::Vector2f(120, 50));
     m_playButton.setFillColor(sf::Color::White);
     m_playButton.setOrigin(m_playButton.getSize().x / 2, m_playButton.getSize().y / 2);
-    m_playButton.setPosition(Global::S_WIDTH / 2,Global::S_HEIGHT / 2 - 100);
+    m_playButton.setPosition(Global::S_WIDTH / 2,Global::S_HEIGHT / 2 - 200);
     m_playText.setFont(m_font);
     m_playText.setString("Play");
     m_playText.setCharacterSize(30);
@@ -71,13 +77,25 @@ void MainMenu::initButtons()
     m_editorButton.setSize(sf::Vector2f(200, 50));
     m_editorButton.setFillColor(sf::Color::White);
     m_editorButton.setOrigin(m_editorButton.getSize().x / 2, m_editorButton.getSize().y / 2);
-    m_editorButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+    m_editorButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
     m_editorText.setFont(m_font);
     m_editorText.setString("Level Editor");
     m_editorText.setCharacterSize(30);
     m_editorText.setFillColor(sf::Color::Black);
     m_editorText.setPosition(m_editorButton.getPosition());
     m_editorText.setOrigin(m_editorText.getGlobalBounds().width / 2, m_editorText.getGlobalBounds().height / 2);
+
+    // Select Level Button
+    m_selectLevelButton.setSize(sf::Vector2f(200, 50));
+    m_selectLevelButton.setFillColor(sf::Color::White);
+    m_selectLevelButton.setOrigin(m_selectLevelButton.getSize().x / 2, m_selectLevelButton.getSize().y / 2);
+    m_selectLevelButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+    m_selectLevelText.setFont(m_font);
+    m_selectLevelText.setString("Select Level");
+    m_selectLevelText.setCharacterSize(30);
+    m_selectLevelText.setFillColor(sf::Color::Black);
+    m_selectLevelText.setPosition(m_selectLevelButton.getPosition());
+    m_selectLevelText.setOrigin(m_selectLevelText.getGlobalBounds().width / 2, m_selectLevelText.getGlobalBounds().height / 2);
 
     // Exit Button
     m_exitButton.setSize(sf::Vector2f(100, 50));

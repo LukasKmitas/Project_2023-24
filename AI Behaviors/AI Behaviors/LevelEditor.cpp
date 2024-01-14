@@ -1,6 +1,6 @@
 #include "LevelEditor.h"
 
-    LevelEditor::LevelEditor()
+LevelEditor::LevelEditor()
 {
     if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
     {
@@ -441,7 +441,24 @@ void LevelEditor::initBackButton()
 
 void LevelEditor::saveLevelToFile(const std::string & m_filename)
 {
+    std::ifstream fileExistsCheck(m_filename);
+
+    if (fileExistsCheck)
+    {
+        fileExistsCheck.close();
+        std::cout << "The level file already exists. Do you want to overwrite it? (Y/N): ";
+        char response;
+        std::cin >> response;
+
+        if (response != 'Y' && response != 'y')
+        {
+            std::cout << "Level not saved." << std::endl;
+            return;
+        }
+    }
+
     std::ofstream file(m_filename, std::ios::out);
+
     if (file.is_open())
     {
         for (int i = 0; i < numRows; ++i)
@@ -507,6 +524,33 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
     }
 }
 
+void LevelEditor::loadLevelForLevelEditor()
+{
+    std::cout << "Do you want to load a level? (Y/N): ";
+    char response;
+    std::cin >> response;
+
+    if (response == 'Y' || response == 'y')
+    {
+        std::string filename;
+        std::cout << "Enter the filename to load: ";
+        std::cin >> filename;
+
+        if (!filename.empty())
+        {
+            loadLevelFromFile("Assets\\SaveFiles\\" + filename + ".txt");
+            std::cout << "Level loaded." << std::endl;
+        }
+        else
+        {
+            std::cout << "Invalid filename. Level not loaded." << std::endl;
+        }
+    }
+}
+
+/// <summary>
+/// animates the resources 
+/// </summary>
 void LevelEditor::animationForResources()
 {
     if (tileAnimationClock.getElapsedTime().asMilliseconds() > 200)

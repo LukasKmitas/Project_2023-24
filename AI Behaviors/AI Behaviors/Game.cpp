@@ -108,26 +108,44 @@ void Game::processKeys(sf::Event t_event)
 	cameraVelocity = sf::Vector2f(0.0f, 0.0f);
 	float speed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? 2.0f * viewMoveSpeed : viewMoveSpeed;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	switch (m_currentState)
 	{
-		cameraVelocity.y -= speed;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		cameraVelocity.x -= speed;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		cameraVelocity.y += speed;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		cameraVelocity.x += speed;
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-	{
-		saveLevel();
+	case GameState::MainMenu:
+		break;
+	case GameState::PlayGame:
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			cameraVelocity.y -= speed;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			cameraVelocity.x -= speed;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			cameraVelocity.y += speed;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			cameraVelocity.x += speed;
+		}
+		break;
+	case GameState::LevelEditor:
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+		{
+			saveLevel();
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+		{
+			m_levelEditor.loadLevelForLevelEditor();
+		}
+		break;
+	case GameState::LevelSelection:
+		break;
+	case GameState::Exit:
+		break;
+	default:
+		break;
 	}
 }
 
@@ -151,7 +169,7 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		break;
 	case GameState::PlayGame:
-		loadLevelForPlay();
+		loadMainLevel();
 		updateView();
 		createBuilding(m_window);
 		m_gui.update(t_deltaTime);
@@ -198,6 +216,9 @@ void Game::render()
 	case GameState::LevelEditor:
 		m_levelEditor.render(m_window);
 		m_window.setView(gameView);
+		break;
+	case GameState::LevelSelection:
+		
 		break;
 	case GameState::Exit:
 		break;
@@ -317,17 +338,25 @@ void Game::createBase()
 
 void Game::saveLevel()
 {
-	if (m_currentState == GameState::LevelEditor)
+	std::string filename;
+	std::cout << "Enter a filename to save the level: ";
+	std::cin >> filename;
+
+	if (filename.empty())
 	{
-		m_levelEditor.saveLevelToFile("Assets\\SaveFiles\\level.txt");
+		std::cout << "Invalid filename. Level not saved." << std::endl;
+		return;
 	}
-	else
+
+	if (filename.find(".txt") == std::string::npos)
 	{
-		std::cout << "Cannot save level. Not in Level Editor mode." << std::endl;
+		filename += ".txt";
 	}
+
+	m_levelEditor.saveLevelToFile("Assets\\SaveFiles\\" + filename);
 }
 
-void Game::loadLevelForPlay()
+void Game::loadMainLevel()
 {
 	if (!levelLoaded)
 	{
@@ -341,4 +370,38 @@ void Game::resetView()
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
+}
+
+void Game::initLevelSelectionButtons()
+{
+	//levelSelectionButtons.clear();
+	//levelFilenames.clear();
+
+	//const std::string saveFilesPath = "Assets\\SaveFiles\\";
+
+	//for (const auto& entry : std::filesystem::directory_iterator(saveFilesPath))
+	//{
+	//	if (entry.is_regular_file() && entry.path().extension() == ".txt")
+	//	{
+	//		// Extract filename (without extension)
+	//		std::string filename = entry.path().filename().stem().string();
+	//		levelFilenames.push_back(filename);
+
+	//		// Create button with filename text
+	//		sf::RectangleShape button(sf::Vector2f(200.0f, 50.0f));
+	//		button.setFillColor(sf::Color::Blue);
+	//		button.setPosition(10.0f, static_cast<float>(levelSelectionButtons.size()) * 60.0f);
+
+	//		sf::Text buttonText;
+	//		buttonText.setFont(m_ArialBlackfont);
+	//		buttonText.setString(filename);
+	//		buttonText.setCharacterSize(20);
+	//		buttonText.setFillColor(sf::Color::White);
+	//		buttonText.setPosition(20.0f, static_cast<float>(levelSelectionButtons.size()) * 60.0f + 10.0f);
+
+	//		levelSelectionButtons.push_back(button);
+	//		m_window.draw(button);
+	//		m_window.draw(buttonText);
+	//	}
+	//}
 }

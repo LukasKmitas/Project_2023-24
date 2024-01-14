@@ -23,9 +23,11 @@ private:
     sf::Text m_welcomeMessage;
     sf::Text m_playText;
     sf::Text m_editorText;
+    sf::Text m_selectLevelText;
     sf::Text m_exitText;
     sf::RectangleShape m_playButton;
     sf::RectangleShape m_editorButton;
+    sf::RectangleShape m_selectLevelButton;
     sf::RectangleShape m_exitButton;
 
 };

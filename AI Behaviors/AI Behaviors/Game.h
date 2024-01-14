@@ -1,13 +1,19 @@
 #ifndef GAME_HPP
 #define GAME_HPP
+//#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 
 #include <SFML/Graphics.hpp>
+//#include <filesystem>
+//#include <experimental/filesystem>
+
 #include "GameState.h"
 #include "MainMenu.h"
 #include "LevelEditor.h"
 #include "GUI.h"
 #include "Global.h"
 #include "BuildingType.h"
+
+namespace fs = std::experimental::filesystem;
 
 class Game
 {
@@ -35,9 +41,11 @@ private:
 	void createBuilding(sf::RenderWindow& window);
 	void createBase();
 	void saveLevel();
-	void loadLevelForPlay();
+	void loadMainLevel();
 
 	void resetView();
+
+	void initLevelSelectionButtons();
 
 	sf::RenderWindow m_window;
 	sf::View gameView;
@@ -52,6 +60,9 @@ private:
 
 	bool levelLoaded = false;
 	bool m_exitGame;
+
+	std::vector<sf::RectangleShape> levelSelectionButtons;
+	std::vector<std::string> levelFilenames;
 
 };
 
