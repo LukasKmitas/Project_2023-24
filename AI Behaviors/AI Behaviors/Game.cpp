@@ -105,9 +105,30 @@ void Game::processEvents()
 				}
 			}
 		}
+		if (sf::Event::MouseButtonReleased == newEvent.type)
+		{
+			switch (m_currentState)
+			{
+			case GameState::MainMenu:
+				break;
+			case GameState::PlayGame:
+				break;
+			case GameState::LevelEditor:
+				if (newEvent.mouseButton.button == sf::Mouse::Left)
+				{
+					m_levelEditor.releaseDragRect();
+				}
+				break;
+			case GameState::LevelSelection:
+				break;
+			case GameState::Exit:
+				break;
+			default:
+				break;
+			}
+		}
 	}
 }
-
 
 /// <summary>
 /// deal with key presses from the user
@@ -198,7 +219,7 @@ void Game::update(sf::Time t_deltaTime)
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
 		updateView();
-		m_levelEditor.update(t_deltaTime);
+		m_levelEditor.update(t_deltaTime, m_window);
 		break;
 	case GameState::Exit:
 		m_exitGame = true;

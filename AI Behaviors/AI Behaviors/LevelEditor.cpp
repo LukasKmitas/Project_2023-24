@@ -12,14 +12,22 @@ LevelEditor::LevelEditor()
     initbuttonsForToolEditor();
     m_tiles.resize(numRows, std::vector<Tile>(numCols));
     initGrid();
+    initDragRectangle();
     //randomGenerateLevel();
     m_levelEditorView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
     m_levelEditorView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 }
 
-void LevelEditor::update(sf::Time t_deltaTime)
+void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
     animationForResources();
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+        sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
+        sf::Vector2f newSize = worldMousePosition - startMousePos;
+        dragRectangle.setSize(newSize);
+    }
 }
 
 void LevelEditor::render(sf::RenderWindow & m_window)
@@ -51,6 +59,8 @@ void LevelEditor::render(sf::RenderWindow & m_window)
         };
         m_window.draw(line, 2, sf::Lines);
     }
+    m_window.draw(dragRectangle);
+
     m_window.setView(m_levelEditorView);
     m_window.draw(m_backgroundForTilesTools);
     m_window.draw(m_toGoBackButton);
@@ -94,6 +104,9 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_g
 
     handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, lastClickedButtonIndex, selectedButtonIndex);
 
+    startMousePos = worldMousePosition;
+    newMousePos = worldMousePosition;
+    dragRectangle.setPosition(startMousePos);
 }
 
 void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
@@ -569,4 +582,16 @@ void LevelEditor::animationForResources()
         }
         tileAnimationClock.restart();
     }
+}
+
+void LevelEditor::releaseDragRect()
+{
+    dragRectangle.setSize(sf::Vector2f(0.0f,0.0f));
+}
+
+void LevelEditor::initDragRectangle()
+{
+    sf::Vector2f initialSize = sf::Vector2f(0.f, 0.f);
+    dragRectangle.setSize(initialSize);
+    dragRectangle.setFillColor(sf::Color::Black);
 }

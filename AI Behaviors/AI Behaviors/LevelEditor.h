@@ -12,7 +12,7 @@ class LevelEditor
 public:
 	LevelEditor();
 
-	void update(sf::Time t_deltaTime);
+	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);
 	void render(sf::RenderWindow& m_window);
 	void renderLoadedLevel(sf::RenderWindow& m_window);
 
@@ -24,6 +24,7 @@ public:
 	void loadLevelForLevelEditor();
 
 	void animationForResources();
+	void releaseDragRect();
 
 	std::vector<std::vector<Tile>> m_tiles;
 
@@ -40,6 +41,7 @@ private:
 	void initbuttonsForToolEditor();
 	void initButtonsForToolSet();
 	void initBackButton();
+	void initDragRectangle();
 
 	void handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[], int& lastClickedIndex, int& selectedIndex);
 	void handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex);
@@ -80,5 +82,8 @@ private:
 		{1022, 1798, 16, 16}
 	};
 
+	sf::RectangleShape dragRectangle;
+	sf::Vector2f newMousePos;
+	sf::Vector2f startMousePos;
 };
 
