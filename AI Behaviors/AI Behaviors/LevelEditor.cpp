@@ -21,7 +21,7 @@ LevelEditor::LevelEditor()
 void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
     animationForResources();
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && isTileSelected)
     {
         sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
         sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
@@ -104,9 +104,12 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_g
 
     handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, lastClickedButtonIndex, selectedButtonIndex);
 
-    startMousePos = worldMousePosition;
-    newMousePos = worldMousePosition;
-    dragRectangle.setPosition(startMousePos);
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        startMousePos = worldMousePosition;
+        newMousePos = worldMousePosition;
+        dragRectangle.setPosition(startMousePos);
+    }
 }
 
 void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
@@ -138,29 +141,6 @@ void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f 
 
 void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex)
 {
-    sf::IntRect buttonAreaForWalkable[4] = {
-        {17, 1808, 16, 16},
-        {33, 1808, 16, 16},
-        {49, 1808, 16, 16},
-        {49, 1792, 16, 16}
-    };
-
-    sf::IntRect buttonAreaForWalls[5] = {
-        {49, 1695, 16, 16},
-        {242, 1808, 16, 16},
-        {257, 1808, 16, 16},
-        {226, 1776, 16, 16},
-        {258, 1792, 16, 16}
-    };
-
-    sf::IntRect buttonAreaForResources = { 971, 1798, 16, 16 };
-
-    sf::IntRect buttonAreaForMiscs[2] =
-    {
-        {971, 1764, 16, 16},
-        {854, 1776, 16, 16}
-    };
-
     sf::IntRect* buttonArea = nullptr;
     if (selectedIndex < 4)
     {
@@ -198,10 +178,48 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
                     m_tiles[i][j].isWall = (selectedIndex >= 4 && selectedIndex < 9);
                     m_tiles[i][j].isResource = (selectedIndex == 9);
                     isOffsetApplied = false;
-
+                    m_tiles[i][j].m_tile.setRotation(0);
                     m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
                     break;
                 }
+            }
+        }
+    }
+
+}
+
+void LevelEditor::placeTilesInDragRectangle()
+{
+    for (int i = 0; i < numRows; ++i)
+    {
+        for (int j = 0; j < numCols; ++j)
+        {
+            if (dragRectangle.getGlobalBounds().intersects(m_tiles[i][j].m_tile.getGlobalBounds()))
+            {
+                m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
+                m_tiles[i][j].isWall = (selectedButtonIndex >= 4 && selectedButtonIndex < 9);
+                m_tiles[i][j].isResource = (selectedButtonIndex == 9);
+                isOffsetApplied = false;
+
+                sf::IntRect* buttonArea = nullptr;
+                if (selectedButtonIndex < 4)
+                {
+                    buttonArea = &buttonAreaForWalkable[selectedButtonIndex];
+                }
+                else if (selectedButtonIndex < 9)
+                {
+                    buttonArea = &buttonAreaForWalls[selectedButtonIndex - 4];
+                }
+                else if (selectedButtonIndex < 10)
+                {
+                    buttonArea = &buttonAreaForResources;
+                }
+                else
+                {
+                    buttonArea = &buttonAreaForMiscs[selectedButtonIndex - 10];
+                }
+
+                m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
             }
         }
     }
@@ -562,7 +580,7 @@ void LevelEditor::loadLevelForLevelEditor()
 }
 
 /// <summary>
-/// animates the resources 
+/// animates the resources tiles
 /// </summary>
 void LevelEditor::animationForResources()
 {
@@ -586,7 +604,10 @@ void LevelEditor::animationForResources()
 
 void LevelEditor::releaseDragRect()
 {
+    placeTilesInDragRectangle();
     dragRectangle.setSize(sf::Vector2f(0.0f,0.0f));
+    startMousePos = sf::Vector2f(0.f, 0.f);
+    newMousePos = sf::Vector2f(0.f, 0.f);
 }
 
 void LevelEditor::initDragRectangle()
