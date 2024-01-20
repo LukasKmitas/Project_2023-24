@@ -56,13 +56,14 @@ private:
 	int selectedTileY;
 	float offset = 25.0f;
 	bool isTileSelected = false;
-	bool isOffsetApplied = false;
 
-	sf::Vector2f originalTilePosition;
+	sf::Vector2f newMousePos;
+	sf::Vector2f startMousePos;
 
 	sf::RectangleShape m_backgroundForTilesTools;
 	sf::RectangleShape m_toGoBackButton;
 	sf::RectangleShape m_backgroundForBTF[4];
+	sf::RectangleShape dragRectangle;
 
 	sf::Sprite m_buttons[numButtons];
 
@@ -82,7 +83,6 @@ private:
 		{49, 1808, 16, 16},
 		{49, 1792, 16, 16}
 	};
-
 	sf::IntRect buttonAreaForWalls[5] = {
 		{49, 1695, 16, 16},
 		{242, 1808, 16, 16},
@@ -90,15 +90,14 @@ private:
 		{226, 1776, 16, 16},
 		{258, 1792, 16, 16}
 	};
-
 	sf::IntRect buttonAreaForResources = { 971, 1798, 16, 16 };
-
 	sf::IntRect buttonAreaForMiscs[2] =
 	{
 		{971, 1764, 16, 16},
 		{854, 1776, 16, 16}
 	};
 
+	//animation stuff
 	sf::Clock tileAnimationClock;
 	int currentTileAnimationFrame = 0;
 	const int numTileFrames = 4;
@@ -108,9 +107,5 @@ private:
 		{1005, 1798, 16, 16},
 		{1022, 1798, 16, 16}
 	};
-
-	sf::RectangleShape dragRectangle;
-	sf::Vector2f newMousePos;
-	sf::Vector2f startMousePos;
 };
 

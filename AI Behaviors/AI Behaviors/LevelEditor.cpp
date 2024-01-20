@@ -21,7 +21,7 @@ LevelEditor::LevelEditor()
 void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
     animationForResources();
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && isTileSelected)
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && isTileSelected) // used for dragging, creates the size
     {
         sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
         sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
@@ -30,6 +30,10 @@ void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
     }
 }
 
+/// <summary>
+/// Draws everything in the level editor mode
+/// </summary>
+/// <param name="m_window"></param>
 void LevelEditor::render(sf::RenderWindow & m_window)
 {
     for (int i = 0; i < numRows; ++i)
@@ -59,9 +63,9 @@ void LevelEditor::render(sf::RenderWindow & m_window)
         };
         m_window.draw(line, 2, sf::Lines);
     }
-    m_window.draw(dragRectangle);
 
-    m_window.setView(m_levelEditorView);
+    m_window.draw(dragRectangle);
+    m_window.setView(m_levelEditorView); // Stuff above stays the same, stuff below move along side the view
     m_window.draw(m_backgroundForTilesTools);
     m_window.draw(m_toGoBackButton);
     m_window.draw(m_toGoBackText);
@@ -81,6 +85,10 @@ void LevelEditor::render(sf::RenderWindow & m_window)
     }
 }
 
+/// <summary>
+/// Draws the level - used in gameplay
+/// </summary>
+/// <param name="m_window"></param>
 void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
 {
     for (int i = 0; i < numRows; ++i)
@@ -92,6 +100,12 @@ void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
     }
 }
 
+/// <summary>
+/// handles the mouse input inside the level editor 
+/// </summary>
+/// <param name="m_mousePosition"></param>
+/// <param name="m_gameState"></param>
+/// <param name="m_window"></param>
 void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_gameState, sf::RenderWindow & m_window)
 {
     sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_levelEditorView);
@@ -112,6 +126,14 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_g
     }
 }
 
+/// <summary>
+/// Handles the selection of button presses for the bottom UI
+/// </summary>
+/// <param name="guiMousePosition"></param>
+/// <param name="worldMousePosition"></param>
+/// <param name="buttons"></param>
+/// <param name="lastClickedIndex"></param>
+/// <param name="selectedIndex"></param>
 void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
 {
     bool isButtonClicked = false;
@@ -139,6 +161,12 @@ void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f 
     }
 }
 
+/// <summary>
+/// handles the placement for the tiles
+/// </summary>
+/// <param name="worldMousePosition"></param>
+/// <param name="lastClickedIndex"></param>
+/// <param name="selectedIndex"></param>
 void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex)
 {
     sf::IntRect* buttonArea = nullptr;
@@ -177,7 +205,6 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
                     m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
                     m_tiles[i][j].isWall = (selectedIndex >= 4 && selectedIndex < 9);
                     m_tiles[i][j].isResource = (selectedIndex == 9);
-                    isOffsetApplied = false;
                     m_tiles[i][j].m_tile.setRotation(0);
                     m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
                     break;
@@ -188,6 +215,9 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
 
 }
 
+/// <summary>
+/// Adds all the texture inside the dragRectangle shape
+/// </summary>
 void LevelEditor::placeTilesInDragRectangle()
 {
     for (int i = 0; i < numRows; ++i)
@@ -196,11 +226,6 @@ void LevelEditor::placeTilesInDragRectangle()
         {
             if (dragRectangle.getGlobalBounds().intersects(m_tiles[i][j].m_tile.getGlobalBounds()))
             {
-                m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
-                m_tiles[i][j].isWall = (selectedButtonIndex >= 4 && selectedButtonIndex < 9);
-                m_tiles[i][j].isResource = (selectedButtonIndex == 9);
-                isOffsetApplied = false;
-
                 sf::IntRect* buttonArea = nullptr;
                 if (selectedButtonIndex < 4)
                 {
@@ -218,59 +243,55 @@ void LevelEditor::placeTilesInDragRectangle()
                 {
                     buttonArea = &buttonAreaForMiscs[selectedButtonIndex - 10];
                 }
-
+                m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
+                m_tiles[i][j].isWall = (selectedButtonIndex >= 4 && selectedButtonIndex < 9);
+                m_tiles[i][j].isResource = (selectedButtonIndex == 9);
+                m_tiles[i][j].m_tile.setRotation(0);
                 m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
             }
         }
     }
 }
 
+/// <summary>
+/// able to rotate the first tile you place
+/// </summary>
+/// <param name="event"></param>
 void LevelEditor::handleRotationInput(sf::Event event)
 {
-    if (isTileSelected && selectedButtonIndex != -1 && !isOffsetApplied)
+    int rotationAngle = 90;
+
+    switch (event.key.code)
     {
-        int rotationAngle = 90;
-
-        sf::FloatRect tileBounds = m_tiles[selectedTileX][selectedTileY].m_tile.getLocalBounds();
-        m_tiles[selectedTileX][selectedTileY].m_tile.setOrigin(tileBounds.width / 2.f, tileBounds.height / 2.f);
-
-        m_tiles[selectedTileX][selectedTileY].m_tile.setPosition(
-            m_tiles[selectedTileX][selectedTileY].m_tile.getPosition().x + offset,
-            m_tiles[selectedTileX][selectedTileY].m_tile.getPosition().y + offset
-        );
-
-        isOffsetApplied = true;
-    }
-
-    if (isTileSelected && selectedButtonIndex != -1)
-    {
-        int rotationAngle = 90;
-
-        switch (event.key.code)
-        {
-        case sf::Keyboard::Q:
-            m_tiles[selectedTileX][selectedTileY].m_tile.rotate(-rotationAngle); // Rotate counter-clockwise
-            break;
-        case sf::Keyboard::E:
-            m_tiles[selectedTileX][selectedTileY].m_tile.rotate(rotationAngle); // Rotate clockwise
-            break;
-        default:
-            break;
-        }
+    case sf::Keyboard::Q:
+        m_tiles[selectedTileX][selectedTileY].m_tile.rotate(-rotationAngle); // Rotate counter-clockwise
+        break;
+    case sf::Keyboard::E:
+        m_tiles[selectedTileX][selectedTileY].m_tile.rotate(rotationAngle); // Rotate clockwise
+        break;
+    default:
+        break;
     }
 }
 
+/// <summary>
+/// initializes the grid m_tiles
+/// </summary>
 void LevelEditor::initGrid()
 {
     for (int i = 0; i < numRows; ++i)
     {
         for (int j = 0; j < numCols; ++j)
         {
-            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].tileSize, i * m_tiles[i][j].tileSize);
+            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].tileSize + 25, i * m_tiles[i][j].tileSize + 25);
+            m_tiles[i][j].m_tile.setOrigin(m_tiles[i][j].tileSize / 2.f, m_tiles[i][j].tileSize / 2.f);
         }
     }
 }
 
+/// <summary>
+/// to randomise the map 
+/// </summary>
 void LevelEditor::randomGenerateLevel()
 {
     for (int i = 0; i < numRows; ++i)
@@ -294,6 +315,9 @@ void LevelEditor::randomGenerateLevel()
     }
 }
 
+/// <summary>
+/// initializes the UI bar
+/// </summary>
 void LevelEditor::initBar()
 {
     m_backgroundForTilesTools.setFillColor(sf::Color(255, 255, 255, 200));
@@ -347,6 +371,9 @@ void LevelEditor::initBar()
     }
 }
 
+/// <summary>
+/// initializes the tool editor
+/// </summary>
 void LevelEditor::initbuttonsForToolEditor()
 {
     if (!m_underWaterTexture.loadFromFile("Assets\\Temp\\Labrynna Underwater.png"))
@@ -356,6 +383,9 @@ void LevelEditor::initbuttonsForToolEditor()
     initButtonsForToolSet();
 }
 
+/// <summary>
+/// initializes the buttons for the UI
+/// </summary>
 void LevelEditor::initButtonsForToolSet()
 {
     const float buttonSize = 60.f;
@@ -453,6 +483,9 @@ void LevelEditor::initButtonsForToolSet()
     }
 }
 
+/// <summary>
+/// initializes the back button
+/// </summary>
 void LevelEditor::initBackButton()
 {
     m_toGoBackButton.setFillColor(sf::Color(0, 200, 200));
@@ -470,6 +503,10 @@ void LevelEditor::initBackButton()
     m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
 }
 
+/// <summary>
+/// Saves the level with the correct m_tiles properties
+/// </summary>
+/// <param name="m_filename"></param>
 void LevelEditor::saveLevelToFile(const std::string & m_filename)
 {
     std::ifstream fileExistsCheck(m_filename);
@@ -519,6 +556,10 @@ void LevelEditor::saveLevelToFile(const std::string & m_filename)
     }
 }
 
+/// <summary>
+/// Loads the level with the correct m_tile properties
+/// </summary>
+/// <param name="m_filename"></param>
 void LevelEditor::loadLevelFromFile(const std::string & m_filename)
 {
     std::ifstream inputFile(m_filename);
@@ -555,6 +596,9 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
     }
 }
 
+/// <summary>
+/// Loads the level in the "selection level" state  
+/// </summary>
 void LevelEditor::loadLevelForLevelEditor()
 {
     std::cout << "Do you want to load a level? (Y/N): ";
@@ -602,6 +646,9 @@ void LevelEditor::animationForResources()
     }
 }
 
+/// <summary>
+/// reset the stuff for dragRectangle
+/// </summary>
 void LevelEditor::releaseDragRect()
 {
     placeTilesInDragRectangle();
@@ -610,6 +657,9 @@ void LevelEditor::releaseDragRect()
     newMousePos = sf::Vector2f(0.f, 0.f);
 }
 
+/// <summary>
+/// initializes the dragRectangle shape
+/// </summary>
 void LevelEditor::initDragRectangle()
 {
     sf::Vector2f initialSize = sf::Vector2f(0.f, 0.f);

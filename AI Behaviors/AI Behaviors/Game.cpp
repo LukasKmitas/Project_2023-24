@@ -382,7 +382,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 void Game::createBase()
 {
 	Headquarters* newHeadquarters = new Headquarters();
-	newHeadquarters->setPosition(sf::Vector2f(1000.0f,300.0f));
+	newHeadquarters->setPosition(sf::Vector2f(800.0f,200.0f));
 	placedBuildings.push_back(newHeadquarters);
 	std::cout << "Base Initilised" << std::endl;
 }
