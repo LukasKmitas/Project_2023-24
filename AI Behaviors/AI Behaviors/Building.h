@@ -23,6 +23,8 @@ public:
     int getCost() const;
     bool checkAffordability();
 
+    void togglePlacementRadiusVisibility();
+
     const sf::Sprite& getBuildingSprite() const 
     {
         return m_buildingSprite;
@@ -31,10 +33,18 @@ public:
     {
         return m_buildingTexture;
     }
+    const sf::CircleShape& Building::getPlacementRadius() const
+    {
+        return m_placementRadius;
+    }
+
     int getBuildingID() const 
     {
         return buildingID;
     }
+
+    void setPlacementRadius(float radius, sf::Color color, float thickness);
+    sf::CircleShape m_placementRadius;
 
 protected:
 
@@ -48,4 +58,6 @@ protected:
     int m_cost = 100;
     static int buildingCount;
     int buildingID = 0;
+
+    bool m_placementRadiusVisible = false;
 };

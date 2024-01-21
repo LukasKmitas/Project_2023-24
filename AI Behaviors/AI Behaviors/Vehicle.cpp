@@ -17,6 +17,10 @@ void Vehicle::update(sf::Time deltaTime)
 void Vehicle::render(sf::RenderWindow& m_window) const
 {
 	m_window.draw(m_buildingSprite);
+	if (m_placementRadiusVisible)
+	{
+		m_window.draw(m_placementRadius);
+	}
 }
 
 void Vehicle::setupSprite()
