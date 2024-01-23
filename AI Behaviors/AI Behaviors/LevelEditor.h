@@ -25,6 +25,7 @@ public:
 
 	void animationForResources();
 	void releaseDragRect();
+	void resetFogOfWar();
 
 	std::vector<std::vector<Tile>> m_tiles;
 

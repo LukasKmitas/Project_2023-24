@@ -18,6 +18,8 @@ void Building::update(sf::Time t_deltaTime)
 
 void Building::render(sf::RenderWindow& m_window) const
 {
+	m_window.draw(m_buildingSprite);
+	m_window.draw(m_placementRadius);
 }
 
 int Building::getHealth() const
@@ -55,6 +57,11 @@ int Building::getCost() const
 	return m_cost;
 }
 
+int Building::getBuildingID() const
+{
+	return buildingID;
+}
+
 bool Building::checkAffordability()
 {
 	if (Global::currency >= m_cost) 
@@ -70,17 +77,27 @@ bool Building::checkAffordability()
 	}
 }
 
-void Building::togglePlacementRadiusVisibility() 
-{
-	m_placementRadiusVisible = !m_placementRadiusVisible;
-}
-
-void Building::setPlacementRadius(float radius, sf::Color color, float thickness)
+void Building::setPlacementRadiusSize(float radius)
 {
 	m_placementRadius.setRadius(radius);
-	m_placementRadius.setFillColor(sf::Color::Transparent);
-	m_placementRadius.setOutlineColor(color);
-	m_placementRadius.setOutlineThickness(thickness);
 	m_placementRadius.setOrigin(radius, radius);
-	m_placementRadius.setPosition(m_buildingSprite.getPosition().x, m_buildingSprite.getPosition().y);
+	m_placementRadius.setFillColor(sf::Color(255, 255, 255, 0));
+
+	m_placementRadius.setOutlineColor(sf::Color::Black); // temp
+	m_placementRadius.setOutlineThickness(1); // temp
+}
+
+const sf::Sprite& Building::getBuildingSprite() const
+{
+	return m_buildingSprite;
+}
+
+const sf::Texture& Building::getBuildingTexture() const
+{
+	return m_buildingTexture;
+}
+
+const sf::CircleShape& Building::getPlacementRadius() const
+{
+	return m_placementRadius;
 }

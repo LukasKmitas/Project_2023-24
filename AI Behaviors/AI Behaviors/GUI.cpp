@@ -33,7 +33,7 @@ GUI::GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingTy
 	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_refinery = new Refinery();
 	m_barracks = new Barracks();
-	m_vehicle = new Vehicle();
+	m_warFactory = new WarFactory();
 	m_airCraft = new AirCraft();
 }
 
@@ -104,7 +104,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			if (vehicleIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Vehicle Clicked" << std::endl;
-				m_selectedBuildingType = BuildingType::Vehicle;
+				m_selectedBuildingType = BuildingType::WarFactory;
 				m_confirmBuildingPlacement = true;
 			}
 			// Aircraft
@@ -122,6 +122,14 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			// InfantrySquad
 
 		}
+		else if (m_selectedBuildingType == BuildingType::WarFactory)
+		{
+
+		}
+		else if (m_selectedBuildingType == BuildingType::AirCraft)
+		{
+
+		}
 		m_ghostBuildingSprite.setPosition(-2000, -2000);
 	}
 }
@@ -131,33 +139,41 @@ void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow
 	if (m_confirmBuildingPlacement)
 	{
 		sf::Vector2f guiMousePosition = window.mapPixelToCoords(m_mousePosition, m_guiView);
+		bool isValidPlacement = IsPlacementValid(guiMousePosition, window);
+		bool isValidPlacementForTiles = IsPlacementValidForTiles(guiMousePosition);
+
 		if (m_selectedBuildingType == BuildingType::Refinery)
 		{
 			const sf::Sprite& buildingSprite = m_refinery->getBuildingSprite();
 			m_ghostBuildingSprite = buildingSprite;
 			m_ghostBuildingSprite.setPosition(guiMousePosition);
-			m_ghostBuildingSprite.setColor(sf::Color(255, 255, 255, 128));
 		}
 		else if (m_selectedBuildingType == BuildingType::Barracks)
 		{
 			const sf::Sprite& buildingSprite = m_barracks->getBuildingSprite();
 			m_ghostBuildingSprite = buildingSprite;
 			m_ghostBuildingSprite.setPosition(guiMousePosition);
-			m_ghostBuildingSprite.setColor(sf::Color(255, 255, 255, 128));
 		}
-		else if (m_selectedBuildingType == BuildingType::Vehicle)
+		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
-			const sf::Sprite& buildingSprite = m_vehicle->getBuildingSprite();
+			const sf::Sprite& buildingSprite = m_warFactory->getBuildingSprite();
 			m_ghostBuildingSprite = buildingSprite;
 			m_ghostBuildingSprite.setPosition(guiMousePosition);
-			m_ghostBuildingSprite.setColor(sf::Color(255, 255, 255, 128));
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{
 			const sf::Sprite& buildingSprite = m_airCraft->getBuildingSprite();
 			m_ghostBuildingSprite = buildingSprite;
 			m_ghostBuildingSprite.setPosition(guiMousePosition);
-			m_ghostBuildingSprite.setColor(sf::Color(255, 255, 255, 128));
+		}
+
+		if (isValidPlacement && isValidPlacementForTiles)
+		{
+			m_ghostBuildingSprite.setColor(sf::Color(0, 255, 0, 150));
+		}
+		else
+		{
+			m_ghostBuildingSprite.setColor(sf::Color(255, 0, 0, 150));
 		}
 	}
 
@@ -182,8 +198,8 @@ void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow
 					m_confirmed = true;
 				}
 				break;
-			case BuildingType::Vehicle:
-				if (m_vehicle->checkAffordability())
+			case BuildingType::WarFactory:
+				if (m_warFactory->checkAffordability())
 				{
 					m_confirmed = true;
 				}
@@ -211,16 +227,13 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Headquarters " << building->getBuildingID() << std::endl;
-				building->togglePlacementRadiusVisibility();
-				building->setPlacementRadius(250.0f, sf::Color::Green, 2.0f);
-				//std::cout << "Headquarters selected" << std::endl;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
 					m_selectedBuildingType = BuildingType::Headquarters;
 					m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Refinery, 0, 0, "");
 					m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Barracks, 1, 0, "");
-					m_sideBar.addBuildingButton(m_BuildingTexture2, BuildingType::Vehicle, 2, 0, "Vehicle");
+					m_sideBar.addBuildingButton(m_BuildingTexture2, BuildingType::WarFactory, 2, 0, "WarFactory");
 					m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::AirCraft, 0, 1, "");
 				}
 				break;
@@ -231,9 +244,6 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Barracks " << building->getBuildingID() << std::endl;
-				building->togglePlacementRadiusVisibility();
-				building->setPlacementRadius(160.0f, sf::Color::Green, 2.0f);
-				//std::cout << "Barracks selected" << std::endl;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
@@ -246,18 +256,15 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				break;
 			}
 		}
-		else if (dynamic_cast<Vehicle*>(building) != nullptr)
+		else if (dynamic_cast<WarFactory*>(building) != nullptr)
 		{
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Vehicle " << building->getBuildingID() << std::endl;
-				building->togglePlacementRadiusVisibility();
-				building->setPlacementRadius(180.0f, sf::Color::Green, 2.0f);
-				//std::cout << "Vehicle selected" << std::endl;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
-					m_selectedBuildingType = BuildingType::Vehicle;
+					m_selectedBuildingType = BuildingType::WarFactory;
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Ranger, 0, 0, "Ranger");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 1, 0, "Tank");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Artillery, 2, 0, "Artillery");
@@ -271,9 +278,6 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Aircraft " << building->getBuildingID() << std::endl;
-				building->togglePlacementRadiusVisibility();
-				building->setPlacementRadius(200.0f, sf::Color::Green, 2.0f);
-				//std::cout << "Aircraft selected" << std::endl;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
@@ -321,8 +325,7 @@ bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
 	sf::Vector2f worldPosition = m_window.mapPixelToCoords(sf::Vector2i(m_position), m_window.getView());
 	m_ghostBuildingSprite.setPosition(worldPosition);
 	sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
-
-	bool withinPlacementRadius = false;
+	m_placementValid = false;
 
 	for (Building* building : placedBuildings)
 	{
@@ -331,13 +334,23 @@ bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
 		{
 			return false;
 		}
-		sf::CircleShape placementRadius = building->getPlacementRadius();
-		if (placementRadius.getGlobalBounds().contains(worldPosition))
+
+		const sf::CircleShape& existingBuildingRadius = building->getPlacementRadius();
+		sf::Vector2f center = existingBuildingRadius.getPosition();
+		float radius = existingBuildingRadius.getRadius();
+
+		sf::Vector2f newBuildingCenter(
+			newBuildingBounds.left + newBuildingBounds.width / 2.0f,
+			newBuildingBounds.top + newBuildingBounds.height / 2.0f);
+
+		float distance = std::sqrt(std::pow(newBuildingCenter.x - center.x, 2) + std::pow(newBuildingCenter.y - center.y, 2));
+
+		if (distance < radius)
 		{
-			withinPlacementRadius = true;
+			m_placementValid = true;
 		}
 	}
-	return withinPlacementRadius;
+	return m_placementValid;
 }
 
 bool GUI::IsPlacementValidForTiles(sf::Vector2f& position)

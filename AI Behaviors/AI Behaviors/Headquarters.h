@@ -13,6 +13,5 @@ public:
 private:
     
     void setupSprite();
-    
 
 };

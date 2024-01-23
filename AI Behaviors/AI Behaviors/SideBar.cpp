@@ -43,7 +43,7 @@ void SideBar::addBuildingButton(const sf::Texture& texture, BuildingType buildin
         button.m_sprite.setTextureRect(sf::IntRect(250, 649, 120, 92));
         m_barracksIconPosition = sf::Vector2f(xPosition, yPosition);
     }
-    else if (buildingType == BuildingType::Vehicle)
+    else if (buildingType == BuildingType::WarFactory)
     {
         button.m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 48));
         button.m_sprite.setScale(1.82, 1.85);

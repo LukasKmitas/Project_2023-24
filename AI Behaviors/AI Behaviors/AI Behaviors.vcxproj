@@ -26,13 +26,15 @@
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="Headquarters.cpp" />
+    <ClCompile Include="Infantry.cpp" />
     <ClCompile Include="LevelEditor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Refinery.cpp" />
     <ClCompile Include="SideBar.cpp" />
     <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="WarFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirCraft.h" />
@@ -45,13 +47,15 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="Headquarters.h" />
+    <ClInclude Include="Infantry.h" />
     <ClInclude Include="InfantryType.h" />
     <ClInclude Include="LevelEditor.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Refinery.h" />
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="Tile.h" />
-    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="WarFactory.h" />
     <ClInclude Include="VehicleType.h" />
   </ItemGroup>
   <ItemGroup>

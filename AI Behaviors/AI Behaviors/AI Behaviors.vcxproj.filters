@@ -40,6 +40,12 @@
     <Filter Include="Source Files\LevelEditor">
       <UniqueIdentifier>{df98f989-c7b3-4031-b1d8-a06bb6ec31ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Units">
+      <UniqueIdentifier>{59e9d43b-a3be-4f2e-af33-bd5dfea66e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Units">
+      <UniqueIdentifier>{f69a1bbf-7126-4104-a9ec-6bd340836365}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,7 +75,7 @@
     <ClCompile Include="Barracks.cpp">
       <Filter>Source Files\Buildings</Filter>
     </ClCompile>
-    <ClCompile Include="Vehicle.cpp">
+    <ClCompile Include="WarFactory.cpp">
       <Filter>Source Files\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="AirCraft.cpp">
@@ -81,8 +87,14 @@
     <ClCompile Include="LevelEditor.cpp">
       <Filter>Source Files\LevelEditor</Filter>
     </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Infantry.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\LevelEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,7 +134,7 @@
     <ClInclude Include="Barracks.h">
       <Filter>Header Files\Buildings</Filter>
     </ClInclude>
-    <ClInclude Include="Vehicle.h">
+    <ClInclude Include="WarFactory.h">
       <Filter>Header Files\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="AirCraft.h">
@@ -139,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Header Files\LevelEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Header Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Infantry.h">
+      <Filter>Header Files\Units</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

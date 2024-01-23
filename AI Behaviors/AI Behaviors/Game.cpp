@@ -22,6 +22,7 @@ Game::Game() :
 	initBackgroundImage();
 	initBackButton();
 	initLevelSelectionButtons();
+	m_levelEditor.resetFogOfWar();
 }
 
 /// <summary>
@@ -215,6 +216,7 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
+		updateFogOfWarBasedOnBuildings(placedBuildings);
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -359,9 +361,9 @@ void Game::createBuilding(sf::RenderWindow& window)
 			placedBuildings.push_back(newBarracks);
 			std::cout << "Barracks Created" << std::endl;
 		}
-		else if (m_selectedBuildingType == BuildingType::Vehicle)
+		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
-			Vehicle* newVehicle = new Vehicle();
+			WarFactory* newVehicle = new WarFactory();
 			newVehicle->setPosition(worldMousePosition);
 			placedBuildings.push_back(newVehicle);
 			std::cout << "Vehicle Created" << std::endl;
@@ -407,11 +409,15 @@ void Game::saveLevel()
 	m_levelEditor.saveLevelToFile("Assets\\SaveFiles\\" + filename);
 }
 
+/// <summary>
+/// Resets the view back to normal
+/// </summary>
 void Game::resetView() 
 {
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
+	initLevelSelectionButtons();
 }
 
 void Game::goToMainMenu()
@@ -524,5 +530,35 @@ void Game::loadLevel(const std::string& filename)
 	{
 		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + filename + ".txt");
 		levelLoaded = true;
+	}
+}
+
+void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings)
+{
+	for (auto& building : buildings)
+	{
+		sf::Vector2f buildingCenter = building->getPosition();
+		float radius = 300;
+
+		// Determine the range of tiles affected by this building
+		int minX = std::max(static_cast<int>((buildingCenter.x - radius) / m_tiles.tileSize), 0);
+		int maxX = std::min(static_cast<int>((buildingCenter.x + radius) / m_tiles.tileSize), m_levelEditor.numCols - 1);
+		int minY = std::max(static_cast<int>((buildingCenter.y - radius) / m_tiles.tileSize), 0);
+		int maxY = std::min(static_cast<int>((buildingCenter.y + radius) / m_tiles.tileSize), m_levelEditor.numRows - 1);
+
+		for (int i = minY; i <= maxY; ++i)
+		{
+			for (int j = minX; j <= maxX; ++j)
+			{
+				// Check if the tile is within the circle's radius
+				sf::Vector2f tileCenter(j * m_tiles.tileSize + m_tiles.tileSize / 2.0f, i * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
+				float distance = std::sqrt(std::pow(tileCenter.x - buildingCenter.x, 2) + std::pow(tileCenter.y - buildingCenter.y, 2));
+
+				if (distance <= radius)
+				{
+					m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Visible;
+				}
+			}
+		}
 	}
 }

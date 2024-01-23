@@ -1,11 +1,11 @@
 #pragma once
 #include "Building.h"
 
-class Vehicle : public Building
+class WarFactory : public Building
 {
 public:
-	Vehicle();
-	~Vehicle();
+	WarFactory();
+	~WarFactory();
 
 	void update(sf::Time deltaTime) override;
 	void render(sf::RenderWindow& m_window) const override;

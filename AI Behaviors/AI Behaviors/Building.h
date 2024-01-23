@@ -21,30 +21,14 @@ public:
     sf::Vector2f getPosition();
  
     int getCost() const;
+    int getBuildingID() const;
     bool checkAffordability();
 
-    void togglePlacementRadiusVisibility();
+    void setPlacementRadiusSize(float radius);
 
-    const sf::Sprite& getBuildingSprite() const 
-    {
-        return m_buildingSprite;
-    }
-    const sf::Texture& getBuildingTexture() const
-    {
-        return m_buildingTexture;
-    }
-    const sf::CircleShape& Building::getPlacementRadius() const
-    {
-        return m_placementRadius;
-    }
-
-    int getBuildingID() const 
-    {
-        return buildingID;
-    }
-
-    void setPlacementRadius(float radius, sf::Color color, float thickness);
-    sf::CircleShape m_placementRadius;
+    const sf::Sprite& getBuildingSprite() const;
+    const sf::Texture& getBuildingTexture() const;
+    const sf::CircleShape& getPlacementRadius() const;
 
 protected:
 
@@ -53,6 +37,8 @@ protected:
     
     sf::Texture m_buildingTexture;
     sf::Sprite m_buildingSprite;
+
+    sf::CircleShape m_placementRadius;
 
     int m_health = 100;
     int m_cost = 100;

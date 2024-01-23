@@ -9,7 +9,7 @@
 #include "Headquarters.h"
 #include "Refinery.h"
 #include "Barracks.h"
-#include "Vehicle.h"
+#include "WarFactory.h"
 #include "AirCraft.h"
 #include "Tile.h"
 #include "LevelEditor.h"
@@ -20,7 +20,7 @@ public:
 
     Refinery* m_refinery = nullptr;
     Barracks* m_barracks = nullptr;
-    Vehicle* m_vehicle = nullptr;
+    WarFactory* m_warFactory = nullptr;
     AirCraft* m_airCraft = nullptr;
     InfantryType m_selectedUnitType = InfantryType::None;
     LevelEditor levelEditor;
@@ -70,4 +70,5 @@ private:
     sf::Texture m_ghostBuildingTexture;
 
     bool m_showSlider = false;
+    bool m_placementValid = false;
 };

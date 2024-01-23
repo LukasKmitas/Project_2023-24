@@ -4,6 +4,7 @@ Refinery::Refinery()
 {
 	setupSprite();
 	m_cost = 1500;
+	setPlacementRadiusSize(150.0f);
 }
 
 Refinery::~Refinery()
@@ -17,10 +18,7 @@ void Refinery::update(sf::Time deltaTime)
 void Refinery::render(sf::RenderWindow& m_window) const
 {
 	m_window.draw(m_buildingSprite);
-	if (m_placementRadiusVisible)
-	{
-		m_window.draw(m_placementRadius);
-	}
+	m_window.draw(m_placementRadius);
 }
 
 void Refinery::setupSprite()

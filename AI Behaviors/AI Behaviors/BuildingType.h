@@ -6,6 +6,6 @@ enum class BuildingType
     Refinery,
     Headquarters,
     Barracks,
-    Vehicle,
+    WarFactory,
     AirCraft
 };

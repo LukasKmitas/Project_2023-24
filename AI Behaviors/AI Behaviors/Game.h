@@ -10,6 +10,7 @@
 #include "GUI.h"
 #include "Global.h"
 #include "BuildingType.h"
+#include "Tile.h"
 
 namespace fs = std::experimental::filesystem;
 
@@ -29,6 +30,7 @@ private:
 	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
+	Tile m_tiles;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -49,6 +51,8 @@ private:
 
 	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
 	void loadLevel(const std::string& filename);
+
+	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
 	std::vector<std::string> levelFilenames;

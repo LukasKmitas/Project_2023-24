@@ -3,6 +3,7 @@
 Headquarters::Headquarters()
 {
 	setupSprite();
+	setPlacementRadiusSize(250);
 }
 
 Headquarters::~Headquarters()
@@ -16,10 +17,7 @@ void Headquarters::update(sf::Time deltaTime)
 void Headquarters::render(sf::RenderWindow& m_window) const
 {
 	m_window.draw(m_buildingSprite);
-	if (m_placementRadiusVisible)
-	{
-		m_window.draw(m_placementRadius);
-	}
+	m_window.draw(m_placementRadius);
 }
 
 void Headquarters::setupSprite()

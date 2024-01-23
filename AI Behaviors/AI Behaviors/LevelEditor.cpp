@@ -95,7 +95,20 @@ void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
     {
         for (int j = 0; j < numCols; ++j)
         {
-            m_window.draw(m_tiles[i][j].m_tile);
+            Tile& tile = m_tiles[i][j];
+            switch (tile.fogStatus)
+            {
+            case Tile::FogStatus::Unexplored:
+                tile.m_tile.setFillColor(sf::Color(0, 0, 0, 255));
+                break;
+            case Tile::FogStatus::Explored:
+                tile.m_tile.setFillColor(sf::Color(128, 128, 128, 128));
+                break;
+            case Tile::FogStatus::Visible:
+                tile.m_tile.setFillColor(sf::Color::White);
+                break;
+            }
+            m_window.draw(tile.m_tile);
         }
     }
 }
@@ -665,4 +678,15 @@ void LevelEditor::initDragRectangle()
     sf::Vector2f initialSize = sf::Vector2f(0.f, 0.f);
     dragRectangle.setSize(initialSize);
     dragRectangle.setFillColor(sf::Color::Black);
+}
+
+void LevelEditor::resetFogOfWar()
+{
+    for (auto& row : m_tiles)
+    {
+        for (auto& tile : row)
+        {
+            tile.fogStatus = Tile::FogStatus::Unexplored;
+        }
+    }
 }

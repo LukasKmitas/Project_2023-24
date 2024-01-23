@@ -4,6 +4,7 @@ AirCraft::AirCraft()
 {
 	setupSprite();
 	m_cost = 1000;
+	setPlacementRadiusSize(200.0f);
 }
 
 AirCraft::~AirCraft()
@@ -17,10 +18,7 @@ void AirCraft::update(sf::Time deltaTime)
 void AirCraft::render(sf::RenderWindow& m_window) const
 {
 	m_window.draw(m_buildingSprite);
-	if (m_placementRadiusVisible)
-	{
-		m_window.draw(m_placementRadius);
-	}
+	m_window.draw(m_placementRadius);
 }
 
 void AirCraft::setupSprite()
