@@ -52,6 +52,7 @@ private:
 
     void updateCurrency();
     void setupTopBar();
+    void loadIcons();
 
     sf::View m_guiView;
 
@@ -65,6 +66,7 @@ private:
     sf::Texture m_unitInfantryTexture;
     sf::Texture m_unitVehicleTexture;
     sf::Texture m_unitAirCraftTexture;
+    sf::Texture m_harvesterIcon;
 
     sf::Sprite m_ghostBuildingSprite;
     sf::Texture m_ghostBuildingTexture;

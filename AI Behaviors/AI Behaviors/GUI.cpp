@@ -8,27 +8,8 @@ GUI::GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingTy
 	m_tilesReference(m_tiles)
 {
 	setupTopBar();
+	loadIcons();
 
-	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
-	{
-		std::cout << "Error - Problem Loading Building 1 Texture" << std::endl;
-	}
-	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\VehicleIcon.png"))
-	{
-		std::cout << "Error - Problem Loading Building 2 Texture" << std::endl;
-	}
-	if (!m_unitInfantryTexture.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
-	{
-		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
-	}
-	if (!m_unitVehicleTexture.loadFromFile("Assets\\Images\\Vehicle Unit Icons.png"))
-	{
-		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
-	}
-	if (!m_unitAirCraftTexture.loadFromFile("Assets\\Images\\Aircraft Unit Icons.png"))
-	{
-		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
-	}
 	m_guiView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
 	m_guiView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_refinery = new Refinery();
@@ -265,10 +246,10 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				if (m_showSlider)
 				{
 					m_selectedBuildingType = BuildingType::WarFactory;
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Ranger, 0, 0, "Ranger");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 1, 0, "Tank");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Artillery, 2, 0, "Artillery");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::None, 0, 1, "");
+					m_sideBar.addVehicleButton(m_harvesterIcon, VehicleType::Harvester, 0, 0, "Harvester");
+					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Ranger, 1, 0, "Ranger");
+					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 2, 0, "Tank");
+					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Artillery, 0, 1, "Artillery");
 				}
 				break;
 			}
@@ -318,6 +299,34 @@ void GUI::setupTopBar()
 	sf::FloatRect textBounds = m_currencyText.getLocalBounds();
 	m_currencyText.setOrigin(textBounds.width / 2, 0);
 	m_currencyText.setPosition(Global::S_WIDTH - 200, 0);
+}
+
+void GUI::loadIcons()
+{
+	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
+	{
+		std::cout << "Error - Problem Loading Building 1 Texture" << std::endl;
+	}
+	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\VehicleIcon.png"))
+	{
+		std::cout << "Error - Problem Loading Building 2 Texture" << std::endl;
+	}
+	if (!m_unitInfantryTexture.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	{
+		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
+	}
+	if (!m_unitVehicleTexture.loadFromFile("Assets\\Images\\Vehicle Unit Icons.png"))
+	{
+		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
+	}
+	if (!m_unitAirCraftTexture.loadFromFile("Assets\\Images\\Aircraft Unit Icons.png"))
+	{
+		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
+	}
+	if (!m_harvesterIcon.loadFromFile("Assets\\Images\\HarvesterLogo.png"))
+	{
+		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
+	}
 }
 
 bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)

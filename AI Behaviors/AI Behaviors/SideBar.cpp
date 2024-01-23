@@ -144,7 +144,11 @@ void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleTy
     float xPosition = m_bottomBackground.getPosition().x + gridX * buttonWidth;
     float yPosition = m_bottomBackground.getPosition().y + gridY * buttonHeight;
 
-    if (vehicleType == VehicleType::Ranger)
+    if (vehicleType == VehicleType::Harvester)
+    {
+        button.m_sprite.setScale(0.113, 0.087);
+    }
+    else if (vehicleType == VehicleType::Ranger)
     {
         button.m_sprite.setTextureRect(sf::IntRect(132, 0, 32, 24));
     }
