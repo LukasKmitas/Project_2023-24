@@ -47,6 +47,10 @@ public:
     {
         return m_airCraftIconPosition;
     }
+    sf::Vector2f getHarvesterIconPosition() const
+    {
+        return m_harvesterIconPosition;
+    }
 
     const sf::RectangleShape& getSideBarRect() const
     {
@@ -70,6 +74,7 @@ private:
     sf::Vector2f m_barracksIconPosition;
     sf::Vector2f m_vehicleIconPosition;
     sf::Vector2f m_airCraftIconPosition;
+    sf::Vector2f m_harvesterIconPosition;
 
     int gridCols = 3;
     int gridRows = 6;

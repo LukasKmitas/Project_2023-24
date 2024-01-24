@@ -105,7 +105,13 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
-
+			sf::Vector2f harvesterIconPosition = m_sideBar.getHarvesterIconPosition();
+			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(120, 92));
+			if (harvesterIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "harvester Icon Clicked" << std::endl;
+				
+			}
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{

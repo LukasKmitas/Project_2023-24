@@ -30,6 +30,7 @@ private:
 	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
+
 	Tile m_tiles;
 
 	void processEvents();

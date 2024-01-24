@@ -15,9 +15,14 @@ public:
 
 protected:
 
-    sf::Vector2f position;
+    sf::Texture m_unitTexture;
+    sf::Sprite m_unitSprite;
 
-    float health;
+    int m_cost = 100;
+
+    float m_health = 100;
+
+    sf::Vector2f m_position;
 
 };
 

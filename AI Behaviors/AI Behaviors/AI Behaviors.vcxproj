@@ -25,6 +25,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Harvester.cpp" />
     <ClCompile Include="Headquarters.cpp" />
     <ClCompile Include="Infantry.cpp" />
     <ClCompile Include="LevelEditor.cpp" />
@@ -34,6 +35,7 @@
     <ClCompile Include="SideBar.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="WarFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +48,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="Harvester.h" />
     <ClInclude Include="Headquarters.h" />
     <ClInclude Include="Infantry.h" />
     <ClInclude Include="InfantryType.h" />
@@ -55,6 +58,7 @@
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="Vehicle.h" />
     <ClInclude Include="WarFactory.h" />
     <ClInclude Include="VehicleType.h" />
   </ItemGroup>

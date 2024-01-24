@@ -517,7 +517,7 @@ void Game::handleLevelSelectionMouseInput(sf::Vector2i mousePosition)
 			levelSelectionButtons[selectedButtonIndex].setFillColor(sf::Color::Blue);
 			selectedButtonIndex = static_cast<int>(i);
 			levelSelectionButtons[selectedButtonIndex].setFillColor(sf::Color::Red);
-
+			levelLoaded = false;
 			loadLevel(levelFilenames[selectedButtonIndex]);
 			break;
 		}
