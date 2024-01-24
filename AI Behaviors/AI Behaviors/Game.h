@@ -12,6 +12,8 @@
 #include "BuildingType.h"
 #include "Tile.h"
 
+#include "Harvester.h"
+
 namespace fs = std::experimental::filesystem;
 
 class Game
@@ -29,7 +31,9 @@ private:
 	LevelEditor m_levelEditor;
 	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
+	
 	std::vector<Building*> placedBuildings;
+	std::vector<Unit*> units;
 
 	Tile m_tiles;
 
@@ -54,6 +58,8 @@ private:
 	void loadLevel(const std::string& filename);
 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
+
+	void createUnit(sf::RenderWindow& window);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
 	std::vector<std::string> levelFilenames;

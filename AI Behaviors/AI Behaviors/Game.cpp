@@ -217,6 +217,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
 		updateFogOfWarBasedOnBuildings(placedBuildings);
+		createUnit(m_window);
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -248,6 +249,10 @@ void Game::render()
 		for (Building* building : placedBuildings)
 		{
 			building->render(m_window);
+		}
+		for (Unit* unit : units)
+		{
+			unit->render(m_window);
 		}
 		m_gui.render(m_window);
 		m_window.setView(gameView);
@@ -560,5 +565,23 @@ void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& building
 				}
 			}
 		}
+	}
+}
+
+void Game::createUnit(sf::RenderWindow& window)
+{
+	if (m_gui.m_unitConfirmed && m_gui.m_selectedBuilding) 
+	{
+		sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+
+		sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(50.0f, 0.0f);
+
+		Harvester* newHarvester = new Harvester();
+		newHarvester->setPosition(spawnPosition);
+
+		units.push_back(newHarvester);
+
+		m_gui.m_unitConfirmed = false;
+		m_gui.m_selectedBuilding = nullptr;
 	}
 }

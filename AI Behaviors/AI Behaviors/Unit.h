@@ -9,9 +9,13 @@ public:
     Unit();
     virtual ~Unit();
 
+    virtual void update(float deltaTime);
+    virtual void render(sf::RenderWindow& m_window) const;
+
     virtual void move(const sf::Vector2f& direction);
     virtual void attack(Unit* target);
-    virtual void update(float deltaTime);
+
+    void setPosition(const sf::Vector2f& position);
 
 protected:
 

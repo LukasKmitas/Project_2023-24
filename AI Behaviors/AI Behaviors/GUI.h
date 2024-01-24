@@ -22,9 +22,10 @@ public:
     Barracks* m_barracks = nullptr;
     WarFactory* m_warFactory = nullptr;
     AirCraft* m_airCraft = nullptr;
-    InfantryType m_selectedUnitType = InfantryType::None;
+    InfantryType m_selectedInfantryType = InfantryType::None;
+    VehicleType m_selectedVehicleType = VehicleType::None;
     LevelEditor levelEditor;
-
+    Building* m_selectedBuilding = nullptr;
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
 
@@ -39,6 +40,7 @@ public:
 
     bool m_confirmBuildingPlacement = false;
     bool m_confirmed = false;
+    bool m_unitConfirmed = false;
 
     bool IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window);
     bool IsPlacementValidForTiles(sf::Vector2f& m_position);

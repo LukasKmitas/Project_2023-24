@@ -18,6 +18,11 @@ void Harvester::render(sf::RenderWindow& m_window)
 	m_window.draw(m_unitSprite);
 }
 
+void Harvester::setPosition(const sf::Vector2f& position) 
+{
+	m_unitSprite.setPosition(position);
+}
+
 void Harvester::setupHarvester()
 {
 	if (!m_unitTexture.loadFromFile("Assets\\Images\\HarvesterLogo.png"))
