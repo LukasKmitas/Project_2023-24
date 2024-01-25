@@ -34,6 +34,7 @@ private:
 	
 	std::vector<Building*> placedBuildings;
 	std::vector<Unit*> units;
+	Unit* m_selectedUnit = nullptr;
 
 	Tile m_tiles;
 
@@ -60,6 +61,8 @@ private:
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
 
 	void createUnit(sf::RenderWindow& window);
+
+	void selectUnitAt(const sf::Vector2f& mousePos);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
 	std::vector<std::string> levelFilenames;

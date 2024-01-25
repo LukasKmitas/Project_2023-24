@@ -81,6 +81,7 @@ void Game::processEvents()
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+				sf::Vector2f mousePos = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 				switch (m_currentState)
 				{
 				case GameState::MainMenu:
@@ -88,6 +89,14 @@ void Game::processEvents()
 					break;
 				case GameState::PlayGame:
 					m_gui.handleMouseClick(mousePosition, m_window);
+					if (m_selectedUnit) 
+					{
+						m_selectedUnit->moveTo(mousePos);
+					}
+					else 
+					{
+						selectUnitAt(mousePos);
+					}
 					break;
 				case GameState::LevelEditor:
 					m_levelEditor.handleMouseInput(mousePosition, m_currentState, m_window);
@@ -137,17 +146,16 @@ void Game::processEvents()
 /// <param name="t_event">key press event</param>
 void Game::processKeys(sf::Event t_event)
 {
-	if (sf::Keyboard::Escape == t_event.key.code)
-	{
-		m_exitGame = true;
-	}
-
 	cameraVelocity = sf::Vector2f(0.0f, 0.0f);
 	float speed = (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) ? 2.0f * viewMoveSpeed : viewMoveSpeed;
 
 	switch (m_currentState)
 	{
 	case GameState::MainMenu:
+		if (sf::Keyboard::Escape == t_event.key.code)
+		{
+			m_exitGame = true;
+		}
 		break;
 	case GameState::PlayGame:
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -165,6 +173,14 @@ void Game::processKeys(sf::Event t_event)
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			cameraVelocity.x += speed;
+		}
+		if (sf::Keyboard::Escape == t_event.key.code)
+		{
+			m_selectedUnit = nullptr;
+			for (Unit* unit : units)
+			{
+				unit->setSelected(false);
+			}
 		}
 		break;
 	case GameState::LevelEditor:
@@ -218,6 +234,10 @@ void Game::update(sf::Time t_deltaTime)
 		m_levelEditor.animationForResources();
 		updateFogOfWarBasedOnBuildings(placedBuildings);
 		createUnit(m_window);
+		for (Unit* unit : units) 
+		{
+			unit->update(t_deltaTime);
+		}
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -574,7 +594,7 @@ void Game::createUnit(sf::RenderWindow& window)
 	{
 		sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
 
-		sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(50.0f, 0.0f);
+		sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
 
 		Harvester* newHarvester = new Harvester();
 		newHarvester->setPosition(spawnPosition);
@@ -583,5 +603,17 @@ void Game::createUnit(sf::RenderWindow& window)
 
 		m_gui.m_unitConfirmed = false;
 		m_gui.m_selectedBuilding = nullptr;
+	}
+}
+
+void Game::selectUnitAt(const sf::Vector2f& mousePos) 
+{
+	for (Unit* unit : units) 
+	{
+		if (unit->getSprite().getGlobalBounds().contains(mousePos)) 
+		{
+			m_selectedUnit = unit;
+			break;
+		}
 	}
 }

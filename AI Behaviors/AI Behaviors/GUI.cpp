@@ -111,6 +111,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			{
 				std::cout << "harvester Icon Clicked" << std::endl;
 				m_selectedVehicleType = VehicleType::Harvester;
+				
 				m_unitConfirmed = true;
 			}
 		}
@@ -250,6 +251,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Vehicle " << building->getBuildingID() << std::endl;
+				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
