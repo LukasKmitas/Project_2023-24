@@ -23,6 +23,10 @@ Game::Game() :
 	initBackButton();
 	initLevelSelectionButtons();
 	m_levelEditor.resetFogOfWar();
+
+	selectionBox.setFillColor(sf::Color(0, 255, 0, 50));
+	selectionBox.setOutlineColor(sf::Color(0, 255, 0));
+	selectionBox.setOutlineThickness(1.0f);
 }
 
 /// <summary>
@@ -78,10 +82,10 @@ void Game::processEvents()
 		}
 		if (sf::Event::MouseButtonPressed == newEvent.type) // Check for mouse button press.
 		{
+			sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+			sf::Vector2f mousePos = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
-				sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-				sf::Vector2f mousePos = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 				switch (m_currentState)
 				{
 				case GameState::MainMenu:
@@ -91,12 +95,20 @@ void Game::processEvents()
 					m_gui.handleMouseClick(mousePosition, m_window);
 					if (m_selectedUnit) 
 					{
-						m_selectedUnit->moveTo(mousePos);
+						for (Unit* unit : units) 
+						{
+							if (unit->isSelected) 
+							{
+								unit->moveTo(mousePos);
+							}
+						}
 					}
 					else 
 					{
 						selectUnitAt(mousePos);
 					}
+					isDragging = true;
+					dragStart = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 					break;
 				case GameState::LevelEditor:
 					m_levelEditor.handleMouseInput(mousePosition, m_currentState, m_window);
@@ -114,6 +126,31 @@ void Game::processEvents()
 					break;
 				}
 			}
+			if (newEvent.mouseButton.button == sf::Mouse::Right)
+			{
+				switch (m_currentState)
+				{
+				case GameState::MainMenu:
+					break;
+				case GameState::PlayGame:
+					//assignFormationTargets(mousePos);
+					setFormationTargets(mousePos);
+					m_selectedUnit = nullptr;
+					for (Unit* unit : units) 
+					{
+						unit->setSelected(false);
+					}
+					break;
+				case GameState::LevelEditor:
+					break;
+				case GameState::LevelSelection:
+					break;
+				case GameState::Exit:
+					break;
+				default:
+					break;
+				}
+			}
 		}
 		if (sf::Event::MouseButtonReleased == newEvent.type)
 		{
@@ -122,6 +159,12 @@ void Game::processEvents()
 			case GameState::MainMenu:
 				break;
 			case GameState::PlayGame:
+				if (newEvent.mouseButton.button == sf::Mouse::Left)
+				{
+					isDragging = false;
+					selectUnitsInBox();
+				}
+				selectionBox.setSize(sf::Vector2f(0, 0));
 				break;
 			case GameState::LevelEditor:
 				if (newEvent.mouseButton.button == sf::Mouse::Left)
@@ -135,6 +178,15 @@ void Game::processEvents()
 				break;
 			default:
 				break;
+			}
+		}
+		if (sf::Event::MouseMoved == newEvent.type)
+		{
+			if (isDragging)
+			{
+				dragEnd = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+				selectionBox.setPosition(std::min(dragStart.x, dragEnd.x), std::min(dragStart.y, dragEnd.y));
+				selectionBox.setSize(sf::Vector2f(std::abs(dragEnd.x - dragStart.x), std::abs(dragEnd.y - dragStart.y)));
 			}
 		}
 	}
@@ -236,7 +288,7 @@ void Game::update(sf::Time t_deltaTime)
 		createUnit(m_window);
 		for (Unit* unit : units) 
 		{
-			unit->update(t_deltaTime);
+			unit->update(t_deltaTime, units);
 		}
 		break;
 	case GameState::LevelEditor:
@@ -276,6 +328,10 @@ void Game::render()
 		}
 		m_gui.render(m_window);
 		m_window.setView(gameView);
+		if (isDragging)
+		{
+			m_window.draw(selectionBox);
+		}
 		break;
 	case GameState::LevelEditor:
 		m_levelEditor.render(m_window);
@@ -613,7 +669,66 @@ void Game::selectUnitAt(const sf::Vector2f& mousePos)
 		if (unit->getSprite().getGlobalBounds().contains(mousePos)) 
 		{
 			m_selectedUnit = unit;
+			unit->setSelected(true);
 			break;
 		}
 	}
 }
+
+void Game::selectUnitsInBox() 
+{
+	sf::FloatRect selectionRect = selectionBox.getGlobalBounds();
+
+	for (Unit* unit : units) 
+	{
+		if (selectionRect.intersects(unit->getSprite().getGlobalBounds())) 
+		{
+			m_selectedUnit = unit;
+			unit->setSelected(true);
+		}
+	}
+}
+
+void Game::assignFormationTargets(const sf::Vector2f& targetPos)
+{
+	int numUnits = std::count_if(units.begin(), units.end(), [](Unit* unit) { return unit->isSelected; });
+	float spacing = 80.0f;
+
+	int formationSize = std::sqrt(numUnits); // For a square formation
+	sf::Vector2f formationOrigin = targetPos - sf::Vector2f(formationSize * spacing / 2, formationSize * spacing / 2);
+
+	int count = 0;
+	for (Unit* unit : units) 
+	{
+		if (unit->isSelected) 
+		{
+			int x = count % formationSize;
+			int y = count / formationSize;
+			sf::Vector2f formationPos = formationOrigin + sf::Vector2f(x * spacing, y * spacing);
+			unit->moveTo(formationPos);
+			count++;
+		}
+	}
+}
+
+void Game::setFormationTargets(const sf::Vector2f& targetCenter) 
+{
+	int selectedCount = std::count_if(units.begin(), units.end(), [](const Unit* u) { return u->isSelected; });
+	if (selectedCount == 0) return;
+
+	float radius = 50.0f;
+	float angleStep = 360.0f / selectedCount;
+	float currentAngle = 0.0f;
+
+	for (Unit* unit : units) 
+	{
+		if (unit->isSelected) 
+		{
+			float rad = currentAngle * (3.14159265f / 180.0f);
+			sf::Vector2f offset(radius * cos(rad), radius * sin(rad));
+			unit->moveTo(targetCenter + offset);
+			currentAngle += angleStep;
+		}
+	}
+}
+

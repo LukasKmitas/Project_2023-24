@@ -14,7 +14,8 @@ Harvester::~Harvester()
 
 void Harvester::update(sf::Time t_deltaTime)
 {
-	movement(t_deltaTime);
+    
+	//movement(t_deltaTime);
 }
 
 void Harvester::render(sf::RenderWindow& m_window)

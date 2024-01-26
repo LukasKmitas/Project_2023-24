@@ -63,6 +63,10 @@ private:
 	void createUnit(sf::RenderWindow& window);
 
 	void selectUnitAt(const sf::Vector2f& mousePos);
+	void selectUnitsInBox();
+
+	void assignFormationTargets(const sf::Vector2f& targetPos);
+	void setFormationTargets(const sf::Vector2f& targetCenter);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
 	std::vector<std::string> levelFilenames;
@@ -79,6 +83,11 @@ private:
 	sf::Sprite m_backGroundSprite;
 
 	sf::Vector2f cameraVelocity;
+
+	bool isDragging = false;
+	sf::Vector2f dragStart;
+	sf::Vector2f dragEnd;
+	sf::RectangleShape selectionBox;
 
 	int selectedButtonIndex;
 
