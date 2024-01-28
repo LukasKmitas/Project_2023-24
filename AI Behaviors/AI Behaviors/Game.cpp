@@ -95,12 +95,25 @@ void Game::processEvents()
 					m_gui.handleMouseClick(mousePosition, m_window);
 					if (m_selectedUnit) 
 					{
-						for (Unit* unit : units) 
+						std::vector<Unit*> selectedUnits;
+						for (Unit* unit : units)
 						{
 							if (unit->isSelected) 
 							{
-								unit->moveTo(mousePos);
+								selectedUnits.push_back(unit);
 							}
+						}
+
+						int gridSize = calculateGridSize(selectedUnits.size());
+						float spacing = 80.0f;
+
+						for (int i = 0; i < selectedUnits.size(); ++i)
+						{
+							int row = i / gridSize;
+							int col = i % gridSize;
+
+							sf::Vector2f gridPosition = sf::Vector2f(mousePos.x + col * spacing, mousePos.y + row * spacing);
+							selectedUnits[i]->moveTo(gridPosition);
 						}
 					}
 					else 
@@ -133,8 +146,6 @@ void Game::processEvents()
 				case GameState::MainMenu:
 					break;
 				case GameState::PlayGame:
-					//assignFormationTargets(mousePos);
-					setFormationTargets(mousePos);
 					m_selectedUnit = nullptr;
 					for (Unit* unit : units) 
 					{
@@ -284,12 +295,13 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
-		updateFogOfWarBasedOnBuildings(placedBuildings);
 		createUnit(m_window);
-		for (Unit* unit : units) 
+		for (Unit* unit : units)
 		{
 			unit->update(t_deltaTime, units);
 		}
+		updateFogOfWarBasedOnUnits(units);
+		updateFogOfWarBasedOnBuildings(placedBuildings);
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -433,6 +445,15 @@ void Game::createBuilding(sf::RenderWindow& window)
 			Refinery* newRefinery = new Refinery();
 			newRefinery->setPosition(worldMousePosition);
 			placedBuildings.push_back(newRefinery);
+			sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+
+			sf::Vector2f spawnPosition = worldMousePosition + sf::Vector2f(0.0f, 60.0f);
+			Harvester* newHarvester = new Harvester();
+			newHarvester->setPosition(spawnPosition);
+			newHarvester->setBuildings(placedBuildings);
+			newHarvester->currentState = newHarvester->MovingToResource;
+			units.push_back(newHarvester);
+
 			std::cout << "Refinery Created" << std::endl;
 		}
 		else if (m_selectedBuildingType == BuildingType::Barracks)
@@ -644,6 +665,46 @@ void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& building
 	}
 }
 
+void Game::updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units) 
+{
+
+	for (int i = 0; i < m_levelEditor.numRows; ++i) 
+	{
+		for (int j = 0; j < m_levelEditor.numCols; ++j) 
+		{
+			if (m_levelEditor.m_tiles[i][j].fogStatus == Tile::FogStatus::Visible)
+			{
+				m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Explored;
+			}
+		}
+	}
+
+	for (auto& unit : units) 
+	{
+		sf::Vector2f unitCenter = unit->getPosition();
+		float radius = unit->getViewRadius(); 
+
+		int minX = std::max(static_cast<int>((unitCenter.x - radius) / m_tiles.tileSize), 0);
+		int maxX = std::min(static_cast<int>((unitCenter.x + radius) / m_tiles.tileSize), m_levelEditor.numCols - 1);
+		int minY = std::max(static_cast<int>((unitCenter.y - radius) / m_tiles.tileSize), 0);
+		int maxY = std::min(static_cast<int>((unitCenter.y + radius) / m_tiles.tileSize), m_levelEditor.numRows - 1);
+
+		for (int i = minY; i <= maxY; ++i)
+		{
+			for (int j = minX; j <= maxX; ++j) 
+			{
+				sf::Vector2f tileCenter(j * m_tiles.tileSize + m_tiles.tileSize / 2.0f, i * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
+				float distance = std::sqrt(std::pow(tileCenter.x - unitCenter.x, 2) + std::pow(tileCenter.y - unitCenter.y, 2));
+
+				if (distance <= radius)
+				{
+					m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Visible;
+				}
+			}
+		}
+	}
+}
+
 void Game::createUnit(sf::RenderWindow& window)
 {
 	if (m_gui.m_unitConfirmed && m_gui.m_selectedBuilding) 
@@ -654,6 +715,7 @@ void Game::createUnit(sf::RenderWindow& window)
 
 		Harvester* newHarvester = new Harvester();
 		newHarvester->setPosition(spawnPosition);
+		newHarvester->setBuildings(placedBuildings);
 
 		units.push_back(newHarvester);
 
@@ -689,46 +751,7 @@ void Game::selectUnitsInBox()
 	}
 }
 
-void Game::assignFormationTargets(const sf::Vector2f& targetPos)
+int Game::calculateGridSize(int numberOfUnits)
 {
-	int numUnits = std::count_if(units.begin(), units.end(), [](Unit* unit) { return unit->isSelected; });
-	float spacing = 80.0f;
-
-	int formationSize = std::sqrt(numUnits); // For a square formation
-	sf::Vector2f formationOrigin = targetPos - sf::Vector2f(formationSize * spacing / 2, formationSize * spacing / 2);
-
-	int count = 0;
-	for (Unit* unit : units) 
-	{
-		if (unit->isSelected) 
-		{
-			int x = count % formationSize;
-			int y = count / formationSize;
-			sf::Vector2f formationPos = formationOrigin + sf::Vector2f(x * spacing, y * spacing);
-			unit->moveTo(formationPos);
-			count++;
-		}
-	}
+	return std::ceil(std::sqrt(numberOfUnits));
 }
-
-void Game::setFormationTargets(const sf::Vector2f& targetCenter) 
-{
-	int selectedCount = std::count_if(units.begin(), units.end(), [](const Unit* u) { return u->isSelected; });
-	if (selectedCount == 0) return;
-
-	float radius = 50.0f;
-	float angleStep = 360.0f / selectedCount;
-	float currentAngle = 0.0f;
-
-	for (Unit* unit : units) 
-	{
-		if (unit->isSelected) 
-		{
-			float rad = currentAngle * (3.14159265f / 180.0f);
-			sf::Vector2f offset(radius * cos(rad), radius * sin(rad));
-			unit->moveTo(targetCenter + offset);
-			currentAngle += angleStep;
-		}
-	}
-}
-

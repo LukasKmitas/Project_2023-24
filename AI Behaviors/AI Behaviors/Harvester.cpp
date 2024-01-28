@@ -12,10 +12,29 @@ Harvester::~Harvester()
 {
 }
 
-void Harvester::update(sf::Time t_deltaTime)
+void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 {
+    switch (currentState)
+    {
+    case Idle:
+
+        break;
+    case MovingToResource:
     
-	//movement(t_deltaTime);
+        break;
+    case CollectingResource:
+        
+        break;
+    case MovingToRefinery:
+        findNearestRefinery();
+        break;
+    case UnloadingResource:
+       
+        break;
+    }
+
+	Vehicle::update(t_deltaTime, allUnits);
+	movement(t_deltaTime);
 }
 
 void Harvester::render(sf::RenderWindow& m_window)
@@ -25,28 +44,10 @@ void Harvester::render(sf::RenderWindow& m_window)
 
 void Harvester::movement(sf::Time t_deltaTime)
 {
-    if (m_position != m_targetPosition)
+    if (magnitude(m_velocity) > 0) 
     {
-        sf::Vector2f direction = m_targetPosition - m_position;
-        float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-
-        if (length != 0)
-        {
-            direction /= length;
-        }
-
-        float distanceToMove = t_deltaTime.asSeconds() * m_speed;
-
-        if (length < distanceToMove)
-        {
-            m_unitSprite.setPosition(m_targetPosition);
-            m_position = m_targetPosition;
-        }
-        else
-        {
-            m_unitSprite.move(direction * distanceToMove);
-            m_position = m_unitSprite.getPosition();
-        }
+        float rotationAngle = angleFromVector(m_velocity);
+        m_unitSprite.setRotation(rotationAngle + 90);
     }
 }
 
@@ -61,4 +62,42 @@ void Harvester::setupHarvester()
 	m_unitSprite.setTextureRect(sf::IntRect(0, 0, 136, 215));
 	m_unitSprite.setOrigin(m_unitSprite.getLocalBounds().width / 2, m_unitSprite.getLocalBounds().height / 2);
 	m_unitSprite.setScale(0.3, 0.3);
+}
+
+void Harvester::findNearestRefinery()
+{
+    float minDistance = std::numeric_limits<float>::max();
+    Refinery* nearestRefinery = nullptr;
+
+    for (auto building : *allBuildings)
+    {
+        if (Refinery* refinery = dynamic_cast<Refinery*>(building)) 
+        {
+            float distance = this->distance(this->getPosition(), refinery->getPosition());
+            if (distance < minDistance) 
+            {
+                minDistance = distance;
+                nearestRefinery = refinery;
+            }
+        }
+    }
+
+    if (nearestRefinery)
+    {
+        this->moveToRefinery(nearestRefinery);
+    }
+}
+
+void Harvester::moveToRefinery(Refinery* refinery)
+{
+    if (refinery) 
+    {
+        currentState = MovingToRefinery;
+        moveTo(refinery->getPosition());
+    }
+}
+
+void Harvester::setBuildings(const std::vector<Building*>& buildings) 
+{
+    this->allBuildings = &buildings;
 }

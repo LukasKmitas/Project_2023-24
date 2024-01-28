@@ -59,14 +59,14 @@ private:
 	void loadLevel(const std::string& filename);
 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
+	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
 
 	void createUnit(sf::RenderWindow& window);
 
 	void selectUnitAt(const sf::Vector2f& mousePos);
 	void selectUnitsInBox();
 
-	void assignFormationTargets(const sf::Vector2f& targetPos);
-	void setFormationTargets(const sf::Vector2f& targetCenter);
+	int calculateGridSize(int numberOfUnits);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
 	std::vector<std::string> levelFilenames;

@@ -2,6 +2,7 @@
 
 Unit::Unit()
 {
+    initView();
 }
 
 Unit::~Unit()
@@ -9,44 +10,14 @@ Unit::~Unit()
 }
 
 void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
-{
-    float deltaTimeInSeconds = t_deltaTime.asSeconds();
-    sf::Vector2f desired = m_targetPosition - m_position;
-    float distance = magnitude(desired);
-    normalize(desired);
-
-    float slowingDistance = 150.0f;
-    if (distance < slowingDistance)
-    {
-        desired *= (maxSpeed * distance / slowingDistance);
-    }
-    else 
-    {
-        desired *= maxSpeed;
-    }
-
-    sf::Vector2f sep = separation(allUnits);
-    sep *= separationWeight;
-
-    sf::Vector2f steer = desired + sep;
-    m_velocity += steer;
-    normalize(m_velocity);
-    m_velocity *= maxSpeed;
-
-    if (distance > stoppingDistance) 
-    { 
-        m_position += m_velocity * deltaTimeInSeconds;
-        m_unitSprite.setPosition(m_position);
-    }
-    else 
-    {
-        m_velocity = sf::Vector2f(0.0f, 0.0f); 
-    }
+{ 
+    m_viewCircleShape.setPosition(m_unitSprite.getPosition().x, m_unitSprite.getPosition().y);
 }
 
 void Unit::render(sf::RenderWindow& m_window) const
 {
     m_window.draw(m_unitSprite);
+    m_window.draw(m_viewCircleShape);
 }
 
 void Unit::attack(Unit* target)
@@ -58,14 +29,9 @@ void Unit::setPosition(const sf::Vector2f& position)
     m_unitSprite.setPosition(position);
 }
 
-void Unit::moveTo(const sf::Vector2f& targetPos) 
+void Unit::moveTo(const sf::Vector2f& targetPos)
 {
     m_targetPosition = targetPos;
-   
-    float offsetX = static_cast<float>(rand() % static_cast<int>(offsetRange)) - offsetRange / 2.0f;
-    float offsetY = static_cast<float>(rand() % static_cast<int>(offsetRange)) - offsetRange / 2.0f;
-
-    m_targetPosition = sf::Vector2f(targetPos.x + offsetX, targetPos.y + offsetY);
 }
 
 void Unit::setSelected(bool selected) 
@@ -79,35 +45,6 @@ void Unit::setSelected(bool selected)
     {
         m_unitSprite.setColor(sf::Color(255, 255, 255, 255));
     }
-}
-
-sf::Vector2f Unit::separation(const std::vector<Unit*>& units)
-{
-    sf::Vector2f steer(0.0f, 0.0f);
-    int count = 0;
-    float desiredSeparation = 50.0f;
-
-    for (const auto& other : units) 
-    {
-        float d = distance(m_position, other->getPosition());
-        if ((other != this) && (d < desiredSeparation) && (d > 0)) 
-        {
-            sf::Vector2f diff = m_position - other->getPosition();
-            normalize(diff);
-            diff /= d; 
-            steer += diff;
-            count++;
-        }
-    }
-
-    if (count > 0) 
-    {
-        steer /= static_cast<float>(count);
-        normalize(steer);
-        steer *= maxSpeed;
-    }
-
-    return steer;
 }
 
 float Unit::distance(const sf::Vector2f& a, const sf::Vector2f& b) 
@@ -131,7 +68,25 @@ float Unit::magnitude(const sf::Vector2f& v)
     return std::sqrt(v.x * v.x + v.y * v.y);
 }
 
+void Unit::initView()
+{
+    m_viewCircleShape.setRadius(viewRadius);
+    m_viewCircleShape.setFillColor(sf::Color(255, 255, 255, 0));
+    m_viewCircleShape.setOrigin(viewRadius, viewRadius);
+    m_viewCircleShape.setPosition(m_position);
+}
+
 sf::Vector2f Unit::getPosition() const 
 {
-    return m_position;
+    return m_unitSprite.getPosition();
+}
+
+float Unit::angleFromVector(const sf::Vector2f& vector) 
+{
+    return std::atan2(vector.y, vector.x) * 180 / PI;
+}
+
+float Unit::getViewRadius() const 
+{
+    return viewRadius;
 }
