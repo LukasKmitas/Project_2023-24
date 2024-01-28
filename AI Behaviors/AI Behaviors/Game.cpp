@@ -451,6 +451,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 			Harvester* newHarvester = new Harvester();
 			newHarvester->setPosition(spawnPosition);
 			newHarvester->setBuildings(placedBuildings);
+			newHarvester->setTiles(m_levelEditor.m_tiles);
 			newHarvester->currentState = newHarvester->MovingToResource;
 			units.push_back(newHarvester);
 
@@ -716,6 +717,8 @@ void Game::createUnit(sf::RenderWindow& window)
 		Harvester* newHarvester = new Harvester();
 		newHarvester->setPosition(spawnPosition);
 		newHarvester->setBuildings(placedBuildings);
+		newHarvester->setTiles(m_levelEditor.m_tiles);
+		newHarvester->currentState = newHarvester->MovingToResource;
 
 		units.push_back(newHarvester);
 
