@@ -61,7 +61,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 	{
 		if (m_selectedBuildingType == BuildingType::Headquarters)
 		{
-			// Refinery
+			// Refinery building
 			sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
 			sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
 			if (refineryIconBounds.contains(guiMousePosition))
@@ -70,7 +70,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 				m_selectedBuildingType = BuildingType::Refinery;
 				m_confirmBuildingPlacement = true;
 			}
-			// Barracks
+			// Barracks building
 			sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
 			sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
 			if (barrackIconBounds.contains(guiMousePosition))
@@ -79,7 +79,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 				m_selectedBuildingType = BuildingType::Barracks;
 				m_confirmBuildingPlacement = true;
 			}
-			// Vehicle
+			// Vehicle building
 			sf::Vector2f vehicleIconPosition = m_sideBar.getVehicleIconPosition();
 			sf::FloatRect vehicleIconBounds(vehicleIconPosition, sf::Vector2f(120, 92));
 			if (vehicleIconBounds.contains(guiMousePosition))
@@ -88,7 +88,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 				m_selectedBuildingType = BuildingType::WarFactory;
 				m_confirmBuildingPlacement = true;
 			}
-			// Aircraft
+			// Aircraft building
 			sf::Vector2f aircraftIconPosition = m_sideBar.getAirCraftIconPosition();
 			sf::FloatRect aircraftIconBounds(aircraftIconPosition, sf::Vector2f(120, 92));
 			if (aircraftIconBounds.contains(guiMousePosition))
@@ -100,19 +100,22 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		}
 		else if (m_selectedBuildingType == BuildingType::Barracks)
 		{
-			// InfantrySquad
+			// InfantrySquad unit
 
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
+			// Harvester Unit
 			sf::Vector2f harvesterIconPosition = m_sideBar.getHarvesterIconPosition();
 			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(120, 92));
 			if (harvesterIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "harvester Icon Clicked" << std::endl;
-				m_selectedVehicleType = VehicleType::Harvester;
-				
-				m_unitConfirmed = true;
+				if (m_unit.checkAffordability())
+				{
+					m_selectedVehicleType = VehicleType::Harvester;
+					m_unitConfirmed = true;
+				}
 			}
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)

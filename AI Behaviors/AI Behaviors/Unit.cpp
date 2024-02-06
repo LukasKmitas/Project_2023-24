@@ -76,6 +76,21 @@ void Unit::initView()
     m_viewCircleShape.setPosition(m_position);
 }
 
+bool Unit::checkAffordability()
+{
+    if (Global::currency >= m_cost)
+    {
+        Global::currency -= m_cost;
+        std::cout << m_cost << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "Not enough currency to create unit." << std::endl;
+        return false;
+    }
+}
+
 sf::Vector2f Unit::getPosition() const 
 {
     return m_unitSprite.getPosition();

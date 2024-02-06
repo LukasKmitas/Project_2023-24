@@ -54,8 +54,5 @@ private:
 	float maxResourceCapacity = 100.0f; 
 	float currentResourceLoad = 0.0f;
 
-	float const RESOURCE_CAPACITY = 1000;
-	float currentResourceAmount;
-
 };
 

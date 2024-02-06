@@ -17,7 +17,7 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     switch (currentState)
     {
     case Idle:
-
+        
         break;
     case MovingToResource:
         findNearestResourceTile();
@@ -28,7 +28,6 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         break;
     case CollectingResource:
         currentResourceLoad += collectionRate * t_deltaTime.asSeconds();
-        std::cout << currentResourceLoad << std::endl;
         if (currentResourceLoad >= maxResourceCapacity) 
         {
             currentResourceLoad = maxResourceCapacity;
@@ -50,7 +49,6 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         }
         break;
     }
-
 	Vehicle::update(t_deltaTime, allUnits);
 	movement(t_deltaTime);
 }
@@ -142,12 +140,10 @@ void Harvester::unloadResources(sf::Time t_deltaTime)
     currentResourceLoad -= unloadedResources; 
     currentResourceLoad = std::max(0.0f, currentResourceLoad);
 
-    float conversionRate = 22.0f;
+    int conversionRate = 14;
     int addedCurrency = static_cast<int>(unloadedResources * conversionRate);
 
     Global::currency += addedCurrency;
-
-    std::cout << "Unloaded resources: " << currentResourceLoad << ", Added currency: " << addedCurrency << ", Current currency: " << Global::currency << std::endl;
 }
 
 void Harvester::moveToRefinery(Refinery* refinery)

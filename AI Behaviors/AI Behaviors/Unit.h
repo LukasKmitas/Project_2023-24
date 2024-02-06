@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "Global.h"
 
 class Unit
 {
@@ -29,6 +30,8 @@ public:
     float distance(const sf::Vector2f& a, const sf::Vector2f& b);
     void normalize(sf::Vector2f& vec);
     float magnitude(const sf::Vector2f& v);
+
+    bool checkAffordability();
 
     int unitIndex = 0;
 
