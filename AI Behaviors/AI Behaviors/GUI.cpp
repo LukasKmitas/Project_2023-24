@@ -111,7 +111,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			if (harvesterIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "harvester Icon Clicked" << std::endl;
-				if (m_unit.checkAffordability())
+				if (m_harvester.checkAffordability())
 				{
 					m_selectedVehicleType = VehicleType::Harvester;
 					m_unitConfirmed = true;

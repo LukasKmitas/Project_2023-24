@@ -14,7 +14,7 @@
 
 #include "Tile.h"
 #include "LevelEditor.h"
-#include "Unit.h"
+#include "Harvester.h"
 
 class GUI
 {
@@ -30,7 +30,7 @@ public:
     Building* m_selectedBuilding = nullptr;
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
-    Unit m_unit;
+    Harvester m_harvester;
 
     GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingType, std::vector<std::vector<Tile>>& m_tiles);
     ~GUI();
