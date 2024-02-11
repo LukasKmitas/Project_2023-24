@@ -53,7 +53,11 @@ public:
     }
     sf::Vector2f getFirehawkIconPosition() const
     {
-        return m_harvesterIconPosition;
+        return m_firehawkIconPosition;
+    }
+    sf::Vector2f getHammerHeadIconPosition() const
+    {
+        return m_hammerHeadIconPosition;
     }
 
     const sf::RectangleShape& getSideBarRect() const
@@ -81,7 +85,8 @@ private:
     // Vehicles
     sf::Vector2f m_harvesterIconPosition;
     // Air
-    sf::Vector2f m_fireHawkIconPosition;
+    sf::Vector2f m_hammerHeadIconPosition;
+    sf::Vector2f m_firehawkIconPosition;
 
     int gridCols = 3;
     int gridRows = 6;

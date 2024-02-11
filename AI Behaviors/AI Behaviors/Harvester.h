@@ -1,9 +1,9 @@
 #pragma once
-#include "Vehicle.h"
+#include "VehicleUnit.h"
 #include "Refinery.h"
 #include "Tile.h"
 
-class Harvester : public Vehicle
+class Harvester : public VehicleUnit
 {
 public:
 	enum State
@@ -19,7 +19,6 @@ public:
 	~Harvester();
 
 	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
-	void render(sf::RenderWindow& m_window);
 
 	void setBuildings(const std::vector<Building*>& buildings);
 	void setTiles(const std::vector<std::vector<Tile>>& tiles);

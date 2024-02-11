@@ -209,10 +209,12 @@ void SideBar::addAirCraftButton(const sf::Texture& texture, AirCraftType aircraf
     else if (aircraftType == AirCraftType::HammerHead)
     {
         button.m_sprite.setTextureRect(sf::IntRect(33, 0, 32, 24));
+        m_hammerHeadIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else if (aircraftType == AirCraftType::Firehawk)
     {
         button.m_sprite.setTextureRect(sf::IntRect(99, 0, 32, 24));
+        m_firehawkIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else
     {

@@ -1,14 +1,14 @@
-#include "Vehicle.h"
+#include "VehicleUnit.h"
 
-Vehicle::Vehicle()
+VehicleUnit::VehicleUnit()
 {
 }
 
-Vehicle::~Vehicle()
+VehicleUnit::~VehicleUnit()
 {
 }
 
-void Vehicle::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void VehicleUnit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 {
     Unit::update(t_deltaTime, allUnits);
 
@@ -26,13 +26,13 @@ void Vehicle::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     }
 }
 
-void Vehicle::steerTowards(const sf::Vector2f& target)
+void VehicleUnit::steerTowards(const sf::Vector2f& target)
 {
     sf::Vector2f desired = target - m_position;
     float distance = magnitude(desired);
     normalize(desired);
 
-    // Slow down as the vehicle approaches the target
+    // Slow down as the unit approaches the target
     float slowingDistance = 120.0f;
     if (distance < slowingDistance) 
     {
@@ -44,10 +44,10 @@ void Vehicle::steerTowards(const sf::Vector2f& target)
     }
 
     sf::Vector2f steer = desired - m_velocity;
-    if (magnitude(steer) > maxForce)
+    if (magnitude(steer) > m_maxForce)
     {
         normalize(steer);
-        steer *= maxForce;
+        steer *= m_maxForce;
     }
 
     m_velocity += steer;

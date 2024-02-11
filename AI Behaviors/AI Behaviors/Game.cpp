@@ -450,6 +450,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 			sf::Vector2f spawnPosition = worldMousePosition + sf::Vector2f(0.0f, 60.0f);
 			Harvester* newHarvester = new Harvester();
 			newHarvester->setPosition(spawnPosition);
+			newHarvester->setTargetPosition(spawnPosition);
 			newHarvester->setBuildings(placedBuildings);
 			newHarvester->setTiles(m_levelEditor.m_tiles);
 			newHarvester->currentState = newHarvester->MovingToResource;
@@ -708,22 +709,64 @@ void Game::updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units)
 
 void Game::createUnit(sf::RenderWindow& window)
 {
-	if (m_gui.m_unitConfirmed && m_gui.m_selectedBuilding) 
+	if (m_gui.m_unitConfirmed)
 	{
-		sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+		// Vehicles
+		if (m_gui.m_selectedVehicleType == VehicleType::Harvester)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
 
-		sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
 
-		Harvester* newHarvester = new Harvester();
-		newHarvester->setPosition(spawnPosition);
-		newHarvester->setBuildings(placedBuildings);
-		newHarvester->setTiles(m_levelEditor.m_tiles);
-		newHarvester->currentState = newHarvester->MovingToResource;
+				Harvester* newHarvester = new Harvester();
+				newHarvester->setPosition(spawnPosition);
+				newHarvester->setBuildings(placedBuildings);
+				newHarvester->setTiles(m_levelEditor.m_tiles);
+				newHarvester->currentState = newHarvester->MovingToResource;
 
-		units.push_back(newHarvester);
+				units.push_back(newHarvester);
 
-		m_gui.m_unitConfirmed = false;
-		m_gui.m_selectedBuilding = nullptr;
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
+		// Air
+		if (m_gui.m_selectedAircraftType == AirCraftType::HammerHead)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+
+				HammerHead* newHammerHead = new HammerHead();
+				newHammerHead->setPosition(spawnPosition);
+				newHammerHead->setTargetPosition(spawnPosition);
+				units.push_back(newHammerHead);
+
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
+		if (m_gui.m_selectedAircraftType == AirCraftType::Firehawk)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+
+				Firehawk* newFirehawk = new Firehawk();
+				newFirehawk->setPosition(spawnPosition);
+				newFirehawk->setTargetPosition(spawnPosition);
+				units.push_back(newFirehawk);
+
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
 	}
 }
 

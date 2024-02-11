@@ -110,7 +110,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(120, 92));
 			if (harvesterIconBounds.contains(guiMousePosition))
 			{
-				std::cout << "harvester Icon Clicked" << std::endl;
+				std::cout << "Harvester Icon Clicked" << std::endl;
 				if (m_harvester.checkAffordability())
 				{
 					m_selectedVehicleType = VehicleType::Harvester;
@@ -120,7 +120,31 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{
+			// HammerHead
+			sf::Vector2f hammerHeadIconPosition = m_sideBar.getHammerHeadIconPosition();
+			sf::FloatRect hammerHeadIconBounds(hammerHeadIconPosition, sf::Vector2f(120, 92));
+			if (hammerHeadIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "HammerHead Icon Clicked" << std::endl;
+				if (m_hammerHead.checkAffordability())
+				{
+					m_selectedAircraftType = AirCraftType::HammerHead;
+					m_unitConfirmed = true;
+				}
+			}
 
+			// Firehawk Unit
+			sf::Vector2f firehawkIconPosition = m_sideBar.getFirehawkIconPosition();
+			sf::FloatRect firehawkIconBounds(firehawkIconPosition, sf::Vector2f(120, 92));
+			if (firehawkIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Firehawk Icon Clicked" << std::endl;
+				if (m_firehawk.checkAffordability())
+				{
+					m_selectedAircraftType = AirCraftType::Firehawk;
+					m_unitConfirmed = true;
+				}
+			}
 		}
 		m_ghostBuildingSprite.setPosition(-2000, -2000);
 	}
@@ -272,6 +296,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Aircraft " << building->getBuildingID() << std::endl;
+				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{

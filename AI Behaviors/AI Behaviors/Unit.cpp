@@ -12,6 +12,7 @@ Unit::~Unit()
 void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 { 
     m_viewCircleShape.setPosition(m_unitSprite.getPosition().x, m_unitSprite.getPosition().y);
+    avoidCollisions(allUnits);
 }
 
 void Unit::render(sf::RenderWindow& m_window) const
@@ -24,14 +25,51 @@ void Unit::attack(Unit* target)
 {
 }
 
+void Unit::avoidCollisions(std::vector<Unit*>& allUnits)
+{
+    sf::Vector2f separationForce(0.0f, 0.0f);
+    int closeUnits = 0;
+
+    for (auto& other : allUnits)
+    {
+        if (other == this) continue;
+
+        float dist = distance(this->getPosition(), other->getPosition());
+        if (dist < m_viewRadius - 150)
+        { 
+            sf::Vector2f pushAway = this->getPosition() - other->getPosition();
+            normalize(pushAway); 
+            separationForce += pushAway / dist;
+            closeUnits++;
+        }
+    }
+
+    if (closeUnits > 0) 
+    {
+        separationForce /= static_cast<float>(closeUnits); 
+        normalize(separationForce);
+        separationForce *= m_speed;
+
+        m_targetPosition += separationForce;
+    }
+}
+
+void Unit::setTargetPosition(const sf::Vector2f& targetPos)
+{
+    m_targetPosition = targetPos;
+    isOrbiting = false;
+}
+
 void Unit::setPosition(const sf::Vector2f& position) 
 {
+    m_position = position;
     m_unitSprite.setPosition(position);
 }
 
 void Unit::moveTo(const sf::Vector2f& targetPos)
 {
     m_targetPosition = targetPos;
+    isOrbiting = false;
 }
 
 void Unit::setSelected(bool selected) 
@@ -70,9 +108,9 @@ float Unit::magnitude(const sf::Vector2f& v)
 
 void Unit::initView()
 {
-    m_viewCircleShape.setRadius(viewRadius);
+    m_viewCircleShape.setRadius(m_viewRadius);
     m_viewCircleShape.setFillColor(sf::Color(255, 255, 255, 0));
-    m_viewCircleShape.setOrigin(viewRadius, viewRadius);
+    m_viewCircleShape.setOrigin(m_viewRadius, m_viewRadius);
     m_viewCircleShape.setPosition(m_position);
 }
 
@@ -103,5 +141,5 @@ float Unit::angleFromVector(const sf::Vector2f& vector)
 
 float Unit::getViewRadius() const 
 {
-    return viewRadius;
+    return m_viewRadius;
 }

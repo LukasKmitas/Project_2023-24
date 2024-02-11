@@ -20,14 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AirCraft.cpp" />
+    <ClCompile Include="AircraftUnit.cpp" />
     <ClCompile Include="Barracks.cpp" />
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Firehawk.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="HammerHead.cpp" />
     <ClCompile Include="Harvester.cpp" />
     <ClCompile Include="Headquarters.cpp" />
-    <ClCompile Include="Infantry.cpp" />
+    <ClCompile Include="InfantryUnit.cpp" />
     <ClCompile Include="LevelEditor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
@@ -35,22 +38,25 @@
     <ClCompile Include="SideBar.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Unit.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="VehicleUnit.cpp" />
     <ClCompile Include="WarFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirCraft.h" />
     <ClInclude Include="AirCraftType.h" />
+    <ClInclude Include="AircraftUnit.h" />
     <ClInclude Include="Barracks.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
+    <ClInclude Include="Firehawk.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="HammerHead.h" />
     <ClInclude Include="Harvester.h" />
     <ClInclude Include="Headquarters.h" />
-    <ClInclude Include="Infantry.h" />
+    <ClInclude Include="InfantryUnit.h" />
     <ClInclude Include="InfantryType.h" />
     <ClInclude Include="LevelEditor.h" />
     <ClInclude Include="MainMenu.h" />
@@ -58,7 +64,7 @@
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Unit.h" />
-    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="VehicleUnit.h" />
     <ClInclude Include="WarFactory.h" />
     <ClInclude Include="VehicleType.h" />
   </ItemGroup>

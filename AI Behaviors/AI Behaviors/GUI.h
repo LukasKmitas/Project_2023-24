@@ -14,7 +14,11 @@
 
 #include "Tile.h"
 #include "LevelEditor.h"
+
 #include "Harvester.h"
+
+#include "HammerHead.h"
+#include "Firehawk.h"
 
 class GUI
 {
@@ -24,13 +28,18 @@ public:
     Barracks* m_barracks = nullptr;
     WarFactory* m_warFactory = nullptr;
     AirCraft* m_airCraft = nullptr;
-    InfantryType m_selectedInfantryType = InfantryType::None;
-    VehicleType m_selectedVehicleType = VehicleType::None;
     LevelEditor levelEditor;
     Building* m_selectedBuilding = nullptr;
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
+
+    InfantryType m_selectedInfantryType = InfantryType::None;
+    VehicleType m_selectedVehicleType = VehicleType::None;
+    AirCraftType m_selectedAircraftType = AirCraftType::None;
+
     Harvester m_harvester;
+    HammerHead m_hammerHead;
+    Firehawk m_firehawk;
 
     GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingType, std::vector<std::vector<Tile>>& m_tiles);
     ~GUI();
@@ -71,7 +80,10 @@ private:
     sf::Texture m_unitInfantryTexture;
     sf::Texture m_unitVehicleTexture;
     sf::Texture m_unitAirCraftTexture;
+
     sf::Texture m_harvesterIcon;
+
+    sf::Texture m_firehawkIcon;
 
     sf::Sprite m_ghostBuildingSprite;
     sf::Texture m_ghostBuildingTexture;

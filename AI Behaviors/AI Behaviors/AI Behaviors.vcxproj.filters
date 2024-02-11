@@ -90,16 +90,25 @@
     <ClCompile Include="Unit.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
-    <ClCompile Include="Infantry.cpp">
+    <ClCompile Include="InfantryUnit.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Source Files\LevelEditor</Filter>
     </ClCompile>
-    <ClCompile Include="Vehicle.cpp">
+    <ClCompile Include="VehicleUnit.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
     <ClCompile Include="Harvester.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Firehawk.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="AircraftUnit.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="HammerHead.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
   </ItemGroup>
@@ -161,13 +170,22 @@
     <ClInclude Include="Unit.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
-    <ClInclude Include="Infantry.h">
+    <ClInclude Include="InfantryUnit.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
-    <ClInclude Include="Vehicle.h">
+    <ClInclude Include="VehicleUnit.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
     <ClInclude Include="Harvester.h">
+      <Filter>Header Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Firehawk.h">
+      <Filter>Header Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="AircraftUnit.h">
+      <Filter>Header Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="HammerHead.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
   </ItemGroup>

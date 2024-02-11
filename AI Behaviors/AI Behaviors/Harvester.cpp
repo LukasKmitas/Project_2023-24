@@ -49,13 +49,8 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         }
         break;
     }
-	Vehicle::update(t_deltaTime, allUnits);
+	VehicleUnit::update(t_deltaTime, allUnits);
 	movement(t_deltaTime);
-}
-
-void Harvester::render(sf::RenderWindow& m_window)
-{
-	m_window.draw(m_unitSprite);
 }
 
 void Harvester::movement(sf::Time t_deltaTime)

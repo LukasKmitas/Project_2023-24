@@ -1,11 +1,11 @@
 #pragma once
 #include "Unit.h"
 
-class Vehicle : public Unit
+class VehicleUnit : public Unit
 {
 public:
-    Vehicle();
-    virtual ~Vehicle();
+    VehicleUnit();
+    virtual ~VehicleUnit();
 
     void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
 
@@ -15,5 +15,4 @@ protected:
 
 private:
 
-    float maxForce = 1.0f;
 };
