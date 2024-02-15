@@ -6,6 +6,7 @@ Harvester::Harvester()
 	m_cost = 1600;
 	m_speed = 80;
 	m_health = 100;
+    m_maxForce = 1;
 }
 
 Harvester::~Harvester()

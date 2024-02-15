@@ -12,7 +12,5 @@ public:
 private:
 
 	void setupHammerhead();
-	void steerTowards(const sf::Vector2f& target, sf::Time t_deltaTime);
 
 };
-

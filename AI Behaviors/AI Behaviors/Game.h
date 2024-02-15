@@ -34,6 +34,7 @@ private:
 	
 	std::vector<Building*> placedBuildings;
 	std::vector<Unit*> units;
+	std::vector<Unit*> enemyUnits;
 	Unit* m_selectedUnit = nullptr;
 
 	Tile m_tiles;
@@ -61,7 +62,8 @@ private:
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
 	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
 
-	void createUnit(sf::RenderWindow& window);
+	void createUnit();
+	void createEnemyUnit();
 
 	void selectUnitAt(const sf::Vector2f& mousePos);
 	void selectUnitsInBox();

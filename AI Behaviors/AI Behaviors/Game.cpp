@@ -295,10 +295,14 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
-		createUnit(m_window);
+		createUnit();
 		for (Unit* unit : units)
 		{
 			unit->update(t_deltaTime, units);
+		}
+		for (Unit* eUnits : enemyUnits)
+		{
+			eUnits->update(t_deltaTime, enemyUnits);
 		}
 		updateFogOfWarBasedOnUnits(units);
 		updateFogOfWarBasedOnBuildings(placedBuildings);
@@ -337,6 +341,10 @@ void Game::render()
 		for (Unit* unit : units)
 		{
 			unit->render(m_window);
+		}
+		for (Unit* eUnit : enemyUnits)
+		{
+			eUnit->render(m_window);
 		}
 		m_gui.render(m_window);
 		m_window.setView(gameView);
@@ -707,7 +715,7 @@ void Game::updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units)
 	}
 }
 
-void Game::createUnit(sf::RenderWindow& window)
+void Game::createUnit()
 {
 	if (m_gui.m_unitConfirmed)
 	{
@@ -768,6 +776,10 @@ void Game::createUnit(sf::RenderWindow& window)
 			}
 		}
 	}
+}
+
+void Game::createEnemyUnit()
+{
 }
 
 void Game::selectUnitAt(const sf::Vector2f& mousePos) 
