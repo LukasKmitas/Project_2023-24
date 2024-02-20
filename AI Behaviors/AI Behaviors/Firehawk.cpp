@@ -31,7 +31,7 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 void Firehawk::approachTarget(const sf::Vector2f& targetPos, sf::Time t_deltaTime)
 {
 	sf::Vector2f direction = targetPos - m_position;
-	float distanceToTarget = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+	float distanceToTarget = magnitude(direction);
 
 	if (distanceToTarget < m_orbitRadius)
 	{
@@ -39,14 +39,14 @@ void Firehawk::approachTarget(const sf::Vector2f& targetPos, sf::Time t_deltaTim
 	}
 	else
 	{
-		normalize(direction);
+		direction = normalize(direction);
 		m_velocity = direction * m_speed;
 		m_position += m_velocity * t_deltaTime.asSeconds();
 
-		float desiredAngle = atan2(direction.y, direction.x) * (180 / PI);
+		float desiredAngle = angleFromVector(direction); 
 		float currentAngle = m_unitSprite.getRotation() - 90;
-		float angleDiff = fmod(desiredAngle - currentAngle + 540, 360) - 180;
 
+		float angleDiff = fmod(desiredAngle - currentAngle + 540, 360) - 180;
 		float newAngle = currentAngle + std::min(std::max(angleDiff, -m_rotationSpeed * t_deltaTime.asSeconds()), m_rotationSpeed * t_deltaTime.asSeconds());
 		m_unitSprite.setRotation(newAngle + 90);
 	}
@@ -64,8 +64,8 @@ void Firehawk::orbitTarget(sf::Time t_deltaTime)
 	m_position.x = m_targetPosition.x + m_orbitRadius * cos(m_currentOrbitAngle * (PI / 180.f));
 	m_position.y = m_targetPosition.y + m_orbitRadius * sin(m_currentOrbitAngle * (PI / 180.f));
 
-	 sf::Vector2f direction = m_position - m_targetPosition;
-    float desiredAngle = atan2(direction.y, direction.x) * (180 / PI) + 90;
+	sf::Vector2f direction = m_position - m_targetPosition;
+	float desiredAngle = atan2(direction.y, direction.x) * (180 / PI) + 90;
     float currentAngle = m_unitSprite.getRotation() - 90; 
 
     float angleDiff = fmod(desiredAngle - currentAngle + 540, 360) - 180;

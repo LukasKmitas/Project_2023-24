@@ -149,9 +149,10 @@ void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleTy
         button.m_sprite.setScale(0.113, 0.087);
         m_harvesterIconPosition = sf::Vector2f(xPosition, yPosition);
     }
-    else if (vehicleType == VehicleType::Ranger)
+    else if (vehicleType == VehicleType::Buggy)
     {
         button.m_sprite.setTextureRect(sf::IntRect(132, 0, 32, 24));
+        m_buggyIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else if (vehicleType == VehicleType::Tank)
     {

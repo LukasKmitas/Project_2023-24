@@ -11,8 +11,6 @@ public:
 
 protected:
 
-    void steerTowards(const sf::Vector2f& target);
-
 private:
 
 };

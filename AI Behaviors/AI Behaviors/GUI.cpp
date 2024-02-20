@@ -105,7 +105,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
-			// Harvester Unit
+			// Harvester 
 			sf::Vector2f harvesterIconPosition = m_sideBar.getHarvesterIconPosition();
 			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(120, 92));
 			if (harvesterIconBounds.contains(guiMousePosition))
@@ -114,6 +114,18 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 				if (m_harvester.checkAffordability())
 				{
 					m_selectedVehicleType = VehicleType::Harvester;
+					m_unitConfirmed = true;
+				}
+			}
+			// Buggy
+			sf::Vector2f buggyIconPosition = m_sideBar.getBuggyIconPosition();
+			sf::FloatRect buggyIconBounds(buggyIconPosition, sf::Vector2f(120, 92));
+			if (buggyIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Buggy Icon Clicked" << std::endl;
+				if (m_buggy.checkAffordability())
+				{
+					m_selectedVehicleType = VehicleType::Buggy;
 					m_unitConfirmed = true;
 				}
 			}
@@ -284,7 +296,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				{
 					m_selectedBuildingType = BuildingType::WarFactory;
 					m_sideBar.addVehicleButton(m_harvesterIcon, VehicleType::Harvester, 0, 0, "Harvester");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Ranger, 1, 0, "Ranger");
+					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Buggy, 1, 0, "Ranger");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 2, 0, "Tank");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Artillery, 0, 1, "Artillery");
 				}

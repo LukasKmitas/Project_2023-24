@@ -22,7 +22,9 @@
     <ClCompile Include="AirCraft.cpp" />
     <ClCompile Include="AircraftUnit.cpp" />
     <ClCompile Include="Barracks.cpp" />
+    <ClCompile Include="Buggy.cpp" />
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Firehawk.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
@@ -46,8 +48,10 @@
     <ClInclude Include="AirCraftType.h" />
     <ClInclude Include="AircraftUnit.h" />
     <ClInclude Include="Barracks.h" />
+    <ClInclude Include="Buggy.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Firehawk.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

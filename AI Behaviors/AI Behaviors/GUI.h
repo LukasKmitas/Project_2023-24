@@ -16,6 +16,7 @@
 #include "LevelEditor.h"
 
 #include "Harvester.h"
+#include "Buggy.h"
 
 #include "HammerHead.h"
 #include "Firehawk.h"
@@ -38,6 +39,7 @@ public:
     AirCraftType m_selectedAircraftType = AirCraftType::None;
 
     Harvester m_harvester;
+    Buggy m_buggy;
     HammerHead m_hammerHead;
     Firehawk m_firehawk;
 

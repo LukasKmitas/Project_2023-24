@@ -34,8 +34,8 @@ private:
 	void findNearestResourceTile();
 	void findNearestRefinery();
 
+	void gettingResourcePosition(const sf::Vector2f& resourcePos);
 	void moveToRefinery(Refinery* refinery);
-	void moveToResource(const sf::Vector2f& resourcePos);
 
 	void unloadResources(sf::Time t_deltaTime);
 
@@ -53,5 +53,6 @@ private:
 	float maxResourceCapacity = 100.0f; 
 	float currentResourceLoad = 0.0f;
 
+	bool foundResource = false;
 };
 

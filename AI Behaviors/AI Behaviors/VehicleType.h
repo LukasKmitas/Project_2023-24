@@ -4,7 +4,7 @@ enum class VehicleType
 {
     None,
     Harvester,
-    Ranger,
+    Buggy,
     Tank,
     Artillery
 };

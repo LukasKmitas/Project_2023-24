@@ -9,6 +9,4 @@ public:
 
 	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
 
-	sf::Vector2f steerTowards(sf::Vector2f target);
-
 };

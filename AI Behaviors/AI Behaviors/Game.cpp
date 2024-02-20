@@ -296,9 +296,32 @@ void Game::update(sf::Time t_deltaTime)
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
 		createUnit();
-		for (Unit* unit : units)
+		createEnemyUnit();
+		for (auto& unit : units)
 		{
-			unit->update(t_deltaTime, units);
+			unit->update(t_deltaTime, enemyUnits);
+
+			for (auto& bullet : unit->bullets)
+			{
+				for (auto& enemyUnit : enemyUnits)
+				{
+					if (bullet.shape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+					{
+						bullet.active = false;
+						enemyUnit->takeDamage(bullet.damage);
+						if (enemyUnit->getHealth() <= 0)
+						{
+							enemyUnit->m_active = false;
+						}
+					}
+				}
+			}
+			// Remove inactive bullets
+			unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
+				[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
+			// Remove dead enemy units
+			/*enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
+				[](const std::unique_ptr<Unit>& enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());*/
 		}
 		for (Unit* eUnits : enemyUnits)
 		{
@@ -725,16 +748,33 @@ void Game::createUnit()
 			if (m_gui.m_selectedBuilding)
 			{
 				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
-
 				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
 
 				Harvester* newHarvester = new Harvester();
 				newHarvester->setPosition(spawnPosition);
+				newHarvester->setTargetPosition(spawnPosition);
 				newHarvester->setBuildings(placedBuildings);
 				newHarvester->setTiles(m_levelEditor.m_tiles);
 				newHarvester->currentState = newHarvester->MovingToResource;
 
 				units.push_back(newHarvester);
+
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
+		if (m_gui.m_selectedVehicleType == VehicleType::Buggy)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+
+				Buggy* newBuggy = new Buggy();
+				newBuggy->setPosition(spawnPosition);
+				newBuggy->setTargetPosition(spawnPosition);
+				newBuggy->setEnemyUnits(enemyUnits);
+				units.push_back(newBuggy);
 
 				m_gui.m_unitConfirmed = false;
 				m_gui.m_selectedBuilding = nullptr;
@@ -746,7 +786,6 @@ void Game::createUnit()
 			if (m_gui.m_selectedBuilding)
 			{
 				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
-
 				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
 
 				HammerHead* newHammerHead = new HammerHead();
@@ -763,7 +802,6 @@ void Game::createUnit()
 			if (m_gui.m_selectedBuilding)
 			{
 				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
-
 				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
 
 				Firehawk* newFirehawk = new Firehawk();
@@ -780,6 +818,17 @@ void Game::createUnit()
 
 void Game::createEnemyUnit()
 {
+	if (!once)
+	{
+		sf::Vector2f spawnPosition = sf::Vector2f(700.0f, 800.0f);
+
+		Buggy* newBuggy = new Buggy();
+		newBuggy->setPosition(spawnPosition);
+		newBuggy->setTargetPosition(spawnPosition);
+
+		enemyUnits.push_back(newBuggy);
+		once = true;
+	}
 }
 
 void Game::selectUnitAt(const sf::Vector2f& mousePos) 

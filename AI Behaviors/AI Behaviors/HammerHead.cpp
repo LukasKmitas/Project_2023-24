@@ -6,9 +6,9 @@ HammerHead::HammerHead()
 	m_cost = 1500;
 	m_speed = 110;
 	m_health = 100;
-	m_slowingRadius = 50.0f;
-    m_rotationSpeed = 1000;
-    m_maxForce = 100;
+	m_slowingRadius = 100.0f;
+    m_rotationSpeed = 80;
+    m_maxForce = 200;
 }
 
 HammerHead::~HammerHead()
@@ -20,9 +20,15 @@ void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     AircraftUnit::update(t_deltaTime, allUnits);
 
     sf::Vector2f steeringForce = steerTowards(m_targetPosition);
+
     m_velocity += steeringForce * t_deltaTime.asSeconds();
 
-    if (magnitude(m_velocity) > m_speed) 
+    float distanceToTarget = magnitude(m_targetPosition - m_position);
+    if (distanceToTarget < 1.0f)
+    { 
+        m_velocity = sf::Vector2f(0, 0);
+    }
+    else if (magnitude(m_velocity) > m_speed)
     {
         normalize(m_velocity);
         m_velocity *= m_speed;
@@ -33,7 +39,7 @@ void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 
     if (magnitude(m_velocity) > 0) 
     {
-        float targetAngle = angleFromVector(m_velocity) + 90; 
+        float targetAngle = angleFromVector(m_velocity) + 90;
         m_unitSprite.setRotation(targetAngle);
     }
 }

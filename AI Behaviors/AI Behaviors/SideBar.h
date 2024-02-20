@@ -31,6 +31,7 @@ public:
 
     std::vector<Button> m_buttons;
 
+    // Buildings
     sf::Vector2f getRefineryIconPosition() const 
     {
         return m_refineryIconPosition;
@@ -47,10 +48,16 @@ public:
     {
         return m_airCraftIconPosition;
     }
+    // Vehicles
     sf::Vector2f getHarvesterIconPosition() const
     {
         return m_harvesterIconPosition;
     }
+    sf::Vector2f getBuggyIconPosition() const
+    {
+        return m_buggyIconPosition;
+    }
+    // Air
     sf::Vector2f getFirehawkIconPosition() const
     {
         return m_firehawkIconPosition;
@@ -84,6 +91,7 @@ private:
     sf::Vector2f m_airCraftIconPosition;
     // Vehicles
     sf::Vector2f m_harvesterIconPosition;
+    sf::Vector2f m_buggyIconPosition;
     // Air
     sf::Vector2f m_hammerHeadIconPosition;
     sf::Vector2f m_firehawkIconPosition;

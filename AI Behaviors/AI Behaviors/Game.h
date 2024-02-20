@@ -103,6 +103,7 @@ private:
 	float buttonHeight = 50.0f;
 
 	bool levelLoaded = false;
+	bool once = false; // temp
 	bool m_exitGame;
 
 };
