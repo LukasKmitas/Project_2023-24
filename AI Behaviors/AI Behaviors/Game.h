@@ -12,7 +12,7 @@
 #include "BuildingType.h"
 #include "Tile.h"
 
-#include "Harvester.h"
+#include "ParticleSystem.h"
 
 namespace fs = std::experimental::filesystem;
 
@@ -38,6 +38,7 @@ private:
 	Unit* m_selectedUnit = nullptr;
 
 	Tile m_tiles;
+	ParticleSystem m_particleSystem;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);

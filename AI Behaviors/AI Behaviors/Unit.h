@@ -57,6 +57,7 @@ protected:
     UnitType m_unitType;
 
     void initView();
+    void initShader();
 
     void avoidCollisions(std::vector<Unit*>& allUnits);
 
@@ -67,6 +68,7 @@ protected:
     sf::Sprite m_weaponSprite;
 
     sf::CircleShape m_viewCircleShape;
+    sf::Shader glowShader;
 
     int m_cost = 100;
     float m_health = 100.0f;

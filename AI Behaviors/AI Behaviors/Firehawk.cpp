@@ -5,7 +5,7 @@ Firehawk::Firehawk()
 	setupFirehawk();
 	m_cost = 1500;
 	m_speed = 130;
-	m_health = 100;
+	m_health = 160;
 	m_orbitRadius = 50.0f;
 	m_orbitSpeed = 80.0f;
 	m_viewRadius = 500;

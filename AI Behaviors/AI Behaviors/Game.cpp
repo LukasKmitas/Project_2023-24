@@ -305,13 +305,26 @@ void Game::update(sf::Time t_deltaTime)
 			{
 				for (auto& enemyUnit : enemyUnits)
 				{
-					if (bullet.shape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+					if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 					{
 						bullet.active = false;
 						enemyUnit->takeDamage(bullet.damage);
 						if (enemyUnit->getHealth() <= 0)
 						{
 							enemyUnit->m_active = false;
+						}
+						// Create sparkle effect
+						for (int i = 0; i < 20; ++i)
+						{
+							float angle = (std::rand() % 360) * 3.14159f / 180.0f;
+							float speed = (std::rand() % 100) / 10.0f + 50.0f; // Random speed between 50 and 60
+							sf::Vector2f velocity(std::cos(angle) * speed, std::sin(angle) * speed);
+
+							// Set lifetime to be between 0.1 and 0.5 seconds
+							float lifetime = static_cast<float>(std::rand() % 40) / 100.0f + 0.1f;
+
+							sf::Color color = sf::Color::White;
+							m_particleSystem.addParticle(Particle(bullet.position, velocity, sf::Color::White, lifetime));
 						}
 					}
 				}
@@ -320,13 +333,14 @@ void Game::update(sf::Time t_deltaTime)
 			unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
 				[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
 			// Remove dead enemy units
-			/*enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
-				[](const std::unique_ptr<Unit>& enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());*/
+			enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
+				[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());
 		}
 		for (Unit* eUnits : enemyUnits)
 		{
 			eUnits->update(t_deltaTime, enemyUnits);
 		}
+		m_particleSystem.update(t_deltaTime);
 		updateFogOfWarBasedOnUnits(units);
 		updateFogOfWarBasedOnBuildings(placedBuildings);
 		break;
@@ -375,6 +389,7 @@ void Game::render()
 		{
 			m_window.draw(selectionBox);
 		}
+		m_particleSystem.render(m_window);
 		break;
 	case GameState::LevelEditor:
 		m_levelEditor.render(m_window);

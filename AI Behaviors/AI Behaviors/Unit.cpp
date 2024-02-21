@@ -3,6 +3,7 @@
 Unit::Unit()
 {
     initView();
+    initShader();
 }
 
 Unit::~Unit()
@@ -33,7 +34,7 @@ void Unit::render(sf::RenderWindow& m_window) const
 
     for (auto& bullet : bullets) 
     {
-        bullet.render(m_window);
+        bullet.render(m_window, glowShader);
     }
 }
 
@@ -142,6 +143,17 @@ void Unit::initView()
     m_viewCircleShape.setFillColor(sf::Color(255, 255, 255, 0));
     m_viewCircleShape.setOrigin(m_viewRadius, m_viewRadius);
     m_viewCircleShape.setPosition(m_position);
+}
+
+void Unit::initShader()
+{
+    if (!glowShader.loadFromFile("Assets\\Shaders\\glowShader.frag", sf::Shader::Fragment))
+    {
+        std::cout << "Error - Loading glow shader" << std::endl;
+    }
+  
+    glowShader.setUniform("glowColor", sf::Glsl::Vec4(1.0, 0.0, 0.0, 1.0));
+    glowShader.setUniform("glowRadius", 1.0f);
 }
 
 bool Unit::checkAffordability()

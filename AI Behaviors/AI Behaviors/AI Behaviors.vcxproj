@@ -36,6 +36,7 @@
     <ClCompile Include="LevelEditor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Refinery.cpp" />
     <ClCompile Include="SideBar.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -64,6 +65,7 @@
     <ClInclude Include="InfantryType.h" />
     <ClInclude Include="LevelEditor.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Refinery.h" />
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="Tile.h" />

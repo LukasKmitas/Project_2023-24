@@ -8,6 +8,7 @@ Buggy::Buggy()
     m_health = 100;
     m_maxForce = 150;
     m_slowingRadius = 50;
+    m_viewRadius = 250;
     m_bulletSpeed = 300.0f;
 }
 
@@ -129,6 +130,7 @@ void Buggy::aimWeapon(sf::Time t_deltaTime, const std::vector<Unit*>& enemyUnits
 {
     if (enemyUnits.empty())
     {
+        m_weaponSprite.setRotation(m_unitSprite.getRotation());
         return;
     }
      
@@ -162,8 +164,19 @@ void Buggy::shootAtEnemy()
 {
     if (!isReloading && fireTimer <= 0.0f) 
     {
+        // create a random spray between -2.5 to 2.5 degrees
+        float sprayAngle = (std::rand() % 6 - 2.5) * (3.14159265 / 180);
+
+        float cosAngle = std::cos(sprayAngle);
+        float sinAngle = std::sin(sprayAngle);
+        sf::Vector2f sprayedDirection = 
+        {
+            directionToEnemy.x * cosAngle - directionToEnemy.y * sinAngle,
+            directionToEnemy.x * sinAngle + directionToEnemy.y * cosAngle
+        };
+
         sf::Vector2f bulletStartPosition = m_weaponSprite.getPosition();
-        bullets.emplace_back(bulletStartPosition, directionToEnemy, m_bulletSpeed);
+        bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
         shotsFired++;
         fireTimer = fireRate;
 
