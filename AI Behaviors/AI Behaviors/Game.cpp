@@ -12,16 +12,23 @@ Game::Game() :
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
+	m_window.setMouseCursorVisible(false);
 
 	if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
 	{
 		std::cout << "Error - loading font" << std::endl;
 	}
 
+	if (!m_cursorTexture.loadFromFile("Assets\\Images\\GUI\\pointer1.png"))
+	{
+		std::cout << "Error - loading cursor texture" << std::endl;
+	}
+	m_cursorSprite.setTexture(m_cursorTexture);
+
 	createBase();
-	initBackgroundImage();
 	initBackButton();
 	initLevelSelectionButtons();
+	initParticles();
 	m_levelEditor.resetFogOfWar();
 
 	selectionBox.setFillColor(sf::Color(0, 255, 0, 50));
@@ -276,6 +283,8 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+	sf::Vector2f mouseWorldPos = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+	m_cursorSprite.setPosition(static_cast<float>(mouseWorldPos.x), static_cast<float>(mouseWorldPos.y));
 	switch (m_currentState)
 	{
 	case GameState::MainMenu:
@@ -283,6 +292,7 @@ void Game::update(sf::Time t_deltaTime)
 		{
 			resetView();
 		}
+		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
 		loadLevel(levelFilenames[selectedButtonIndex]);
@@ -313,19 +323,7 @@ void Game::update(sf::Time t_deltaTime)
 						{
 							enemyUnit->m_active = false;
 						}
-						// Create sparkle effect
-						for (int i = 0; i < 20; ++i)
-						{
-							float angle = (std::rand() % 360) * 3.14159f / 180.0f;
-							float speed = (std::rand() % 100) / 10.0f + 50.0f; // Random speed between 50 and 60
-							sf::Vector2f velocity(std::cos(angle) * speed, std::sin(angle) * speed);
-
-							// Set lifetime to be between 0.1 and 0.5 seconds
-							float lifetime = static_cast<float>(std::rand() % 40) / 100.0f + 0.1f;
-
-							sf::Color color = sf::Color::White;
-							m_particleSystem.addParticle(Particle(bullet.position, velocity, sf::Color::White, lifetime));
-						}
+						spawnBulletSparkParticles(bullet.position);
 					}
 				}
 			}
@@ -343,6 +341,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_particleSystem.update(t_deltaTime);
 		updateFogOfWarBasedOnUnits(units);
 		updateFogOfWarBasedOnBuildings(placedBuildings);
+		spawnBubbleParticles();
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -366,7 +365,6 @@ void Game::render()
 	switch (m_currentState)
 	{
 	case GameState::MainMenu:
-		m_window.draw(m_backGroundSprite);
 		m_menu.render(m_window);
 		break;
 	case GameState::PlayGame:
@@ -417,7 +415,7 @@ void Game::render()
 	default:
 		break;
 	}
-
+	m_window.draw(m_cursorSprite);
 	m_window.display();
 }
 
@@ -645,17 +643,16 @@ void Game::initBackButton()
 	m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
 }
 
-void Game::initBackgroundImage()
+void Game::initParticles()
 {
-	if (!m_backgroundTexture.loadFromFile("Assets\\Temp\\Down the Tubes.png"))
+	if (!m_bubbleTexture.loadFromFile("Assets\\Images\\Particles\\46.png"))
 	{
-		std::cout << "Error - Failed to load background image" << std::endl;
+		std::cout << "Error - loading bubble texture" << std::endl;
 	}
-
-	m_backGroundSprite.setTexture(m_backgroundTexture);
-
-	m_backGroundSprite.setScale(static_cast<float>(Global::S_WIDTH) / m_backGroundSprite.getGlobalBounds().width,
-		static_cast<float>(Global::S_HEIGHT) / m_backGroundSprite.getGlobalBounds().height);
+	if (!m_bulletSparksTexture.loadFromFile("Assets\\Images\\Particles\\20.png"))
+	{
+		std::cout << "Error - loading bubble texture" << std::endl;
+	}
 }
 
 void Game::handleLevelSelectionMouseInput(sf::Vector2i mousePosition)
@@ -870,6 +867,56 @@ void Game::selectUnitsInBox()
 			m_selectedUnit = unit;
 			unit->setSelected(true);
 		}
+	}
+}
+
+void Game::spawnBubbleParticles()
+{
+	static sf::Clock spawnTimer;
+	if (spawnTimer.getElapsedTime().asSeconds() > 2.0f)
+	{
+		spawnTimer.restart();
+
+		int bubblesToSpawn = std::rand() % 100 + 20;
+
+		for (int i = 0; i < bubblesToSpawn; ++i)
+		{
+			int randomX = std::rand() % m_levelEditor.numCols;
+			int randomY = std::rand() % m_levelEditor.numRows;
+			if (m_levelEditor.m_tiles[randomY][randomX].fogStatus != Tile::FogStatus::Unexplored)
+			{
+				sf::Vector2f position(randomX * m_tiles.tileSize + m_tiles.tileSize / 2.0f,
+					randomY * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
+
+				angleParticle = static_cast<float>((std::rand() % 41) - 20);	// angle between -20 and 20
+				speedParticle = 20.0f + static_cast<float>(std::rand() % 6);	// Speed Between 20 and 25
+
+				sf::Vector2f velocity(std::sin(angleParticle * 3.14f / 180.0f) * speedParticle, -(speedParticle + static_cast<float>(std::rand() % 10)));
+
+				lifetimeParticle = static_cast<float>(std::rand() % 4 + 3);	// lifetime between 3 and 6
+				sizeParticle = static_cast<float>(std::rand() % 3 + 2);		// size between 2 and 4
+
+				colorParticle = sf::Color(255, 255, 255, 120 + std::rand() % 135);
+
+				m_particleSystem.addParticle(Particle(position, velocity, colorParticle, lifetimeParticle, sizeParticle, &m_bubbleTexture));
+			}
+		}
+	}
+}
+
+void Game::spawnBulletSparkParticles(const sf::Vector2f& position)
+{
+	for (int i = 0; i < 20; ++i) 
+	{
+		angleParticle = (std::rand() % 360) * 3.14159f / 180.0f;
+		speedParticle = (std::rand() % 100) / 10.0f + 50.0f; // Random speed between 50 and 60
+		sf::Vector2f velocity(std::cos(angleParticle) * speedParticle, std::sin(angleParticle) * speedParticle);
+
+		lifetimeParticle = static_cast<float>(std::rand() % 40) / 100.0f + 0.1f;
+		sizeParticle = static_cast<float>(std::rand() % 3 + 2);
+
+		colorParticle = sf::Color(255, 255, 255, 160 + std::rand() % 95);
+		m_particleSystem.addParticle(Particle(position, velocity, colorParticle, lifetimeParticle, sizeParticle, &m_bulletSparksTexture));
 	}
 }
 

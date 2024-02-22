@@ -22,7 +22,7 @@ void Headquarters::render(sf::RenderWindow& m_window) const
 
 void Headquarters::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Command Center.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Command Center.png"))
 	{
 		std::cout << "Error - Loading Command Center Building Sprite" << std::endl;
 	}

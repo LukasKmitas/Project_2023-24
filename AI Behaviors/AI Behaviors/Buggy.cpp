@@ -45,7 +45,7 @@ void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 
 void Buggy::setupBuggy()
 {
-	if (!m_unitTexture.loadFromFile("Assets\\Images\\buggy.png"))
+	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\buggy.png"))
 	{
 		std::cout << "Error - Loading buggy Texture" << std::endl;
 	}
@@ -55,7 +55,7 @@ void Buggy::setupBuggy()
 	m_unitSprite.setOrigin(m_unitSprite.getLocalBounds().width / 2, m_unitSprite.getLocalBounds().height / 2);
 	m_unitSprite.setScale(0.12, 0.12);
 
-    if (!m_weaponTexture.loadFromFile("Assets\\Images\\weapon1.png"))
+    if (!m_weaponTexture.loadFromFile("Assets\\Images\\Units\\weapon1.png"))
     {
         std::cout << "Error - Loading buggy weapon Texture" << std::endl;
     }

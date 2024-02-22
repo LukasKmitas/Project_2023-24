@@ -23,7 +23,7 @@ void AirCraft::render(sf::RenderWindow& m_window) const
 
 void AirCraft::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Air Control.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Air Control.png"))
 	{
 		std::cout << "Error - Loading AirCraft Building Sprite" << std::endl;
 	}

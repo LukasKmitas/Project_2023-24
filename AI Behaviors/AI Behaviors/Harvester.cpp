@@ -117,7 +117,7 @@ void Harvester::movement(sf::Time t_deltaTime)
 
 void Harvester::setupHarvester()
 {
-	if (!m_unitTexture.loadFromFile("Assets\\Images\\Harvester.png"))
+	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\Harvester.png"))
 	{
 		std::cout << "Error - Loading harvester Texture" << std::endl;
 	}

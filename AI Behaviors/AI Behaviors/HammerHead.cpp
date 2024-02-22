@@ -46,7 +46,7 @@ void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 
 void HammerHead::setupHammerhead()
 {
-	if (!m_unitTexture.loadFromFile("Assets\\Images\\HammerHead.png"))
+	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\HammerHead.png"))
 	{
 		std::cout << "Error - Loading HammerHead Texture" << std::endl;
 	}

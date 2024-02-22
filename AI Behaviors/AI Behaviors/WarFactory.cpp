@@ -23,7 +23,7 @@ void WarFactory::render(sf::RenderWindow& m_window) const
 
 void WarFactory::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Ground Control.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Ground Control.png"))
 	{
 		std::cout << "Error - Loading Vehicle Building Sprite" << std::endl;
 	}

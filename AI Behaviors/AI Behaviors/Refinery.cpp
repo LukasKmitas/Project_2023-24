@@ -23,7 +23,7 @@ void Refinery::render(sf::RenderWindow& m_window) const
 
 void Refinery::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Refinery.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Refinery.png"))
 	{
 		std::cout << "Error - Loading Refinery Building Sprite" << std::endl;
 	}

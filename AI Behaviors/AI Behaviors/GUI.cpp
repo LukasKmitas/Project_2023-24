@@ -353,27 +353,27 @@ void GUI::setupTopBar()
 
 void GUI::loadIcons()
 {
-	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\BuildingIcons.png"))
+	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\GUI\\BuildingIcons.png"))
 	{
 		std::cout << "Error - Problem Loading Building 1 Texture" << std::endl;
 	}
-	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\VehicleIcon.png"))
+	if (!m_BuildingTexture2.loadFromFile("Assets\\Images\\GUI\\VehicleIcon.png"))
 	{
 		std::cout << "Error - Problem Loading Building 2 Texture" << std::endl;
 	}
-	if (!m_unitInfantryTexture.loadFromFile("Assets\\Images\\InfantryUnitIcons.png"))
+	if (!m_unitInfantryTexture.loadFromFile("Assets\\Images\\GUI\\InfantryUnitIcons.png"))
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}
-	if (!m_unitVehicleTexture.loadFromFile("Assets\\Images\\Vehicle Unit Icons.png"))
+	if (!m_unitVehicleTexture.loadFromFile("Assets\\Images\\GUI\\Vehicle Unit Icons.png"))
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}
-	if (!m_unitAirCraftTexture.loadFromFile("Assets\\Images\\Aircraft Unit Icons.png"))
+	if (!m_unitAirCraftTexture.loadFromFile("Assets\\Images\\GUI\\Aircraft Unit Icons.png"))
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}
-	if (!m_harvesterIcon.loadFromFile("Assets\\Images\\HarvesterLogo.png"))
+	if (!m_harvesterIcon.loadFromFile("Assets\\Images\\GUI\\HarvesterLogo.png"))
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}

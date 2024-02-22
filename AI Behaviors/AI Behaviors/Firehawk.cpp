@@ -75,7 +75,7 @@ void Firehawk::orbitTarget(sf::Time t_deltaTime)
 
 void Firehawk::setupFirehawk()
 {
-	if (!m_unitTexture.loadFromFile("Assets\\Images\\Firehawk.png"))
+	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\Firehawk.png"))
 	{
 		std::cout << "Error - Loading Firehawk Texture" << std::endl;
 	}

@@ -55,7 +55,7 @@ private:
 	void goToMainMenu();
 	void initLevelSelectionButtons();
 	void initBackButton();
-	void initBackgroundImage();
+	void initParticles();
 
 	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
 	void loadLevel(const std::string& filename);
@@ -68,6 +68,9 @@ private:
 
 	void selectUnitAt(const sf::Vector2f& mousePos);
 	void selectUnitsInBox();
+
+	void spawnBubbleParticles();
+	void spawnBulletSparkParticles(const sf::Vector2f& position);
 
 	int calculateGridSize(int numberOfUnits);
 
@@ -82,8 +85,11 @@ private:
 
 	sf::RectangleShape m_toGoBackButton;
 	
-	sf::Texture m_backgroundTexture;
-	sf::Sprite m_backGroundSprite;
+	sf::Texture m_bubbleTexture;
+	sf::Texture m_bulletSparksTexture;
+
+	sf::Texture m_cursorTexture;
+	sf::Sprite m_cursorSprite;
 
 	sf::Vector2f cameraVelocity;
 
@@ -102,6 +108,13 @@ private:
 
 	float buttonWidth = 200.0f;
 	float buttonHeight = 50.0f;
+
+	// Particles variables
+	float angleParticle;
+	float speedParticle;
+	float lifetimeParticle;
+	float sizeParticle;
+	sf::Color colorParticle;
 
 	bool levelLoaded = false;
 	bool once = false; // temp

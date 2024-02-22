@@ -16,12 +16,24 @@ void ParticleSystem::update(sf::Time t_deltaTime)
 
 void ParticleSystem::render(sf::RenderWindow& window)
 {
-    for (const auto& particle : particles)
+    for (const auto& particle : particles) 
     {
-        sf::CircleShape shape(2);
-        shape.setPosition(particle.position);
-        shape.setFillColor(particle.color);
-        window.draw(shape);
+        if (particle.texture)
+        {
+            sf::RectangleShape shape(sf::Vector2f(particle.size * 2, particle.size * 2));
+            shape.setTexture(particle.texture);
+            shape.setFillColor(particle.color);
+            shape.setOrigin(particle.size, particle.size);
+            shape.setPosition(particle.position);
+            window.draw(shape);
+        }
+        else
+        {
+            sf::CircleShape shape(particle.size);
+            shape.setFillColor(particle.color);
+            shape.setPosition(particle.position);
+            window.draw(shape);
+        }
     }
 }
 

@@ -46,6 +46,21 @@
     <Filter Include="Source Files\Units">
       <UniqueIdentifier>{f69a1bbf-7126-4104-a9ec-6bd340836365}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{b7a4e005-e81e-4f8e-8c17-2c83abdfb5a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Images\Units">
+      <UniqueIdentifier>{32449461-962e-4562-9d32-470cc054e509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Images\GUI">
+      <UniqueIdentifier>{efa4a446-49ef-43c4-be28-6b442b153134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Images\Menu">
+      <UniqueIdentifier>{bc88254f-152f-456a-90ed-86be70347ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Images\LevelEditor">
+      <UniqueIdentifier>{4a245778-4c08-4984-be7d-054584fb2a0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -208,12 +223,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="ASSETS\IMAGES\SFML-LOGO.png">
-      <Filter>Resource Files\Images</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <Font Include="ASSETS\FONTS\ariblk.ttf">
+      <Filter>Resource Files\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ManicSea_19.ttf">
       <Filter>Resource Files\Fonts</Filter>
     </Font>
   </ItemGroup>

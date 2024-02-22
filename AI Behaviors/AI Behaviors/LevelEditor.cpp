@@ -389,7 +389,7 @@ void LevelEditor::initBar()
 /// </summary>
 void LevelEditor::initbuttonsForToolEditor()
 {
-    if (!m_underWaterTexture.loadFromFile("Assets\\Temp\\Labrynna Underwater.png"))
+    if (!m_underWaterTexture.loadFromFile("Assets\\Images\\LevelEditor\\Labrynna Underwater.png"))
     {
         std::cout << "Error - problem loading Texture in Level Editor" << std::endl;
     }

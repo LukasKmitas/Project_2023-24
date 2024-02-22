@@ -23,7 +23,7 @@ void Barracks::render(sf::RenderWindow& m_window) const
 
 void Barracks::setupSprite()
 {
-	if (!m_buildingTexture.loadFromFile("Assets\\Images\\Factory.png"))
+	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Factory.png"))
 	{
 		std::cout << "Error - Loading Building Sprite" << std::endl;
 	}
