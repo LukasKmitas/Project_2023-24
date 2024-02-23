@@ -5,6 +5,6 @@ enum class GameState
     MainMenu,
     PlayGame,
     LevelEditor,
-    LevelSelection,
+    LevelLoad,
     Exit
 };

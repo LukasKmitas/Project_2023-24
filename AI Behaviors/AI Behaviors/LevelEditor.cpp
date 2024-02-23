@@ -6,6 +6,14 @@ LevelEditor::LevelEditor()
     {
         std::cout << "Error - problem loading font in Level Editor" << std::endl;
     }
+    if (!m_buttonTexture.loadFromFile("Assets\\Images\\GUI\\buttonStock2.png"))
+    {
+        std::cout << "Error - loading button texture" << std::endl;
+    }
+    if (!m_buttonTexture1.loadFromFile("Assets\\Images\\GUI\\Card X5.png"))
+    {
+        std::cout << "Error - loading button texture" << std::endl;
+    }
 
     initBar();
     initBackButton();
@@ -21,12 +29,19 @@ LevelEditor::LevelEditor()
 void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
     animationForResources();
+    animationForWeed();
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && isTileSelected) // used for dragging, creates the size
     {
         sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
         sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
         sf::Vector2f newSize = worldMousePosition - startMousePos;
         dragRectangle.setSize(newSize);
+    }
+    if (buttonSelectedanimationClock.getElapsedTime().asSeconds() > animationSpeed) 
+    {
+        currentAnimationFrame = (currentAnimationFrame + 1) % 4;
+        buttonSelectedSprite.setTextureRect(sf::IntRect(currentAnimationFrame * 16, 0, 16, 16));
+        buttonSelectedanimationClock.restart();
     }
 }
 
@@ -83,6 +98,14 @@ void LevelEditor::render(sf::RenderWindow & m_window)
     {
         m_window.draw(m_buttons[i]);
     }
+
+    if (selectedButtonIndex >= 0) 
+    {
+        sf::Vector2f buttonPos = m_buttons[selectedButtonIndex].getPosition();
+        buttonSelectedSprite.setPosition(buttonPos.x - 1, buttonPos.y - 1);
+
+        m_window.draw(buttonSelectedSprite);
+    }
 }
 
 /// <summary>
@@ -119,23 +142,26 @@ void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
 /// <param name="m_mousePosition"></param>
 /// <param name="m_gameState"></param>
 /// <param name="m_window"></param>
-void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_gameState, sf::RenderWindow & m_window)
+void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_gameState, sf::RenderWindow& m_window)
 {
     sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_levelEditorView);
     sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_window.getView());
 
-    if (m_toGoBackButton.getGlobalBounds().contains(guiMousePosition))
-    {
-        m_gameState = GameState::MainMenu;
-    }
-
     handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, lastClickedButtonIndex, selectedButtonIndex);
 
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    startMousePos = worldMousePosition;
+    newMousePos = worldMousePosition;
+    dragRectangle.setPosition(startMousePos);
+
+    if (m_toGoBackButton.getGlobalBounds().contains(guiMousePosition))
     {
-        startMousePos = worldMousePosition;
-        newMousePos = worldMousePosition;
-        dragRectangle.setPosition(startMousePos);
+        dragRectangle.setSize(sf::Vector2f(0.0f, 0.0f));
+        startMousePos = sf::Vector2f(0.f, 0.f);
+        newMousePos = sf::Vector2f(0.f, 0.f);
+        isButtonClicked = false;
+        isTileSelected = false;
+        lastClickedButtonIndex = -1;
+        m_gameState = GameState::MainMenu;
     }
 }
 
@@ -149,14 +175,14 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState & m_g
 /// <param name="selectedIndex"></param>
 void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
 {
-    bool isButtonClicked = false;
+    isButtonClicked = false;
 
     for (int i = 0; i < numButtons; ++i)
     {
         if (buttons[i].getGlobalBounds().contains(guiMousePosition))
         {
             selectedIndex = i;
-            buttons[i].setColor(sf::Color(255, 200, 200));
+            buttons[i].setColor(sf::Color(150, 150, 150));
             isButtonClicked = true;
             lastClickedIndex = i;
         }
@@ -168,8 +194,7 @@ void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f 
 
     if (!isButtonClicked && lastClickedIndex != -1)
     {
-        buttons[lastClickedIndex].setColor(sf::Color(255, 200, 200));
-
+        buttons[lastClickedIndex].setColor(sf::Color(150, 150, 150));
         handleTilePlacement(worldMousePosition, lastClickedIndex, selectedIndex);
     }
 }
@@ -218,6 +243,7 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
                     m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
                     m_tiles[i][j].isWall = (selectedIndex >= 4 && selectedIndex < 9);
                     m_tiles[i][j].isResource = (selectedIndex == 9);
+                    m_tiles[i][j].animationWeed = (selectedIndex == 10);
                     m_tiles[i][j].m_tile.setRotation(0);
                     m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
                     break;
@@ -259,6 +285,7 @@ void LevelEditor::placeTilesInDragRectangle()
                 m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
                 m_tiles[i][j].isWall = (selectedButtonIndex >= 4 && selectedButtonIndex < 9);
                 m_tiles[i][j].isResource = (selectedButtonIndex == 9);
+                m_tiles[i][j].animationWeed = (selectedButtonIndex == 10);
                 m_tiles[i][j].m_tile.setRotation(0);
                 m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
             }
@@ -333,24 +360,24 @@ void LevelEditor::randomGenerateLevel()
 /// </summary>
 void LevelEditor::initBar()
 {
-    m_backgroundForTilesTools.setFillColor(sf::Color(255, 255, 255, 200));
+    m_backgroundForTilesTools.setFillColor(sf::Color(0, 0, 0, 200));
     m_backgroundForTilesTools.setSize(sf::Vector2f(Global::S_WIDTH, 200));
     m_backgroundForTilesTools.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 + 440);
     m_backgroundForTilesTools.setOrigin(m_backgroundForTilesTools.getGlobalBounds().width / 2, m_backgroundForTilesTools.getGlobalBounds().height / 2);
 
     const int numRectangles = 4;
-    const float rectWidth = 100.f;
-    const float spacing = 300.f;
+    const float rectWidth = 150.f;
+    const float spacing = 320.f;
 
     const float startX = (Global::S_WIDTH / 2) - (numRectangles * (rectWidth + spacing) / 2) + 100;
     const float startY = Global::S_HEIGHT - 180;
 
     for (int i = 0; i < numRectangles; ++i)
     {
-        m_backgroundForBTF[i].setFillColor(sf::Color::Cyan);
         m_backgroundForBTF[i].setSize(sf::Vector2f(rectWidth, 40));
         float xPos = startX + i * (rectWidth + spacing);
         m_backgroundForBTF[i].setPosition(xPos, startY);
+        m_backgroundForBTF[i].setTexture(&m_buttonTexture1);
 
         sf::Text* textPtr = nullptr;
         switch (i)
@@ -376,8 +403,10 @@ void LevelEditor::initBar()
         }
 
         textPtr->setFont(m_font);
-        textPtr->setCharacterSize(20U);
-        textPtr->setFillColor(sf::Color::Black);
+        textPtr->setCharacterSize(24U);
+        textPtr->setFillColor(sf::Color(225, 245, 255));
+        textPtr->setOutlineColor(sf::Color::Blue);
+        textPtr->setOutlineThickness(0.2f);
         sf::FloatRect textRect = textPtr->getLocalBounds();
         textPtr->setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
         textPtr->setPosition(m_backgroundForBTF[i].getPosition().x + rectWidth / 2.0f, m_backgroundForBTF[i].getPosition().y + 20.0f);
@@ -393,6 +422,14 @@ void LevelEditor::initbuttonsForToolEditor()
     {
         std::cout << "Error - problem loading Texture in Level Editor" << std::endl;
     }
+    if (!buttonSelectedTexture.loadFromFile("Assets\\Images\\GUI\\buttonSelected.png"))
+    {
+        std::cout << "Error - loading button texture" << std::endl;
+    }
+    buttonSelectedSprite.setTexture(buttonSelectedTexture);
+    buttonSelectedSprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
+    buttonSelectedSprite.setOrigin(buttonSelectedSprite.getLocalBounds().width / 2, buttonSelectedSprite.getLocalBounds().height / 2);
+    buttonSelectedSprite.setScale(4.2,4.2);
     initButtonsForToolSet();
 }
 
@@ -432,17 +469,17 @@ void LevelEditor::initButtonsForToolSet()
     };
 
     // Calculate starting positions for each button type
-    const float startXForWalkable = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 120;
-    const float startYForWalkable = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+    const float startXForWalkable = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 70;
+    const float startYForWalkable = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 120;
 
-    const float startXForWalls = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 520;
-    const float startYForWalls = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+    const float startXForWalls = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 500;
+    const float startYForWalls = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 120;
 
-    const float startXForResource = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1080;
-    const float startYForResource = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+    const float startXForResource = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1100;
+    const float startYForResource = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 120;
 
-    const float startXForMisc = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1430;
-    const float startYForMisc = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 80;
+    const float startXForMisc = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1500;
+    const float startYForMisc = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 120;
 
     for (int i = 0; i < numButtons; ++i)
     {
@@ -469,6 +506,7 @@ void LevelEditor::initButtonsForToolSet()
 
         m_buttons[i].setTextureRect(*buttonArea);
         m_buttons[i].setScale(buttonSize / m_buttons[i].getGlobalBounds().width, buttonSize / m_buttons[i].getGlobalBounds().height);
+        m_buttons[i].setOrigin(m_buttons[i].getLocalBounds().width / 2, m_buttons[i].getLocalBounds().height / 2);
 
         // Calculate position based on index and type of button
         float xPos, yPos;
@@ -501,17 +539,17 @@ void LevelEditor::initButtonsForToolSet()
 /// </summary>
 void LevelEditor::initBackButton()
 {
-    m_toGoBackButton.setFillColor(sf::Color(0, 200, 200));
     m_toGoBackButton.setSize(sf::Vector2f(100, 50));
     m_toGoBackButton.setPosition(80, 50);
     m_toGoBackButton.setOrigin(m_toGoBackButton.getGlobalBounds().width / 2, m_toGoBackButton.getGlobalBounds().height / 2);
+    m_toGoBackButton.setTexture(&m_buttonTexture);
 
     m_toGoBackText.setFont(m_font);
     m_toGoBackText.setString("Back");
     m_toGoBackText.setPosition(m_toGoBackButton.getPosition().x, m_toGoBackButton.getPosition().y - 5);
     m_toGoBackText.setCharacterSize(25U);
-    m_toGoBackText.setOutlineColor(sf::Color::Black);
-    m_toGoBackText.setFillColor(sf::Color::White);
+    m_toGoBackText.setFillColor(sf::Color(225, 245, 255));
+    m_toGoBackText.setOutlineColor(sf::Color::Blue);
     m_toGoBackText.setOutlineThickness(1.0f);
     m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
 }
@@ -548,6 +586,7 @@ void LevelEditor::saveLevelToFile(const std::string & m_filename)
             {
                 file << m_tiles[i][j].isWall << " ";
                 file << m_tiles[i][j].isResource << " ",
+                file << m_tiles[i][j].animationWeed << " ",
                 file << m_tiles[i][j].m_tile.getTextureRect().left << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().top << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().width << " ";
@@ -583,11 +622,12 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
         {
             for (int j = 0; j < numCols; ++j)
             {
-                int isWallValue, isResourceValue;
-                inputFile >> isWallValue >> isResourceValue;
+                int isWallValue, isResourceValue, isAnimationWeed;
+                inputFile >> isWallValue >> isResourceValue >> isAnimationWeed;
 
                 m_tiles[i][j].isWall = (isWallValue == 1);
                 m_tiles[i][j].isResource = (isResourceValue == 1);
+                m_tiles[i][j].animationWeed = (isAnimationWeed == 1);
 
                 int left, top, width, height, xPos, yPos, tileRotation, originX, originY;
                 inputFile >> left >> top >> width >> height >> xPos >> yPos >> tileRotation >> originX >> originY;
@@ -641,17 +681,35 @@ void LevelEditor::loadLevelForLevelEditor()
 /// </summary>
 void LevelEditor::animationForResources()
 {
-    if (tileAnimationClock.getElapsedTime().asMilliseconds() > 200)
+    if (tileResourceAnimationClock.getElapsedTime().asMilliseconds() > 200)
     {
-        currentTileAnimationFrame = (currentTileAnimationFrame + 1) % numTileFrames;
-
+        currentResourceTileAnimationFrame = (currentResourceTileAnimationFrame + 1) % numTileFrames;
         for (int i = 0; i < 50; ++i)
         {
             for (int j = 0; j < 50; ++j)
             {
                 if (m_tiles[i][j].isResource == true)
                 {
-                    m_tiles[i][j].m_tile.setTextureRect(tileAnimationFrames[currentTileAnimationFrame]);
+                    m_tiles[i][j].m_tile.setTextureRect(tileResourceAnimationFrames[currentResourceTileAnimationFrame]);
+                }
+            }
+        }
+        tileResourceAnimationClock.restart();
+    }
+}
+
+void LevelEditor::animationForWeed()
+{
+    if (tileAnimationClock.getElapsedTime().asMilliseconds() > 200) 
+    {
+        currentTileWeedAnimationFrame = (currentTileWeedAnimationFrame + 1) % numTileFrames;
+        for (int i = 0; i < 50; ++i)
+        {
+            for (int j = 0; j < 50; ++j)
+            {
+                if (m_tiles[i][j].animationWeed == true)
+                {
+                    m_tiles[i][j].m_tile.setTextureRect(tileWeedAnimationFrames[currentTileWeedAnimationFrame]);
                 }
             }
         }
@@ -664,7 +722,10 @@ void LevelEditor::animationForResources()
 /// </summary>
 void LevelEditor::releaseDragRect()
 {
-    placeTilesInDragRectangle();
+    if (isTileSelected)
+    {
+        placeTilesInDragRectangle();
+    }
     dragRectangle.setSize(sf::Vector2f(0.0f,0.0f));
     startMousePos = sf::Vector2f(0.f, 0.f);
     newMousePos = sf::Vector2f(0.f, 0.f);
@@ -677,7 +738,9 @@ void LevelEditor::initDragRectangle()
 {
     sf::Vector2f initialSize = sf::Vector2f(0.f, 0.f);
     dragRectangle.setSize(initialSize);
-    dragRectangle.setFillColor(sf::Color::Black);
+    dragRectangle.setFillColor(sf::Color(0, 255, 0, 50));
+    dragRectangle.setOutlineColor(sf::Color::Black);
+    dragRectangle.setOutlineThickness(1.0f);
 }
 
 void LevelEditor::resetFogOfWar()

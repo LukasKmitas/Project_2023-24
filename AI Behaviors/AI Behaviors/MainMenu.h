@@ -29,19 +29,19 @@ private:
     sf::Text outlineText;
     sf::Text m_playText;
     sf::Text m_editorText;
-    sf::Text m_selectLevelText;
+    sf::Text m_loadLevelText;
     sf::Text m_exitText;
 
     sf::RectangleShape m_playButton;
     sf::RectangleShape m_editorButton;
-    sf::RectangleShape m_selectLevelButton;
+    sf::RectangleShape m_loadLevelButton;
     sf::RectangleShape m_exitButton;
     sf::Texture m_buttonTexture;
     sf::Sprite m_buttonTabSprite;
     sf::Texture m_buttonTabTexture;
  
     sf::Texture m_backgroundTexture;
-    sf::Sprite m_backGroundSprite;
+    sf::Sprite m_backgroundSprite;
     
     sf::Shader m_titleShader;
     sf::Shader m_backgroundShader;

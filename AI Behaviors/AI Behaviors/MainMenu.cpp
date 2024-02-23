@@ -19,14 +19,14 @@ void MainMenu::update(sf::Time t_deltaTime)
 
 void MainMenu::render(sf::RenderWindow& m_window)
 {
-    m_window.draw(m_backGroundSprite, &m_backgroundShader);
+    m_window.draw(m_backgroundSprite, &m_backgroundShader);
     m_window.draw(m_playButton);
     m_window.draw(m_editorButton);
-    m_window.draw(m_selectLevelButton);
+    m_window.draw(m_loadLevelButton);
     m_window.draw(m_exitButton);
     m_window.draw(m_playText);
     m_window.draw(m_editorText);
-    m_window.draw(m_selectLevelText);
+    m_window.draw(m_loadLevelText);
     m_window.draw(m_exitText);
 
     m_window.draw(outlineText);
@@ -45,9 +45,9 @@ void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState&
     {
         m_gameState = GameState::LevelEditor;
     }
-    else if (m_selectLevelButton.getGlobalBounds().contains(m_mousePosition))
+    else if (m_loadLevelButton.getGlobalBounds().contains(m_mousePosition))
     {
-        m_gameState = GameState::LevelSelection;
+        m_gameState = GameState::LevelLoad;
     }
     else if (m_exitButton.getGlobalBounds().contains(m_mousePosition))
     {
@@ -126,19 +126,19 @@ void MainMenu::initButtons()
     m_editorText.setOrigin(m_editorText.getGlobalBounds().width / 2, m_editorText.getGlobalBounds().height / 2);
     m_editorText.setPosition(m_editorButton.getPosition().x, m_editorButton.getPosition().y - 5);
 
-    // Select Level Button
-    m_selectLevelButton.setSize(sf::Vector2f(300, 85));
-    m_selectLevelButton.setOrigin(m_selectLevelButton.getSize().x / 2, m_selectLevelButton.getSize().y / 2);
-    m_selectLevelButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 + 100);
-    m_selectLevelButton.setTexture(&m_buttonTexture);
-    m_selectLevelText.setFont(m_font);
-    m_selectLevelText.setString("Select Level");
-    m_selectLevelText.setCharacterSize(35);
-    m_selectLevelText.setFillColor(sf::Color(225, 245, 255));
-    m_selectLevelText.setOutlineColor(sf::Color::Blue);
-    m_selectLevelText.setOutlineThickness(1.0f);
-    m_selectLevelText.setOrigin(m_selectLevelText.getGlobalBounds().width / 2, m_selectLevelText.getGlobalBounds().height / 2);
-    m_selectLevelText.setPosition(m_selectLevelButton.getPosition().x, m_selectLevelButton.getPosition().y - 5);
+    // Load Level Button
+    m_loadLevelButton.setSize(sf::Vector2f(300, 85));
+    m_loadLevelButton.setOrigin(m_loadLevelButton.getSize().x / 2, m_loadLevelButton.getSize().y / 2);
+    m_loadLevelButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 + 100);
+    m_loadLevelButton.setTexture(&m_buttonTexture);
+    m_loadLevelText.setFont(m_font);
+    m_loadLevelText.setString("Load Level");
+    m_loadLevelText.setCharacterSize(35);
+    m_loadLevelText.setFillColor(sf::Color(225, 245, 255));
+    m_loadLevelText.setOutlineColor(sf::Color::Blue);
+    m_loadLevelText.setOutlineThickness(1.0f);
+    m_loadLevelText.setOrigin(m_loadLevelText.getGlobalBounds().width / 2, m_loadLevelText.getGlobalBounds().height / 2);
+    m_loadLevelText.setPosition(m_loadLevelButton.getPosition().x, m_loadLevelButton.getPosition().y - 5);
 
     // Exit Button
     m_exitButton.setSize(sf::Vector2f(300, 85));
@@ -163,10 +163,10 @@ void MainMenu::initBackgroundImage()
         std::cout << "Error - Failed to load background image" << std::endl;
     }
 
-    m_backGroundSprite.setTexture(m_backgroundTexture);
+    m_backgroundSprite.setTexture(m_backgroundTexture);
 
-    m_backGroundSprite.setScale(static_cast<float>(Global::S_WIDTH) / m_backGroundSprite.getGlobalBounds().width,
-        static_cast<float>(Global::S_HEIGHT) / m_backGroundSprite.getGlobalBounds().height);
+    m_backgroundSprite.setScale(static_cast<float>(Global::S_WIDTH) / m_backgroundSprite.getGlobalBounds().width,
+        static_cast<float>(Global::S_HEIGHT) / m_backgroundSprite.getGlobalBounds().height);
 }
 
 void MainMenu::buttonTabAnimation(sf::RenderWindow& m_window, sf::Time t_deltaTime)
@@ -197,9 +197,9 @@ void MainMenu::buttonTabAnimation(sf::RenderWindow& m_window, sf::Time t_deltaTi
     {
         animateTab(m_editorButton);
     }
-    else if (m_selectLevelButton.getGlobalBounds().contains(mousePos))
+    else if (m_loadLevelButton.getGlobalBounds().contains(mousePos))
     {
-        animateTab(m_selectLevelButton);
+        animateTab(m_loadLevelButton);
     }
     else if (m_exitButton.getGlobalBounds().contains(mousePos)) 
     {

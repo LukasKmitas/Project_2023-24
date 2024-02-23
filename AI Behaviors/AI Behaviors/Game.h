@@ -11,7 +11,7 @@
 #include "Global.h"
 #include "BuildingType.h"
 #include "Tile.h"
-
+#include "LevelLoader.h"
 #include "ParticleSystem.h"
 
 namespace fs = std::experimental::filesystem;
@@ -39,6 +39,7 @@ private:
 
 	Tile m_tiles;
 	ParticleSystem m_particleSystem;
+	LevelLoader m_levelLoader;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -52,9 +53,7 @@ private:
 
 	void resetView();
 
-	void goToMainMenu();
 	void initLevelSelectionButtons();
-	void initBackButton();
 	void initParticles();
 
 	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
@@ -81,10 +80,7 @@ private:
 	sf::View gameView;
 	sf::Font m_font;
 	sf::Text levelSelectionButtonText;
-	sf::Text m_toGoBackText;
 
-	sf::RectangleShape m_toGoBackButton;
-	
 	sf::Texture m_bubbleTexture;
 	sf::Texture m_bulletSparksTexture;
 
@@ -92,6 +88,9 @@ private:
 	sf::Sprite m_cursorSprite;
 
 	sf::Vector2f cameraVelocity;
+	float currentZoomLevel = 1.0f;
+	const float minZoomLevel = 0.6f;
+	const float maxZoomLevel = 1.5f;
 
 	bool isDragging = false;
 	sf::Vector2f dragStart;

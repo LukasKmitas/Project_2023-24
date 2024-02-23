@@ -26,7 +26,6 @@ Game::Game() :
 	m_cursorSprite.setTexture(m_cursorTexture);
 
 	createBase();
-	initBackButton();
 	initLevelSelectionButtons();
 	initParticles();
 	m_levelEditor.resetFogOfWar();
@@ -82,6 +81,21 @@ void Game::processEvents()
 		{
 			m_exitGame = true;
 		}
+		if(newEvent.type == sf::Event::MouseWheelScrolled)
+		{
+			if (m_currentState == GameState::PlayGame || m_currentState == GameState::LevelEditor) 
+			{
+				float zoomFactor = (newEvent.mouseWheelScroll.delta > 0) ? 0.9f : 1.1f;
+				float newZoomLevel = currentZoomLevel * zoomFactor;
+
+				if (newZoomLevel >= minZoomLevel && newZoomLevel <= maxZoomLevel) 
+				{
+					currentZoomLevel = newZoomLevel;
+					gameView.setSize(Global::S_WIDTH * currentZoomLevel, Global::S_HEIGHT * currentZoomLevel);
+					updateView(); 
+				}
+			}
+		}
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
@@ -133,11 +147,8 @@ void Game::processEvents()
 				case GameState::LevelEditor:
 					m_levelEditor.handleMouseInput(mousePosition, m_currentState, m_window);
 					break;
-				case GameState::LevelSelection:
-					if (m_toGoBackButton.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
-					{
-						goToMainMenu();
-					}
+				case GameState::LevelLoad:
+					m_levelLoader.goToMainMenu(mousePosition, m_currentState);
 					handleLevelSelectionMouseInput(mousePosition);
 					break;
 				case GameState::Exit:
@@ -161,7 +172,7 @@ void Game::processEvents()
 					break;
 				case GameState::LevelEditor:
 					break;
-				case GameState::LevelSelection:
+				case GameState::LevelLoad:
 					break;
 				case GameState::Exit:
 					break;
@@ -190,7 +201,7 @@ void Game::processEvents()
 					m_levelEditor.releaseDragRect();
 				}
 				break;
-			case GameState::LevelSelection:
+			case GameState::LevelLoad:
 				break;
 			case GameState::Exit:
 				break;
@@ -200,11 +211,26 @@ void Game::processEvents()
 		}
 		if (sf::Event::MouseMoved == newEvent.type)
 		{
-			if (isDragging)
+			switch (m_currentState)
 			{
-				dragEnd = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
-				selectionBox.setPosition(std::min(dragStart.x, dragEnd.x), std::min(dragStart.y, dragEnd.y));
-				selectionBox.setSize(sf::Vector2f(std::abs(dragEnd.x - dragStart.x), std::abs(dragEnd.y - dragStart.y)));
+			case GameState::MainMenu:
+				break;
+			case GameState::PlayGame:
+				if (isDragging)
+				{
+					dragEnd = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+					selectionBox.setPosition(std::min(dragStart.x, dragEnd.x), std::min(dragStart.y, dragEnd.y));
+					selectionBox.setSize(sf::Vector2f(std::abs(dragEnd.x - dragStart.x), std::abs(dragEnd.y - dragStart.y)));
+				}
+				break;
+			case GameState::LevelEditor:
+				break;
+			case GameState::LevelLoad:
+				break;
+			case GameState::Exit:
+				break;
+			default:
+				break;
 			}
 		}
 	}
@@ -263,7 +289,7 @@ void Game::processKeys(sf::Event t_event)
 			m_levelEditor.loadLevelForLevelEditor();
 		}
 		break;
-	case GameState::LevelSelection:
+	case GameState::LevelLoad:
 		break;
 	case GameState::Exit:
 		break;
@@ -305,6 +331,7 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_gui.handleBuildingPlacement(mousePosition, m_window);
 		m_levelEditor.animationForResources();
+		m_levelEditor.animationForWeed();
 		createUnit();
 		createEnemyUnit();
 		for (auto& unit : units)
@@ -347,6 +374,9 @@ void Game::update(sf::Time t_deltaTime)
 		m_previousState = GameState::LevelEditor;
 		updateView();
 		m_levelEditor.update(t_deltaTime, m_window);
+		break;
+	case GameState::LevelLoad:
+		m_levelLoader.update(t_deltaTime);
 		break;
 	case GameState::Exit:
 		m_exitGame = true;
@@ -393,9 +423,8 @@ void Game::render()
 		m_levelEditor.render(m_window);
 		m_window.setView(gameView);
 		break;
-	case GameState::LevelSelection:
-		m_window.draw(m_toGoBackButton);
-		m_window.draw(m_toGoBackText);
+	case GameState::LevelLoad:
+		m_levelLoader.render(m_window);
 		for (const auto& button : levelSelectionButtons)
 		{
 			m_window.draw(button);
@@ -426,6 +455,8 @@ void Game::updateView()
 {
 	sf::Vector2f viewCenter = gameView.getCenter();
 	sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(m_window));
+	float halfWidth = gameView.getSize().x / 2.f;
+	float halfHeight = gameView.getSize().y / 2.f;
 	switch (m_currentState)
 	{
 	case GameState::PlayGame:
@@ -475,6 +506,14 @@ void Game::updateView()
 	default:
 		break;
 	}
+	float minXBound = minX + halfWidth;
+	float maxXBound = maxX - halfWidth;
+	float minYBound = minY + halfHeight;
+	float maxYBound = maxY - halfHeight;
+
+	//viewCenter.x = std::max(minXBound, std::min(viewCenter.x, maxXBound));
+	//viewCenter.y = std::max(minYBound, std::min(viewCenter.y, maxYBound));
+
 	gameView.setCenter(viewCenter);
 }
 
@@ -532,7 +571,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 void Game::createBase()
 {
 	Headquarters* newHeadquarters = new Headquarters();
-	newHeadquarters->setPosition(sf::Vector2f(800.0f,200.0f));
+	newHeadquarters->setPosition(sf::Vector2f(500.0f, 350.0f));
 	placedBuildings.push_back(newHeadquarters);
 	std::cout << "Base Initilised" << std::endl;
 }
@@ -566,11 +605,6 @@ void Game::resetView()
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
 	initLevelSelectionButtons();
-}
-
-void Game::goToMainMenu()
-{
-	m_currentState = GameState::MainMenu;
 }
 
 void Game::initLevelSelectionButtons()
@@ -624,23 +658,6 @@ void Game::initLevelSelectionButtons()
 		}
 	}
 	selectedButtonIndex = 0;
-}
-
-void Game::initBackButton()
-{
-	m_toGoBackButton.setFillColor(sf::Color(0, 200, 200));
-	m_toGoBackButton.setSize(sf::Vector2f(100, 50));
-	m_toGoBackButton.setPosition(80, 50);
-	m_toGoBackButton.setOrigin(m_toGoBackButton.getGlobalBounds().width / 2, m_toGoBackButton.getGlobalBounds().height / 2);
-
-	m_toGoBackText.setFont(m_font);
-	m_toGoBackText.setString("Back");
-	m_toGoBackText.setPosition(m_toGoBackButton.getPosition().x, m_toGoBackButton.getPosition().y - 5);
-	m_toGoBackText.setCharacterSize(25U);
-	m_toGoBackText.setOutlineColor(sf::Color::Black);
-	m_toGoBackText.setFillColor(sf::Color::White);
-	m_toGoBackText.setOutlineThickness(1.0f);
-	m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
 }
 
 void Game::initParticles()

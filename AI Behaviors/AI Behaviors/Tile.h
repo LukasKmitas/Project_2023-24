@@ -13,6 +13,7 @@ public:
     int tileSize = 50;
     bool isWall;
     bool isResource;
+    bool animationWeed;
 
 private:
 

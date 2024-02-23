@@ -34,6 +34,7 @@
     <ClCompile Include="Headquarters.cpp" />
     <ClCompile Include="InfantryUnit.cpp" />
     <ClCompile Include="LevelEditor.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
@@ -64,6 +65,7 @@
     <ClInclude Include="InfantryUnit.h" />
     <ClInclude Include="InfantryType.h" />
     <ClInclude Include="LevelEditor.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Refinery.h" />
