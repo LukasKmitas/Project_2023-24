@@ -1,17 +1,17 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <filesystem>
-
 #include "GameState.h"
 #include "MainMenu.h"
 #include "LevelEditor.h"
+#include "LevelLoader.h"
 #include "GUI.h"
 #include "Global.h"
 #include "BuildingType.h"
 #include "Tile.h"
-#include "LevelLoader.h"
 #include "ParticleSystem.h"
 
 namespace fs = std::experimental::filesystem;
@@ -25,46 +25,44 @@ public:
 	void run();
 
 private:
+
 	GameState m_currentState = GameState::MainMenu;
 	GameState m_previousState;
 	MainMenu m_menu;
+	Tile m_tiles;
 	LevelEditor m_levelEditor;
+	LevelLoader m_levelLoader;
 	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
-	
 	std::vector<Building*> placedBuildings;
 	std::vector<Unit*> units;
 	std::vector<Unit*> enemyUnits;
 	Unit* m_selectedUnit = nullptr;
-
-	Tile m_tiles;
 	ParticleSystem m_particleSystem;
-	LevelLoader m_levelLoader;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
 
-	void updateView();
 	void createBuilding(sf::RenderWindow& window);
 	void createBase();
 	void saveLevel();
+	void loadLevel(const std::string& filename);
 
+	void moveCamera(sf::Vector2f mousePosition);
+	void updateViewWithMouse();
 	void resetView();
+	void resetZoom();
 
 	void initLevelSelectionButtons();
 	void initParticles();
-
-	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
-	void loadLevel(const std::string& filename);
 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
 	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
 
 	void createUnit();
 	void createEnemyUnit();
-
 	void selectUnitAt(const sf::Vector2f& mousePos);
 	void selectUnitsInBox();
 
@@ -73,13 +71,9 @@ private:
 
 	int calculateGridSize(int numberOfUnits);
 
-	std::vector<sf::RectangleShape> levelSelectionButtons;
-	std::vector<std::string> levelFilenames;
-
 	sf::RenderWindow m_window;
 	sf::View gameView;
 	sf::Font m_font;
-	sf::Text levelSelectionButtonText;
 
 	sf::Texture m_bubbleTexture;
 	sf::Texture m_bulletSparksTexture;
@@ -87,26 +81,23 @@ private:
 	sf::Texture m_cursorTexture;
 	sf::Sprite m_cursorSprite;
 
+	sf::Vector2f viewCenter = gameView.getCenter();
+	sf::Vector2i guiMousePosition;
+	sf::Vector2f worldMousePosition;
 	sf::Vector2f cameraVelocity;
-	float currentZoomLevel = 1.0f;
 	const float minZoomLevel = 0.6f;
 	const float maxZoomLevel = 1.5f;
-
-	bool isDragging = false;
-	sf::Vector2f dragStart;
-	sf::Vector2f dragEnd;
-	sf::RectangleShape selectionBox;
-
-	int selectedButtonIndex;
-
+	float currentZoomLevel = 1.0f;
 	float viewMoveSpeed = 5.0f;
 	float minX = 950;
 	float minY = 530;
 	float maxX = 1550;
 	float maxY = 1970;
 
-	float buttonWidth = 200.0f;
-	float buttonHeight = 50.0f;
+	bool isDragging = false;
+	sf::Vector2f dragStart;
+	sf::Vector2f dragEnd;
+	sf::RectangleShape selectionBox;
 
 	// Particles variables
 	float angleParticle;
@@ -115,9 +106,19 @@ private:
 	float sizeParticle;
 	sf::Color colorParticle;
 
-	bool levelLoaded = false;
 	bool once = false; // temp
 	bool m_exitGame;
+
+	std::vector<std::string> levelFilenames;
+	int selectedButtonIndex;
+	sf::Text m_toGoBackText;
+	sf::RectangleShape m_toGoBackButton;
+	std::vector<sf::RectangleShape> levelSelectionButtons;
+	sf::Text levelSelectionButtonText;
+	float buttonWidth = 200.0f;
+	float buttonHeight = 50.0f;
+	bool levelLoaded = false;
+	sf::Texture m_buttonTexture;
 
 };
 
