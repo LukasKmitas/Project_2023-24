@@ -55,7 +55,6 @@ private:
 	void resetView();
 	void resetZoom();
 
-	void initLevelSelectionButtons();
 	void initParticles();
 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
@@ -106,19 +105,9 @@ private:
 	float sizeParticle;
 	sf::Color colorParticle;
 
-	bool once = false; // temp
-	bool m_exitGame;
-
-	std::vector<std::string> levelFilenames;
-	int selectedButtonIndex;
-	sf::Text m_toGoBackText;
-	sf::RectangleShape m_toGoBackButton;
-	std::vector<sf::RectangleShape> levelSelectionButtons;
-	sf::Text levelSelectionButtonText;
-	float buttonWidth = 200.0f;
-	float buttonHeight = 50.0f;
+	bool runOnce = false; // temp
 	bool levelLoaded = false;
-	sf::Texture m_buttonTexture;
+	bool m_exitGame;
 
 };
 

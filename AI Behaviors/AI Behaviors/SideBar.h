@@ -22,6 +22,7 @@ class SideBar
 public:
     SideBar(BuildingType& m_selectedBuildingType);
 
+    void update(sf::Time t_deltaTime);
     void render(sf::RenderWindow& m_window);
 
     void addBuildingButton(const sf::Texture& texture, BuildingType buildingType, int gridX, int gridY, const std::string& buttonText);
@@ -29,48 +30,24 @@ public:
     void addVehicleButton(const sf::Texture& texture, VehicleType vehicleType, int gridX, int gridY, const std::string& buttonText);
     void addAirCraftButton(const sf::Texture& texture, AirCraftType aircraftType, int gridX, int gridY, const std::string& buttonText);
 
+    void clearButtons();
+
     std::vector<Button> m_buttons;
 
     // Buildings
-    sf::Vector2f getRefineryIconPosition() const 
-    {
-        return m_refineryIconPosition;
-    }
-    sf::Vector2f getBarracksIconPosition() const
-    {
-        return m_barracksIconPosition;
-    }
-    sf::Vector2f getVehicleIconPosition() const
-    {
-        return m_vehicleIconPosition;
-    }
-    sf::Vector2f getAirCraftIconPosition() const
-    {
-        return m_airCraftIconPosition;
-    }
+    sf::Vector2f getRefineryIconPosition() const;
+    sf::Vector2f getBarracksIconPosition() const;
+    sf::Vector2f getVehicleIconPosition() const;
+    sf::Vector2f getAirCraftIconPosition() const;
     // Vehicles
-    sf::Vector2f getHarvesterIconPosition() const
-    {
-        return m_harvesterIconPosition;
-    }
-    sf::Vector2f getBuggyIconPosition() const
-    {
-        return m_buggyIconPosition;
-    }
+    sf::Vector2f getHarvesterIconPosition() const;
+    sf::Vector2f getBuggyIconPosition() const;
     // Air
-    sf::Vector2f getFirehawkIconPosition() const
-    {
-        return m_firehawkIconPosition;
-    }
-    sf::Vector2f getHammerHeadIconPosition() const
-    {
-        return m_hammerHeadIconPosition;
-    }
+    sf::Vector2f getFirehawkIconPosition() const;
+    sf::Vector2f getHammerHeadIconPosition() const;
 
-    const sf::RectangleShape& getSideBarRect() const
-    {
-        return m_background;
-    }
+    const sf::RectangleShape& getSideBarRect() const;
+    const sf::Sprite& getSellSprite() const;
 
 private:
 
@@ -78,12 +55,26 @@ private:
     void setupFont();
     void drawGrid(sf::RenderWindow& m_window);
 
+    void initButton();
+
     BuildingType& m_selectedBuildingType;
 
-    sf::Font m_buttonFont;
+    sf::Font m_font;
+    sf::Text m_sellText;
 
     sf::RectangleShape m_background;
+    sf::Texture m_backgroundTexture;
     sf::RectangleShape m_bottomBackground;
+    sf::Texture m_bottomBackgroundTexture;
+
+    sf::Sprite m_sellSprite;
+    sf::Texture m_sellTexture;
+
+    Button m_button;
+
+    sf::Shader m_colorShiftShader;
+    sf::Shader m_rippleShader;
+
     // Buildings
     sf::Vector2f m_refineryIconPosition;
     sf::Vector2f m_barracksIconPosition;
@@ -101,5 +92,12 @@ private:
     float cellWidth = m_bottomBackground.getSize().x / gridCols;
     float cellHeight = m_bottomBackground.getSize().y / gridRows;
 
+    float buttonWidth = m_bottomBackground.getSize().x / gridCols;
+    float buttonHeight = m_bottomBackground.getSize().y / gridRows;
+    float xPosition;
+    float yPosition;
+
+    sf::Vector2f textPosition = m_button.m_sprite.getPosition();
+    sf::FloatRect textBounds = m_button.m_text.getLocalBounds();
 };
 

@@ -25,6 +25,10 @@ GUI::~GUI()
 void GUI::update(sf::Time t_deltaTime)
 {
 	updateCurrency();
+	if (m_showSlider)
+	{
+		m_sideBar.update(t_deltaTime);
+	}
 }
 
 void GUI::render(sf::RenderWindow& m_window)
@@ -48,6 +52,23 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 	sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_window.getView());
 	sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_guiView);
 
+	// Selling the building
+	if (m_sideBar.getSellSprite().getGlobalBounds().contains(guiMousePosition))
+	{
+		if (m_selectedBuilding)
+		{
+			if (m_selectedBuildingType != BuildingType::Headquarters)
+			{
+				sellBuilding();
+			}
+			m_selectedBuilding = nullptr;
+			m_selectedBuildingType = BuildingType::None;
+			m_showSlider = false;
+			m_confirmBuildingPlacement = false;
+			return;
+		}
+	}
+
 	if (!m_sideBar.getSideBarRect().getGlobalBounds().contains(guiMousePosition))
 	{
 		m_selectedBuildingType = BuildingType::None;
@@ -63,7 +84,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		{
 			// Refinery building
 			sf::Vector2f refineryIconPosition = m_sideBar.getRefineryIconPosition();
-			sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect refineryIconBounds(refineryIconPosition, sf::Vector2f(98, 75));
 			if (refineryIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Refinery Clicked" << std::endl;
@@ -72,7 +93,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			}
 			// Barracks building
 			sf::Vector2f barracksIconPosition = m_sideBar.getBarracksIconPosition();
-			sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect barrackIconBounds(barracksIconPosition, sf::Vector2f(98, 75));
 			if (barrackIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Barracks Clicked" << std::endl;
@@ -81,7 +102,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			}
 			// Vehicle building
 			sf::Vector2f vehicleIconPosition = m_sideBar.getVehicleIconPosition();
-			sf::FloatRect vehicleIconBounds(vehicleIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect vehicleIconBounds(vehicleIconPosition, sf::Vector2f(98, 75));
 			if (vehicleIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Vehicle Clicked" << std::endl;
@@ -90,7 +111,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			}
 			// Aircraft building
 			sf::Vector2f aircraftIconPosition = m_sideBar.getAirCraftIconPosition();
-			sf::FloatRect aircraftIconBounds(aircraftIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect aircraftIconBounds(aircraftIconPosition, sf::Vector2f(98, 75));
 			if (aircraftIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Aircraft Clicked" << std::endl;
@@ -107,7 +128,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		{
 			// Harvester 
 			sf::Vector2f harvesterIconPosition = m_sideBar.getHarvesterIconPosition();
-			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect harvesterIconBounds(harvesterIconPosition, sf::Vector2f(98, 75));
 			if (harvesterIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Harvester Icon Clicked" << std::endl;
@@ -119,7 +140,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 			}
 			// Buggy
 			sf::Vector2f buggyIconPosition = m_sideBar.getBuggyIconPosition();
-			sf::FloatRect buggyIconBounds(buggyIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect buggyIconBounds(buggyIconPosition, sf::Vector2f(98, 75));
 			if (buggyIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Buggy Icon Clicked" << std::endl;
@@ -134,7 +155,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		{
 			// HammerHead
 			sf::Vector2f hammerHeadIconPosition = m_sideBar.getHammerHeadIconPosition();
-			sf::FloatRect hammerHeadIconBounds(hammerHeadIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect hammerHeadIconBounds(hammerHeadIconPosition, sf::Vector2f(98, 75));
 			if (hammerHeadIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "HammerHead Icon Clicked" << std::endl;
@@ -147,7 +168,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 
 			// Firehawk Unit
 			sf::Vector2f firehawkIconPosition = m_sideBar.getFirehawkIconPosition();
-			sf::FloatRect firehawkIconBounds(firehawkIconPosition, sf::Vector2f(120, 92));
+			sf::FloatRect firehawkIconBounds(firehawkIconPosition, sf::Vector2f(98, 75));
 			if (firehawkIconBounds.contains(guiMousePosition))
 			{
 				std::cout << "Firehawk Icon Clicked" << std::endl;
@@ -197,15 +218,15 @@ void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow
 
 		if (isValidPlacement && isValidPlacementForTiles)
 		{
-			m_ghostBuildingSprite.setColor(sf::Color(0, 255, 0, 150));
+			m_ghostBuildingSprite.setColor(sf::Color(0, 255, 0, 200));
 		}
 		else
 		{
-			m_ghostBuildingSprite.setColor(sf::Color(255, 0, 0, 150));
+			m_ghostBuildingSprite.setColor(sf::Color(255, 0, 0, 200));
 		}
 	}
 
-	if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right))
+	if (m_confirmBuildingPlacement && sf::Mouse::isButtonPressed(sf::Mouse::Right)) // Place building
 	{
 		sf::Vector2f guiMousePosition = window.mapPixelToCoords(m_mousePosition, m_guiView);
 		bool isValidPlacement = IsPlacementValid(guiMousePosition, window);
@@ -259,6 +280,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
+					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::Headquarters;
 					m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Refinery, 0, 0, "");
 					m_sideBar.addBuildingButton(m_BuildingTexture1, BuildingType::Barracks, 1, 0, "");
@@ -276,11 +298,12 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
+					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::Barracks;
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RifleSquad, 0, 0, "");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RifleSquad, 0, 0, "Riflemen");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "Grenaders");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "Rocketeers");
+					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "Medic");
 				}
 				break;
 			}
@@ -294,11 +317,11 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
+					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::WarFactory;
 					m_sideBar.addVehicleButton(m_harvesterIcon, VehicleType::Harvester, 0, 0, "Harvester");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Buggy, 1, 0, "Ranger");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 2, 0, "Tank");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Artillery, 0, 1, "Artillery");
 				}
 				break;
 			}
@@ -312,11 +335,10 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{
+					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::AirCraft;
-					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::Orca, 0, 0, "Orca");
-					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::HammerHead, 1, 0, "HammerHead");
-					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::Firehawk, 2, 0, "Firehawk");
-					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::None, 0, 1, "");
+					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::HammerHead, 0, 0, "HammerHead");
+					m_sideBar.addAirCraftButton(m_unitAirCraftTexture, AirCraftType::Firehawk, 1, 0, "Firehawk");
 				}
 				break;
 			}
@@ -327,28 +349,31 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 void GUI::updateCurrency()
 {
 	Global::currency = std::min(Global::currency, 5000);
-	m_currencyText.setString("Currency: " + std::to_string(Global::currency));
+	m_currencyText.setString("Currency:   " + std::to_string(Global::currency));
 }
 
 void GUI::setupTopBar()
 {
-	m_topBar.setSize(sf::Vector2f(400, 20));
-	m_topBar.setFillColor(sf::Color(135, 135, 135, 255));
+	if (!m_m_topBarTexture.loadFromFile("Assets\\Images\\GUI\\Card X5.png"))
+	{
+		std::cout << "problem loading font" << std::endl;
+	}
+	m_topBar.setSize(sf::Vector2f(400, 50));
 	m_topBar.setOutlineColor(sf::Color(200, 100, 100, 200));
-	m_topBar.setOutlineThickness(3);
+	m_topBar.setOutlineThickness(2);
 	m_topBar.setPosition(Global::S_WIDTH - 400, 0);
+	m_topBar.setTexture(&m_m_topBarTexture);
 
 	m_currencyFont.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf");
 	m_currencyText.setFont(m_currencyFont);
-	m_currencyText.setCharacterSize(16);
-	m_currencyText.setFillColor(sf::Color::White);
-	m_currencyText.setOutlineColor(sf::Color::Black);
-	m_currencyText.setOutlineThickness(1);
-	m_currencyText.setStyle(sf::Text::Bold);
-	m_currencyText.setString("Currency: " + std::to_string(Global::currency));
+	m_currencyText.setCharacterSize(28);
+	m_currencyText.setFillColor(sf::Color(225, 245, 255));
+	m_currencyText.setOutlineColor(sf::Color::Blue);
+	m_currencyText.setOutlineThickness(0.3);
+	m_currencyText.setString("Currency:   " + std::to_string(Global::currency));
 	sf::FloatRect textBounds = m_currencyText.getLocalBounds();
 	m_currencyText.setOrigin(textBounds.width / 2, 0);
-	m_currencyText.setPosition(Global::S_WIDTH - 200, 0);
+	m_currencyText.setPosition(Global::S_WIDTH - 200, 5);
 }
 
 void GUI::loadIcons()
@@ -444,4 +469,17 @@ bool GUI::IsPlacementValidForTiles(sf::Vector2f& position)
 		return true;
 	}
 	return false;
+}
+
+void GUI::sellBuilding() 
+{
+	if (m_selectedBuilding) 
+	{
+		Global::currency += m_selectedBuilding->getCost() - 300;
+		auto it = std::find(placedBuildings.begin(), placedBuildings.end(), m_selectedBuilding);
+		if (it != placedBuildings.end()) 
+		{
+			placedBuildings.erase(it);
+		}
+	}
 }

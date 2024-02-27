@@ -25,7 +25,6 @@ Game::Game() :
 
 	createBase();
 	initParticles();
-	initLevelSelectionButtons();
 
 	m_levelEditor.resetFogOfWar();
 
@@ -285,8 +284,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
-		//m_levelLoader.update(t_deltaTime);
-		loadLevel(levelFilenames[selectedButtonIndex]);
+		loadLevel(m_levelLoader.levelFilenames[m_levelLoader.selectedButtonIndex]);
 		updateViewWithMouse();
 		createBuilding(m_window);
 		m_gui.update(t_deltaTime);
@@ -310,7 +308,7 @@ void Game::update(sf::Time t_deltaTime)
 					if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 					{
 						bullet.active = false;
-						enemyUnit->takeDamage(bullet.damage);
+						//enemyUnit->takeDamage(bullet.damage);
 						if (enemyUnit->getHealth() <= 0)
 						{
 							enemyUnit->m_active = false;
@@ -341,8 +339,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_levelEditor.update(t_deltaTime, m_window);
 		break;
 	case GameState::LevelLoad:
-		//m_levelLoader.update(t_deltaTime);
-		loadLevel(levelFilenames[selectedButtonIndex]);
+		loadLevel(m_levelLoader.levelFilenames[m_levelLoader.selectedButtonIndex]);
 		break;
 	case GameState::Exit:
 		m_exitGame = true;
@@ -353,7 +350,7 @@ void Game::update(sf::Time t_deltaTime)
 }
 
 /// <summary>
-/// draw the frame and then switch buffers
+/// Draws all the sprites, shapes and texts
 /// </summary>
 void Game::render()
 {
@@ -375,7 +372,14 @@ void Game::render()
 		}
 		for (Unit* eUnit : enemyUnits)
 		{
-			eUnit->render(m_window);
+			sf::Vector2f unitPosition = eUnit->getPosition();
+			int tileX = static_cast<int>(unitPosition.x / m_tiles.tileSize);
+			int tileY = static_cast<int>(unitPosition.y / m_tiles.tileSize);
+
+			if (m_levelEditor.m_tiles[tileY][tileX].fogStatus == Tile::FogStatus::Visible)
+			{
+				eUnit->render(m_window);
+			}
 		}
 		m_gui.render(m_window);
 		m_window.setView(gameView);
@@ -449,7 +453,6 @@ void Game::moveCamera(sf::Vector2f mousePosition)
 		viewCenter.y += viewMoveSpeed;
 	}
 }
-
 
 void Game::createBuilding(sf::RenderWindow& window)
 {
@@ -692,16 +695,16 @@ void Game::createUnit()
 
 void Game::createEnemyUnit()
 {
-	if (!once)
+	if (!runOnce)
 	{
-		sf::Vector2f spawnPosition = sf::Vector2f(700.0f, 800.0f);
+		sf::Vector2f spawnPosition = sf::Vector2f(300.0f, 950.0f);
 
 		Buggy* newBuggy = new Buggy();
 		newBuggy->setPosition(spawnPosition);
 		newBuggy->setTargetPosition(spawnPosition);
 
 		enemyUnits.push_back(newBuggy);
-		once = true;
+		runOnce = true;
 	}
 }
 
@@ -790,8 +793,7 @@ void Game::resetView()
 	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
-	//m_levelLoader.initLevelSelectionButtons();
-	initLevelSelectionButtons();
+	m_levelLoader.initLevelSelectionButtons();
 }
 
 void Game::resetZoom()
@@ -806,57 +808,6 @@ void Game::resetZoom()
 int Game::calculateGridSize(int numberOfUnits)
 {
 	return std::ceil(std::sqrt(numberOfUnits));
-}
-
-void Game::initLevelSelectionButtons()
-{
-	levelSelectionButtons.clear();
-	levelFilenames.clear();
-
-	const std::string saveFilesPath = "Assets\\SaveFiles\\";
-
-	float buttonSpacing = 30.0f;
-
-	float startX = (Global::S_WIDTH - buttonWidth) / 2.0f;
-	float startY = (Global::S_HEIGHT - (buttonHeight + buttonSpacing) * levelSelectionButtons.size()) / 2.0f - 200;
-
-	size_t i = 0;
-	for (const auto& entry : std::filesystem::directory_iterator(saveFilesPath))
-	{
-		if (entry.is_regular_file() && entry.path().extension() == ".txt")
-		{
-			// Extract filename (without extension)
-			std::string filename = entry.path().filename().stem().string();
-			levelFilenames.push_back(filename);
-
-			sf::RectangleShape button(sf::Vector2f(buttonWidth, buttonHeight));
-			button.setTexture(&m_buttonTexture);
-			if (i == 0)
-			{
-				button.setFillColor(sf::Color(255, 80, 80, 255));
-			}
-			else
-			{
-				button.setFillColor(sf::Color(100, 100, 150, 255));
-			}
-
-			button.setPosition(startX, startY + static_cast<float>(i) * (buttonHeight + buttonSpacing));
-
-			levelSelectionButtonText.setFont(m_font);
-			levelSelectionButtonText.setString(filename);
-			levelSelectionButtonText.setCharacterSize(20);
-			levelSelectionButtonText.setFillColor(sf::Color::White);
-
-			float textX = startX + (buttonWidth - levelSelectionButtonText.getGlobalBounds().width) / 2.0f;
-			float textY = startY + static_cast<float>(i) * (buttonHeight + buttonSpacing) + (buttonHeight - levelSelectionButtonText.getGlobalBounds().height) / 2.0f;
-			levelSelectionButtonText.setPosition(textX, textY);
-
-			levelSelectionButtons.push_back(button);
-
-			++i;
-		}
-	}
-	selectedButtonIndex = 0;
 }
 
 void Game::loadLevel(const std::string& filename)

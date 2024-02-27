@@ -23,6 +23,10 @@ public:
 	void goToMainMenu(sf::Vector2i mousePosition, GameState& m_gameState);
 	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
 
+	std::vector<std::string> levelFilenames;
+
+	int selectedButtonIndex;
+
 private:
 
 	LevelEditor m_levelEditor;
@@ -33,7 +37,6 @@ private:
 	void loadLevel(const std::string& filename);
 
 	std::vector<sf::RectangleShape> levelSelectionButtons;
-	std::vector<std::string> levelFilenames;
 
 	sf::RectangleShape m_toGoBackButton;
 	sf::Texture m_buttonTexture;
@@ -44,8 +47,6 @@ private:
 	sf::Font m_font;
 	sf::Text m_toGoBackText;
 	sf::Text levelSelectionButtonText;
-
-	int selectedButtonIndex;
 
 	float buttonWidth = 250.0f;
 	float buttonHeight = 80.0f;

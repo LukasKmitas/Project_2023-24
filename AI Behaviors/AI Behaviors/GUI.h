@@ -29,8 +29,8 @@ public:
     Barracks* m_barracks = nullptr;
     WarFactory* m_warFactory = nullptr;
     AirCraft* m_airCraft = nullptr;
-    LevelEditor levelEditor;
     Building* m_selectedBuilding = nullptr;
+    LevelEditor levelEditor;
     std::vector<Building*>& placedBuildings;
     BuildingType& m_selectedBuildingType;
 
@@ -69,10 +69,12 @@ private:
     void updateCurrency();
     void setupTopBar();
     void loadIcons();
+    void sellBuilding();
 
     sf::View m_guiView;
 
     sf::RectangleShape m_topBar;
+    sf::Texture m_m_topBarTexture;
 
     sf::Font m_currencyFont;
     sf::Text m_currencyText;

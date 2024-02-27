@@ -59,7 +59,7 @@ void MainMenu::initButtons()
 {
     if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
     {
-        std::cout << "Error - problem loading font in Main Menu" << std::endl;
+        std::cout << "Error - loading font in Main Menu" << std::endl;
     }
 
     if (!m_titleShader.loadFromFile("Assets\\Shaders\\titleEffect.frag", sf::Shader::Fragment))
