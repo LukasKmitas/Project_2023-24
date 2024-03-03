@@ -13,10 +13,10 @@ void SideBar::update(sf::Time t_deltaTime)
 {
     static float time = 0.0f;
     time += t_deltaTime.asSeconds();
-    m_rippleShader.setUniform("time", time);
-    m_rippleShader.setUniform("center", sf::Glsl::Vec2(0.5, 0.5));
+    m_colorShiftShader.setUniform("time", time);
+    /*m_rippleShader.setUniform("center", sf::Glsl::Vec2(0.5, 0.5));
     m_rippleShader.setUniform("frequency", 10.0f);
-    m_rippleShader.setUniform("amplitude", 0.05f);
+    m_rippleShader.setUniform("amplitude", 0.05f);*/
 }
 
 void SideBar::render(sf::RenderWindow& m_window)
@@ -24,7 +24,7 @@ void SideBar::render(sf::RenderWindow& m_window)
     m_window.draw(m_background);
     m_window.draw(m_bottomBackground);
    
-    m_window.draw(m_sellSprite, &m_rippleShader);
+    m_window.draw(m_sellSprite, &m_colorShiftShader);
     m_window.draw(m_sellText);
 
     drawGrid(m_window);

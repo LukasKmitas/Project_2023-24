@@ -4,12 +4,14 @@ Buggy::Buggy()
 {
 	setupBuggy();
 	m_cost = 700;
-	m_speed = 120;
     m_health = 100;
+    m_viewRadius = 300;
+    m_speed = 120;
+
     m_maxForce = 150;
-    m_slowingRadius = 50;
-    m_viewRadius = 250;
+    m_slowingRadius = 100;
     m_bulletSpeed = 300.0f;
+    rotationSpeedDegreesPerSecond = 180;
 }
 
 Buggy::~Buggy()
@@ -66,59 +68,40 @@ void Buggy::setupBuggy()
 
 void Buggy::movement(sf::Time t_deltaTime)
 {
-    if (m_targetPosition == m_position)
+    float arrivalTolerance = 5.0f;
+    float distance = magnitude(m_targetPosition - m_position);
+    if (distance < arrivalTolerance)
     {
         m_velocity = sf::Vector2f(0, 0);
+        m_acceleration = sf::Vector2f(0, 0);
         return;
     }
 
-    sf::Vector2f toTarget = m_targetPosition - m_position;
-    float distance = magnitude(toTarget);
-
-    sf::Vector2f desiredDirection = normalize(toTarget);
+    sf::Vector2f desiredDirection = normalize(m_targetPosition - m_position);
 
     float speed = m_speed;
     if (distance < m_slowingRadius)
     {
-        speed = m_speed * (distance / m_slowingRadius);
+        speed *= (distance / m_slowingRadius);
     }
 
     sf::Vector2f desiredVelocity = desiredDirection * speed;
     sf::Vector2f steeringForce = desiredVelocity - m_velocity;
     steeringForce = normalize(steeringForce) * m_maxForce;
 
-    sf::Vector2f acceleration = steeringForce;
-    m_velocity += acceleration * t_deltaTime.asSeconds();
+    m_acceleration = steeringForce;
+    m_velocity += m_acceleration * t_deltaTime.asSeconds();
 
-    if (magnitude(m_velocity) > speed)
+    if (magnitude(m_velocity) > m_speed)
     {
-        m_velocity = normalize(m_velocity) * speed;
+        m_velocity = normalize(m_velocity) * m_speed;
     }
 
     m_position += m_velocity * t_deltaTime.asSeconds();
     setPosition(m_position);
 
-    if (magnitude(m_velocity) > 0.0f) 
-    { 
-        float desiredAngle = angleFromVector(m_velocity);
-        float currentAngle = m_unitSprite.getRotation();
-        float rotationStep = m_rotationSpeed * t_deltaTime.asSeconds();
-
-        float angleDifference = desiredAngle - currentAngle + 90;
-        while (angleDifference < -180) angleDifference += 360;
-        while (angleDifference > 180) angleDifference -= 360;
-
-        if (angleDifference > 0)
-        {
-            rotationStep = std::min(rotationStep, angleDifference);
-        }
-        else
-        {
-            rotationStep = std::max(-rotationStep, angleDifference);
-        }
-
-        m_unitSprite.setRotation(currentAngle + rotationStep);
-    }
+    // Orient the sprite towards the direction of movement
+    orientSpriteToMovement(t_deltaTime);
 }
 
 void Buggy::setEnemyUnits(std::vector<Unit*>& enemyUnits)
@@ -147,7 +130,7 @@ void Buggy::aimWeapon(sf::Time t_deltaTime, const std::vector<Unit*>& enemyUnits
         }
     }
 
-    if (closestEnemy && closestDistance <= this->getViewRadius()) 
+    if (closestEnemy && closestDistance <= this->getViewRadius() - 50) 
     {
         directionToEnemy = normalize(closestEnemy->getPosition() - this->getPosition());
         float angleDegrees = angleFromVector(directionToEnemy);

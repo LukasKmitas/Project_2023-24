@@ -84,7 +84,7 @@ private:
 	sf::Vector2i guiMousePosition;
 	sf::Vector2f worldMousePosition;
 	sf::Vector2f cameraVelocity;
-	const float minZoomLevel = 0.6f;
+	const float minZoomLevel = 0.5f;
 	const float maxZoomLevel = 1.5f;
 	float currentZoomLevel = 1.0f;
 	float viewMoveSpeed = 5.0f;

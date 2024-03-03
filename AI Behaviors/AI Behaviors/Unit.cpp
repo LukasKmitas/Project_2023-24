@@ -18,10 +18,12 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     {
         bullet.update(t_deltaTime);
     }
+    m_particleSystem.update(t_deltaTime);
 }
 
-void Unit::render(sf::RenderWindow& m_window) const
+void Unit::render(sf::RenderWindow& m_window)
 {
+    m_particleSystem.render(m_window);
     m_window.draw(m_unitSprite);
     m_window.draw(m_weaponSprite);
     m_window.draw(m_viewCircleShape);
@@ -31,7 +33,7 @@ void Unit::render(sf::RenderWindow& m_window) const
     line[0].color = sf::Color::Red;
     line[1].color = sf::Color::Red;
     m_window.draw(line);
-
+  
     for (auto& bullet : bullets) 
     {
         bullet.render(m_window, glowShader);
@@ -44,7 +46,7 @@ void Unit::attack(Unit* target)
 
 void Unit::avoidCollisions(std::vector<Unit*>& allUnits)
 {
-    const float minSeparation = 150.0f;
+    const float minSeparation = 250.0f;
     sf::Vector2f separationForce(0.0f, 0.0f);
     int closeUnits = 0;
 
@@ -73,6 +75,39 @@ void Unit::avoidCollisions(std::vector<Unit*>& allUnits)
         separationForce /= static_cast<float>(closeUnits);
         separationForce = normalize(separationForce);
         m_targetPosition += separationForce;
+    }
+}
+
+void Unit::orientSpriteToMovement(sf::Time t_deltaTime)
+{
+    if (magnitude(m_velocity) > 0.0f)
+    {
+        float targetAngleRadians = std::atan2(m_velocity.y, m_velocity.x);
+        float targetAngleDegrees = toDegrees(targetAngleRadians) + 90;
+
+        float currentAngleDegrees = fmod(m_unitSprite.getRotation(), 360.0f);
+        if (currentAngleDegrees < 0)
+        {
+            currentAngleDegrees += 360.0f;
+        }
+        float difference = targetAngleDegrees - currentAngleDegrees;
+        if (difference > 180.0f)
+        {
+            difference -= 360.0f;
+        }
+        if (difference < -180.0f) 
+        {
+            difference += 360.0f;
+        }
+
+        // Determine rotation speed and apply a fraction of the difference
+        float step = rotationSpeedDegreesPerSecond * t_deltaTime.asSeconds();
+        if (std::abs(difference) < step)
+        {
+            step = std::abs(difference); // Clamp to avoid overshooting
+        }
+
+        m_unitSprite.setRotation(currentAngleDegrees + (difference > 0 ? step : -step));
     }
 }
 
@@ -113,7 +148,7 @@ void Unit::setSelected(bool selected)
     isSelected = selected;
     if (isSelected) 
     {
-        m_unitSprite.setColor(sf::Color(0, 255, 0, 128));
+        m_unitSprite.setColor(sf::Color(100, 255, 100, 255));
     }
     else 
     {
@@ -135,6 +170,11 @@ float Unit::magnitude(const sf::Vector2f& v)
 float Unit::getHealth() const
 {
     return m_health;
+}
+
+float Unit::toDegrees(float radians)
+{
+    return radians * 180.0f / PI;
 }
 
 void Unit::initView()
