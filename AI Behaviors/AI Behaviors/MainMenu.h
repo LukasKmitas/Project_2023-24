@@ -30,11 +30,13 @@ private:
     sf::Text m_playText;
     sf::Text m_editorText;
     sf::Text m_loadLevelText;
+    sf::Text m_neuralNetworkText;
     sf::Text m_exitText;
 
     sf::RectangleShape m_playButton;
     sf::RectangleShape m_editorButton;
     sf::RectangleShape m_loadLevelButton;
+    sf::RectangleShape m_NeuralNetworkButton;
     sf::RectangleShape m_exitButton;
     sf::Texture m_buttonTexture;
     sf::Sprite m_buttonTabSprite;

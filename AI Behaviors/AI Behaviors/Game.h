@@ -13,6 +13,7 @@
 #include "BuildingType.h"
 #include "Tile.h"
 #include "ParticleSystem.h"
+#include "NeuralNetworks.h"
 
 namespace fs = std::experimental::filesystem;
 
@@ -39,6 +40,7 @@ private:
 	std::vector<Unit*> enemyUnits;
 	Unit* m_selectedUnit = nullptr;
 	ParticleSystem m_particleSystem;
+	NeuralNetworks m_neural_network;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -56,6 +58,11 @@ private:
 	void resetZoom();
 
 	void initParticles();
+	void initializeNeuralNetwork();
+	void initMouseDotCircle();
+
+	void updateNeuralNetwork();
+	void drawNeuralNetwork(sf::RenderWindow& window);
 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
 	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
@@ -73,6 +80,7 @@ private:
 	sf::RenderWindow m_window;
 	sf::View gameView;
 	sf::Font m_font;
+	sf::Font m_normalfont;
 
 	sf::Texture m_bubbleTexture;
 	sf::Texture m_bulletSparksTexture;
@@ -109,6 +117,43 @@ private:
 	bool levelLoaded = false;
 	bool m_exitGame;
 
+
+	// Neural Network stuff
+	int mouse_x;
+	int mouse_y;
+	int outputHeight = 64;
+	int outputWidth = 64;
+
+	float total_error = 0;
+	float dot_x;
+	float dot_y;
+
+	const int TRAININGS_PER_FRAME = 1000;
+
+	bool train = false;
+
+	vector_2d errors;
+
+	std::vector<std::vector<float>> neural_network;
+	std::vector<std::vector<std::vector<float>>> weights;
+	std::vector<std::vector<float>> inputs;
+	std::vector<std::vector<float>> target_outputs;
+
+	std::array<int, 2> hiddenNeurons = m_neural_network.getHiddenNeurons();
+	std::array<int, 3> biasNeurons = m_neural_network.getBiasNeurons();
+
+	std::mt19937_64 random_engine;
+
+	sf::Text errorText;
+
+	sf::Texture font_texture;
+	sf::Texture outputs_texture;
+
+	sf::Image outputs_image;
+
+	sf::Sprite outputs_sprite;
+
+	sf::CircleShape mouseDotShape;
 };
 
 #endif
