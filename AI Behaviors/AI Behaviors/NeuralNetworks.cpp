@@ -3,52 +3,50 @@
 NeuralNetworks::NeuralNetworks()
 	: HIDDEN_NEURONS{ 3, 3 }, BIAS_NEURONS{ 1, 0, 0 }
 {
-	setupNeuralCircle();
+	if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
+	{
+		std::cout << "Error - problem loading font in Level Editor" << std::endl;
+	}
+	initNeuralCircle();
+	initBackButton();
+	initMouseDotCircle();
 }
 
 NeuralNetworks::~NeuralNetworks()
 {
 }
 
-void NeuralNetworks::draw_text(bool m_horizontal_center, bool m_vertical_center, int m_x, int m_y, const std::string& m_text, const sf::Color& m_color, sf::RenderWindow& m_window, const sf::Texture& m_font_texture)
+void NeuralNetworks::update(sf::Time t_deltaTime)
 {
-	int character_x = m_x;
-	int character_y = m_y;
+}
 
-	int character_height = m_font_texture.getSize().y;
-	int character_width = m_font_texture.getSize().x / 96;
+void NeuralNetworks::render(sf::RenderWindow& m_window)
+{
+	m_window.draw(m_toGoBackButton);
+	m_window.draw(m_toGoBackText);
+	//m_window.draw(m_neuralWeightText);
 
-	sf::Sprite character_sprite(m_font_texture);
-	character_sprite.setColor(m_color);
-
-	if (m_horizontal_center)
+	for (unsigned i = 0; i < inputs.size(); i++)
 	{
-		character_x -= static_cast<short>(round(0.5f * character_width * m_text.substr(0, m_text.find_first_of('\n')).size()));
-	}
-	if (m_vertical_center)
-	{
-		character_y -= static_cast<short>(round(0.5f * character_height * (1 + std::count(m_text.begin(), m_text.end(), '\n'))));
-	}
+		mouseDotShape.setFillColor(sf::Color(round(255 * target_outputs[i][0]), round(255 * target_outputs[i][1]), round(255 * target_outputs[i][2])));
+		mouseDotShape.setPosition(SCREEN_HEIGHT * (1 + inputs[i][0]), SCREEN_WITDH * inputs[i][1]);
 
-	for (auto a = m_text.begin(); a != m_text.end(); ++a)
-	{
-		if (*a == '\n')
-		{
-			character_x = m_x - (m_horizontal_center ? static_cast<short>(round(0.5f * character_width * m_text.substr(0, m_text.find_first_of('\n')).size())) : 0);
-			character_y += character_height;
-			continue;
-		}
-
-		character_sprite.setPosition(character_x, character_y);
-		character_sprite.setTextureRect(sf::IntRect(character_width * (*a - 32), 0, character_width, character_height));
-
-		character_x += character_width;
-
-		m_window.draw(character_sprite);
+		m_window.draw(mouseDotShape);
 	}
 }
 
-void NeuralNetworks::draw_neural_network(sf::RenderWindow& m_window, const sf::Texture& m_fontTexture, const vector_2d& m_neural_network, const vector_3d& m_weights)
+void NeuralNetworks::draw_text(int m_x, int m_y, const std::string& m_text, const sf::Color& m_color, sf::RenderWindow& m_window)
+{
+	m_neuralWeightText.setString(m_text);
+	m_neuralWeightText.setFillColor(m_color);
+	m_neuralWeightText.setOrigin(m_neuralWeightText.getGlobalBounds().width / 2, m_neuralWeightText.getGlobalBounds().height / 2);
+
+	m_neuralWeightText.setPosition(m_x, m_y - 5);
+
+	m_window.draw(m_neuralWeightText);
+}
+
+void NeuralNetworks::draw_neural_network(sf::RenderWindow& m_window, const vector_2d& m_neural_network, const vector_3d& m_weights)
 {
 	float max_neuron = std::max(abs(get_max_element(m_neural_network)), abs(get_min_element(m_neural_network)));
 	float min_neuron = -max_neuron;
@@ -69,8 +67,8 @@ void NeuralNetworks::draw_neural_network(sf::RenderWindow& m_window, const sf::T
 			// Rounding the value of the neuron
 			float neuron_value = round(m_neural_network[i][k] * pow(10, 2)) / pow(10, 2);
 
-			unsigned char neuron_color = round(255 * (m_neural_network[i][k] - min_neuron) / (max_neuron - min_neuron));
-			unsigned char text_color = 255 * (128 > neuron_color);
+			int neuron_color = round(255 * (m_neural_network[i][k] - min_neuron) / (max_neuron - min_neuron));
+			int text_color = 255 * (128 > neuron_color);
 
 			int neuron_y = Global::S_HEIGHT * (1 + k) / (1 + m_neural_network[i].size());
 
@@ -126,7 +124,7 @@ void NeuralNetworks::draw_neural_network(sf::RenderWindow& m_window, const sf::T
 			}
 			m_window.draw(neuron_shape);
 
-			draw_text(1, 1, neuron_x, neuron_y, neuron_text_stream.str(), sf::Color(text_color, text_color, text_color), m_window, m_fontTexture);
+			draw_text(neuron_x, neuron_y, neuron_text_stream.str(), sf::Color(text_color, text_color, text_color), m_window);
 		}
 	}
 }
@@ -266,12 +264,85 @@ std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::v
 	}
 }
 
-void NeuralNetworks::setupNeuralCircle()
+void NeuralNetworks::addInput(float m_dot_x, float m_dot_y)
+{
+	inputs.push_back({ m_dot_x, m_dot_y });
+}
+
+void NeuralNetworks::addTargetOutput(float m_r, float m_g, float m_b)
+{
+	target_outputs.push_back({ m_r, m_g, m_b });
+}
+
+void NeuralNetworks::goToMainMenu(sf::Vector2i mousePosition, GameState& m_gameState)
+{
+	if (m_toGoBackButton.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
+	{
+		m_gameState = GameState::MainMenu;
+	}
+}
+
+std::array<int, 2> NeuralNetworks::getHiddenNeurons() const
+{
+	return HIDDEN_NEURONS;
+}
+
+std::array<int, 3> NeuralNetworks::getBiasNeurons() const
+{
+	return BIAS_NEURONS;
+}
+
+const std::vector<std::vector<float>>& NeuralNetworks::getInputs() const
+{
+	return inputs;
+}
+
+const std::vector<std::vector<float>>& NeuralNetworks::getTargetOutputs() const
+{
+	return target_outputs;
+}
+
+void NeuralNetworks::initNeuralCircle()
 {
 	neuron_shape.setRadius(32);
 	neuron_shape.setOrigin(32, 32);
 	neuron_shape.setOutlineColor(sf::Color(255, 255, 255));
 	neuron_shape.setOutlineThickness(2);
+
+	m_neuralWeightText.setFont(m_font);
+	m_neuralWeightText.setCharacterSize(24);
+	m_neuralWeightText.setOrigin(m_neuralWeightText.getGlobalBounds().width / 2, m_neuralWeightText.getGlobalBounds().height / 2);
+}
+
+void NeuralNetworks::initBackButton()
+{
+	if (!m_buttonTexture.loadFromFile("Assets\\Images\\GUI\\buttonStock2.png"))
+	{
+		std::cout << "Error - loading button texture" << std::endl;
+	}
+
+	m_toGoBackButton.setSize(sf::Vector2f(100, 50));
+	m_toGoBackButton.setPosition(80, 50);
+	m_toGoBackButton.setOrigin(m_toGoBackButton.getGlobalBounds().width / 2, m_toGoBackButton.getGlobalBounds().height / 2);
+	m_toGoBackButton.setTexture(&m_buttonTexture);
+
+	m_toGoBackText.setFont(m_font);
+	m_toGoBackText.setString("Back");
+	m_toGoBackText.setPosition(m_toGoBackButton.getPosition().x, m_toGoBackButton.getPosition().y - 5);
+	m_toGoBackText.setCharacterSize(25U);
+	m_toGoBackText.setFillColor(sf::Color(225, 245, 255));
+	m_toGoBackText.setOutlineColor(sf::Color::Blue);
+	m_toGoBackText.setOutlineThickness(1.0f);
+	m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
+}
+
+void NeuralNetworks::initMouseDotCircle()
+{
+	mouseDotShape.setRadius(10);
+	mouseDotShape.setOrigin(mouseDotShape.getRadius(), mouseDotShape.getRadius());
+	mouseDotShape.setFillColor(sf::Color::White);
+	mouseDotShape.setOutlineColor(sf::Color::Black);
+	mouseDotShape.setOutlineThickness(2.0f);
 }
 
 float NeuralNetworks::activationFunction(bool m_derivative, float m_input)

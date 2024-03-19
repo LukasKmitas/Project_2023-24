@@ -133,11 +133,8 @@ private:
 	bool train = false;
 
 	vector_2d errors;
-
 	std::vector<std::vector<float>> neural_network;
 	std::vector<std::vector<std::vector<float>>> weights;
-	std::vector<std::vector<float>> inputs;
-	std::vector<std::vector<float>> target_outputs;
 
 	std::array<int, 2> hiddenNeurons = m_neural_network.getHiddenNeurons();
 	std::array<int, 3> biasNeurons = m_neural_network.getBiasNeurons();
@@ -146,14 +143,12 @@ private:
 
 	sf::Text errorText;
 
-	sf::Texture font_texture;
-	sf::Texture outputs_texture;
-
 	sf::Image outputs_image;
 
 	sf::Sprite outputs_sprite;
+	sf::Texture outputs_texture;
 
-	sf::CircleShape mouseDotShape;
+	//sf::CircleShape mouseDotShape;
 };
 
 #endif

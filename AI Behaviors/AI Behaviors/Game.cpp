@@ -39,7 +39,6 @@ Game::Game() :
 	hiddenNeurons = m_neural_network.getHiddenNeurons();
 	biasNeurons = m_neural_network.getBiasNeurons();
 	initializeNeuralNetwork();
-	initMouseDotCircle();
 }
 
 /// <summary>
@@ -215,32 +214,37 @@ void Game::processEvents()
 			}
 			break;
 		case GameState::NeuralNetworks:
-			if (sf::Event::MouseButtonPressed == newEvent.type && newEvent.mouseButton.button == sf::Mouse::Left)
+			if (sf::Event::MouseButtonPressed == newEvent.type)
 			{
-				int mouse_x = sf::Mouse::getPosition(m_window).x;
-				int mouse_y = sf::Mouse::getPosition(m_window).y;
-
-				if (mouse_x >= Global::S_WIDTH / 2 && mouse_x < m_window.getSize().x)
+				if (newEvent.mouseButton.button == sf::Mouse::Left)
 				{
-					if (0 <= mouse_y && mouse_y < m_window.getSize().y)
-					{
-						float dot_x = (mouse_x - SCREEN_HEIGHT) / static_cast<float>(SCREEN_HEIGHT);
-						float dot_y = mouse_y / static_cast<float>(SCREEN_WITDH);
+					m_neural_network.goToMainMenu(guiMousePosition, m_currentState);
 
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+					int mouse_x = sf::Mouse::getPosition(m_window).x;
+					int mouse_y = sf::Mouse::getPosition(m_window).y;
+
+					if (mouse_x >= Global::S_WIDTH / 2 + 120 && mouse_x < m_window.getSize().x)
+					{
+						if (0 <= mouse_y && mouse_y < m_window.getSize().y)
 						{
-							inputs.push_back({ dot_x, dot_y });
-							target_outputs.push_back({ 0, 0, 1 });
-						}
-						else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-						{
-							inputs.push_back({ dot_x, dot_y });
-							target_outputs.push_back({ 1, 0, 0 });
-						}
-						else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-						{
-							inputs.push_back({ dot_x, dot_y });
-							target_outputs.push_back({ 0, 1, 0 });
+							float dot_x = (mouse_x - SCREEN_HEIGHT) / static_cast<float>(SCREEN_HEIGHT);
+							float dot_y = mouse_y / static_cast<float>(SCREEN_WITDH);
+
+							if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+							{
+								m_neural_network.addInput(dot_x, dot_y);
+								m_neural_network.addTargetOutput(1, 0, 0);
+							}
+							else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+							{
+								m_neural_network.addInput(dot_x, dot_y);
+								m_neural_network.addTargetOutput(0, 1, 0);
+							}
+							else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+							{
+								m_neural_network.addInput(dot_x, dot_y);
+								m_neural_network.addTargetOutput(0, 0, 1);
+							}
 						}
 					}
 				}
@@ -447,6 +451,7 @@ void Game::render()
 		break;
 	case GameState::NeuralNetworks:
 		drawNeuralNetwork(m_window);
+		m_neural_network.render(m_window);
 		m_window.draw(errorText);
 		break;
 	case GameState::Exit:
@@ -600,14 +605,10 @@ void Game::initParticles()
 
 void Game::initializeNeuralNetwork()
 {
-	if (!font_texture.loadFromFile("ASSETS\\IMAGES\\FontSheet.png"))
-	{
-		std::cout << "Error loading texture" << std::endl;
-	}
 	errorText.setFont(m_normalfont);
 	errorText.setCharacterSize(20);
 	errorText.setFillColor(sf::Color::White);
-	errorText.setPosition(10, 10);
+	errorText.setPosition(400, 10);
 
 	neural_network.resize(2 + hiddenNeurons.size());
 	neural_network[0].resize(m_neural_network.INPUT_NEURONS + biasNeurons[0], 0);
@@ -653,15 +654,6 @@ void Game::initializeNeuralNetwork()
 	}
 }
 
-void Game::initMouseDotCircle()
-{
-	mouseDotShape.setRadius(10);
-	mouseDotShape.setOrigin(mouseDotShape.getRadius(), mouseDotShape.getRadius());
-	mouseDotShape.setFillColor(sf::Color::White);
-	mouseDotShape.setOutlineColor(sf::Color::Black);
-	mouseDotShape.setOutlineThickness(2.0f);
-}
-
 void Game::updateNeuralNetwork()
 {
 	if (train)	// Training the neural network
@@ -670,19 +662,19 @@ void Game::updateNeuralNetwork()
 
 		for (int i = 0; i < TRAININGS_PER_FRAME; i++)
 		{
-			int input_index = rand() % inputs.size();
+			int input_index = rand() % m_neural_network.getInputs().size();
 
-			m_neural_network.forwardPropagation(true, inputs[input_index], neural_network, weights);
-			m_neural_network.backPropagation(target_outputs[input_index], errors, neural_network, weights);
+			m_neural_network.forwardPropagation(true, m_neural_network.getInputs()[input_index], neural_network, weights);
+			m_neural_network.backPropagation(m_neural_network.getTargetOutputs()[input_index], errors, neural_network, weights);
 		}
 
-		for (int i = 0; i < inputs.size(); i++)
+		for (int i = 0; i < m_neural_network.getInputs().size(); i++)
 		{
-			vector_1d outputs = m_neural_network.forwardPropagation(false, inputs[i], neural_network, weights);
+			vector_1d outputs = m_neural_network.forwardPropagation(false, m_neural_network.getInputs()[i], neural_network, weights);
 
 			for (int j = 0; j < outputs.size(); j++)
 			{
-				total_error += std::abs(outputs[j] - target_outputs[i][j]);
+				total_error += std::abs(outputs[j] - m_neural_network.getTargetOutputs()[i][j]);
 			}
 		}
 	}
@@ -691,7 +683,7 @@ void Game::updateNeuralNetwork()
 
 void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
 {
-	m_neural_network.draw_neural_network(m_window, font_texture, neural_network, weights);
+	m_neural_network.draw_neural_network(m_window, neural_network, weights);
 
 	for (int i = 0; i < outputWidth; i++)
 	{
@@ -707,14 +699,6 @@ void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
 	}
 
 	m_window.draw(outputs_sprite);
-
-	for (unsigned i = 0; i < inputs.size(); i++)
-	{
-		mouseDotShape.setFillColor(sf::Color(round(255 * target_outputs[i][0]), round(255 * target_outputs[i][1]), round(255 * target_outputs[i][2])));
-		mouseDotShape.setPosition(SCREEN_HEIGHT * (1 + inputs[i][0]), SCREEN_WITDH * inputs[i][1]);
-
-		m_window.draw(mouseDotShape);
-	}
 }
 
 void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings)
