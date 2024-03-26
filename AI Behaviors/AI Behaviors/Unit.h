@@ -4,6 +4,7 @@
 #include "Global.h"
 #include <cmath> 
 #include "Bullet.h"
+#include "Missile.h"
 #include "ParticleSystem.h"
 
 enum class UnitType
@@ -31,6 +32,8 @@ public:
     void setTargetPosition(const sf::Vector2f& targetPos);
     void takeDamage(float damageAmount);
 
+    void setEnemyUnits(std::vector<Unit*>& enemyUnits);
+
     const sf::Sprite& getSprite() const;
 
     sf::Vector2f getPosition() const;
@@ -38,11 +41,12 @@ public:
     sf::Vector2f steerTowards(sf::Vector2f target);
 
     std::vector<Bullet> bullets;
+    std::vector<Missile> missiles;
 
     float angleFromVector(const sf::Vector2f& vector);
     float getViewRadius() const;
     float distance(const sf::Vector2f& a, const sf::Vector2f& b);
-    float magnitude(const sf::Vector2f& v);
+    float magnitude(const sf::Vector2f& v) const;
     float getHealth() const;
     float toDegrees(float radians);
 
@@ -59,6 +63,9 @@ protected:
     UnitType m_unitType;
     ParticleSystem m_particleSystem;
 
+    std::vector<Unit*>* enemyUnits = nullptr;
+    Unit* closestEnemy = nullptr;
+
     void initView();
     void initShader();
 
@@ -70,6 +77,10 @@ protected:
 
     sf::Texture m_weaponTexture;
     sf::Sprite m_weaponSprite;
+
+    // For Hammerhead
+    sf::Sprite m_leftGunSprite;
+    sf::Sprite m_rightGunSprite;
 
     sf::CircleShape m_viewCircleShape;
     sf::Shader glowShader;
@@ -85,10 +96,12 @@ protected:
     float m_rotationSpeed = 250.0f;
     float m_bulletSpeed = 100;
     float rotationSpeedDegreesPerSecond = 90.0f;
+    float closestDistance;
 
     const float PI = 3.14159265358979323846f;
 
     bool isOrbiting = false;
+    bool isReloading = false;
 
     sf::Vector2f m_position;
     sf::Vector2f m_targetPosition;

@@ -73,6 +73,12 @@
     <Filter Include="Source Files\NeuralNetworks">
       <UniqueIdentifier>{6589290a-f31a-4230-8f81-d77ebc4444dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Weapons">
+      <UniqueIdentifier>{3b4c4ac1-221d-4b70-91b3-c433479943a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Weapons">
+      <UniqueIdentifier>{8cf26ba4-d55a-4186-9d65-0d150a6ff9c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -141,9 +147,6 @@
     <ClCompile Include="Buggy.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -152,6 +155,12 @@
     </ClCompile>
     <ClCompile Include="NeuralNetworks.cpp">
       <Filter>Source Files\NeuralNetworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Source Files\Weapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,9 +242,6 @@
     <ClInclude Include="Buggy.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ParticleSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -244,6 +250,12 @@
     </ClInclude>
     <ClInclude Include="NeuralNetworks.h">
       <Filter>Header Files\NerualNetworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Header Files\Weapons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

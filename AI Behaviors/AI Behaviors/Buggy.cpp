@@ -41,7 +41,7 @@ void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 
     if (enemyUnits) 
     {
-        aimWeapon(t_deltaTime, *enemyUnits);
+        aimWeapon(*enemyUnits);
     }
 }
 
@@ -104,12 +104,7 @@ void Buggy::movement(sf::Time t_deltaTime)
     orientSpriteToMovement(t_deltaTime);
 }
 
-void Buggy::setEnemyUnits(std::vector<Unit*>& enemyUnits)
-{
-    this->enemyUnits = &enemyUnits;
-}
-
-void Buggy::aimWeapon(sf::Time t_deltaTime, const std::vector<Unit*>& enemyUnits)
+void Buggy::aimWeapon(const std::vector<Unit*>& enemyUnits)
 {
     if (enemyUnits.empty())
     {

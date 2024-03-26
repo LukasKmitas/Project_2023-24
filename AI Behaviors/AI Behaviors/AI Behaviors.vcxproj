@@ -37,6 +37,7 @@
     <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Missile.cpp" />
     <ClCompile Include="NeuralNetworks.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Refinery.cpp" />
@@ -68,6 +69,7 @@
     <ClInclude Include="LevelEditor.h" />
     <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Missile.h" />
     <ClInclude Include="NeuralNetworks.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Refinery.h" />

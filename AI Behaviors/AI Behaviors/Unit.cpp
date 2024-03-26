@@ -18,6 +18,10 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     {
         bullet.update(t_deltaTime);
     }
+    /*for (auto& missile : missiles) 
+    {
+        missile.update(t_deltaTime);
+    }*/
     m_particleSystem.update(t_deltaTime);
 }
 
@@ -26,6 +30,8 @@ void Unit::render(sf::RenderWindow& m_window)
     m_particleSystem.render(m_window);
     m_window.draw(m_unitSprite);
     m_window.draw(m_weaponSprite);
+    m_window.draw(m_leftGunSprite);
+    m_window.draw(m_rightGunSprite);
     m_window.draw(m_viewCircleShape);
     sf::VertexArray line(sf::Lines, 2);
     line[0].position = m_unitSprite.getPosition();
@@ -37,6 +43,10 @@ void Unit::render(sf::RenderWindow& m_window)
     for (auto& bullet : bullets) 
     {
         bullet.render(m_window, glowShader);
+    }
+    for (const auto& missile : missiles)
+    {
+        missile.render(m_window);
     }
 }
 
@@ -126,6 +136,11 @@ void Unit::takeDamage(float damageAmount)
     }
 }
 
+void Unit::setEnemyUnits(std::vector<Unit*>& enemyUnits)
+{
+    this->enemyUnits = &enemyUnits;
+}
+
 const sf::Sprite& Unit::getSprite() const
 {
     return m_unitSprite;
@@ -162,7 +177,7 @@ float Unit::distance(const sf::Vector2f& a, const sf::Vector2f& b)
     return std::sqrt(diff.x * diff.x + diff.y * diff.y);
 }
 
-float Unit::magnitude(const sf::Vector2f& v) 
+float Unit::magnitude(const sf::Vector2f& v) const
 {
     return std::sqrt(v.x * v.x + v.y * v.y);
 }

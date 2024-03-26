@@ -14,4 +14,11 @@ private:
 	void setupHammerhead();
 	void setupParticleExhaustEffect();
 
+	void movement(sf::Time t_deltaTime);
+	void aimWeapons(const std::vector<Unit*>& enemyUnits);
+	void shootAtEnemy();
+
+	float fireRate = 0.2f; 
+	float fireTimer = 0.0f; 
+	float bulletSpeed = 300.0f;
 };

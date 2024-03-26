@@ -59,7 +59,6 @@ private:
 
 	void initParticles();
 	void initializeNeuralNetwork();
-	void initMouseDotCircle();
 
 	void updateNeuralNetwork();
 	void drawNeuralNetwork(sf::RenderWindow& window);
@@ -74,6 +73,7 @@ private:
 
 	void spawnBubbleParticles();
 	void spawnBulletSparkParticles(const sf::Vector2f& position);
+	void spawnExplosionParticle(const sf::Vector2f& position);
 
 	int calculateGridSize(int numberOfUnits);
 
@@ -143,12 +143,10 @@ private:
 
 	sf::Text errorText;
 
-	sf::Image outputs_image;
+	sf::Image outputImage;
+	sf::Sprite outputSprite;
+	sf::Texture outputTexture;
 
-	sf::Sprite outputs_sprite;
-	sf::Texture outputs_texture;
-
-	//sf::CircleShape mouseDotShape;
 };
 
 #endif

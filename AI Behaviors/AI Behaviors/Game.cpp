@@ -366,9 +366,30 @@ void Game::update(sf::Time t_deltaTime)
 					}
 				}
 			}
+			for (auto& missile : unit->missiles)
+			{
+				for (auto& enemyUnit : enemyUnits)
+				{
+					if (missile.missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+					{
+						missile.active = false;
+						//enemyUnit->takeDamage(missile.damage);
+						if (enemyUnit->getHealth() <= 0)
+						{
+							enemyUnit->m_active = false;
+						}
+						spawnExplosionParticle(missile.position);
+					}
+				}
+			}
+
 			// Remove inactive bullets
 			unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
 				[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
+			// Remove inactive missiles
+			unit->missiles.erase(std::remove_if(unit->missiles.begin(), unit->missiles.end(),
+				[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), unit->missiles.end());
+
 			// Remove dead enemy units
 			enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
 				[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());
@@ -619,13 +640,13 @@ void Game::initializeNeuralNetwork()
 
 	weights.resize(neural_network.size() - 1);
 
-	outputs_image.create(outputWidth, outputHeight);
-	outputs_texture.loadFromImage(outputs_image);
-	outputs_sprite.setPosition(SCREEN_HEIGHT, 0);
+	outputImage.create(outputWidth, outputHeight);
+	outputTexture.loadFromImage(outputImage);
+	outputSprite.setPosition(SCREEN_HEIGHT, 0);
 	//outputs_sprite.setScale(15, 17);
-	outputs_sprite.setScale(SCREEN_HEIGHT / outputWidth, SCREEN_WITDH / outputHeight);
-	outputs_sprite.setOrigin(outputs_sprite.getGlobalBounds().width / 2, outputs_sprite.getGlobalBounds().height / 2);
-	outputs_sprite.setTexture(outputs_texture);
+	outputSprite.setScale(SCREEN_HEIGHT / outputWidth, SCREEN_WITDH / outputHeight);
+	outputSprite.setOrigin(outputSprite.getGlobalBounds().width / 2, outputSprite.getGlobalBounds().height / 2);
+	outputSprite.setTexture(outputTexture);
 
 	for (size_t i = 1; i < neural_network.size() - 1; ++i)
 	{
@@ -678,7 +699,7 @@ void Game::updateNeuralNetwork()
 			}
 		}
 	}
-	outputs_texture.update(outputs_image);
+	outputTexture.update(outputImage);
 }
 
 void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
@@ -694,11 +715,11 @@ void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
 
 			std::vector output_color = m_neural_network.forwardPropagation(0, { input_1, input_2 }, neural_network, weights);
 
-			outputs_image.setPixel(i, j, sf::Color(round(255 * output_color[0]), round(255 * output_color[1]), round(255 * output_color[2])));
+			outputImage.setPixel(i, j, sf::Color(round(255 * output_color[0]), round(255 * output_color[1]), round(255 * output_color[2])));
 		}
 	}
 
-	m_window.draw(outputs_sprite);
+	m_window.draw(outputSprite);
 }
 
 void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings)
@@ -824,6 +845,7 @@ void Game::createUnit()
 				HammerHead* newHammerHead = new HammerHead();
 				newHammerHead->setPosition(spawnPosition);
 				newHammerHead->setTargetPosition(spawnPosition);
+				newHammerHead->setEnemyUnits(enemyUnits);
 				units.push_back(newHammerHead);
 
 				m_gui.m_unitConfirmed = false;
@@ -860,6 +882,15 @@ void Game::createEnemyUnit()
 		newBuggy->setTargetPosition(spawnPosition);
 
 		enemyUnits.push_back(newBuggy);
+
+		sf::Vector2f spawnPosition2 = sf::Vector2f(500.0f, 950.0f);
+
+		Buggy* newBuggy2 = new Buggy();
+		newBuggy2->setPosition(spawnPosition2);
+		newBuggy2->setTargetPosition(spawnPosition2);
+
+		enemyUnits.push_back(newBuggy2);
+
 		runOnce = true;
 	}
 }
@@ -938,6 +969,35 @@ void Game::spawnBulletSparkParticles(const sf::Vector2f& position)
 
 		colorParticle = sf::Color(255, 255, 255, 160 + std::rand() % 95);
 		m_particleSystem.addParticle(Particle(position, velocity, colorParticle, lifetimeParticle, sizeParticle, &m_bulletSparksTexture));
+	}
+}
+
+void Game::spawnExplosionParticle(const sf::Vector2f& position) 
+{
+	int particleCount = 30;
+
+	std::vector<sf::Color> colors =
+	{
+		sf::Color::Red,  
+		sf::Color::Yellow, 
+		sf::Color(255, 165, 0), 
+		sf::Color(255, 140, 0), 
+		sf::Color(128, 128, 128),
+		sf::Color(80, 80, 80), 
+		sf::Color::Black 
+	};
+
+	for (int i = 0; i < particleCount; ++i) 
+	{
+		float angle = (std::rand() % 360) * 3.14f / 180.0f;
+		float speed = static_cast<float>(std::rand() % 50 + 50); 
+		sf::Vector2f velocity(speed * std::cos(angle), speed * std::sin(angle));
+		sf::Color color = colors[std::rand() % colors.size()];
+
+		float size = static_cast<float>(std::rand() % 2 + 1);
+		float lifetime = 0.1f + static_cast<float>(std::rand() % 10) / 10.0f;
+
+		m_particleSystem.addParticle(Particle(position, velocity, color, lifetime, size));
 	}
 }
 
