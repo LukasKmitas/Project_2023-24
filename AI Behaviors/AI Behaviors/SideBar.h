@@ -42,6 +42,7 @@ public:
     // Vehicles
     sf::Vector2f getHarvesterIconPosition() const;
     sf::Vector2f getBuggyIconPosition() const;
+    sf::Vector2f getTankAuroraIconPosition() const;
     // Air
     sf::Vector2f getFirehawkIconPosition() const;
     sf::Vector2f getHammerHeadIconPosition() const;
@@ -83,6 +84,7 @@ private:
     // Vehicles
     sf::Vector2f m_harvesterIconPosition;
     sf::Vector2f m_buggyIconPosition;
+    sf::Vector2f m_tankAuroraIconPosition;
     // Air
     sf::Vector2f m_hammerHeadIconPosition;
     sf::Vector2f m_firehawkIconPosition;

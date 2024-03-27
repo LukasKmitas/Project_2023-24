@@ -36,7 +36,7 @@ private:
 	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	std::vector<Building*> placedBuildings;
-	std::vector<Unit*> units;
+	std::vector<Unit*> playerUnits;
 	std::vector<Unit*> enemyUnits;
 	Unit* m_selectedUnit = nullptr;
 	ParticleSystem m_particleSystem;

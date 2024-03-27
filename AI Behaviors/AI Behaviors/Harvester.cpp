@@ -14,7 +14,7 @@ Harvester::~Harvester()
 {
 }
 
-void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 {
     switch (currentState)
     {
@@ -52,7 +52,7 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         }
         break;
     }
-	VehicleUnit::update(t_deltaTime, allUnits);
+	VehicleUnit::update(t_deltaTime, allyUnits);
 	movement(t_deltaTime);
 }
 

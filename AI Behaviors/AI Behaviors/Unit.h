@@ -21,7 +21,7 @@ public:
     Unit();
     virtual ~Unit();
 
-    virtual void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits);
+    virtual void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits);
     virtual void render(sf::RenderWindow& m_window);
 
     virtual void attack(Unit* target);
@@ -31,6 +31,7 @@ public:
     void setSelected(bool selected);
     void setTargetPosition(const sf::Vector2f& targetPos);
     void takeDamage(float damageAmount);
+    void addHealth(float healthAmount);
 
     void setEnemyUnits(std::vector<Unit*>& enemyUnits);
 
@@ -67,26 +68,27 @@ protected:
     Unit* closestEnemy = nullptr;
 
     void initView();
+    void initHealthBar();
     void initShader();
 
-    void avoidCollisions(std::vector<Unit*>& allUnits);
+    void avoidCollisions(std::vector<Unit*>& allyUnits);
     void orientSpriteToMovement(sf::Time t_deltaTime);
 
     sf::Texture m_unitTexture;
     sf::Sprite m_unitSprite;
 
+    sf::RectangleShape m_healthBarBackground;
+    sf::RectangleShape m_healthBarForeground;
+
     sf::Texture m_weaponTexture;
     sf::Sprite m_weaponSprite;
-
-    // For Hammerhead
-    sf::Sprite m_leftGunSprite;
-    sf::Sprite m_rightGunSprite;
 
     sf::CircleShape m_viewCircleShape;
     sf::Shader glowShader;
 
     int m_cost = 100;
     float m_health = 100.0f;
+    const float m_maxHealth = 100.0f;
     float m_viewRadius = 100.0f;
 
     float m_speed = 100.0f;
@@ -97,6 +99,7 @@ protected:
     float m_bulletSpeed = 100;
     float rotationSpeedDegreesPerSecond = 90.0f;
     float closestDistance;
+    float m_arrivalTolerance = 5.0f;
 
     const float PI = 3.14159265358979323846f;
 

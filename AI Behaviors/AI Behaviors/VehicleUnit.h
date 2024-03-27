@@ -7,10 +7,7 @@ public:
     VehicleUnit();
     virtual ~VehicleUnit();
 
-    void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
-
-protected:
-
-private:
+    void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+    void render(sf::RenderWindow& m_window) override;
 
 };

@@ -18,9 +18,10 @@ Buggy::~Buggy()
 {
 }
 
-void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 {
-	VehicleUnit::update(t_deltaTime, allUnits);
+	VehicleUnit::update(t_deltaTime, allyUnits);
+
     movement(t_deltaTime);
     m_weaponSprite.setPosition(m_unitSprite.getPosition());
 
@@ -68,9 +69,8 @@ void Buggy::setupBuggy()
 
 void Buggy::movement(sf::Time t_deltaTime)
 {
-    float arrivalTolerance = 5.0f;
     float distance = magnitude(m_targetPosition - m_position);
-    if (distance < arrivalTolerance)
+    if (distance < m_arrivalTolerance)
     {
         m_velocity = sf::Vector2f(0, 0);
         m_acceleration = sf::Vector2f(0, 0);

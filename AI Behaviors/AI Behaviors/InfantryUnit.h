@@ -5,7 +5,7 @@ class InfantryUnit : public Unit
 {
 public:
     InfantryUnit();
-    virtual ~InfantryUnit();
+    ~InfantryUnit();
 
    
 };

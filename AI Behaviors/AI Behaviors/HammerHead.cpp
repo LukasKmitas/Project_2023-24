@@ -18,9 +18,9 @@ HammerHead::~HammerHead()
 {
 }
 
-void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 {
-    AircraftUnit::update(t_deltaTime, allUnits);
+    AircraftUnit::update(t_deltaTime, allyUnits);
 
     movement(t_deltaTime);
     orientSpriteToMovement(t_deltaTime);
@@ -35,8 +35,15 @@ void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         aimWeapons(*enemyUnits);
     }
 
-    setupParticleExhaustEffect();
-    
+    spawnParticleExhaustEffect();
+}
+
+void HammerHead::render(sf::RenderWindow& m_window)
+{
+    AircraftUnit::render(m_window);
+
+    m_window.draw(m_leftGunSprite);
+    m_window.draw(m_rightGunSprite);
 }
 
 void HammerHead::setupHammerhead()
@@ -61,11 +68,9 @@ void HammerHead::setupHammerhead()
     m_leftGunSprite.setScale(0.1, 0.1);
     m_rightGunSprite.setOrigin(m_weaponTexture.getSize().x / 2, m_weaponTexture.getSize().y / 2);
     m_rightGunSprite.setScale(0.1, 0.1);
-    m_leftGunSprite.setColor(sf::Color::Yellow);
-    m_rightGunSprite.setColor(sf::Color::Yellow);
 }
 
-void HammerHead::setupParticleExhaustEffect()
+void HammerHead::spawnParticleExhaustEffect()
 {
     const int particlesPerUpdate = 3;
     float particleOffset = 20.0f;

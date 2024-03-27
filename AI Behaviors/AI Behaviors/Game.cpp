@@ -132,7 +132,7 @@ void Game::processEvents()
 					if (m_selectedUnit)
 					{
 						std::vector<Unit*> selectedUnits;
-						for (Unit* unit : units)
+						for (Unit* unit : playerUnits)
 						{
 							if (unit->isSelected)
 							{
@@ -162,7 +162,7 @@ void Game::processEvents()
 				if (newEvent.mouseButton.button == sf::Mouse::Right) // Check for Right mouse button
 				{
 					m_selectedUnit = nullptr;
-					for (Unit* unit : units)
+					for (Unit* unit : playerUnits)
 					{
 						unit->setSelected(false);
 					}
@@ -280,7 +280,7 @@ void Game::processKeys(sf::Event t_event)
 		if (sf::Keyboard::Escape == t_event.key.code)
 		{
 			m_selectedUnit = nullptr;
-			for (Unit* unit : units)
+			for (Unit* unit : playerUnits)
 			{
 				unit->setSelected(false);
 			}
@@ -346,9 +346,9 @@ void Game::update(sf::Time t_deltaTime)
 		m_levelEditor.animationForWeed();
 		createUnit();
 		createEnemyUnit();
-		for (auto& unit : units)
+		for (auto& unit : playerUnits)
 		{
-			unit->update(t_deltaTime, enemyUnits);
+			unit->update(t_deltaTime, playerUnits);
 
 			for (auto& bullet : unit->bullets)
 			{
@@ -357,7 +357,7 @@ void Game::update(sf::Time t_deltaTime)
 					if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 					{
 						bullet.active = false;
-						//enemyUnit->takeDamage(bullet.damage);
+						enemyUnit->takeDamage(bullet.damage);
 						if (enemyUnit->getHealth() <= 0)
 						{
 							enemyUnit->m_active = false;
@@ -373,7 +373,7 @@ void Game::update(sf::Time t_deltaTime)
 					if (missile.missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 					{
 						missile.active = false;
-						//enemyUnit->takeDamage(missile.damage);
+						enemyUnit->takeDamage(missile.damage);
 						if (enemyUnit->getHealth() <= 0)
 						{
 							enemyUnit->m_active = false;
@@ -397,9 +397,37 @@ void Game::update(sf::Time t_deltaTime)
 		for (Unit* eUnits : enemyUnits)
 		{
 			eUnits->update(t_deltaTime, enemyUnits);
+
+			for (auto& bullet : eUnits->bullets)
+			{
+				for (auto& playerUnit : playerUnits)
+				{
+					if (bullet.bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
+					{
+						bullet.active = false;
+						playerUnit->takeDamage(bullet.damage);
+						if (playerUnit->getHealth() <= 0)
+						{
+							playerUnit->m_active = false;
+						}
+						spawnBulletSparkParticles(bullet.position);
+					}
+				}
+			}
+
+			// Remove inactive bullets
+			eUnits->bullets.erase(std::remove_if(eUnits->bullets.begin(), eUnits->bullets.end(),
+				[](const Bullet& bullet) { return !bullet.active; }), eUnits->bullets.end());
+			// Remove inactive missiles
+			eUnits->missiles.erase(std::remove_if(eUnits->missiles.begin(), eUnits->missiles.end(),
+				[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), eUnits->missiles.end());
+
+			// Remove dead enemy units
+			playerUnits.erase(std::remove_if(playerUnits.begin(), playerUnits.end(),
+				[](Unit* playerUnits) { return !playerUnits->isActive(); }), playerUnits.end());
 		}
 		m_particleSystem.update(t_deltaTime);
-		updateFogOfWarBasedOnUnits(units);
+		updateFogOfWarBasedOnUnits(playerUnits);
 		updateFogOfWarBasedOnBuildings(placedBuildings);
 		spawnBubbleParticles();
 		break;
@@ -440,7 +468,7 @@ void Game::render()
 		{
 			building->render(m_window);
 		}
-		for (Unit* unit : units)
+		for (Unit* unit : playerUnits)
 		{
 			unit->render(m_window);
 		}
@@ -553,7 +581,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 			newHarvester->setBuildings(placedBuildings);
 			newHarvester->setTiles(m_levelEditor.m_tiles);
 			newHarvester->currentState = newHarvester->MovingToResource;
-			units.push_back(newHarvester);
+			playerUnits.push_back(newHarvester);
 
 			std::cout << "Refinery Created" << std::endl;
 		}
@@ -811,7 +839,7 @@ void Game::createUnit()
 				newHarvester->setTiles(m_levelEditor.m_tiles);
 				newHarvester->currentState = newHarvester->MovingToResource;
 
-				units.push_back(newHarvester);
+				playerUnits.push_back(newHarvester);
 
 				m_gui.m_unitConfirmed = false;
 				m_gui.m_selectedBuilding = nullptr;
@@ -828,7 +856,24 @@ void Game::createUnit()
 				newBuggy->setPosition(spawnPosition);
 				newBuggy->setTargetPosition(spawnPosition);
 				newBuggy->setEnemyUnits(enemyUnits);
-				units.push_back(newBuggy);
+				playerUnits.push_back(newBuggy);
+
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
+		if (m_gui.m_selectedVehicleType == VehicleType::Tank)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+
+				TankAurora* newTankAurora = new TankAurora();
+				newTankAurora->setPosition(spawnPosition);
+				newTankAurora->setTargetPosition(spawnPosition);
+				newTankAurora->setEnemyUnits(enemyUnits);
+				playerUnits.push_back(newTankAurora);
 
 				m_gui.m_unitConfirmed = false;
 				m_gui.m_selectedBuilding = nullptr;
@@ -846,7 +891,7 @@ void Game::createUnit()
 				newHammerHead->setPosition(spawnPosition);
 				newHammerHead->setTargetPosition(spawnPosition);
 				newHammerHead->setEnemyUnits(enemyUnits);
-				units.push_back(newHammerHead);
+				playerUnits.push_back(newHammerHead);
 
 				m_gui.m_unitConfirmed = false;
 				m_gui.m_selectedBuilding = nullptr;
@@ -862,7 +907,8 @@ void Game::createUnit()
 				Firehawk* newFirehawk = new Firehawk();
 				newFirehawk->setPosition(spawnPosition);
 				newFirehawk->setTargetPosition(spawnPosition);
-				units.push_back(newFirehawk);
+				newFirehawk->setEnemyUnits(enemyUnits);
+				playerUnits.push_back(newFirehawk);
 
 				m_gui.m_unitConfirmed = false;
 				m_gui.m_selectedBuilding = nullptr;
@@ -880,7 +926,7 @@ void Game::createEnemyUnit()
 		Buggy* newBuggy = new Buggy();
 		newBuggy->setPosition(spawnPosition);
 		newBuggy->setTargetPosition(spawnPosition);
-
+		newBuggy->setEnemyUnits(playerUnits);
 		enemyUnits.push_back(newBuggy);
 
 		sf::Vector2f spawnPosition2 = sf::Vector2f(500.0f, 950.0f);
@@ -888,7 +934,7 @@ void Game::createEnemyUnit()
 		Buggy* newBuggy2 = new Buggy();
 		newBuggy2->setPosition(spawnPosition2);
 		newBuggy2->setTargetPosition(spawnPosition2);
-
+		newBuggy2->setEnemyUnits(playerUnits);
 		enemyUnits.push_back(newBuggy2);
 
 		runOnce = true;
@@ -897,7 +943,7 @@ void Game::createEnemyUnit()
 
 void Game::selectUnitAt(const sf::Vector2f& mousePos)
 {
-	for (Unit* unit : units)
+	for (Unit* unit : playerUnits)
 	{
 		if (unit->getSprite().getGlobalBounds().contains(mousePos))
 		{
@@ -912,7 +958,7 @@ void Game::selectUnitsInBox()
 {
 	sf::FloatRect selectionRect = selectionBox.getGlobalBounds();
 
-	for (Unit* unit : units)
+	for (Unit* unit : playerUnits)
 	{
 		if (selectionRect.intersects(unit->getSprite().getGlobalBounds()))
 		{

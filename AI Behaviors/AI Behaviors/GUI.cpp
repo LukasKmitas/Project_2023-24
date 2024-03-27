@@ -150,6 +150,18 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 					m_unitConfirmed = true;
 				}
 			}
+			// Tank Aurora
+			sf::Vector2f tankAuroraIconPosition = m_sideBar.getTankAuroraIconPosition();
+			sf::FloatRect tankAuroraIconBounds(tankAuroraIconPosition, sf::Vector2f(98, 75));
+			if (tankAuroraIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Tank Aurora Icon Clicked" << std::endl;
+				if (m_tankAurora.checkAffordability())
+				{
+					m_selectedVehicleType = VehicleType::Tank;
+					m_unitConfirmed = true;
+				}
+			}
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{
@@ -319,7 +331,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 				{
 					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::WarFactory;
-					m_sideBar.addVehicleButton(m_harvesterIcon, VehicleType::Harvester, 0, 0, "Harvester");
+					m_sideBar.addVehicleButton(m_harvesterIconTexture, VehicleType::Harvester, 0, 0, "Harvester");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Buggy, 1, 0, "Ranger");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 2, 0, "Tank");
 				}
@@ -398,7 +410,7 @@ void GUI::loadIcons()
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}
-	if (!m_harvesterIcon.loadFromFile("Assets\\Images\\GUI\\HarvesterLogo.png"))
+	if (!m_harvesterIconTexture.loadFromFile("Assets\\Images\\GUI\\HarvesterLogo.png"))
 	{
 		std::cout << "Error - Problem Loading Infantry Texture" << std::endl;
 	}

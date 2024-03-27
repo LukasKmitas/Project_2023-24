@@ -17,6 +17,7 @@
 
 #include "Harvester.h"
 #include "Buggy.h"
+#include "TankAurora.h"
 
 #include "HammerHead.h"
 #include "Firehawk.h"
@@ -40,6 +41,7 @@ public:
 
     Harvester m_harvester;
     Buggy m_buggy;
+    TankAurora m_tankAurora;
     HammerHead m_hammerHead;
     Firehawk m_firehawk;
 
@@ -85,9 +87,7 @@ private:
     sf::Texture m_unitVehicleTexture;
     sf::Texture m_unitAirCraftTexture;
 
-    sf::Texture m_harvesterIcon;
-
-    sf::Texture m_firehawkIcon;
+    sf::Texture m_harvesterIconTexture;
 
     sf::Sprite m_ghostBuildingSprite;
     sf::Texture m_ghostBuildingTexture;

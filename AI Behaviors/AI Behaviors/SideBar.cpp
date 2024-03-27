@@ -133,8 +133,8 @@ void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleTy
 
     if (vehicleType == VehicleType::Harvester)
     {
-        m_button.m_sprite.setScale(0.82, 0.81);
-        //m_button.m_sprite.setScale(0.113, 0.087);
+        m_button.m_sprite.setScale(0.096, 0.075);
+        m_button.m_sprite.setTextureRect(sf::IntRect(0, 0, 1024, 1000));
         m_harvesterIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else if (vehicleType == VehicleType::Buggy)
@@ -145,6 +145,7 @@ void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleTy
     else
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(1, 1, 30, 22));
+        m_tankAuroraIconPosition = sf::Vector2f(xPosition, yPosition);
     }
 
     m_button.m_sprite.setPosition(xPosition, yPosition);
@@ -222,6 +223,11 @@ sf::Vector2f SideBar::getHarvesterIconPosition() const
 sf::Vector2f SideBar::getBuggyIconPosition() const
 {
     return m_buggyIconPosition;
+}
+
+sf::Vector2f SideBar::getTankAuroraIconPosition() const
+{
+    return m_tankAuroraIconPosition;
 }
 
 sf::Vector2f SideBar::getFirehawkIconPosition() const

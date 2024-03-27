@@ -18,7 +18,7 @@ public:
 	Harvester();
 	~Harvester();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
 
 	void setBuildings(const std::vector<Building*>& buildings);
 	void setTiles(const std::vector<std::vector<Tile>>& tiles);

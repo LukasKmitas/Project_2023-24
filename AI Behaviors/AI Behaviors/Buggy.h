@@ -7,7 +7,7 @@ public:
 	Buggy();
 	~Buggy();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
 
 private:
 

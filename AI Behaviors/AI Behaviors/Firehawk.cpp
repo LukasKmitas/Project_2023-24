@@ -15,8 +15,10 @@ Firehawk::~Firehawk()
 {
 }
 
-void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 {
+	AircraftUnit::update(t_deltaTime, allyUnits);
+
 	if (!isOrbiting) 
 	{
 		approachTarget(m_targetPosition, t_deltaTime);
@@ -36,24 +38,26 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
 		}
 	}
 
-	// Check for enemy units in range and if directly aligned and then fires
-	for (auto& enemyUnit : allUnits) 
-	{
-		float distanceToEnemy = magnitude(enemyUnit->getPosition() - m_position);
-		if (distanceToEnemy <= m_viewRadius)
+	if (this->enemyUnits) 
+	{ 
+		for (auto& enemyUnit : *this->enemyUnits) 
 		{
-			// Check if Firehawk is facing the enemy directly
-			sf::Vector2f directionToEnemy = normalize(enemyUnit->getPosition() - m_position);
-			float angleToEnemy = angleFromVector(directionToEnemy);
-			float firehawkAngle = m_unitSprite.getRotation() - 90;
+			float distanceToEnemy = magnitude(enemyUnit->getPosition() - m_position);
+			if (distanceToEnemy <= m_viewRadius)
+			{
+				sf::Vector2f directionToEnemy = normalize(enemyUnit->getPosition() - m_position);
+				float angleToEnemy = angleFromVector(directionToEnemy);
+				float firehawkAngle = m_unitSprite.getRotation() - 90;
 
-			if (std::abs(firehawkAngle - angleToEnemy) < 10.0f)
-			{ 
-				fireMissileAtTarget(enemyUnit->getPosition());
-				break;
+				if (std::abs(firehawkAngle - angleToEnemy) < 10.0f)
+				{
+					fireMissileAtTarget(enemyUnit->getPosition());
+					break; 
+				}
 			}
 		}
 	}
+
 	for (auto& missile : missiles)
 	{
 		missile.update(t_deltaTime);

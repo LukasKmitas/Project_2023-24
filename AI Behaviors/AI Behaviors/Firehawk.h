@@ -7,7 +7,7 @@ public:
 	Firehawk();
 	~Firehawk();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
 
 private:
 
@@ -25,9 +25,9 @@ private:
 	float m_currentOrbitAngle = 0.0f;
 
 	// Missile stuff
-	float reloadCooldown = 0.0f; // Time until the Firehawk can fire again after a burst
-	const float reloadCooldownTime = 5.0f; // Cooldown time for reloading missiles
-	int missilesFiredInBurst = 0; // Count of missiles fired in the current burst
+	float reloadCooldown = 0.0f; 
+	const float reloadCooldownTime = 5.0f;
+	int missilesFiredInBurst = 0;
 	const int burstSize = 4;
 };
 

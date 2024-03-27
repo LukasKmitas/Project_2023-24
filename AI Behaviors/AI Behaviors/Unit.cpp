@@ -3,6 +3,7 @@
 Unit::Unit()
 {
     initView();
+    initHealthBar();
     initShader();
 }
 
@@ -10,10 +11,10 @@ Unit::~Unit()
 {
 }
 
-void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 { 
     m_viewCircleShape.setPosition(m_unitSprite.getPosition().x, m_unitSprite.getPosition().y);
-    avoidCollisions(allUnits);
+    avoidCollisions(allyUnits);
     for (auto& bullet : bullets)
     {
         bullet.update(t_deltaTime);
@@ -22,7 +23,15 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     {
         missile.update(t_deltaTime);
     }*/
+
     m_particleSystem.update(t_deltaTime);
+
+    m_healthBarBackground.setPosition(m_position.x, m_position.y - 20);
+    m_healthBarForeground.setPosition(m_healthBarBackground.getPosition());
+
+    float healthPercentage = m_health / 100;
+    m_healthBarForeground.setSize(sf::Vector2f(40 * healthPercentage, 5));
+
 }
 
 void Unit::render(sf::RenderWindow& m_window)
@@ -30,9 +39,11 @@ void Unit::render(sf::RenderWindow& m_window)
     m_particleSystem.render(m_window);
     m_window.draw(m_unitSprite);
     m_window.draw(m_weaponSprite);
-    m_window.draw(m_leftGunSprite);
-    m_window.draw(m_rightGunSprite);
     m_window.draw(m_viewCircleShape);
+
+    m_window.draw(m_healthBarBackground);
+    m_window.draw(m_healthBarForeground);
+
     sf::VertexArray line(sf::Lines, 2);
     line[0].position = m_unitSprite.getPosition();
     line[1].position = m_targetPosition;
@@ -54,26 +65,26 @@ void Unit::attack(Unit* target)
 {
 }
 
-void Unit::avoidCollisions(std::vector<Unit*>& allUnits)
+void Unit::avoidCollisions(std::vector<Unit*>& allyUnits)
 {
     const float minSeparation = 250.0f;
     sf::Vector2f separationForce(0.0f, 0.0f);
     int closeUnits = 0;
 
-    for (auto& other : allUnits)
+    for (auto& unit : allyUnits)
     {
-        if (other == this) continue;
+        if (unit == this) continue;
 
-        if ((m_unitType == UnitType::Air && (other->m_unitType == UnitType::Vehicle || other->m_unitType == UnitType::Infantry)) ||
-            (other->m_unitType == UnitType::Air && (m_unitType == UnitType::Vehicle || m_unitType == UnitType::Infantry)))
+        if ((m_unitType == UnitType::Air && (unit->m_unitType == UnitType::Vehicle || unit->m_unitType == UnitType::Infantry)) ||
+            (unit->m_unitType == UnitType::Air && (m_unitType == UnitType::Vehicle || m_unitType == UnitType::Infantry)))
         {
             continue; 
         }
 
-        float dist = distance(this->getPosition(), other->getPosition());
+        float dist = distance(this->getPosition(), unit->getPosition());
         if (dist < m_viewRadius - minSeparation)
         {
-            sf::Vector2f pushAway = this->getPosition() - other->getPosition();
+            sf::Vector2f pushAway = this->getPosition() - unit->getPosition();
             pushAway = normalize(pushAway);
             separationForce += pushAway / dist;
             closeUnits++;
@@ -133,6 +144,15 @@ void Unit::takeDamage(float damageAmount)
     if (m_health < 0)
     {
         m_health = 0;
+    }
+}
+
+void Unit::addHealth(float healthAmount)
+{
+    m_health += healthAmount;
+    if (m_health > m_maxHealth)
+    {
+        m_health = m_maxHealth;
     }
 }
 
@@ -198,6 +218,17 @@ void Unit::initView()
     m_viewCircleShape.setFillColor(sf::Color(255, 255, 255, 0));
     m_viewCircleShape.setOrigin(m_viewRadius, m_viewRadius);
     m_viewCircleShape.setPosition(m_position);
+}
+
+void Unit::initHealthBar()
+{
+    m_healthBarBackground.setSize(sf::Vector2f(40, 5)); 
+    m_healthBarBackground.setFillColor(sf::Color(50, 50, 50, 150));
+    m_healthBarBackground.setOrigin(m_healthBarBackground.getSize().x / 2, m_healthBarBackground.getSize().y / 2);
+
+    m_healthBarForeground.setSize(sf::Vector2f(40, 5));
+    m_healthBarForeground.setFillColor(sf::Color(0, 255, 0, 200));
+    m_healthBarForeground.setOrigin(m_healthBarForeground.getSize().x / 2, m_healthBarForeground.getSize().y / 2);
 }
 
 void Unit::initShader()
