@@ -32,6 +32,29 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
     float healthPercentage = m_health / 100;
     m_healthBarForeground.setSize(sf::Vector2f(40 * healthPercentage, 5));
 
+    if (isGraduallySlowed) 
+    {
+        float elapsedTime = slowEffectClock.getElapsedTime().asSeconds() - slowDownStartTime;
+        if (elapsedTime < slowEffectDuration)
+        {
+            // Gradually slow down
+            float currentSpeedFactor = 1.0f - ((1.0f - minimumSpeedFactor) * (elapsedTime / slowEffectDuration));
+            m_speed = originalSpeed * currentSpeedFactor;
+        }
+        else if (elapsedTime < slowEffectDuration + postSlowWaitDuration)
+        {
+            // Keep the unit stopped
+            m_speed = originalSpeed * minimumSpeedFactor;
+            inPostSlowWait = true;
+        }
+        else
+        {
+            // Reset to original speed
+            m_speed = originalSpeed;
+            isGraduallySlowed = false;
+            inPostSlowWait = false;
+        }
+    }
 }
 
 void Unit::render(sf::RenderWindow& m_window)
@@ -154,6 +177,17 @@ void Unit::addHealth(float healthAmount)
     {
         m_health = m_maxHealth;
     }
+}
+
+void Unit::applySlowEffect(float minSpeedFactor, float duration, float postSlowWait)
+{
+    isSlowed = true;
+    isGraduallySlowed = true;
+    minimumSpeedFactor = minSpeedFactor;
+    slowEffectDuration = duration;
+    postSlowWaitDuration = postSlowWait;
+    slowDownStartTime = slowEffectClock.getElapsedTime().asSeconds();
+    inPostSlowWait = false;
 }
 
 void Unit::setEnemyUnits(std::vector<Unit*>& enemyUnits)

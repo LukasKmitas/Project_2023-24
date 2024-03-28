@@ -14,20 +14,45 @@ private:
 
 	void setupTankAurora();
 	void setupHealingAura();
+	void setupEnergyWave();
 
 	void movement(sf::Time t_deltaTime);
 
-	void spawnElectricalParticleEffect();
+	void spawnElectricalParticleEffect(sf::Time t_deltaTime);
+
+	void startEMPCharge();
+	void emitEMP();
+
+	sf::Vector2f rotateVector(sf::Vector2f vector, float angleDegrees);
+
+	float angleBetweenVectors(sf::Vector2f vec1, sf::Vector2f vec2);
+
+	void resetEnergyWave();
 
 	sf::CircleShape m_healingAura;
 	sf::Shader m_healingAuraShader;
 	sf::Clock m_shaderClock;
 
+	sf::Sprite m_energyWaveSprite;
+	sf::Texture m_energyWaveTexture;
 	sf::Texture m_lightningTexture;
+
+	sf::Vector2f directionToEnemy;
 
 	float m_healingRange = 150.0f;
 
-	bool isChargingEMPWave = false;
-	
+	// Electicity stuff
+	bool isChargingEMPWave = true;
+	float empChargeTime = 6.0f;
+	float currentChargeTime = 0.0f;
+	float empExpandArea = 15.0f;
+
+	// Energy Wave stuff
+	bool isFiringEnergyWave = false;
+	sf::Vector2f energyWavePosition;
+	float energyWaveSpeed = 200.0f;
+	float energyWaveSize = 0.4f; 
+	float energyWaveMaxSize = 1.5f;
+	float energyWaveGrowthRate = 0.5f;
 };
 

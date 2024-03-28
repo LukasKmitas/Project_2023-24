@@ -32,6 +32,7 @@ public:
     void setTargetPosition(const sf::Vector2f& targetPos);
     void takeDamage(float damageAmount);
     void addHealth(float healthAmount);
+    void applySlowEffect(float speedFactor, float duration, float postSlowWait);
 
     void setEnemyUnits(std::vector<Unit*>& enemyUnits);
 
@@ -111,5 +112,17 @@ protected:
     sf::Vector2f m_velocity;
     sf::Vector2f directionToEnemy;
     sf::Vector2f m_acceleration = sf::Vector2f(0.0f, 0.0f);
+
+
+    sf::Clock slowEffectClock;
+    bool isSlowed = false;
+    bool isGraduallySlowed = false;
+    bool inPostSlowWait = false;
+    float slowDownStartTime = 0.0f;
+    float minimumSpeedFactor = 0.1f;
+    float slowEffectDuration = 0.0f;
+    float originalSpeed = 100.0f; 
+    float postSlowWaitDuration = 3.0f;
+
 };
 

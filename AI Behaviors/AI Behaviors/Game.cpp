@@ -937,6 +937,14 @@ void Game::createEnemyUnit()
 		newBuggy2->setEnemyUnits(playerUnits);
 		enemyUnits.push_back(newBuggy2);
 
+		sf::Vector2f spawnPosition3 = sf::Vector2f(700.0f, 950.0f);
+
+		TankAurora* newTankAurora = new TankAurora();
+		newTankAurora->setPosition(spawnPosition3);
+		newTankAurora->setTargetPosition(spawnPosition3);
+		newTankAurora->setEnemyUnits(playerUnits);
+		enemyUnits.push_back(newTankAurora);
+
 		runOnce = true;
 	}
 }
