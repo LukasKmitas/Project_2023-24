@@ -165,6 +165,9 @@
     <ClCompile Include="TankAurora.cpp">
       <Filter>Source Files\Units</Filter>
     </ClCompile>
+    <ClCompile Include="RiflemanSquad.cpp">
+      <Filter>Source Files\Units</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -261,6 +264,9 @@
       <Filter>Header Files\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="TankAurora.h">
+      <Filter>Header Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="RiflemanSquad.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
   </ItemGroup>

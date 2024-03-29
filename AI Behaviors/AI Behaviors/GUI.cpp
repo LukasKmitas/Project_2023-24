@@ -121,8 +121,18 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 		}
 		else if (m_selectedBuildingType == BuildingType::Barracks)
 		{
-			// InfantrySquad unit
-
+			// Rifleman Squad unit
+			sf::Vector2f riflemanIconPosition = m_sideBar.getRiflemanIconPosition();
+			sf::FloatRect riflemanIconBounds(riflemanIconPosition, sf::Vector2f(98, 75));
+			if (riflemanIconBounds.contains(guiMousePosition))
+			{
+				std::cout << "Rifleman Squad Icon Clicked" << std::endl;
+				if (m_riflemanSquad.checkAffordability())
+				{
+					m_selectedInfantryType = InfantryType::RifleSquad;
+					m_unitConfirmed = true;
+				}
+			}
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
@@ -307,6 +317,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
 				std::cout << "You have selected Barracks " << building->getBuildingID() << std::endl;
+				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
 				{

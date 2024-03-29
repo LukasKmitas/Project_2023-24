@@ -15,6 +15,8 @@
 #include "Tile.h"
 #include "LevelEditor.h"
 
+#include "RiflemanSquad.h"
+
 #include "Harvester.h"
 #include "Buggy.h"
 #include "TankAurora.h"
@@ -39,6 +41,7 @@ public:
     VehicleType m_selectedVehicleType = VehicleType::None;
     AirCraftType m_selectedAircraftType = AirCraftType::None;
 
+    RiflemanSquad m_riflemanSquad;
     Harvester m_harvester;
     Buggy m_buggy;
     TankAurora m_tankAurora;

@@ -824,6 +824,25 @@ void Game::createUnit()
 {
 	if (m_gui.m_unitConfirmed)
 	{
+		// Infantry 
+		if (m_gui.m_selectedInfantryType == InfantryType::RifleSquad)
+		{
+			if (m_gui.m_selectedBuilding)
+			{
+				sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
+				sf::Vector2f spawnPosition = buildingPosition + sf::Vector2f(0.0f, 60.0f);
+
+				RiflemanSquad* newRiflemanSquad = new RiflemanSquad();
+				newRiflemanSquad->setPosition(spawnPosition);
+				newRiflemanSquad->setTargetPosition(spawnPosition);
+				newRiflemanSquad->setEnemyUnits(enemyUnits);
+
+				playerUnits.push_back(newRiflemanSquad);
+
+				m_gui.m_unitConfirmed = false;
+				m_gui.m_selectedBuilding = nullptr;
+			}
+		}
 		// Vehicles
 		if (m_gui.m_selectedVehicleType == VehicleType::Harvester)
 		{

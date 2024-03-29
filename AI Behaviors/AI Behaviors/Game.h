@@ -117,7 +117,6 @@ private:
 	bool levelLoaded = false;
 	bool m_exitGame;
 
-
 	// Neural Network stuff
 	int mouse_x;
 	int mouse_y;

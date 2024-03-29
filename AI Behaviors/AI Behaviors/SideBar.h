@@ -39,6 +39,8 @@ public:
     sf::Vector2f getBarracksIconPosition() const;
     sf::Vector2f getVehicleIconPosition() const;
     sf::Vector2f getAirCraftIconPosition() const;
+    // Infantry
+    sf::Vector2f getRiflemanIconPosition() const;
     // Vehicles
     sf::Vector2f getHarvesterIconPosition() const;
     sf::Vector2f getBuggyIconPosition() const;
@@ -81,6 +83,8 @@ private:
     sf::Vector2f m_barracksIconPosition;
     sf::Vector2f m_vehicleIconPosition;
     sf::Vector2f m_airCraftIconPosition;
+    // Infantry
+    sf::Vector2f m_riflemanIconPosition;
     // Vehicles
     sf::Vector2f m_harvesterIconPosition;
     sf::Vector2f m_buggyIconPosition;

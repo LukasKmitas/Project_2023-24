@@ -48,6 +48,9 @@ private:
 	float empExpandArea = 15.0f;
 
 	// Energy Wave stuff
+	sf::Shader waveShader;
+	sf::Clock clock;
+
 	bool isFiringEnergyWave = false;
 	sf::Vector2f energyWavePosition;
 	float energyWaveSpeed = 200.0f;

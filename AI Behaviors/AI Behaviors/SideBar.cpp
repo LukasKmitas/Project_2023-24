@@ -94,6 +94,7 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
     if (inftantryType == InfantryType::RifleSquad)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(1, 1, 30, 22));
+        m_riflemanIconPosition = sf::Vector2f(xPosition, yPosition);
     }
     else if (inftantryType == InfantryType::GrenadeSquad)
     {
@@ -213,6 +214,11 @@ sf::Vector2f SideBar::getVehicleIconPosition() const
 sf::Vector2f SideBar::getAirCraftIconPosition() const
 {
     return m_airCraftIconPosition;
+}
+
+sf::Vector2f SideBar::getRiflemanIconPosition() const
+{
+    return m_riflemanIconPosition;
 }
 
 sf::Vector2f SideBar::getHarvesterIconPosition() const

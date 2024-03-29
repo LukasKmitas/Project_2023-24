@@ -85,9 +85,11 @@ void TankAurora::render(sf::RenderWindow& m_window)
 
     m_particleSystem.render(m_window);
 
+    waveShader.setUniform("time", clock.getElapsedTime().asSeconds());
+
     if (isFiringEnergyWave) 
     {
-        m_window.draw(m_energyWaveSprite);
+        m_window.draw(m_energyWaveSprite, &waveShader);
     }
 }
 
@@ -128,6 +130,10 @@ void TankAurora::setupEnergyWave()
     if (!m_energyWaveTexture.loadFromFile("Assets\\Images\\Units\\EnergyWave.png"))
     {
         std::cout << "Error - Loading Energy wave Texture" << std::endl;
+    }
+    if (!waveShader.loadFromFile("Assets\\Shaders\\vertexShader2.vert", "Assets\\Shaders\\EnergyWave.frag")) 
+    {
+        std::cerr << "Failed to load shader" << std::endl;
     }
     m_energyWaveSprite.setTexture(m_energyWaveTexture);
     m_energyWaveSprite.setPosition(m_position);

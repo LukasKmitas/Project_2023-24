@@ -41,6 +41,7 @@
     <ClCompile Include="NeuralNetworks.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Refinery.cpp" />
+    <ClCompile Include="RiflemanSquad.cpp" />
     <ClCompile Include="SideBar.cpp" />
     <ClCompile Include="TankAurora.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -74,6 +75,7 @@
     <ClInclude Include="NeuralNetworks.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Refinery.h" />
+    <ClInclude Include="RiflemanSquad.h" />
     <ClInclude Include="SideBar.h" />
     <ClInclude Include="TankAurora.h" />
     <ClInclude Include="Tile.h" />
