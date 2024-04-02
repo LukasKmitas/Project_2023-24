@@ -24,8 +24,6 @@ public:
     virtual void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits);
     virtual void render(sf::RenderWindow& m_window);
 
-    virtual void attack(Unit* target);
-
     void setPosition(const sf::Vector2f& m_position);
     void moveTo(const sf::Vector2f& targetPos);
     void setSelected(bool selected);
@@ -41,6 +39,7 @@ public:
     sf::Vector2f getPosition() const;
     sf::Vector2f normalize(const sf::Vector2f source);
     sf::Vector2f steerTowards(sf::Vector2f target);
+    sf::Vector2f rotateVector(sf::Vector2f vector, float angleDegrees);
 
     std::vector<Bullet> bullets;
     std::vector<Missile> missiles;
@@ -51,6 +50,9 @@ public:
     float magnitude(const sf::Vector2f& v) const;
     float getHealth() const;
     float toDegrees(float radians);
+    float angleBetweenVectors(sf::Vector2f vec1, sf::Vector2f vec2);
+
+    float getDamage() const;
 
     bool checkAffordability();
     bool isActive() const;
@@ -59,6 +61,7 @@ public:
 
     bool isSelected = false;
     bool m_active = true;
+    bool m_isEnemy = false;
 
 protected:
 
@@ -74,6 +77,9 @@ protected:
 
     void avoidCollisions(std::vector<Unit*>& allyUnits);
     void orientSpriteToMovement(sf::Time t_deltaTime);
+
+    virtual void squadEntityRemoval();
+    virtual void squadEntityRegain();
 
     sf::Texture m_unitTexture;
     sf::Sprite m_unitSprite;
@@ -91,6 +97,7 @@ protected:
     float m_health = 100.0f;
     const float m_maxHealth = 100.0f;
     float m_viewRadius = 100.0f;
+    float m_damage = 4.0f;
 
     float m_speed = 100.0f;
     float m_stoppingDistance = 20;

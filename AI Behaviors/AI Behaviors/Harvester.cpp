@@ -30,7 +30,7 @@ void Harvester::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
         break;
     case CollectingResource:
         currentResourceLoad += collectionRate * t_deltaTime.asSeconds();
-        std::cout << "Current resource collected: " << currentResourceLoad << std::endl;
+        //std::cout << "Current resource collected: " << currentResourceLoad << std::endl;
         if (currentResourceLoad >= maxResourceCapacity) 
         {
             currentResourceLoad = maxResourceCapacity;
@@ -163,7 +163,17 @@ void Harvester::findNearestResourceTile()
         for (int x = 0; x < (*tiles)[0].size(); ++x)
         {
             const Tile& tile = (*tiles)[y][x];
-            if (tile.isResource && (tile.fogStatus == Tile::FogStatus::Visible || tile.fogStatus == Tile::FogStatus::Explored))
+            if (!m_isEnemy && tile.isResource && (tile.fogStatus == Tile::FogStatus::Visible || tile.fogStatus == Tile::FogStatus::Explored))
+            {
+                sf::Vector2f tilePos(x * tile.tileSize, y * tile.tileSize);
+                float distance = this->distance(this->getPosition(), tilePos);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestResourcePos = tilePos;
+                }
+            }
+            if (m_isEnemy && tile.isResource)
             {
                 sf::Vector2f tilePos(x * tile.tileSize, y * tile.tileSize);
                 float distance = this->distance(this->getPosition(), tilePos);
@@ -191,8 +201,14 @@ void Harvester::unloadResources(sf::Time t_deltaTime)
 
     int conversionRate = 14;
     int addedCurrency = static_cast<int>(unloadedResources * conversionRate);
-
-    Global::currency += addedCurrency;
+    if (m_isEnemy)
+    {
+        Global::enemyCurrency += addedCurrency;
+    }
+    else
+    {
+        Global::playerCurrency += addedCurrency;
+    }
 }
 
 void Harvester::moveToRefinery(Refinery* refinery)
@@ -208,7 +224,7 @@ void Harvester::moveToRefinery(Refinery* refinery)
 void Harvester::gettingResourcePosition(const sf::Vector2f& resourcePos)
 {
     m_targetPosition = resourcePos + sf::Vector2f(25,25);
-    std::cout << "Resource tile found at: " << m_targetPosition.x << " " << m_targetPosition.y << std::endl;
+    //std::cout << "Resource tile found at: " << m_targetPosition.x << " " << m_targetPosition.y << std::endl;
     foundResource = true;
 }
 

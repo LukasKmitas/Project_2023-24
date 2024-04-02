@@ -31,16 +31,20 @@ private:
 	GameState m_previousState;
 	MainMenu m_menu;
 	Tile m_tiles;
+	std::vector<Tile> m_tilesVector;
 	LevelEditor m_levelEditor;
 	LevelLoader m_levelLoader;
-	GUI m_gui{ placedBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
+	GUI m_gui{ placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
-	std::vector<Building*> placedBuildings;
+	std::vector<Building*> placedPlayerBuildings;
+	std::vector<Building*> placedEnemyBuildings;
 	std::vector<Unit*> playerUnits;
 	std::vector<Unit*> enemyUnits;
 	Unit* m_selectedUnit = nullptr;
 	ParticleSystem m_particleSystem;
 	NeuralNetworks m_neural_network;
+
+	std::map<BuildingType, int> enemyBuildingCounts;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -49,8 +53,19 @@ private:
 
 	void createBuilding(sf::RenderWindow& window);
 	void createBase();
+	void createEnemyStarterBase();
 	void saveLevel();
 	void loadLevel(const std::string& filename);
+
+	// Enemy AI
+	void updateEnemyAI(sf::Time t_deltaTime);
+	void createEnemyUnit(const std::string& unitType);
+	void updateBuildingCounts();
+	void decideNextEnemyBuilding();
+	void placeEnemyBuilding(BuildingType type);
+	sf::Vector2f findPlacementPositionNearExistingBuilding();
+	sf::Vector2f enemyBuildingPosition;
+	Building* newEnemyBuilding = nullptr;
 
 	void moveCamera(sf::Vector2f mousePosition);
 	void updateViewWithMouse();
@@ -122,26 +137,19 @@ private:
 	int mouse_y;
 	int outputHeight = 64;
 	int outputWidth = 64;
-
 	float total_error = 0;
 	float dot_x;
 	float dot_y;
-
 	const int TRAININGS_PER_FRAME = 1000;
-
 	bool train = false;
 
 	vector_2d errors;
 	std::vector<std::vector<float>> neural_network;
 	std::vector<std::vector<std::vector<float>>> weights;
-
 	std::array<int, 2> hiddenNeurons = m_neural_network.getHiddenNeurons();
 	std::array<int, 3> biasNeurons = m_neural_network.getBiasNeurons();
-
 	std::mt19937_64 random_engine;
-
 	sf::Text errorText;
-
 	sf::Image outputImage;
 	sf::Sprite outputSprite;
 	sf::Texture outputTexture;

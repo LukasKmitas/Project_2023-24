@@ -23,10 +23,6 @@ private:
 	void startEMPCharge();
 	void emitEMP();
 
-	sf::Vector2f rotateVector(sf::Vector2f vector, float angleDegrees);
-
-	float angleBetweenVectors(sf::Vector2f vec1, sf::Vector2f vec2);
-
 	void resetEnergyWave();
 
 	sf::CircleShape m_healingAura;

@@ -84,10 +84,6 @@ void Unit::render(sf::RenderWindow& m_window)
     }
 }
 
-void Unit::attack(Unit* target)
-{
-}
-
 void Unit::avoidCollisions(std::vector<Unit*>& allyUnits)
 {
     const float minSeparation = 250.0f;
@@ -155,6 +151,14 @@ void Unit::orientSpriteToMovement(sf::Time t_deltaTime)
     }
 }
 
+void Unit::squadEntityRemoval()
+{
+}
+
+void Unit::squadEntityRegain()
+{
+}
+
 void Unit::setTargetPosition(const sf::Vector2f& targetPos)
 {
     m_targetPosition = targetPos;
@@ -168,6 +172,7 @@ void Unit::takeDamage(float damageAmount)
     {
         m_health = 0;
     }
+    squadEntityRemoval();
 }
 
 void Unit::addHealth(float healthAmount)
@@ -177,6 +182,7 @@ void Unit::addHealth(float healthAmount)
     {
         m_health = m_maxHealth;
     }
+    squadEntityRegain();
 }
 
 void Unit::applySlowEffect(float minSpeedFactor, float duration, float postSlowWait)
@@ -246,6 +252,19 @@ float Unit::toDegrees(float radians)
     return radians * 180.0f / PI;
 }
 
+float Unit::angleBetweenVectors(sf::Vector2f vec1, sf::Vector2f vec2)
+{
+    float dot = vec1.x * vec2.x + vec1.y * vec2.y;
+    float det = vec1.x * vec2.y - vec1.y * vec2.x;
+    float angle = atan2(det, dot) * (180 / PI);
+    return angle;
+}
+
+float Unit::getDamage() const
+{
+    return m_damage;
+}
+
 void Unit::initView()
 {
     m_viewCircleShape.setRadius(m_viewRadius);
@@ -278,16 +297,27 @@ void Unit::initShader()
 
 bool Unit::checkAffordability()
 {
-    if (Global::currency >= m_cost)
+    if (!m_isEnemy)
     {
-        Global::currency -= m_cost;
-        std::cout << m_cost << std::endl;
-        return true;
+        if (Global::playerCurrency >= m_cost)
+        {
+            Global::playerCurrency -= m_cost;
+            std::cout << m_cost << std::endl;
+            return true;
+        }
+        else
+        {
+            std::cout << "Not enough currency to create unit." << std::endl;
+            return false;
+        }
     }
     else
     {
-        std::cout << "Not enough currency to create unit." << std::endl;
-        return false;
+        if (Global::enemyCurrency >= m_cost)
+        {
+            Global::enemyCurrency -= m_cost;
+            return true;
+        }
     }
 }
 
@@ -342,6 +372,16 @@ sf::Vector2f Unit::steerTowards(sf::Vector2f target)
     }
 
     return steer;
+}
+
+sf::Vector2f Unit::rotateVector(sf::Vector2f vector, float angleDegrees)
+{
+    float rad = angleDegrees * PI / 180.0f;
+    return sf::Vector2f
+    (
+        vector.x * cos(rad) - vector.y * sin(rad),
+        vector.x * sin(rad) + vector.y * cos(rad)
+    );
 }
 
 float Unit::angleFromVector(const sf::Vector2f& vector) 

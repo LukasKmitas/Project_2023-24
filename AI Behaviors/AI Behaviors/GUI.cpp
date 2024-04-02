@@ -324,9 +324,9 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 					m_sideBar.clearButtons();
 					m_selectedBuildingType = BuildingType::Barracks;
 					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RifleSquad, 0, 0, "Riflemen");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "Grenaders");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "Rocketeers");
-					m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "Medic");
+					//m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::GrenadeSquad, 1, 0, "Grenaders");
+					//m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::RocketSquad, 2, 0, "Rocketeers");
+					//m_sideBar.addInfantryButton(m_unitInfantryTexture, InfantryType::MedicUnit, 0, 1, "Medic");
 				}
 				break;
 			}
@@ -371,8 +371,8 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 
 void GUI::updateCurrency()
 {
-	Global::currency = std::min(Global::currency, 5000);
-	m_currencyText.setString("Currency:   " + std::to_string(Global::currency));
+	Global::playerCurrency = std::min(Global::playerCurrency, 5000);
+	m_currencyText.setString("Currency:   " + std::to_string(Global::playerCurrency));
 }
 
 void GUI::setupTopBar()
@@ -393,7 +393,7 @@ void GUI::setupTopBar()
 	m_currencyText.setFillColor(sf::Color(225, 245, 255));
 	m_currencyText.setOutlineColor(sf::Color::Blue);
 	m_currencyText.setOutlineThickness(0.3);
-	m_currencyText.setString("Currency:   " + std::to_string(Global::currency));
+	m_currencyText.setString("Currency:   " + std::to_string(Global::playerCurrency));
 	sf::FloatRect textBounds = m_currencyText.getLocalBounds();
 	m_currencyText.setOrigin(textBounds.width / 2, 0);
 	m_currencyText.setPosition(Global::S_WIDTH - 200, 5);
@@ -498,7 +498,7 @@ void GUI::sellBuilding()
 {
 	if (m_selectedBuilding) 
 	{
-		Global::currency += m_selectedBuilding->getCost() - 300;
+		Global::playerCurrency += m_selectedBuilding->getCost() - 300;
 		auto it = std::find(placedBuildings.begin(), placedBuildings.end(), m_selectedBuilding);
 		if (it != placedBuildings.end()) 
 		{

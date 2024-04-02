@@ -15,8 +15,6 @@ public:
 
     sf::Vector2f position;
 
-    float damage = 4.0f;
-
     bool active = true;
 
 private:

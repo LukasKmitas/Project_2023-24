@@ -27,8 +27,10 @@ Game::Game() :
 	}
 	m_cursorSprite.setTexture(m_cursorTexture);
 
-	createBase();
 	initParticles();
+
+	createBase();
+	createEnemyStarterBase();
 
 	m_levelEditor.resetFogOfWar();
 
@@ -42,8 +44,7 @@ Game::Game() :
 }
 
 /// <summary>
-/// default destructor we didn't dynamically allocate anything
-/// so we don't need to free it, but mthod needs to be here
+/// default destructor
 /// </summary>
 Game::~Game()
 {
@@ -337,9 +338,13 @@ void Game::update(sf::Time t_deltaTime)
 		updateViewWithMouse();
 		createBuilding(m_window);
 		m_gui.update(t_deltaTime);
-		for (Building* building : placedBuildings)
+		for (Building* playerBuilding : placedPlayerBuildings)
 		{
-			building->update(t_deltaTime);
+			playerBuilding->update(t_deltaTime);
+		}
+		for (Building* enemyBuilding : placedEnemyBuildings)
+		{
+			enemyBuilding->update(t_deltaTime);
 		}
 		m_gui.handleBuildingPlacement(mouseGUIPosition, m_window);
 		m_levelEditor.animationForResources();
@@ -357,7 +362,7 @@ void Game::update(sf::Time t_deltaTime)
 					if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 					{
 						bullet.active = false;
-						enemyUnit->takeDamage(bullet.damage);
+						enemyUnit->takeDamage(unit->getDamage());
 						if (enemyUnit->getHealth() <= 0)
 						{
 							enemyUnit->m_active = false;
@@ -405,7 +410,7 @@ void Game::update(sf::Time t_deltaTime)
 					if (bullet.bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
 					{
 						bullet.active = false;
-						playerUnit->takeDamage(bullet.damage);
+						playerUnit->takeDamage(eUnits->getDamage());
 						if (playerUnit->getHealth() <= 0)
 						{
 							playerUnit->m_active = false;
@@ -428,8 +433,9 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_particleSystem.update(t_deltaTime);
 		updateFogOfWarBasedOnUnits(playerUnits);
-		updateFogOfWarBasedOnBuildings(placedBuildings);
+		updateFogOfWarBasedOnBuildings(placedPlayerBuildings);
 		spawnBubbleParticles();
+		updateEnemyAI(t_deltaTime);
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -464,9 +470,20 @@ void Game::render()
 		break;
 	case GameState::PlayGame:
 		m_levelEditor.renderLoadedLevel(m_window);
-		for (Building* building : placedBuildings)
+		for (Building* playerBuilding : placedPlayerBuildings)
 		{
-			building->render(m_window);
+			playerBuilding->render(m_window);
+		}
+		for (Building* enemyBuilding : placedEnemyBuildings)
+		{
+			sf::Vector2f buildingPosition = enemyBuilding->getPosition();
+			int tileX = static_cast<int>(buildingPosition.x / m_tiles.tileSize);
+			int tileY = static_cast<int>(buildingPosition.y / m_tiles.tileSize);
+
+			if (m_levelEditor.m_tiles[tileY][tileX].fogStatus == Tile::FogStatus::Visible)
+			{
+				enemyBuilding->render(m_window);
+			}
 		}
 		for (Unit* unit : playerUnits)
 		{
@@ -571,14 +588,14 @@ void Game::createBuilding(sf::RenderWindow& window)
 		{
 			Refinery* newRefinery = new Refinery();
 			newRefinery->setPosition(worldMousePosition);
-			placedBuildings.push_back(newRefinery);
+			placedPlayerBuildings.push_back(newRefinery);
 			sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
 
 			sf::Vector2f spawnPosition = worldMousePosition + sf::Vector2f(0.0f, 60.0f);
 			Harvester* newHarvester = new Harvester();
 			newHarvester->setPosition(spawnPosition);
 			newHarvester->setTargetPosition(spawnPosition);
-			newHarvester->setBuildings(placedBuildings);
+			newHarvester->setBuildings(placedPlayerBuildings);
 			newHarvester->setTiles(m_levelEditor.m_tiles);
 			newHarvester->currentState = newHarvester->MovingToResource;
 			playerUnits.push_back(newHarvester);
@@ -589,21 +606,21 @@ void Game::createBuilding(sf::RenderWindow& window)
 		{
 			Barracks* newBarracks = new Barracks();
 			newBarracks->setPosition(worldMousePosition);
-			placedBuildings.push_back(newBarracks);
+			placedPlayerBuildings.push_back(newBarracks);
 			std::cout << "Barracks Created" << std::endl;
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
 			WarFactory* newVehicle = new WarFactory();
 			newVehicle->setPosition(worldMousePosition);
-			placedBuildings.push_back(newVehicle);
+			placedPlayerBuildings.push_back(newVehicle);
 			std::cout << "Vehicle Created" << std::endl;
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{
 			AirCraft* newAirCraft = new AirCraft();
 			newAirCraft->setPosition(worldMousePosition);
-			placedBuildings.push_back(newAirCraft);
+			placedPlayerBuildings.push_back(newAirCraft);
 			std::cout << "AirCraft Created" << std::endl;
 		}
 		m_gui.m_confirmBuildingPlacement = false;
@@ -616,8 +633,35 @@ void Game::createBase()
 {
 	Headquarters* newHeadquarters = new Headquarters();
 	newHeadquarters->setPosition(sf::Vector2f(500.0f, 350.0f));
-	placedBuildings.push_back(newHeadquarters);
+	placedPlayerBuildings.push_back(newHeadquarters);
 	std::cout << "Base Initilised" << std::endl;
+}
+
+void Game::createEnemyStarterBase()
+{
+	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+
+	Headquarters* newHeadquarters = new Headquarters();
+	newHeadquarters->setPosition(sf::Vector2f(1900.0f, 2100.0f));
+	placedEnemyBuildings.push_back(newHeadquarters);
+
+	Refinery* newRefinery = new Refinery();
+	newRefinery->setPosition(sf::Vector2f(2100.0f, 2300.0f));
+	placedEnemyBuildings.push_back(newRefinery);
+
+	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f) + sf::Vector2f(0.0f, 60.0f);
+
+	Harvester* newHarvester = new Harvester();
+	newHarvester->setPosition(spawnPosition);
+	newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
+	newHarvester->setBuildings(placedEnemyBuildings);
+	newHarvester->setTiles(m_levelEditor.m_tiles);
+	newHarvester->currentState = newHarvester->MovingToResource;
+	newHarvester->m_isEnemy = true;
+	enemyUnits.push_back(newHarvester);
+
+	std::cout << "Enemy Base Initilised" << std::endl;
+	updateBuildingCounts();
 }
 
 void Game::saveLevel()
@@ -824,6 +868,8 @@ void Game::createUnit()
 {
 	if (m_gui.m_unitConfirmed)
 	{
+		sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+
 		// Infantry 
 		if (m_gui.m_selectedInfantryType == InfantryType::RifleSquad)
 		{
@@ -834,13 +880,10 @@ void Game::createUnit()
 
 				RiflemanSquad* newRiflemanSquad = new RiflemanSquad();
 				newRiflemanSquad->setPosition(spawnPosition);
-				newRiflemanSquad->setTargetPosition(spawnPosition);
+				newRiflemanSquad->setTargetPosition(spawnPosition + targetPositionOffset);
 				newRiflemanSquad->setEnemyUnits(enemyUnits);
 
 				playerUnits.push_back(newRiflemanSquad);
-
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
 			}
 		}
 		// Vehicles
@@ -853,15 +896,12 @@ void Game::createUnit()
 
 				Harvester* newHarvester = new Harvester();
 				newHarvester->setPosition(spawnPosition);
-				newHarvester->setTargetPosition(spawnPosition);
-				newHarvester->setBuildings(placedBuildings);
+				newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
+				newHarvester->setBuildings(placedPlayerBuildings);
 				newHarvester->setTiles(m_levelEditor.m_tiles);
 				newHarvester->currentState = newHarvester->MovingToResource;
 
 				playerUnits.push_back(newHarvester);
-
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
 			}
 		}
 		if (m_gui.m_selectedVehicleType == VehicleType::Buggy)
@@ -873,12 +913,10 @@ void Game::createUnit()
 
 				Buggy* newBuggy = new Buggy();
 				newBuggy->setPosition(spawnPosition);
-				newBuggy->setTargetPosition(spawnPosition);
+				newBuggy->setTargetPosition(spawnPosition + targetPositionOffset);
 				newBuggy->setEnemyUnits(enemyUnits);
-				playerUnits.push_back(newBuggy);
 
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
+				playerUnits.push_back(newBuggy);
 			}
 		}
 		if (m_gui.m_selectedVehicleType == VehicleType::Tank)
@@ -890,12 +928,10 @@ void Game::createUnit()
 
 				TankAurora* newTankAurora = new TankAurora();
 				newTankAurora->setPosition(spawnPosition);
-				newTankAurora->setTargetPosition(spawnPosition);
+				newTankAurora->setTargetPosition(spawnPosition + targetPositionOffset);
 				newTankAurora->setEnemyUnits(enemyUnits);
-				playerUnits.push_back(newTankAurora);
 
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
+				playerUnits.push_back(newTankAurora);
 			}
 		}
 		// Air
@@ -908,12 +944,10 @@ void Game::createUnit()
 
 				HammerHead* newHammerHead = new HammerHead();
 				newHammerHead->setPosition(spawnPosition);
-				newHammerHead->setTargetPosition(spawnPosition);
+				newHammerHead->setTargetPosition(spawnPosition + targetPositionOffset);
 				newHammerHead->setEnemyUnits(enemyUnits);
-				playerUnits.push_back(newHammerHead);
 
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
+				playerUnits.push_back(newHammerHead);
 			}
 		}
 		if (m_gui.m_selectedAircraftType == AirCraftType::Firehawk)
@@ -925,14 +959,18 @@ void Game::createUnit()
 
 				Firehawk* newFirehawk = new Firehawk();
 				newFirehawk->setPosition(spawnPosition);
-				newFirehawk->setTargetPosition(spawnPosition);
+				newFirehawk->setTargetPosition(spawnPosition + targetPositionOffset);
 				newFirehawk->setEnemyUnits(enemyUnits);
-				playerUnits.push_back(newFirehawk);
 
-				m_gui.m_unitConfirmed = false;
-				m_gui.m_selectedBuilding = nullptr;
+				playerUnits.push_back(newFirehawk);
 			}
 		}
+		m_gui.m_unitConfirmed = false;
+		m_gui.m_selectedBuilding = nullptr;
+		m_gui.m_selectedBuildingType = BuildingType::None;
+		m_gui.m_selectedInfantryType = InfantryType::None;
+		m_gui.m_selectedVehicleType = VehicleType::None;
+		m_gui.m_selectedAircraftType = AirCraftType::None;
 	}
 }
 
@@ -1105,5 +1143,299 @@ void Game::loadLevel(const std::string& filename)
 	{
 		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + filename + ".txt");
 		levelLoaded = true;
+	}
+}
+
+void Game::updateEnemyAI(sf::Time t_deltaTime)
+{
+	static sf::Time enemyProductionTimer = sf::seconds(0);
+	enemyProductionTimer += t_deltaTime;
+
+	// Example condition: every 10 seconds try to produce a unit
+	if (enemyProductionTimer > sf::seconds(10)) 
+	{
+		updateBuildingCounts();
+
+		if (rand() % 2) 
+		{
+			std::cout << "Enemy created building" << std::endl;
+			decideNextEnemyBuilding();
+		}
+		else 
+		{
+			if (enemyBuildingCounts[BuildingType::Barracks] > 0) // Infantry section
+			{
+				createEnemyUnit("Rifleman");
+				std::cout << "Enemy created Rifleman" << std::endl;
+			}
+			else if (enemyBuildingCounts[BuildingType::WarFactory] > 0) // Vehicle Section
+			{
+				int unitChance = rand() % 10;
+				if (unitChance < 4) // 40% chance for Buggy
+				{ 
+					createEnemyUnit("Buggy");
+					std::cout << "Enemy created Buggy" << std::endl;
+				}
+				else if (unitChance < 8) // 40% chance for Tank
+				{
+					createEnemyUnit("TankAurora");
+					std::cout << "Enemy created Tank" << std::endl;
+				}
+				else  // 20% chance for Harvester
+				{ 
+					createEnemyUnit("Harvester");
+					std::cout << "Enemy created Harvester" << std::endl;
+				}
+			}
+			else if (enemyBuildingCounts[BuildingType::AirCraft] > 0) // Air section
+			{
+				if (rand() % 2) // 50/50 chance
+				{ 
+					createEnemyUnit("Hammerhead");
+					std::cout << "Enemy created Hammerhead" << std::endl;
+				}
+				else
+				{
+					createEnemyUnit("Firehawk");
+					std::cout << "Enemy created Firehawk" << std::endl;
+				}
+			}
+			else
+			{
+				std::cout << "Enemy has no building sadly" << std::endl;
+			}
+		}
+		enemyProductionTimer = sf::seconds(0);
+	}
+
+}
+
+void Game::createEnemyUnit(const std::string& unitType)
+{
+	sf::Vector2f spawnPosition = enemyBuildingPosition;
+	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+
+	if (unitType == "Rifleman") // Infantry units
+	{
+		RiflemanSquad* newRiflemanSquad = new RiflemanSquad();
+		newRiflemanSquad->setPosition(spawnPosition);
+		newRiflemanSquad->setTargetPosition(spawnPosition + targetPositionOffset);
+		newRiflemanSquad->setEnemyUnits(playerUnits);
+
+		enemyUnits.push_back(newRiflemanSquad);
+	}
+	else if (unitType == "Harvester") // Vehicle units
+	{
+		Harvester* newHarvester = new Harvester();
+		newHarvester->setPosition(spawnPosition);
+		newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
+		newHarvester->setBuildings(placedEnemyBuildings);
+		newHarvester->setTiles(m_levelEditor.m_tiles);
+		newHarvester->currentState = newHarvester->MovingToResource;
+
+		enemyUnits.push_back(newHarvester);
+	}
+	else if (unitType == "Buggy") 
+	{
+		Buggy* newBuggy = new Buggy();
+		newBuggy->setPosition(spawnPosition);
+		newBuggy->setTargetPosition(spawnPosition + targetPositionOffset);
+		newBuggy->setEnemyUnits(playerUnits);
+
+		enemyUnits.push_back(newBuggy);
+	}
+	else if (unitType == "TankAurora")
+	{
+		TankAurora* newTankAurora = new TankAurora();
+		newTankAurora->setPosition(spawnPosition);
+		newTankAurora->setTargetPosition(spawnPosition + targetPositionOffset);
+		newTankAurora->setEnemyUnits(playerUnits);
+
+		enemyUnits.push_back(newTankAurora);
+	}
+	else if (unitType == "Hammerhead")
+	{
+		HammerHead* newHammerHead = new HammerHead();
+		newHammerHead->setPosition(spawnPosition);
+		newHammerHead->setTargetPosition(spawnPosition + targetPositionOffset);
+		newHammerHead->setEnemyUnits(playerUnits);
+
+		enemyUnits.push_back(newHammerHead);
+	}
+	else if (unitType == "Firehawk")
+	{
+		Firehawk* newFirehawk = new Firehawk();
+		newFirehawk->setPosition(spawnPosition);
+		newFirehawk->setTargetPosition(spawnPosition + targetPositionOffset);
+		newFirehawk->setEnemyUnits(playerUnits);
+
+		enemyUnits.push_back(newFirehawk);
+	}
+}
+
+void Game::updateBuildingCounts()
+{
+	for (auto& count : enemyBuildingCounts)
+	{
+		count.second = 0;
+	}
+
+	enemyBuildingCounts =
+	{
+		{BuildingType::Refinery, 0},
+		{BuildingType::Headquarters, 0},
+		{BuildingType::Barracks, 0},
+		{BuildingType::WarFactory, 0},
+		{BuildingType::AirCraft, 0}
+	};
+
+	// Iterate over all placed enemy buildings and increment the count for each type
+	for (const auto& building : placedEnemyBuildings)
+	{
+		if (dynamic_cast<Refinery*>(building) != nullptr)
+		{
+			enemyBuildingCounts[BuildingType::Refinery]++;
+		}
+		else if (dynamic_cast<Headquarters*>(building) != nullptr) 
+		{
+			enemyBuildingCounts[BuildingType::Headquarters]++;
+		}
+		else if (dynamic_cast<Barracks*>(building) != nullptr)
+		{
+			enemyBuildingCounts[BuildingType::Barracks]++;
+		}
+		else if (dynamic_cast<WarFactory*>(building) != nullptr)
+		{
+			enemyBuildingCounts[BuildingType::WarFactory]++;
+		}
+		else if (dynamic_cast<AirCraft*>(building) != nullptr)
+		{
+			enemyBuildingCounts[BuildingType::AirCraft]++;
+		}
+	}
+}
+
+void Game::decideNextEnemyBuilding()
+{
+	updateBuildingCounts();
+
+	const int maxRefineries = 4;
+	const int maxBarracks = 2;
+	const int maxWarFactories = 2;
+	const int maxAirCrafts = 2;
+
+	if (enemyBuildingCounts[BuildingType::Refinery] < maxRefineries)
+	{
+		placeEnemyBuilding(BuildingType::Refinery);
+	}
+	else if (enemyBuildingCounts[BuildingType::Barracks] < maxBarracks)
+	{
+		placeEnemyBuilding(BuildingType::Barracks);
+	}
+	else if (enemyBuildingCounts[BuildingType::WarFactory] < maxWarFactories)
+	{
+		placeEnemyBuilding(BuildingType::WarFactory);
+	}
+	else if (enemyBuildingCounts[BuildingType::AirCraft] < maxAirCrafts)
+	{
+		placeEnemyBuilding(BuildingType::AirCraft);
+	}
+}
+
+void Game::placeEnemyBuilding(BuildingType type)
+{
+	sf::Vector2f position = findPlacementPositionNearExistingBuilding();
+	enemyBuildingPosition = position;
+
+	switch (type)
+	{
+	case BuildingType::Refinery:
+		newEnemyBuilding = new Refinery();
+		createEnemyUnit("Harvester");
+		break;
+	case BuildingType::Barracks:
+		newEnemyBuilding = new Barracks();
+		break;
+	case BuildingType::WarFactory:
+		newEnemyBuilding = new WarFactory();
+		break;
+	case BuildingType::AirCraft:
+		newEnemyBuilding = new AirCraft();
+		break;
+	default:
+		break;
+	}
+
+	if (newEnemyBuilding)
+	{
+		newEnemyBuilding->setPosition(position);
+		placedEnemyBuildings.push_back(newEnemyBuilding);
+	}
+}
+
+sf::Vector2f Game::findPlacementPositionNearExistingBuilding()
+{
+	const int maxAttempts = 100; // Limit the number of attempts to avoid an infinite loop
+	int attempts = 0;
+	bool intersectsBuilding = false;
+	bool intersectsWallTile = false;
+	float buildingWidth = 100.0f;
+	float buildingHeight = 100.0f;
+
+	while (attempts < maxAttempts)
+	{
+		attempts++;
+
+		if (placedEnemyBuildings.empty()) 
+		{
+			std::cout << "No enemy buildings found :( what the hell" << std::endl;
+		}
+
+		int index = rand() % placedEnemyBuildings.size();
+		Building* baseBuilding = placedEnemyBuildings[index];
+
+		// Calculate a random position within the placement radius of the selected building
+		float radius = baseBuilding->getPlacementRadius().getRadius();
+		sf::Vector2f centerPosition = baseBuilding->getPosition();
+		float angle = static_cast<float>(rand() % 360) * (3.14159f / 180.0f);
+		float distanceFromCenter = static_cast<float>(rand() % static_cast<int>(radius));
+		sf::Vector2f newPosition = centerPosition + sf::Vector2f(distanceFromCenter * cos(angle), distanceFromCenter * sin(angle));
+		//sf::FloatRect newBuildingRect = newEnemyBuilding->getBuildingSprite().getGlobalBounds();
+		sf::FloatRect newBuildingRect(newPosition.x - buildingWidth / 2, newPosition.y - buildingHeight / 2, buildingWidth, buildingHeight);
+
+		// Check for intersection with existing buildings
+		intersectsBuilding = false;
+		for (const auto& building : placedEnemyBuildings) 
+		{
+			sf::FloatRect existingBuildingRect = building->getBuildingSprite().getGlobalBounds();
+
+			if (newBuildingRect.intersects(existingBuildingRect))
+			{
+				intersectsBuilding = true;
+				break;
+			}
+		}
+
+		// Check for intersection with wall tiles
+		intersectsWallTile = false;
+		for (const auto& tile : m_tilesVector) 
+		{ 
+			if (tile.isWall)
+			{
+				sf::FloatRect wallTileRect = tile.m_tile.getGlobalBounds();
+
+				if (newBuildingRect.intersects(wallTileRect))
+				{
+					intersectsWallTile = true;
+					break;
+				}
+			}
+		}
+
+		if (!intersectsBuilding && !intersectsWallTile) 
+		{
+			std::cout << newPosition.x << " " << newPosition.y << std::endl;
+			return newPosition;
+		}
 	}
 }

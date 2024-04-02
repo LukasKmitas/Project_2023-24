@@ -7,6 +7,7 @@ Buggy::Buggy()
     m_health = 100;
     m_viewRadius = 300;
     m_speed = 120;
+    m_damage = 4;
 
     m_maxForce = 150;
     m_slowingRadius = 100;

@@ -64,9 +64,9 @@ int Building::getBuildingID() const
 
 bool Building::checkAffordability()
 {
-	if (Global::currency >= m_cost) 
+	if (Global::playerCurrency >= m_cost) 
 	{
-		Global::currency -= m_cost;
+		Global::playerCurrency -= m_cost;
 		std::cout << m_cost << std::endl;
 		return true;
 	}

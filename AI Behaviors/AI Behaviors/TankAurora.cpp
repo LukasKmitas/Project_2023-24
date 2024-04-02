@@ -241,24 +241,6 @@ void TankAurora::emitEMP()
     }
 }
 
-sf::Vector2f TankAurora::rotateVector(sf::Vector2f vector, float angleDegrees)
-{
-    float rad = angleDegrees * PI / 180.0f;
-    return sf::Vector2f
-    (
-        vector.x * cos(rad) - vector.y * sin(rad),
-        vector.x * sin(rad) + vector.y * cos(rad)
-    );
-}
-
-float TankAurora::angleBetweenVectors(sf::Vector2f vec1, sf::Vector2f vec2)
-{
-    float dot = vec1.x * vec2.x + vec1.y * vec2.y;
-    float det = vec1.x * vec2.y - vec1.y * vec2.x;
-    float angle = atan2(det, dot) * (180 / PI);
-    return angle;
-}
-
 void TankAurora::resetEnergyWave()
 {
     isFiringEnergyWave = false;

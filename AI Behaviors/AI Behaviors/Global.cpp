@@ -1,3 +1,5 @@
 #include "Global.h"
 
-int Global::currency = 5000;
+int Global::playerCurrency = 5000;
+
+int Global::enemyCurrency = 10000;
