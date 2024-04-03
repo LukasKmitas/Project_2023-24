@@ -269,6 +269,9 @@
     <ClInclude Include="RiflemanSquad.h">
       <Filter>Header Files\Units</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyAIState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="ASSETS\FONTS\ariblk.ttf">

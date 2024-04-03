@@ -338,104 +338,18 @@ void Game::update(sf::Time t_deltaTime)
 		updateViewWithMouse();
 		createBuilding(m_window);
 		m_gui.update(t_deltaTime);
-		for (Building* playerBuilding : placedPlayerBuildings)
-		{
-			playerBuilding->update(t_deltaTime);
-		}
-		for (Building* enemyBuilding : placedEnemyBuildings)
-		{
-			enemyBuilding->update(t_deltaTime);
-		}
 		m_gui.handleBuildingPlacement(mouseGUIPosition, m_window);
 		m_levelEditor.animationForResources();
 		m_levelEditor.animationForWeed();
 		createUnit();
-		createEnemyUnit();
-		for (auto& unit : playerUnits)
-		{
-			unit->update(t_deltaTime, playerUnits);
-
-			for (auto& bullet : unit->bullets)
-			{
-				for (auto& enemyUnit : enemyUnits)
-				{
-					if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
-					{
-						bullet.active = false;
-						enemyUnit->takeDamage(unit->getDamage());
-						if (enemyUnit->getHealth() <= 0)
-						{
-							enemyUnit->m_active = false;
-						}
-						spawnBulletSparkParticles(bullet.position);
-					}
-				}
-			}
-			for (auto& missile : unit->missiles)
-			{
-				for (auto& enemyUnit : enemyUnits)
-				{
-					if (missile.missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
-					{
-						missile.active = false;
-						enemyUnit->takeDamage(missile.damage);
-						if (enemyUnit->getHealth() <= 0)
-						{
-							enemyUnit->m_active = false;
-						}
-						spawnExplosionParticle(missile.position);
-					}
-				}
-			}
-
-			// Remove inactive bullets
-			unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
-				[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
-			// Remove inactive missiles
-			unit->missiles.erase(std::remove_if(unit->missiles.begin(), unit->missiles.end(),
-				[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), unit->missiles.end());
-
-			// Remove dead enemy units
-			enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
-				[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());
-		}
-		for (Unit* eUnits : enemyUnits)
-		{
-			eUnits->update(t_deltaTime, enemyUnits);
-
-			for (auto& bullet : eUnits->bullets)
-			{
-				for (auto& playerUnit : playerUnits)
-				{
-					if (bullet.bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
-					{
-						bullet.active = false;
-						playerUnit->takeDamage(eUnits->getDamage());
-						if (playerUnit->getHealth() <= 0)
-						{
-							playerUnit->m_active = false;
-						}
-						spawnBulletSparkParticles(bullet.position);
-					}
-				}
-			}
-
-			// Remove inactive bullets
-			eUnits->bullets.erase(std::remove_if(eUnits->bullets.begin(), eUnits->bullets.end(),
-				[](const Bullet& bullet) { return !bullet.active; }), eUnits->bullets.end());
-			// Remove inactive missiles
-			eUnits->missiles.erase(std::remove_if(eUnits->missiles.begin(), eUnits->missiles.end(),
-				[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), eUnits->missiles.end());
-
-			// Remove dead enemy units
-			playerUnits.erase(std::remove_if(playerUnits.begin(), playerUnits.end(),
-				[](Unit* playerUnits) { return !playerUnits->isActive(); }), playerUnits.end());
-		}
+		updatePlayerAssets(t_deltaTime);
+		updateEnemyAssets(t_deltaTime);
 		m_particleSystem.update(t_deltaTime);
 		updateFogOfWarBasedOnUnits(playerUnits);
 		updateFogOfWarBasedOnBuildings(placedPlayerBuildings);
 		spawnBubbleParticles();
-		updateEnemyAI(t_deltaTime);
+		updateEnemyAIDecisionOnCreating(t_deltaTime);
+		updateEnemyAIUnitDecisionState(t_deltaTime);
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -637,31 +551,61 @@ void Game::createBase()
 	std::cout << "Base Initilised" << std::endl;
 }
 
-void Game::createEnemyStarterBase()
+void Game::updatePlayerAssets(sf::Time t_deltaTime)
 {
-	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+	for (Building* playerBuilding : placedPlayerBuildings)
+	{
+		playerBuilding->update(t_deltaTime);
+	}
 
-	Headquarters* newHeadquarters = new Headquarters();
-	newHeadquarters->setPosition(sf::Vector2f(1900.0f, 2100.0f));
-	placedEnemyBuildings.push_back(newHeadquarters);
+	for (auto& unit : playerUnits)
+	{
+		unit->update(t_deltaTime, playerUnits);
 
-	Refinery* newRefinery = new Refinery();
-	newRefinery->setPosition(sf::Vector2f(2100.0f, 2300.0f));
-	placedEnemyBuildings.push_back(newRefinery);
+		for (auto& bullet : unit->bullets)
+		{
+			for (auto& enemyUnit : enemyUnits)
+			{
+				if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+				{
+					bullet.active = false;
+					enemyUnit->takeDamage(unit->getDamage());
+					if (enemyUnit->getHealth() <= 0)
+					{
+						enemyUnit->m_active = false;
+					}
+					spawnBulletSparkParticles(bullet.position);
+				}
+			}
+		}
+		for (auto& missile : unit->missiles)
+		{
+			for (auto& enemyUnit : enemyUnits)
+			{
+				if (missile.missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+				{
+					missile.active = false;
+					enemyUnit->takeDamage(missile.damage);
+					if (enemyUnit->getHealth() <= 0)
+					{
+						enemyUnit->m_active = false;
+					}
+					spawnExplosionParticle(missile.position);
+				}
+			}
+		}
 
-	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f) + sf::Vector2f(0.0f, 60.0f);
+		// Remove inactive bullets
+		unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
+			[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
+		// Remove inactive missiles
+		unit->missiles.erase(std::remove_if(unit->missiles.begin(), unit->missiles.end(),
+			[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), unit->missiles.end());
 
-	Harvester* newHarvester = new Harvester();
-	newHarvester->setPosition(spawnPosition);
-	newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
-	newHarvester->setBuildings(placedEnemyBuildings);
-	newHarvester->setTiles(m_levelEditor.m_tiles);
-	newHarvester->currentState = newHarvester->MovingToResource;
-	newHarvester->m_isEnemy = true;
-	enemyUnits.push_back(newHarvester);
-
-	std::cout << "Enemy Base Initilised" << std::endl;
-	updateBuildingCounts();
+		// Remove dead enemy units
+		enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
+			[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());
+	}
 }
 
 void Game::saveLevel()
@@ -974,38 +918,6 @@ void Game::createUnit()
 	}
 }
 
-void Game::createEnemyUnit()
-{
-	if (!runOnce)
-	{
-		sf::Vector2f spawnPosition = sf::Vector2f(300.0f, 950.0f);
-
-		Buggy* newBuggy = new Buggy();
-		newBuggy->setPosition(spawnPosition);
-		newBuggy->setTargetPosition(spawnPosition);
-		newBuggy->setEnemyUnits(playerUnits);
-		enemyUnits.push_back(newBuggy);
-
-		sf::Vector2f spawnPosition2 = sf::Vector2f(500.0f, 950.0f);
-
-		Buggy* newBuggy2 = new Buggy();
-		newBuggy2->setPosition(spawnPosition2);
-		newBuggy2->setTargetPosition(spawnPosition2);
-		newBuggy2->setEnemyUnits(playerUnits);
-		enemyUnits.push_back(newBuggy2);
-
-		sf::Vector2f spawnPosition3 = sf::Vector2f(700.0f, 950.0f);
-
-		TankAurora* newTankAurora = new TankAurora();
-		newTankAurora->setPosition(spawnPosition3);
-		newTankAurora->setTargetPosition(spawnPosition3);
-		newTankAurora->setEnemyUnits(playerUnits);
-		enemyUnits.push_back(newTankAurora);
-
-		runOnce = true;
-	}
-}
-
 void Game::selectUnitAt(const sf::Vector2f& mousePos)
 {
 	for (Unit* unit : playerUnits)
@@ -1146,74 +1058,177 @@ void Game::loadLevel(const std::string& filename)
 	}
 }
 
-void Game::updateEnemyAI(sf::Time t_deltaTime)
+void Game::createEnemyStarterBase()
+{
+	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+
+	Headquarters* newHeadquarters = new Headquarters();
+	newHeadquarters->setPosition(sf::Vector2f(1900.0f, 2100.0f));
+	placedEnemyBuildings.push_back(newHeadquarters);
+
+	Refinery* newRefinery = new Refinery();
+	newRefinery->setPosition(sf::Vector2f(2100.0f, 2300.0f));
+	placedEnemyBuildings.push_back(newRefinery);
+
+	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f) + sf::Vector2f(0.0f, 60.0f);
+
+	Harvester* newHarvester = new Harvester();
+	newHarvester->setPosition(spawnPosition);
+	newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
+	newHarvester->setBuildings(placedEnemyBuildings);
+	newHarvester->setTiles(m_levelEditor.m_tiles);
+	newHarvester->currentState = newHarvester->MovingToResource;
+	newHarvester->m_isEnemy = true;
+	enemyUnits.push_back(newHarvester);
+
+	std::cout << "Enemy Base Initilised" << std::endl;
+	updateBuildingCounts();
+}
+
+void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 {
 	static sf::Time enemyProductionTimer = sf::seconds(0);
 	enemyProductionTimer += t_deltaTime;
 
-	// Example condition: every 10 seconds try to produce a unit
-	if (enemyProductionTimer > sf::seconds(10)) 
+	// Every 5 seconds try to make either a unit or building
+	if (enemyProductionTimer > sf::seconds(5))
 	{
 		updateBuildingCounts();
 
-		if (rand() % 2) 
+		if (rand() % 2)
 		{
-			std::cout << "Enemy created building" << std::endl;
 			decideNextEnemyBuilding();
+			std::cout << "Enemy created building" << std::endl;
 		}
-		else 
+		else
 		{
-			if (enemyBuildingCounts[BuildingType::Barracks] > 0) // Infantry section
+			// Collect all building types that are available for unit production
+			if (enemyBuildingCounts[BuildingType::Barracks] > 0)
 			{
-				createEnemyUnit("Rifleman");
-				std::cout << "Enemy created Rifleman" << std::endl;
+				availableBuildings.push_back(BuildingType::Barracks);
 			}
-			else if (enemyBuildingCounts[BuildingType::WarFactory] > 0) // Vehicle Section
+			if (enemyBuildingCounts[BuildingType::WarFactory] > 0)
 			{
-				int unitChance = rand() % 10;
-				if (unitChance < 4) // 40% chance for Buggy
-				{ 
-					createEnemyUnit("Buggy");
-					std::cout << "Enemy created Buggy" << std::endl;
-				}
-				else if (unitChance < 8) // 40% chance for Tank
+				availableBuildings.push_back(BuildingType::WarFactory);
+			}
+			if (enemyBuildingCounts[BuildingType::AirCraft] > 0)
+			{
+				availableBuildings.push_back(BuildingType::AirCraft);
+			}
+
+			if (!availableBuildings.empty())
+			{
+				// Randomly select an available building type
+				BuildingType selectedBuilding = availableBuildings[rand() % availableBuildings.size()];
+
+				// Based on the selected building, decide which unit to create
+				switch (selectedBuilding)
 				{
-					createEnemyUnit("TankAurora");
-					std::cout << "Enemy created Tank" << std::endl;
-				}
-				else  // 20% chance for Harvester
-				{ 
-					createEnemyUnit("Harvester");
-					std::cout << "Enemy created Harvester" << std::endl;
-				}
-			}
-			else if (enemyBuildingCounts[BuildingType::AirCraft] > 0) // Air section
-			{
-				if (rand() % 2) // 50/50 chance
-				{ 
-					createEnemyUnit("Hammerhead");
-					std::cout << "Enemy created Hammerhead" << std::endl;
-				}
-				else
+				case BuildingType::Barracks:
+					createEnemyUnit("Rifleman");
+					std::cout << "Enemy created Rifleman" << std::endl;
+					break;
+				case BuildingType::WarFactory:
 				{
-					createEnemyUnit("Firehawk");
-					std::cout << "Enemy created Firehawk" << std::endl;
+					int unitChance = rand() % 10;
+					if (unitChance < 4) // 40% chance for Buggy
+					{
+						createEnemyUnit("Buggy");
+						std::cout << "Enemy created Buggy" << std::endl;
+					}
+					else if (unitChance < 8) // 40% chance for Tank
+					{
+						createEnemyUnit("TankAurora");
+						std::cout << "Enemy created Tank" << std::endl;
+					}
+					else  // 20% chance for Harvester
+					{
+						createEnemyUnit("Harvester");
+						std::cout << "Enemy created Harvester" << std::endl;
+					}
 				}
-			}
-			else
-			{
-				std::cout << "Enemy has no building sadly" << std::endl;
+				break;
+				case BuildingType::AirCraft:
+				{
+					if (rand() % 2) // 50/50 chance
+					{
+						createEnemyUnit("Hammerhead");
+						std::cout << "Enemy created Hammerhead" << std::endl;
+					}
+					else
+					{
+						createEnemyUnit("Firehawk");
+						std::cout << "Enemy created Firehawk" << std::endl;
+					}
+				}
+				break;
+				default:
+					std::cout << "Enemy has no buildings to create a unit" << std::endl;
+					break;
+				}
 			}
 		}
 		enemyProductionTimer = sf::seconds(0);
 	}
+}
 
+void Game::updateEnemyAssets(sf::Time t_deltaTime)
+{
+	for (Building* enemyBuilding : placedEnemyBuildings)
+	{
+		enemyBuilding->update(t_deltaTime);
+	}
+
+	for (Unit* eUnits : enemyUnits)
+	{
+		eUnits->update(t_deltaTime, enemyUnits);
+
+		for (auto& bullet : eUnits->bullets)
+		{
+			for (auto& playerUnit : playerUnits)
+			{
+				if (bullet.bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
+				{
+					bullet.active = false;
+					playerUnit->takeDamage(eUnits->getDamage());
+					if (playerUnit->getHealth() <= 0)
+					{
+						playerUnit->m_active = false;
+					}
+					spawnBulletSparkParticles(bullet.position);
+				}
+			}
+		}
+
+		// Remove inactive bullets
+		eUnits->bullets.erase(std::remove_if(eUnits->bullets.begin(), eUnits->bullets.end(),
+			[](const Bullet& bullet) { return !bullet.active; }), eUnits->bullets.end());
+		// Remove inactive missiles
+		eUnits->missiles.erase(std::remove_if(eUnits->missiles.begin(), eUnits->missiles.end(),
+			[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), eUnits->missiles.end());
+
+		// Remove dead enemy units
+		playerUnits.erase(std::remove_if(playerUnits.begin(), playerUnits.end(),
+			[](Unit* playerUnits) { return !playerUnits->isActive(); }), playerUnits.end());
+	}
 }
 
 void Game::createEnemyUnit(const std::string& unitType)
 {
 	sf::Vector2f spawnPosition = enemyBuildingPosition;
 	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+
+	// Find a building of the appropriate type and use its position
+	for (const auto& building : placedEnemyBuildings)
+	{
+		if ((unitType == "Rifleman" && dynamic_cast<Barracks*>(building) != nullptr) ||
+			((unitType == "Harvester" || unitType == "Buggy" || unitType == "TankAurora") && dynamic_cast<WarFactory*>(building) != nullptr) ||
+			((unitType == "Hammerhead" || unitType == "Firehawk") && dynamic_cast<AirCraft*>(building) != nullptr))
+		{
+			spawnPosition = building->getPosition();
+			break;
+		}
+	}
 
 	if (unitType == "Rifleman") // Infantry units
 	{
@@ -1231,6 +1246,7 @@ void Game::createEnemyUnit(const std::string& unitType)
 		newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
 		newHarvester->setBuildings(placedEnemyBuildings);
 		newHarvester->setTiles(m_levelEditor.m_tiles);
+		newHarvester->m_isEnemy = true;
 		newHarvester->currentState = newHarvester->MovingToResource;
 
 		enemyUnits.push_back(newHarvester);
@@ -1319,7 +1335,7 @@ void Game::decideNextEnemyBuilding()
 {
 	updateBuildingCounts();
 
-	const int maxRefineries = 4;
+	const int maxRefineries = 2;
 	const int maxBarracks = 2;
 	const int maxWarFactories = 2;
 	const int maxAirCrafts = 2;
@@ -1375,7 +1391,7 @@ void Game::placeEnemyBuilding(BuildingType type)
 
 sf::Vector2f Game::findPlacementPositionNearExistingBuilding()
 {
-	const int maxAttempts = 100; // Limit the number of attempts to avoid an infinite loop
+	const int maxAttempts = 500; // Limit the number of attempts to avoid an infinite loop
 	int attempts = 0;
 	bool intersectsBuilding = false;
 	bool intersectsWallTile = false;
@@ -1438,4 +1454,193 @@ sf::Vector2f Game::findPlacementPositionNearExistingBuilding()
 			return newPosition;
 		}
 	}
+	std::cout << "Error - this return shoudnt happen" << std::endl;
+	return sf::Vector2f(-1, -1);
+}
+
+void Game::moveEnemyUnits()
+{
+	for (auto& enemyUnit : enemyUnits) 
+	{
+		if (!enemyUnit)
+		{ 
+			continue;
+		}
+		if (dynamic_cast<Harvester*>(enemyUnit) != nullptr)
+		{
+			continue; // To ignore the Harvester units
+		}
+
+		// Find the nearest player unit or building position
+		sf::Vector2f targetPos = findNearestPlayerObjectPosition(enemyUnit->getPosition());
+		enemyUnit->moveTo(targetPos);
+	}
+}
+
+sf::Vector2f Game::findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosition)
+{
+	sf::Vector2f nearestTargetPosition;
+	float nearestDistanceSquared = std::numeric_limits<float>::max();
+
+	for (const auto& playerUnit : playerUnits) 
+	{
+		float distanceSquared = distanceSquaredBetweenPoints(enemyPosition, playerUnit->getPosition());
+		if (distanceSquared < nearestDistanceSquared) 
+		{
+			nearestDistanceSquared = distanceSquared;
+			nearestTargetPosition = playerUnit->getPosition();
+		}
+	}
+
+	for (const auto& building : placedPlayerBuildings)
+	{
+		float distanceSquared = distanceSquaredBetweenPoints(enemyPosition, building->getPosition());
+		if (distanceSquared < nearestDistanceSquared)
+		{
+			nearestDistanceSquared = distanceSquared;
+			nearestTargetPosition = building->getPosition();
+		}
+	}
+
+	return nearestTargetPosition;
+}
+
+float Game::distanceSquaredBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2)
+{
+	return (p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y);
+}
+
+void Game::updateEnemyAIUnitDecisionState(sf::Time deltaTime)
+{
+	stateTimer += deltaTime;
+
+	switch (enemyAIState)
+	{
+	case EnemyAIState::Exploring:
+		//std::cout << "Exploring" << std::endl;
+		if (stateTimer > sf::seconds(30))
+		{ 
+			enemyAIState = EnemyAIState::Grouping;
+			stateTimer = sf::seconds(0);
+		}
+		else
+		{
+			enemyExploring(deltaTime);
+		}
+		break;
+	case EnemyAIState::Grouping:
+		//std::cout << "Grouping" << std::endl;
+		enemyGroupUnits(deltaTime);
+		if (enemyUnits.size() >= 10)
+		{ 
+			enemyAIState = EnemyAIState::Attacking;
+		}
+		break;
+	case EnemyAIState::Attacking:
+		//std::cout << "Attacking" << std::endl;
+		enemyAttacking(deltaTime);
+		if (stateTimer > sf::seconds(60))
+		{ 
+			enemyAIState = EnemyAIState::Exploring;
+			stateTimer = sf::seconds(0); 
+		}
+		break;
+	}
+}
+
+void Game::enemyExploring(sf::Time deltaTime)
+{
+	static sf::Time exploreTimer = sf::Time::Zero;
+	const sf::Time exploreInterval = sf::seconds(2);
+
+	exploreTimer += deltaTime;
+
+	if (exploreTimer >= exploreInterval)
+	{
+		exploreTimer -= exploreInterval;
+		auto validTargets = getValidExplorationTargets();
+
+		if (!validTargets.empty()) 
+		{
+			for (auto& enemyUnit : enemyUnits)
+			{
+				// Skip Harvester units from exploring
+				if (dynamic_cast<Harvester*>(enemyUnit) != nullptr)
+				{
+					continue;
+				}
+
+				// Select a random target position from the valid targets
+				int randomIndex = rand() % validTargets.size();
+				sf::Vector2f targetPos = validTargets[randomIndex];
+				std::cout << targetPos.x << " " << targetPos.y << std::endl;
+				enemyUnit->moveTo(targetPos);
+			}
+		}
+	}
+}
+
+void Game::enemyGroupUnits(sf::Time deltaTime)
+{
+	static sf::Time groupUnitsTimer = sf::Time::Zero;
+	const sf::Time groupInterval = sf::seconds(6);
+
+	groupUnitsTimer += deltaTime;
+
+	sf::Vector2f headquartersPos = findEnemyHeadquartersPosition();
+	sf::Vector2f rallyPoint = headquartersPos + sf::Vector2f(-100, -100); 
+
+	if (groupUnitsTimer >= groupInterval)
+	{
+		for (auto& enemyUnit : enemyUnits)
+		{
+			// Exclude non-combat units like the Harvester from being grouped
+			if (dynamic_cast<Harvester*>(enemyUnit) == nullptr)
+			{
+				enemyUnit->moveTo(rallyPoint);
+			}
+		}
+		groupUnitsTimer -= groupInterval;
+	}
+}
+
+void Game::enemyAttacking(sf::Time deltaTime)
+{
+	static sf::Time moveUnitsTimer = sf::Time::Zero;
+	const sf::Time moveInterval = sf::seconds(2);
+
+	moveUnitsTimer += deltaTime;
+
+	if (moveUnitsTimer >= moveInterval)
+	{
+		moveEnemyUnits(); // Move enemy units
+
+		moveUnitsTimer -= moveInterval;
+	}
+}
+
+std::vector<sf::Vector2f> Game::getValidExplorationTargets()
+{
+	for (const auto& tile : m_tilesVector)
+	{
+		if (!tile.isWall) 
+		{ 
+			validTargets.push_back(tile.m_tile.getPosition());
+		}
+	}
+
+	return validTargets;
+}
+
+sf::Vector2f Game::findEnemyHeadquartersPosition() 
+{
+	for (const auto& building : placedEnemyBuildings) 
+	{
+		if (dynamic_cast<Headquarters*>(building) != nullptr) 
+		{
+			return building->getPosition();
+		}
+	}
+
+	return sf::Vector2f(1900.0f, 2100.0f);
 }

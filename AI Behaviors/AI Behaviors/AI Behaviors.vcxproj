@@ -58,6 +58,7 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="EnemyAIState.h" />
     <ClInclude Include="Firehawk.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

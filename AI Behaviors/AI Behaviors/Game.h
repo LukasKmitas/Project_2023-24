@@ -14,6 +14,7 @@
 #include "Tile.h"
 #include "ParticleSystem.h"
 #include "NeuralNetworks.h"
+#include "EnemyAIState.h"
 
 namespace fs = std::experimental::filesystem;
 
@@ -51,21 +52,38 @@ private:
 	void update(sf::Time t_deltaTime);
 	void render();
 
+	// Player stuff 
 	void createBuilding(sf::RenderWindow& window);
 	void createBase();
-	void createEnemyStarterBase();
+	void updatePlayerAssets(sf::Time t_deltaTime);
+
 	void saveLevel();
 	void loadLevel(const std::string& filename);
 
 	// Enemy AI
-	void updateEnemyAI(sf::Time t_deltaTime);
+	EnemyAIState enemyAIState = EnemyAIState::Exploring;
+	sf::Time stateTimer = sf::seconds(0);
+	void createEnemyStarterBase();
+	void updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime);
+	void updateEnemyAssets(sf::Time t_deltaTime);
 	void createEnemyUnit(const std::string& unitType);
 	void updateBuildingCounts();
 	void decideNextEnemyBuilding();
 	void placeEnemyBuilding(BuildingType type);
 	sf::Vector2f findPlacementPositionNearExistingBuilding();
+	void moveEnemyUnits();
+	sf::Vector2f findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosition);
+	float distanceSquaredBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2);
 	sf::Vector2f enemyBuildingPosition;
 	Building* newEnemyBuilding = nullptr;
+	std::vector<BuildingType> availableBuildings;
+	void updateEnemyAIUnitDecisionState(sf::Time deltaTime);
+	void enemyExploring(sf::Time deltaTime);
+	void enemyGroupUnits(sf::Time deltaTime);
+	void enemyAttacking(sf::Time deltaTime);
+	std::vector<sf::Vector2f> getValidExplorationTargets();
+	sf::Vector2f findEnemyHeadquartersPosition();
+	std::vector<sf::Vector2f> validTargets;
 
 	void moveCamera(sf::Vector2f mousePosition);
 	void updateViewWithMouse();
@@ -82,7 +100,6 @@ private:
 	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
 
 	void createUnit();
-	void createEnemyUnit();
 	void selectUnitAt(const sf::Vector2f& mousePos);
 	void selectUnitsInBox();
 
@@ -128,7 +145,6 @@ private:
 	float sizeParticle;
 	sf::Color colorParticle;
 
-	bool runOnce = false; // temp
 	bool levelLoaded = false;
 	bool m_exitGame;
 
