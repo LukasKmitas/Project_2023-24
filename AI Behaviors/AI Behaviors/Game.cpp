@@ -41,6 +41,7 @@ Game::Game() :
 	hiddenNeurons = m_neural_network.getHiddenNeurons();
 	biasNeurons = m_neural_network.getBiasNeurons();
 	initializeNeuralNetwork();
+	initVictoryPanel();
 }
 
 /// <summary>
@@ -92,6 +93,13 @@ void Game::processEvents()
 				train = !train;
 			}
 		}
+		if (showWinPanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
+		{
+			sf::Vector2f mousePosition = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+			guiMousePosition = sf::Mouse::getPosition(m_window);
+			handleVictoryPanelInput(static_cast<sf::Vector2f>(guiMousePosition));
+			continue;
+		}
 		if (sf::Event::Closed == newEvent.type)
 		{
 			m_exitGame = true;
@@ -127,48 +135,45 @@ void Game::processEvents()
 		case GameState::PlayGame:
 			if (sf::Event::MouseButtonPressed == newEvent.type)
 			{
-				if (m_gameWinLose != WinLoseState::NONE)
+				if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button
 				{
-					if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button
+					m_gui.handleMouseClick(guiMousePosition, m_window);
+					if (m_selectedUnit)
 					{
-						m_gui.handleMouseClick(guiMousePosition, m_window);
-						if (m_selectedUnit)
-						{
-							std::vector<Unit*> selectedUnits;
-							for (Unit* unit : playerUnits)
-							{
-								if (unit->isSelected)
-								{
-									selectedUnits.push_back(unit);
-								}
-							}
-
-							int gridSize = calculateGridSize(selectedUnits.size());
-							float spacing = 80.0f;
-
-							for (int i = 0; i < selectedUnits.size(); ++i)
-							{
-								int row = i / gridSize;
-								int col = i % gridSize;
-
-								sf::Vector2f gridPosition = sf::Vector2f(worldMousePosition.x + col * spacing, worldMousePosition.y + row * spacing);
-								selectedUnits[i]->moveTo(gridPosition);
-							}
-						}
-						else
-						{
-							selectUnitAt(worldMousePosition);
-						}
-						isDragging = true;
-						dragStart = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
-					}
-					if (newEvent.mouseButton.button == sf::Mouse::Right) // Check for Right mouse button
-					{
-						m_selectedUnit = nullptr;
+						std::vector<Unit*> selectedUnits;
 						for (Unit* unit : playerUnits)
 						{
-							unit->setSelected(false);
+							if (unit->isSelected)
+							{
+								selectedUnits.push_back(unit);
+							}
 						}
+
+						int gridSize = calculateGridSize(selectedUnits.size());
+						float spacing = 80.0f;
+
+						for (int i = 0; i < selectedUnits.size(); ++i)
+						{
+							int row = i / gridSize;
+							int col = i % gridSize;
+
+							sf::Vector2f gridPosition = sf::Vector2f(worldMousePosition.x + col * spacing, worldMousePosition.y + row * spacing);
+							selectedUnits[i]->moveTo(gridPosition);
+						}
+					}
+					else
+					{
+						selectUnitAt(worldMousePosition);
+					}
+					isDragging = true;
+					dragStart = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+				}
+				if (newEvent.mouseButton.button == sf::Mouse::Right) // Check for Right mouse button
+				{
+					m_selectedUnit = nullptr;
+					for (Unit* unit : playerUnits)
+					{
+						unit->setSelected(false);
 					}
 				}
 			}
@@ -338,7 +343,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
-		if (m_gameWinLose != WinLoseState::NONE)
+		if (m_gameWinLose == WinLoseState::NONE)
 		{
 			loadLevel(m_levelLoader.levelFilenames[m_levelLoader.selectedButtonIndex]);
 			updateViewWithMouse();
@@ -353,10 +358,10 @@ void Game::update(sf::Time t_deltaTime)
 			spawnBubbleParticles();
 			updateEnemyAIDecisionOnCreating(t_deltaTime);
 			updateEnemyAIUnitDecisionState(t_deltaTime);
+			m_particleSystem.update(t_deltaTime);
 		}
 		m_levelEditor.animationForResources();
 		m_levelEditor.animationForWeed();
-		m_particleSystem.update(t_deltaTime);
 		checkVictoryConditions();
 		break;
 	case GameState::LevelEditor:
@@ -429,12 +434,19 @@ void Game::render()
 			}
 		}
 		m_gui.render(m_window);
-		m_window.setView(gameView);
-		if (isDragging)
+		if (showWinPanel)
 		{
-			m_window.draw(selectionBox);
+			renderVictoryPanel(m_window);
 		}
-		m_particleSystem.render(m_window);
+		m_window.setView(gameView);
+		if (m_gameWinLose == WinLoseState::NONE)
+		{
+			if (isDragging)
+			{
+				m_window.draw(selectionBox);
+			}
+			m_particleSystem.render(m_window);
+		}
 		break;
 	case GameState::LevelEditor:
 		m_levelEditor.render(m_window);
@@ -1084,6 +1096,83 @@ void Game::spawnExplosionParticle(const sf::Vector2f& position)
 	}
 }
 
+void Game::initVictoryPanel()
+{
+	if (!PanelBackgroundTexture.loadFromFile("Assets\\Images\\GUI\\panel.png"))
+	{
+		std::cout << "Error - loading Panel texture" << std::endl;
+	}
+
+	PanelBackgroundSprite.setTexture(PanelBackgroundTexture);
+	PanelBackgroundSprite.setOrigin(PanelBackgroundSprite.getGlobalBounds().width / 2, PanelBackgroundSprite.getGlobalBounds().height / 2);
+	PanelBackgroundSprite.setScale(5, 5);
+	PanelBackgroundSprite.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
+
+	winLoseText.setFont(m_font);
+	winLoseText.setString("Victory!");
+	winLoseText.setCharacterSize(50);
+	winLoseText.setFillColor(sf::Color::White);
+	winLoseText.setOutlineColor(sf::Color::Yellow);
+	winLoseText.setOutlineThickness(0.3);
+	winLoseText.setOrigin(winLoseText.getGlobalBounds().width / 2, winLoseText.getGlobalBounds().height / 2);
+	winLoseText.setPosition(Global::S_WIDTH / 2, 300);
+
+	playAgainButton.setSize(sf::Vector2f(150, 50));
+	playAgainButton.setOrigin(playAgainButton.getSize().x / 2, playAgainButton.getSize().y / 2);
+	playAgainButton.setFillColor(sf::Color(100, 100, 250));
+	playAgainButton.setPosition(Global::S_WIDTH / 2, 450);
+
+	playAgainText.setFont(m_font);
+	playAgainText.setString("Play Again");
+	playAgainText.setCharacterSize(24);
+	playAgainText.setFillColor(sf::Color::White);
+	playAgainText.setOutlineColor(sf::Color::Black);
+	playAgainText.setOutlineThickness(0.5);
+	playAgainText.setOrigin(playAgainText.getLocalBounds().width / 2, playAgainText.getLocalBounds().height / 2);
+	playAgainText.setPosition(playAgainButton.getPosition());
+
+	exitButton.setSize(sf::Vector2f(150, 50));
+	exitButton.setOrigin(exitButton.getSize().x / 2, exitButton.getSize().y / 2);
+	exitButton.setFillColor(sf::Color(250, 100, 100));
+	exitButton.setPosition(Global::S_WIDTH / 2, 550);
+
+	exitText.setFont(m_font);
+	exitText.setString("Exit");
+	exitText.setCharacterSize(24);
+	exitText.setFillColor(sf::Color::White);
+	exitText.setOutlineColor(sf::Color::Black);
+	exitText.setOutlineThickness(0.5);
+	exitText.setOrigin(exitText.getLocalBounds().width / 2, exitText.getLocalBounds().height / 2);
+	exitText.setPosition(exitButton.getPosition());
+}
+
+void Game::renderVictoryPanel(sf::RenderWindow& window)
+{
+	window.draw(PanelBackgroundSprite);
+	window.draw(winLoseText);
+	window.draw(playAgainButton);
+	window.draw(playAgainText);
+	window.draw(exitButton);
+	window.draw(exitText);
+}
+
+void Game::handleVictoryPanelInput(const sf::Vector2f& m_mousePosition)
+{
+	if (playAgainButton.getGlobalBounds().contains(m_mousePosition)) 
+	{
+		showWinPanel = false;
+		std::cout << "Playing again" << std::endl;
+	}
+	if (exitButton.getGlobalBounds().contains(m_mousePosition))
+	{
+		showWinPanel = false;
+		m_currentState = GameState::MainMenu;
+		resetView();
+
+		std::cout << "Back to Main menu" << std::endl;
+	}
+}
+
 /// <summary>
 /// Resets the view back to normal
 /// </summary>
@@ -1126,12 +1215,13 @@ void Game::checkVictoryConditions()
 	if (placedEnemyBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::WIN;
-		std::cout << "Player has Won the game HEEEEHAAAA" << std::endl;
+		winLoseText.setString("Victory!");
+		showWinPanel = true;
 	}
 	else if (placedPlayerBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::LOSE;
-		std::cout << "Player has Lost the game :(" << std::endl;
+		winLoseText.setString("Game Over - YOU LOST");
 	}
 }
 

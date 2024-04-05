@@ -20,6 +20,8 @@ private:
 
 	bool isTargetWithinRange(const sf::Vector2f& targetPos);
 
+	void launchMissile(const sf::Vector2f& targetPos);
+
 	sf::Texture missileTexture;
 
 	float m_orbitRadius = 150.0f;
@@ -31,5 +33,9 @@ private:
 	const float reloadCooldownTime = 5.0f;
 	int missilesFiredInBurst = 0;
 	const int burstSize = 4;
+	int phase = 0;
+	float phaseTimer = 0.0f;
+	const float phaseDelay = 1.0f;
+
 };
 

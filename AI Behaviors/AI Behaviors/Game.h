@@ -45,7 +45,7 @@ private:
 	Unit* m_selectedUnit = nullptr;
 	ParticleSystem m_particleSystem;
 	NeuralNetworks m_neural_network;
-	WinLoseState m_gameWinLose;
+	WinLoseState m_gameWinLose = WinLoseState::NONE;
 
 	std::map<BuildingType, int> enemyBuildingCounts;
 
@@ -111,6 +111,10 @@ private:
 	void spawnBulletSparkParticles(const sf::Vector2f& position);
 	void spawnExplosionParticle(const sf::Vector2f& position);
 
+	void initVictoryPanel();
+	void renderVictoryPanel(sf::RenderWindow& window);
+	void handleVictoryPanelInput(const sf::Vector2f& m_mousePosition);
+
 	int calculateGridSize(int numberOfUnits);
 
 	sf::RenderWindow m_window;
@@ -175,6 +179,16 @@ private:
 	sf::Image outputImage;
 	sf::Sprite outputSprite;
 	sf::Texture outputTexture;
+
+	// Win/Lose stuff
+	bool showWinPanel = false;
+	sf::Sprite PanelBackgroundSprite;
+	sf::Texture PanelBackgroundTexture;
+	sf::Text winLoseText;
+	sf::Text playAgainText;
+	sf::Text exitText;
+	sf::RectangleShape playAgainButton;
+	sf::RectangleShape exitButton;
 
 };
 

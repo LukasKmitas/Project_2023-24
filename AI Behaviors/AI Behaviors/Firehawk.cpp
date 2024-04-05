@@ -29,6 +29,11 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 	}
 	m_unitSprite.setPosition(m_position);
 
+	if (phase == 1 && phaseTimer > 0.0f)
+	{
+		phaseTimer -= t_deltaTime.asSeconds();
+	}
+
 	if (reloadCooldown > 0.0f)
 	{
 		reloadCooldown -= t_deltaTime.asSeconds();
@@ -132,17 +137,31 @@ void Firehawk::fireMissileAtTarget(const sf::Vector2f& targetPos)
 {
 	if (reloadCooldown <= 0.0f && missilesFiredInBurst < burstSize)
 	{
-		float spray = (std::rand() % 10 - 5) * (3.14159265 / 180.0f);
-		sf::Vector2f direction = normalize(targetPos - m_position);
-		float angle = atan2(direction.y, direction.x) + spray;
-		sf::Vector2f missileDirection = sf::Vector2f(cos(angle), sin(angle));
+		if (missilesFiredInBurst == 0)
+		{
+			phase = 0;
+			phaseTimer = phaseDelay;
+		}
 
-		missiles.emplace_back(m_position, missileDirection, 200.0f, missileTexture);
-		missilesFiredInBurst++;
+		// First phase of firing
+		if (phase == 0 && missilesFiredInBurst < 2)
+		{
+			launchMissile(targetPos);
+			if (missilesFiredInBurst == 2)
+			{
+				phase = 1;
+			}
+		}
+		// Second phase after the delay
+		else if (phase == 1 && phaseTimer <= 0.0f)
+		{
+			launchMissile(targetPos);
+		}
 
 		if (missilesFiredInBurst >= burstSize)
 		{
 			reloadCooldown = reloadCooldownTime;
+			missilesFiredInBurst = 0;
 		}
 	}
 }
@@ -163,4 +182,15 @@ bool Firehawk::isTargetWithinRange(const sf::Vector2f& targetPos)
 		}
 	}
 	return false;
+}
+
+void Firehawk::launchMissile(const sf::Vector2f& targetPos)
+{
+	float spray = (std::rand() % 10 - 5) * (PI / 180.0f);
+	sf::Vector2f direction = normalize(targetPos - m_position);
+	float angle = atan2(direction.y, direction.x) + spray;
+	sf::Vector2f missileDirection = sf::Vector2f(cos(angle), sin(angle));
+
+	missiles.emplace_back(m_position, missileDirection, 200.0f, missileTexture);
+	missilesFiredInBurst++;
 }
