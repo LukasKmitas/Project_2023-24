@@ -18,6 +18,8 @@ private:
 
 	void fireMissileAtTarget(const sf::Vector2f& targetPos);
 
+	bool isTargetWithinRange(const sf::Vector2f& targetPos);
+
 	sf::Texture missileTexture;
 
 	float m_orbitRadius = 150.0f;

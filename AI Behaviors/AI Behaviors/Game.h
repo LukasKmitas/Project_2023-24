@@ -15,6 +15,7 @@
 #include "ParticleSystem.h"
 #include "NeuralNetworks.h"
 #include "EnemyAIState.h"
+#include "WinLoseState.h"
 
 namespace fs = std::experimental::filesystem;
 
@@ -32,7 +33,6 @@ private:
 	GameState m_previousState;
 	MainMenu m_menu;
 	Tile m_tiles;
-	std::vector<Tile> m_tilesVector;
 	LevelEditor m_levelEditor;
 	LevelLoader m_levelLoader;
 	GUI m_gui{ placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
@@ -41,9 +41,11 @@ private:
 	std::vector<Building*> placedEnemyBuildings;
 	std::vector<Unit*> playerUnits;
 	std::vector<Unit*> enemyUnits;
+	std::vector<std::unique_ptr<Unit>> enemyUnitsV2;
 	Unit* m_selectedUnit = nullptr;
 	ParticleSystem m_particleSystem;
 	NeuralNetworks m_neural_network;
+	WinLoseState m_gameWinLose;
 
 	std::map<BuildingType, int> enemyBuildingCounts;
 
@@ -59,14 +61,17 @@ private:
 
 	void saveLevel();
 	void loadLevel(const std::string& filename);
+	void checkVictoryConditions();
 
 	// Enemy AI
 	EnemyAIState enemyAIState = EnemyAIState::Exploring;
 	sf::Time stateTimer = sf::seconds(0);
 	void createEnemyStarterBase();
 	void updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime);
+	void updateEnemyAIUnitDecisionState(sf::Time deltaTime);
 	void updateEnemyAssets(sf::Time t_deltaTime);
 	void createEnemyUnit(const std::string& unitType);
+	void createEnemyHarvesterUnit();
 	void updateBuildingCounts();
 	void decideNextEnemyBuilding();
 	void placeEnemyBuilding(BuildingType type);
@@ -74,15 +79,14 @@ private:
 	void moveEnemyUnits();
 	sf::Vector2f findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosition);
 	float distanceSquaredBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2);
-	sf::Vector2f enemyBuildingPosition;
+	sf::Vector2f enemyRefineryBuildingPosition;
 	Building* newEnemyBuilding = nullptr;
-	std::vector<BuildingType> availableBuildings;
-	void updateEnemyAIUnitDecisionState(sf::Time deltaTime);
 	void enemyExploring(sf::Time deltaTime);
 	void enemyGroupUnits(sf::Time deltaTime);
 	void enemyAttacking(sf::Time deltaTime);
 	std::vector<sf::Vector2f> getValidExplorationTargets();
 	sf::Vector2f findEnemyHeadquartersPosition();
+	bool isPositionWithinMap(const sf::Vector2f& position);
 	std::vector<sf::Vector2f> validTargets;
 
 	void moveCamera(sf::Vector2f mousePosition);
@@ -132,6 +136,8 @@ private:
 	float minY = 530;
 	float maxX = 1550;
 	float maxY = 1970;
+	int mapWidth = 2400;
+	int mapHeight = 2400;
 
 	bool isDragging = false;
 	sf::Vector2f dragStart;

@@ -42,7 +42,7 @@ void RiflemanSquad::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 
     if (enemyUnits)
     {
-        shootAt(*enemyUnits);
+        aimAt(*enemyUnits);
     }
 }
 
@@ -166,7 +166,7 @@ void RiflemanSquad::squadEntityRegain()
     }
 }
 
-void RiflemanSquad::shootAt(const std::vector<Unit*>& enemyUnits)
+void RiflemanSquad::aimAt(const std::vector<Unit*>& enemyUnits)
 {
     if (isReloading || fireTimer > 0.0f)
     {
@@ -178,12 +178,24 @@ void RiflemanSquad::shootAt(const std::vector<Unit*>& enemyUnits)
 
     for (Unit* enemy : enemyUnits)
     {
-        sf::Vector2f toEnemy = normalize(enemy->getPosition() - this->getPosition());
-        float distance = magnitude(enemy->getPosition() - this->getPosition());
-
-        if (distance <= m_viewRadius - 15)
+        targetPositions.push_back(enemy->getPosition());
+    }
+    if (enemyBuildings)
+    {
+        for (Building* building : *enemyBuildings)
         {
-            float dotProduct = forwardDirection.x * toEnemy.x + forwardDirection.y * toEnemy.y;
+            targetPositions.push_back(building->getPosition());
+        }
+    }
+
+    for (const auto& targetPos : targetPositions)
+    {
+        sf::Vector2f toTarget = normalize(targetPos - this->getPosition());
+        float distance = magnitude(targetPos - this->getPosition());
+
+        if (distance <= m_viewRadius - 20)
+        {
+            float dotProduct = forwardDirection.x * toTarget.x + forwardDirection.y * toTarget.y;
             float angleToEnemy = acos(dotProduct) * (180.0f / PI);
 
             std::vector<sf::Sprite> allShootingEntities = m_entities;
@@ -199,13 +211,12 @@ void RiflemanSquad::shootAt(const std::vector<Unit*>& enemyUnits)
                     float cosAngle = cos(sprayAngle);
                     float sinAngle = sin(sprayAngle);
                     sf::Vector2f sprayedDirection = normalize(sf::Vector2f(
-                        toEnemy.x * cosAngle - toEnemy.y * sinAngle,
-                        toEnemy.x * sinAngle + toEnemy.y * cosAngle));
+                        toTarget.x * cosAngle - toTarget.y * sinAngle,
+                        toTarget.x * sinAngle + toTarget.y * cosAngle));
 
                     sf::Vector2f bulletStartPosition = entity.getPosition() + sprayedDirection * 10.0f;
                     bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
                 }
-
                 shotsFired++;
                 fireTimer = fireRate;
 

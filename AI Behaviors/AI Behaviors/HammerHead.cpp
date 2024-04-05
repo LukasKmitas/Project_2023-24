@@ -170,10 +170,37 @@ void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
         }
     }
 
+    for (Building* building : *enemyBuildings)
+    {
+        float distance = this->distance(this->getPosition(), building->getPosition());
+
+        sf::Vector2f toBuilding = building->getPosition() - this->getPosition();
+        float angleToBuilding = atan2(toBuilding.y, toBuilding.x) * (180.0f / PI);
+        float angleDifference = fmod(neutralAngle - angleToBuilding + 360.0f, 360.0f);
+
+        if (angleDifference > 180.0f)
+        {
+            angleDifference -= 360.0f;
+        }
+        if (distance < closestDistance && distance <= m_viewRadius && abs(angleDifference) <= 90)
+        {
+            closestDistance = distance;
+            closestBuilding = building;
+        }
+    }
+
     if (closestEnemy && closestDistance <= this->getViewRadius() - 30)
     {
         // Aim at enemy
         directionToEnemy = normalize(closestEnemy->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(directionToEnemy);
+        m_leftGunSprite.setRotation(angleDegrees + 90);
+        m_rightGunSprite.setRotation(angleDegrees + 90);
+        shootAtEnemy();
+    }
+    else if (closestBuilding && closestDistance <= this->getViewRadius() - 30)
+    {
+        directionToEnemy = normalize(closestBuilding->getPosition() - this->getPosition());
         float angleDegrees = angleFromVector(directionToEnemy);
         m_leftGunSprite.setRotation(angleDegrees + 90);
         m_rightGunSprite.setRotation(angleDegrees + 90);

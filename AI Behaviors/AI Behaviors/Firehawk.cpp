@@ -38,22 +38,25 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 		}
 	}
 
-	if (this->enemyUnits) 
-	{ 
-		for (auto& enemyUnit : *this->enemyUnits) 
+	bool targetFound = false;
+	for (auto& enemyUnit : *this->enemyUnits)
+	{
+		if (isTargetWithinRange(enemyUnit->getPosition()))
 		{
-			float distanceToEnemy = magnitude(enemyUnit->getPosition() - m_position);
-			if (distanceToEnemy <= m_viewRadius)
-			{
-				sf::Vector2f directionToEnemy = normalize(enemyUnit->getPosition() - m_position);
-				float angleToEnemy = angleFromVector(directionToEnemy);
-				float firehawkAngle = m_unitSprite.getRotation() - 90;
+			fireMissileAtTarget(enemyUnit->getPosition());
+			targetFound = true;
+			break;
+		}
+	}
 
-				if (std::abs(firehawkAngle - angleToEnemy) < 10.0f)
-				{
-					fireMissileAtTarget(enemyUnit->getPosition());
-					break; 
-				}
+	if (!targetFound && this->enemyBuildings)
+	{
+		for (auto& building : *this->enemyBuildings)
+		{
+			if (isTargetWithinRange(building->getPosition()))
+			{
+				fireMissileAtTarget(building->getPosition());
+				break;
 			}
 		}
 	}
@@ -142,4 +145,22 @@ void Firehawk::fireMissileAtTarget(const sf::Vector2f& targetPos)
 			reloadCooldown = reloadCooldownTime;
 		}
 	}
+}
+
+bool Firehawk::isTargetWithinRange(const sf::Vector2f& targetPos)
+{
+	float distanceToTarget = magnitude(targetPos - m_position);
+
+	if (distanceToTarget <= m_viewRadius - 10)
+	{
+		sf::Vector2f directionToTarget = normalize(targetPos - m_position);
+		float angleToTarget = angleFromVector(directionToTarget);
+		float firehawkAngle = m_unitSprite.getRotation() - 90;
+
+		if (std::abs(firehawkAngle - angleToTarget) < 10.0f)
+		{
+			return true;
+		}
+	}
+	return false;
 }

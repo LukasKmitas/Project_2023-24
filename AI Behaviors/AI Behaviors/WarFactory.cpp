@@ -3,8 +3,8 @@
 WarFactory::WarFactory()
 {
 	setupSprite();
-	m_cost = 2000;
 	setPlacementRadiusSize(150.0f);
+	m_cost = 2000;
 }
 
 WarFactory::~WarFactory()
@@ -17,8 +17,7 @@ void WarFactory::update(sf::Time deltaTime)
 
 void WarFactory::render(sf::RenderWindow& m_window) const
 {
-	m_window.draw(m_buildingSprite);
-	m_window.draw(m_placementRadius);
+	Building::render(m_window);
 }
 
 void WarFactory::setupSprite()

@@ -13,15 +13,15 @@ public:
     virtual void update(sf::Time t_deltaTime);
     virtual void render(sf::RenderWindow& m_window) const;
 
-    int getHealth() const;
-    void setHealth(int m_health);
-    void applyDamage(int m_damage);
+    void takeDamage(float damageAmount);
     void setPosition(const sf::Vector2f& m_position);
 
     sf::Vector2f getPosition();
  
     int getCost() const;
     int getBuildingID() const;
+    float getHealth() const;
+
     bool checkAffordability();
 
     void setPlacementRadiusSize(float radius);
@@ -40,7 +40,11 @@ protected:
 
     sf::CircleShape m_placementRadius;
 
+    sf::RectangleShape healthBar;
+    sf::RectangleShape healthBarBackground;
+
     int m_health = 100;
+    int m_maxHealth = 100;
     int m_cost = 100;
     static int buildingCount;
     int buildingID = 0;

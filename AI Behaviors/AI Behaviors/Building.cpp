@@ -6,6 +6,12 @@ Building::Building()
 {
 	buildingCount++;
 	buildingID = buildingCount;
+
+	healthBarBackground.setSize(sf::Vector2f(50, 5));
+	healthBarBackground.setFillColor(sf::Color(0, 0, 0));
+
+	healthBar.setSize(sf::Vector2f(50, 5)); 
+	healthBar.setFillColor(sf::Color(0, 255, 0));
 }
 
 Building::~Building()
@@ -20,31 +26,30 @@ void Building::render(sf::RenderWindow& m_window) const
 {
 	m_window.draw(m_buildingSprite);
 	m_window.draw(m_placementRadius);
+
+	m_window.draw(healthBarBackground);
+	m_window.draw(healthBar);
 }
 
-int Building::getHealth() const
+void Building::takeDamage(float damageAmount)
 {
-	return m_health;
-}
-
-void Building::setHealth(int m_health)
-{
-	m_health = m_health;
-}
-
-void Building::applyDamage(int m_damage)
-{
-	m_health -= m_damage;
-	if (m_health < 0) 
+	m_health -= damageAmount;
+	if (m_health < 0)
 	{
 		m_health = 0;
 	}
+
+	float healthPercentage = static_cast<float>(m_health) / m_maxHealth;
+	healthBar.setSize(sf::Vector2f(healthBarBackground.getSize().x * healthPercentage, healthBar.getSize().y));
 }
 
 void Building::setPosition(const sf::Vector2f& m_position)
 {
 	m_buildingSprite.setPosition(m_position);
 	m_placementRadius.setPosition(m_position);
+
+	healthBarBackground.setPosition(m_position.x - healthBarBackground.getSize().x / 2, m_position.y - m_buildingSprite.getGlobalBounds().height / 2 - 10);
+	healthBar.setPosition(healthBarBackground.getPosition());
 }
 
 sf::Vector2f Building::getPosition()
@@ -60,6 +65,11 @@ int Building::getCost() const
 int Building::getBuildingID() const
 {
 	return buildingID;
+}
+
+float Building::getHealth() const
+{
+	return m_health;
 }
 
 bool Building::checkAffordability()

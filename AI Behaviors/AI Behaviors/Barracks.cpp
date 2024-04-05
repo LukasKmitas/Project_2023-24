@@ -3,8 +3,8 @@
 Barracks::Barracks()
 {
 	setupSprite();
-	m_cost = 500;
 	setPlacementRadiusSize(100.0f);
+	m_cost = 500;
 }
 
 Barracks::~Barracks()
@@ -17,8 +17,7 @@ void Barracks::update(sf::Time deltaTime)
 
 void Barracks::render(sf::RenderWindow& m_window) const
 {
-	m_window.draw(m_buildingSprite);
-	m_window.draw(m_placementRadius);
+	Building::render(m_window);
 }
 
 void Barracks::setupSprite()

@@ -3,8 +3,8 @@
 Refinery::Refinery()
 {
 	setupSprite();
-	m_cost = 1500;
 	setPlacementRadiusSize(150.0f);
+	m_cost = 1500;
 }
 
 Refinery::~Refinery()
@@ -17,8 +17,7 @@ void Refinery::update(sf::Time deltaTime)
 
 void Refinery::render(sf::RenderWindow& m_window) const
 {
-	m_window.draw(m_buildingSprite);
-	m_window.draw(m_placementRadius);
+	Building::render(m_window);
 }
 
 void Refinery::setupSprite()

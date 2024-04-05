@@ -23,10 +23,12 @@ private:
 	void squadEntityRemoval() override;
 	void squadEntityRegain() override;
 
-	void shootAt(const std::vector<Unit*>& enemyUnits);
+	void aimAt(const std::vector<Unit*>& enemyUnits);
 
 	std::vector<sf::Sprite> m_entities;
 	std::vector<sf::Vector2f> m_offsets;
+
+	std::vector<sf::Vector2f> targetPositions;
 
 	sf::Vector2f previousPosition;
 

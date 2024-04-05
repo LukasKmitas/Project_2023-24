@@ -114,6 +114,7 @@ void Buggy::aimWeapon(const std::vector<Unit*>& enemyUnits)
     }
      
     closestDistance = std::numeric_limits<float>::max();
+    closestBuildingDistance = std::numeric_limits<float>::max();
 
     for (Unit* enemy : enemyUnits)
     {
@@ -125,10 +126,30 @@ void Buggy::aimWeapon(const std::vector<Unit*>& enemyUnits)
             closestEnemy = enemy;
         }
     }
+    if (enemyBuildings)
+    {
+        for (Building* building : *enemyBuildings)
+        {
+            float distance = this->distance(this->getPosition(), building->getPosition());
+
+            if (distance < closestBuildingDistance)
+            {
+                closestBuildingDistance = distance;
+                closestBuilding = building;
+            }
+        }
+    }
 
     if (closestEnemy && closestDistance <= this->getViewRadius() - 50) 
     {
         directionToEnemy = normalize(closestEnemy->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(directionToEnemy);
+        m_weaponSprite.setRotation(angleDegrees + 90);
+        shootAtEnemy();
+    }
+    else if (closestBuilding && closestBuildingDistance <= this->getViewRadius() - 50)
+    {
+        directionToEnemy = normalize(closestBuilding->getPosition() - this->getPosition());
         float angleDegrees = angleFromVector(directionToEnemy);
         m_weaponSprite.setRotation(angleDegrees + 90);
         shootAtEnemy();

@@ -6,6 +6,7 @@
 #include "Bullet.h"
 #include "Missile.h"
 #include "ParticleSystem.h"
+#include "Building.h"
 
 enum class UnitType
 {
@@ -33,6 +34,7 @@ public:
     void applySlowEffect(float speedFactor, float duration, float postSlowWait);
 
     void setEnemyUnits(std::vector<Unit*>& enemyUnits);
+    void setEnemyBuildings(std::vector<Building*>& enemyBuildings);
 
     const sf::Sprite& getSprite() const;
 
@@ -69,7 +71,9 @@ protected:
     ParticleSystem m_particleSystem;
 
     std::vector<Unit*>* enemyUnits = nullptr;
+    std::vector<Building*>* enemyBuildings = nullptr;
     Unit* closestEnemy = nullptr;
+    Building* closestBuilding = nullptr;
 
     void initView();
     void initHealthBar();
@@ -107,6 +111,7 @@ protected:
     float m_bulletSpeed = 100;
     float rotationSpeedDegreesPerSecond = 90.0f;
     float closestDistance;
+    float closestBuildingDistance;
     float m_arrivalTolerance = 5.0f;
 
     const float PI = 3.14159265358979323846f;

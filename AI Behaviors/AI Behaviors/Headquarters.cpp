@@ -16,8 +16,7 @@ void Headquarters::update(sf::Time deltaTime)
 
 void Headquarters::render(sf::RenderWindow& m_window) const
 {
-	m_window.draw(m_buildingSprite);
-	m_window.draw(m_placementRadius);
+	Building::render(m_window);
 }
 
 void Headquarters::setupSprite()

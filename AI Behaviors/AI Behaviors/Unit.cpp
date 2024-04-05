@@ -201,6 +201,11 @@ void Unit::setEnemyUnits(std::vector<Unit*>& enemyUnits)
     this->enemyUnits = &enemyUnits;
 }
 
+void Unit::setEnemyBuildings(std::vector<Building*>& enemyBuildings)
+{
+    this->enemyBuildings = &enemyBuildings;
+}
+
 const sf::Sprite& Unit::getSprite() const
 {
     return m_unitSprite;
