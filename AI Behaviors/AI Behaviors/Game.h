@@ -30,6 +30,7 @@ public:
 private:
 
 	GameState m_currentState = GameState::MainMenu;
+	WinLoseState m_gameWinLose = WinLoseState::NONE;
 	GameState m_previousState;
 	MainMenu m_menu;
 	Tile m_tiles;
@@ -37,16 +38,13 @@ private:
 	LevelLoader m_levelLoader;
 	GUI m_gui{ placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
+	ParticleSystem m_particleSystem;
+	NeuralNetworks m_neural_network;
+	Unit* m_selectedUnit = nullptr;
 	std::vector<Building*> placedPlayerBuildings;
 	std::vector<Building*> placedEnemyBuildings;
 	std::vector<Unit*> playerUnits;
 	std::vector<Unit*> enemyUnits;
-	std::vector<std::unique_ptr<Unit>> enemyUnitsV2;
-	Unit* m_selectedUnit = nullptr;
-	ParticleSystem m_particleSystem;
-	NeuralNetworks m_neural_network;
-	WinLoseState m_gameWinLose = WinLoseState::NONE;
-
 	std::map<BuildingType, int> enemyBuildingCounts;
 
 	void processEvents();
@@ -63,9 +61,9 @@ private:
 	void loadLevel(const std::string& filename);
 	void checkVictoryConditions();
 
-	// Enemy AI
+	// Enemy AI stuff
 	EnemyAIState enemyAIState = EnemyAIState::Exploring;
-	sf::Time stateTimer = sf::seconds(0);
+	sf::Time enemyStateTimer = sf::seconds(0);
 	void createEnemyStarterBase();
 	void updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime);
 	void updateEnemyAIUnitDecisionState(sf::Time deltaTime);
@@ -111,9 +109,12 @@ private:
 	void spawnBulletSparkParticles(const sf::Vector2f& position);
 	void spawnExplosionParticle(const sf::Vector2f& position);
 
-	void initVictoryPanel();
-	void renderVictoryPanel(sf::RenderWindow& window);
+	void initWinLosePanel();
+	void renderWinLosePanel(sf::RenderWindow& window);
 	void handleVictoryPanelInput(const sf::Vector2f& m_mousePosition);
+	
+	void gameReset();
+	void clearGameEntities();
 
 	int calculateGridSize(int numberOfUnits);
 
@@ -181,7 +182,7 @@ private:
 	sf::Texture outputTexture;
 
 	// Win/Lose stuff
-	bool showWinPanel = false;
+	bool showWinLosePanel = false;
 	sf::Sprite PanelBackgroundSprite;
 	sf::Texture PanelBackgroundTexture;
 	sf::Text winLoseText;
@@ -189,6 +190,13 @@ private:
 	sf::Text exitText;
 	sf::RectangleShape playAgainButton;
 	sf::RectangleShape exitButton;
+
+	sf::Text playerStatsText;
+	sf::Text enemyStatsText;
+	int playerUnitStatCount = 0;
+	int playerBuildingStatCount = 0;
+	int enemyUnitStatCount = 0;
+	int enemyBuildingStatCount = 0;
 
 };
 

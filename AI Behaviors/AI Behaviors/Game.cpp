@@ -12,6 +12,7 @@ Game::Game() :
 	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_window.setView(gameView);
 	m_window.setMouseCursorVisible(false);
+	viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 
 	if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
 	{
@@ -41,7 +42,7 @@ Game::Game() :
 	hiddenNeurons = m_neural_network.getHiddenNeurons();
 	biasNeurons = m_neural_network.getBiasNeurons();
 	initializeNeuralNetwork();
-	initVictoryPanel();
+	initWinLosePanel();
 }
 
 /// <summary>
@@ -93,7 +94,7 @@ void Game::processEvents()
 				train = !train;
 			}
 		}
-		if (showWinPanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
+		if (showWinLosePanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
 		{
 			sf::Vector2f mousePosition = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 			guiMousePosition = sf::Mouse::getPosition(m_window);
@@ -109,11 +110,11 @@ void Game::processEvents()
 			if (m_currentState == GameState::PlayGame || m_currentState == GameState::LevelEditor)
 			{
 				float zoomFactor = (newEvent.mouseWheelScroll.delta > 0) ? 0.9f : 1.1f;
-				float newZoomLevel = currentZoomLevel * zoomFactor;
+				float zoomDistance = currentZoomLevel * zoomFactor;
 
-				if (newZoomLevel >= minZoomLevel && newZoomLevel <= maxZoomLevel)
+				if (zoomDistance >= minZoomLevel && zoomDistance <= maxZoomLevel)
 				{
-					currentZoomLevel = newZoomLevel;
+					currentZoomLevel = zoomDistance;
 					gameView.setSize(Global::S_WIDTH * currentZoomLevel, Global::S_HEIGHT * currentZoomLevel);
 					updateViewWithMouse();
 				}
@@ -434,9 +435,9 @@ void Game::render()
 			}
 		}
 		m_gui.render(m_window);
-		if (showWinPanel)
+		if (showWinLosePanel)
 		{
-			renderVictoryPanel(m_window);
+			renderWinLosePanel(m_window);
 		}
 		m_window.setView(gameView);
 		if (m_gameWinLose == WinLoseState::NONE)
@@ -475,27 +476,36 @@ void Game::render()
 void Game::updateViewWithMouse()
 {
 	sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(m_window));
+	sf::Vector2f viewSize = gameView.getSize();
+	float viewHalfWidth = viewSize.x / 2.0f;
+	float viewHalfHeight = viewSize.y / 2.0f;
 
 	switch (m_currentState)
 	{
 	case GameState::PlayGame:
-		minX = 950;
-		minY = 530;
-		maxX = 1550;
-		maxY = 1970;
+		minX = viewHalfWidth;
+		minY = viewHalfHeight;
+		maxX = 2500 - viewHalfWidth;
+		maxY = 2500 - viewHalfHeight;
 		moveCamera(mousePosition);
 		break;
 	case GameState::LevelEditor:
-		minX = 500;
-		minY = 200;
-		maxX = 1900;
-		maxY = 2300;
+		minX = viewHalfWidth - 500;
+		minY = viewHalfHeight - 500;
+		maxX = 3000 - viewHalfWidth; 
+		maxY = 3000 - viewHalfHeight;
 		moveCamera(mousePosition);
 		break;
 	default:
 		break;
 	}
+
+	// Clamp the viewCenter to be within the boundaries
+	viewCenter.x = std::max(minX, std::min(viewCenter.x, maxX));
+	viewCenter.y = std::max(minY, std::min(viewCenter.y, maxY));
+
 	gameView.setCenter(viewCenter);
+	m_window.setView(gameView);
 }
 
 void Game::moveCamera(sf::Vector2f mousePosition)
@@ -563,6 +573,7 @@ void Game::createBuilding(sf::RenderWindow& window)
 			placedPlayerBuildings.push_back(newAirCraft);
 			std::cout << "AirCraft Created" << std::endl;
 		}
+		playerBuildingStatCount++;
 		m_gui.m_confirmBuildingPlacement = false;
 		m_gui.m_confirmed = false;
 		m_selectedBuildingType = BuildingType::Headquarters;
@@ -981,6 +992,7 @@ void Game::createUnit()
 				playerUnits.push_back(newFirehawk);
 			}
 		}
+		playerUnitStatCount++;
 		m_gui.m_unitConfirmed = false;
 		m_gui.m_selectedBuilding = nullptr;
 		m_gui.m_selectedBuildingType = BuildingType::None;
@@ -1096,7 +1108,7 @@ void Game::spawnExplosionParticle(const sf::Vector2f& position)
 	}
 }
 
-void Game::initVictoryPanel()
+void Game::initWinLosePanel()
 {
 	if (!PanelBackgroundTexture.loadFromFile("Assets\\Images\\GUI\\panel.png"))
 	{
@@ -1120,7 +1132,7 @@ void Game::initVictoryPanel()
 	playAgainButton.setSize(sf::Vector2f(150, 50));
 	playAgainButton.setOrigin(playAgainButton.getSize().x / 2, playAgainButton.getSize().y / 2);
 	playAgainButton.setFillColor(sf::Color(100, 100, 250));
-	playAgainButton.setPosition(Global::S_WIDTH / 2, 450);
+	playAgainButton.setPosition(Global::S_WIDTH / 2, 500);
 
 	playAgainText.setFont(m_font);
 	playAgainText.setString("Play Again");
@@ -1134,7 +1146,7 @@ void Game::initVictoryPanel()
 	exitButton.setSize(sf::Vector2f(150, 50));
 	exitButton.setOrigin(exitButton.getSize().x / 2, exitButton.getSize().y / 2);
 	exitButton.setFillColor(sf::Color(250, 100, 100));
-	exitButton.setPosition(Global::S_WIDTH / 2, 550);
+	exitButton.setPosition(Global::S_WIDTH / 2, 600);
 
 	exitText.setFont(m_font);
 	exitText.setString("Exit");
@@ -1144,9 +1156,26 @@ void Game::initVictoryPanel()
 	exitText.setOutlineThickness(0.5);
 	exitText.setOrigin(exitText.getLocalBounds().width / 2, exitText.getLocalBounds().height / 2);
 	exitText.setPosition(exitButton.getPosition());
+
+	// STATS
+	playerStatsText.setFont(m_font);
+	playerStatsText.setCharacterSize(24);
+	playerStatsText.setFillColor(sf::Color::White);
+	playerStatsText.setString("Player Stats:");
+	playerStatsText.setOrigin(playerStatsText.getLocalBounds().width / 2, playerStatsText.getLocalBounds().height / 2);
+	playerStatsText.setPosition(Global::S_WIDTH / 2 - 250,
+		PanelBackgroundSprite.getPosition().y - 50);
+
+	enemyStatsText.setFont(m_font);
+	enemyStatsText.setCharacterSize(24);
+	enemyStatsText.setFillColor(sf::Color::White);
+	enemyStatsText.setString("Enemy Stats:");
+	enemyStatsText.setOrigin(enemyStatsText.getLocalBounds().width / 2, enemyStatsText.getLocalBounds().height / 2);
+	enemyStatsText.setPosition(Global::S_WIDTH / 2 + 200,
+		PanelBackgroundSprite.getPosition().y - 50);
 }
 
-void Game::renderVictoryPanel(sf::RenderWindow& window)
+void Game::renderWinLosePanel(sf::RenderWindow& window)
 {
 	window.draw(PanelBackgroundSprite);
 	window.draw(winLoseText);
@@ -1154,21 +1183,29 @@ void Game::renderVictoryPanel(sf::RenderWindow& window)
 	window.draw(playAgainText);
 	window.draw(exitButton);
 	window.draw(exitText);
+	window.draw(playerStatsText);
+	window.draw(enemyStatsText);
+
+	playerStatsText.setString("PLAYER STATS\n\nBuildings: " + std::to_string(playerBuildingStatCount) +
+		"\nUnits: " + std::to_string(playerUnitStatCount));
+	enemyStatsText.setString("ENEMY STATS\n\nBuildings: " + std::to_string(enemyBuildingStatCount) +
+		"\nUnits: " + std::to_string(enemyUnitStatCount));
 }
 
 void Game::handleVictoryPanelInput(const sf::Vector2f& m_mousePosition)
 {
 	if (playAgainButton.getGlobalBounds().contains(m_mousePosition)) 
 	{
-		showWinPanel = false;
+		showWinLosePanel = false;
+		gameReset();
 		std::cout << "Playing again" << std::endl;
 	}
 	if (exitButton.getGlobalBounds().contains(m_mousePosition))
 	{
-		showWinPanel = false;
+		showWinLosePanel = false;
 		m_currentState = GameState::MainMenu;
-		resetView();
-
+		levelLoaded = false;
+		gameReset();
 		std::cout << "Back to Main menu" << std::endl;
 	}
 }
@@ -1215,13 +1252,14 @@ void Game::checkVictoryConditions()
 	if (placedEnemyBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::WIN;
+		showWinLosePanel = true;
 		winLoseText.setString("Victory!");
-		showWinPanel = true;
 	}
 	else if (placedPlayerBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::LOSE;
-		winLoseText.setString("Game Over - YOU LOST");
+		showWinLosePanel = true;
+		winLoseText.setString("Game Over\nYou lost");
 	}
 }
 
@@ -1263,7 +1301,7 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 	std::vector<BuildingType> availableBuildings;
 
 	// Every few seconds the enemy will try to make either a unit or building
-	if (enemyProductionTimer > sf::seconds(80))
+	if (enemyProductionTimer > sf::seconds(8))
 	{
 		updateBuildingCounts();
 
@@ -1297,6 +1335,7 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 				{
 				case BuildingType::Barracks:
 					createEnemyUnit("Rifleman");
+					enemyUnitStatCount++;
 					std::cout << "Enemy created Rifleman" << std::endl;
 					break;
 				case BuildingType::WarFactory:
@@ -1305,16 +1344,19 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 					if (unitChance < 4) // 40% chance for Buggy
 					{
 						createEnemyUnit("Buggy");
+						enemyUnitStatCount++;
 						std::cout << "Enemy created Buggy" << std::endl;
 					}
 					else if (unitChance < 8) // 40% chance for Tank
 					{
 						createEnemyUnit("TankAurora");
+						enemyUnitStatCount++;
 						std::cout << "Enemy created Tank" << std::endl;
 					}
 					else  // 20% chance for Harvester
 					{
 						createEnemyUnit("Harvester");
+						enemyUnitStatCount++;
 						std::cout << "Enemy created Harvester" << std::endl;
 					}
 				}
@@ -1324,11 +1366,13 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 					if (rand() % 2) // 50/50 chance
 					{
 						createEnemyUnit("Hammerhead");
+						enemyUnitStatCount++;
 						std::cout << "Enemy created Hammerhead" << std::endl;
 					}
 					else
 					{
 						createEnemyUnit("Firehawk");
+						enemyUnitStatCount++;
 						std::cout << "Enemy created Firehawk" << std::endl;
 					}
 				}
@@ -1350,16 +1394,16 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 
 void Game::updateEnemyAIUnitDecisionState(sf::Time deltaTime)
 {
-	stateTimer += deltaTime;
+	enemyStateTimer += deltaTime;
 
 	switch (enemyAIState)
 	{
 	case EnemyAIState::Exploring:
 		//std::cout << "Exploring" << std::endl;
-		if (stateTimer > sf::seconds(30))
+		if (enemyStateTimer > sf::seconds(30))
 		{
 			enemyAIState = EnemyAIState::Grouping;
-			stateTimer = sf::seconds(0);
+			enemyStateTimer = sf::seconds(0);
 		}
 		else
 		{
@@ -1369,7 +1413,7 @@ void Game::updateEnemyAIUnitDecisionState(sf::Time deltaTime)
 	case EnemyAIState::Grouping:
 		//std::cout << "Grouping" << std::endl;
 		enemyGroupUnits(deltaTime);
-		if (enemyUnits.size() >= 5)
+		if (enemyUnits.size() >= 6)
 		{
 			enemyAIState = EnemyAIState::Attacking;
 		}
@@ -1377,10 +1421,10 @@ void Game::updateEnemyAIUnitDecisionState(sf::Time deltaTime)
 	case EnemyAIState::Attacking:
 		//std::cout << "Attacking" << std::endl;
 		enemyAttacking(deltaTime);
-		if (stateTimer > sf::seconds(30))
+		if (enemyStateTimer > sf::seconds(30))
 		{
 			enemyAIState = EnemyAIState::Exploring;
-			stateTimer = sf::seconds(0);
+			enemyStateTimer = sf::seconds(0);
 		}
 		break;
 	}
@@ -1712,6 +1756,7 @@ void Game::placeEnemyBuilding(BuildingType type)
 	{
 		newEnemyBuilding->setPosition(position);
 		placedEnemyBuildings.push_back(newEnemyBuilding);
+		enemyBuildingStatCount++;
 	}
 	if (createHarvesterUnit)
 	{
@@ -1974,4 +2019,48 @@ bool Game::isPositionWithinMap(const sf::Vector2f& position)
 
 	return position.x >= mapLeft && position.x <= mapRight &&
 		position.y >= mapTop && position.y <= mapBottom;
+}
+
+void Game::gameReset()
+{
+	resetView();
+	viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_levelEditor.resetFogOfWar();
+	m_gameWinLose = WinLoseState::NONE;
+	Global::playerCurrency = 5000;
+	Global::enemyCurrency = 10000;
+	playerUnitStatCount = 0;
+	playerBuildingStatCount = 0;
+	enemyUnitStatCount = 0;
+	enemyBuildingStatCount = 0;
+	clearGameEntities();
+	createBase();
+	createEnemyStarterBase();
+}
+
+void Game::clearGameEntities()
+{
+	for (auto building : placedPlayerBuildings) 
+	{
+		delete building; 
+	}
+	placedPlayerBuildings.clear();
+
+	for (auto building : placedEnemyBuildings) 
+	{
+		delete building;
+	}
+	placedEnemyBuildings.clear();
+
+	for (auto unit : playerUnits)
+	{
+		delete unit;
+	}
+	playerUnits.clear();
+
+	for (auto unit : enemyUnits)
+	{
+		delete unit;
+	}
+	enemyUnits.clear();
 }
