@@ -11,7 +11,7 @@ Barracks::~Barracks()
 {
 }
 
-void Barracks::update(sf::Time deltaTime)
+void Barracks::update(sf::Time t_deltaTime)
 {
 }
 
@@ -20,6 +20,9 @@ void Barracks::render(sf::RenderWindow& m_window) const
 	Building::render(m_window);
 }
 
+/// <summary>
+/// initializes the barracks building
+/// </summary>
 void Barracks::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Factory.png"))

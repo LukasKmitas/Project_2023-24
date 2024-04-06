@@ -18,41 +18,41 @@ public:
 	Harvester();
 	~Harvester();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 
-	void setBuildings(const std::vector<Building*>& buildings);
-	void setTiles(const std::vector<std::vector<Tile>>& tiles);
+	void setBuildings(const std::vector<Building*>& m_buildings);
+	void setTiles(const std::vector<std::vector<Tile>>& m_tiles);
 
-	State currentState = Idle;
+	State m_currentState = Idle;
 
 private:
 
-	Refinery* targetRefinery = nullptr;
+	Refinery* m_targetRefinery = nullptr;
 
 	void movement(sf::Time t_deltaTime);
 
 	void findNearestResourceTile();
 	void findNearestRefinery();
 
-	void gettingResourcePosition(const sf::Vector2f& resourcePos);
-	void moveToRefinery(Refinery* refinery);
+	void gettingResourcePosition(const sf::Vector2f& m_resourcePos);
+	void moveToRefinery(Refinery* m_refinery);
 
 	void unloadResources(sf::Time t_deltaTime);
 
 	bool isAtTargetPosition();
 	bool isAtRefinery();
 
-	void setupHarvester();
+	void initHarvester();
 
-	sf::Vector2f resourcePosition;
+	sf::Vector2f m_resourcePosition;
 
-	const std::vector<Building*>* allBuildings;
-	const std::vector<std::vector<Tile>>* tiles;
+	const std::vector<Building*>* m_allBuildings;
+	const std::vector<std::vector<Tile>>* m_tiles;
 
-	float collectionRate = 4.0f; 
-	float maxResourceCapacity = 100.0f; 
-	float currentResourceLoad = 0.0f;
+	float m_collectionRate = 4.0f; 
+	float m_maxResourceCapacity = 100.0f; 
+	float m_currentResourceLoad = 0.0f;
 
-	bool foundResource = false;
+	bool m_foundResource = false;
 };
 

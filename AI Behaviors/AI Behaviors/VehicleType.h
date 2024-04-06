@@ -5,6 +5,6 @@ enum class VehicleType
     None,
     Harvester,
     Buggy,
-    Tank,
+    TankAurora,
     Artillery
 };

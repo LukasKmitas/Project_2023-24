@@ -11,7 +11,7 @@ Refinery::~Refinery()
 {
 }
 
-void Refinery::update(sf::Time deltaTime)
+void Refinery::update(sf::Time t_deltaTime)
 {
 }
 
@@ -20,6 +20,9 @@ void Refinery::render(sf::RenderWindow& m_window) const
 	Building::render(m_window);
 }
 
+/// <summary>
+/// initializes the refinery building
+/// </summary>
 void Refinery::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Refinery.png"))

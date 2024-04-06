@@ -2,7 +2,7 @@
 
 HammerHead::HammerHead()
 {
-	setupHammerhead();
+	initHammerhead();
 	m_cost = 1500;
 	m_health = 100;
     m_viewRadius = 310;
@@ -11,28 +11,28 @@ HammerHead::HammerHead()
 	m_slowingRadius = 100.0f;
     m_rotationSpeed = 80;
     m_maxForce = 200;
-    rotationSpeedDegreesPerSecond = 90;
+    m_rotationSpeed = 90;
 }
 
 HammerHead::~HammerHead()
 {
 }
 
-void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
+void HammerHead::update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits)
 {
-    AircraftUnit::update(t_deltaTime, allyUnits);
+    AircraftUnit::update(t_deltaTime, m_allyUnits);
 
     movement(t_deltaTime);
     orientSpriteToMovement(t_deltaTime);
 
-    if (fireTimer > 0.0f)
+    if (m_fireTimer > 0.0f)
     {
-        fireTimer -= t_deltaTime.asSeconds();
+        m_fireTimer -= t_deltaTime.asSeconds();
     }
 
-    if (enemyUnits)
+    if (m_enemyUnits)
     {
-        aimWeapons(*enemyUnits);
+        aimWeapons(*m_enemyUnits);
     }
 
     spawnParticleExhaustEffect();
@@ -46,7 +46,10 @@ void HammerHead::render(sf::RenderWindow& m_window)
     m_window.draw(m_rightGunSprite);
 }
 
-void HammerHead::setupHammerhead()
+/// <summary>
+/// initiliazes the hammerhead unit 
+/// </summary>
+void HammerHead::initHammerhead()
 {
 	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\HammerHead.png"))
 	{
@@ -70,6 +73,9 @@ void HammerHead::setupHammerhead()
     m_rightGunSprite.setScale(0.1, 0.1);
 }
 
+/// <summary>
+/// creates a fire/exhaust particle effect at the back of the unit 
+/// </summary>
 void HammerHead::spawnParticleExhaustEffect()
 {
     const int particlesPerUpdate = 3;
@@ -92,6 +98,10 @@ void HammerHead::spawnParticleExhaustEffect()
     }
 }
 
+/// <summary>
+/// makes the unit move
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void HammerHead::movement(sf::Time t_deltaTime)
 {
     float arrivalTolerance = 5.0f;
@@ -127,9 +137,13 @@ void HammerHead::movement(sf::Time t_deltaTime)
     setPosition(m_position);
 }
 
-void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
+/// <summary>
+/// Makes it aim at the enemy
+/// </summary>
+/// <param name="m_enemyUnits"></param>
+void HammerHead::aimWeapons(const std::vector<Unit*>& m_enemyUnits)
 {
-    if (enemyUnits.empty())
+    if (m_enemyUnits.empty())
     {
         m_leftGunSprite.setRotation(m_unitSprite.getRotation());
         m_rightGunSprite.setRotation(m_unitSprite.getRotation());
@@ -149,9 +163,9 @@ void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
     m_rightGunSprite.setPosition(rightWeaponPosition);
 
     // Initialize closest enemy data
-    closestDistance = std::numeric_limits<float>::max();
+    m_closestDistance = std::numeric_limits<float>::max();
 
-    for (Unit* enemy : enemyUnits)
+    for (Unit* enemy : m_enemyUnits)
     {
         float distance = this->distance(this->getPosition(), enemy->getPosition());
 
@@ -163,14 +177,14 @@ void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
         {
             angleDifference -= 360.0f;
         }
-        if (distance < closestDistance && distance <= m_viewRadius && abs(angleDifference) <= 90)
+        if (distance < m_closestDistance && distance <= m_viewRadius && abs(angleDifference) <= 90)
         {
-            closestDistance = distance;
-            closestEnemy = enemy;
+            m_closestDistance = distance;
+            m_closestEnemy = enemy;
         }
     }
 
-    for (Building* building : *enemyBuildings)
+    for (Building* building : *m_enemyBuildings)
     {
         float distance = this->distance(this->getPosition(), building->getPosition());
 
@@ -182,26 +196,26 @@ void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
         {
             angleDifference -= 360.0f;
         }
-        if (distance < closestDistance && distance <= m_viewRadius && abs(angleDifference) <= 90)
+        if (distance < m_closestDistance && distance <= m_viewRadius && abs(angleDifference) <= 90)
         {
-            closestDistance = distance;
-            closestBuilding = building;
+            m_closestDistance = distance;
+            m_closestBuilding = building;
         }
     }
 
-    if (closestEnemy && closestDistance <= this->getViewRadius() - 30)
+    if (m_closestEnemy && m_closestDistance <= this->getViewRadius() - 30)
     {
         // Aim at enemy
-        directionToEnemy = normalize(closestEnemy->getPosition() - this->getPosition());
-        float angleDegrees = angleFromVector(directionToEnemy);
+        m_directionToEnemy = normalize(m_closestEnemy->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(m_directionToEnemy);
         m_leftGunSprite.setRotation(angleDegrees + 90);
         m_rightGunSprite.setRotation(angleDegrees + 90);
         shootAtEnemy();
     }
-    else if (closestBuilding && closestDistance <= this->getViewRadius() - 30)
+    else if (m_closestBuilding && m_closestDistance <= this->getViewRadius() - 30)
     {
-        directionToEnemy = normalize(closestBuilding->getPosition() - this->getPosition());
-        float angleDegrees = angleFromVector(directionToEnemy);
+        m_directionToEnemy = normalize(m_closestBuilding->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(m_directionToEnemy);
         m_leftGunSprite.setRotation(angleDegrees + 90);
         m_rightGunSprite.setRotation(angleDegrees + 90);
         shootAtEnemy();
@@ -213,11 +227,14 @@ void HammerHead::aimWeapons(const std::vector<Unit*>& enemyUnits)
     }
 }
 
+/// <summary>
+/// shoots bullets
+/// </summary>
 void HammerHead::shootAtEnemy()
 {
-    if (fireTimer <= 0.0f)
+    if (m_fireTimer <= 0.0f)
     {
-        fireTimer = fireRate;
+        m_fireTimer = m_fireRate;
 
         float sprayAngle = (std::rand() % 11 - 5) * (3.14159265 / 180);
 
@@ -225,14 +242,14 @@ void HammerHead::shootAtEnemy()
         float sinAngle = std::sin(sprayAngle);
         sf::Vector2f sprayedDirection =
         {
-            directionToEnemy.x * cosAngle - directionToEnemy.y * sinAngle,
-            directionToEnemy.x * sinAngle + directionToEnemy.y * cosAngle
+            m_directionToEnemy.x * cosAngle - m_directionToEnemy.y * sinAngle,
+            m_directionToEnemy.x * sinAngle + m_directionToEnemy.y * cosAngle
         };
 
         sf::Vector2f bulletStartPosition1 = m_leftGunSprite.getPosition();
         sf::Vector2f bulletStartPosition2 = m_rightGunSprite.getPosition();
 
-        bullets.emplace_back(bulletStartPosition1, sprayedDirection, bulletSpeed);
-        bullets.emplace_back(bulletStartPosition2, sprayedDirection, bulletSpeed);
+        m_bullets.emplace_back(bulletStartPosition1, sprayedDirection, m_bulletSpeed);
+        m_bullets.emplace_back(bulletStartPosition2, sprayedDirection, m_bulletSpeed);
     }
 }

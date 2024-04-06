@@ -6,6 +6,10 @@ MainMenu::MainMenu()
     initBackgroundImage();
 }
 
+/// <summary>
+/// Updates main menu
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void MainMenu::update(sf::Time t_deltaTime)
 {
     titleAnimation(t_deltaTime);
@@ -14,9 +18,12 @@ void MainMenu::update(sf::Time t_deltaTime)
     static float time = 0.0f;
     time += t_deltaTime.asSeconds();
     m_backgroundShader.setUniform("time", time);
-
 }
 
+/// <summary>
+/// renders main menu content
+/// </summary>
+/// <param name="m_window"></param>
 void MainMenu::render(sf::RenderWindow& m_window)
 {
     m_window.draw(m_backgroundSprite, &m_backgroundShader);
@@ -31,12 +38,17 @@ void MainMenu::render(sf::RenderWindow& m_window)
     m_window.draw(m_neuralNetworkText);
     m_window.draw(m_exitText);
 
-    m_window.draw(outlineText);
+    m_window.draw(m_outlineText);
     m_window.draw(m_titleText, &m_titleShader);
 
     buttonTabAnimation(m_window, m_deltaTime);
 }
 
+/// <summary>
+/// handles the button presses
+/// </summary>
+/// <param name="m_mousePosition"></param>
+/// <param name="m_gameState"></param>
 void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState& m_gameState)
 {
     if (m_playButton.getGlobalBounds().contains(m_mousePosition))
@@ -61,6 +73,9 @@ void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState&
     }
 }
 
+/// <summary>
+/// Initializes the buttons
+/// </summary>
 void MainMenu::initButtons()
 {
     if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
@@ -99,10 +114,10 @@ void MainMenu::initButtons()
     m_titleText.setCharacterSize(80U);
     m_titleText.setFillColor(sf::Color(10, 10, 80));
     m_titleText.setOrigin(m_titleText.getGlobalBounds().width / 2, m_titleText.getGlobalBounds().height / 2);
-    outlineText = m_titleText;
-    outlineText.setFillColor(sf::Color::Transparent);
-    outlineText.setOutlineColor(sf::Color(255, 215, 0));
-    outlineText.setOutlineThickness(1.0f);
+    m_outlineText = m_titleText;
+    m_outlineText.setFillColor(sf::Color::Transparent);
+    m_outlineText.setOutlineColor(sf::Color(255, 215, 0));
+    m_outlineText.setOutlineThickness(1.0f);
 
     // Play Button
     m_playButton.setSize(sf::Vector2f(300, 85));
@@ -161,21 +176,24 @@ void MainMenu::initButtons()
     m_exitText.setPosition(m_exitButton.getPosition().x, m_exitButton.getPosition().y - 5);
 
     // Neural Network Button
-    m_NeuralNetworkButton.setSize(sf::Vector2f(300, 85));
+    m_NeuralNetworkButton.setSize(sf::Vector2f(320, 85));
     m_NeuralNetworkButton.setOrigin(m_NeuralNetworkButton.getSize().x / 2, m_NeuralNetworkButton.getSize().y / 2);
-    m_NeuralNetworkButton.setPosition(Global::S_WIDTH / 2 - 600, Global::S_HEIGHT / 2 + 100);
+    m_NeuralNetworkButton.setPosition(Global::S_WIDTH / 2 - 600, Global::S_HEIGHT / 2 + 250);
     m_NeuralNetworkButton.setTexture(&m_buttonTexture);
     m_neuralNetworkText.setFont(m_font);
     m_neuralNetworkText.setString("Neural Networks");
-    m_neuralNetworkText.setCharacterSize(35);
+    m_neuralNetworkText.setCharacterSize(30);
     m_neuralNetworkText.setFillColor(sf::Color(225, 245, 255));
-    m_neuralNetworkText.setOutlineColor(sf::Color::Blue);
+    m_neuralNetworkText.setOutlineColor(sf::Color::Red);
     m_neuralNetworkText.setOutlineThickness(1.0f);
     m_neuralNetworkText.setOrigin(m_neuralNetworkText.getGlobalBounds().width / 2, m_neuralNetworkText.getGlobalBounds().height / 2);
     m_neuralNetworkText.setPosition(m_NeuralNetworkButton.getPosition().x, m_NeuralNetworkButton.getPosition().y - 5);
 
 }
 
+/// <summary>
+/// Initializes background
+/// </summary>
 void MainMenu::initBackgroundImage()
 {
     if (!m_backgroundTexture.loadFromFile("Assets\\Images\\Menu\\Down the Tubes.png"))
@@ -189,6 +207,11 @@ void MainMenu::initBackgroundImage()
         static_cast<float>(Global::S_HEIGHT) / m_backgroundSprite.getGlobalBounds().height);
 }
 
+/// <summary>
+/// Makes an animation when mouse is over the button
+/// </summary>
+/// <param name="m_window"></param>
+/// <param name="t_deltaTime"></param>
 void MainMenu::buttonTabAnimation(sf::RenderWindow& m_window, sf::Time t_deltaTime)
 {
     static float animationTime = 0.0f;
@@ -231,6 +254,10 @@ void MainMenu::buttonTabAnimation(sf::RenderWindow& m_window, sf::Time t_deltaTi
     }
 }
 
+/// <summary>
+/// Animates the title to make it more fancy
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void MainMenu::titleAnimation(sf::Time t_deltaTime)
 {
     static float time = 0.0f;
@@ -244,6 +271,6 @@ void MainMenu::titleAnimation(sf::Time t_deltaTime)
     float scale = m_titleMinScale + (sin(m_titleAnimationTime) + 1) / 2 * (m_titleMaxScale - m_titleMinScale);
     m_titleText.setScale(scale, scale);
     m_titleText.setOrigin(m_titleText.getLocalBounds().width / 2, m_titleText.getLocalBounds().height / 2);
-    outlineText.setScale(scale, scale);
-    outlineText.setOrigin(outlineText.getLocalBounds().width / 2, outlineText.getLocalBounds().height / 2);
+    m_outlineText.setScale(scale, scale);
+    m_outlineText.setOrigin(m_outlineText.getLocalBounds().width / 2, m_outlineText.getLocalBounds().height / 2);
 }

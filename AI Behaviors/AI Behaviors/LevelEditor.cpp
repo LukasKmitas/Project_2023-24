@@ -18,7 +18,7 @@ LevelEditor::LevelEditor()
     initBar();
     initBackButton();
     initbuttonsForToolEditor();
-    m_tiles.resize(numRows, std::vector<Tile>(numCols));
+    m_tiles.resize(m_numRows, std::vector<Tile>(m_numCols));
     initGrid();
     initDragRectangle();
     //randomGenerateLevel();
@@ -26,22 +26,27 @@ LevelEditor::LevelEditor()
     m_levelEditorView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 }
 
+/// <summary>
+/// Updates the level editor content changes
+/// </summary>
+/// <param name="t_deltaTime"></param>
+/// <param name="m_window"></param>
 void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
     animationForResources();
     animationForWeed();
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && isTileSelected) // used for dragging, creates the size
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && m_isTileSelected) // used for dragging, creates the size
     {
         sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
         sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition, m_window.getView());
-        sf::Vector2f newSize = worldMousePosition - startMousePos;
-        dragRectangle.setSize(newSize);
+        sf::Vector2f newSize = worldMousePosition - m_startMousePos;
+        m_dragRectangle.setSize(newSize);
     }
-    if (buttonSelectedanimationClock.getElapsedTime().asSeconds() > animationSpeed) 
+    if (m_buttonSelectedAnimationClock.getElapsedTime().asSeconds() > m_animationSpeed) 
     {
-        currentAnimationFrame = (currentAnimationFrame + 1) % 4;
-        buttonSelectedSprite.setTextureRect(sf::IntRect(currentAnimationFrame * 16, 0, 16, 16));
-        buttonSelectedanimationClock.restart();
+        m_currentAnimationFrame = (m_currentAnimationFrame + 1) % 4;
+        m_buttonSelectedSprite.setTextureRect(sf::IntRect(m_currentAnimationFrame * 16, 0, 16, 16));
+        m_buttonSelectedAnimationClock.restart();
     }
 }
 
@@ -51,35 +56,34 @@ void LevelEditor::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 /// <param name="m_window"></param>
 void LevelEditor::render(sf::RenderWindow & m_window)
 {
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
             m_window.draw(m_tiles[i][j].m_tile);
         }
     }
 
-    for (int i = 0; i <= numRows; ++i)
+    for (int i = 0; i <= m_numRows; ++i)
     {
         sf::Vertex line[] =
         {
-            sf::Vertex(sf::Vector2f(i * m_tiles[0][0].tileSize, 0), sf::Color::Black),
-            sf::Vertex(sf::Vector2f(i * m_tiles[0][0].tileSize, numRows * m_tiles[0][0].tileSize), sf::Color::Black)
+            sf::Vertex(sf::Vector2f(i * m_tiles[0][0].m_tileSize, 0), sf::Color::Black),
+            sf::Vertex(sf::Vector2f(i * m_tiles[0][0].m_tileSize, m_numRows * m_tiles[0][0].m_tileSize), sf::Color::Black)
+        };
+        m_window.draw(line, 2, sf::Lines);
+    }
+    for (int j = 0; j <= m_numCols; ++j)
+    {
+        sf::Vertex line[] =
+        {
+            sf::Vertex(sf::Vector2f(0, j * m_tiles[0][0].m_tileSize), sf::Color::Black),
+            sf::Vertex(sf::Vector2f(m_numCols * m_tiles[0][0].m_tileSize, j * m_tiles[0][0].m_tileSize), sf::Color::Black)
         };
         m_window.draw(line, 2, sf::Lines);
     }
 
-    for (int j = 0; j <= numCols; ++j)
-    {
-        sf::Vertex line[] =
-        {
-            sf::Vertex(sf::Vector2f(0, j * m_tiles[0][0].tileSize), sf::Color::Black),
-            sf::Vertex(sf::Vector2f(numCols * m_tiles[0][0].tileSize, j * m_tiles[0][0].tileSize), sf::Color::Black)
-        };
-        m_window.draw(line, 2, sf::Lines);
-    }
-
-    m_window.draw(dragRectangle);
+    m_window.draw(m_dragRectangle);
     m_window.setView(m_levelEditorView); // Stuff above stays the same, stuff below move along side the view
     m_window.draw(m_backgroundForTilesTools);
     m_window.draw(m_toGoBackButton);
@@ -94,17 +98,17 @@ void LevelEditor::render(sf::RenderWindow & m_window)
     m_window.draw(m_ResourceText);
     m_window.draw(m_MiscText);
 
-    for (int i = 0; i < numButtons; i++)
+    for (int i = 0; i < m_numButtons; i++)
     {
         m_window.draw(m_buttons[i]);
     }
 
-    if (selectedButtonIndex >= 0) 
+    if (m_selectedButtonIndex >= 0) 
     {
-        sf::Vector2f buttonPos = m_buttons[selectedButtonIndex].getPosition();
-        buttonSelectedSprite.setPosition(buttonPos.x - 1, buttonPos.y - 1);
+        sf::Vector2f buttonPos = m_buttons[m_selectedButtonIndex].getPosition();
+        m_buttonSelectedSprite.setPosition(buttonPos.x - 1, buttonPos.y - 1);
 
-        m_window.draw(buttonSelectedSprite);
+        m_window.draw(m_buttonSelectedSprite);
     }
 }
 
@@ -114,12 +118,12 @@ void LevelEditor::render(sf::RenderWindow & m_window)
 /// <param name="m_window"></param>
 void LevelEditor::renderLoadedLevel(sf::RenderWindow & m_window)
 {
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
             Tile& tile = m_tiles[i][j];
-            switch (tile.fogStatus)
+            switch (tile.m_fogStatus)
             {
             case Tile::FogStatus::Unexplored:
                 tile.m_tile.setFillColor(sf::Color(0, 0, 0, 255));
@@ -147,20 +151,20 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_ga
     sf::Vector2f guiMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_levelEditorView);
     sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(m_mousePosition, m_window.getView());
 
-    handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, lastClickedButtonIndex, selectedButtonIndex);
+    handleTileButtons(guiMousePosition, worldMousePosition, m_buttons, m_lastClickedButtonIndex, m_selectedButtonIndex);
 
-    startMousePos = worldMousePosition;
-    newMousePos = worldMousePosition;
-    dragRectangle.setPosition(startMousePos);
+    m_startMousePos = worldMousePosition;
+    m_newMousePos = worldMousePosition;
+    m_dragRectangle.setPosition(m_startMousePos);
 
     if (m_toGoBackButton.getGlobalBounds().contains(guiMousePosition))
     {
-        dragRectangle.setSize(sf::Vector2f(0.0f, 0.0f));
-        startMousePos = sf::Vector2f(0.f, 0.f);
-        newMousePos = sf::Vector2f(0.f, 0.f);
-        isButtonClicked = false;
-        isTileSelected = false;
-        lastClickedButtonIndex = -1;
+        m_dragRectangle.setSize(sf::Vector2f(0.0f, 0.0f));
+        m_startMousePos = sf::Vector2f(0.f, 0.f);
+        m_newMousePos = sf::Vector2f(0.f, 0.f);
+        m_isButtonClicked = false;
+        m_isTileSelected = false;
+        m_lastClickedButtonIndex = -1;
         m_gameState = GameState::MainMenu;
     }
 }
@@ -173,77 +177,76 @@ void LevelEditor::handleMouseInput(sf::Vector2i m_mousePosition, GameState& m_ga
 /// <param name="buttons"></param>
 /// <param name="lastClickedIndex"></param>
 /// <param name="selectedIndex"></param>
-void LevelEditor::handleTileButtons(sf::Vector2f guiMousePosition, sf::Vector2f worldMousePosition, sf::Sprite buttons[],int& lastClickedIndex, int& selectedIndex)
+void LevelEditor::handleTileButtons(sf::Vector2f m_guiMousePosition, sf::Vector2f m_worldMousePosition, sf::Sprite m_buttons[],int& m_lastClickedIndex, int& m_selectedIndex)
 {
-    isButtonClicked = false;
+    m_isButtonClicked = false;
 
-    for (int i = 0; i < numButtons; ++i)
+    for (int i = 0; i < m_numButtons; ++i)
     {
-        if (buttons[i].getGlobalBounds().contains(guiMousePosition))
+        if (m_buttons[i].getGlobalBounds().contains(m_guiMousePosition))
         {
-            selectedIndex = i;
-            buttons[i].setColor(sf::Color(150, 150, 150));
-            isButtonClicked = true;
-            lastClickedIndex = i;
+            m_selectedIndex = i;
+            m_buttons[i].setColor(sf::Color(150, 150, 150));
+            m_isButtonClicked = true;
+            m_lastClickedIndex = i;
         }
         else
         {
-            buttons[i].setColor(sf::Color(255, 255, 255));
+            m_buttons[i].setColor(sf::Color(255, 255, 255));
         }
     }
 
-    if (!isButtonClicked && lastClickedIndex != -1)
+    if (!m_isButtonClicked && m_lastClickedIndex != -1)
     {
-        buttons[lastClickedIndex].setColor(sf::Color(150, 150, 150));
-        handleTilePlacement(worldMousePosition, lastClickedIndex, selectedIndex);
+        m_buttons[m_lastClickedIndex].setColor(sf::Color(150, 150, 150));
+        handleTilePlacement(m_worldMousePosition, m_selectedIndex);
     }
 }
 
 /// <summary>
-/// handles the placement for the tiles
+///  handles the placement for the tiles
 /// </summary>
-/// <param name="worldMousePosition"></param>
-/// <param name="lastClickedIndex"></param>
-/// <param name="selectedIndex"></param>
-void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastClickedIndex, int selectedIndex)
+/// <param name="m_worldMousePosition"></param>
+/// <param name="m_selectedIndex"></param>
+void LevelEditor::handleTilePlacement(sf::Vector2f m_worldMousePosition, int m_selectedIndex)
 {
     sf::IntRect* buttonArea = nullptr;
-    if (selectedIndex < 4)
+    if (m_selectedIndex < 4)
     {
-        buttonArea = &buttonAreaForWalkable[selectedIndex];
+        buttonArea = &m_buttonAreaForWalkable[m_selectedIndex];
     }
-    else if (selectedIndex < 9)
+    else if (m_selectedIndex < 9)
     {
-        buttonArea = &buttonAreaForWalls[selectedIndex - 4];
+        buttonArea = &m_buttonAreaForWalls[m_selectedIndex - 4];
     }
-    else if (selectedIndex < 10)
+    else if (m_selectedIndex < 10)
     {
-        buttonArea = &buttonAreaForResources;
+        buttonArea = &m_buttonAreaForResources;
     }
     else
     {
-        buttonArea = &buttonAreaForMiscs[selectedIndex - 10];
+        buttonArea = &m_buttonAreaForMiscs[m_selectedIndex - 10];
     }
 
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
-            if (m_tiles[i][j].m_tile.getGlobalBounds().contains(worldMousePosition))
+            if (m_tiles[i][j].m_tile.getGlobalBounds().contains(m_worldMousePosition))
             {
-                if (!isTileSelected && selectedIndex != -1)
+                if (!m_isTileSelected && m_selectedIndex != -1)
                 {
-                    isTileSelected = true;
+                    m_isTileSelected = true;
                     break;
                 }
-                else if (isTileSelected && selectedIndex != -1 && !m_backgroundForTilesTools.getGlobalBounds().contains(worldMousePosition))
+                else if (m_isTileSelected && m_selectedIndex != -1 && !m_backgroundForTilesTools.getGlobalBounds().contains(m_worldMousePosition))
                 {
-                    selectedTileX = i;
-                    selectedTileY = j;
+                    m_selectedTileX = i;
+                    m_selectedTileY = j;
                     m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
-                    m_tiles[i][j].isWall = (selectedIndex >= 4 && selectedIndex < 9);
-                    m_tiles[i][j].isResource = (selectedIndex == 9);
-                    m_tiles[i][j].animationWeed = (selectedIndex == 10);
+                    m_tiles[i][j].m_isWall = (m_selectedIndex >= 4 && m_selectedIndex < 9);
+                    m_tiles[i][j].m_isResource = (m_selectedIndex == 9);
+                    m_tiles[i][j].m_animationWeed = (m_selectedIndex == 10);
                     m_tiles[i][j].m_tile.setRotation(0);
                     m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
                     break;
@@ -251,7 +254,6 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
             }
         }
     }
-
 }
 
 /// <summary>
@@ -259,33 +261,33 @@ void LevelEditor::handleTilePlacement(sf::Vector2f worldMousePosition, int lastC
 /// </summary>
 void LevelEditor::placeTilesInDragRectangle()
 {
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
-            if (dragRectangle.getGlobalBounds().intersects(m_tiles[i][j].m_tile.getGlobalBounds()))
+            if (m_dragRectangle.getGlobalBounds().intersects(m_tiles[i][j].m_tile.getGlobalBounds()))
             {
                 sf::IntRect* buttonArea = nullptr;
-                if (selectedButtonIndex < 4)
+                if (m_selectedButtonIndex < 4)
                 {
-                    buttonArea = &buttonAreaForWalkable[selectedButtonIndex];
+                    buttonArea = &m_buttonAreaForWalkable[m_selectedButtonIndex];
                 }
-                else if (selectedButtonIndex < 9)
+                else if (m_selectedButtonIndex < 9)
                 {
-                    buttonArea = &buttonAreaForWalls[selectedButtonIndex - 4];
+                    buttonArea = &m_buttonAreaForWalls[m_selectedButtonIndex - 4];
                 }
-                else if (selectedButtonIndex < 10)
+                else if (m_selectedButtonIndex < 10)
                 {
-                    buttonArea = &buttonAreaForResources;
+                    buttonArea = &m_buttonAreaForResources;
                 }
                 else
                 {
-                    buttonArea = &buttonAreaForMiscs[selectedButtonIndex - 10];
+                    buttonArea = &m_buttonAreaForMiscs[m_selectedButtonIndex - 10];
                 }
                 m_tiles[i][j].m_tile.setTexture(&m_underWaterTexture);
-                m_tiles[i][j].isWall = (selectedButtonIndex >= 4 && selectedButtonIndex < 9);
-                m_tiles[i][j].isResource = (selectedButtonIndex == 9);
-                m_tiles[i][j].animationWeed = (selectedButtonIndex == 10);
+                m_tiles[i][j].m_isWall = (m_selectedButtonIndex >= 4 && m_selectedButtonIndex < 9);
+                m_tiles[i][j].m_isResource = (m_selectedButtonIndex == 9);
+                m_tiles[i][j].m_animationWeed = (m_selectedButtonIndex == 10);
                 m_tiles[i][j].m_tile.setRotation(0);
                 m_tiles[i][j].m_tile.setTextureRect(*buttonArea);
             }
@@ -297,17 +299,17 @@ void LevelEditor::placeTilesInDragRectangle()
 /// able to rotate the first tile you place
 /// </summary>
 /// <param name="event"></param>
-void LevelEditor::handleRotationInput(sf::Event event)
+void LevelEditor::handleRotationInput(sf::Event m_event)
 {
     int rotationAngle = 90;
 
-    switch (event.key.code)
+    switch (m_event.key.code)
     {
     case sf::Keyboard::Q:
-        m_tiles[selectedTileX][selectedTileY].m_tile.rotate(-rotationAngle); // Rotate counter-clockwise
+        m_tiles[m_selectedTileX][m_selectedTileY].m_tile.rotate(-rotationAngle); // Rotate counter-clockwise
         break;
     case sf::Keyboard::E:
-        m_tiles[selectedTileX][selectedTileY].m_tile.rotate(rotationAngle); // Rotate clockwise
+        m_tiles[m_selectedTileX][m_selectedTileY].m_tile.rotate(rotationAngle); // Rotate clockwise
         break;
     default:
         break;
@@ -319,12 +321,12 @@ void LevelEditor::handleRotationInput(sf::Event event)
 /// </summary>
 void LevelEditor::initGrid()
 {
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
-            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].tileSize + 25, i * m_tiles[i][j].tileSize + 25);
-            m_tiles[i][j].m_tile.setOrigin(m_tiles[i][j].tileSize / 2.f, m_tiles[i][j].tileSize / 2.f);
+            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].m_tileSize + 25, i * m_tiles[i][j].m_tileSize + 25);
+            m_tiles[i][j].m_tile.setOrigin(m_tiles[i][j].m_tileSize / 2.f, m_tiles[i][j].m_tileSize / 2.f);
         }
     }
 }
@@ -334,23 +336,23 @@ void LevelEditor::initGrid()
 /// </summary>
 void LevelEditor::randomGenerateLevel()
 {
-    for (int i = 0; i < numRows; ++i)
+    for (int i = 0; i < m_numRows; ++i)
     {
-        for (int j = 0; j < numCols; ++j)
+        for (int j = 0; j < m_numCols; ++j)
         {
             // Set random wall probability
             int randomNumber = rand() % 100;
             if (randomNumber < 3)
             {
-                m_tiles[i][j].isWall = true;
+                m_tiles[i][j].m_isWall = true;
                 m_tiles[i][j].m_tile.setFillColor(sf::Color::Blue); // Wall tiles
             }
             else
             {
-                m_tiles[i][j].isWall = false;
+                m_tiles[i][j].m_isWall = false;
                 m_tiles[i][j].m_tile.setFillColor(sf::Color::Green); // Non-wall tiles
             }
-            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].tileSize, i * m_tiles[i][j].tileSize);
+            m_tiles[i][j].m_tile.setPosition(j * m_tiles[i][j].m_tileSize, i * m_tiles[i][j].m_tileSize);
         }
     }
 }
@@ -422,14 +424,14 @@ void LevelEditor::initbuttonsForToolEditor()
     {
         std::cout << "Error - problem loading Texture in Level Editor" << std::endl;
     }
-    if (!buttonSelectedTexture.loadFromFile("Assets\\Images\\GUI\\buttonSelected.png"))
+    if (!m_buttonSelectedTexture.loadFromFile("Assets\\Images\\GUI\\buttonSelected.png"))
     {
         std::cout << "Error - loading button texture" << std::endl;
     }
-    buttonSelectedSprite.setTexture(buttonSelectedTexture);
-    buttonSelectedSprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
-    buttonSelectedSprite.setOrigin(buttonSelectedSprite.getLocalBounds().width / 2, buttonSelectedSprite.getLocalBounds().height / 2);
-    buttonSelectedSprite.setScale(4.2,4.2);
+    m_buttonSelectedSprite.setTexture(m_buttonSelectedTexture);
+    m_buttonSelectedSprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
+    m_buttonSelectedSprite.setOrigin(m_buttonSelectedSprite.getLocalBounds().width / 2, m_buttonSelectedSprite.getLocalBounds().height / 2);
+    m_buttonSelectedSprite.setScale(4.2,4.2);
     initButtonsForToolSet();
 }
 
@@ -481,7 +483,7 @@ void LevelEditor::initButtonsForToolSet()
     const float startXForMisc = m_backgroundForTilesTools.getPosition().x - m_backgroundForTilesTools.getSize().x / 2 + 1500;
     const float startYForMisc = m_backgroundForTilesTools.getPosition().y - m_backgroundForTilesTools.getSize().y / 2 + 120;
 
-    for (int i = 0; i < numButtons; ++i)
+    for (int i = 0; i < m_numButtons; ++i)
     {
         m_buttons[i].setTexture(m_underWaterTexture);
 
@@ -580,13 +582,13 @@ void LevelEditor::saveLevelToFile(const std::string & m_filename)
 
     if (file.is_open())
     {
-        for (int i = 0; i < numRows; ++i)
+        for (int i = 0; i < m_numRows; ++i)
         {
-            for (int j = 0; j < numCols; ++j)
+            for (int j = 0; j < m_numCols; ++j)
             {
-                file << m_tiles[i][j].isWall << " ";
-                file << m_tiles[i][j].isResource << " ",
-                file << m_tiles[i][j].animationWeed << " ",
+                file << m_tiles[i][j].m_isWall << " ";
+                file << m_tiles[i][j].m_isResource << " ",
+                file << m_tiles[i][j].m_animationWeed << " ",
                 file << m_tiles[i][j].m_tile.getTextureRect().left << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().top << " ";
                 file << m_tiles[i][j].m_tile.getTextureRect().width << " ";
@@ -618,16 +620,16 @@ void LevelEditor::loadLevelFromFile(const std::string & m_filename)
 
     if (inputFile.is_open())
     {
-        for (int i = 0; i < numRows; ++i)
+        for (int i = 0; i < m_numRows; ++i)
         {
-            for (int j = 0; j < numCols; ++j)
+            for (int j = 0; j < m_numCols; ++j)
             {
                 int isWallValue, isResourceValue, isAnimationWeed;
                 inputFile >> isWallValue >> isResourceValue >> isAnimationWeed;
 
-                m_tiles[i][j].isWall = (isWallValue == 1);
-                m_tiles[i][j].isResource = (isResourceValue == 1);
-                m_tiles[i][j].animationWeed = (isAnimationWeed == 1);
+                m_tiles[i][j].m_isWall = (isWallValue == 1);
+                m_tiles[i][j].m_isResource = (isResourceValue == 1);
+                m_tiles[i][j].m_animationWeed = (isAnimationWeed == 1);
 
                 int left, top, width, height, xPos, yPos, tileRotation, originX, originY;
                 inputFile >> left >> top >> width >> height >> xPos >> yPos >> tileRotation >> originX >> originY;
@@ -681,39 +683,42 @@ void LevelEditor::loadLevelForLevelEditor()
 /// </summary>
 void LevelEditor::animationForResources()
 {
-    if (tileResourceAnimationClock.getElapsedTime().asMilliseconds() > 200)
+    if (m_tileResourceAnimationClock.getElapsedTime().asMilliseconds() > 200)
     {
-        currentResourceTileAnimationFrame = (currentResourceTileAnimationFrame + 1) % numTileFrames;
+        m_currentResourceTileAnimationFrame = (m_currentResourceTileAnimationFrame + 1) % m_numTileFrames;
         for (int i = 0; i < 50; ++i)
         {
             for (int j = 0; j < 50; ++j)
             {
-                if (m_tiles[i][j].isResource == true)
+                if (m_tiles[i][j].m_isResource == true)
                 {
-                    m_tiles[i][j].m_tile.setTextureRect(tileResourceAnimationFrames[currentResourceTileAnimationFrame]);
+                    m_tiles[i][j].m_tile.setTextureRect(m_tileResourceAnimationFrames[m_currentResourceTileAnimationFrame]);
                 }
             }
         }
-        tileResourceAnimationClock.restart();
+        m_tileResourceAnimationClock.restart();
     }
 }
 
+/// <summary>
+/// Animates the weed tiles
+/// </summary>
 void LevelEditor::animationForWeed()
 {
-    if (tileAnimationClock.getElapsedTime().asMilliseconds() > 200) 
+    if (m_tileAnimationClock.getElapsedTime().asMilliseconds() > 200) 
     {
-        currentTileWeedAnimationFrame = (currentTileWeedAnimationFrame + 1) % numTileFrames;
+        m_currentTileWeedAnimationFrame = (m_currentTileWeedAnimationFrame + 1) % m_numTileFrames;
         for (int i = 0; i < 50; ++i)
         {
             for (int j = 0; j < 50; ++j)
             {
-                if (m_tiles[i][j].animationWeed == true)
+                if (m_tiles[i][j].m_animationWeed == true)
                 {
-                    m_tiles[i][j].m_tile.setTextureRect(tileWeedAnimationFrames[currentTileWeedAnimationFrame]);
+                    m_tiles[i][j].m_tile.setTextureRect(m_tileWeedAnimationFrames[m_currentTileWeedAnimationFrame]);
                 }
             }
         }
-        tileAnimationClock.restart();
+        m_tileAnimationClock.restart();
     }
 }
 
@@ -722,13 +727,13 @@ void LevelEditor::animationForWeed()
 /// </summary>
 void LevelEditor::releaseDragRect()
 {
-    if (isTileSelected)
+    if (m_isTileSelected)
     {
         placeTilesInDragRectangle();
     }
-    dragRectangle.setSize(sf::Vector2f(0.0f,0.0f));
-    startMousePos = sf::Vector2f(0.f, 0.f);
-    newMousePos = sf::Vector2f(0.f, 0.f);
+    m_dragRectangle.setSize(sf::Vector2f(0.0f,0.0f));
+    m_startMousePos = sf::Vector2f(0.f, 0.f);
+    m_newMousePos = sf::Vector2f(0.f, 0.f);
 }
 
 /// <summary>
@@ -737,19 +742,22 @@ void LevelEditor::releaseDragRect()
 void LevelEditor::initDragRectangle()
 {
     sf::Vector2f initialSize = sf::Vector2f(0.f, 0.f);
-    dragRectangle.setSize(initialSize);
-    dragRectangle.setFillColor(sf::Color(0, 255, 0, 50));
-    dragRectangle.setOutlineColor(sf::Color::Black);
-    dragRectangle.setOutlineThickness(1.0f);
+    m_dragRectangle.setSize(initialSize);
+    m_dragRectangle.setFillColor(sf::Color(0, 255, 0, 50));
+    m_dragRectangle.setOutlineColor(sf::Color::Black);
+    m_dragRectangle.setOutlineThickness(1.0f);
 }
 
+/// <summary>
+/// Resets the fog
+/// </summary>
 void LevelEditor::resetFogOfWar()
 {
     for (auto& row : m_tiles)
     {
         for (auto& tile : row)
         {
-            tile.fogStatus = Tile::FogStatus::Unexplored;
+            tile.m_fogStatus = Tile::FogStatus::Unexplored;
         }
     }
 }

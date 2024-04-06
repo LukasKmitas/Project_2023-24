@@ -54,8 +54,8 @@ public:
 
 private:
 
-    void setupSlider();
-    void setupFont();
+    void initSlider();
+    void initFont();
     void drawGrid(sf::RenderWindow& m_window);
 
     void initButton();
@@ -93,17 +93,17 @@ private:
     sf::Vector2f m_hammerHeadIconPosition;
     sf::Vector2f m_firehawkIconPosition;
 
-    int gridCols = 3;
-    int gridRows = 6;
-    float cellWidth = m_bottomBackground.getSize().x / gridCols;
-    float cellHeight = m_bottomBackground.getSize().y / gridRows;
+    int m_gridCols = 3;
+    int m_gridRows = 6;
+    float m_cellWidth = m_bottomBackground.getSize().x / m_gridCols;
+    float m_cellHeight = m_bottomBackground.getSize().y / m_gridRows;
 
-    float buttonWidth = m_bottomBackground.getSize().x / gridCols;
-    float buttonHeight = m_bottomBackground.getSize().y / gridRows;
-    float xPosition;
-    float yPosition;
+    float m_buttonWidth = m_bottomBackground.getSize().x / m_gridCols;
+    float m_buttonHeight = m_bottomBackground.getSize().y / m_gridRows;
+    float m_xPosition;
+    float m_yPosition;
 
-    sf::Vector2f textPosition = m_button.m_sprite.getPosition();
-    sf::FloatRect textBounds = m_button.m_text.getLocalBounds();
+    sf::Vector2f m_textPosition = m_button.m_sprite.getPosition();
+    sf::FloatRect m_textBounds = m_button.m_text.getLocalBounds();
 };
 

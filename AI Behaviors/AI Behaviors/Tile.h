@@ -7,13 +7,13 @@ public:
     Tile();
 
     enum class FogStatus { Unexplored, Explored, Visible };
-    FogStatus fogStatus = FogStatus::Unexplored;
+    FogStatus m_fogStatus = FogStatus::Unexplored;
 
     sf::RectangleShape m_tile;
-    int tileSize = 50;
-    bool isWall;
-    bool isResource;
-    bool animationWeed;
+    int m_tileSize = 50;
+    bool m_isWall;
+    bool m_isResource;
+    bool m_animationWeed;
 
 private:
 

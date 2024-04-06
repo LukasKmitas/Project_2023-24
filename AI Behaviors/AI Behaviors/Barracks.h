@@ -7,7 +7,7 @@ public:
 	Barracks();
 	~Barracks();
 
-	void update(sf::Time deltaTime) override;
+	void update(sf::Time t_deltaTime) override;
 	void render(sf::RenderWindow& m_window) const override;
 
 private:

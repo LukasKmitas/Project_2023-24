@@ -8,11 +8,11 @@ Game::Game() :
 	m_exitGame{ false },
 	m_neural_network(NeuralNetworks())
 {
-	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
-	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
-	m_window.setView(gameView);
+	m_gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
+	m_gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_window.setView(m_gameView);
 	m_window.setMouseCursorVisible(false);
-	viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 
 	if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
 	{
@@ -35,13 +35,13 @@ Game::Game() :
 
 	m_levelEditor.resetFogOfWar();
 
-	selectionBox.setFillColor(sf::Color(0, 255, 0, 50));
-	selectionBox.setOutlineColor(sf::Color(0, 255, 0));
-	selectionBox.setOutlineThickness(1.0f);
+	m_selectionBox.setFillColor(sf::Color(0, 255, 0, 50));
+	m_selectionBox.setOutlineColor(sf::Color(0, 255, 0));
+	m_selectionBox.setOutlineThickness(1.0f);
 
-	hiddenNeurons = m_neural_network.getHiddenNeurons();
-	biasNeurons = m_neural_network.getBiasNeurons();
-	initializeNeuralNetwork();
+	m_hiddenNeurons = m_neural_network.getHiddenNeurons();
+	m_biasNeurons = m_neural_network.getBiasNeurons();
+	initNeuralNetwork();
 	initWinLosePanel();
 }
 
@@ -91,14 +91,14 @@ void Game::processEvents()
 			processKeys(newEvent);
 			if (newEvent.key.code == sf::Keyboard::Enter)
 			{
-				train = !train;
+				m_train = !m_train;
 			}
 		}
-		if (showWinLosePanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
+		if (m_showWinLosePanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
 		{
 			sf::Vector2f mousePosition = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
-			guiMousePosition = sf::Mouse::getPosition(m_window);
-			handleVictoryPanelInput(static_cast<sf::Vector2f>(guiMousePosition));
+			m_guiMousePosition = sf::Mouse::getPosition(m_window);
+			handleWinLosePanel(static_cast<sf::Vector2f>(m_guiMousePosition));
 			continue;
 		}
 		if (sf::Event::Closed == newEvent.type)
@@ -110,27 +110,27 @@ void Game::processEvents()
 			if (m_currentState == GameState::PlayGame || m_currentState == GameState::LevelEditor)
 			{
 				float zoomFactor = (newEvent.mouseWheelScroll.delta > 0) ? 0.9f : 1.1f;
-				float zoomDistance = currentZoomLevel * zoomFactor;
+				float zoomDistance = m_currentZoomLevel * zoomFactor;
 
-				if (zoomDistance >= minZoomLevel && zoomDistance <= maxZoomLevel)
+				if (zoomDistance >= m_minZoomLevel && zoomDistance <= m_maxZoomLevel)
 				{
-					currentZoomLevel = zoomDistance;
-					gameView.setSize(Global::S_WIDTH * currentZoomLevel, Global::S_HEIGHT * currentZoomLevel);
+					m_currentZoomLevel = zoomDistance;
+					m_gameView.setSize(Global::S_WIDTH * m_currentZoomLevel, Global::S_HEIGHT * m_currentZoomLevel);
 					updateViewWithMouse();
 				}
 			}
 		}
 		if (sf::Event::MouseButtonPressed == newEvent.type) // Check for mouse button press.
 		{
-			guiMousePosition = sf::Mouse::getPosition(m_window); // GUI
-			worldMousePosition = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window)); // World
+			m_guiMousePosition = sf::Mouse::getPosition(m_window); // GUI
+			m_worldMousePosition = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window)); // World
 		}
 		switch (m_currentState)
 		{
 		case GameState::MainMenu:
 			if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button.
 			{
-				m_menu.handleButtonClick(m_window.mapPixelToCoords(guiMousePosition), m_currentState);
+				m_menu.handleButtonClick(m_window.mapPixelToCoords(m_guiMousePosition), m_currentState);
 			}
 			break;
 		case GameState::PlayGame:
@@ -138,11 +138,11 @@ void Game::processEvents()
 			{
 				if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for left mouse button
 				{
-					m_gui.handleMouseClick(guiMousePosition, m_window);
+					m_gui.handleMouseClick(m_guiMousePosition, m_window);
 					if (m_selectedUnit)
 					{
 						std::vector<Unit*> selectedUnits;
-						for (Unit* unit : playerUnits)
+						for (Unit* unit : m_playerUnits)
 						{
 							if (unit->isSelected)
 							{
@@ -158,21 +158,21 @@ void Game::processEvents()
 							int row = i / gridSize;
 							int col = i % gridSize;
 
-							sf::Vector2f gridPosition = sf::Vector2f(worldMousePosition.x + col * spacing, worldMousePosition.y + row * spacing);
+							sf::Vector2f gridPosition = sf::Vector2f(m_worldMousePosition.x + col * spacing, m_worldMousePosition.y + row * spacing);
 							selectedUnits[i]->moveTo(gridPosition);
 						}
 					}
 					else
 					{
-						selectUnitAt(worldMousePosition);
+						selectUnitAt(m_worldMousePosition);
 					}
-					isDragging = true;
-					dragStart = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+					m_isDragging = true;
+					m_dragStart = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
 				}
 				if (newEvent.mouseButton.button == sf::Mouse::Right) // Check for Right mouse button
 				{
 					m_selectedUnit = nullptr;
-					for (Unit* unit : playerUnits)
+					for (Unit* unit : m_playerUnits)
 					{
 						unit->setSelected(false);
 					}
@@ -182,18 +182,18 @@ void Game::processEvents()
 			{
 				if (newEvent.mouseButton.button == sf::Mouse::Left)
 				{
-					isDragging = false;
+					m_isDragging = false;
 					selectUnitsInBox();
 				}
-				selectionBox.setSize(sf::Vector2f(0, 0));
+				m_selectionBox.setSize(sf::Vector2f(0, 0));
 			}
 			if (sf::Event::MouseMoved == newEvent.type)
 			{
-				if (isDragging)
+				if (m_isDragging)
 				{
-					dragEnd = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
-					selectionBox.setPosition(std::min(dragStart.x, dragEnd.x), std::min(dragStart.y, dragEnd.y));
-					selectionBox.setSize(sf::Vector2f(std::abs(dragEnd.x - dragStart.x), std::abs(dragEnd.y - dragStart.y)));
+					m_dragEnd = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+					m_selectionBox.setPosition(std::min(m_dragStart.x, m_dragEnd.x), std::min(m_dragStart.y, m_dragEnd.y));
+					m_selectionBox.setSize(sf::Vector2f(std::abs(m_dragEnd.x - m_dragStart.x), std::abs(m_dragEnd.y - m_dragStart.y)));
 				}
 			}
 			break;
@@ -202,7 +202,7 @@ void Game::processEvents()
 			{
 				if (newEvent.mouseButton.button == sf::Mouse::Left) // Check for Left mouse button
 				{
-					m_levelEditor.handleMouseInput(guiMousePosition, m_currentState, m_window);
+					m_levelEditor.handleMouseInput(m_guiMousePosition, m_currentState, m_window);
 				}
 			}
 			if (sf::Event::MouseButtonReleased == newEvent.type) // Check for release mouse button
@@ -218,8 +218,8 @@ void Game::processEvents()
 			{
 				if (newEvent.mouseButton.button == sf::Mouse::Left)
 				{
-					m_levelLoader.goToMainMenu(guiMousePosition, m_currentState);
-					m_levelLoader.handleLevelSelectionMouseInput(guiMousePosition);
+					m_levelLoader.goToMainMenu(m_guiMousePosition, m_currentState);
+					m_levelLoader.handleLevelSelectionMouseInput(m_guiMousePosition);
 				}
 			}
 			break;
@@ -228,7 +228,7 @@ void Game::processEvents()
 			{
 				if (newEvent.mouseButton.button == sf::Mouse::Left)
 				{
-					m_neural_network.goToMainMenu(guiMousePosition, m_currentState);
+					m_neural_network.goToMainMenu(m_guiMousePosition, m_currentState);
 
 					int mouse_x = sf::Mouse::getPosition(m_window).x;
 					int mouse_y = sf::Mouse::getPosition(m_window).y;
@@ -290,7 +290,7 @@ void Game::processKeys(sf::Event t_event)
 		if (sf::Keyboard::Escape == t_event.key.code)
 		{
 			m_selectedUnit = nullptr;
-			for (Unit* unit : playerUnits)
+			for (Unit* unit : m_playerUnits)
 			{
 				unit->setSelected(false);
 			}
@@ -346,7 +346,7 @@ void Game::update(sf::Time t_deltaTime)
 	case GameState::PlayGame:
 		if (m_gameWinLose == WinLoseState::NONE)
 		{
-			loadLevel(m_levelLoader.levelFilenames[m_levelLoader.selectedButtonIndex]);
+			loadLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
 			updateViewWithMouse();
 			m_gui.update(t_deltaTime);
 			m_gui.handleBuildingPlacement(mouseGUIPosition, m_window);
@@ -354,8 +354,8 @@ void Game::update(sf::Time t_deltaTime)
 			createUnit();
 			updatePlayerAssets(t_deltaTime);
 			updateEnemyAssets(t_deltaTime);
-			updateFogOfWarBasedOnUnits(playerUnits);
-			updateFogOfWarBasedOnBuildings(placedPlayerBuildings);
+			updateFogOfWarBasedOnUnits(m_playerUnits);
+			updateFogOfWarBasedOnBuildings(m_placedPlayerBuildings);
 			spawnBubbleParticles();
 			updateEnemyAIDecisionOnCreating(t_deltaTime);
 			updateEnemyAIUnitDecisionState(t_deltaTime);
@@ -371,11 +371,11 @@ void Game::update(sf::Time t_deltaTime)
 		m_levelEditor.update(t_deltaTime, m_window);
 		break;
 	case GameState::LevelLoad:
-		loadLevel(m_levelLoader.levelFilenames[m_levelLoader.selectedButtonIndex]);
+		loadLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
 		break;
 	case GameState::NeuralNetworks:
 		updateNeuralNetwork();
-		errorText.setString("Total Error: " + std::to_string(total_error));
+		m_errorText.setString("Total Error: " + std::to_string(m_totalErrors));
 		break;
 	case GameState::Exit:
 		m_exitGame = true;
@@ -398,60 +398,60 @@ void Game::render()
 		break;
 	case GameState::PlayGame:
 		m_levelEditor.renderLoadedLevel(m_window);
-		for (Building* playerBuilding : placedPlayerBuildings)
+		for (Building* playerBuilding : m_placedPlayerBuildings)
 		{
 			playerBuilding->render(m_window);
 		}
-		for (Building* enemyBuilding : placedEnemyBuildings)
+		for (Building* enemyBuilding : m_placedEnemyBuildings)
 		{
 			sf::Vector2f buildingPosition = enemyBuilding->getPosition();
-			if (isPositionWithinMap(buildingPosition))
+			if (checkPositionWithinMap(buildingPosition))
 			{
-				int tileX = static_cast<int>(buildingPosition.x / m_tiles.tileSize);
-				int tileY = static_cast<int>(buildingPosition.y / m_tiles.tileSize);
+				int tileX = static_cast<int>(buildingPosition.x / m_tiles.m_tileSize);
+				int tileY = static_cast<int>(buildingPosition.y / m_tiles.m_tileSize);
 
-				if (m_levelEditor.m_tiles[tileY][tileX].fogStatus == Tile::FogStatus::Visible)
+				if (m_levelEditor.m_tiles[tileY][tileX].m_fogStatus == Tile::FogStatus::Visible)
 				{
 					enemyBuilding->render(m_window);
 				}
 			}
 		}
-		for (Unit* unit : playerUnits)
+		for (Unit* unit : m_playerUnits)
 		{
 			unit->render(m_window);
 		}
-		for (Unit* eUnit : enemyUnits)
+		for (Unit* eUnit : m_enemyUnits)
 		{
 			sf::Vector2f unitPosition = eUnit->getPosition();
-			if (isPositionWithinMap(unitPosition))
+			if (checkPositionWithinMap(unitPosition))
 			{
-				int tileX = static_cast<int>(unitPosition.x / m_tiles.tileSize);
-				int tileY = static_cast<int>(unitPosition.y / m_tiles.tileSize);
+				int tileX = static_cast<int>(unitPosition.x / m_tiles.m_tileSize);
+				int tileY = static_cast<int>(unitPosition.y / m_tiles.m_tileSize);
 
-				if (m_levelEditor.m_tiles[tileY][tileX].fogStatus == Tile::FogStatus::Visible)
+				if (m_levelEditor.m_tiles[tileY][tileX].m_fogStatus == Tile::FogStatus::Visible)
 				{
 					eUnit->render(m_window);
 				}
 			}
 		}
 		m_gui.render(m_window);
-		if (showWinLosePanel)
+		if (m_showWinLosePanel)
 		{
 			renderWinLosePanel(m_window);
 		}
-		m_window.setView(gameView);
+		m_window.setView(m_gameView);
 		if (m_gameWinLose == WinLoseState::NONE)
 		{
-			if (isDragging)
+			if (m_isDragging)
 			{
-				m_window.draw(selectionBox);
+				m_window.draw(m_selectionBox);
 			}
 			m_particleSystem.render(m_window);
 		}
 		break;
 	case GameState::LevelEditor:
 		m_levelEditor.render(m_window);
-		m_window.setView(gameView);
+		m_window.setView(m_gameView);
 		break;
 	case GameState::LevelLoad:
 		m_levelLoader.render(m_window);
@@ -459,7 +459,7 @@ void Game::render()
 	case GameState::NeuralNetworks:
 		drawNeuralNetwork(m_window);
 		m_neural_network.render(m_window);
-		m_window.draw(errorText);
+		m_window.draw(m_errorText);
 		break;
 	case GameState::Exit:
 		break;
@@ -476,24 +476,24 @@ void Game::render()
 void Game::updateViewWithMouse()
 {
 	sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(m_window));
-	sf::Vector2f viewSize = gameView.getSize();
+	sf::Vector2f viewSize = m_gameView.getSize();
 	float viewHalfWidth = viewSize.x / 2.0f;
 	float viewHalfHeight = viewSize.y / 2.0f;
 
 	switch (m_currentState)
 	{
 	case GameState::PlayGame:
-		minX = viewHalfWidth;
-		minY = viewHalfHeight;
-		maxX = 2500 - viewHalfWidth;
-		maxY = 2500 - viewHalfHeight;
+		m_minX = viewHalfWidth;
+		m_minY = viewHalfHeight;
+		m_maxX = 2500 - viewHalfWidth;
+		m_maxY = 2500 - viewHalfHeight;
 		moveCamera(mousePosition);
 		break;
 	case GameState::LevelEditor:
-		minX = viewHalfWidth - 500;
-		minY = viewHalfHeight - 500;
-		maxX = 3000 - viewHalfWidth; 
-		maxY = 3000 - viewHalfHeight;
+		m_minX = viewHalfWidth - 500;
+		m_minY = viewHalfHeight - 500;
+		m_maxX = 3000 - viewHalfWidth; 
+		m_maxY = 3000 - viewHalfHeight;
 		moveCamera(mousePosition);
 		break;
 	default:
@@ -501,54 +501,58 @@ void Game::updateViewWithMouse()
 	}
 
 	// Clamp the viewCenter to be within the boundaries
-	viewCenter.x = std::max(minX, std::min(viewCenter.x, maxX));
-	viewCenter.y = std::max(minY, std::min(viewCenter.y, maxY));
+	m_viewCenter.x = std::max(m_minX, std::min(m_viewCenter.x, m_maxX));
+	m_viewCenter.y = std::max(m_minY, std::min(m_viewCenter.y, m_maxY));
 
-	gameView.setCenter(viewCenter);
-	m_window.setView(gameView);
+	m_gameView.setCenter(m_viewCenter);
+	m_window.setView(m_gameView);
 }
 
-void Game::moveCamera(sf::Vector2f mousePosition)
+void Game::moveCamera(sf::Vector2f m_mousePosition)
 {
-	if (mousePosition.x < Global::S_WIDTH * 0.01 && viewCenter.x - viewMoveSpeed > minX)
+	if (m_mousePosition.x < Global::S_WIDTH * 0.01 && m_viewCenter.x - m_viewMoveSpeed > m_minX)
 	{
-		viewCenter.x -= viewMoveSpeed;
+		m_viewCenter.x -= m_viewMoveSpeed;
 	}
-	if (mousePosition.x > Global::S_WIDTH * 0.99 && viewCenter.x + viewMoveSpeed < maxX)
+	if (m_mousePosition.x > Global::S_WIDTH * 0.99 && m_viewCenter.x + m_viewMoveSpeed < m_maxX)
 	{
-		viewCenter.x += viewMoveSpeed;
+		m_viewCenter.x += m_viewMoveSpeed;
 	}
-	if (mousePosition.y < Global::S_HEIGHT * 0.01 && viewCenter.y - viewMoveSpeed > minY)
+	if (m_mousePosition.y < Global::S_HEIGHT * 0.01 && m_viewCenter.y - m_viewMoveSpeed > m_minY)
 	{
-		viewCenter.y -= viewMoveSpeed;
+		m_viewCenter.y -= m_viewMoveSpeed;
 	}
-	if (mousePosition.y > Global::S_HEIGHT * 0.99 && viewCenter.y + viewMoveSpeed < maxY)
+	if (m_mousePosition.y > Global::S_HEIGHT * 0.99 && m_viewCenter.y + m_viewMoveSpeed < m_maxY)
 	{
-		viewCenter.y += viewMoveSpeed;
+		m_viewCenter.y += m_viewMoveSpeed;
 	}
 }
 
-void Game::createBuilding(sf::RenderWindow& window)
+/// <summary>
+/// creates the buildings for players side
+/// </summary>
+/// <param name="m_window"></param>
+void Game::createBuilding(sf::RenderWindow& m_window)
 {
 	if (m_gui.m_confirmed)
 	{
-		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-		sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition);
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
+		sf::Vector2f worldMousePosition = m_window.mapPixelToCoords(mousePosition);
 		if (m_selectedBuildingType == BuildingType::Refinery)
 		{
 			Refinery* newRefinery = new Refinery();
 			newRefinery->setPosition(worldMousePosition);
-			placedPlayerBuildings.push_back(newRefinery);
+			m_placedPlayerBuildings.push_back(newRefinery);
 			sf::Vector2f buildingPosition = m_gui.m_selectedBuilding->getPosition();
 
 			sf::Vector2f spawnPosition = worldMousePosition + sf::Vector2f(0.0f, 60.0f);
 			Harvester* newHarvester = new Harvester();
 			newHarvester->setPosition(spawnPosition);
 			newHarvester->setTargetPosition(spawnPosition);
-			newHarvester->setBuildings(placedPlayerBuildings);
+			newHarvester->setBuildings(m_placedPlayerBuildings);
 			newHarvester->setTiles(m_levelEditor.m_tiles);
-			newHarvester->currentState = newHarvester->MovingToResource;
-			playerUnits.push_back(newHarvester);
+			newHarvester->m_currentState = newHarvester->MovingToResource;
+			m_playerUnits.push_back(newHarvester);
 
 			std::cout << "Refinery Created" << std::endl;
 		}
@@ -556,35 +560,38 @@ void Game::createBuilding(sf::RenderWindow& window)
 		{
 			Barracks* newBarracks = new Barracks();
 			newBarracks->setPosition(worldMousePosition);
-			placedPlayerBuildings.push_back(newBarracks);
+			m_placedPlayerBuildings.push_back(newBarracks);
 			std::cout << "Barracks Created" << std::endl;
 		}
 		else if (m_selectedBuildingType == BuildingType::WarFactory)
 		{
 			WarFactory* newVehicle = new WarFactory();
 			newVehicle->setPosition(worldMousePosition);
-			placedPlayerBuildings.push_back(newVehicle);
+			m_placedPlayerBuildings.push_back(newVehicle);
 			std::cout << "Vehicle Created" << std::endl;
 		}
 		else if (m_selectedBuildingType == BuildingType::AirCraft)
 		{
 			AirCraft* newAirCraft = new AirCraft();
 			newAirCraft->setPosition(worldMousePosition);
-			placedPlayerBuildings.push_back(newAirCraft);
+			m_placedPlayerBuildings.push_back(newAirCraft);
 			std::cout << "AirCraft Created" << std::endl;
 		}
-		playerBuildingStatCount++;
+		m_playerBuildingStatCount++;
 		m_gui.m_confirmBuildingPlacement = false;
 		m_gui.m_confirmed = false;
 		m_selectedBuildingType = BuildingType::Headquarters;
 	}
 }
 
+/// <summary>
+/// creates the players base
+/// </summary>
 void Game::createBase()
 {
 	Headquarters* newHeadquarters = new Headquarters();
 	newHeadquarters->setPosition(sf::Vector2f(500.0f, 350.0f));
-	placedPlayerBuildings.push_back(newHeadquarters);
+	m_placedPlayerBuildings.push_back(newHeadquarters);
 	std::cout << "Base Initilised" << std::endl;
 }
 
@@ -594,41 +601,41 @@ void Game::createBase()
 /// <param name="t_deltaTime"></param>
 void Game::updatePlayerAssets(sf::Time t_deltaTime)
 {
-	for (Building* playerBuilding : placedPlayerBuildings)
+	for (Building* playerBuilding : m_placedPlayerBuildings)
 	{
 		playerBuilding->update(t_deltaTime);
 	}
 
-	for (auto& unit : playerUnits)
+	for (auto& unit : m_playerUnits)
 	{
-		unit->update(t_deltaTime, playerUnits);
+		unit->update(t_deltaTime, m_playerUnits);
 
-		for (auto& bullet : unit->bullets) // BULLETS
+		for (auto& bullet : unit->m_bullets) // BULLETS
 		{
 			bool hit = false;
 
-			for (auto& enemyUnit : enemyUnits)
+			for (auto& enemyUnit : m_enemyUnits)
 			{
-				if (bullet.bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+				if (bullet.m_bulletShape.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 				{
-					bullet.active = false;
+					bullet.m_active = false;
 					enemyUnit->takeDamage(unit->getDamage());
 					if (enemyUnit->getHealth() <= 0)
 					{
 						enemyUnit->m_active = false;
 					}
-					spawnBulletSparkParticles(bullet.position);
+					spawnBulletSparkParticles(bullet.m_position);
 				}
 			}
 
-			for (auto& enemyBuilding : placedEnemyBuildings)
+			for (auto& enemyBuilding : m_placedEnemyBuildings)
 			{
-				if (bullet.bulletShape.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
+				if (bullet.m_bulletShape.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
 				{
-					bullet.active = false;
+					bullet.m_active = false;
 					enemyBuilding->takeDamage(unit->getDamage());
 					hit = true;
-					spawnBulletSparkParticles(bullet.position);
+					spawnBulletSparkParticles(bullet.m_position);
 					break;
 				}
 			}
@@ -637,31 +644,31 @@ void Game::updatePlayerAssets(sf::Time t_deltaTime)
 				continue;
 			}
 		}
-		for (auto& missile : unit->missiles) // MISSILES
+		for (auto& missile : unit->m_missiles) // MISSILES
 		{
 			bool hit = false;
 
-			for (auto& enemyUnit : enemyUnits)
+			for (auto& enemyUnit : m_enemyUnits)
 			{
-				if (missile.missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+				if (missile.m_missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 				{
-					missile.active = false;
-					enemyUnit->takeDamage(missile.damage);
+					missile.m_active = false;
+					enemyUnit->takeDamage(missile.m_damage);
 					if (enemyUnit->getHealth() <= 0)
 					{
 						enemyUnit->m_active = false;
 					}
-					spawnExplosionParticle(missile.position);
+					spawnExplosionParticle(missile.m_position);
 				}
 			}
-			for (auto& enemyBuilding : placedEnemyBuildings)
+			for (auto& enemyBuilding : m_placedEnemyBuildings)
 			{
-				if (missile.missileSprite.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
+				if (missile.m_missileSprite.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
 				{
-					missile.active = false;
+					missile.m_active = false;
 					enemyBuilding->takeDamage(unit->getDamage());
 					hit = true;
-					spawnExplosionParticle(missile.position);
+					spawnExplosionParticle(missile.m_position);
 					break;
 				}
 			}
@@ -672,21 +679,24 @@ void Game::updatePlayerAssets(sf::Time t_deltaTime)
 		}
 
 		// Remove inactive bullets
-		unit->bullets.erase(std::remove_if(unit->bullets.begin(), unit->bullets.end(),
-			[](const Bullet& bullet) { return !bullet.active; }), unit->bullets.end());
+		unit->m_bullets.erase(std::remove_if(unit->m_bullets.begin(), unit->m_bullets.end(),
+			[](const Bullet& bullet) { return !bullet.m_active; }), unit->m_bullets.end());
 		// Remove inactive missiles
-		unit->missiles.erase(std::remove_if(unit->missiles.begin(), unit->missiles.end(),
-			[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), unit->missiles.end());
+		unit->m_missiles.erase(std::remove_if(unit->m_missiles.begin(), unit->m_missiles.end(),
+			[](const Missile& missile) { return !missile.m_active && missile.m_trail.empty(); }), unit->m_missiles.end());
 
 		// Remove dead enemy units
-		enemyUnits.erase(std::remove_if(enemyUnits.begin(), enemyUnits.end(),
-			[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), enemyUnits.end());
+		m_enemyUnits.erase(std::remove_if(m_enemyUnits.begin(), m_enemyUnits.end(),
+			[](Unit* enemyUnit) { return !enemyUnit->isActive(); }), m_enemyUnits.end());
 		// Remove buildings
-		placedEnemyBuildings.erase(std::remove_if(placedEnemyBuildings.begin(), placedEnemyBuildings.end(),
-			[](Building* building) { return building->getHealth() <= 0; }), placedEnemyBuildings.end());
+		m_placedEnemyBuildings.erase(std::remove_if(m_placedEnemyBuildings.begin(), m_placedEnemyBuildings.end(),
+			[](Building* building) { return building->getHealth() <= 0; }), m_placedEnemyBuildings.end());
 	}
 }
 
+/// <summary>
+/// Saves the level file name
+/// </summary>
 void Game::saveLevel()
 {
 	std::string filename;
@@ -719,179 +729,205 @@ void Game::initParticles()
 	}
 }
 
-void Game::initializeNeuralNetwork()
+/// <summary>
+/// initializes the neural networks
+/// </summary>
+void Game::initNeuralNetwork()
 {
-	errorText.setFont(m_normalfont);
-	errorText.setCharacterSize(20);
-	errorText.setFillColor(sf::Color::White);
-	errorText.setPosition(400, 10);
+	m_errorText.setFont(m_normalfont);
+	m_errorText.setCharacterSize(20);
+	m_errorText.setFillColor(sf::Color::White);
+	m_errorText.setPosition(400, 10);
 
-	neural_network.resize(2 + hiddenNeurons.size());
-	neural_network[0].resize(m_neural_network.INPUT_NEURONS + biasNeurons[0], 0);
-	neural_network.back().resize(m_neural_network.OUTPUT_NEURONS, 0);
+	m_neuralNetwork.resize(2 + m_hiddenNeurons.size());
+	m_neuralNetwork[0].resize(m_neural_network.INPUT_NEURONS + m_biasNeurons[0], 0);
+	m_neuralNetwork.back().resize(m_neural_network.OUTPUT_NEURONS, 0);
 
-	random_engine.seed(std::chrono::system_clock::now().time_since_epoch().count());
-	std::uniform_real_distribution<float> distribution(-1, 1);
+	m_random.seed(std::chrono::system_clock::now().time_since_epoch().count());
+	std::uniform_real_distribution<float> m_distribution(-1, 1); // its to distribute random weights
 
-	weights.resize(neural_network.size() - 1);
+	m_weights.resize(m_neuralNetwork.size() - 1);
 
-	outputImage.create(outputWidth, outputHeight);
-	outputTexture.loadFromImage(outputImage);
-	outputSprite.setPosition(SCREEN_HEIGHT, 0);
+	m_outputImage.create(m_outputWidth, m_outputHeight);
+	m_outputTexture.loadFromImage(m_outputImage);
+	m_outputSprite.setPosition(SCREEN_HEIGHT, 0);
 	//outputs_sprite.setScale(15, 17);
-	outputSprite.setScale(SCREEN_HEIGHT / outputWidth, SCREEN_WITDH / outputHeight);
-	outputSprite.setOrigin(outputSprite.getGlobalBounds().width / 2, outputSprite.getGlobalBounds().height / 2);
-	outputSprite.setTexture(outputTexture);
+	m_outputSprite.setScale(SCREEN_HEIGHT / m_outputWidth, SCREEN_WITDH / m_outputHeight);
+	m_outputSprite.setOrigin(m_outputSprite.getGlobalBounds().width / 2, m_outputSprite.getGlobalBounds().height / 2);
+	m_outputSprite.setTexture(m_outputTexture);
 
-	for (size_t i = 1; i < neural_network.size() - 1; ++i)
+	for (size_t i = 1; i < m_neuralNetwork.size() - 1; ++i)
 	{
-		neural_network[i].resize(biasNeurons[i] + hiddenNeurons[i - 1], 0);
+		m_neuralNetwork[i].resize(m_biasNeurons[i] + m_hiddenNeurons[i - 1], 0);
 	}
 
-	for (size_t i = 0; i < weights.size(); ++i)
+	for (size_t i = 0; i < m_weights.size(); ++i)
 	{
-		size_t next_layer_size = neural_network[i + 1].size() - (i < weights.size() - 1 ? biasNeurons[i + 1] : 0);
-		weights[i].resize(next_layer_size, vector_1d(neural_network[i].size()));
+		size_t m_layerSize = m_neuralNetwork[i + 1].size() - (i < m_weights.size() - 1 ? m_biasNeurons[i + 1] : 0);
+		m_weights[i].resize(m_layerSize, vector_1d(m_neuralNetwork[i].size()));
 
-		for (auto& weight_layer : weights[i])
+		for (auto& m_weightLayer : m_weights[i])
 		{
-			for (float& weight : weight_layer)
+			for (float& m_weight : m_weightLayer)
 			{
-				weight = distribution(random_engine);
+				m_weight = m_distribution(m_random); // Gives random weights at the beginning
 			}
 		}
 	}
 
-	errors.resize(weights.size());
+	m_errors.resize(m_weights.size());
 
-	for (size_t i = 0; i < errors.size(); ++i)
+	for (size_t i = 0; i < m_errors.size(); ++i)
 	{
-		errors[i].resize(weights[i].size(), 0);
+		m_errors[i].resize(m_weights[i].size(), 0);
 	}
 }
 
+/// <summary>
+/// Updates the nerual network
+/// 
+/// This is also how i train it, adjusting the weights and biases based on the error between the actual and predicted outputs,
+/// which IS a learning process. 
+/// The network's ability to improve its predictions over time as it processes more data is neural network learning
+/// </summary>
 void Game::updateNeuralNetwork()
 {
-	if (train)	// Training the neural network
+	if (m_train) // Training the neural network
 	{
-		total_error = 0;
+		m_totalErrors = 0;
 
 		for (int i = 0; i < TRAININGS_PER_FRAME; i++)
 		{
-			int input_index = rand() % m_neural_network.getInputs().size();
+			int m_inputIndex = rand() % m_neural_network.getInputs().size();
 
-			m_neural_network.forwardPropagation(true, m_neural_network.getInputs()[input_index], neural_network, weights);
-			m_neural_network.backPropagation(m_neural_network.getTargetOutputs()[input_index], errors, neural_network, weights);
+			m_neural_network.forwardPropagation(true, m_neural_network.getInputs()[m_inputIndex], m_neuralNetwork, m_weights);
+			m_neural_network.backPropagation(m_neural_network.getTargetOutputs()[m_inputIndex], m_errors, m_neuralNetwork, m_weights);
 		}
 
 		for (int i = 0; i < m_neural_network.getInputs().size(); i++)
 		{
-			vector_1d outputs = m_neural_network.forwardPropagation(false, m_neural_network.getInputs()[i], neural_network, weights);
+			vector_1d m_outputs = m_neural_network.forwardPropagation(false, m_neural_network.getInputs()[i], m_neuralNetwork, m_weights);
 
-			for (int j = 0; j < outputs.size(); j++)
+			for (int j = 0; j < m_outputs.size(); j++)
 			{
-				total_error += std::abs(outputs[j] - m_neural_network.getTargetOutputs()[i][j]);
+				m_totalErrors += std::abs(m_outputs[j] - m_neural_network.getTargetOutputs()[i][j]);
 			}
 		}
 	}
-	outputTexture.update(outputImage);
+	m_outputTexture.update(m_outputImage);
 }
 
+/// <summary>
+/// Renders the neural networks 
+/// </summary>
+/// <param name="m_window"></param>
 void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
 {
-	m_neural_network.draw_neural_network(m_window, neural_network, weights);
+	m_neural_network.drawNeuralPerceptron(m_window, m_neuralNetwork, m_weights); // draws the perceptrons
 
-	for (int i = 0; i < outputWidth; i++)
+	// For visualization to see it working on the image sprite
+	for (int i = 0; i < m_outputWidth; i++)
 	{
-		for (int j = 0; j < outputHeight; j++)
+		for (int j = 0; j < m_outputHeight; j++)
 		{
-			float input_1 = i / static_cast<float>(outputWidth);
-			float input_2 = j / static_cast<float>(outputHeight);
+			float m_inputOne = i / static_cast<float>(m_outputWidth);
+			float m_inputTwo = j / static_cast<float>(m_outputHeight);
 
-			std::vector output_color = m_neural_network.forwardPropagation(0, { input_1, input_2 }, neural_network, weights);
+			std::vector m_outputColor = m_neural_network.forwardPropagation(0, { m_inputOne, m_inputTwo }, m_neuralNetwork, m_weights);
 
-			outputImage.setPixel(i, j, sf::Color(round(255 * output_color[0]), round(255 * output_color[1]), round(255 * output_color[2])));
+			m_outputImage.setPixel(i, j, sf::Color(round(255 * m_outputColor[0]), round(255 * m_outputColor[1]), round(255 * m_outputColor[2])));
 		}
 	}
 
-	m_window.draw(outputSprite);
+	m_window.draw(m_outputSprite);
 }
 
-void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings)
+/// <summary>
+/// Updates the fog for the buildings
+/// </summary>
+/// <param name="m_buildings"></param>
+void Game::updateFogOfWarBasedOnBuildings(const std::vector<Building*>& m_buildings)
 {
-	for (auto& building : buildings)
+	for (auto& building : m_buildings)
 	{
-		sf::Vector2f buildingCenter = building->getPosition();
-		float radius = 300;
+		sf::Vector2f m_buildingCenter = building->getPosition();
+		float m_buildingRadius = 300;
 
 		// Determine the range of tiles affected by this building
-		int minX = std::max(static_cast<int>((buildingCenter.x - radius) / m_tiles.tileSize), 0);
-		int maxX = std::min(static_cast<int>((buildingCenter.x + radius) / m_tiles.tileSize), m_levelEditor.numCols - 1);
-		int minY = std::max(static_cast<int>((buildingCenter.y - radius) / m_tiles.tileSize), 0);
-		int maxY = std::min(static_cast<int>((buildingCenter.y + radius) / m_tiles.tileSize), m_levelEditor.numRows - 1);
+		int minX = std::max(static_cast<int>((m_buildingCenter.x - m_buildingRadius) / m_tiles.m_tileSize), 0);
+		int maxX = std::min(static_cast<int>((m_buildingCenter.x + m_buildingRadius) / m_tiles.m_tileSize), m_levelEditor.m_numCols - 1);
+		int minY = std::max(static_cast<int>((m_buildingCenter.y - m_buildingRadius) / m_tiles.m_tileSize), 0);
+		int maxY = std::min(static_cast<int>((m_buildingCenter.y + m_buildingRadius) / m_tiles.m_tileSize), m_levelEditor.m_numRows - 1);
 
 		for (int i = minY; i <= maxY; ++i)
 		{
 			for (int j = minX; j <= maxX; ++j)
 			{
 				// Check if the tile is within the circle's radius
-				sf::Vector2f tileCenter(j * m_tiles.tileSize + m_tiles.tileSize / 2.0f, i * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
-				float distance = std::sqrt(std::pow(tileCenter.x - buildingCenter.x, 2) + std::pow(tileCenter.y - buildingCenter.y, 2));
+				sf::Vector2f m_tileCenter(j * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f, i * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f);
+				float m_distance = std::sqrt(std::pow(m_tileCenter.x - m_buildingCenter.x, 2) + std::pow(m_tileCenter.y - m_buildingCenter.y, 2));
 
-				if (distance <= radius)
+				if (m_distance <= m_buildingRadius)
 				{
-					m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Visible;
+					m_levelEditor.m_tiles[i][j].m_fogStatus = Tile::FogStatus::Visible;
 				}
 			}
 		}
 	}
 }
 
-void Game::updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units)
+/// <summary>
+/// Updates the fog for units
+/// </summary>
+/// <param name="m_units"></param>
+void Game::updateFogOfWarBasedOnUnits(const std::vector<Unit*>& m_units)
 {
 
-	for (int i = 0; i < m_levelEditor.numRows; ++i)
+	for (int i = 0; i < m_levelEditor.m_numRows; ++i)
 	{
-		for (int j = 0; j < m_levelEditor.numCols; ++j)
+		for (int j = 0; j < m_levelEditor.m_numCols; ++j)
 		{
-			if (m_levelEditor.m_tiles[i][j].fogStatus == Tile::FogStatus::Visible)
+			if (m_levelEditor.m_tiles[i][j].m_fogStatus == Tile::FogStatus::Visible)
 			{
-				m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Explored;
+				m_levelEditor.m_tiles[i][j].m_fogStatus = Tile::FogStatus::Explored;
 			}
 		}
 	}
 
-	for (auto& unit : units)
+	for (auto& unit : m_units)
 	{
-		sf::Vector2f unitCenter = unit->getPosition();
-		float radius = unit->getViewRadius();
+		sf::Vector2f m_unitCenter = unit->getPosition();
+		float m_unitRadius = unit->getViewRadius();
 
-		int minX = std::max(static_cast<int>((unitCenter.x - radius) / m_tiles.tileSize), 0);
-		int maxX = std::min(static_cast<int>((unitCenter.x + radius) / m_tiles.tileSize), m_levelEditor.numCols - 1);
-		int minY = std::max(static_cast<int>((unitCenter.y - radius) / m_tiles.tileSize), 0);
-		int maxY = std::min(static_cast<int>((unitCenter.y + radius) / m_tiles.tileSize), m_levelEditor.numRows - 1);
+		int minX = std::max(static_cast<int>((m_unitCenter.x - m_unitRadius) / m_tiles.m_tileSize), 0);
+		int maxX = std::min(static_cast<int>((m_unitCenter.x + m_unitRadius) / m_tiles.m_tileSize), m_levelEditor.m_numCols - 1);
+		int minY = std::max(static_cast<int>((m_unitCenter.y - m_unitRadius) / m_tiles.m_tileSize), 0);
+		int maxY = std::min(static_cast<int>((m_unitCenter.y + m_unitRadius) / m_tiles.m_tileSize), m_levelEditor.m_numRows - 1);
 
 		for (int i = minY; i <= maxY; ++i)
 		{
 			for (int j = minX; j <= maxX; ++j)
 			{
-				sf::Vector2f tileCenter(j * m_tiles.tileSize + m_tiles.tileSize / 2.0f, i * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
-				float distance = std::sqrt(std::pow(tileCenter.x - unitCenter.x, 2) + std::pow(tileCenter.y - unitCenter.y, 2));
+				sf::Vector2f m_tileCenter(j * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f, i * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f);
+				float m_distance = std::sqrt(std::pow(m_tileCenter.x - m_unitCenter.x, 2) + std::pow(m_tileCenter.y - m_unitCenter.y, 2));
 
-				if (distance <= radius)
+				if (m_distance <= m_unitRadius)
 				{
-					m_levelEditor.m_tiles[i][j].fogStatus = Tile::FogStatus::Visible;
+					m_levelEditor.m_tiles[i][j].m_fogStatus = Tile::FogStatus::Visible;
 				}
 			}
 		}
 	}
 }
 
+/// <summary>
+/// Creates the unit for players side
+/// </summary>
 void Game::createUnit()
 {
 	if (m_gui.m_unitConfirmed)
 	{
-		sf::Vector2f targetPositionOffset = sf::Vector2f(0, 50);
+		sf::Vector2f targetPositionOffset = sf::Vector2f(0, 60);
 
 		// Infantry 
 		if (m_gui.m_selectedInfantryType == InfantryType::RifleSquad)
@@ -904,10 +940,10 @@ void Game::createUnit()
 				RiflemanSquad* newRiflemanSquad = new RiflemanSquad();
 				newRiflemanSquad->setPosition(spawnPosition);
 				newRiflemanSquad->setTargetPosition(spawnPosition + targetPositionOffset);
-				newRiflemanSquad->setEnemyUnits(enemyUnits);
-				newRiflemanSquad->setEnemyBuildings(placedEnemyBuildings);
+				newRiflemanSquad->setEnemyUnits(m_enemyUnits);
+				newRiflemanSquad->setEnemyBuildings(m_placedEnemyBuildings);
 
-				playerUnits.push_back(newRiflemanSquad);
+				m_playerUnits.push_back(newRiflemanSquad);
 			}
 		}
 		// Vehicles
@@ -921,11 +957,11 @@ void Game::createUnit()
 				Harvester* newHarvester = new Harvester();
 				newHarvester->setPosition(spawnPosition);
 				newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
-				newHarvester->setBuildings(placedPlayerBuildings);
+				newHarvester->setBuildings(m_placedPlayerBuildings);
 				newHarvester->setTiles(m_levelEditor.m_tiles);
-				newHarvester->currentState = newHarvester->MovingToResource;
+				newHarvester->m_currentState = newHarvester->MovingToResource;
 
-				playerUnits.push_back(newHarvester);
+				m_playerUnits.push_back(newHarvester);
 			}
 		}
 		if (m_gui.m_selectedVehicleType == VehicleType::Buggy)
@@ -938,13 +974,13 @@ void Game::createUnit()
 				Buggy* newBuggy = new Buggy();
 				newBuggy->setPosition(spawnPosition);
 				newBuggy->setTargetPosition(spawnPosition + targetPositionOffset);
-				newBuggy->setEnemyUnits(enemyUnits);
-				newBuggy->setEnemyBuildings(placedEnemyBuildings);
+				newBuggy->setEnemyUnits(m_enemyUnits);
+				newBuggy->setEnemyBuildings(m_placedEnemyBuildings);
 
-				playerUnits.push_back(newBuggy);
+				m_playerUnits.push_back(newBuggy);
 			}
 		}
-		if (m_gui.m_selectedVehicleType == VehicleType::Tank)
+		if (m_gui.m_selectedVehicleType == VehicleType::TankAurora)
 		{
 			if (m_gui.m_selectedBuilding)
 			{
@@ -954,9 +990,9 @@ void Game::createUnit()
 				TankAurora* newTankAurora = new TankAurora();
 				newTankAurora->setPosition(spawnPosition);
 				newTankAurora->setTargetPosition(spawnPosition + targetPositionOffset);
-				newTankAurora->setEnemyUnits(enemyUnits);
+				newTankAurora->setEnemyUnits(m_enemyUnits);
 
-				playerUnits.push_back(newTankAurora);
+				m_playerUnits.push_back(newTankAurora);
 			}
 		}
 		// Air
@@ -970,10 +1006,10 @@ void Game::createUnit()
 				HammerHead* newHammerHead = new HammerHead();
 				newHammerHead->setPosition(spawnPosition);
 				newHammerHead->setTargetPosition(spawnPosition + targetPositionOffset);
-				newHammerHead->setEnemyUnits(enemyUnits);
-				newHammerHead->setEnemyBuildings(placedEnemyBuildings);
+				newHammerHead->setEnemyUnits(m_enemyUnits);
+				newHammerHead->setEnemyBuildings(m_placedEnemyBuildings);
 
-				playerUnits.push_back(newHammerHead);
+				m_playerUnits.push_back(newHammerHead);
 			}
 		}
 		if (m_gui.m_selectedAircraftType == AirCraftType::Firehawk)
@@ -986,13 +1022,13 @@ void Game::createUnit()
 				Firehawk* newFirehawk = new Firehawk();
 				newFirehawk->setPosition(spawnPosition);
 				newFirehawk->setTargetPosition(spawnPosition + targetPositionOffset);
-				newFirehawk->setEnemyUnits(enemyUnits);
-				newFirehawk->setEnemyBuildings(placedEnemyBuildings);
+				newFirehawk->setEnemyUnits(m_enemyUnits);
+				newFirehawk->setEnemyBuildings(m_placedEnemyBuildings);
 
-				playerUnits.push_back(newFirehawk);
+				m_playerUnits.push_back(newFirehawk);
 			}
 		}
-		playerUnitStatCount++;
+		m_playerUnitStatCount++;
 		m_gui.m_unitConfirmed = false;
 		m_gui.m_selectedBuilding = nullptr;
 		m_gui.m_selectedBuildingType = BuildingType::None;
@@ -1002,11 +1038,15 @@ void Game::createUnit()
 	}
 }
 
-void Game::selectUnitAt(const sf::Vector2f& mousePos)
+/// <summary>
+/// Selects the unit
+/// </summary>
+/// <param name="m_mousePos"></param>
+void Game::selectUnitAt(const sf::Vector2f& m_mousePos)
 {
-	for (Unit* unit : playerUnits)
+	for (Unit* unit : m_playerUnits)
 	{
-		if (unit->getSprite().getGlobalBounds().contains(mousePos))
+		if (unit->getSprite().getGlobalBounds().contains(m_mousePos))
 		{
 			m_selectedUnit = unit;
 			unit->setSelected(true);
@@ -1015,11 +1055,14 @@ void Game::selectUnitAt(const sf::Vector2f& mousePos)
 	}
 }
 
+/// <summary>
+/// To select all units within the box
+/// </summary>
 void Game::selectUnitsInBox()
 {
-	sf::FloatRect selectionRect = selectionBox.getGlobalBounds();
+	sf::FloatRect selectionRect = m_selectionBox.getGlobalBounds();
 
-	for (Unit* unit : playerUnits)
+	for (Unit* unit : m_playerUnits)
 	{
 		if (selectionRect.intersects(unit->getSprite().getGlobalBounds()))
 		{
@@ -1029,61 +1072,74 @@ void Game::selectUnitsInBox()
 	}
 }
 
+/// <summary>
+/// Spawns a bubble particle effect around the world to give the theme better look
+/// </summary>
 void Game::spawnBubbleParticles()
 {
-	static sf::Clock spawnTimer;
-	if (spawnTimer.getElapsedTime().asSeconds() > 2.0f)
+	static sf::Clock m_spawnTimer;
+	if (m_spawnTimer.getElapsedTime().asSeconds() > 2.0f)
 	{
-		spawnTimer.restart();
+		m_spawnTimer.restart();
 
-		int bubblesToSpawn = std::rand() % 100 + 20;
+		int m_bubblesToSpawn = std::rand() % 100 + 20;
 
-		for (int i = 0; i < bubblesToSpawn; ++i)
+		for (int i = 0; i < m_bubblesToSpawn; ++i)
 		{
-			int randomX = std::rand() % m_levelEditor.numCols;
-			int randomY = std::rand() % m_levelEditor.numRows;
-			if (m_levelEditor.m_tiles[randomY][randomX].fogStatus != Tile::FogStatus::Unexplored)
+			int m_randomX = std::rand() % m_levelEditor.m_numCols;
+			int m_randomY = std::rand() % m_levelEditor.m_numRows;
+
+			if (m_levelEditor.m_tiles[m_randomY][m_randomX].m_fogStatus != Tile::FogStatus::Unexplored)
 			{
-				sf::Vector2f position(randomX * m_tiles.tileSize + m_tiles.tileSize / 2.0f,
-					randomY * m_tiles.tileSize + m_tiles.tileSize / 2.0f);
+				sf::Vector2f m_position(m_randomX * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f,
+					m_randomY * m_tiles.m_tileSize + m_tiles.m_tileSize / 2.0f);
 
-				angleParticle = static_cast<float>((std::rand() % 41) - 20);	// angle between -20 and 20
-				speedParticle = 20.0f + static_cast<float>(std::rand() % 6);	// Speed Between 20 and 25
+				m_angleParticle = static_cast<float>((std::rand() % 41) - 20);	// angle between -20 and 20
+				m_speedParticle = 20.0f + static_cast<float>(std::rand() % 6);	// Speed Between 20 and 25
 
-				sf::Vector2f velocity(std::sin(angleParticle * 3.14f / 180.0f) * speedParticle, -(speedParticle + static_cast<float>(std::rand() % 10)));
+				sf::Vector2f velocity(std::sin(m_angleParticle * 3.14f / 180.0f) * m_speedParticle, -(m_speedParticle + static_cast<float>(std::rand() % 10)));
 
-				lifetimeParticle = static_cast<float>(std::rand() % 4 + 3);	// lifetime between 3 and 6
-				sizeParticle = static_cast<float>(std::rand() % 3 + 2);		// size between 2 and 4
+				m_lifetimeParticle = static_cast<float>(std::rand() % 4 + 3);	// lifetime between 3 and 6
+				m_sizeParticle = static_cast<float>(std::rand() % 3 + 2);		// size between 2 and 4
+				m_colorParticle = sf::Color(255, 255, 255, 120 + std::rand() % 135);
 
-				colorParticle = sf::Color(255, 255, 255, 120 + std::rand() % 135);
-
-				m_particleSystem.addParticle(Particle(position, velocity, colorParticle, lifetimeParticle, sizeParticle, &m_bubbleTexture));
+				m_particleSystem.addParticle(Particle(m_position, velocity, m_colorParticle, m_lifetimeParticle, m_sizeParticle, &m_bubbleTexture));
 			}
 		}
 	}
 }
 
-void Game::spawnBulletSparkParticles(const sf::Vector2f& position)
+/// <summary>
+/// spawns a spark particle effect
+/// </summary>
+/// <param name="m_position"></param>
+void Game::spawnBulletSparkParticles(const sf::Vector2f& m_position)
 {
-	for (int i = 0; i < 20; ++i)
+	int m_particleCount = 20;
+
+	for (int i = 0; i < m_particleCount; ++i)
 	{
-		angleParticle = (std::rand() % 360) * 3.14159f / 180.0f;
-		speedParticle = (std::rand() % 100) / 10.0f + 50.0f; // Random speed between 50 and 60
-		sf::Vector2f velocity(std::cos(angleParticle) * speedParticle, std::sin(angleParticle) * speedParticle);
+		m_angleParticle = (std::rand() % 360) * 3.14159f / 180.0f;
+		m_speedParticle = (std::rand() % 100) / 10.0f + 50.0f; // Random speed between 50 and 60
+		sf::Vector2f m_velocity(std::cos(m_angleParticle) * m_speedParticle, std::sin(m_angleParticle) * m_speedParticle);
 
-		lifetimeParticle = static_cast<float>(std::rand() % 40) / 100.0f + 0.1f;
-		sizeParticle = static_cast<float>(std::rand() % 3 + 2);
+		m_lifetimeParticle = static_cast<float>(std::rand() % 40) / 100.0f + 0.1f;
+		m_sizeParticle = static_cast<float>(std::rand() % 3 + 2);
 
-		colorParticle = sf::Color(255, 255, 255, 160 + std::rand() % 95);
-		m_particleSystem.addParticle(Particle(position, velocity, colorParticle, lifetimeParticle, sizeParticle, &m_bulletSparksTexture));
+		m_colorParticle = sf::Color(255, 255, 255, 160 + std::rand() % 95);
+		m_particleSystem.addParticle(Particle(m_position, m_velocity, m_colorParticle, m_lifetimeParticle, m_sizeParticle, &m_bulletSparksTexture));
 	}
 }
 
-void Game::spawnExplosionParticle(const sf::Vector2f& position) 
+/// <summary>
+/// spawns an explosion particle effect
+/// </summary>
+/// <param name="m_position"></param>
+void Game::spawnExplosionParticle(const sf::Vector2f& m_position)
 {
-	int particleCount = 30;
+	int m_particleCount = 30;
 
-	std::vector<sf::Color> colors =
+	std::vector<sf::Color> m_randomColors =
 	{
 		sf::Color::Red,  
 		sf::Color::Yellow, 
@@ -1094,117 +1150,128 @@ void Game::spawnExplosionParticle(const sf::Vector2f& position)
 		sf::Color::Black 
 	};
 
-	for (int i = 0; i < particleCount; ++i) 
+	for (int i = 0; i < m_particleCount; ++i) 
 	{
-		float angle = (std::rand() % 360) * 3.14f / 180.0f;
-		float speed = static_cast<float>(std::rand() % 50 + 50); 
-		sf::Vector2f velocity(speed * std::cos(angle), speed * std::sin(angle));
-		sf::Color color = colors[std::rand() % colors.size()];
+		float m_angle = (std::rand() % 360) * 3.14f / 180.0f;
+		float m_speed = static_cast<float>(std::rand() % 50 + 50); 
+		sf::Vector2f m_velocity(m_speed * std::cos(m_angle), m_speed * std::sin(m_angle));
+		sf::Color m_color = m_randomColors[std::rand() % m_randomColors.size()];
 
-		float size = static_cast<float>(std::rand() % 2 + 1);
-		float lifetime = 0.1f + static_cast<float>(std::rand() % 10) / 10.0f;
+		float m_size = static_cast<float>(std::rand() % 2 + 1);
+		float m_lifetime = 0.1f + static_cast<float>(std::rand() % 10) / 10.0f;
 
-		m_particleSystem.addParticle(Particle(position, velocity, color, lifetime, size));
+		m_particleSystem.addParticle(Particle(m_position, m_velocity, m_color, m_lifetime, m_size));
 	}
 }
 
+/// <summary>
+/// Initializes the win/lose panel
+/// </summary>
 void Game::initWinLosePanel()
 {
-	if (!PanelBackgroundTexture.loadFromFile("Assets\\Images\\GUI\\panel.png"))
+	if (!m_panelBackgroundTexture.loadFromFile("Assets\\Images\\GUI\\panel.png"))
 	{
 		std::cout << "Error - loading Panel texture" << std::endl;
 	}
 
-	PanelBackgroundSprite.setTexture(PanelBackgroundTexture);
-	PanelBackgroundSprite.setOrigin(PanelBackgroundSprite.getGlobalBounds().width / 2, PanelBackgroundSprite.getGlobalBounds().height / 2);
-	PanelBackgroundSprite.setScale(5, 5);
-	PanelBackgroundSprite.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
+	m_panelBackgroundSprite.setTexture(m_panelBackgroundTexture);
+	m_panelBackgroundSprite.setOrigin(m_panelBackgroundSprite.getGlobalBounds().width / 2, m_panelBackgroundSprite.getGlobalBounds().height / 2);
+	m_panelBackgroundSprite.setScale(5, 5);
+	m_panelBackgroundSprite.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
 
-	winLoseText.setFont(m_font);
-	winLoseText.setString("Victory!");
-	winLoseText.setCharacterSize(50);
-	winLoseText.setFillColor(sf::Color::White);
-	winLoseText.setOutlineColor(sf::Color::Yellow);
-	winLoseText.setOutlineThickness(0.3);
-	winLoseText.setOrigin(winLoseText.getGlobalBounds().width / 2, winLoseText.getGlobalBounds().height / 2);
-	winLoseText.setPosition(Global::S_WIDTH / 2, 300);
+	m_winLoseText.setFont(m_font);
+	m_winLoseText.setString("Victory!");
+	m_winLoseText.setCharacterSize(50);
+	m_winLoseText.setFillColor(sf::Color::White);
+	m_winLoseText.setOutlineColor(sf::Color::Yellow);
+	m_winLoseText.setOutlineThickness(0.3);
+	m_winLoseText.setOrigin(m_winLoseText.getGlobalBounds().width / 2, m_winLoseText.getGlobalBounds().height / 2);
+	m_winLoseText.setPosition(Global::S_WIDTH / 2, 300);
 
-	playAgainButton.setSize(sf::Vector2f(150, 50));
-	playAgainButton.setOrigin(playAgainButton.getSize().x / 2, playAgainButton.getSize().y / 2);
-	playAgainButton.setFillColor(sf::Color(100, 100, 250));
-	playAgainButton.setPosition(Global::S_WIDTH / 2, 500);
+	m_playAgainButton.setSize(sf::Vector2f(150, 50));
+	m_playAgainButton.setOrigin(m_playAgainButton.getSize().x / 2, m_playAgainButton.getSize().y / 2);
+	m_playAgainButton.setFillColor(sf::Color(100, 100, 250));
+	m_playAgainButton.setPosition(Global::S_WIDTH / 2, 500);
 
-	playAgainText.setFont(m_font);
-	playAgainText.setString("Play Again");
-	playAgainText.setCharacterSize(24);
-	playAgainText.setFillColor(sf::Color::White);
-	playAgainText.setOutlineColor(sf::Color::Black);
-	playAgainText.setOutlineThickness(0.5);
-	playAgainText.setOrigin(playAgainText.getLocalBounds().width / 2, playAgainText.getLocalBounds().height / 2);
-	playAgainText.setPosition(playAgainButton.getPosition());
+	m_playAgainText.setFont(m_font);
+	m_playAgainText.setString("Play Again");
+	m_playAgainText.setCharacterSize(24);
+	m_playAgainText.setFillColor(sf::Color::White);
+	m_playAgainText.setOutlineColor(sf::Color::Black);
+	m_playAgainText.setOutlineThickness(0.5);
+	m_playAgainText.setOrigin(m_playAgainText.getLocalBounds().width / 2, m_playAgainText.getLocalBounds().height / 2);
+	m_playAgainText.setPosition(m_playAgainButton.getPosition());
 
-	exitButton.setSize(sf::Vector2f(150, 50));
-	exitButton.setOrigin(exitButton.getSize().x / 2, exitButton.getSize().y / 2);
-	exitButton.setFillColor(sf::Color(250, 100, 100));
-	exitButton.setPosition(Global::S_WIDTH / 2, 600);
+	m_exitButton.setSize(sf::Vector2f(150, 50));
+	m_exitButton.setOrigin(m_exitButton.getSize().x / 2, m_exitButton.getSize().y / 2);
+	m_exitButton.setFillColor(sf::Color(250, 100, 100));
+	m_exitButton.setPosition(Global::S_WIDTH / 2, 600);
 
-	exitText.setFont(m_font);
-	exitText.setString("Exit");
-	exitText.setCharacterSize(24);
-	exitText.setFillColor(sf::Color::White);
-	exitText.setOutlineColor(sf::Color::Black);
-	exitText.setOutlineThickness(0.5);
-	exitText.setOrigin(exitText.getLocalBounds().width / 2, exitText.getLocalBounds().height / 2);
-	exitText.setPosition(exitButton.getPosition());
+	m_exitText.setFont(m_font);
+	m_exitText.setString("Exit");
+	m_exitText.setCharacterSize(24);
+	m_exitText.setFillColor(sf::Color::White);
+	m_exitText.setOutlineColor(sf::Color::Black);
+	m_exitText.setOutlineThickness(0.5);
+	m_exitText.setOrigin(m_exitText.getLocalBounds().width / 2, m_exitText.getLocalBounds().height / 2);
+	m_exitText.setPosition(m_exitButton.getPosition());
 
 	// STATS
-	playerStatsText.setFont(m_font);
-	playerStatsText.setCharacterSize(24);
-	playerStatsText.setFillColor(sf::Color::White);
-	playerStatsText.setString("Player Stats:");
-	playerStatsText.setOrigin(playerStatsText.getLocalBounds().width / 2, playerStatsText.getLocalBounds().height / 2);
-	playerStatsText.setPosition(Global::S_WIDTH / 2 - 250,
-		PanelBackgroundSprite.getPosition().y - 50);
+	m_playerStatsText.setFont(m_font);
+	m_playerStatsText.setCharacterSize(24);
+	m_playerStatsText.setFillColor(sf::Color::White);
+	m_playerStatsText.setString("Player Stats:");
+	m_playerStatsText.setOrigin(m_playerStatsText.getLocalBounds().width / 2, m_playerStatsText.getLocalBounds().height / 2);
+	m_playerStatsText.setPosition(Global::S_WIDTH / 2 - 250,
+		m_panelBackgroundSprite.getPosition().y - 50);
 
-	enemyStatsText.setFont(m_font);
-	enemyStatsText.setCharacterSize(24);
-	enemyStatsText.setFillColor(sf::Color::White);
-	enemyStatsText.setString("Enemy Stats:");
-	enemyStatsText.setOrigin(enemyStatsText.getLocalBounds().width / 2, enemyStatsText.getLocalBounds().height / 2);
-	enemyStatsText.setPosition(Global::S_WIDTH / 2 + 200,
-		PanelBackgroundSprite.getPosition().y - 50);
+	m_enemyStatsText.setFont(m_font);
+	m_enemyStatsText.setCharacterSize(24);
+	m_enemyStatsText.setFillColor(sf::Color::White);
+	m_enemyStatsText.setString("Enemy Stats:");
+	m_enemyStatsText.setOrigin(m_enemyStatsText.getLocalBounds().width / 2, m_enemyStatsText.getLocalBounds().height / 2);
+	m_enemyStatsText.setPosition(Global::S_WIDTH / 2 + 200,
+		m_panelBackgroundSprite.getPosition().y - 50);
 }
 
-void Game::renderWinLosePanel(sf::RenderWindow& window)
+/// <summary>
+/// Renders the win/lose panel with stats
+/// </summary>
+/// <param name="m_window"></param>
+void Game::renderWinLosePanel(sf::RenderWindow& m_window)
 {
-	window.draw(PanelBackgroundSprite);
-	window.draw(winLoseText);
-	window.draw(playAgainButton);
-	window.draw(playAgainText);
-	window.draw(exitButton);
-	window.draw(exitText);
-	window.draw(playerStatsText);
-	window.draw(enemyStatsText);
+	m_window.draw(m_panelBackgroundSprite);
+	m_window.draw(m_winLoseText);
+	m_window.draw(m_playAgainButton);
+	m_window.draw(m_playAgainText);
+	m_window.draw(m_exitButton);
+	m_window.draw(m_exitText);
+	m_window.draw(m_playerStatsText);
+	m_window.draw(m_enemyStatsText);
 
-	playerStatsText.setString("PLAYER STATS\n\nBuildings: " + std::to_string(playerBuildingStatCount) +
-		"\nUnits: " + std::to_string(playerUnitStatCount));
-	enemyStatsText.setString("ENEMY STATS\n\nBuildings: " + std::to_string(enemyBuildingStatCount) +
-		"\nUnits: " + std::to_string(enemyUnitStatCount));
+	m_playerStatsText.setString("PLAYER STATS\n\nBuildings: " + std::to_string(m_playerBuildingStatCount) +
+		"\nUnits: " + std::to_string(m_playerUnitStatCount));
+	m_enemyStatsText.setString("ENEMY STATS\n\nBuildings: " + std::to_string(m_enemyBuildingStatCount) +
+		"\nUnits: " + std::to_string(m_enemyUnitStatCount));
 }
 
-void Game::handleVictoryPanelInput(const sf::Vector2f& m_mousePosition)
+/// <summary>
+/// handles the mouse input for the win/lose panel
+/// </summary>
+/// <param name="m_mousePosition"></param>
+void Game::handleWinLosePanel(const sf::Vector2f& m_mousePosition)
 {
-	if (playAgainButton.getGlobalBounds().contains(m_mousePosition)) 
+	if (m_playAgainButton.getGlobalBounds().contains(m_mousePosition)) 
 	{
-		showWinLosePanel = false;
+		m_showWinLosePanel = false;
 		gameReset();
 		std::cout << "Playing again" << std::endl;
 	}
-	if (exitButton.getGlobalBounds().contains(m_mousePosition))
+	if (m_exitButton.getGlobalBounds().contains(m_mousePosition))
 	{
-		showWinLosePanel = false;
+		m_showWinLosePanel = false;
 		m_currentState = GameState::MainMenu;
-		levelLoaded = false;
+		m_levelLoaded = false;
 		gameReset();
 		std::cout << "Back to Main menu" << std::endl;
 	}
@@ -1215,76 +1282,86 @@ void Game::handleVictoryPanelInput(const sf::Vector2f& m_mousePosition)
 /// </summary>
 void Game::resetView()
 {
-	gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
-	gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
-	m_window.setView(gameView);
+	m_gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
+	m_gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_window.setView(m_gameView);
 	m_levelLoader.initLevelSelectionButtons();
 }
 
+/// <summary>
+/// Resets the view for zooming
+/// </summary>
 void Game::resetZoom()
 {
 	float initialWidth = Global::S_WIDTH;
 	float initialHeight = Global::S_HEIGHT;
 
-	gameView.setSize(initialWidth, initialHeight);
+	m_gameView.setSize(initialWidth, initialHeight);
 	updateViewWithMouse();
 }
 
-int Game::calculateGridSize(int numberOfUnits)
+int Game::calculateGridSize(int m_numberOfUnits)
 {
-	return std::ceil(std::sqrt(numberOfUnits));
+	return std::ceil(std::sqrt(m_numberOfUnits));
 }
 
-void Game::loadLevel(const std::string& filename)
+/// <summary>
+/// Loads the level
+/// </summary>
+/// <param name="m_filename"></param>
+void Game::loadLevel(const std::string& m_filename)
 {
-	if (!levelLoaded)
+	if (!m_levelLoaded)
 	{
-		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + filename + ".txt");
-		levelLoaded = true;
+		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + m_filename + ".txt");
+		m_levelLoaded = true;
 	}
 }
 
 /// <summary>
-/// Checks the victory conditions
+/// Checks the victory and lose conditions
 /// </summary>
 void Game::checkVictoryConditions()
 {
-	if (placedEnemyBuildings.empty())
+	if (m_placedEnemyBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::WIN;
-		showWinLosePanel = true;
-		winLoseText.setString("Victory!");
+		m_showWinLosePanel = true;
+		m_winLoseText.setString("Victory!");
 	}
-	else if (placedPlayerBuildings.empty())
+	else if (m_placedPlayerBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::LOSE;
-		showWinLosePanel = true;
-		winLoseText.setString("Game Over\nYou lost");
+		m_showWinLosePanel = true;
+		m_winLoseText.setString("Game Over\nYou lost");
 	}
 }
 
+/// <summary>
+/// Creates some buildings and units to give an advantage to the enemy a bit at the start of the game
+/// </summary>
 void Game::createEnemyStarterBase()
 {
-	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 60);
+	sf::Vector2f m_targetPositionOffset = sf::Vector2f(0, 60);
 
 	Headquarters* newHeadquarters = new Headquarters();
 	newHeadquarters->setPosition(sf::Vector2f(1900.0f, 2100.0f));
-	placedEnemyBuildings.push_back(newHeadquarters);
+	m_placedEnemyBuildings.push_back(newHeadquarters);
 
 	Refinery* newRefinery = new Refinery();
 	newRefinery->setPosition(sf::Vector2f(2100.0f, 2300.0f));
-	placedEnemyBuildings.push_back(newRefinery);
+	m_placedEnemyBuildings.push_back(newRefinery);
 
 	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f);
 
 	Harvester* newHarvester = new Harvester();
 	newHarvester->setPosition(spawnPosition);
-	newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
-	newHarvester->setBuildings(placedEnemyBuildings);
+	newHarvester->setTargetPosition(spawnPosition + m_targetPositionOffset);
+	newHarvester->setBuildings(m_placedEnemyBuildings);
 	newHarvester->setTiles(m_levelEditor.m_tiles);
-	newHarvester->currentState = newHarvester->MovingToResource;
+	newHarvester->m_currentState = newHarvester->MovingToResource;
 	newHarvester->m_isEnemy = true;
-	enemyUnits.push_back(newHarvester);
+	m_enemyUnits.push_back(newHarvester);
 
 	std::cout << "Enemy Base Initilised" << std::endl;
 	updateBuildingCounts();
@@ -1296,12 +1373,12 @@ void Game::createEnemyStarterBase()
 /// <param name="t_deltaTime"></param>
 void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 {
-	static sf::Time enemyProductionTimer = sf::seconds(0);
-	enemyProductionTimer += t_deltaTime;
-	std::vector<BuildingType> availableBuildings;
+	static sf::Time m_enemyProductionTimer = sf::seconds(0);
+	m_enemyProductionTimer += t_deltaTime;
+	std::vector<BuildingType> m_availableBuildings;
 
 	// Every few seconds the enemy will try to make either a unit or building
-	if (enemyProductionTimer > sf::seconds(8))
+	if (m_enemyProductionTimer > sf::seconds(8))
 	{
 		updateBuildingCounts();
 
@@ -1312,31 +1389,31 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 		else
 		{
 			// Collect all building types that are available for unit production
-			if (enemyBuildingCounts[BuildingType::Barracks] > 0)
+			if (m_enemyBuildingCounts[BuildingType::Barracks] > 0)
 			{
-				availableBuildings.push_back(BuildingType::Barracks);
+				m_availableBuildings.push_back(BuildingType::Barracks);
 			}
-			if (enemyBuildingCounts[BuildingType::WarFactory] > 0)
+			if (m_enemyBuildingCounts[BuildingType::WarFactory] > 0)
 			{
-				availableBuildings.push_back(BuildingType::WarFactory);
+				m_availableBuildings.push_back(BuildingType::WarFactory);
 			}
-			if (enemyBuildingCounts[BuildingType::AirCraft] > 0)
+			if (m_enemyBuildingCounts[BuildingType::AirCraft] > 0)
 			{
-				availableBuildings.push_back(BuildingType::AirCraft);
+				m_availableBuildings.push_back(BuildingType::AirCraft);
 			}
 
-			if (!availableBuildings.empty())
+			if (!m_availableBuildings.empty())
 			{
 				// Randomly select an available building type
-				BuildingType selectedBuilding = availableBuildings[rand() % availableBuildings.size()];
+				BuildingType m_selectedBuilding = m_availableBuildings[rand() % m_availableBuildings.size()];
 
 				// Based on the selected building, decide which unit to create
-				switch (selectedBuilding)
+				switch (m_selectedBuilding)
 				{
 				case BuildingType::Barracks:
 					createEnemyUnit("Rifleman");
-					enemyUnitStatCount++;
-					std::cout << "Enemy created Rifleman" << std::endl;
+					m_enemyUnitStatCount++;
+					//std::cout << "Enemy created Rifleman" << std::endl;
 					break;
 				case BuildingType::WarFactory:
 				{
@@ -1344,20 +1421,20 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 					if (unitChance < 4) // 40% chance for Buggy
 					{
 						createEnemyUnit("Buggy");
-						enemyUnitStatCount++;
-						std::cout << "Enemy created Buggy" << std::endl;
+						m_enemyUnitStatCount++;
+						//std::cout << "Enemy created Buggy" << std::endl;
 					}
 					else if (unitChance < 8) // 40% chance for Tank
 					{
 						createEnemyUnit("TankAurora");
-						enemyUnitStatCount++;
-						std::cout << "Enemy created Tank" << std::endl;
+						m_enemyUnitStatCount++;
+						//std::cout << "Enemy created Tank" << std::endl;
 					}
 					else  // 20% chance for Harvester
 					{
 						createEnemyUnit("Harvester");
-						enemyUnitStatCount++;
-						std::cout << "Enemy created Harvester" << std::endl;
+						m_enemyUnitStatCount++;
+						//std::cout << "Enemy created Harvester" << std::endl;
 					}
 				}
 				break;
@@ -1366,14 +1443,14 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 					if (rand() % 2) // 50/50 chance
 					{
 						createEnemyUnit("Hammerhead");
-						enemyUnitStatCount++;
-						std::cout << "Enemy created Hammerhead" << std::endl;
+						m_enemyUnitStatCount++;
+						//std::cout << "Enemy created Hammerhead" << std::endl;
 					}
 					else
 					{
 						createEnemyUnit("Firehawk");
-						enemyUnitStatCount++;
-						std::cout << "Enemy created Firehawk" << std::endl;
+						m_enemyUnitStatCount++;
+						//std::cout << "Enemy created Firehawk" << std::endl;
 					}
 				}
 				break;
@@ -1388,84 +1465,92 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 				std::cout << "Enemy has no buildings to make a unit so it shall create a building" << std::endl;
 			}
 		}
-		enemyProductionTimer = sf::seconds(0);
+		m_enemyProductionTimer = sf::seconds(0);
 	}
 }
 
-void Game::updateEnemyAIUnitDecisionState(sf::Time deltaTime)
+/// <summary>
+/// This decides the enemy what to do Explore, group together and attack the player
+/// </summary>
+/// <param name="t_deltaTime"></param>
+void Game::updateEnemyAIUnitDecisionState(sf::Time t_deltaTime)
 {
-	enemyStateTimer += deltaTime;
+	m_enemyStateTimer += t_deltaTime;
 
-	switch (enemyAIState)
+	switch (m_enemyAIState)
 	{
 	case EnemyAIState::Exploring:
 		//std::cout << "Exploring" << std::endl;
-		if (enemyStateTimer > sf::seconds(30))
+		if (m_enemyStateTimer > sf::seconds(30))
 		{
-			enemyAIState = EnemyAIState::Grouping;
-			enemyStateTimer = sf::seconds(0);
+			m_enemyAIState = EnemyAIState::Grouping;
+			m_enemyStateTimer = sf::seconds(0);
 		}
 		else
 		{
-			enemyExploring(deltaTime);
+			enemyExploring(t_deltaTime);
 		}
 		break;
 	case EnemyAIState::Grouping:
 		//std::cout << "Grouping" << std::endl;
-		enemyGroupUnits(deltaTime);
-		if (enemyUnits.size() >= 6)
+		enemyGroupUnits(t_deltaTime);
+		if (m_enemyUnits.size() >= 6)
 		{
-			enemyAIState = EnemyAIState::Attacking;
+			m_enemyAIState = EnemyAIState::Attacking;
 		}
 		break;
 	case EnemyAIState::Attacking:
 		//std::cout << "Attacking" << std::endl;
-		enemyAttacking(deltaTime);
-		if (enemyStateTimer > sf::seconds(30))
+		enemyAttacking(t_deltaTime);
+		if (m_enemyStateTimer > sf::seconds(30))
 		{
-			enemyAIState = EnemyAIState::Exploring;
-			enemyStateTimer = sf::seconds(0);
+			m_enemyAIState = EnemyAIState::Exploring;
+			m_enemyStateTimer = sf::seconds(0);
 		}
 		break;
 	}
 }
 
+/// <summary>
+/// Updates the enemies stuff like buildings, units to bullets and particle effects on them
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void Game::updateEnemyAssets(sf::Time t_deltaTime)
 {
-	for (Building* enemyBuilding : placedEnemyBuildings)
+	for (Building* enemyBuilding : m_placedEnemyBuildings)
 	{
 		enemyBuilding->update(t_deltaTime);
 	}
 
-	for (Unit* eUnits : enemyUnits)
+	for (Unit* eUnits : m_enemyUnits)
 	{
-		eUnits->update(t_deltaTime, enemyUnits);
+		eUnits->update(t_deltaTime, m_enemyUnits);
 
-		for (auto& bullet : eUnits->bullets) // BULLETS
+		for (auto& bullet : eUnits->m_bullets) // BULLETS
 		{
 			bool hit = false;
 
-			for (auto& playerUnit : playerUnits)
+			for (auto& playerUnit : m_playerUnits)
 			{
-				if (bullet.bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
+				if (bullet.m_bulletShape.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
 				{
-					bullet.active = false;
+					bullet.m_active = false;
 					playerUnit->takeDamage(eUnits->getDamage());
 					if (playerUnit->getHealth() <= 0)
 					{
 						playerUnit->m_active = false;
 					}
-					spawnBulletSparkParticles(bullet.position);
+					spawnBulletSparkParticles(bullet.m_position);
 				}
 			}
-			for (auto& playerBuilding : placedPlayerBuildings)
+			for (auto& playerBuilding : m_placedPlayerBuildings)
 			{
-				if (bullet.bulletShape.getGlobalBounds().intersects(playerBuilding->getBuildingSprite().getGlobalBounds()))
+				if (bullet.m_bulletShape.getGlobalBounds().intersects(playerBuilding->getBuildingSprite().getGlobalBounds()))
 				{
-					bullet.active = false;
+					bullet.m_active = false;
 					playerBuilding->takeDamage(eUnits->getDamage());
 					hit = true;
-					spawnBulletSparkParticles(bullet.position);
+					spawnBulletSparkParticles(bullet.m_position);
 					break;
 				}
 			}
@@ -1475,47 +1560,47 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 			}
 		}
 
-		for (auto& missile : eUnits->missiles)
+		for (auto& missile : eUnits->m_missiles)
 		{
-			for (auto& playerUnit : playerUnits)
+			for (auto& playerUnit : m_playerUnits)
 			{
-				if (missile.missileSprite.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
+				if (missile.m_missileSprite.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
 				{
-					missile.active = false;
-					playerUnit->takeDamage(missile.damage);
+					missile.m_active = false;
+					playerUnit->takeDamage(missile.m_damage);
 					if (playerUnit->getHealth() <= 0)
 					{
 						playerUnit->m_active = false;
 					}
-					spawnExplosionParticle(missile.position);
+					spawnExplosionParticle(missile.m_position);
 				}
 			}
 		}
-		for (auto& missile : eUnits->missiles) // MISSILES
+		for (auto& missile : eUnits->m_missiles) // MISSILES
 		{
 			bool hit = false;
 
-			for (auto& playerUnit : playerUnits)
+			for (auto& playerUnit : m_playerUnits)
 			{
-				if (missile.missileSprite.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
+				if (missile.m_missileSprite.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
 				{
-					missile.active = false;
-					playerUnit->takeDamage(missile.damage);
+					missile.m_active = false;
+					playerUnit->takeDamage(missile.m_damage);
 					if (playerUnit->getHealth() <= 0)
 					{
 						playerUnit->m_active = false;
 					}
-					spawnExplosionParticle(missile.position);
+					spawnExplosionParticle(missile.m_position);
 				}
 			}
-			for (auto& playerBuilding : placedPlayerBuildings)
+			for (auto& playerBuilding : m_placedPlayerBuildings)
 			{
-				if (missile.missileSprite.getGlobalBounds().intersects(playerBuilding->getBuildingSprite().getGlobalBounds()))
+				if (missile.m_missileSprite.getGlobalBounds().intersects(playerBuilding->getBuildingSprite().getGlobalBounds()))
 				{
-					missile.active = false;
+					missile.m_active = false;
 					playerBuilding->takeDamage(eUnits->getDamage());
 					hit = true;
-					spawnExplosionParticle(missile.position);
+					spawnExplosionParticle(missile.m_position);
 					break;
 				}
 			}
@@ -1526,18 +1611,18 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 		}
 
 		// Remove inactive bullets
-		eUnits->bullets.erase(std::remove_if(eUnits->bullets.begin(), eUnits->bullets.end(),
-			[](const Bullet& bullet) { return !bullet.active; }), eUnits->bullets.end());
+		eUnits->m_bullets.erase(std::remove_if(eUnits->m_bullets.begin(), eUnits->m_bullets.end(),
+			[](const Bullet& bullet) { return !bullet.m_active; }), eUnits->m_bullets.end());
 		// Remove inactive missiles
-		eUnits->missiles.erase(std::remove_if(eUnits->missiles.begin(), eUnits->missiles.end(),
-			[](const Missile& missile) { return !missile.active && missile.trail.empty(); }), eUnits->missiles.end());
+		eUnits->m_missiles.erase(std::remove_if(eUnits->m_missiles.begin(), eUnits->m_missiles.end(),
+			[](const Missile& missile) { return !missile.m_active && missile.m_trail.empty(); }), eUnits->m_missiles.end());
 
 		// Remove dead enemy units
-		playerUnits.erase(std::remove_if(playerUnits.begin(), playerUnits.end(),
-			[](Unit* playerUnits) { return !playerUnits->isActive(); }), playerUnits.end());
+		m_playerUnits.erase(std::remove_if(m_playerUnits.begin(), m_playerUnits.end(),
+			[](Unit* playerUnits) { return !playerUnits->isActive(); }), m_playerUnits.end());
 		// Remove buildings
-		placedPlayerBuildings.erase(std::remove_if(placedPlayerBuildings.begin(), placedPlayerBuildings.end(),
-			[](Building* building) { return building->getHealth() <= 0; }), placedPlayerBuildings.end());
+		m_placedPlayerBuildings.erase(std::remove_if(m_placedPlayerBuildings.begin(), m_placedPlayerBuildings.end(),
+			[](Building* building) { return building->getHealth() <= 0; }), m_placedPlayerBuildings.end());
 	}
 }
 
@@ -1545,104 +1630,107 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 /// Creates the specific unit type on that buildings position
 /// </summary>
 /// <param name="unitType"></param>
-void Game::createEnemyUnit(const std::string& unitType)
+void Game::createEnemyUnit(const std::string& m_unitType)
 {
-	sf::Vector2f spawnPosition = sf::Vector2f(0, 0);
-	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 60);
-	bool validBuildingFound = false;
+	sf::Vector2f m_spawnPosition = sf::Vector2f(0, 0);
+	sf::Vector2f m_targetPositionOffset = sf::Vector2f(0, 60);
+	bool m_validBuildingFound = false;
 
 	// Find a building of the appropriate type and use its position
-	for (const auto& building : placedEnemyBuildings)
+	for (const auto& building : m_placedEnemyBuildings)
 	{
-		if (unitType == "Rifleman" && dynamic_cast<Barracks*>(building) != nullptr) 
+		if (m_unitType == "Rifleman" && dynamic_cast<Barracks*>(building) != nullptr)
 		{
-			spawnPosition = building->getPosition();
-			validBuildingFound = true;
+			m_spawnPosition = building->getPosition();
+			m_validBuildingFound = true;
 			break;
 		}
-		else if ((unitType == "Harvester" || unitType == "Buggy" || unitType == "TankAurora") && dynamic_cast<WarFactory*>(building) != nullptr)
+		else if ((m_unitType == "Harvester" || m_unitType == "Buggy" || m_unitType == "TankAurora") && dynamic_cast<WarFactory*>(building) != nullptr)
 		{
-			spawnPosition = building->getPosition();
-			validBuildingFound = true;
+			m_spawnPosition = building->getPosition();
+			m_validBuildingFound = true;
 			break;
 		}
-		else if ((unitType == "Hammerhead" || unitType == "Firehawk") && dynamic_cast<AirCraft*>(building) != nullptr)
+		else if ((m_unitType == "Hammerhead" || m_unitType == "Firehawk") && dynamic_cast<AirCraft*>(building) != nullptr)
 		{
-			spawnPosition = building->getPosition();
-			validBuildingFound = true;	
+			m_spawnPosition = building->getPosition();
+			m_validBuildingFound = true;	
 			break;
 		}
 	}
 
-	if (!validBuildingFound)
+	if (!m_validBuildingFound)
 	{
-		std::cerr << "No building found for creating unit: " << unitType << std::endl;
+		std::cerr << "No building found for creating unit: " << m_unitType << std::endl;
 		return;
 	}
 
-	if (unitType == "Rifleman") // Infantry units
+	if (m_unitType == "Rifleman") // Infantry units
 	{
 		RiflemanSquad* newRiflemanSquad = new RiflemanSquad();
-		newRiflemanSquad->setPosition(spawnPosition);
-		newRiflemanSquad->setTargetPosition(spawnPosition + targetPositionOffset);
-		newRiflemanSquad->setEnemyUnits(playerUnits);
-		newRiflemanSquad->setEnemyBuildings(placedPlayerBuildings);
+		newRiflemanSquad->setPosition(m_spawnPosition);
+		newRiflemanSquad->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newRiflemanSquad->setEnemyUnits(m_playerUnits);
+		newRiflemanSquad->setEnemyBuildings(m_placedPlayerBuildings);
 
-		enemyUnits.push_back(newRiflemanSquad);
+		m_enemyUnits.push_back(newRiflemanSquad);
 	}
-	else if (unitType == "Harvester") // Vehicle units
+	else if (m_unitType == "Harvester") // Vehicle units
 	{
 		Harvester* newHarvester = new Harvester();
-		newHarvester->setPosition(spawnPosition);
-		newHarvester->setTargetPosition(spawnPosition + targetPositionOffset);
-		newHarvester->setBuildings(placedEnemyBuildings);
+		newHarvester->setPosition(m_spawnPosition);
+		newHarvester->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newHarvester->setBuildings(m_placedEnemyBuildings);
 		newHarvester->setTiles(m_levelEditor.m_tiles);
 		newHarvester->m_isEnemy = true;
-		newHarvester->currentState = newHarvester->MovingToResource;
+		newHarvester->m_currentState = newHarvester->MovingToResource;
 
-		enemyUnits.push_back(newHarvester);
+		m_enemyUnits.push_back(newHarvester);
 	}
-	else if (unitType == "Buggy")
+	else if (m_unitType == "Buggy")
 	{
 		Buggy* newBuggy = new Buggy();
-		newBuggy->setPosition(spawnPosition);
-		newBuggy->setTargetPosition(spawnPosition + targetPositionOffset);
-		newBuggy->setEnemyUnits(playerUnits);
-		newBuggy->setEnemyBuildings(placedPlayerBuildings);
+		newBuggy->setPosition(m_spawnPosition);
+		newBuggy->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newBuggy->setEnemyUnits(m_playerUnits);
+		newBuggy->setEnemyBuildings(m_placedPlayerBuildings);
 
-		enemyUnits.push_back(newBuggy);
+		m_enemyUnits.push_back(newBuggy);
 	}
-	else if (unitType == "TankAurora")
+	else if (m_unitType == "TankAurora")
 	{
 		TankAurora* newTankAurora = new TankAurora();
-		newTankAurora->setPosition(spawnPosition);
-		newTankAurora->setTargetPosition(spawnPosition + targetPositionOffset);
-		newTankAurora->setEnemyUnits(playerUnits);
+		newTankAurora->setPosition(m_spawnPosition);
+		newTankAurora->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newTankAurora->setEnemyUnits(m_playerUnits);
 
-		enemyUnits.push_back(newTankAurora);
+		m_enemyUnits.push_back(newTankAurora);
 	}
-	else if (unitType == "Hammerhead")
+	else if (m_unitType == "Hammerhead")
 	{
 		HammerHead* newHammerHead = new HammerHead();
-		newHammerHead->setPosition(spawnPosition);
-		newHammerHead->setTargetPosition(spawnPosition + targetPositionOffset);
-		newHammerHead->setEnemyUnits(playerUnits);
-		newHammerHead->setEnemyBuildings(placedPlayerBuildings);
+		newHammerHead->setPosition(m_spawnPosition);
+		newHammerHead->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newHammerHead->setEnemyUnits(m_playerUnits);
+		newHammerHead->setEnemyBuildings(m_placedPlayerBuildings);
 
-		enemyUnits.push_back(newHammerHead);
+		m_enemyUnits.push_back(newHammerHead);
 	}
-	else if (unitType == "Firehawk")
+	else if (m_unitType == "Firehawk")
 	{
 		Firehawk* newFirehawk = new Firehawk();
-		newFirehawk->setPosition(spawnPosition);
-		newFirehawk->setTargetPosition(spawnPosition + targetPositionOffset);
-		newFirehawk->setEnemyUnits(playerUnits);
-		newFirehawk->setEnemyBuildings(placedPlayerBuildings);
+		newFirehawk->setPosition(m_spawnPosition);
+		newFirehawk->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
+		newFirehawk->setEnemyUnits(m_playerUnits);
+		newFirehawk->setEnemyBuildings(m_placedPlayerBuildings);
 
-		enemyUnits.push_back(newFirehawk);
+		m_enemyUnits.push_back(newFirehawk);
 	}
 }
 
+/// <summary>
+/// This create the enemy harvester unit this goes along side with the refinery building
+/// </summary>
 void Game::createEnemyHarvesterUnit()
 {
 	sf::Vector2f targetPositionOffset = sf::Vector2f(0, 60);
@@ -1650,22 +1738,25 @@ void Game::createEnemyHarvesterUnit()
 	Harvester* newHarvester = new Harvester();
 	newHarvester->setPosition(enemyRefineryBuildingPosition);
 	newHarvester->setTargetPosition(enemyRefineryBuildingPosition + targetPositionOffset);
-	newHarvester->setBuildings(placedEnemyBuildings);
+	newHarvester->setBuildings(m_placedEnemyBuildings);
 	newHarvester->setTiles(m_levelEditor.m_tiles);
 	newHarvester->m_isEnemy = true;
-	newHarvester->currentState = newHarvester->MovingToResource;
+	newHarvester->m_currentState = newHarvester->MovingToResource;
 
-	enemyUnits.push_back(newHarvester);
+	m_enemyUnits.push_back(newHarvester);
 }
 
+/// <summary>
+/// Checks how many buildings it has
+/// </summary>
 void Game::updateBuildingCounts()
 {
-	for (auto& count : enemyBuildingCounts)
+	for (auto& count : m_enemyBuildingCounts)
 	{
 		count.second = 0;
 	}
 
-	enemyBuildingCounts =
+	m_enemyBuildingCounts =
 	{
 		{BuildingType::Refinery, 0},
 		{BuildingType::Headquarters, 0},
@@ -1675,31 +1766,34 @@ void Game::updateBuildingCounts()
 	};
 
 	// Iterate over all placed enemy buildings and increment the count for each type
-	for (const auto& building : placedEnemyBuildings)
+	for (const auto& building : m_placedEnemyBuildings)
 	{
 		if (dynamic_cast<Refinery*>(building) != nullptr)
 		{
-			enemyBuildingCounts[BuildingType::Refinery]++;
+			m_enemyBuildingCounts[BuildingType::Refinery]++;
 		}
 		else if (dynamic_cast<Headquarters*>(building) != nullptr) 
 		{
-			enemyBuildingCounts[BuildingType::Headquarters]++;
+			m_enemyBuildingCounts[BuildingType::Headquarters]++;
 		}
 		else if (dynamic_cast<Barracks*>(building) != nullptr)
 		{
-			enemyBuildingCounts[BuildingType::Barracks]++;
+			m_enemyBuildingCounts[BuildingType::Barracks]++;
 		}
 		else if (dynamic_cast<WarFactory*>(building) != nullptr)
 		{
-			enemyBuildingCounts[BuildingType::WarFactory]++;
+			m_enemyBuildingCounts[BuildingType::WarFactory]++;
 		}
 		else if (dynamic_cast<AirCraft*>(building) != nullptr)
 		{
-			enemyBuildingCounts[BuildingType::AirCraft]++;
+			m_enemyBuildingCounts[BuildingType::AirCraft]++;
 		}
 	}
 }
 
+/// <summary>
+/// This is to decie which building it should be placing
+/// </summary>
 void Game::decideNextEnemyBuilding()
 {
 	updateBuildingCounts();
@@ -1709,35 +1803,39 @@ void Game::decideNextEnemyBuilding()
 	const int maxWarFactories = 2;
 	const int maxAirCrafts = 2;
 
-	if (enemyBuildingCounts[BuildingType::Refinery] < maxRefineries)
+	if (m_enemyBuildingCounts[BuildingType::Refinery] < maxRefineries)
 	{
 		placeEnemyBuilding(BuildingType::Refinery);
 	}
-	else if (enemyBuildingCounts[BuildingType::Barracks] < maxBarracks)
+	else if (m_enemyBuildingCounts[BuildingType::Barracks] < maxBarracks)
 	{
 		placeEnemyBuilding(BuildingType::Barracks);
 	}
-	else if (enemyBuildingCounts[BuildingType::WarFactory] < maxWarFactories)
+	else if (m_enemyBuildingCounts[BuildingType::WarFactory] < maxWarFactories)
 	{
 		placeEnemyBuilding(BuildingType::WarFactory);
 	}
-	else if (enemyBuildingCounts[BuildingType::AirCraft] < maxAirCrafts)
+	else if (m_enemyBuildingCounts[BuildingType::AirCraft] < maxAirCrafts)
 	{
 		placeEnemyBuilding(BuildingType::AirCraft);
 	}
 }
 
-void Game::placeEnemyBuilding(BuildingType type)
+/// <summary>
+/// Decides which building type to place
+/// </summary>
+/// <param name="m_type"></param>
+void Game::placeEnemyBuilding(BuildingType m_type)
 {
-	sf::Vector2f position = findPlacementPositionNearExistingBuilding();
-	bool createHarvesterUnit = false;
+	sf::Vector2f m_position = findPlacementPositionNearExistingBuilding();
+	bool m_createHarvesterUnit = false;
 
-	switch (type)
+	switch (m_type)
 	{
 	case BuildingType::Refinery:
 		newEnemyBuilding = new Refinery();
-		enemyRefineryBuildingPosition = position;
-		createHarvesterUnit = true;
+		enemyRefineryBuildingPosition = m_position;
+		m_createHarvesterUnit = true;
 		break;
 	case BuildingType::Barracks:
 		newEnemyBuilding = new Barracks();
@@ -1754,99 +1852,106 @@ void Game::placeEnemyBuilding(BuildingType type)
 
 	if (newEnemyBuilding)
 	{
-		newEnemyBuilding->setPosition(position);
-		placedEnemyBuildings.push_back(newEnemyBuilding);
-		enemyBuildingStatCount++;
+		newEnemyBuilding->setPosition(m_position);
+		m_placedEnemyBuildings.push_back(newEnemyBuilding);
+		m_enemyBuildingStatCount++;
 	}
-	if (createHarvesterUnit)
+	if (m_createHarvesterUnit)
 	{
 		createEnemyHarvesterUnit();
 	}
 }
 
+/// <summary>
+/// Find a suitable place to create a building
+/// </summary>
+/// <returns></returns>
 sf::Vector2f Game::findPlacementPositionNearExistingBuilding()
 {
-	const int maxAttempts = 500; // Limit the number of attempts to avoid an infinite loop
-	int attempts = 0;
-	bool intersectsBuilding = false;
-	bool intersectsWallTile = false;
-	float buildingWidth = 100.0f;
-	float buildingHeight = 100.0f;
-	sf::FloatRect mapBounds(100, 100, mapWidth, mapHeight);
+	const int m_maxAttempts = 500; // Limit the number of attempts to avoid an infinite loop
+	int m_attempts = 0;
+	bool m_intersectsBuilding = false;
+	bool m_intersectsWallTile = false;
+	float m_buildingWidth = 100.0f;
+	float m_buildingHeight = 100.0f;
+	sf::FloatRect m_mapBounds(100, 100, m_mapWidth, m_mapHeight);
 
-	while (attempts < maxAttempts)
+	while (m_attempts < m_maxAttempts)
 	{
-		attempts++;
+		m_attempts++;
 
-		if (placedEnemyBuildings.empty()) 
+		if (m_placedEnemyBuildings.empty()) 
 		{
 			std::cout << "No enemy buildings found :( what the hell" << std::endl;
 		}
 
-		int index = rand() % placedEnemyBuildings.size();
-		Building* baseBuilding = placedEnemyBuildings[index];
+		int m_index = rand() % m_placedEnemyBuildings.size();
+		Building* baseBuilding = m_placedEnemyBuildings[m_index];
 
 		// Calculate a random position within the placement radius of the selected building
-		float radius = baseBuilding->getPlacementRadius().getRadius();
-		sf::Vector2f centerPosition = baseBuilding->getPosition();
-		float angle = static_cast<float>(rand() % 360) * (3.14159f / 180.0f);
-		float distanceFromCenter = static_cast<float>(rand() % static_cast<int>(radius));
-		sf::Vector2f newPosition = centerPosition + sf::Vector2f(distanceFromCenter * cos(angle), distanceFromCenter * sin(angle));
-		//sf::FloatRect newBuildingRect = newEnemyBuilding->getBuildingSprite().getGlobalBounds();
-		sf::FloatRect buildingBounds(newPosition.x - buildingWidth / 2, newPosition.y - buildingHeight / 2, buildingWidth, buildingHeight);
+		float m_radius = baseBuilding->getPlacementRadius().getRadius();
+		sf::Vector2f m_centerPosition = baseBuilding->getPosition();
+		float m_angle = static_cast<float>(rand() % 360) * (3.14159f / 180.0f);
+		float m_distanceFromCenter = static_cast<float>(rand() % static_cast<int>(m_radius));
+		sf::Vector2f m_newPos = m_centerPosition + sf::Vector2f(m_distanceFromCenter * cos(m_angle), m_distanceFromCenter * sin(m_angle));
+		//sf::FloatRect newBuildingRect = baseBuilding->getBuildingSprite().getGlobalBounds();
+		sf::FloatRect m_buildingBounds(m_newPos.x - m_buildingWidth / 2, m_newPos.y - m_buildingHeight / 2, m_buildingWidth, m_buildingHeight);
 
-		bool isInsideMap = mapBounds.contains(buildingBounds.left, buildingBounds.top) &&
-			mapBounds.contains(buildingBounds.left + buildingBounds.width, buildingBounds.top + buildingBounds.height);
+		bool m_isInsideMap = m_mapBounds.contains(m_buildingBounds.left, m_buildingBounds.top) &&
+			m_mapBounds.contains(m_buildingBounds.left + m_buildingBounds.width, m_buildingBounds.top + m_buildingBounds.height);
 
 		// Check for intersection with existing buildings
-		intersectsBuilding = false;
-		for (const auto& building : placedEnemyBuildings) 
+		m_intersectsBuilding = false;
+		for (const auto& building : m_placedEnemyBuildings) 
 		{
 			sf::FloatRect existingBuildingRect = building->getBuildingSprite().getGlobalBounds();
 
-			if (buildingBounds.intersects(existingBuildingRect))
+			if (m_buildingBounds.intersects(existingBuildingRect))
 			{
-				intersectsBuilding = true;
+				m_intersectsBuilding = true;
 				break;
 			}
 		}
 
 		// Check for intersection with wall tiles
-		intersectsWallTile = false;
+		m_intersectsWallTile = false;
 		for (const auto& row : m_levelEditor.m_tiles)
 		{
 			for (const auto& tile : row)
 			{
-				if (tile.isWall)
+				if (tile.m_isWall)
 				{
 					sf::FloatRect wallTileRect = tile.m_tile.getGlobalBounds();
 
-					if (buildingBounds.intersects(wallTileRect))
+					if (m_buildingBounds.intersects(wallTileRect))
 					{
-						intersectsWallTile = true;
+						m_intersectsWallTile = true;
 						break;
 					}
 				}
 			}
-			if (intersectsWallTile) 
+			if (m_intersectsWallTile) 
 			{
 				break;
 			}
 		}
 
-		if (!intersectsBuilding && !intersectsWallTile && isInsideMap) 
+		if (!m_intersectsBuilding && !m_intersectsWallTile && m_isInsideMap) 
 		{
-			std::cout << newPosition.x << " " << newPosition.y << std::endl;
-			return newPosition;
+			std::cout << m_newPos.x << " " << m_newPos.y << std::endl;
+			return m_newPos;
 		}
 	}
-	std::cout << "Could not find a valid position after " << maxAttempts << " attempts" << std::endl;
+	std::cout << "Could not find a valid position after " << m_maxAttempts << " attempts" << std::endl;
 	return sf::Vector2f(-1, -1);
 }
 
+/// <summary>
+/// Moves the enemies towards the player units or buildings
+/// </summary>
 void Game::moveEnemyUnits()
 {
-	for (auto& enemyUnit : enemyUnits) 
+	for (auto& enemyUnit : m_enemyUnits) 
 	{
 		if (!enemyUnit)
 		{ 
@@ -1863,14 +1968,14 @@ void Game::moveEnemyUnits()
 	}
 }
 
-sf::Vector2f Game::findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosition)
+sf::Vector2f Game::findNearestPlayerObjectPosition(const sf::Vector2f& m_enemyPosition)
 {
 	sf::Vector2f nearestTargetPosition;
 	float nearestDistanceSquared = std::numeric_limits<float>::max();
 
-	for (const auto& playerUnit : playerUnits) 
+	for (const auto& playerUnit : m_playerUnits) 
 	{
-		float distanceSquared = distanceSquaredBetweenPoints(enemyPosition, playerUnit->getPosition());
+		float distanceSquared = distanceBetweenPoints(m_enemyPosition, playerUnit->getPosition());
 		if (distanceSquared < nearestDistanceSquared) 
 		{
 			nearestDistanceSquared = distanceSquared;
@@ -1878,9 +1983,9 @@ sf::Vector2f Game::findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosi
 		}
 	}
 
-	for (const auto& building : placedPlayerBuildings)
+	for (const auto& building : m_placedPlayerBuildings)
 	{
-		float distanceSquared = distanceSquaredBetweenPoints(enemyPosition, building->getPosition());
+		float distanceSquared = distanceBetweenPoints(m_enemyPosition, building->getPosition());
 		if (distanceSquared < nearestDistanceSquared)
 		{
 			nearestDistanceSquared = distanceSquared;
@@ -1891,26 +1996,30 @@ sf::Vector2f Game::findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosi
 	return nearestTargetPosition;
 }
 
-float Game::distanceSquaredBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2)
+float Game::distanceBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2)
 {
 	return (p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y);
 }
 
-void Game::enemyExploring(sf::Time deltaTime)
+/// <summary>
+/// Makes the enemies explore the map
+/// </summary>
+/// <param name="t_deltaTime"></param>
+void Game::enemyExploring(sf::Time t_deltaTime)
 {
-	static sf::Time exploreTimer = sf::Time::Zero;
-	const sf::Time exploreInterval = sf::seconds(8);
+	static sf::Time m_exploreTimer = sf::Time::Zero;
+	const sf::Time m_exploreInterval = sf::seconds(8);
 
-	exploreTimer += deltaTime;
+	m_exploreTimer += t_deltaTime;
 
-	if (exploreTimer >= exploreInterval)
+	if (m_exploreTimer >= m_exploreInterval)
 	{
-		exploreTimer -= exploreInterval;
-		auto validTargets = getValidExplorationTargets();
+		m_exploreTimer -= m_exploreInterval;
+		auto validTargets = getValidExplorationTargets(); // check for valid targets to explore
 
 		if (!validTargets.empty()) 
 		{
-			for (auto& enemyUnit : enemyUnits)
+			for (auto& enemyUnit : m_enemyUnits)
 			{
 				if (!enemyUnit)
 				{
@@ -1923,28 +2032,32 @@ void Game::enemyExploring(sf::Time deltaTime)
 				}
 
 				// Select a random target position from the valid targets
-				int randomIndex = rand() % validTargets.size();
-				sf::Vector2f targetPos = validTargets[randomIndex];
-				std::cout << targetPos.x << " " << targetPos.y << std::endl;
-				enemyUnit->moveTo(targetPos);
+				int m_randomIndex = rand() % validTargets.size();
+				sf::Vector2f m_targetPos = validTargets[m_randomIndex];
+				//std::cout << m_targetPos.x << " " << m_targetPos.y << std::endl;
+				enemyUnit->moveTo(m_targetPos);
 			}
 		}
 	}
 }
 
-void Game::enemyGroupUnits(sf::Time deltaTime)
+/// <summary>
+/// Makes a group of enemies come together
+/// </summary>
+/// <param name="t_deltaTime"></param>
+void Game::enemyGroupUnits(sf::Time t_deltaTime)
 {
-	static sf::Time groupUnitsTimer = sf::Time::Zero;
-	const sf::Time groupInterval = sf::seconds(6);
+	static sf::Time m_groupUnitsTimer = sf::Time::Zero;
+	const sf::Time m_groupInterval = sf::seconds(6);
 
-	groupUnitsTimer += deltaTime;
+	m_groupUnitsTimer += t_deltaTime;
 
-	sf::Vector2f headquartersPos = findEnemyHeadquartersPosition();
-	sf::Vector2f rallyPoint = headquartersPos + sf::Vector2f(-200, -200); 
+	sf::Vector2f m_headquartersPos = findEnemyHeadquartersPosition(); // to make the rally point to be beside the enemy base 
+	sf::Vector2f m_rallyPoint = m_headquartersPos + sf::Vector2f(-200, -200); 
 
-	if (groupUnitsTimer >= groupInterval)
+	if (m_groupUnitsTimer >= m_groupInterval)
 	{
-		for (auto& enemyUnit : enemyUnits)
+		for (auto& enemyUnit : m_enemyUnits)
 		{
 			if (!enemyUnit)
 			{
@@ -1953,24 +2066,28 @@ void Game::enemyGroupUnits(sf::Time deltaTime)
 			// Exclude non-combat units like the Harvester from being grouped
 			if (dynamic_cast<Harvester*>(enemyUnit) == nullptr)
 			{
-				enemyUnit->moveTo(rallyPoint);
+				enemyUnit->moveTo(m_rallyPoint);
 			}
 		}
-		groupUnitsTimer -= groupInterval;
+		m_groupUnitsTimer -= m_groupInterval;
 	}
 }
 
-void Game::enemyAttacking(sf::Time deltaTime)
+/// <summary>
+/// orders the enemy to attack the player units/buildings
+/// </summary>
+/// <param name="t_deltaTime"></param>
+void Game::enemyAttacking(sf::Time t_deltaTime)
 {
-	static sf::Time moveUnitsTimer = sf::Time::Zero;
-	const sf::Time moveInterval = sf::seconds(2);
+	static sf::Time m_moveUnitsTimer = sf::Time::Zero;
+	const sf::Time m_moveInterval = sf::seconds(2);
 
-	moveUnitsTimer += deltaTime;
+	m_moveUnitsTimer += t_deltaTime;
 
-	if (moveUnitsTimer >= moveInterval)
+	if (m_moveUnitsTimer >= m_moveInterval)
 	{
 		moveEnemyUnits(); // Move enemy units
-		moveUnitsTimer -= moveInterval;
+		m_moveUnitsTimer -= m_moveInterval;
 	}
 }
 
@@ -1980,20 +2097,20 @@ std::vector<sf::Vector2f> Game::getValidExplorationTargets()
 	{
 		for (const auto& tile : row) 
 		{
-			if (!tile.isWall)
+			if (!tile.m_isWall)
 			{
 				sf::Vector2f position = tile.m_tile.getPosition();
-				validTargets.push_back(position);
+				m_validTargets.push_back(position);
 			}
 		}
 	}
 
-	return validTargets;
+	return m_validTargets;
 }
 
 sf::Vector2f Game::findEnemyHeadquartersPosition() 
 {
-	for (const auto& building : placedEnemyBuildings) 
+	for (const auto& building : m_placedEnemyBuildings) 
 	{
 		if (dynamic_cast<Headquarters*>(building) != nullptr) 
 		{
@@ -2010,57 +2127,63 @@ sf::Vector2f Game::findEnemyHeadquartersPosition()
 /// </summary>
 /// <param name="position"></param>
 /// <returns></returns>
-bool Game::isPositionWithinMap(const sf::Vector2f& position)
+bool Game::checkPositionWithinMap(const sf::Vector2f& m_position)
 {
 	const float mapLeft = 0;
 	const float mapTop = 0;
 	const float mapRight = 2500; 
 	const float mapBottom = 2500; 
 
-	return position.x >= mapLeft && position.x <= mapRight &&
-		position.y >= mapTop && position.y <= mapBottom;
+	return m_position.x >= mapLeft && m_position.x <= mapRight &&
+		m_position.y >= mapTop && m_position.y <= mapBottom;
 }
 
+/// <summary>
+/// To reset the game and undo all the properties for a new game
+/// </summary>
 void Game::gameReset()
 {
 	resetView();
-	viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_viewCenter = sf::Vector2f(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
 	m_levelEditor.resetFogOfWar();
 	m_gameWinLose = WinLoseState::NONE;
 	Global::playerCurrency = 5000;
 	Global::enemyCurrency = 10000;
-	playerUnitStatCount = 0;
-	playerBuildingStatCount = 0;
-	enemyUnitStatCount = 0;
-	enemyBuildingStatCount = 0;
+	m_playerUnitStatCount = 0;
+	m_playerBuildingStatCount = 0;
+	m_enemyUnitStatCount = 0;
+	m_enemyBuildingStatCount = 0;
 	clearGameEntities();
 	createBase();
 	createEnemyStarterBase();
 }
 
+/// <summary>
+/// Clears all game enities such as units and buildings
+/// </summary>
 void Game::clearGameEntities()
 {
-	for (auto building : placedPlayerBuildings) 
+	for (auto building : m_placedPlayerBuildings) 
 	{
 		delete building; 
 	}
-	placedPlayerBuildings.clear();
+	m_placedPlayerBuildings.clear();
 
-	for (auto building : placedEnemyBuildings) 
+	for (auto building : m_placedEnemyBuildings) 
 	{
 		delete building;
 	}
-	placedEnemyBuildings.clear();
+	m_placedEnemyBuildings.clear();
 
-	for (auto unit : playerUnits)
+	for (auto unit : m_playerUnits)
 	{
 		delete unit;
 	}
-	playerUnits.clear();
+	m_playerUnits.clear();
 
-	for (auto unit : enemyUnits)
+	for (auto unit : m_enemyUnits)
 	{
 		delete unit;
 	}
-	enemyUnits.clear();
+	m_enemyUnits.clear();
 }

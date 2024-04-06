@@ -8,7 +8,7 @@ public:
 	RiflemanSquad();
 	~RiflemanSquad();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 	void render(sf::RenderWindow& m_window) override;
 
 	void initSquad();
@@ -23,25 +23,25 @@ private:
 	void squadEntityRemoval() override;
 	void squadEntityRegain() override;
 
-	void aimAt(const std::vector<Unit*>& enemyUnits);
+	void aimAt(const std::vector<Unit*>& m_enemyUnits);
 
 	std::vector<sf::Sprite> m_entities;
 	std::vector<sf::Vector2f> m_offsets;
 
-	std::vector<sf::Vector2f> targetPositions;
+	std::vector<sf::Vector2f> m_targetPositions;
 
-	sf::Vector2f previousPosition;
+	sf::Vector2f m_previousPosition;
 
-	int numberOfSoldiers = 4;
+	int m_numberOfSoldiers = 4;
 
-	float scatterRadius = 30.0f;
+	float m_scatterRadius = 30.0f;
 
-	int shotsFired = 0;
-	int clipSize = 4; 
-	float reloadTime = 2.0f;
-	float fireRate = 0.2f;
-	float fireTimer = 0.0f;
-	float reloadTimer = 0.0f;
-	bool isReloading = false;
+	int m_shotsFired = 0;
+	int m_clipSize = 4; 
+	float m_reloadTime = 2.0f;
+	float m_fireRate = 0.2f;
+	float m_fireTimer = 0.0f;
+	float m_reloadTimer = 0.0f;
+	bool m_isReloading = false;
 };
 

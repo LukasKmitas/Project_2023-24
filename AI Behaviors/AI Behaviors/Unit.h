@@ -26,27 +26,27 @@ public:
     virtual void render(sf::RenderWindow& m_window);
 
     void setPosition(const sf::Vector2f& m_position);
-    void moveTo(const sf::Vector2f& targetPos);
-    void setSelected(bool selected);
-    void setTargetPosition(const sf::Vector2f& targetPos);
-    void takeDamage(float damageAmount);
-    void addHealth(float healthAmount);
-    void applySlowEffect(float speedFactor, float duration, float postSlowWait);
+    void moveTo(const sf::Vector2f& m_targetPos);
+    void setSelected(bool m_selected);
+    void setTargetPosition(const sf::Vector2f& m_targetPos);
+    void takeDamage(float m_damageAmount);
+    void addHealth(float m_healthAmount);
+    void applySlowEffect(float m_speedFactor, float m_duration, float m_postSlowWait);
 
-    void setEnemyUnits(std::vector<Unit*>& enemyUnits);
-    void setEnemyBuildings(std::vector<Building*>& enemyBuildings);
+    void setEnemyUnits(std::vector<Unit*>& m_enemyUnits);
+    void setEnemyBuildings(std::vector<Building*>& m_enemyBuildings);
 
     const sf::Sprite& getSprite() const;
 
     sf::Vector2f getPosition() const;
-    sf::Vector2f normalize(const sf::Vector2f source);
-    sf::Vector2f steerTowards(sf::Vector2f target);
-    sf::Vector2f rotateVector(sf::Vector2f vector, float angleDegrees);
+    sf::Vector2f normalize(const sf::Vector2f m_source);
+    sf::Vector2f steerTowards(sf::Vector2f m_target);
+    sf::Vector2f rotateVector(sf::Vector2f m_vector, float m_angleDegrees);
 
-    std::vector<Bullet> bullets;
-    std::vector<Missile> missiles;
+    std::vector<Bullet> m_bullets;
+    std::vector<Missile> m_missiles;
 
-    float angleFromVector(const sf::Vector2f& vector);
+    float angleFromVector(const sf::Vector2f& m_vector);
     float getViewRadius() const;
     float distance(const sf::Vector2f& a, const sf::Vector2f& b);
     float magnitude(const sf::Vector2f& v) const;
@@ -59,7 +59,7 @@ public:
     bool checkAffordability();
     bool isActive() const;
 
-    int unitIndex = 0;
+    int m_unitIndex = 0;
 
     bool isSelected = false;
     bool m_active = true;
@@ -70,16 +70,16 @@ protected:
     UnitType m_unitType;
     ParticleSystem m_particleSystem;
 
-    std::vector<Unit*>* enemyUnits = nullptr;
-    std::vector<Building*>* enemyBuildings = nullptr;
-    Unit* closestEnemy = nullptr;
-    Building* closestBuilding = nullptr;
+    std::vector<Unit*>* m_enemyUnits = nullptr;
+    std::vector<Building*>* m_enemyBuildings = nullptr;
+    Unit* m_closestEnemy = nullptr;
+    Building* m_closestBuilding = nullptr;
 
     void initView();
     void initHealthBar();
     void initShader();
 
-    void avoidCollisions(std::vector<Unit*>& allyUnits);
+    void avoidCollisions(std::vector<Unit*>& m_allyUnits);
     void orientSpriteToMovement(sf::Time t_deltaTime);
 
     virtual void squadEntityRemoval();
@@ -95,7 +95,7 @@ protected:
     sf::Sprite m_weaponSprite;
 
     sf::CircleShape m_viewCircleShape;
-    sf::Shader glowShader;
+    sf::Shader m_glowShader;
 
     int m_cost = 100;
     float m_health = 100.0f;
@@ -109,9 +109,9 @@ protected:
     float m_maxForce = 1.0f;
     float m_rotationSpeed = 250.0f;
     float m_bulletSpeed = 100;
-    float rotationSpeedDegreesPerSecond = 90.0f;
-    float closestDistance;
-    float closestBuildingDistance;
+    float m_rotationSpeed = 90.0f;
+    float m_closestDistance;
+    float m_closestBuildingDistance;
     float m_arrivalTolerance = 5.0f;
 
     const float PI = 3.14159265358979323846f;
@@ -122,19 +122,18 @@ protected:
     sf::Vector2f m_position;
     sf::Vector2f m_targetPosition;
     sf::Vector2f m_velocity;
-    sf::Vector2f directionToEnemy;
+    sf::Vector2f m_directionToEnemy;
     sf::Vector2f m_acceleration = sf::Vector2f(0.0f, 0.0f);
 
-
-    sf::Clock slowEffectClock;
-    bool isSlowed = false;
-    bool isGraduallySlowed = false;
-    bool inPostSlowWait = false;
-    float slowDownStartTime = 0.0f;
-    float minimumSpeedFactor = 0.1f;
-    float slowEffectDuration = 0.0f;
-    float originalSpeed = 100.0f; 
-    float postSlowWaitDuration = 3.0f;
+    sf::Clock m_slowEffectClock;
+    bool m_isSlowed = false;
+    bool m_isGraduallySlowed = false;
+    bool m_inPostSlowWait = false;
+    float m_slowDownStartTime = 0.0f;
+    float m_minimumSpeedFactor = 0.1f;
+    float m_slowEffectDuration = 0.0f;
+    float m_originalSpeed = 100.0f; 
+    float m_postSlowWaitDuration = 3.0f;
 
 };
 

@@ -11,7 +11,7 @@ AirCraft::~AirCraft()
 {
 }
 
-void AirCraft::update(sf::Time deltaTime)
+void AirCraft::update(sf::Time t_deltaTime)
 {
 }
 
@@ -20,6 +20,9 @@ void AirCraft::render(sf::RenderWindow& m_window) const
 	Building::render(m_window);
 }
 
+/// <summary>
+/// initializes the aircraft building
+/// </summary>
 void AirCraft::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Air Control.png"))

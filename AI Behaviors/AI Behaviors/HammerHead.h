@@ -7,23 +7,23 @@ public:
 	HammerHead();
 	~HammerHead();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 	void render(sf::RenderWindow& m_window) override;
 
 private:
 
-	void setupHammerhead();
+	void initHammerhead();
 	
 	void spawnParticleExhaustEffect();
 
 	void movement(sf::Time t_deltaTime);
-	void aimWeapons(const std::vector<Unit*>& enemyUnits);
+	void aimWeapons(const std::vector<Unit*>& m_enemyUnits);
 	void shootAtEnemy();
 
 	sf::Sprite m_leftGunSprite;
 	sf::Sprite m_rightGunSprite;
 
-	float fireRate = 0.2f; 
-	float fireTimer = 0.0f; 
-	float bulletSpeed = 300.0f;
+	float m_fireRate = 0.2f; 
+	float m_fireTimer = 0.0f; 
+	float m_bulletSpeed = 300.0f;
 };

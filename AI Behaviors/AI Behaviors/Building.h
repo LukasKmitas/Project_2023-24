@@ -13,7 +13,7 @@ public:
     virtual void update(sf::Time t_deltaTime);
     virtual void render(sf::RenderWindow& m_window) const;
 
-    void takeDamage(float damageAmount);
+    void takeDamage(float m_damageAmount);
     void setPosition(const sf::Vector2f& m_position);
 
     sf::Vector2f getPosition();
@@ -24,7 +24,7 @@ public:
 
     bool checkAffordability();
 
-    void setPlacementRadiusSize(float radius);
+    void setPlacementRadiusSize(float m_radius);
 
     const sf::Sprite& getBuildingSprite() const;
     const sf::Texture& getBuildingTexture() const;
@@ -40,14 +40,14 @@ protected:
 
     sf::CircleShape m_placementRadius;
 
-    sf::RectangleShape healthBar;
-    sf::RectangleShape healthBarBackground;
+    sf::RectangleShape m_healthBar;
+    sf::RectangleShape m_healthBarBackground;
 
     int m_health = 100;
     int m_maxHealth = 100;
     int m_cost = 100;
-    static int buildingCount;
-    int buildingID = 0;
+    static int m_buildingCount;
+    int m_buildingID = 0;
 
     bool m_placementRadiusVisible = false;
 };

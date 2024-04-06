@@ -36,16 +36,16 @@ private:
 	Tile m_tiles;
 	LevelEditor m_levelEditor;
 	LevelLoader m_levelLoader;
-	GUI m_gui{ placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
+	GUI m_gui{ m_placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	ParticleSystem m_particleSystem;
 	NeuralNetworks m_neural_network;
 	Unit* m_selectedUnit = nullptr;
-	std::vector<Building*> placedPlayerBuildings;
-	std::vector<Building*> placedEnemyBuildings;
-	std::vector<Unit*> playerUnits;
-	std::vector<Unit*> enemyUnits;
-	std::map<BuildingType, int> enemyBuildingCounts;
+	std::vector<Building*> m_placedPlayerBuildings;
+	std::vector<Building*> m_placedEnemyBuildings;
+	std::vector<Unit*> m_playerUnits;
+	std::vector<Unit*> m_enemyUnits;
+	std::map<BuildingType, int> m_enemyBuildingCounts;
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
@@ -53,73 +53,75 @@ private:
 	void render();
 
 	// Player stuff 
-	void createBuilding(sf::RenderWindow& window);
+	void createBuilding(sf::RenderWindow& m_window);
 	void createBase();
 	void updatePlayerAssets(sf::Time t_deltaTime);
+	void createUnit();
+	void selectUnitAt(const sf::Vector2f& m_mousePos);
+	void selectUnitsInBox();
 
 	void saveLevel();
-	void loadLevel(const std::string& filename);
+	void loadLevel(const std::string& m_filename);
 	void checkVictoryConditions();
 
 	// Enemy AI stuff
-	EnemyAIState enemyAIState = EnemyAIState::Exploring;
-	sf::Time enemyStateTimer = sf::seconds(0);
+	EnemyAIState m_enemyAIState = EnemyAIState::Exploring;
 	void createEnemyStarterBase();
 	void updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime);
-	void updateEnemyAIUnitDecisionState(sf::Time deltaTime);
+	void updateEnemyAIUnitDecisionState(sf::Time t_deltaTime);
 	void updateEnemyAssets(sf::Time t_deltaTime);
-	void createEnemyUnit(const std::string& unitType);
+	void createEnemyUnit(const std::string& m_unitType);
 	void createEnemyHarvesterUnit();
 	void updateBuildingCounts();
 	void decideNextEnemyBuilding();
-	void placeEnemyBuilding(BuildingType type);
-	sf::Vector2f findPlacementPositionNearExistingBuilding();
+	void placeEnemyBuilding(BuildingType m_type);
 	void moveEnemyUnits();
-	sf::Vector2f findNearestPlayerObjectPosition(const sf::Vector2f& enemyPosition);
-	float distanceSquaredBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2);
-	sf::Vector2f enemyRefineryBuildingPosition;
-	Building* newEnemyBuilding = nullptr;
-	void enemyExploring(sf::Time deltaTime);
-	void enemyGroupUnits(sf::Time deltaTime);
-	void enemyAttacking(sf::Time deltaTime);
+	void enemyExploring(sf::Time t_deltaTime);
+	void enemyGroupUnits(sf::Time t_deltaTime);
+	void enemyAttacking(sf::Time t_deltaTime);
+	bool checkPositionWithinMap(const sf::Vector2f& m_position);
+	float distanceBetweenPoints(const sf::Vector2f& p1, const sf::Vector2f& p2);
+	sf::Vector2f findNearestPlayerObjectPosition(const sf::Vector2f& m_enemyPosition);
+	sf::Vector2f findPlacementPositionNearExistingBuilding();
 	std::vector<sf::Vector2f> getValidExplorationTargets();
 	sf::Vector2f findEnemyHeadquartersPosition();
-	bool isPositionWithinMap(const sf::Vector2f& position);
-	std::vector<sf::Vector2f> validTargets;
+	Building* newEnemyBuilding = nullptr;
+	sf::Vector2f enemyRefineryBuildingPosition;
+	std::vector<sf::Vector2f> m_validTargets;
+	sf::Time m_enemyStateTimer = sf::seconds(0);
 
-	void moveCamera(sf::Vector2f mousePosition);
+	// m_windows/camera/view stuff
+	void moveCamera(sf::Vector2f m_mousePosition);
 	void updateViewWithMouse();
 	void resetView();
 	void resetZoom();
 
-	void initParticles();
-	void initializeNeuralNetwork();
-
+	//Neural networks stuff
+	void initNeuralNetwork();
 	void updateNeuralNetwork();
-	void drawNeuralNetwork(sf::RenderWindow& window);
+	void drawNeuralNetwork(sf::RenderWindow& m_window);
 
-	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& buildings);
-	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& units);
+	// Updates the fog of war 
+	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& m_buildings);
+	void updateFogOfWarBasedOnUnits(const std::vector<Unit*>& m_units);
 
-	void createUnit();
-	void selectUnitAt(const sf::Vector2f& mousePos);
-	void selectUnitsInBox();
-
+	// Particle stuff
+	void initParticles(); 
 	void spawnBubbleParticles();
-	void spawnBulletSparkParticles(const sf::Vector2f& position);
-	void spawnExplosionParticle(const sf::Vector2f& position);
+	void spawnBulletSparkParticles(const sf::Vector2f& m_position);
+	void spawnExplosionParticle(const sf::Vector2f& m_position);
 
 	void initWinLosePanel();
-	void renderWinLosePanel(sf::RenderWindow& window);
-	void handleVictoryPanelInput(const sf::Vector2f& m_mousePosition);
+	void renderWinLosePanel(sf::RenderWindow& m_window);
+	void handleWinLosePanel(const sf::Vector2f& m_mousePosition);
 	
 	void gameReset();
 	void clearGameEntities();
 
-	int calculateGridSize(int numberOfUnits);
+	int calculateGridSize(int m_numberOfUnits);
 
 	sf::RenderWindow m_window;
-	sf::View gameView;
+	sf::View m_gameView;
 	sf::Font m_font;
 	sf::Font m_normalfont;
 
@@ -129,74 +131,73 @@ private:
 	sf::Texture m_cursorTexture;
 	sf::Sprite m_cursorSprite;
 
-	sf::Vector2f viewCenter = gameView.getCenter();
-	sf::Vector2i guiMousePosition;
-	sf::Vector2f worldMousePosition;
-	sf::Vector2f cameraVelocity;
-	const float minZoomLevel = 0.5f;
-	const float maxZoomLevel = 1.5f;
-	float currentZoomLevel = 1.0f;
-	float viewMoveSpeed = 5.0f;
-	float minX = 950;
-	float minY = 530;
-	float maxX = 1550;
-	float maxY = 1970;
-	int mapWidth = 2400;
-	int mapHeight = 2400;
+	sf::Vector2f m_viewCenter = m_gameView.getCenter();
+	sf::Vector2i m_guiMousePosition;
+	sf::Vector2f m_worldMousePosition;
+	sf::Vector2f m_cameraVelocity;
+	const float m_minZoomLevel = 0.5f;
+	const float m_maxZoomLevel = 1.5f;
+	float m_currentZoomLevel = 1.0f;
+	float m_viewMoveSpeed = 5.0f;
+	float m_minX = 950;
+	float m_minY = 530;
+	float m_maxX = 1550;
+	float m_maxY = 1970;
+	int m_mapWidth = 2400;
+	int m_mapHeight = 2400;
 
-	bool isDragging = false;
-	sf::Vector2f dragStart;
-	sf::Vector2f dragEnd;
-	sf::RectangleShape selectionBox;
+	bool m_isDragging = false;
+	sf::Vector2f m_dragStart;
+	sf::Vector2f m_dragEnd;
+	sf::RectangleShape m_selectionBox;
 
 	// Particles variables
-	float angleParticle;
-	float speedParticle;
-	float lifetimeParticle;
-	float sizeParticle;
-	sf::Color colorParticle;
+	float m_angleParticle;
+	float m_speedParticle;
+	float m_lifetimeParticle;
+	float m_sizeParticle;
+	sf::Color m_colorParticle;
 
-	bool levelLoaded = false;
+	bool m_levelLoaded = false;
 	bool m_exitGame;
 
 	// Neural Network stuff
-	int mouse_x;
-	int mouse_y;
-	int outputHeight = 64;
-	int outputWidth = 64;
-	float total_error = 0;
-	float dot_x;
-	float dot_y;
+	int m_mousePosX;
+	int m_mousePosY;
+	int m_outputHeight = 64;
+	int m_outputWidth = 64;
+	float m_totalErrors = 0;
+	float m_dotX;
+	float m_dotY;
 	const int TRAININGS_PER_FRAME = 1000;
-	bool train = false;
-
-	vector_2d errors;
-	std::vector<std::vector<float>> neural_network;
-	std::vector<std::vector<std::vector<float>>> weights;
-	std::array<int, 2> hiddenNeurons = m_neural_network.getHiddenNeurons();
-	std::array<int, 3> biasNeurons = m_neural_network.getBiasNeurons();
-	std::mt19937_64 random_engine;
-	sf::Text errorText;
-	sf::Image outputImage;
-	sf::Sprite outputSprite;
-	sf::Texture outputTexture;
+	bool m_train = false;
+	vector_2d m_errors;
+	std::vector<std::vector<float>> m_neuralNetwork;
+	std::vector<std::vector<std::vector<float>>> m_weights;
+	std::array<int, 2> m_hiddenNeurons = m_neural_network.getHiddenNeurons();
+	std::array<int, 3> m_biasNeurons = m_neural_network.getBiasNeurons();
+	std::mt19937_64 m_random;
+	sf::Text m_errorText;
+	sf::Image m_outputImage;
+	sf::Sprite m_outputSprite;
+	sf::Texture m_outputTexture;
 
 	// Win/Lose stuff
-	bool showWinLosePanel = false;
-	sf::Sprite PanelBackgroundSprite;
-	sf::Texture PanelBackgroundTexture;
-	sf::Text winLoseText;
-	sf::Text playAgainText;
-	sf::Text exitText;
-	sf::RectangleShape playAgainButton;
-	sf::RectangleShape exitButton;
+	bool m_showWinLosePanel = false;
+	sf::Sprite m_panelBackgroundSprite;
+	sf::Texture m_panelBackgroundTexture;
+	sf::Text m_winLoseText;
+	sf::Text m_playAgainText;
+	sf::Text m_exitText;
+	sf::RectangleShape m_playAgainButton;
+	sf::RectangleShape m_exitButton;
 
-	sf::Text playerStatsText;
-	sf::Text enemyStatsText;
-	int playerUnitStatCount = 0;
-	int playerBuildingStatCount = 0;
-	int enemyUnitStatCount = 0;
-	int enemyBuildingStatCount = 0;
+	sf::Text m_playerStatsText;
+	sf::Text m_enemyStatsText;
+	int m_playerUnitStatCount = 0;
+	int m_playerBuildingStatCount = 0;
+	int m_enemyUnitStatCount = 0;
+	int m_enemyBuildingStatCount = 0;
 
 };
 

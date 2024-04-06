@@ -4,9 +4,9 @@ SideBar::SideBar(BuildingType& m_selectedBuildingType)
     :
     m_selectedBuildingType(m_selectedBuildingType)
 {
-    setupFont();
+    initFont();
     initButton();
-    setupSlider();
+    initSlider();
 }
 
 void SideBar::update(sf::Time t_deltaTime)
@@ -19,6 +19,10 @@ void SideBar::update(sf::Time t_deltaTime)
     m_rippleShader.setUniform("amplitude", 0.05f);*/
 }
 
+/// <summary>
+/// Renders the sideBar UI in gameplay
+/// </summary>
+/// <param name="m_window"></param>
 void SideBar::render(sf::RenderWindow& m_window)
 {
     m_window.draw(m_background);
@@ -36,65 +40,81 @@ void SideBar::render(sf::RenderWindow& m_window)
     }
 }
 
+/// <summary>
+/// Adds the building buttons for the sidebar
+/// </summary>
+/// <param name="texture"></param>
+/// <param name="buildingType"></param>
+/// <param name="gridX"></param>
+/// <param name="gridY"></param>
+/// <param name="buttonText"></param>
 void SideBar::addBuildingButton(const sf::Texture& texture, BuildingType buildingType, int gridX, int gridY, const std::string& buttonText)
 {
     m_button.m_sprite.setTexture(texture);
     m_button.m_sprite.setScale(0.82, 0.81);
 
-    buttonWidth = m_bottomBackground.getSize().x / gridCols;
-    buttonHeight = m_bottomBackground.getSize().y / gridRows;
-    xPosition = (m_bottomBackground.getPosition().x + gridX * buttonWidth) + 2;
-    yPosition = (m_bottomBackground.getPosition().y + gridY * buttonHeight) + 2;
+    m_buttonWidth = m_bottomBackground.getSize().x / m_gridCols;
+    m_buttonHeight = m_bottomBackground.getSize().y / m_gridRows;
+    m_xPosition = (m_bottomBackground.getPosition().x + gridX * m_buttonWidth) + 2;
+    m_yPosition = (m_bottomBackground.getPosition().y + gridY * m_buttonHeight) + 2;
 
     if (buildingType == BuildingType::Refinery)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(250, 277, 120, 92));
-        m_refineryIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_refineryIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else if (buildingType == BuildingType::Barracks)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(250, 649, 120, 92));
-        m_barracksIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_barracksIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else if (buildingType == BuildingType::WarFactory)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 48));
         m_button.m_sprite.setScale(1.53, 1.56);
-        m_vehicleIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_vehicleIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(250, 464, 120, 92));
-        m_airCraftIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_airCraftIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
 
-    m_button.m_sprite.setPosition(xPosition, yPosition);
+    m_button.m_sprite.setPosition(m_xPosition, m_yPosition);
     m_button.m_text.setString(buttonText);
-    textPosition = m_button.m_sprite.getPosition();
-    textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
-    textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
-    textBounds = m_button.m_text.getLocalBounds();
-    m_button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
-    m_button.m_text.setPosition(textPosition);
+    m_textPosition = m_button.m_sprite.getPosition();
+    m_textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
+    m_textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
+    m_textBounds = m_button.m_text.getLocalBounds();
+    m_button.m_text.setOrigin(m_textBounds.width / 2, m_textBounds.height / 2);
+    m_button.m_text.setPosition(m_textPosition);
     m_button.m_buildingType = buildingType;
 
     m_buttons.push_back(m_button);
 }
 
+/// <summary>
+/// Adds the buttons for the infantry when barracks building is clicked on
+/// </summary>
+/// <param name="texture"></param>
+/// <param name="inftantryType"></param>
+/// <param name="gridX"></param>
+/// <param name="gridY"></param>
+/// <param name="buttonText"></param>
 void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftantryType, int gridX, int gridY, const std::string& buttonText)
 {
     m_button.m_sprite.setTexture(texture);
     m_button.m_sprite.setScale(3.26, 3.39);
 
-     buttonWidth = m_bottomBackground.getSize().x / gridCols;
-     buttonHeight = m_bottomBackground.getSize().y / gridRows;
-     xPosition = (m_bottomBackground.getPosition().x + gridX * buttonWidth) + 2;
-     yPosition = (m_bottomBackground.getPosition().y + gridY * buttonHeight) + 2;
+     m_buttonWidth = m_bottomBackground.getSize().x / m_gridCols;
+     m_buttonHeight = m_bottomBackground.getSize().y / m_gridRows;
+     m_xPosition = (m_bottomBackground.getPosition().x + gridX * m_buttonWidth) + 2;
+     m_yPosition = (m_bottomBackground.getPosition().y + gridY * m_buttonHeight) + 2;
 
     if (inftantryType == InfantryType::RifleSquad)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(1, 1, 30, 22));
-        m_riflemanIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_riflemanIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else if (inftantryType == InfantryType::GrenadeSquad)
     {
@@ -109,88 +129,104 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
         m_button.m_sprite.setTextureRect(sf::IntRect(133, 1, 30, 22));
     }
 
-    m_button.m_sprite.setPosition(xPosition, yPosition);
+    m_button.m_sprite.setPosition(m_xPosition, m_yPosition);
     m_button.m_text.setString(buttonText);
-    textPosition = m_button.m_sprite.getPosition();
-    textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
-    textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
-    textBounds = m_button.m_text.getLocalBounds();
-    m_button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
-    m_button.m_text.setPosition(textPosition);
+    m_textPosition = m_button.m_sprite.getPosition();
+    m_textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
+    m_textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
+    m_textBounds = m_button.m_text.getLocalBounds();
+    m_button.m_text.setOrigin(m_textBounds.width / 2, m_textBounds.height / 2);
+    m_button.m_text.setPosition(m_textPosition);
     m_button.m_infantryType = inftantryType;
 
     m_buttons.push_back(m_button);
 }
 
+/// <summary>
+/// Adds the buttons for vehicles when the warfactory building is clicked on 
+/// </summary>
+/// <param name="texture"></param>
+/// <param name="vehicleType"></param>
+/// <param name="gridX"></param>
+/// <param name="gridY"></param>
+/// <param name="buttonText"></param>
 void SideBar::addVehicleButton(const sf::Texture& texture, VehicleType vehicleType, int gridX, int gridY, const std::string& buttonText)
 {
     m_button.m_sprite.setTexture(texture);
     m_button.m_sprite.setScale(3.26, 3.39);
 
-     buttonWidth = m_bottomBackground.getSize().x / gridCols;
-     buttonHeight = m_bottomBackground.getSize().y / gridRows;
-     xPosition = (m_bottomBackground.getPosition().x + gridX * buttonWidth) + 2;
-     yPosition = (m_bottomBackground.getPosition().y + gridY * buttonHeight) + 2;
+     m_buttonWidth = m_bottomBackground.getSize().x / m_gridCols;
+     m_buttonHeight = m_bottomBackground.getSize().y / m_gridRows;
+     m_xPosition = (m_bottomBackground.getPosition().x + gridX * m_buttonWidth) + 2;
+     m_yPosition = (m_bottomBackground.getPosition().y + gridY * m_buttonHeight) + 2;
 
     if (vehicleType == VehicleType::Harvester)
     {
         m_button.m_sprite.setScale(0.096, 0.075);
         m_button.m_sprite.setTextureRect(sf::IntRect(0, 0, 1024, 1000));
-        m_harvesterIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_harvesterIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else if (vehicleType == VehicleType::Buggy)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(133, 1, 30, 22));
-        m_buggyIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_buggyIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(1, 1, 30, 22));
-        m_tankAuroraIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_tankAuroraIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
 
-    m_button.m_sprite.setPosition(xPosition, yPosition);
+    m_button.m_sprite.setPosition(m_xPosition, m_yPosition);
     m_button.m_text.setString(buttonText);
-    textPosition = m_button.m_sprite.getPosition();
-    textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
-    textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
-    textBounds = m_button.m_text.getLocalBounds();
-    m_button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
-    m_button.m_text.setPosition(textPosition);
+    m_textPosition = m_button.m_sprite.getPosition();
+    m_textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
+    m_textPosition.y += m_button.m_sprite.getGlobalBounds().height - 8;
+    m_textBounds = m_button.m_text.getLocalBounds();
+    m_button.m_text.setOrigin(m_textBounds.width / 2, m_textBounds.height / 2);
+    m_button.m_text.setPosition(m_textPosition);
     m_button.m_vehicleType = vehicleType;
 
     m_buttons.push_back(m_button);
 }
 
+/// <summary>
+/// Adds the buttons for the air units when the aircraft building is clicked on
+/// </summary>
+/// <param name="texture"></param>
+/// <param name="aircraftType"></param>
+/// <param name="gridX"></param>
+/// <param name="gridY"></param>
+/// <param name="buttonText"></param>
 void SideBar::addAirCraftButton(const sf::Texture& texture, AirCraftType aircraftType, int gridX, int gridY, const std::string& buttonText)
 {
     m_button.m_sprite.setTexture(texture);
     m_button.m_sprite.setScale(3.26, 3.39);
 
-    buttonWidth = m_bottomBackground.getSize().x / gridCols;
-    buttonHeight = m_bottomBackground.getSize().y / gridRows;
-    xPosition = (m_bottomBackground.getPosition().x + gridX * buttonWidth) + 2;
-    yPosition = (m_bottomBackground.getPosition().y + gridY * buttonHeight) + 2;
+    m_buttonWidth = m_bottomBackground.getSize().x / m_gridCols;
+    m_buttonHeight = m_bottomBackground.getSize().y / m_gridRows;
+    m_xPosition = (m_bottomBackground.getPosition().x + gridX * m_buttonWidth) + 2;
+    m_yPosition = (m_bottomBackground.getPosition().y + gridY * m_buttonHeight) + 2;
 
     if (aircraftType == AirCraftType::HammerHead)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(34, 1, 30, 22));
-        m_hammerHeadIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_hammerHeadIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
     else
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(100, 1, 30, 22));
-        m_firehawkIconPosition = sf::Vector2f(xPosition, yPosition);
+        m_firehawkIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
 
-    m_button.m_sprite.setPosition(xPosition, yPosition);
+    m_button.m_sprite.setPosition(m_xPosition, m_yPosition);
     m_button.m_text.setString(buttonText);
-    textPosition = m_button.m_sprite.getPosition();
-    textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
-    textPosition.y += m_button.m_sprite.getGlobalBounds().height - 10;
-    textBounds = m_button.m_text.getLocalBounds();
-    m_button.m_text.setOrigin(textBounds.width / 2, textBounds.height / 2);
-    m_button.m_text.setPosition(textPosition);
+    m_textPosition = m_button.m_sprite.getPosition();
+    m_textPosition.x += m_button.m_sprite.getGlobalBounds().width / 2;
+    m_textPosition.y += m_button.m_sprite.getGlobalBounds().height - 10;
+    m_textBounds = m_button.m_text.getLocalBounds();
+    m_button.m_text.setOrigin(m_textBounds.width / 2, m_textBounds.height / 2);
+    m_button.m_text.setPosition(m_textPosition);
     m_button.m_airCraftType = aircraftType;
 
     m_buttons.push_back(m_button);
@@ -256,7 +292,10 @@ const sf::Sprite& SideBar::getSellSprite() const
     return m_sellSprite;
 }
 
-void SideBar::setupSlider()
+/// <summary>
+/// Initializes the slider
+/// </summary>
+void SideBar::initSlider()
 {
     if (!m_backgroundTexture.loadFromFile("Assets\\Images\\GUI\\Panel_1.png"))
     {
@@ -308,7 +347,10 @@ void SideBar::setupSlider()
 
 }
 
-void SideBar::setupFont()
+/// <summary>
+/// Initializes fonts
+/// </summary>
+void SideBar::initFont()
 {
     if (!m_font.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf"))
     {
@@ -316,16 +358,20 @@ void SideBar::setupFont()
     }
 }
 
+/// <summary>
+/// Draws the grid thats where the buttons are in the sidebar GUI
+/// </summary>
+/// <param name="m_window"></param>
 void SideBar::drawGrid(sf::RenderWindow& m_window)
 {
-    float cellWidth = m_bottomBackground.getSize().x / gridCols;
-    float cellHeight = m_bottomBackground.getSize().y / gridRows;
+    float cellWidth = m_bottomBackground.getSize().x / m_gridCols;
+    float cellHeight = m_bottomBackground.getSize().y / m_gridRows;
 
     sf::Color gridColor = sf::Color(63, 208, 212);
     float gridThickness = 2.0f;
 
     // Vertical lines
-    for (int i = 1; i < gridCols; ++i)
+    for (int i = 1; i < m_gridCols; ++i)
     {
         sf::RectangleShape line(sf::Vector2f(gridThickness, m_bottomBackground.getSize().y));
         line.setPosition(m_bottomBackground.getPosition().x + i * cellWidth, m_bottomBackground.getPosition().y);
@@ -334,7 +380,7 @@ void SideBar::drawGrid(sf::RenderWindow& m_window)
     }
 
     // Horizontal lines
-    for (int i = 1; i < gridRows; ++i)
+    for (int i = 1; i < m_gridRows; ++i)
     {
         sf::RectangleShape line(sf::Vector2f(m_bottomBackground.getSize().x, gridThickness));
         line.setPosition(m_bottomBackground.getPosition().x, m_bottomBackground.getPosition().y + i * cellHeight);
@@ -343,6 +389,9 @@ void SideBar::drawGrid(sf::RenderWindow& m_window)
     }
 }
 
+/// <summary>
+/// Initializes button
+/// </summary>
 void SideBar::initButton()
 {
     m_button.m_text.setFont(m_font);
@@ -353,6 +402,9 @@ void SideBar::initButton()
     m_button.m_text.setStyle(sf::Text::Bold);
 }
 
+/// <summary>
+/// Just to clear everything
+/// </summary>
 void SideBar::clearButtons()
 {
     m_buttons.clear();

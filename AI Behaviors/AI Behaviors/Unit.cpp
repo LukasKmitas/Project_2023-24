@@ -15,7 +15,7 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 { 
     m_viewCircleShape.setPosition(m_unitSprite.getPosition().x, m_unitSprite.getPosition().y);
     avoidCollisions(allyUnits);
-    for (auto& bullet : bullets)
+    for (auto& bullet : m_bullets)
     {
         bullet.update(t_deltaTime);
     }
@@ -32,27 +32,27 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
     float healthPercentage = m_health / 100;
     m_healthBarForeground.setSize(sf::Vector2f(40 * healthPercentage, 5));
 
-    if (isGraduallySlowed) 
+    if (m_isGraduallySlowed) 
     {
-        float elapsedTime = slowEffectClock.getElapsedTime().asSeconds() - slowDownStartTime;
-        if (elapsedTime < slowEffectDuration)
+        float elapsedTime = m_slowEffectClock.getElapsedTime().asSeconds() - m_slowDownStartTime;
+        if (elapsedTime < m_slowEffectDuration)
         {
             // Gradually slow down
-            float currentSpeedFactor = 1.0f - ((1.0f - minimumSpeedFactor) * (elapsedTime / slowEffectDuration));
-            m_speed = originalSpeed * currentSpeedFactor;
+            float currentSpeedFactor = 1.0f - ((1.0f - m_minimumSpeedFactor) * (elapsedTime / m_slowEffectDuration));
+            m_speed = m_originalSpeed * currentSpeedFactor;
         }
-        else if (elapsedTime < slowEffectDuration + postSlowWaitDuration)
+        else if (elapsedTime < m_slowEffectDuration + m_postSlowWaitDuration)
         {
             // Keep the unit stopped
-            m_speed = originalSpeed * minimumSpeedFactor;
-            inPostSlowWait = true;
+            m_speed = m_originalSpeed * m_minimumSpeedFactor;
+            m_inPostSlowWait = true;
         }
         else
         {
             // Reset to original speed
-            m_speed = originalSpeed;
-            isGraduallySlowed = false;
-            inPostSlowWait = false;
+            m_speed = m_originalSpeed;
+            m_isGraduallySlowed = false;
+            m_inPostSlowWait = false;
         }
     }
 }
@@ -74,23 +74,27 @@ void Unit::render(sf::RenderWindow& m_window)
     line[1].color = sf::Color::Red;
     m_window.draw(line);
   
-    for (auto& bullet : bullets) 
+    for (auto& bullet : m_bullets) 
     {
-        bullet.render(m_window, glowShader);
+        bullet.render(m_window, m_glowShader);
     }
-    for (const auto& missile : missiles)
+    for (const auto& missile : m_missiles)
     {
         missile.render(m_window);
     }
 }
 
-void Unit::avoidCollisions(std::vector<Unit*>& allyUnits)
+/// <summary>
+/// its to avoid colliding with each other
+/// </summary>
+/// <param name="m_allyUnits"></param>
+void Unit::avoidCollisions(std::vector<Unit*>& m_allyUnits)
 {
     const float minSeparation = 250.0f;
     sf::Vector2f separationForce(0.0f, 0.0f);
     int closeUnits = 0;
 
-    for (auto& unit : allyUnits)
+    for (auto& unit : m_allyUnits)
     {
         if (unit == this) continue;
 
@@ -118,6 +122,10 @@ void Unit::avoidCollisions(std::vector<Unit*>& allyUnits)
     }
 }
 
+/// <summary>
+/// it just orientates the sprite a bit
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void Unit::orientSpriteToMovement(sf::Time t_deltaTime)
 {
     if (magnitude(m_velocity) > 0.0f)
@@ -141,7 +149,7 @@ void Unit::orientSpriteToMovement(sf::Time t_deltaTime)
         }
 
         // Determine rotation speed and apply a fraction of the difference
-        float step = rotationSpeedDegreesPerSecond * t_deltaTime.asSeconds();
+        float step = m_rotationSpeed * t_deltaTime.asSeconds();
         if (std::abs(difference) < step)
         {
             step = std::abs(difference); // Clamp to avoid overshooting
@@ -159,15 +167,23 @@ void Unit::squadEntityRegain()
 {
 }
 
-void Unit::setTargetPosition(const sf::Vector2f& targetPos)
+/// <summary>
+/// sets target position
+/// </summary>
+/// <param name="m_targetPos"></param>
+void Unit::setTargetPosition(const sf::Vector2f& m_targetPos)
 {
-    m_targetPosition = targetPos;
+    m_targetPosition = m_targetPos;
     isOrbiting = false;
 }
 
-void Unit::takeDamage(float damageAmount)
+/// <summary>
+/// this is how it takes damage takes away health
+/// </summary>
+/// <param name="m_damageAmount"></param>
+void Unit::takeDamage(float m_damageAmount)
 {
-    m_health -= damageAmount;
+    m_health -= m_damageAmount;
     if (m_health < 0)
     {
         m_health = 0;
@@ -175,9 +191,13 @@ void Unit::takeDamage(float damageAmount)
     squadEntityRemoval();
 }
 
-void Unit::addHealth(float healthAmount)
+/// <summary>
+/// Adds health to the unit
+/// </summary>
+/// <param name="m_healthAmount"></param>
+void Unit::addHealth(float m_healthAmount)
 {
-    m_health += healthAmount;
+    m_health += m_healthAmount;
     if (m_health > m_maxHealth)
     {
         m_health = m_maxHealth;
@@ -185,25 +205,39 @@ void Unit::addHealth(float healthAmount)
     squadEntityRegain();
 }
 
-void Unit::applySlowEffect(float minSpeedFactor, float duration, float postSlowWait)
+/// <summary>
+/// This slows down the enemy slowly to a stop
+/// </summary>
+/// <param name="m_speedFactor"></param>
+/// <param name="m_duration"></param>
+/// <param name="m_postSlowWait"></param>
+void Unit::applySlowEffect(float m_speedFactor, float m_duration, float m_postSlowWait)
 {
-    isSlowed = true;
-    isGraduallySlowed = true;
-    minimumSpeedFactor = minSpeedFactor;
-    slowEffectDuration = duration;
-    postSlowWaitDuration = postSlowWait;
-    slowDownStartTime = slowEffectClock.getElapsedTime().asSeconds();
-    inPostSlowWait = false;
+    m_isSlowed = true;
+    m_isGraduallySlowed = true;
+    m_minimumSpeedFactor = m_speedFactor;
+    m_slowEffectDuration = m_duration;
+    m_postSlowWaitDuration = m_postSlowWait;
+    m_slowDownStartTime = m_slowEffectClock.getElapsedTime().asSeconds();
+    m_inPostSlowWait = false;
 }
 
-void Unit::setEnemyUnits(std::vector<Unit*>& enemyUnits)
+/// <summary>
+/// sets the enemies 
+/// </summary>
+/// <param name="m_enemyUnits"></param>
+void Unit::setEnemyUnits(std::vector<Unit*>& m_enemyUnits)
 {
-    this->enemyUnits = &enemyUnits;
+    this->m_enemyUnits = &m_enemyUnits;
 }
 
-void Unit::setEnemyBuildings(std::vector<Building*>& enemyBuildings)
+/// <summary>
+/// sets the buildings
+/// </summary>
+/// <param name="m_enemyBuildings"></param>
+void Unit::setEnemyBuildings(std::vector<Building*>& m_enemyBuildings)
 {
-    this->enemyBuildings = &enemyBuildings;
+    this->m_enemyBuildings = &m_enemyBuildings;
 }
 
 const sf::Sprite& Unit::getSprite() const
@@ -217,18 +251,26 @@ void Unit::setPosition(const sf::Vector2f& position)
     m_unitSprite.setPosition(position);
 }
 
-void Unit::moveTo(const sf::Vector2f& targetPos)
+/// <summary>
+/// Gives the target position
+/// </summary>
+/// <param name="m_targetPos"></param>
+void Unit::moveTo(const sf::Vector2f& m_targetPos)
 {
-    m_targetPosition = targetPos;
+    m_targetPosition = m_targetPos;
     isOrbiting = false;
 }
 
-void Unit::setSelected(bool selected) 
+/// <summary>
+/// Checks if its selected
+/// </summary>
+/// <param name="m_selected"></param>
+void Unit::setSelected(bool m_selected)
 {
-    isSelected = selected;
+    isSelected = m_selected;
     if (isSelected) 
     {
-        m_unitSprite.setColor(sf::Color(100, 255, 100, 255));
+        m_unitSprite.setColor(sf::Color(120, 255, 120, 255));
     }
     else 
     {
@@ -270,6 +312,9 @@ float Unit::getDamage() const
     return m_damage;
 }
 
+/// <summary>
+/// initializes view
+/// </summary>
 void Unit::initView()
 {
     m_viewCircleShape.setRadius(m_viewRadius);
@@ -278,6 +323,9 @@ void Unit::initView()
     m_viewCircleShape.setPosition(m_position);
 }
 
+/// <summary>
+/// initializes health bar
+/// </summary>
 void Unit::initHealthBar()
 {
     m_healthBarBackground.setSize(sf::Vector2f(40, 5)); 
@@ -289,15 +337,18 @@ void Unit::initHealthBar()
     m_healthBarForeground.setOrigin(m_healthBarForeground.getSize().x / 2, m_healthBarForeground.getSize().y / 2);
 }
 
+/// <summary>
+/// initializes shaders
+/// </summary>
 void Unit::initShader()
 {
-    if (!glowShader.loadFromFile("Assets\\Shaders\\glowShader.frag", sf::Shader::Fragment))
+    if (!m_glowShader.loadFromFile("Assets\\Shaders\\glowShader.frag", sf::Shader::Fragment))
     {
         std::cout << "Error - Loading glow shader" << std::endl;
     }
   
-    glowShader.setUniform("glowColor", sf::Glsl::Vec4(1.0, 0.0, 0.0, 1.0));
-    glowShader.setUniform("glowRadius", 1.0f);
+    m_glowShader.setUniform("glowColor", sf::Glsl::Vec4(1.0, 0.0, 0.0, 1.0));
+    m_glowShader.setUniform("glowRadius", 1.0f);
 }
 
 bool Unit::checkAffordability()
@@ -336,22 +387,27 @@ sf::Vector2f Unit::getPosition() const
     return m_unitSprite.getPosition();
 }
 
-sf::Vector2f Unit::normalize(const sf::Vector2f source)
+sf::Vector2f Unit::normalize(const sf::Vector2f m_source)
 {
-    float length = sqrt((source.x * source.x) + (source.y * source.y));
+    float length = sqrt((m_source.x * m_source.x) + (m_source.y * m_source.y));
     if (length != 0)
     {
-        return sf::Vector2f(source.x / length, source.y / length);
+        return sf::Vector2f(m_source.x / length, m_source.y / length);
     }
     else
     {
-        return source;
+        return m_source;
     }
 }
 
-sf::Vector2f Unit::steerTowards(sf::Vector2f target)
+/// <summary>
+/// Makes it slowly steer towards that direction
+/// </summary>
+/// <param name="m_target"></param>
+/// <returns></returns>
+sf::Vector2f Unit::steerTowards(sf::Vector2f m_target)
 {
-    sf::Vector2f desiredVelocity = target - m_position;
+    sf::Vector2f desiredVelocity = m_target - m_position;
     float distance = magnitude(desiredVelocity);
 
     if (distance > 0.1f)
@@ -379,19 +435,19 @@ sf::Vector2f Unit::steerTowards(sf::Vector2f target)
     return steer;
 }
 
-sf::Vector2f Unit::rotateVector(sf::Vector2f vector, float angleDegrees)
+sf::Vector2f Unit::rotateVector(sf::Vector2f m_vector, float m_angleDegrees)
 {
-    float rad = angleDegrees * PI / 180.0f;
+    float rad = m_angleDegrees * PI / 180.0f;
     return sf::Vector2f
     (
-        vector.x * cos(rad) - vector.y * sin(rad),
-        vector.x * sin(rad) + vector.y * cos(rad)
+        m_vector.x * cos(rad) - m_vector.y * sin(rad),
+        m_vector.x * sin(rad) + m_vector.y * cos(rad)
     );
 }
 
-float Unit::angleFromVector(const sf::Vector2f& vector) 
+float Unit::angleFromVector(const sf::Vector2f& m_vector)
 {
-    return std::atan2(vector.y, vector.x) * 180 / PI;
+    return std::atan2(m_vector.y, m_vector.x) * 180 / PI;
 }
 
 float Unit::getViewRadius() const 

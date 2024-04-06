@@ -2,7 +2,7 @@
 
 Firehawk::Firehawk()
 {
-	setupFirehawk();
+	initFirehawk();
 	m_cost = 1500;
 	m_speed = 130;
 	m_health = 160;
@@ -15,9 +15,9 @@ Firehawk::~Firehawk()
 {
 }
 
-void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
+void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits)
 {
-	AircraftUnit::update(t_deltaTime, allyUnits);
+	AircraftUnit::update(t_deltaTime, m_allyUnits);
 
 	if (!isOrbiting) 
 	{
@@ -29,22 +29,22 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 	}
 	m_unitSprite.setPosition(m_position);
 
-	if (phase == 1 && phaseTimer > 0.0f)
+	if (m_phase == 1 && m_phaseTimer > 0.0f)
 	{
-		phaseTimer -= t_deltaTime.asSeconds();
+		m_phaseTimer -= t_deltaTime.asSeconds();
 	}
 
-	if (reloadCooldown > 0.0f)
+	if (m_reloadCooldown > 0.0f)
 	{
-		reloadCooldown -= t_deltaTime.asSeconds();
-		if (reloadCooldown <= 0.0f) 
+		m_reloadCooldown -= t_deltaTime.asSeconds();
+		if (m_reloadCooldown <= 0.0f) 
 		{
-			missilesFiredInBurst = 0;
+			m_missilesFiredInBurst = 0;
 		}
 	}
 
 	bool targetFound = false;
-	for (auto& enemyUnit : *this->enemyUnits)
+	for (auto& enemyUnit : *this->m_enemyUnits)
 	{
 		if (isTargetWithinRange(enemyUnit->getPosition()))
 		{
@@ -54,9 +54,9 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 		}
 	}
 
-	if (!targetFound && this->enemyBuildings)
+	if (!targetFound && this->m_enemyBuildings)
 	{
-		for (auto& building : *this->enemyBuildings)
+		for (auto& building : *this->m_enemyBuildings)
 		{
 			if (isTargetWithinRange(building->getPosition()))
 			{
@@ -66,15 +66,20 @@ void Firehawk::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 		}
 	}
 
-	for (auto& missile : missiles)
+	for (auto& missile : m_missiles)
 	{
 		missile.update(t_deltaTime);
 	}
 }
 
-void Firehawk::approachTarget(const sf::Vector2f& targetPos, sf::Time t_deltaTime)
+/// <summary>
+/// makes the unit move 
+/// </summary>
+/// <param name="m_targetPos"></param>
+/// <param name="t_deltaTime"></param>
+void Firehawk::approachTarget(const sf::Vector2f& m_targetPos, sf::Time t_deltaTime)
 {
-	sf::Vector2f direction = targetPos - m_position;
+	sf::Vector2f direction = m_targetPos - m_position;
 	float distanceToTarget = magnitude(direction);
 
 	if (distanceToTarget < m_orbitRadius)
@@ -96,6 +101,10 @@ void Firehawk::approachTarget(const sf::Vector2f& targetPos, sf::Time t_deltaTim
 	}
 }
 
+/// <summary>
+/// Makes the unit orbit around an area
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void Firehawk::orbitTarget(sf::Time t_deltaTime) 
 {
 	m_currentOrbitAngle += m_orbitSpeed * t_deltaTime.asSeconds();
@@ -116,7 +125,10 @@ void Firehawk::orbitTarget(sf::Time t_deltaTime)
     m_unitSprite.setRotation(newAngle + 90); 
 }
 
-void Firehawk::setupFirehawk()
+/// <summary>
+/// initializes firehawk unit
+/// </summary>
+void Firehawk::initFirehawk()
 {
 	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\Firehawk.png"))
 	{
@@ -127,52 +139,61 @@ void Firehawk::setupFirehawk()
 	m_unitSprite.setOrigin(m_unitSprite.getLocalBounds().width / 2, m_unitSprite.getLocalBounds().height / 2);
 	m_unitSprite.setScale(0.1, 0.1);
 
-	if (!missileTexture.loadFromFile("Assets/Images/Units/Missile.png"))
+	if (!m_missileTexture.loadFromFile("Assets/Images/Units/Missile.png"))
 	{
 		std::cout << "Error - Loading Missile Texture" << std::endl;
 	}
 }
 
-void Firehawk::fireMissileAtTarget(const sf::Vector2f& targetPos)
+/// <summary>
+/// shoots missles in a 2 phases 2 rockets and then 2 more after a while
+/// </summary>
+/// <param name="m_targetPos"></param>
+void Firehawk::fireMissileAtTarget(const sf::Vector2f& m_targetPos)
 {
-	if (reloadCooldown <= 0.0f && missilesFiredInBurst < burstSize)
+	if (m_reloadCooldown <= 0.0f && m_missilesFiredInBurst < m_burstSize)
 	{
-		if (missilesFiredInBurst == 0)
+		if (m_missilesFiredInBurst == 0)
 		{
-			phase = 0;
-			phaseTimer = phaseDelay;
+			m_phase = 0;
+			m_phaseTimer = m_phaseDelay;
 		}
 
 		// First phase of firing
-		if (phase == 0 && missilesFiredInBurst < 2)
+		if (m_phase == 0 && m_missilesFiredInBurst < 2)
 		{
-			launchMissile(targetPos);
-			if (missilesFiredInBurst == 2)
+			launchMissile(m_targetPos);
+			if (m_missilesFiredInBurst == 2)
 			{
-				phase = 1;
+				m_phase = 1;
 			}
 		}
 		// Second phase after the delay
-		else if (phase == 1 && phaseTimer <= 0.0f)
+		else if (m_phase == 1 && m_phaseTimer <= 0.0f)
 		{
-			launchMissile(targetPos);
+			launchMissile(m_targetPos);
 		}
 
-		if (missilesFiredInBurst >= burstSize)
+		if (m_missilesFiredInBurst >= m_burstSize)
 		{
-			reloadCooldown = reloadCooldownTime;
-			missilesFiredInBurst = 0;
+			m_reloadCooldown = m_reloadCooldownTime;
+			m_missilesFiredInBurst = 0;
 		}
 	}
 }
 
-bool Firehawk::isTargetWithinRange(const sf::Vector2f& targetPos)
+/// <summary>
+/// The target needs to be in line of sight to be able to shoot
+/// </summary>
+/// <param name="m_targetPos"></param>
+/// <returns></returns>
+bool Firehawk::isTargetWithinRange(const sf::Vector2f& m_targetPos)
 {
-	float distanceToTarget = magnitude(targetPos - m_position);
+	float distanceToTarget = magnitude(m_targetPos - m_position);
 
 	if (distanceToTarget <= m_viewRadius - 10)
 	{
-		sf::Vector2f directionToTarget = normalize(targetPos - m_position);
+		sf::Vector2f directionToTarget = normalize(m_targetPos - m_position);
 		float angleToTarget = angleFromVector(directionToTarget);
 		float firehawkAngle = m_unitSprite.getRotation() - 90;
 
@@ -184,13 +205,17 @@ bool Firehawk::isTargetWithinRange(const sf::Vector2f& targetPos)
 	return false;
 }
 
-void Firehawk::launchMissile(const sf::Vector2f& targetPos)
+/// <summary>
+/// shoots out the missles
+/// </summary>
+/// <param name="targetPos"></param>
+void Firehawk::launchMissile(const sf::Vector2f& m_targetPos)
 {
 	float spray = (std::rand() % 10 - 5) * (PI / 180.0f);
-	sf::Vector2f direction = normalize(targetPos - m_position);
+	sf::Vector2f direction = normalize(m_targetPos - m_position);
 	float angle = atan2(direction.y, direction.x) + spray;
 	sf::Vector2f missileDirection = sf::Vector2f(cos(angle), sin(angle));
 
-	missiles.emplace_back(m_position, missileDirection, 200.0f, missileTexture);
-	missilesFiredInBurst++;
+	m_missiles.emplace_back(m_position, missileDirection, 200.0f, m_missileTexture);
+	m_missilesFiredInBurst++;
 }

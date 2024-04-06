@@ -6,34 +6,34 @@ class Bullet
 {
 public:
 
-    Bullet(const sf::Vector2f& startPosition, const sf::Vector2f& targetDirection, float speed);
+    Bullet(const sf::Vector2f& m_startPosition, const sf::Vector2f& m_targetDirection, float m_speed);
 
-    void update(sf::Time deltaTime);
-    void render(sf::RenderWindow& window, const sf::Shader& glowShader) const;
+    void update(sf::Time t_deltaTime);
+    void render(sf::RenderWindow& m_window, const sf::Shader& m_glowShader) const;
 
-    sf::CircleShape bulletShape;
+    sf::CircleShape m_bulletShape;
 
-    sf::Vector2f position;
+    sf::Vector2f m_position;
 
-    bool active = true;
+    bool m_active = true;
 
 private:
 
     struct TrailPart
     {
-        sf::CircleShape trialShape;
-        float lifetime;
+        sf::CircleShape m_trialShape;
+        float m_lifetime = 0;
     };
 
-    sf::Vector2f normalize(const sf::Vector2f& source);
+    sf::Vector2f normalize(const sf::Vector2f& m_source);
 
-    std::deque<TrailPart> trail;
+    std::deque<TrailPart> m_trail;
 
-    sf::Vector2f velocity;
+    sf::Vector2f m_velocity;
 
-    float lifetime = 1.0f;
-    float trailMaxLifetime = 0.3f;
-    float timeSinceLastTrailPart = 0.0f;
-    float addTrailPartInterval = 0.03f;
+    float m_lifetime = 1.0f;
+    float m_trailMaxLifetime = 0.3f;
+    float m_timeSinceLastTrailPart = 0.0f;
+    float m_addTrailPartInterval = 0.03f;
 
 };

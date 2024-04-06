@@ -4,7 +4,7 @@ RiflemanSquad::RiflemanSquad()
 {
     initRifleman();
     initSquad();
-    previousPosition = m_position;
+    m_previousPosition = m_position;
     m_cost = 100;
     m_health = 100;
     m_viewRadius = 300;
@@ -18,31 +18,31 @@ RiflemanSquad::~RiflemanSquad()
 {
 }
 
-void RiflemanSquad::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
+void RiflemanSquad::update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits)
 {
-    InfantryUnit::update(t_deltaTime, allyUnits);
+    InfantryUnit::update(t_deltaTime, m_allyUnits);
 
     movement(t_deltaTime);
 
     updateFormation();
 
-    if (fireTimer > 0.0f)
+    if (m_fireTimer > 0.0f)
     {
-        fireTimer -= t_deltaTime.asSeconds();
+        m_fireTimer -= t_deltaTime.asSeconds();
     }
-    if (isReloading)
+    if (m_isReloading)
     {
-        reloadTimer -= t_deltaTime.asSeconds();
-        if (reloadTimer <= 0.0f)
+        m_reloadTimer -= t_deltaTime.asSeconds();
+        if (m_reloadTimer <= 0.0f)
         {
-            isReloading = false;
-            shotsFired = 0;
+            m_isReloading = false;
+            m_shotsFired = 0;
         }
     }
 
-    if (enemyUnits)
+    if (m_enemyUnits)
     {
-        aimAt(*enemyUnits);
+        aimAt(*m_enemyUnits);
     }
 }
 
@@ -56,16 +56,19 @@ void RiflemanSquad::render(sf::RenderWindow& m_window)
     }
 }
 
+/// <summary>
+/// Initialize unit squad enities
+/// </summary>
 void RiflemanSquad::initSquad()
 {
-    float angleStep = 360.0f / numberOfSoldiers;
-    for (int i = 0; i < numberOfSoldiers; i++)
+    float angleStep = 360.0f / m_numberOfSoldiers;
+    for (int i = 0; i < m_numberOfSoldiers; i++)
     {
         sf::Sprite soldier = m_unitSprite;
         float angle = angleStep * i;
         float radians = angle * (PI / 180.0f);
 
-        sf::Vector2f offset(cos(radians) * scatterRadius, sin(radians) * scatterRadius);
+        sf::Vector2f offset(cos(radians) * m_scatterRadius, sin(radians) * m_scatterRadius);
         m_offsets.push_back(offset);
 
         soldier.setPosition(m_unitSprite.getPosition() + offset);
@@ -73,6 +76,9 @@ void RiflemanSquad::initSquad()
     }
 }
 
+/// <summary>
+/// Initialize the rifleman unit
+/// </summary>
 void RiflemanSquad::initRifleman()
 {
     if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\Rifleman.png"))
@@ -86,6 +92,10 @@ void RiflemanSquad::initRifleman()
     m_unitSprite.setScale(0.15, 0.15);
 }
 
+/// <summary>
+/// This units movement
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void RiflemanSquad::movement(sf::Time t_deltaTime)
 {
     float distance = magnitude(m_targetPosition - m_position);
@@ -121,6 +131,9 @@ void RiflemanSquad::movement(sf::Time t_deltaTime)
     orientSpriteToMovement(t_deltaTime);
 }
 
+/// <summary>
+/// To updates the formation of this unit
+/// </summary>
 void RiflemanSquad::updateFormation()
 {
     for (int i = 0; i < m_entities.size(); i++) 
@@ -130,10 +143,13 @@ void RiflemanSquad::updateFormation()
     }
 }
 
+/// <summary>
+/// when the unit takes damage the enities die
+/// </summary>
 void RiflemanSquad::takeDamageSquad() 
 {
     float healthPercentage = m_health / m_maxHealth;
-    int newActiveEntitiesCount = static_cast<int>(std::ceil(healthPercentage * numberOfSoldiers));
+    int newActiveEntitiesCount = static_cast<int>(std::ceil(healthPercentage * m_numberOfSoldiers));
 
     newActiveEntitiesCount = std::max(0, std::min(newActiveEntitiesCount, static_cast<int>(m_entities.size())));
 
@@ -143,9 +159,12 @@ void RiflemanSquad::takeDamageSquad()
     }
 }
 
+/// <summary>
+/// Removes the enities from the squad
+/// </summary>
 void RiflemanSquad::squadEntityRemoval()
 {
-    int activeEntities = static_cast<int>((m_health / m_maxHealth) * numberOfSoldiers);
+    int activeEntities = static_cast<int>((m_health / m_maxHealth) * m_numberOfSoldiers);
     if (activeEntities < m_entities.size()) 
     {
         m_entities.erase(m_entities.begin() + activeEntities, m_entities.end());
@@ -153,11 +172,13 @@ void RiflemanSquad::squadEntityRemoval()
     updateFormation();
 }
 
+/// <summary>
+/// Ragains the squad members 
+/// </summary>
 void RiflemanSquad::squadEntityRegain()
 {
-    int activeEntities = static_cast<int>((m_health / m_maxHealth) * numberOfSoldiers);
-
-    activeEntities = std::min(activeEntities, numberOfSoldiers);
+    int activeEntities = static_cast<int>((m_health / m_maxHealth) * m_numberOfSoldiers);
+    activeEntities = std::min(activeEntities, m_numberOfSoldiers);
 
     while (m_entities.size() < activeEntities) 
     {
@@ -166,29 +187,33 @@ void RiflemanSquad::squadEntityRegain()
     }
 }
 
-void RiflemanSquad::aimAt(const std::vector<Unit*>& enemyUnits)
+/// <summary>
+/// Tries to aim and shoots at the target with the squad members
+/// </summary>
+/// <param name="m_enemyUnits"></param>
+void RiflemanSquad::aimAt(const std::vector<Unit*>& m_enemyUnits)
 {
-    if (isReloading || fireTimer > 0.0f)
+    if (m_isReloading || m_fireTimer > 0.0f)
     {
         return;
     }
 
-    bool enemyInRange = false;
+    bool m_enemyInRange = false;
     sf::Vector2f forwardDirection = rotateVector(sf::Vector2f(0, -1), m_unitSprite.getRotation());
 
-    for (Unit* enemy : enemyUnits)
+    for (Unit* enemy : m_enemyUnits)
     {
-        targetPositions.push_back(enemy->getPosition());
+        m_targetPositions.push_back(enemy->getPosition());
     }
-    if (enemyBuildings)
+    if (m_enemyBuildings)
     {
-        for (Building* building : *enemyBuildings)
+        for (Building* building : *m_enemyBuildings)
         {
-            targetPositions.push_back(building->getPosition());
+            m_targetPositions.push_back(building->getPosition());
         }
     }
 
-    for (const auto& targetPos : targetPositions)
+    for (const auto& targetPos : m_targetPositions)
     {
         sf::Vector2f toTarget = normalize(targetPos - this->getPosition());
         float distance = magnitude(targetPos - this->getPosition());
@@ -203,7 +228,7 @@ void RiflemanSquad::aimAt(const std::vector<Unit*>& enemyUnits)
 
             if (angleToEnemy <= 45.0f)
             {
-                enemyInRange = true;
+                m_enemyInRange = true;
 
                 for (auto& entity : allShootingEntities)
                 {
@@ -215,24 +240,24 @@ void RiflemanSquad::aimAt(const std::vector<Unit*>& enemyUnits)
                         toTarget.x * sinAngle + toTarget.y * cosAngle));
 
                     sf::Vector2f bulletStartPosition = entity.getPosition() + sprayedDirection * 10.0f;
-                    bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
+                    m_bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
                 }
-                shotsFired++;
-                fireTimer = fireRate;
+                m_shotsFired++;
+                m_fireTimer = m_fireRate;
 
-                if (shotsFired >= clipSize)
+                if (m_shotsFired >= m_clipSize)
                 {
-                    isReloading = true;
-                    reloadTimer = reloadTime;
-                    shotsFired = 0;
+                    m_isReloading = true;
+                    m_reloadTimer = m_reloadTime;
+                    m_shotsFired = 0;
                 }
                 break;
             }
         }
     }
 
-    if (!enemyInRange)
+    if (!m_enemyInRange)
     {
-        fireTimer = fireRate;
+        m_fireTimer = m_fireRate;
     }
 }

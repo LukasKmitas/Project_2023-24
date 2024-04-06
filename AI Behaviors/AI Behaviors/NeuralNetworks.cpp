@@ -20,220 +20,253 @@ void NeuralNetworks::update(sf::Time t_deltaTime)
 {
 }
 
+/// <summary>
+/// renders neural networks stuff
+/// </summary>
+/// <param name="m_window"></param>
 void NeuralNetworks::render(sf::RenderWindow& m_window)
 {
 	m_window.draw(m_toGoBackButton);
 	m_window.draw(m_toGoBackText);
 	//m_window.draw(m_neuralWeightText);
 
-	for (unsigned i = 0; i < inputs.size(); i++)
+	for (unsigned i = 0; i < m_inputs.size(); i++)
 	{
-		mouseDotShape.setFillColor(sf::Color(round(255 * target_outputs[i][0]), round(255 * target_outputs[i][1]), round(255 * target_outputs[i][2])));
-		mouseDotShape.setPosition(SCREEN_HEIGHT * (1 + inputs[i][0]), SCREEN_WITDH * inputs[i][1]);
+		m_mouseDotCircle.setFillColor(sf::Color(round(255 * m_target_outputs[i][0]), round(255 * m_target_outputs[i][1]), round(255 * m_target_outputs[i][2])));
+		m_mouseDotCircle.setPosition(SCREEN_HEIGHT * (1 + m_inputs[i][0]), SCREEN_WITDH * m_inputs[i][1]);
 
-		m_window.draw(mouseDotShape);
+		m_window.draw(m_mouseDotCircle);
 	}
 }
 
-void NeuralNetworks::draw_text(int m_x, int m_y, const std::string& m_text, const sf::Color& m_color, sf::RenderWindow& m_window)
+/// <summary>
+/// Draws the Neural Perceptrons
+/// </summary>
+/// <param name="m_window"></param>
+/// <param name="m_neuralNetwork"></param>
+/// <param name="m_weights"></param>
+void NeuralNetworks::drawNeuralPerceptron(sf::RenderWindow& m_window, const vector_2d& m_neuralNetwork, const vector_3d& m_weights)
+{
+	float m_maxNeuron = std::max(abs(get_max_element(m_neuralNetwork)), abs(get_min_element(m_neuralNetwork)));
+	float m_minNeuron = -m_maxNeuron;
+
+	sf::VertexArray m_connectionLine(sf::Quads, 4);
+
+	if (0 <= get_min_element(m_neuralNetwork))
+	{
+		m_minNeuron = 0;
+	}
+
+	for (int i = 0; i < m_neuralNetwork.size(); i++)
+	{
+		int m_neuronX = (Global::S_WIDTH / 2) * (1 + i) / (1 + m_neuralNetwork.size());
+
+		for (int k = 0; k < m_neuralNetwork[i].size(); k++)
+		{
+			// Rounding the value of the neuron
+			float m_neuronValue = round(m_neuralNetwork[i][k] * pow(10, 2)) / pow(10, 2);
+
+			int m_neuronColor = round(255 * (m_neuralNetwork[i][k] - m_minNeuron) / (m_maxNeuron - m_minNeuron));
+			int m_textColor = 255 * (128 > m_neuronColor);
+			int m_neuronY = Global::S_HEIGHT * (1 + k) / (1 + m_neuralNetwork[i].size());
+
+			std::ostringstream m_neuronTextStream;
+			m_neuronTextStream << std::fixed << std::setprecision(2) << m_neuronValue; // to make it be like "0.02" and not "0.0234324"
+
+			m_neuronCircle.setFillColor(sf::Color(m_neuronColor, m_neuronColor, m_neuronColor));
+			m_neuronCircle.setPosition(m_neuronX, m_neuronY);
+
+			if (i < m_neuralNetwork.size() - 1)
+			{
+				float m_maxWeight = std::max(abs(get_max_element(m_weights[i])), abs(get_min_element(m_weights[i])));
+				float m_minWeight = -m_maxWeight;
+				int m_biasNeurons = 0;
+
+				if (i < m_neuralNetwork.size() - 2)
+				{
+					m_biasNeurons = BIAS_NEURONS[1 + i];
+				}
+
+				for (int j = m_biasNeurons; j < m_neuralNetwork[1 + i].size(); j++)
+				{
+					if (0 <= m_weights[i][j - m_biasNeurons][k])
+					{
+						int m_connectionOpacity = round(255 * m_weights[i][j - m_biasNeurons][k] / m_maxWeight);
+
+						m_connectionLine[0].color = sf::Color(0, 255, 0, m_connectionOpacity);
+						m_connectionLine[1].color = sf::Color(0, 255, 0, m_connectionOpacity);
+						m_connectionLine[2].color = sf::Color(0, 255, 0, m_connectionOpacity);
+						m_connectionLine[3].color = sf::Color(0, 255, 0, m_connectionOpacity);
+					}
+					else
+					{
+						int m_connectionOpacity = round(255 * m_weights[i][j - m_biasNeurons][k] / m_minWeight);
+
+						m_connectionLine[0].color = sf::Color(255, 0, 0, m_connectionOpacity);
+						m_connectionLine[1].color = sf::Color(255, 0, 0, m_connectionOpacity);
+						m_connectionLine[2].color = sf::Color(255, 0, 0, m_connectionOpacity);
+						m_connectionLine[3].color = sf::Color(255, 0, 0, m_connectionOpacity);
+					}
+
+					int m_previousNeuronX = (Global::S_WIDTH / 2) * (2 + i) / (1 + m_neuralNetwork.size());
+					int m_previousNeuronY = Global::S_HEIGHT * (1 + j) / (1 + m_neuralNetwork[1 + i].size());
+
+					m_connectionLine[0].position = sf::Vector2f(m_previousNeuronX, m_previousNeuronY - 0.5f * 2);
+					m_connectionLine[1].position = sf::Vector2f(m_neuronX, m_neuronY - 0.5f * 2);
+					m_connectionLine[2].position = sf::Vector2f(m_neuronX, m_neuronY + 0.5f * 2);
+					m_connectionLine[3].position = sf::Vector2f(m_previousNeuronX, m_previousNeuronY + 0.5f * 2);
+
+					m_window.draw(m_connectionLine);
+				}
+			}
+			m_window.draw(m_neuronCircle);
+			drawWeightText(m_neuronX, m_neuronY, m_neuronTextStream.str(), sf::Color(m_textColor, m_textColor, m_textColor), m_window);
+		}
+	}
+}
+
+/// <summary>
+/// Draws the text for the weight on each perceptron 
+/// </summary>
+/// <param name="m_x"></param>
+/// <param name="m_y"></param>
+/// <param name="m_text"></param>
+/// <param name="m_color"></param>
+/// <param name="m_window"></param>
+void NeuralNetworks::drawWeightText(int m_x, int m_y, const std::string& m_text, const sf::Color& m_color, sf::RenderWindow& m_window)
 {
 	m_neuralWeightText.setString(m_text);
 	m_neuralWeightText.setFillColor(m_color);
 	m_neuralWeightText.setOrigin(m_neuralWeightText.getGlobalBounds().width / 2, m_neuralWeightText.getGlobalBounds().height / 2);
-
 	m_neuralWeightText.setPosition(m_x, m_y - 5);
 
 	m_window.draw(m_neuralWeightText);
 }
 
-void NeuralNetworks::draw_neural_network(sf::RenderWindow& m_window, const vector_2d& m_neural_network, const vector_3d& m_weights)
+/// <summary>
+/// this is a method used for training the neural network, where the error between the predicted output and the actual output
+/// is computed and propagated back through the network. 
+/// This process adjusts the weights and biases to minimize the error, effectively "learning" from the data
+/// </summary>
+/// <param name="m_target"></param>
+/// <param name="m_errors"></param>
+/// <param name="m_neuralNetwork"></param>
+/// <param name="m_weights"></param>
+void NeuralNetworks::backPropagation(const std::vector<float>& m_target, std::vector<std::vector<float>>& m_errors, const std::vector<std::vector<float>>& m_neuralNetwork, std::vector<std::vector<std::vector<float>>>& m_weights)
 {
-	float max_neuron = std::max(abs(get_max_element(m_neural_network)), abs(get_min_element(m_neural_network)));
-	float min_neuron = -max_neuron;
-
-	sf::VertexArray connection_shape(sf::Quads, 4);
-
-	if (0 <= get_min_element(m_neural_network))
+	for (int i = m_neuralNetwork.size() - 1; 0 < i; i--)
 	{
-		min_neuron = 0;
-	}
-
-	for (int i = 0; i < m_neural_network.size(); i++)
-	{
-		int neuron_x = (Global::S_WIDTH / 2) * (1 + i) / (1 + m_neural_network.size());
-
-		for (int k = 0; k < m_neural_network[i].size(); k++)
+		for (int j = 0; j < m_neuralNetwork[i].size(); j++)
 		{
-			// Rounding the value of the neuron
-			float neuron_value = round(m_neural_network[i][k] * pow(10, 2)) / pow(10, 2);
+			int m_biasNeurons = 0;
 
-			int neuron_color = round(255 * (m_neural_network[i][k] - min_neuron) / (max_neuron - min_neuron));
-			int text_color = 255 * (128 > neuron_color);
-
-			int neuron_y = Global::S_HEIGHT * (1 + k) / (1 + m_neural_network[i].size());
-
-			std::ostringstream neuron_text_stream;
-			neuron_text_stream << std::fixed << std::setprecision(2) << neuron_value; // to make it be like "0.02" and not "0.0234324"
-
-			neuron_shape.setFillColor(sf::Color(neuron_color, neuron_color, neuron_color));
-			neuron_shape.setPosition(neuron_x, neuron_y);
-
-			if (i < m_neural_network.size() - 1)
+			if (i == m_neuralNetwork.size() - 1)
 			{
-				float max_weight = std::max(abs(get_max_element(m_weights[i])), abs(get_min_element(m_weights[i])));
-				float min_weight = -max_weight;
-
-				int bias_neurons = 0;
-
-				if (i < m_neural_network.size() - 2)
-				{
-					bias_neurons = BIAS_NEURONS[1 + i];
-				}
-
-				for (int j = bias_neurons; j < m_neural_network[1 + i].size(); j++)
-				{
-					if (0 <= m_weights[i][j - bias_neurons][k])
-					{
-						int connection_opacity = round(255 * m_weights[i][j - bias_neurons][k] / max_weight);
-
-						connection_shape[0].color = sf::Color(0, 255, 0, connection_opacity);
-						connection_shape[1].color = sf::Color(0, 255, 0, connection_opacity);
-						connection_shape[2].color = sf::Color(0, 255, 0, connection_opacity);
-						connection_shape[3].color = sf::Color(0, 255, 0, connection_opacity);
-					}
-					else
-					{
-						int connection_opacity = round(255 * m_weights[i][j - bias_neurons][k] / min_weight);
-
-						connection_shape[0].color = sf::Color(255, 0, 0, connection_opacity);
-						connection_shape[1].color = sf::Color(255, 0, 0, connection_opacity);
-						connection_shape[2].color = sf::Color(255, 0, 0, connection_opacity);
-						connection_shape[3].color = sf::Color(255, 0, 0, connection_opacity);
-					}
-
-					int previous_neuron_x = (Global::S_WIDTH / 2) * (2 + i) / (1 + m_neural_network.size());
-					int previous_neuron_y = Global::S_HEIGHT * (1 + j) / (1 + m_neural_network[1 + i].size());
-
-					connection_shape[0].position = sf::Vector2f(previous_neuron_x, previous_neuron_y - 0.5f * 2);
-					connection_shape[1].position = sf::Vector2f(neuron_x, neuron_y - 0.5f * 2);
-					connection_shape[2].position = sf::Vector2f(neuron_x, neuron_y + 0.5f * 2);
-					connection_shape[3].position = sf::Vector2f(previous_neuron_x, previous_neuron_y + 0.5f * 2);
-
-					m_window.draw(connection_shape);
-				}
-			}
-			m_window.draw(neuron_shape);
-
-			draw_text(neuron_x, neuron_y, neuron_text_stream.str(), sf::Color(text_color, text_color, text_color), m_window);
-		}
-	}
-}
-
-void NeuralNetworks::backPropagation(const std::vector<float>& m_target, std::vector<std::vector<float>>& m_errors, const std::vector<std::vector<float>>& m_neural_network, std::vector<std::vector<std::vector<float>>>& m_weights)
-{
-	for (int i = m_neural_network.size() - 1; 0 < i; i--)
-	{
-		for (int j = 0; j < m_neural_network[i].size(); j++)
-		{
-			int bias_neurons = 0;
-
-			if (i == m_neural_network.size() - 1)
-			{
-				m_errors[i - 1][j] = pow(m_neural_network[i][j] - m_target[j], 3);
+				m_errors[i - 1][j] = pow(m_neuralNetwork[i][j] - m_target[j], 3);
 			}
 			else if (j >= BIAS_NEURONS[i])
 			{
-				int next_bias_neurons = 0;
+				int m_nextBiasNeuron = 0;
 
-				bias_neurons = BIAS_NEURONS[i];
+				m_biasNeurons = BIAS_NEURONS[i];
 
-				if (i < m_neural_network.size() - 2)
+				if (i < m_neuralNetwork.size() - 2)
 				{
-					next_bias_neurons = BIAS_NEURONS[1 + i];
+					m_nextBiasNeuron = BIAS_NEURONS[1 + i];
 				}
 
-				m_errors[i - 1][j - bias_neurons] = 0;
+				m_errors[i - 1][j - m_biasNeurons] = 0;
 
-				for (int k = next_bias_neurons; k < m_neural_network[1 + i].size(); k++)
+				for (int k = m_nextBiasNeuron; k < m_neuralNetwork[1 + i].size(); k++)
 				{
-					m_errors[i - 1][j - bias_neurons] += m_errors[i][k - next_bias_neurons] * m_weights[i][k - next_bias_neurons][j - bias_neurons];
+					m_errors[i - 1][j - m_biasNeurons] += m_errors[i][k - m_nextBiasNeuron] * m_weights[i][k - m_nextBiasNeuron][j - m_biasNeurons];
 				}
 			}
 
-			if (j >= bias_neurons)
+			if (j >= m_biasNeurons)
 			{
-				float neuron_output = 0;
+				float m_neuronOutput = 0;
 
-				for (int k = 0; k < m_weights[i - 1][j - bias_neurons].size(); k++)
+				for (int k = 0; k < m_weights[i - 1][j - m_biasNeurons].size(); k++)
 				{
-					neuron_output += m_neural_network[i - 1][k] * m_weights[i - 1][j - bias_neurons][k];
+					m_neuronOutput += m_neuralNetwork[i - 1][k] * m_weights[i - 1][j - m_biasNeurons][k];
 				}
 
-				for (int k = 0; k < m_neural_network[i - 1].size(); k++)
+				for (int k = 0; k < m_neuralNetwork[i - 1].size(); k++)
 				{
-					m_weights[i - 1][j - bias_neurons][k] -= LEARNING_RATE * m_errors[i - 1][j - bias_neurons] * m_neural_network[i - 1][k] * activationFunction(1, neuron_output);
+					m_weights[i - 1][j - m_biasNeurons][k] -= LEARNING_RATE * m_errors[i - 1][j - m_biasNeurons] * m_neuralNetwork[i - 1][k] * activationFunction(1, m_neuronOutput);
 				}
 			}
 		}
 	}
 }
 
-std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::vector<float>& m_inputs, std::vector<std::vector<float>>& m_neural_network, const std::vector<std::vector<std::vector<float>>>& m_weights)
+/// <summary>
+/// This is a process where input data is passed through the network, layer by layer, until it reaches the output layer.
+/// Each neuron in the network processes the input by performing a weighted sum followed by an "activation function", 
+/// which that introduces non-linearity
+/// </summary>
+/// <param name="m_state"></param>
+/// <param name="m_inputs"></param>
+/// <param name="m_neuralNetwork"></param>
+/// <param name="m_weights"></param>
+/// <returns></returns>
+std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::vector<float>& m_inputs, std::vector<std::vector<float>>& m_neuralNetwork, const std::vector<std::vector<std::vector<float>>>& m_weights)
 {
 	if (m_state)
 	{
-		for (int i = 0; i < m_neural_network[0].size(); i++)
+		for (int i = 0; i < m_neuralNetwork[0].size(); i++)
 		{
 			if (i >= BIAS_NEURONS[0])
 			{
-				m_neural_network[0][i] = m_inputs[i - BIAS_NEURONS[0]];
+				m_neuralNetwork[0][i] = m_inputs[i - BIAS_NEURONS[0]];
 			}
 			else
 			{
 				// Bias neurons values are always 1.
-				m_neural_network[0][i] = 1;
+				m_neuralNetwork[0][i] = 1;
 			}
 		}
 
 		for (int i = 0; i < m_weights.size(); i++)
 		{
-			int bias_neurons = 0;
+			int m_biasNeurons = 0;
 
 			if (i < m_weights.size() - 1)
 			{
-				bias_neurons = BIAS_NEURONS[1 + i];
+				m_biasNeurons = BIAS_NEURONS[1 + i];
 			}
 
 			// At the beginning we assume that each neuron is a bias neuron.
-			std::fill(m_neural_network[1 + i].begin(), m_neural_network[1 + i].end(), 1);
+			std::fill(m_neuralNetwork[1 + i].begin(), m_neuralNetwork[1 + i].end(), 1);
 
 			for (int j = 0; j < m_weights[i].size(); j++)
 			{
-				m_neural_network[1 + i][j + bias_neurons] = 0;
+				m_neuralNetwork[1 + i][j + m_biasNeurons] = 0;
 
 				for (int k = 0; k < m_weights[i][j].size(); k++)
 				{
-					m_neural_network[1 + i][j + bias_neurons] += m_neural_network[i][k] * m_weights[i][j][k];
+					m_neuralNetwork[1 + i][j + m_biasNeurons] += m_neuralNetwork[i][k] * m_weights[i][j][k];
 				}
 
-				m_neural_network[1 + i][j + bias_neurons] = activationFunction(0, m_neural_network[1 + i][j + bias_neurons]);
+				m_neuralNetwork[1 + i][j + m_biasNeurons] = activationFunction(0, m_neuralNetwork[1 + i][j + m_biasNeurons]);
 			}
 		}
-		return m_neural_network[m_neural_network.size() - 1];
+		return m_neuralNetwork[m_neuralNetwork.size() - 1];
 	}
 	else
 	{
-		vector_2d neural_network = m_neural_network;
+		vector_2d m_newNeuralNetwork = m_neuralNetwork;
 
-		for (int i = 0; i < neural_network[0].size(); i++)
+		for (int i = 0; i < m_newNeuralNetwork[0].size(); i++)
 		{
 			if (i >= BIAS_NEURONS[0])
 			{
-				neural_network[0][i] = m_inputs[i - BIAS_NEURONS[0]];
+				m_newNeuralNetwork[0][i] = m_inputs[i - BIAS_NEURONS[0]];
 			}
 			else
 			{
-				neural_network[0][i] = 1;
+				m_newNeuralNetwork[0][i] = 1;
 			}
 		}
 
@@ -246,37 +279,53 @@ std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::v
 				bias_neurons = BIAS_NEURONS[1 + i];
 			}
 
-			std::fill(neural_network[1 + i].begin(), neural_network[1 + i].end(), 1);
+			std::fill(m_newNeuralNetwork[1 + i].begin(), m_newNeuralNetwork[1 + i].end(), 1);
 
 			for (int j = 0; j < m_weights[i].size(); j++)
 			{
-				neural_network[1 + i][j + bias_neurons] = 0;
+				m_newNeuralNetwork[1 + i][j + bias_neurons] = 0;
 
 				for (int k = 0; k < m_weights[i][j].size(); k++)
 				{
-					neural_network[1 + i][j + bias_neurons] += neural_network[i][k] * m_weights[i][j][k];
+					m_newNeuralNetwork[1 + i][j + bias_neurons] += m_newNeuralNetwork[i][k] * m_weights[i][j][k];
 				}
 
-				neural_network[1 + i][j + bias_neurons] = activationFunction(0, neural_network[1 + i][j + bias_neurons]);
+				m_newNeuralNetwork[1 + i][j + bias_neurons] = activationFunction(0, m_newNeuralNetwork[1 + i][j + bias_neurons]);
 			}
 		}
-		return neural_network[neural_network.size() - 1];
+		return m_newNeuralNetwork[m_newNeuralNetwork.size() - 1];
 	}
 }
 
+/// <summary>
+/// adds the input
+/// </summary>
+/// <param name="m_dot_x"></param>
+/// <param name="m_dot_y"></param>
 void NeuralNetworks::addInput(float m_dot_x, float m_dot_y)
 {
-	inputs.push_back({ m_dot_x, m_dot_y });
+	m_inputs.push_back({ m_dot_x, m_dot_y });
 }
 
+/// <summary>
+/// adds the targetOutput thats the circle things for visualization
+/// </summary>
+/// <param name="m_r"></param>
+/// <param name="m_g"></param>
+/// <param name="m_b"></param>
 void NeuralNetworks::addTargetOutput(float m_r, float m_g, float m_b)
 {
-	target_outputs.push_back({ m_r, m_g, m_b });
+	m_target_outputs.push_back({ m_r, m_g, m_b });
 }
 
-void NeuralNetworks::goToMainMenu(sf::Vector2i mousePosition, GameState& m_gameState)
+/// <summary>
+/// To go back to main menu screen
+/// </summary>
+/// <param name="m_mousePosition"></param>
+/// <param name="m_gameState"></param>
+void NeuralNetworks::goToMainMenu(sf::Vector2i m_mousePosition, GameState& m_gameState)
 {
-	if (m_toGoBackButton.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
+	if (m_toGoBackButton.getGlobalBounds().contains(m_mousePosition.x, m_mousePosition.y))
 	{
 		m_gameState = GameState::MainMenu;
 	}
@@ -294,26 +343,32 @@ std::array<int, 3> NeuralNetworks::getBiasNeurons() const
 
 const std::vector<std::vector<float>>& NeuralNetworks::getInputs() const
 {
-	return inputs;
+	return m_inputs;
 }
 
 const std::vector<std::vector<float>>& NeuralNetworks::getTargetOutputs() const
 {
-	return target_outputs;
+	return m_target_outputs;
 }
 
+/// <summary>
+/// Initializes neural circles
+/// </summary>
 void NeuralNetworks::initNeuralCircle()
 {
-	neuron_shape.setRadius(32);
-	neuron_shape.setOrigin(32, 32);
-	neuron_shape.setOutlineColor(sf::Color(255, 255, 255));
-	neuron_shape.setOutlineThickness(2);
+	m_neuronCircle.setRadius(32);
+	m_neuronCircle.setOrigin(32, 32);
+	m_neuronCircle.setOutlineColor(sf::Color(255, 255, 255));
+	m_neuronCircle.setOutlineThickness(2);
 
 	m_neuralWeightText.setFont(m_font);
 	m_neuralWeightText.setCharacterSize(24);
 	m_neuralWeightText.setOrigin(m_neuralWeightText.getGlobalBounds().width / 2, m_neuralWeightText.getGlobalBounds().height / 2);
 }
 
+/// <summary>
+/// Initializes back button
+/// </summary>
 void NeuralNetworks::initBackButton()
 {
 	if (!m_buttonTexture.loadFromFile("Assets\\Images\\GUI\\buttonStock2.png"))
@@ -336,15 +391,24 @@ void NeuralNetworks::initBackButton()
 	m_toGoBackText.setOrigin(m_toGoBackText.getGlobalBounds().width / 2, m_toGoBackText.getGlobalBounds().height / 2);
 }
 
+/// <summary>
+/// Initializes the mouse Dot circle
+/// </summary>
 void NeuralNetworks::initMouseDotCircle()
 {
-	mouseDotShape.setRadius(10);
-	mouseDotShape.setOrigin(mouseDotShape.getRadius(), mouseDotShape.getRadius());
-	mouseDotShape.setFillColor(sf::Color::White);
-	mouseDotShape.setOutlineColor(sf::Color::Black);
-	mouseDotShape.setOutlineThickness(2.0f);
+	m_mouseDotCircle.setRadius(10);
+	m_mouseDotCircle.setOrigin(m_mouseDotCircle.getRadius(), m_mouseDotCircle.getRadius());
+	m_mouseDotCircle.setFillColor(sf::Color::White);
+	m_mouseDotCircle.setOutlineColor(sf::Color::Black);
+	m_mouseDotCircle.setOutlineThickness(2.0f);
 }
 
+/// <summary>
+/// To have non-linearities into the network
+/// </summary>
+/// <param name="m_derivative"></param>
+/// <param name="m_input"></param>
+/// <returns></returns>
 float NeuralNetworks::activationFunction(bool m_derivative, float m_input)
 {
 	if (m_derivative == 0)
@@ -368,6 +432,29 @@ float NeuralNetworks::activationFunction(bool m_derivative, float m_input)
 		{
 			return std::log(2) * std::pow(2, -1 - m_input);
 		}
+	}
+}
+
+/// <summary>
+/// Using the sigmoid activation function
+/// 
+/// Sigmoid function: f(x) = 1 / (1 + exp(-x))
+/// Derivative of sigmoid: f'(x) = f(x) * (1 - f(x))
+/// 
+/// </summary>
+/// <param name="m_derivative"></param>
+/// <param name="m_input"></param>
+/// <returns></returns>
+float NeuralNetworks::activationFunctionSigmoid(bool m_derivative, float m_input)
+{
+	if (!m_derivative)
+	{
+		return 1.0f / (1.0f + std::exp(-m_input));
+	}
+	else
+	{
+		float sigmoid = 1.0f / (1.0f + std::exp(-m_input));
+		return sigmoid * (1 - sigmoid);
 	}
 }
 

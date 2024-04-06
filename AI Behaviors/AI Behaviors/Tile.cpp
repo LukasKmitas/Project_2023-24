@@ -7,5 +7,5 @@ Tile::Tile()
 
 void Tile::initTile()
 {
-	m_tile.setSize(sf::Vector2f(tileSize, tileSize));
+	m_tile.setSize(sf::Vector2f(m_tileSize, m_tileSize));
 }

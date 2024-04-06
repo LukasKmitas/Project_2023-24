@@ -4,7 +4,6 @@
 #include "Global.h"
 #include "BuildingType.h"
 #include "InfantryType.h"
-
 #include "SideBar.h"
 #include "Headquarters.h"
 #include "Refinery.h"
@@ -34,7 +33,7 @@ public:
     AirCraft* m_airCraft = nullptr;
     Building* m_selectedBuilding = nullptr;
     LevelEditor levelEditor;
-    std::vector<Building*>& placedBuildings;
+    std::vector<Building*>& m_placedBuildings;
     BuildingType& m_selectedBuildingType;
 
     InfantryType m_selectedInfantryType = InfantryType::None;
@@ -71,15 +70,15 @@ private:
 
     std::vector<std::vector<Tile>>& m_tilesReference;
 
+    void initTopBar();
     void updateCurrency();
-    void setupTopBar();
     void loadIcons();
     void sellBuilding();
 
     sf::View m_guiView;
 
     sf::RectangleShape m_topBar;
-    sf::Texture m_m_topBarTexture;
+    sf::Texture m_topBarTexture;
 
     sf::Font m_currencyFont;
     sf::Text m_currencyText;

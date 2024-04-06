@@ -1,64 +1,64 @@
 #include "Bullet.h"
 
-Bullet::Bullet(const sf::Vector2f& startPosition, const sf::Vector2f& targetDirection, float speed)
+Bullet::Bullet(const sf::Vector2f& m_startPosition, const sf::Vector2f& m_targetDirection, float m_speed)
 {
-    position = startPosition;
-    velocity = normalize(targetDirection) * speed;
-    bulletShape.setRadius(2.0f);
-    bulletShape.setOrigin(2, 2);
-    bulletShape.setPosition(position);
-    bulletShape.setFillColor(sf::Color::Red); 
+    m_position = m_startPosition;
+    m_velocity = normalize(m_targetDirection) * m_speed;
+    m_bulletShape.setRadius(2.0f);
+    m_bulletShape.setOrigin(2, 2);
+    m_bulletShape.setPosition(m_position);
+    m_bulletShape.setFillColor(sf::Color::Red); 
 }
 
-void Bullet::update(sf::Time deltaTime)
+void Bullet::update(sf::Time t_deltaTime)
 {
-    position += velocity * deltaTime.asSeconds();
-    bulletShape.setPosition(position);
+    m_position += m_velocity * t_deltaTime.asSeconds();
+    m_bulletShape.setPosition(m_position);
 
-    for (auto& part : trail) 
+    for (auto& part : m_trail) 
     {
-        part.lifetime -= deltaTime.asSeconds();
-        part.trialShape.setFillColor(sf::Color(255, 0, 0, static_cast<sf::Uint8>(255 * (part.lifetime / trailMaxLifetime))));
+        part.m_lifetime -= t_deltaTime.asSeconds();
+        part.m_trialShape.setFillColor(sf::Color(255, 0, 0, static_cast<sf::Uint8>(255 * (part.m_lifetime / m_trailMaxLifetime))));
     }
-    trail.erase(std::remove_if(trail.begin(), trail.end(), [](const TrailPart& part) { return part.lifetime <= 0; }), trail.end());
+    m_trail.erase(std::remove_if(m_trail.begin(), m_trail.end(), [](const TrailPart& part) { return part.m_lifetime <= 0; }), m_trail.end());
 
-    timeSinceLastTrailPart += deltaTime.asSeconds();
-    if (timeSinceLastTrailPart >= addTrailPartInterval) 
+    m_timeSinceLastTrailPart += t_deltaTime.asSeconds();
+    if (m_timeSinceLastTrailPart >= m_addTrailPartInterval) 
     {
         TrailPart newPart;
-        newPart.trialShape = bulletShape;
-        newPart.trialShape.setRadius(bulletShape.getRadius() * 0.6f);
-        newPart.lifetime = trailMaxLifetime;
-        trail.push_front(newPart);
+        newPart.m_trialShape = m_bulletShape;
+        newPart.m_trialShape.setRadius(m_bulletShape.getRadius() * 0.6f);
+        newPart.m_lifetime = m_trailMaxLifetime;
+        m_trail.push_front(newPart);
 
-        timeSinceLastTrailPart = 0.0f;
+        m_timeSinceLastTrailPart = 0.0f;
     }
 
-    lifetime -= deltaTime.asSeconds();
-    if (lifetime <= 0.0f)
+    m_lifetime -= t_deltaTime.asSeconds();
+    if (m_lifetime <= 0.0f)
     {
-        active = false;
+        m_active = false;
     }
 }
 
-void Bullet::render(sf::RenderWindow& window, const sf::Shader& glowShader) const
+void Bullet::render(sf::RenderWindow& m_window, const sf::Shader& m_glowShader) const
 {
-    for (const auto& part : trail)
+    for (const auto& part : m_trail)
     {
-        window.draw(part.trialShape);
+        m_window.draw(part.m_trialShape);
     }
-    window.draw(bulletShape, &glowShader);
+    m_window.draw(m_bulletShape, &m_glowShader);
 }
 
-sf::Vector2f Bullet::normalize(const sf::Vector2f& source)
+sf::Vector2f Bullet::normalize(const sf::Vector2f& m_source)
 {
-    float length = std::sqrt(source.x * source.x + source.y * source.y);
+    float length = std::sqrt(m_source.x * m_source.x + m_source.y * m_source.y);
     if (length != 0)
     {
-        return source / length;
+        return m_source / length;
     }
     else
     {
-        return source;
+        return m_source;
     }
 }

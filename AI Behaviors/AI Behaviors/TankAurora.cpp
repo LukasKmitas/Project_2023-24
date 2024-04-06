@@ -16,9 +16,9 @@ TankAurora::~TankAurora()
 {
 }
 
-void TankAurora::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
+void TankAurora::update(sf::Time t_deltaTime, std::vector<Unit*>& m_allUnits)
 {
-	VehicleUnit::update(t_deltaTime, allUnits);
+	VehicleUnit::update(t_deltaTime, m_allUnits);
 
     movement(t_deltaTime);
 
@@ -29,7 +29,7 @@ void TankAurora::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
     sf::Glsl::Vec4 outlineColor(0, 1, 0, 0.3);
     m_healingAuraShader.setUniform("outlineColor", outlineColor);
 
-    for (Unit* unit : allUnits)
+    for (Unit* unit : m_allUnits)
     {
         if (unit != this)
         {
@@ -42,32 +42,32 @@ void TankAurora::update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits)
         }
     }
 
-    if (isChargingEMPWave)
+    if (m_isChargingEMPWave)
     {
         spawnElectricalParticleEffect(t_deltaTime);
-        currentChargeTime += t_deltaTime.asSeconds();
-        if (currentChargeTime >= empChargeTime)
+        m_currentChargeTime += t_deltaTime.asSeconds();
+        if (m_currentChargeTime >= m_empChargeTime)
         {
             emitEMP();
         }
     }
     
-    if (isFiringEnergyWave)
+    if (m_isFiringEnergyWave)
     {
-        energyWavePosition += directionToEnemy * energyWaveSpeed * t_deltaTime.asSeconds();
-        m_energyWaveSprite.setPosition(energyWavePosition);
-        energyWaveSize += energyWaveGrowthRate * t_deltaTime.asSeconds();
+        m_energyWavePosition += m_directionToEnemy * m_energyWaveSpeed * t_deltaTime.asSeconds();
+        m_energyWaveSprite.setPosition(m_energyWavePosition);
+        m_energyWaveSize += m_energyWaveGrowthRate * t_deltaTime.asSeconds();
 
-        if (energyWaveSize >= energyWaveMaxSize)
+        if (m_energyWaveSize >= m_energyWaveMaxSize)
         {
             resetEnergyWave();
         }
         else
         {
-            m_energyWaveSprite.setScale(energyWaveSize, energyWaveSize);
+            m_energyWaveSprite.setScale(m_energyWaveSize, m_energyWaveSize);
         }
 
-        for (Unit* enemy : *enemyUnits) 
+        for (Unit* enemy : *m_enemyUnits) 
         {
             if (m_energyWaveSprite.getGlobalBounds().intersects(enemy->getSprite().getGlobalBounds()))
             {
@@ -85,14 +85,17 @@ void TankAurora::render(sf::RenderWindow& m_window)
 
     m_particleSystem.render(m_window);
 
-    waveShader.setUniform("time", clock.getElapsedTime().asSeconds());
+    m_waveShader.setUniform("time", m_clock.getElapsedTime().asSeconds());
 
-    if (isFiringEnergyWave) 
+    if (m_isFiringEnergyWave) 
     {
-        m_window.draw(m_energyWaveSprite, &waveShader);
+        m_window.draw(m_energyWaveSprite, &m_waveShader);
     }
 }
 
+/// <summary>
+/// Initialize tank Aurora
+/// </summary>
 void TankAurora::setupTankAurora()
 {
 	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\TankAurora.png"))
@@ -111,6 +114,9 @@ void TankAurora::setupTankAurora()
     }
 }
 
+/// <summary>
+/// Initialize the healing aura
+/// </summary>
 void TankAurora::setupHealingAura() 
 {
     m_healingAura.setRadius(m_healingRange);
@@ -125,13 +131,16 @@ void TankAurora::setupHealingAura()
     }
 }
 
+/// <summary>
+/// Initialize the energy wave
+/// </summary>
 void TankAurora::setupEnergyWave()
 {
     if (!m_energyWaveTexture.loadFromFile("Assets\\Images\\Units\\EnergyWave.png"))
     {
         std::cout << "Error - Loading Energy wave Texture" << std::endl;
     }
-    if (!waveShader.loadFromFile("Assets\\Shaders\\vertexShader2.vert", "Assets\\Shaders\\EnergyWave.frag")) 
+    if (!m_waveShader.loadFromFile("Assets\\Shaders\\vertexShader2.vert", "Assets\\Shaders\\EnergyWave.frag")) 
     {
         std::cerr << "Failed to load shader" << std::endl;
     }
@@ -139,9 +148,13 @@ void TankAurora::setupEnergyWave()
     m_energyWaveSprite.setPosition(m_position);
     m_energyWaveSprite.setRotation(m_unitSprite.getRotation() - 90);
     m_energyWaveSprite.setOrigin(m_energyWaveSprite.getGlobalBounds().width / 2, m_energyWaveSprite.getGlobalBounds().height / 2);
-    m_energyWaveSprite.setScale(energyWaveSize, energyWaveSize);
+    m_energyWaveSprite.setScale(m_energyWaveSize, m_energyWaveSize);
 }
 
+/// <summary>
+/// Makes this unit move
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void TankAurora::movement(sf::Time t_deltaTime)
 {
     float distance = magnitude(m_targetPosition - m_position);
@@ -179,10 +192,14 @@ void TankAurora::movement(sf::Time t_deltaTime)
     }
 }
 
+/// <summary>
+/// Creates the energy particle effect to charge up the wave attack
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void TankAurora::spawnElectricalParticleEffect(sf::Time t_deltaTime)
 {
-    float chargeRatio = currentChargeTime / empChargeTime;
-    float size = std::min(chargeRatio * empExpandArea, empExpandArea);
+    float chargeRatio = m_currentChargeTime / m_empChargeTime;
+    float size = std::min(chargeRatio * m_empExpandArea, m_empExpandArea);
 
     int numParticles = static_cast<int>(chargeRatio * 3);
     for (int i = 0; i < numParticles; ++i)
@@ -203,37 +220,43 @@ void TankAurora::spawnElectricalParticleEffect(sf::Time t_deltaTime)
     }
 }
 
+/// <summary>
+/// starts the charge up for the EMP 
+/// </summary>
 void TankAurora::startEMPCharge()
 {
-    isChargingEMPWave = true;
-    currentChargeTime = 0.0f;
+    m_isChargingEMPWave = true;
+    m_currentChargeTime = 0.0f;
 }
 
+/// <summary>
+/// After charging the emp it shoots out the energy wave to slow down enemies
+/// </summary>
 void TankAurora::emitEMP() 
 {
     sf::Vector2f forwardDirection = rotateVector(sf::Vector2f(0, -1), m_unitSprite.getRotation());
 
-    for (Unit* enemy : *enemyUnits)
+    for (Unit* enemy : *m_enemyUnits)
     {
         sf::Vector2f toEnemy = enemy->getPosition() - this->getPosition();
         float distance = magnitude(toEnemy);
 
         if (distance <= m_viewRadius - 20)
         {
-            directionToEnemy = normalize(toEnemy);
-            float angleToEnemy = angleBetweenVectors(forwardDirection, directionToEnemy);
+            m_directionToEnemy = normalize(toEnemy);
+            float angleToEnemy = angleBetweenVectors(forwardDirection, m_directionToEnemy);
 
             if (std::abs(angleToEnemy) <= 45)
             {
-                isChargingEMPWave = false;
-                currentChargeTime = 0.0f;
+                m_isChargingEMPWave = false;
+                m_currentChargeTime = 0.0f;
                
-                isFiringEnergyWave = true;
-                energyWavePosition = m_position;
+                m_isFiringEnergyWave = true;
+                m_energyWavePosition = m_position;
 
-                m_energyWaveSprite.setPosition(energyWavePosition);
+                m_energyWaveSprite.setPosition(m_energyWavePosition);
                 m_energyWaveSprite.setRotation(m_unitSprite.getRotation() - 90);
-                m_energyWaveSprite.setScale(energyWaveSize, energyWaveSize);
+                m_energyWaveSprite.setScale(m_energyWaveSize, m_energyWaveSize);
 
                 break; 
             }
@@ -241,10 +264,13 @@ void TankAurora::emitEMP()
     }
 }
 
+/// <summary>
+/// Reset the energy wave
+/// </summary>
 void TankAurora::resetEnergyWave()
 {
-    isFiringEnergyWave = false;
-    energyWaveSize = 0.4f; 
-    m_energyWaveSprite.setScale(energyWaveSize, energyWaveSize);
+    m_isFiringEnergyWave = false;
+    m_energyWaveSize = 0.4f; 
+    m_energyWaveSprite.setScale(m_energyWaveSize, m_energyWaveSize);
     startEMPCharge();
 }

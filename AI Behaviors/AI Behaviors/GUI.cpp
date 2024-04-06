@@ -2,12 +2,12 @@
 
 GUI::GUI(std::vector<Building*>& m_buildings, BuildingType& m_selectedBuildingType, std::vector<std::vector<Tile>>& m_tiles)
 	: 
-	placedBuildings(m_buildings),
+	m_placedBuildings(m_buildings),
 	m_selectedBuildingType(m_selectedBuildingType),
 	m_sideBar(m_selectedBuildingType),
 	m_tilesReference(m_tiles)
 {
-	setupTopBar();
+	initTopBar();
 	loadIcons();
 
 	m_guiView.setSize(Global::S_WIDTH, Global::S_HEIGHT);
@@ -22,6 +22,10 @@ GUI::~GUI()
 {
 }
 
+/// <summary>
+/// updates GUi content
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void GUI::update(sf::Time t_deltaTime)
 {
 	updateCurrency();
@@ -31,6 +35,10 @@ void GUI::update(sf::Time t_deltaTime)
 	}
 }
 
+/// <summary>
+/// Renders GUI
+/// </summary>
+/// <param name="m_window"></param>
 void GUI::render(sf::RenderWindow& m_window)
 {
 	m_window.setView(m_guiView);
@@ -46,6 +54,11 @@ void GUI::render(sf::RenderWindow& m_window)
 	}
 }
 
+/// <summary>
+/// handles the mouse clicks for GUI related stuff
+/// </summary>
+/// <param name="m_mousePosition"></param>
+/// <param name="m_window"></param>
 void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_window)
 {
 	//std::cout << "Mouse position: (" << mousePosition.x << ", " << mousePosition.y << ")" << std::endl;
@@ -168,7 +181,7 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 				std::cout << "Tank Aurora Icon Clicked" << std::endl;
 				if (m_tankAurora.checkAffordability())
 				{
-					m_selectedVehicleType = VehicleType::Tank;
+					m_selectedVehicleType = VehicleType::TankAurora;
 					m_unitConfirmed = true;
 				}
 			}
@@ -205,6 +218,11 @@ void GUI::handleMouseClick(sf::Vector2i m_mousePosition, sf::RenderWindow& m_win
 	}
 }
 
+/// <summary>
+/// This is more for the ghost buildings and confirms placement
+/// </summary>
+/// <param name="m_mousePosition"></param>
+/// <param name="window"></param>
 void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow& window)
 {
 	if (m_confirmBuildingPlacement)
@@ -289,9 +307,13 @@ void GUI::handleBuildingPlacement(sf::Vector2i m_mousePosition, sf::RenderWindow
 	}
 }
 
+/// <summary>
+/// What "Buttons" suppose to appear when clicking on the building type in gameplay
+/// </summary>
+/// <param name="m_mousePosition"></param>
 void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 {
-	for (Building* building : placedBuildings)
+	for (Building* building : m_placedBuildings)
 	{
 		if (dynamic_cast<Headquarters*>(building) != nullptr)
 		{
@@ -344,7 +366,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 					m_selectedBuildingType = BuildingType::WarFactory;
 					m_sideBar.addVehicleButton(m_harvesterIconTexture, VehicleType::Harvester, 0, 0, "Harvester");
 					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Buggy, 1, 0, "Ranger");
-					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::Tank, 2, 0, "Tank");
+					m_sideBar.addVehicleButton(m_unitVehicleTexture, VehicleType::TankAurora, 2, 0, "TankAurora");
 				}
 				break;
 			}
@@ -369,15 +391,21 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 	}
 }
 
+/// <summary>
+/// updates the currency for player text
+/// </summary>
 void GUI::updateCurrency()
 {
 	Global::playerCurrency = std::min(Global::playerCurrency, 5000);
 	m_currencyText.setString("Currency:   " + std::to_string(Global::playerCurrency));
 }
 
-void GUI::setupTopBar()
+/// <summary>
+/// Initializes the top bar content for currency area
+/// </summary>
+void GUI::initTopBar()
 {
-	if (!m_m_topBarTexture.loadFromFile("Assets\\Images\\GUI\\Card X5.png"))
+	if (!m_topBarTexture.loadFromFile("Assets\\Images\\GUI\\Card X5.png"))
 	{
 		std::cout << "problem loading font" << std::endl;
 	}
@@ -385,7 +413,7 @@ void GUI::setupTopBar()
 	m_topBar.setOutlineColor(sf::Color(200, 100, 100, 200));
 	m_topBar.setOutlineThickness(2);
 	m_topBar.setPosition(Global::S_WIDTH - 400, 0);
-	m_topBar.setTexture(&m_m_topBarTexture);
+	m_topBar.setTexture(&m_topBarTexture);
 
 	m_currencyFont.loadFromFile("Assets\\Fonts\\ManicSea_19.ttf");
 	m_currencyText.setFont(m_currencyFont);
@@ -399,6 +427,9 @@ void GUI::setupTopBar()
 	m_currencyText.setPosition(Global::S_WIDTH - 200, 5);
 }
 
+/// <summary>
+/// Load all the icons for the buttons
+/// </summary>
 void GUI::loadIcons()
 {
 	if (!m_BuildingTexture1.loadFromFile("Assets\\Images\\GUI\\BuildingIcons.png"))
@@ -427,6 +458,12 @@ void GUI::loadIcons()
 	}
 }
 
+/// <summary>
+/// checks if the placement is valid for buildings
+/// </summary>
+/// <param name="m_position"></param>
+/// <param name="m_window"></param>
+/// <returns></returns>
 bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
 {
 	sf::Vector2f worldPosition = m_window.mapPixelToCoords(sf::Vector2i(m_position), m_window.getView());
@@ -434,7 +471,7 @@ bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
 	sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
 	m_placementValid = false;
 
-	for (Building* building : placedBuildings)
+	for (Building* building : m_placedBuildings)
 	{
 		sf::FloatRect existingBuildingBounds = building->getBuildingSprite().getGlobalBounds();
 		if (newBuildingBounds.intersects(existingBuildingBounds))
@@ -460,26 +497,31 @@ bool GUI::IsPlacementValid(sf::Vector2f& m_position, sf::RenderWindow& m_window)
 	return m_placementValid;
 }
 
+/// <summary>
+/// checks if the placement is valid for tiles
+/// </summary>
+/// <param name="position"></param>
+/// <returns></returns>
 bool GUI::IsPlacementValidForTiles(sf::Vector2f& position)
 {
 	// Convert the GUI position to tile coordinates
-	int tileX = static_cast<int>(position.x) / m_tile.tileSize;
-	int tileY = static_cast<int>(position.y) / m_tile.tileSize;
+	int tileX = static_cast<int>(position.x) / m_tile.m_tileSize;
+	int tileY = static_cast<int>(position.y) / m_tile.m_tileSize;
 
-	if (tileX >= 0 && tileX < levelEditor.numRows && tileY >= 0 && tileY < levelEditor.numCols)
+	if (tileX >= 0 && tileX < levelEditor.m_numRows && tileY >= 0 && tileY < levelEditor.m_numCols)
 	{
-		if (m_tilesReference[tileY][tileX].isWall)
+		if (m_tilesReference[tileY][tileX].m_isWall)
 		{
 			return false;
 		}
 
 		// Check for building intersections with the tiles
 		sf::FloatRect newBuildingBounds = m_ghostBuildingSprite.getGlobalBounds();
-		for (int i = 0; i < levelEditor.numRows; ++i)
+		for (int i = 0; i < levelEditor.m_numRows; ++i)
 		{
-			for (int j = 0; j < levelEditor.numCols; ++j)
+			for (int j = 0; j < levelEditor.m_numCols; ++j)
 			{
-				if (m_tilesReference[i][j].isWall) 
+				if (m_tilesReference[i][j].m_isWall) 
 				{
 					sf::FloatRect tileRect(j * 50, i * 50, 50, 50);
 					if (newBuildingBounds.intersects(tileRect))
@@ -494,15 +536,18 @@ bool GUI::IsPlacementValidForTiles(sf::Vector2f& position)
 	return false;
 }
 
+/// <summary>
+/// sell the building off
+/// </summary>
 void GUI::sellBuilding() 
 {
 	if (m_selectedBuilding) 
 	{
 		Global::playerCurrency += m_selectedBuilding->getCost() - 300;
-		auto it = std::find(placedBuildings.begin(), placedBuildings.end(), m_selectedBuilding);
-		if (it != placedBuildings.end()) 
+		auto it = std::find(m_placedBuildings.begin(), m_placedBuildings.end(), m_selectedBuilding);
+		if (it != m_placedBuildings.end()) 
 		{
-			placedBuildings.erase(it);
+			m_placedBuildings.erase(it);
 		}
 	}
 }

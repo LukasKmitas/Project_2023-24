@@ -12,41 +12,44 @@ Buggy::Buggy()
     m_maxForce = 150;
     m_slowingRadius = 100;
     m_bulletSpeed = 300.0f;
-    rotationSpeedDegreesPerSecond = 180;
+    m_rotationSpeed = 180;
 }
 
 Buggy::~Buggy()
 {
 }
 
-void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
+void Buggy::update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits)
 {
-	VehicleUnit::update(t_deltaTime, allyUnits);
+	VehicleUnit::update(t_deltaTime, m_allyUnits);
 
     movement(t_deltaTime);
     m_weaponSprite.setPosition(m_unitSprite.getPosition());
 
-    if (fireTimer > 0.0f)
+    if (m_fireTimer > 0.0f)
     {
-        fireTimer -= t_deltaTime.asSeconds();
+        m_fireTimer -= t_deltaTime.asSeconds();
     }
 
     // Handle reloading
     if (isReloading) 
     {
-        reloadTimer -= t_deltaTime.asSeconds();
-        if (reloadTimer <= 0.0f) 
+        m_reloadTimer -= t_deltaTime.asSeconds();
+        if (m_reloadTimer <= 0.0f) 
         {
             isReloading = false;
         }
     }
 
-    if (enemyUnits) 
+    if (m_enemyUnits) 
     {
-        aimWeapon(*enemyUnits);
+        aimWeapon(*m_enemyUnits);
     }
 }
 
+/// <summary>
+/// Initializes buggy unit
+/// </summary>
 void Buggy::setupBuggy()
 {
 	if (!m_unitTexture.loadFromFile("Assets\\Images\\Units\\buggy.png"))
@@ -68,6 +71,10 @@ void Buggy::setupBuggy()
     m_weaponSprite.setScale(0.1, 0.1);
 }
 
+/// <summary>
+/// movement for this unit
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void Buggy::movement(sf::Time t_deltaTime)
 {
     float distance = magnitude(m_targetPosition - m_position);
@@ -105,52 +112,56 @@ void Buggy::movement(sf::Time t_deltaTime)
     orientSpriteToMovement(t_deltaTime);
 }
 
-void Buggy::aimWeapon(const std::vector<Unit*>& enemyUnits)
+/// <summary>
+/// Aims the weapon towards enemy
+/// </summary>
+/// <param name="m_enemyUnits"></param>
+void Buggy::aimWeapon(const std::vector<Unit*>& m_enemyUnits)
 {
-    if (enemyUnits.empty())
+    if (m_enemyUnits.empty())
     {
         m_weaponSprite.setRotation(m_unitSprite.getRotation());
         return;
     }
      
-    closestDistance = std::numeric_limits<float>::max();
-    closestBuildingDistance = std::numeric_limits<float>::max();
+    m_closestDistance = std::numeric_limits<float>::max();
+    m_closestBuildingDistance = std::numeric_limits<float>::max();
 
-    for (Unit* enemy : enemyUnits)
+    for (Unit* enemy : m_enemyUnits)
     {
         float distance = this->distance(this->getPosition(), enemy->getPosition());
 
-        if (distance < closestDistance) 
+        if (distance < m_closestDistance) 
         {
-            closestDistance = distance;
-            closestEnemy = enemy;
+            m_closestDistance = distance;
+            m_closestEnemy = enemy;
         }
     }
-    if (enemyBuildings)
+    if (m_enemyBuildings)
     {
-        for (Building* building : *enemyBuildings)
+        for (Building* building : *m_enemyBuildings)
         {
             float distance = this->distance(this->getPosition(), building->getPosition());
 
-            if (distance < closestBuildingDistance)
+            if (distance < m_closestBuildingDistance)
             {
-                closestBuildingDistance = distance;
-                closestBuilding = building;
+                m_closestBuildingDistance = distance;
+                m_closestBuilding = building;
             }
         }
     }
 
-    if (closestEnemy && closestDistance <= this->getViewRadius() - 50) 
+    if (m_closestEnemy && m_closestDistance <= this->getViewRadius() - 50) 
     {
-        directionToEnemy = normalize(closestEnemy->getPosition() - this->getPosition());
-        float angleDegrees = angleFromVector(directionToEnemy);
+        m_directionToEnemy = normalize(m_closestEnemy->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(m_directionToEnemy);
         m_weaponSprite.setRotation(angleDegrees + 90);
         shootAtEnemy();
     }
-    else if (closestBuilding && closestBuildingDistance <= this->getViewRadius() - 50)
+    else if (m_closestBuilding && m_closestBuildingDistance <= this->getViewRadius() - 50)
     {
-        directionToEnemy = normalize(closestBuilding->getPosition() - this->getPosition());
-        float angleDegrees = angleFromVector(directionToEnemy);
+        m_directionToEnemy = normalize(m_closestBuilding->getPosition() - this->getPosition());
+        float angleDegrees = angleFromVector(m_directionToEnemy);
         m_weaponSprite.setRotation(angleDegrees + 90);
         shootAtEnemy();
     }
@@ -160,9 +171,12 @@ void Buggy::aimWeapon(const std::vector<Unit*>& enemyUnits)
     }
 }
 
+/// <summary>
+/// shoots the bullet
+/// </summary>
 void Buggy::shootAtEnemy()
 {
-    if (!isReloading && fireTimer <= 0.0f) 
+    if (!isReloading && m_fireTimer <= 0.0f) 
     {
         // create a random spray between -2.5 to 2.5 degrees
         float sprayAngle = (std::rand() % 6 - 2.5) * (3.14159265 / 180);
@@ -171,20 +185,20 @@ void Buggy::shootAtEnemy()
         float sinAngle = std::sin(sprayAngle);
         sf::Vector2f sprayedDirection = 
         {
-            directionToEnemy.x * cosAngle - directionToEnemy.y * sinAngle,
-            directionToEnemy.x * sinAngle + directionToEnemy.y * cosAngle
+            m_directionToEnemy.x * cosAngle - m_directionToEnemy.y * sinAngle,
+            m_directionToEnemy.x * sinAngle + m_directionToEnemy.y * cosAngle
         };
 
         sf::Vector2f bulletStartPosition = m_weaponSprite.getPosition();
-        bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
-        shotsFired++;
-        fireTimer = fireRate;
+        m_bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
+        m_shotsFired++;
+        m_fireTimer = m_fireRate;
 
-        if (shotsFired >= clip)
+        if (m_shotsFired >= m_clip)
         {
             isReloading = true;
-            shotsFired = 0;
-            reloadTimer = reloadTime;
+            m_shotsFired = 0;
+            m_reloadTimer = m_reloadTime;
         }
     }
 }

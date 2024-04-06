@@ -10,7 +10,7 @@ Headquarters::~Headquarters()
 {
 }
 
-void Headquarters::update(sf::Time deltaTime)
+void Headquarters::update(sf::Time t_deltaTime)
 {
 }
 
@@ -19,6 +19,9 @@ void Headquarters::render(sf::RenderWindow& m_window) const
 	Building::render(m_window);
 }
 
+/// <summary>
+/// initializes the headquaters
+/// </summary>
 void Headquarters::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Command Center.png"))

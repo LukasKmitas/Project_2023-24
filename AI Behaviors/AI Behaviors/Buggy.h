@@ -7,21 +7,21 @@ public:
 	Buggy();
 	~Buggy();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 
 private:
 
 	void setupBuggy();
 
 	void movement(sf::Time t_deltaTime);
-	void aimWeapon(const std::vector<Unit*>& enemyUnits);
+	void aimWeapon(const std::vector<Unit*>& m_enemyUnits);
 
 	void shootAtEnemy();
 
-	int shotsFired = 0;
-	int clip = 8;
-	float reloadTime = 2.0f;
-	float reloadTimer = 0.0f;
-	float fireRate = 0.2f;
-	float fireTimer = 0.0f;
+	int m_shotsFired = 0;
+	int m_clip = 8;
+	float m_reloadTime = 2.0f;
+	float m_reloadTimer = 0.0f;
+	float m_fireRate = 0.2f;
+	float m_fireTimer = 0.0f;
 };

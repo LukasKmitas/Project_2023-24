@@ -7,7 +7,7 @@ public:
 	TankAurora();
 	~TankAurora();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allUnits) override;
 	void render(sf::RenderWindow& m_window) override;
 
 private:
@@ -19,10 +19,8 @@ private:
 	void movement(sf::Time t_deltaTime);
 
 	void spawnElectricalParticleEffect(sf::Time t_deltaTime);
-
 	void startEMPCharge();
 	void emitEMP();
-
 	void resetEnergyWave();
 
 	sf::CircleShape m_healingAura;
@@ -33,25 +31,25 @@ private:
 	sf::Texture m_energyWaveTexture;
 	sf::Texture m_lightningTexture;
 
-	sf::Vector2f directionToEnemy;
+	sf::Vector2f m_directionToEnemy;
 
 	float m_healingRange = 150.0f;
 
 	// Electicity stuff
-	bool isChargingEMPWave = true;
-	float empChargeTime = 6.0f;
-	float currentChargeTime = 0.0f;
-	float empExpandArea = 15.0f;
+	bool m_isChargingEMPWave = true;
+	float m_empChargeTime = 6.0f;
+	float m_currentChargeTime = 0.0f;
+	float m_empExpandArea = 15.0f;
 
 	// Energy Wave stuff
-	sf::Shader waveShader;
-	sf::Clock clock;
+	sf::Shader m_waveShader;
+	sf::Clock m_clock;
 
-	bool isFiringEnergyWave = false;
-	sf::Vector2f energyWavePosition;
-	float energyWaveSpeed = 200.0f;
-	float energyWaveSize = 0.4f; 
-	float energyWaveMaxSize = 1.5f;
-	float energyWaveGrowthRate = 0.5f;
+	bool m_isFiringEnergyWave = false;
+	sf::Vector2f m_energyWavePosition;
+	float m_energyWaveSpeed = 200.0f;
+	float m_energyWaveSize = 0.4f; 
+	float m_energyWaveMaxSize = 1.5f;
+	float m_energyWaveGrowthRate = 0.5f;
 };
 

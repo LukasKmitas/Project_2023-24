@@ -26,7 +26,7 @@ private:
     sf::Font m_font;
 
     sf::Text m_titleText;
-    sf::Text outlineText;
+    sf::Text m_outlineText;
     sf::Text m_playText;
     sf::Text m_editorText;
     sf::Text m_loadLevelText;

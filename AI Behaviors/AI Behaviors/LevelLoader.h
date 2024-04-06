@@ -20,12 +20,12 @@ public:
 
 	void initLevelSelectionButtons();
 
-	void goToMainMenu(sf::Vector2i mousePosition, GameState& m_gameState);
-	void handleLevelSelectionMouseInput(sf::Vector2i mousePosition);
+	void goToMainMenu(sf::Vector2i m_mousePosition, GameState& m_gameState);
+	void handleLevelSelectionMouseInput(sf::Vector2i m_mousePosition);
 
-	std::vector<std::string> levelFilenames;
+	std::vector<std::string> m_levelFilenames;
 
-	int selectedButtonIndex;
+	int m_selectedButtonIndex;
 
 private:
 
@@ -34,9 +34,9 @@ private:
 	void initBackground();
 	void initBackButton();
 
-	void loadLevel(const std::string& filename);
+	void loadLevel(const std::string& m_filename);
 
-	std::vector<sf::RectangleShape> levelSelectionButtons;
+	std::vector<sf::RectangleShape> m_levelSelectionButtons;
 
 	sf::RectangleShape m_toGoBackButton;
 	sf::Texture m_buttonTexture;
@@ -46,11 +46,11 @@ private:
 
 	sf::Font m_font;
 	sf::Text m_toGoBackText;
-	sf::Text levelSelectionButtonText;
+	sf::Text m_levelSelectionButtonText;
 
-	float buttonWidth = 250.0f;
-	float buttonHeight = 80.0f;
+	float m_buttonWidth = 250.0f;
+	float m_buttonHeight = 80.0f;
 
-	bool levelLoaded = false;
+	bool m_levelLoaded = false;
 };
 

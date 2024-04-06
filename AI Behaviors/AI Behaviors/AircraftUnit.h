@@ -7,7 +7,7 @@ public:
 	AircraftUnit();
 	~AircraftUnit();
 
-	void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits) override;
+	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 	void render(sf::RenderWindow& m_window) override;
 
 };

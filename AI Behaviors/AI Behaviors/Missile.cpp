@@ -1,103 +1,103 @@
 #include "Missile.h"
 
-Missile::Missile(const sf::Vector2f& startPosition, const sf::Vector2f& targetDirection, float initialSpeed, const sf::Texture& texture)
-    : position(startPosition), speed(initialSpeed) 
+Missile::Missile(const sf::Vector2f& m_startPosition, const sf::Vector2f& m_targetDirection, float m_speed, const sf::Texture& m_texture)
+    : m_position(m_startPosition), m_speed(m_speed)
 {
-    velocity = normalize(targetDirection) * speed;
-    missileSprite.setScale(0.2, 0.2);
-    missileSprite.setTexture(texture);
-    missileSprite.setOrigin(texture.getSize().x / 2.0f, texture.getSize().y / 2.0f); // Center the origin
-    missileSprite.setPosition(position);
+    m_velocity = normalize(m_targetDirection) * m_speed;
+    m_missileSprite.setScale(0.2, 0.2);
+    m_missileSprite.setTexture(m_texture);
+    m_missileSprite.setOrigin(m_texture.getSize().x / 2.0f, m_texture.getSize().y / 2.0f); // Center the origin
+    m_missileSprite.setPosition(m_position);
 }
 
-void Missile::update(sf::Time deltaTime)
+void Missile::update(sf::Time t_deltaTime)
 {
-    if (active)
+    if (m_active)
     {
-        position += velocity * deltaTime.asSeconds();
-        missileSprite.setPosition(position);
-        float angle = atan2(velocity.y, velocity.x) * (180 / 3.14159265f);
-        missileSprite.setRotation(angle + 90);
+        m_position += m_velocity * t_deltaTime.asSeconds();
+        m_missileSprite.setPosition(m_position);
+        float angle = atan2(m_velocity.y, m_velocity.x) * (180 / 3.14159265f);
+        m_missileSprite.setRotation(angle + 90);
 
-        lifetime -= deltaTime.asSeconds();
-        if (lifetime <= 0.0f)
+        m_lifetime -= t_deltaTime.asSeconds();
+        if (m_lifetime <= 0.0f)
         {
-            active = false; 
+            m_active = false; 
         }
     }
 
-    updateTrail(deltaTime);
-
+    updateTrail(t_deltaTime);
 }
 
-void Missile::render(sf::RenderWindow& window) const
+void Missile::render(sf::RenderWindow& m_window) const
 {
-    for (const auto& part : trail) 
+    for (const auto& part : m_trail) 
     {
-        window.draw(part.shape);
+        m_window.draw(part.m_shape);
     }
-    if (active)
+    if (m_active)
     {
-        window.draw(missileSprite);
+        m_window.draw(m_missileSprite);
     }
 }
 
-sf::Vector2f Missile::normalize(const sf::Vector2f& source) const
+sf::Vector2f Missile::normalize(const sf::Vector2f& m_source) const
 {
-    float length = std::sqrt(source.x * source.x + source.y * source.y);
+    float length = std::sqrt(m_source.x * m_source.x + m_source.y * m_source.y);
     if (length != 0)
     {
-        return source / length;
+        return m_source / length;
     }
     else
     {
-        return source;
+        return m_source;
     }
 }
 
-void Missile::updateTrail(sf::Time deltaTime)
+void Missile::updateTrail(sf::Time t_deltaTime)
 {
-    timeSinceLastTrailPart += deltaTime.asSeconds();
+    m_timeSinceLastTrailPart += t_deltaTime.asSeconds();
 
-    if (timeSinceLastTrailPart >= addTrailPartInterval && active)
+    if (m_timeSinceLastTrailPart >= m_addTrailPartInterval && m_active)
     {
         TrailPart newPart;
-        newPart.shape.setRadius(3.0f);
-        newPart.shape.setPosition(position);
-        newPart.lifetime = trailMaxLifetime;
-        newPart.expansionRate = 3.0f;
-        newPart.startColor = sf::Color(255, 140, 0);
-        newPart.endColor = sf::Color(50, 50, 50);
-        newPart.shape.setFillColor(newPart.startColor);
-        trail.push_front(newPart);
+        newPart.m_shape.setRadius(3.0f);
+        newPart.m_shape.setPosition(m_position);
+        newPart.m_lifetime = m_trailMaxLifetime;
+        newPart.m_expansionRate = 3.0f;
+        newPart.m_startColor = sf::Color(255, 140, 0);
+        newPart.m_endColor = sf::Color(50, 50, 50);
+        newPart.m_shape.setFillColor(newPart.m_startColor);
+        m_trail.push_front(newPart);
 
-        timeSinceLastTrailPart = 0.0f;
+        m_timeSinceLastTrailPart = 0.0f;
     }
 
-    for (auto& part : trail)
+    for (auto& part : m_trail)
     {
-        part.lifetime -= deltaTime.asSeconds();
-        float lifeRatio = part.lifetime / trailMaxLifetime;
-        sf::Color currentColor = lerpColor(part.startColor, part.endColor, 1.0f - lifeRatio);
+        part.m_lifetime -= t_deltaTime.asSeconds();
+        float lifeRatio = part.m_lifetime / m_trailMaxLifetime;
+        sf::Color currentColor = lerpColor(part.m_startColor, part.m_endColor, 1.0f - lifeRatio);
 
         if (lifeRatio < 0.2f) // Last 20% of lifetime
         {
             currentColor.a = static_cast<sf::Uint8>(255 * (lifeRatio / 0.2f));
         }
-        part.shape.setFillColor(currentColor);
-        part.shape.setRadius(part.shape.getRadius() + (part.expansionRate * deltaTime.asSeconds()));
+        part.m_shape.setFillColor(currentColor);
+        part.m_shape.setRadius(part.m_shape.getRadius() + (part.m_expansionRate * t_deltaTime.asSeconds()));
     }
 
-    trail.erase(std::remove_if(trail.begin(), trail.end(),
-        [](const TrailPart& part) { return part.lifetime <= 0; }), trail.end());
+    m_trail.erase(std::remove_if(m_trail.begin(), m_trail.end(),
+        [](const TrailPart& part) { return part.m_lifetime <= 0; }), m_trail.end());
 }
 
-sf::Color Missile::lerpColor(const sf::Color& start, const sf::Color& end, float t) 
+sf::Color Missile::lerpColor(const sf::Color& m_start, const sf::Color& m_end, float m_lifeTime)
 {
-    return sf::Color(
-        static_cast<sf::Uint8>(start.r + (end.r - start.r) * t),
-        static_cast<sf::Uint8>(start.g + (end.g - start.g) * t),
-        static_cast<sf::Uint8>(start.b + (end.b - start.b) * t),
-        static_cast<sf::Uint8>(start.a + (end.a - start.a) * t)
+    return sf::Color
+    (
+        static_cast<sf::Uint8>(m_start.r + (m_end.r - m_start.r) * m_lifeTime),
+        static_cast<sf::Uint8>(m_start.g + (m_end.g - m_start.g) * m_lifeTime),
+        static_cast<sf::Uint8>(m_start.b + (m_end.b - m_start.b) * m_lifeTime),
+        static_cast<sf::Uint8>(m_start.a + (m_end.a - m_start.a) * m_lifeTime)
     );
 }

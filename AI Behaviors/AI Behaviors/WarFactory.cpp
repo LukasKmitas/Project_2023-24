@@ -11,7 +11,7 @@ WarFactory::~WarFactory()
 {
 }
 
-void WarFactory::update(sf::Time deltaTime)
+void WarFactory::update(sf::Time t_deltaTime)
 {
 }
 
@@ -20,6 +20,9 @@ void WarFactory::render(sf::RenderWindow& m_window) const
 	Building::render(m_window);
 }
 
+/// <summary>
+/// initializes the war factory building 
+/// </summary>
 void WarFactory::setupSprite()
 {
 	if (!m_buildingTexture.loadFromFile("Assets\\Images\\GUI\\Ground Control.png"))
