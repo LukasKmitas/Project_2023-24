@@ -109,7 +109,6 @@ protected:
     float m_maxForce = 1.0f;
     float m_rotationSpeed = 250.0f;
     float m_bulletSpeed = 100;
-    float m_rotationSpeed = 90.0f;
     float m_closestDistance;
     float m_closestBuildingDistance;
     float m_arrivalTolerance = 5.0f;

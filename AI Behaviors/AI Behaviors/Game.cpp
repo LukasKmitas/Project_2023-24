@@ -29,6 +29,7 @@ Game::Game() :
 	m_cursorSprite.setTexture(m_cursorTexture);
 
 	initParticles();
+	initWinLosePanel();
 
 	createBase();
 	createEnemyStarterBase();
@@ -42,7 +43,6 @@ Game::Game() :
 	m_hiddenNeurons = m_neural_network.getHiddenNeurons();
 	m_biasNeurons = m_neural_network.getBiasNeurons();
 	initNeuralNetwork();
-	initWinLosePanel();
 }
 
 /// <summary>
@@ -1191,7 +1191,7 @@ void Game::initWinLosePanel()
 	m_playAgainButton.setSize(sf::Vector2f(150, 50));
 	m_playAgainButton.setOrigin(m_playAgainButton.getSize().x / 2, m_playAgainButton.getSize().y / 2);
 	m_playAgainButton.setFillColor(sf::Color(100, 100, 250));
-	m_playAgainButton.setPosition(Global::S_WIDTH / 2, 500);
+	m_playAgainButton.setPosition(Global::S_WIDTH / 2, 550);
 
 	m_playAgainText.setFont(m_font);
 	m_playAgainText.setString("Play Again");
@@ -1205,7 +1205,7 @@ void Game::initWinLosePanel()
 	m_exitButton.setSize(sf::Vector2f(150, 50));
 	m_exitButton.setOrigin(m_exitButton.getSize().x / 2, m_exitButton.getSize().y / 2);
 	m_exitButton.setFillColor(sf::Color(250, 100, 100));
-	m_exitButton.setPosition(Global::S_WIDTH / 2, 600);
+	m_exitButton.setPosition(Global::S_WIDTH / 2, 650);
 
 	m_exitText.setFont(m_font);
 	m_exitText.setString("Exit");
@@ -1232,6 +1232,15 @@ void Game::initWinLosePanel()
 	m_enemyStatsText.setOrigin(m_enemyStatsText.getLocalBounds().width / 2, m_enemyStatsText.getLocalBounds().height / 2);
 	m_enemyStatsText.setPosition(Global::S_WIDTH / 2 + 200,
 		m_panelBackgroundSprite.getPosition().y - 50);
+
+	m_gameDurationText.setFont(m_font);
+	m_gameDurationText.setCharacterSize(20);
+	m_gameDurationText.setFillColor(sf::Color::White);
+	m_gameDurationText.setOutlineColor(sf::Color::Yellow);
+	m_gameDurationText.setOutlineThickness(0.2);
+	m_gameDurationText.setString("Game Duration: 00:00");
+	m_gameDurationText.setOrigin(m_gameDurationText.getLocalBounds().width / 2, m_gameDurationText.getLocalBounds().height / 2);
+	m_gameDurationText.setPosition(Global::S_WIDTH / 2, m_winLoseText.getPosition().y + 100); 
 }
 
 /// <summary>
@@ -1248,11 +1257,14 @@ void Game::renderWinLosePanel(sf::RenderWindow& m_window)
 	m_window.draw(m_exitText);
 	m_window.draw(m_playerStatsText);
 	m_window.draw(m_enemyStatsText);
-
+	m_window.draw(m_gameDurationText);
+	
 	m_playerStatsText.setString("PLAYER STATS\n\nBuildings: " + std::to_string(m_playerBuildingStatCount) +
 		"\nUnits: " + std::to_string(m_playerUnitStatCount));
 	m_enemyStatsText.setString("ENEMY STATS\n\nBuildings: " + std::to_string(m_enemyBuildingStatCount) +
 		"\nUnits: " + std::to_string(m_enemyUnitStatCount));
+
+	m_gameDurationText.setString("Game duration: " + std::to_string(m_minutes) + ":" + (m_seconds < 10 ? "0" : "") + std::to_string(m_seconds));
 }
 
 /// <summary>
@@ -1323,6 +1335,13 @@ void Game::loadLevel(const std::string& m_filename)
 /// </summary>
 void Game::checkVictoryConditions()
 {
+	if (m_gameWinLose == WinLoseState::NONE)
+	{
+		m_gameDurationTime = m_gameDurationClock.getElapsedTime();
+		m_minutes = static_cast<int>(m_gameDurationTime.asSeconds()) / 60;
+		m_seconds = static_cast<int>(m_gameDurationTime.asSeconds()) % 60;
+	}
+
 	if (m_placedEnemyBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::WIN;
@@ -2153,6 +2172,7 @@ void Game::gameReset()
 	m_playerBuildingStatCount = 0;
 	m_enemyUnitStatCount = 0;
 	m_enemyBuildingStatCount = 0;
+	m_gameDurationClock.restart();
 	clearGameEntities();
 	createBase();
 	createEnemyStarterBase();

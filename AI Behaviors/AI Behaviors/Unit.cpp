@@ -57,6 +57,10 @@ void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
     }
 }
 
+/// <summary>
+/// Renders the units and anything related to it
+/// </summary>
+/// <param name="m_window"></param>
 void Unit::render(sf::RenderWindow& m_window)
 {
     m_particleSystem.render(m_window);

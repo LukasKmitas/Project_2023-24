@@ -191,13 +191,17 @@ private:
 	sf::Text m_exitText;
 	sf::RectangleShape m_playAgainButton;
 	sf::RectangleShape m_exitButton;
-
 	sf::Text m_playerStatsText;
 	sf::Text m_enemyStatsText;
+	sf::Text m_gameDurationText;
 	int m_playerUnitStatCount = 0;
 	int m_playerBuildingStatCount = 0;
 	int m_enemyUnitStatCount = 0;
 	int m_enemyBuildingStatCount = 0;
+	sf::Clock m_gameDurationClock;
+	sf::Time m_gameDurationTime;
+	int m_minutes = 0;
+	int m_seconds = 0;
 
 };
 
