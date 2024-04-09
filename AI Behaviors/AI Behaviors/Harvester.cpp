@@ -283,12 +283,3 @@ void Harvester::setBuildings(const std::vector<Building*>& m_allyUnits)
 {
     this->m_allBuildings = &m_allyUnits;
 }
-
-/// <summary>
-/// sets the tiles to find resources tile
-/// </summary>
-/// <param name="m_tiles"></param>
-void Harvester::setTiles(const std::vector<std::vector<Tile>>& m_tiles)
-{
-    this->m_tiles = &m_tiles;
-}

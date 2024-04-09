@@ -14,7 +14,8 @@ Unit::~Unit()
 void Unit::update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits)
 { 
     m_viewCircleShape.setPosition(m_unitSprite.getPosition().x, m_unitSprite.getPosition().y);
-    avoidCollisions(allyUnits);
+    avoidCollisionsWithUnits(allyUnits);
+    avoidCollisionsWithWalls();
     for (auto& bullet : m_bullets)
     {
         bullet.update(t_deltaTime);
@@ -86,13 +87,23 @@ void Unit::render(sf::RenderWindow& m_window)
     {
         missile.render(m_window);
     }
+
+    for (const auto& ray : m_debugRays)
+    {
+        sf::VertexArray line(sf::Lines, 2);
+        line[0].position = m_position;
+        line[1].position = m_position + ray;
+        line[0].color = sf::Color::Yellow;
+        line[1].color = sf::Color::Red;
+        m_window.draw(line);
+    }
 }
 
 /// <summary>
 /// its to avoid colliding with each other
 /// </summary>
 /// <param name="m_allyUnits"></param>
-void Unit::avoidCollisions(std::vector<Unit*>& m_allyUnits)
+void Unit::avoidCollisionsWithUnits(std::vector<Unit*>& m_allyUnits)
 {
     const float minSeparation = 250.0f;
     sf::Vector2f separationForce(0.0f, 0.0f);
@@ -123,6 +134,47 @@ void Unit::avoidCollisions(std::vector<Unit*>& m_allyUnits)
         separationForce /= static_cast<float>(closeUnits);
         separationForce = normalize(separationForce);
         m_targetPosition += separationForce;
+    }
+}
+
+/// <summary>
+/// To avoid walls for units
+/// </summary>
+void Unit::avoidCollisionsWithWalls() 
+{
+    m_debugRays.clear();
+
+    if (!m_tiles || m_velocity == sf::Vector2f(0, 0))
+    {
+        return;
+    }
+
+    const float m_distanceAhead = 60.0f; // Distance to check ahead for walls
+    const float m_distanceSides = 30.0f;  // Distance to check to the sides
+    sf::Vector2f m_currentPosition = getPosition();
+
+    std::vector<float> checkAngles = { 0, 30.0f, -30.0f, 60.0f, -60.0f, 90.0f, -90.0f };
+
+    for (float angle : checkAngles) 
+    {
+        sf::Vector2f testDirection = rotateVector(normalize(m_velocity), angle);
+        float checkDistance = angle == 0 ? m_distanceAhead : m_distanceSides;
+        sf::Vector2f newPosition = m_currentPosition + testDirection * checkDistance;
+
+        m_debugRays.push_back(testDirection * checkDistance); 
+
+        int newTileX = static_cast<int>(newPosition.x / (*m_tiles)[0][0].m_tileSize);
+        int newTileY = static_cast<int>(newPosition.y / (*m_tiles)[0][0].m_tileSize);
+
+        if (newTileX >= 0 && newTileX < (*m_tiles)[0].size() && newTileY >= 0 && newTileY < (*m_tiles).size() && (*m_tiles)[newTileY][newTileX].m_isWall)
+        {
+            sf::Vector2f avoidanceDirection = findAvoidanceDirection(m_currentPosition, m_distanceAhead);
+            if (avoidanceDirection != sf::Vector2f(0, 0)) 
+            {
+                m_velocity = lerp(m_velocity, normalize(avoidanceDirection) * m_speed, 0.1f); // Apply smoothing
+                break;
+            }
+        }
     }
 }
 
@@ -172,7 +224,7 @@ void Unit::squadEntityRegain()
 }
 
 /// <summary>
-/// sets target position
+/// sets target position for the start of being created
 /// </summary>
 /// <param name="m_targetPos"></param>
 void Unit::setTargetPosition(const sf::Vector2f& m_targetPos)
@@ -242,6 +294,15 @@ void Unit::setEnemyUnits(std::vector<Unit*>& m_enemyUnits)
 void Unit::setEnemyBuildings(std::vector<Building*>& m_enemyBuildings)
 {
     this->m_enemyBuildings = &m_enemyBuildings;
+}
+
+/// <summary>
+/// Sets the tiles
+/// </summary>
+/// <param name="m_tiles"></param>
+void Unit::setTiles(const std::vector<std::vector<Tile>>& m_tiles)
+{
+    this->m_tiles = &m_tiles;
 }
 
 const sf::Sprite& Unit::getSprite() const
@@ -457,4 +518,34 @@ float Unit::angleFromVector(const sf::Vector2f& m_vector)
 float Unit::getViewRadius() const 
 {
     return m_viewRadius;
+}
+
+sf::Vector2f Unit::lerp(const sf::Vector2f& m_start, const sf::Vector2f& m_end, float m_time) 
+{
+    return m_start + (m_end - m_start) * m_time;
+}
+
+/// <summary>
+/// This looks for a suitable direction to avoid walls when a direct path is blocked 
+/// It tries various angles to find a clear path
+/// </summary>
+/// <param name="m_currentPosition"></param>
+/// <param name="m_checkAheadDistance"></param>
+/// <returns></returns>
+sf::Vector2f Unit::findAvoidanceDirection(const sf::Vector2f& m_currentPosition, float m_checkAheadDistance)
+{
+    for (float angle : {30.0f, -30.0f, 60.0f, -60.0f, 120.0f, -120.0f}) 
+    {
+        sf::Vector2f testDirection = rotateVector(normalize(m_velocity), angle);
+        sf::Vector2f newPosition = m_currentPosition + testDirection * m_checkAheadDistance;
+
+        int newTileX = static_cast<int>(newPosition.x / (*m_tiles)[0][0].m_tileSize);
+        int newTileY = static_cast<int>(newPosition.y / (*m_tiles)[0][0].m_tileSize);
+
+        if (newTileX >= 0 && newTileX < (*m_tiles)[0].size() && newTileY >= 0 && newTileY < (*m_tiles).size() && !(*m_tiles)[newTileY][newTileX].m_isWall)
+        {
+            return testDirection;
+        }
+    }
+    return sf::Vector2f(0, 0);
 }

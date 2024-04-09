@@ -942,6 +942,7 @@ void Game::createUnit()
 				newRiflemanSquad->setTargetPosition(spawnPosition + targetPositionOffset);
 				newRiflemanSquad->setEnemyUnits(m_enemyUnits);
 				newRiflemanSquad->setEnemyBuildings(m_placedEnemyBuildings);
+				newRiflemanSquad->setTiles(m_levelEditor.m_tiles);
 
 				m_playerUnits.push_back(newRiflemanSquad);
 			}
@@ -976,6 +977,7 @@ void Game::createUnit()
 				newBuggy->setTargetPosition(spawnPosition + targetPositionOffset);
 				newBuggy->setEnemyUnits(m_enemyUnits);
 				newBuggy->setEnemyBuildings(m_placedEnemyBuildings);
+				newBuggy->setTiles(m_levelEditor.m_tiles);
 
 				m_playerUnits.push_back(newBuggy);
 			}
@@ -991,6 +993,7 @@ void Game::createUnit()
 				newTankAurora->setPosition(spawnPosition);
 				newTankAurora->setTargetPosition(spawnPosition + targetPositionOffset);
 				newTankAurora->setEnemyUnits(m_enemyUnits);
+				newTankAurora->setTiles(m_levelEditor.m_tiles);
 
 				m_playerUnits.push_back(newTankAurora);
 			}
@@ -1373,14 +1376,14 @@ void Game::createEnemyStarterBase()
 
 	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f);
 
-	Harvester* newHarvester = new Harvester();
+	/*Harvester* newHarvester = new Harvester();
 	newHarvester->setPosition(spawnPosition);
 	newHarvester->setTargetPosition(spawnPosition + m_targetPositionOffset);
 	newHarvester->setBuildings(m_placedEnemyBuildings);
 	newHarvester->setTiles(m_levelEditor.m_tiles);
 	newHarvester->m_currentState = newHarvester->MovingToResource;
 	newHarvester->m_isEnemy = true;
-	m_enemyUnits.push_back(newHarvester);
+	m_enemyUnits.push_back(newHarvester);*/
 
 	std::cout << "Enemy Base Initilised" << std::endl;
 	updateBuildingCounts();
@@ -1691,6 +1694,7 @@ void Game::createEnemyUnit(const std::string& m_unitType)
 		newRiflemanSquad->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
 		newRiflemanSquad->setEnemyUnits(m_playerUnits);
 		newRiflemanSquad->setEnemyBuildings(m_placedPlayerBuildings);
+		newRiflemanSquad->setTiles(m_levelEditor.m_tiles);
 
 		m_enemyUnits.push_back(newRiflemanSquad);
 	}
@@ -1713,6 +1717,7 @@ void Game::createEnemyUnit(const std::string& m_unitType)
 		newBuggy->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
 		newBuggy->setEnemyUnits(m_playerUnits);
 		newBuggy->setEnemyBuildings(m_placedPlayerBuildings);
+		newBuggy->setTiles(m_levelEditor.m_tiles);
 
 		m_enemyUnits.push_back(newBuggy);
 	}
@@ -1722,6 +1727,7 @@ void Game::createEnemyUnit(const std::string& m_unitType)
 		newTankAurora->setPosition(m_spawnPosition);
 		newTankAurora->setTargetPosition(m_spawnPosition + m_targetPositionOffset);
 		newTankAurora->setEnemyUnits(m_playerUnits);
+		newTankAurora->setTiles(m_levelEditor.m_tiles);
 
 		m_enemyUnits.push_back(newTankAurora);
 	}

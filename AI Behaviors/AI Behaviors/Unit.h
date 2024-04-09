@@ -7,6 +7,7 @@
 #include "Missile.h"
 #include "ParticleSystem.h"
 #include "Building.h"
+#include "Tile.h"
 
 enum class UnitType
 {
@@ -35,6 +36,7 @@ public:
 
     void setEnemyUnits(std::vector<Unit*>& m_enemyUnits);
     void setEnemyBuildings(std::vector<Building*>& m_enemyBuildings);
+    void setTiles(const std::vector<std::vector<Tile>>& m_tiles);
 
     const sf::Sprite& getSprite() const;
 
@@ -42,6 +44,8 @@ public:
     sf::Vector2f normalize(const sf::Vector2f m_source);
     sf::Vector2f steerTowards(sf::Vector2f m_target);
     sf::Vector2f rotateVector(sf::Vector2f m_vector, float m_angleDegrees);
+    sf::Vector2f lerp(const sf::Vector2f& m_start, const sf::Vector2f& m_end, float m_time);
+    sf::Vector2f findAvoidanceDirection(const sf::Vector2f& m_currentPosition, float m_checkAheadDistance);
 
     std::vector<Bullet> m_bullets;
     std::vector<Missile> m_missiles;
@@ -74,12 +78,16 @@ protected:
     std::vector<Building*>* m_enemyBuildings = nullptr;
     Unit* m_closestEnemy = nullptr;
     Building* m_closestBuilding = nullptr;
+    const std::vector<std::vector<Tile>>* m_tiles;
+
+    std::vector<sf::Vector2f> m_debugRays;
 
     void initView();
     void initHealthBar();
     void initShader();
 
-    void avoidCollisions(std::vector<Unit*>& m_allyUnits);
+    void avoidCollisionsWithUnits(std::vector<Unit*>& m_allyUnits);
+    void avoidCollisionsWithWalls();
     void orientSpriteToMovement(sf::Time t_deltaTime);
 
     virtual void squadEntityRemoval();
