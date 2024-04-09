@@ -60,8 +60,8 @@ private:
 	void selectUnitAt(const sf::Vector2f& m_mousePos);
 	void selectUnitsInBox();
 
-	void saveLevel();
-	void loadLevel(const std::string& m_filename);
+	void saveMapLevel();
+	void loadMapLevel(const std::string& m_filename);
 	void checkVictoryConditions();
 
 	// Enemy AI stuff
@@ -111,10 +111,18 @@ private:
 	void spawnBulletSparkParticles(const sf::Vector2f& m_position);
 	void spawnExplosionParticle(const sf::Vector2f& m_position);
 
+	//WinLose 
 	void initWinLosePanel();
 	void renderWinLosePanel(sf::RenderWindow& m_window);
 	void handleWinLosePanel(const sf::Vector2f& m_mousePosition);
 	
+	// Pause menu
+	void initPauseMenu();
+	void handlePauseMenu(const sf::Vector2f& m_mousePosition);
+	void renderPauseMenu(sf::RenderWindow& m_window);
+	void saveGameMatch();
+	void loadGameMatch(const std::string& filename);
+
 	void gameReset();
 	void clearGameEntities();
 
@@ -202,6 +210,19 @@ private:
 	sf::Time m_gameDurationTime;
 	int m_minutes = 0;
 	int m_seconds = 0;
+
+
+	// Pause stuff
+	bool m_pausedGame = false;
+	sf::Sprite m_pauseBackgroundSprite;
+	sf::Texture m_pauseBackgroundTexture;
+	sf::Text m_pauseText;
+	sf::Text m_restartText;
+	sf::Text m_exitGameText;
+	sf::Text m_saveGameText;
+	sf::RectangleShape m_restartButton;
+	sf::RectangleShape m_exitGameButton;
+	sf::RectangleShape m_saveGameButton;
 
 };
 

@@ -452,6 +452,11 @@ sf::Vector2f Unit::getPosition() const
     return m_unitSprite.getPosition();
 }
 
+sf::Vector2f Unit::getTargetPosition() const
+{
+    return m_targetPosition;
+}
+
 sf::Vector2f Unit::normalize(const sf::Vector2f m_source)
 {
     float length = sqrt((m_source.x * m_source.x) + (m_source.y * m_source.y));

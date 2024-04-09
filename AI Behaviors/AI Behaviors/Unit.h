@@ -41,6 +41,7 @@ public:
     const sf::Sprite& getSprite() const;
 
     sf::Vector2f getPosition() const;
+    sf::Vector2f getTargetPosition() const;
     sf::Vector2f normalize(const sf::Vector2f m_source);
     sf::Vector2f steerTowards(sf::Vector2f m_target);
     sf::Vector2f rotateVector(sf::Vector2f m_vector, float m_angleDegrees);

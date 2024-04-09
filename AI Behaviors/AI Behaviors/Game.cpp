@@ -30,6 +30,7 @@ Game::Game() :
 
 	initParticles();
 	initWinLosePanel();
+	initPauseMenu();
 
 	createBase();
 	createEnemyStarterBase();
@@ -100,6 +101,12 @@ void Game::processEvents()
 			m_guiMousePosition = sf::Mouse::getPosition(m_window);
 			handleWinLosePanel(static_cast<sf::Vector2f>(m_guiMousePosition));
 			continue;
+		}
+		if (m_pausedGame && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
+		{
+			sf::Vector2f mousePos = m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window));
+			m_guiMousePosition = sf::Mouse::getPosition(m_window);
+			handlePauseMenu(static_cast<sf::Vector2f>(m_guiMousePosition));
 		}
 		if (sf::Event::Closed == newEvent.type)
 		{
@@ -295,11 +302,18 @@ void Game::processKeys(sf::Event t_event)
 				unit->setSelected(false);
 			}
 		}
+		if (t_event.type == sf::Event::KeyPressed)
+		{
+			if (t_event.key.code == sf::Keyboard::Escape)
+			{
+				m_pausedGame = !m_pausedGame;
+			}
+		}
 		break;
 	case GameState::LevelEditor:
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 		{
-			saveLevel();
+			saveMapLevel();
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
 		{
@@ -344,9 +358,13 @@ void Game::update(sf::Time t_deltaTime)
 		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
+		if (m_pausedGame) 
+		{
+			return;
+		}
 		if (m_gameWinLose == WinLoseState::NONE)
 		{
-			loadLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
+			loadMapLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
 			updateViewWithMouse();
 			m_gui.update(t_deltaTime);
 			m_gui.handleBuildingPlacement(mouseGUIPosition, m_window);
@@ -371,7 +389,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_levelEditor.update(t_deltaTime, m_window);
 		break;
 	case GameState::LevelLoad:
-		loadLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
+		loadMapLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
 		break;
 	case GameState::NeuralNetworks:
 		updateNeuralNetwork();
@@ -438,6 +456,10 @@ void Game::render()
 		if (m_showWinLosePanel)
 		{
 			renderWinLosePanel(m_window);
+		}
+		if (m_pausedGame)
+		{
+			renderPauseMenu(m_window);
 		}
 		m_window.setView(m_gameView);
 		if (m_gameWinLose == WinLoseState::NONE)
@@ -697,7 +719,7 @@ void Game::updatePlayerAssets(sf::Time t_deltaTime)
 /// <summary>
 /// Saves the level file name
 /// </summary>
-void Game::saveLevel()
+void Game::saveMapLevel()
 {
 	std::string filename;
 	std::cout << "Enter a filename to save the level: ";
@@ -1324,11 +1346,12 @@ int Game::calculateGridSize(int m_numberOfUnits)
 /// Loads the level
 /// </summary>
 /// <param name="m_filename"></param>
-void Game::loadLevel(const std::string& m_filename)
+void Game::loadMapLevel(const std::string& m_filename)
 {
 	if (!m_levelLoaded)
 	{
 		m_levelEditor.loadLevelFromFile("Assets\\SaveFiles\\" + m_filename + ".txt");
+		loadGameMatch("savegame.txt");
 		m_levelLoaded = true;
 	}
 }
@@ -2162,6 +2185,180 @@ bool Game::checkPositionWithinMap(const sf::Vector2f& m_position)
 	return m_position.x >= mapLeft && m_position.x <= mapRight &&
 		m_position.y >= mapTop && m_position.y <= mapBottom;
 }
+
+/// <summary>
+/// Initializes the pause menu stuff
+/// </summary>
+void Game::initPauseMenu()
+{
+	if (!m_pauseBackgroundTexture.loadFromFile("Assets\\Images\\GUI\\panel.png"))
+	{
+		std::cout << "Error - loading Panel texture" << std::endl;
+	}
+
+	m_pauseBackgroundSprite.setTexture(m_pauseBackgroundTexture);
+	m_pauseBackgroundSprite.setOrigin(m_pauseBackgroundSprite.getGlobalBounds().width / 2, m_pauseBackgroundSprite.getGlobalBounds().height / 2);
+	m_pauseBackgroundSprite.setScale(5, 5);
+	m_pauseBackgroundSprite.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
+
+	m_pauseText.setFont(m_font);
+	m_pauseText.setString("Paused Game");
+	m_pauseText.setCharacterSize(40);
+	m_pauseText.setFillColor(sf::Color::White);
+	m_pauseText.setOutlineColor(sf::Color::Yellow);
+	m_pauseText.setOutlineThickness(0.2f);
+	m_pauseText.setOrigin(m_pauseText.getLocalBounds().width / 2, m_pauseText.getLocalBounds().height / 2);
+	m_pauseText.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 250);
+
+	m_restartButton.setSize(sf::Vector2f(200, 50));
+	m_restartButton.setOrigin(m_restartButton.getLocalBounds().width / 2, m_restartButton.getLocalBounds().height / 2);
+	m_restartButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 - 100);
+	m_restartButton.setFillColor(sf::Color(100, 100, 100, 200)); 
+	m_restartText.setFont(m_font);
+	m_restartText.setString("Restart");
+	m_restartText.setCharacterSize(24);
+	m_restartText.setFillColor(sf::Color::White);
+	m_restartText.setOutlineColor(sf::Color::Cyan);
+	m_restartText.setOutlineThickness(0.2f); 
+	m_restartText.setOrigin(m_restartText.getLocalBounds().width / 2, m_restartText.getLocalBounds().height / 2);
+	m_restartText.setPosition(m_restartButton.getPosition().x, m_restartButton.getPosition().y);
+
+	m_saveGameButton.setSize(sf::Vector2f(200, 50));
+	m_saveGameButton.setOrigin(m_saveGameButton.getLocalBounds().width / 2, m_saveGameButton.getLocalBounds().height / 2);
+	m_saveGameButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
+	m_saveGameButton.setFillColor(sf::Color(100, 100, 100, 200)); 
+	m_saveGameText.setFont(m_font);
+	m_saveGameText.setString("Save Game");
+	m_saveGameText.setCharacterSize(24);
+	m_saveGameText.setFillColor(sf::Color::White);
+	m_saveGameText.setOutlineColor(sf::Color::Yellow);
+	m_saveGameText.setOutlineThickness(0.2f);
+	m_saveGameText.setOrigin(m_saveGameText.getLocalBounds().width / 2, m_saveGameText.getLocalBounds().height / 2);
+	m_saveGameText.setPosition(m_saveGameButton.getPosition().x, m_saveGameButton.getPosition().y);
+
+	m_exitGameButton.setSize(sf::Vector2f(200, 50));
+	m_exitGameButton.setOrigin(m_exitGameButton.getLocalBounds().width / 2, m_exitGameButton.getLocalBounds().height / 2);
+	m_exitGameButton.setPosition(Global::S_WIDTH / 2, Global::S_HEIGHT / 2 + 100);
+	m_exitGameButton.setFillColor(sf::Color(100, 100, 100, 200));
+	m_exitGameText.setFont(m_font);
+	m_exitGameText.setString("Exit Game");
+	m_exitGameText.setCharacterSize(24);
+	m_exitGameText.setFillColor(sf::Color::White);
+	m_exitGameText.setOutlineColor(sf::Color::Red);
+	m_exitGameText.setOutlineThickness(0.2f); 
+	m_exitGameText.setOrigin(m_exitGameText.getLocalBounds().width / 2, m_exitGameText.getLocalBounds().height / 2);
+	m_exitGameText.setPosition(m_exitGameButton.getPosition().x, m_exitGameButton.getPosition().y);
+}
+
+/// <summary>
+/// handles the mouse input for the buttons
+/// </summary>
+/// <param name="m_mousePosition"></param>
+void Game::handlePauseMenu(const sf::Vector2f& m_mousePosition)
+{
+	if (m_restartButton.getGlobalBounds().contains(m_mousePosition)) 
+	{
+		m_pausedGame = false;
+		gameReset();
+		m_currentState = GameState::PlayGame;
+	}
+	if (m_saveGameButton.getGlobalBounds().contains(m_mousePosition))
+	{
+		saveGameMatch();
+	}
+	if (m_exitGameButton.getGlobalBounds().contains(m_mousePosition)) 
+	{
+		m_levelLoaded = false;
+		m_pausedGame = false;
+		gameReset();
+		m_currentState = GameState::MainMenu;
+	}
+}
+
+/// <summary>
+/// Renders all pause menu stuff
+/// </summary>
+/// <param name="m_window"></param>
+void Game::renderPauseMenu(sf::RenderWindow& m_window)
+{
+	m_window.draw(m_pauseBackgroundSprite);
+	m_window.draw(m_pauseText);
+	m_window.draw(m_restartButton);
+	m_window.draw(m_restartText);
+	m_window.draw(m_exitGameButton);
+	m_window.draw(m_exitGameText);
+	m_window.draw(m_saveGameButton);
+	m_window.draw(m_saveGameText);
+}
+
+/// <summary>
+/// Saves the match level all the units/Buildings for player and enemy
+/// </summary>
+void Game::saveGameMatch()
+{
+	std::ofstream saveFile("Assets/SaveGameFiles/savegame.txt");
+
+	if (!saveFile.is_open())
+	{
+		std::cerr << "Failed to open save file for writing." << std::endl;
+		return;
+	}
+
+	saveFile << Global::playerCurrency << std::endl;
+	saveFile << Global::enemyCurrency << std::endl;
+	saveFile << m_playerUnitStatCount << std::endl;
+	saveFile << m_playerBuildingStatCount << std::endl;
+	saveFile << m_enemyUnitStatCount << std::endl;
+	saveFile << m_enemyBuildingStatCount << std::endl;
+	saveFile << m_gameDurationClock.getElapsedTime().asSeconds() << std::endl;
+
+	saveFile << m_placedPlayerBuildings.size() << std::endl;
+	for (const auto& building : m_placedPlayerBuildings)
+	{
+		saveFile << building->getPosition().x << building->getPosition().y << std::endl;
+	}
+
+	saveFile.close();
+	std::cout << "Game saved successfully." << std::endl;
+}
+
+void Game::loadGameMatch(const std::string& filename)
+{
+	std::ifstream loadFile("Assets/SaveGameFiles/" + filename);
+
+	if (!loadFile.is_open())
+	{
+		std::cerr << "Failed to open save file for reading." << std::endl;
+		return;
+	}
+
+	std::string line;
+	if (std::getline(loadFile, line)) Global::playerCurrency = std::stoi(line);
+	if (std::getline(loadFile, line)) Global::enemyCurrency = std::stoi(line);
+	if (std::getline(loadFile, line)) m_playerUnitStatCount = std::stoi(line);
+	if (std::getline(loadFile, line)) m_playerBuildingStatCount = std::stoi(line);
+	if (std::getline(loadFile, line)) m_enemyUnitStatCount = std::stoi(line);
+	if (std::getline(loadFile, line)) m_enemyBuildingStatCount = std::stoi(line);
+	if (std::getline(loadFile, line)) m_gameDurationTime = sf::seconds(std::stof(line));
+
+	int buildingCount;
+	loadFile >> buildingCount; 
+
+	float posX, posY;
+	for (int i = 0; i < buildingCount; ++i)
+	{
+		loadFile >> posX >> posY;
+
+		Barracks* newBarracks = new Barracks();
+		newBarracks->setPosition(sf::Vector2f(posX, posY));
+		m_placedPlayerBuildings.push_back(newBarracks);
+	}
+
+
+	loadFile.close();
+	std::cout << "Match loaded successfully." << std::endl;
+}
+
 
 /// <summary>
 /// To reset the game and undo all the properties for a new game
