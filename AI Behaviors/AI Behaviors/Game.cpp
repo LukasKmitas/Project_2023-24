@@ -2304,24 +2304,66 @@ void Game::saveGameMatch()
 		return;
 	}
 
-	saveFile << Global::playerCurrency << std::endl;
-	saveFile << Global::enemyCurrency << std::endl;
-	saveFile << m_playerUnitStatCount << std::endl;
-	saveFile << m_playerBuildingStatCount << std::endl;
-	saveFile << m_enemyUnitStatCount << std::endl;
-	saveFile << m_enemyBuildingStatCount << std::endl;
-	saveFile << m_gameDurationClock.getElapsedTime().asSeconds() << std::endl;
+	saveFile << "# Player Currency\n" << Global::playerCurrency << std::endl;
+	saveFile << "# Enemy Currency\n" << Global::enemyCurrency << std::endl;
+	saveFile << "# Player Unit Stats\n" << m_playerUnitStatCount << std::endl;
+	saveFile << "# Player Building Stats\n" << m_playerBuildingStatCount << std::endl;
+	saveFile << "# Enemy Unit Stats\n" << m_enemyUnitStatCount << std::endl;
+	saveFile << "# Enemy Building Stats\n" << m_enemyBuildingStatCount << std::endl;
+	saveFile << "# Game Duration in Seconds\n" << m_gameDurationClock.getElapsedTime().asSeconds() << std::endl;
 
-	saveFile << m_placedPlayerBuildings.size() << std::endl;
+	saveFile << "# Player Buildings\n" << m_placedPlayerBuildings.size() << std::endl;
 	for (const auto& building : m_placedPlayerBuildings)
 	{
-		saveFile << building->getPosition().x << building->getPosition().y << std::endl;
+		saveFile << static_cast<int>(building->getType()) << " "
+			<< building->getPosition().x << " "
+			<< building->getPosition().y << " "
+			<< building->getHealth() << std::endl;
+	}
+
+	saveFile << "# Enemy Buildings\n" << m_placedEnemyBuildings.size() << std::endl;
+	for (const auto& building : m_placedEnemyBuildings) 
+	{
+		saveFile << static_cast<int>(building->getType()) << " "
+			<< building->getPosition().x << " "
+			<< building->getPosition().y << " "
+			<< building->getHealth() << std::endl;
+	}
+
+	saveFile << "# Player Units\n";
+	saveFile << m_playerUnits.size() << std::endl;
+	for (const auto& unit : m_playerUnits) 
+	{
+		saveFile << static_cast<int>(unit->getUnitType()) << " "
+			<< unit->getPosition().x << " "
+			<< unit->getPosition().y << " "
+			<< unit->getTargetPosition().x << " "
+			<< unit->getTargetPosition().y  << " "
+			<< unit->getHealth() << " "
+			<< unit->getDamage() << std::endl;
+	}
+
+	saveFile << "# Enemy Units\n";
+	saveFile << m_enemyUnits.size() << std::endl;
+	for (const auto& unit : m_enemyUnits)
+	{
+		saveFile << static_cast<int>(unit->getUnitType()) << " "
+			<< unit->getPosition().x << " "
+			<< unit->getPosition().y << " "
+			<< unit->getTargetPosition().x << " "
+			<< unit->getTargetPosition().y << " "
+			<< unit->getHealth() << " "
+			<< unit->getDamage() << std::endl;
 	}
 
 	saveFile.close();
 	std::cout << "Game saved successfully." << std::endl;
 }
 
+/// <summary>
+/// Loads the match where all the stats, units, buildings are suppose to be
+/// </summary>
+/// <param name="filename"></param>
 void Game::loadGameMatch(const std::string& filename)
 {
 	std::ifstream loadFile("Assets/SaveGameFiles/" + filename);
@@ -2333,32 +2375,179 @@ void Game::loadGameMatch(const std::string& filename)
 	}
 
 	std::string line;
-	if (std::getline(loadFile, line)) Global::playerCurrency = std::stoi(line);
-	if (std::getline(loadFile, line)) Global::enemyCurrency = std::stoi(line);
-	if (std::getline(loadFile, line)) m_playerUnitStatCount = std::stoi(line);
-	if (std::getline(loadFile, line)) m_playerBuildingStatCount = std::stoi(line);
-	if (std::getline(loadFile, line)) m_enemyUnitStatCount = std::stoi(line);
-	if (std::getline(loadFile, line)) m_enemyBuildingStatCount = std::stoi(line);
-	if (std::getline(loadFile, line)) m_gameDurationTime = sf::seconds(std::stof(line));
 
-	int buildingCount;
-	loadFile >> buildingCount; 
+	// Read the currency and stats
+	std::getline(loadFile, line); // Skip the comment in file 
+	std::getline(loadFile, line);
+	Global::playerCurrency = std::stoi(line);
 
-	float posX, posY;
-	for (int i = 0; i < buildingCount; ++i)
-	{
-		loadFile >> posX >> posY;
+	std::getline(loadFile, line); 
+	std::getline(loadFile, line);
+	Global::enemyCurrency = std::stoi(line);
 
-		Barracks* newBarracks = new Barracks();
-		newBarracks->setPosition(sf::Vector2f(posX, posY));
-		m_placedPlayerBuildings.push_back(newBarracks);
-	}
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	m_playerUnitStatCount = std::stoi(line);
 
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	m_playerBuildingStatCount = std::stoi(line);
+
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	m_enemyUnitStatCount = std::stoi(line);
+
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	m_enemyBuildingStatCount = std::stoi(line);
+
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	m_gameDurationTime = sf::seconds(std::stof(line));
+
+	// Load player buildings
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	int playerBuildingCount = std::stoi(line);
+	loadBuildings(loadFile, playerBuildingCount, m_placedPlayerBuildings);
+
+	// Load enemy buildings
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);	
+	std::getline(loadFile, line);
+	int enemyBuildingCount = std::stoi(line);
+	loadBuildings(loadFile, enemyBuildingCount, m_placedEnemyBuildings);
+
+	// Loads player units
+	std::getline(loadFile, line); 
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	int playerCount = std::stoi(line);
+	m_friendly = true;
+	loadUnits(loadFile, playerCount, m_playerUnits, m_enemyUnits, m_placedEnemyBuildings);
+
+	// Loads Enemy units
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	std::getline(loadFile, line);
+	int enemyCount = std::stoi(line);
+	m_friendly = false;
+	loadUnits(loadFile, enemyCount, m_enemyUnits, m_playerUnits, m_placedPlayerBuildings);
 
 	loadFile.close();
 	std::cout << "Match loaded successfully." << std::endl;
 }
 
+/// <summary>
+/// Loads the buildings
+/// </summary>
+/// <param name="loadFile"></param>
+/// <param name="buildingCount"></param>
+/// <param name="buildings"></param>
+void Game::loadBuildings(std::ifstream& loadFile, int buildingCount, std::vector<Building*>& buildings)
+{
+	buildings.clear();
+	int type;
+	float posX, posY, health;
+
+	for (int i = 0; i < buildingCount; ++i)
+	{
+		loadFile >> type >> posX >> posY >> health;
+		Building* building = createBuildingByType(static_cast<BuildingType>(type));
+		if (building)
+		{
+			building->setPosition(sf::Vector2f(posX, posY));
+			building->setHealth(health);
+			buildings.push_back(building);
+		}
+	}
+}
+
+/// <summary>
+/// Loads the units 
+/// </summary>
+/// <param name="loadFile"></param>
+/// <param name="unitCount"></param>
+/// <param name="units"></param>
+void Game::loadUnits(std::ifstream& loadFile, int unitCount, std::vector<Unit*>& units, std::vector<Unit*> m_setEnemyUnits, std::vector<Building*> m_setPlacedEnemyBuildings)
+{
+	units.clear();
+	int type;
+	float posX, posY, tarX, tarY, health, damage;
+
+	for (int i = 0; i < unitCount; ++i) 
+	{
+		loadFile >> type >> posX >> posY >> tarX >> tarY >> health >> damage;
+		Unit* unit = createUnitByType(static_cast<UnitType>(type));
+		if (unit)
+		{
+			unit->setPosition(sf::Vector2f(posX, posY));
+			unit->setTargetPosition(sf::Vector2f(tarX, tarY));
+			unit->setHealth(health);
+			unit->setEnemyUnits(m_setEnemyUnits);
+			unit->setEnemyBuildings(m_setPlacedEnemyBuildings);
+			unit->setTiles(m_levelEditor.m_tiles);
+			if (m_friendly)
+			{
+				unit->m_isEnemy = false;
+			}
+			{
+				unit->m_isEnemy = true;
+			}
+			units.push_back(unit);
+		}
+	}
+}
+
+/// <summary>
+/// Gets the type of building
+/// </summary>
+/// <param name="type"></param>
+/// <returns></returns>
+Building* Game::createBuildingByType(BuildingType type)
+{
+	switch (type)
+	{
+	case BuildingType::Headquarters:
+		return new Headquarters();
+	case BuildingType::Barracks:
+		return new Barracks();
+	case BuildingType::WarFactory:
+		return new WarFactory();
+	case BuildingType::AirCraft:
+		return new AirCraft();
+	case BuildingType::Refinery:
+		return new Refinery();
+	default:
+		return nullptr;
+	}
+}
+
+/// <summary>
+/// Gets the type of unit
+/// </summary>
+/// <param name="type"></param>
+/// <returns></returns>
+Unit* Game::createUnitByType(UnitType type)
+{
+	switch (type)
+	{
+	case UnitType::Rifleman:
+		return new RiflemanSquad();
+	case UnitType::Buggy:
+		return new Buggy();
+	case UnitType::TankAurora:
+		return new TankAurora();
+	case UnitType::Harvester:
+		return new Harvester();
+	case UnitType::Hammerhead:
+		return new HammerHead();
+	case UnitType::Firehawk:
+		return new Firehawk();
+	default:
+		return nullptr;
+	}
+}
 
 /// <summary>
 /// To reset the game and undo all the properties for a new game

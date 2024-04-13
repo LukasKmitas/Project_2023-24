@@ -1,6 +1,6 @@
 #include "WarFactory.h"
 
-WarFactory::WarFactory()
+WarFactory::WarFactory() : Building(BuildingType::WarFactory)
 {
 	setupSprite();
 	setPlacementRadiusSize(150.0f);

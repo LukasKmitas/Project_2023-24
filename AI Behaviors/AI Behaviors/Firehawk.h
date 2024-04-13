@@ -9,6 +9,8 @@ public:
 
 	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 
+	UnitType getUnitType() const override { return UnitType::Firehawk; }
+
 private:
 
 	void approachTarget(const sf::Vector2f& m_targetPos, sf::Time t_deltaTime);

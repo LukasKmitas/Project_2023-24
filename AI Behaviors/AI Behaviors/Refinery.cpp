@@ -1,6 +1,6 @@
 #include "Refinery.h"
 
-Refinery::Refinery()
+Refinery::Refinery() : Building(BuildingType::Refinery)
 {
 	setupSprite();
 	setPlacementRadiusSize(150.0f);

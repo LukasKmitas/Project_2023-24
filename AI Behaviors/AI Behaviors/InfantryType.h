@@ -3,8 +3,5 @@
 enum class InfantryType
 {
     None,
-    RifleSquad,
-    GrenadeSquad,
-    RocketSquad,
-    MedicUnit
+    RifleSquad
 };

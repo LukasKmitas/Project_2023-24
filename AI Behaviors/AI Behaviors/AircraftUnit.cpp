@@ -2,7 +2,7 @@
 
 AircraftUnit::AircraftUnit()
 {
-	m_unitType = UnitType::Air;
+	m_unitTypeClass = UnitTypeClass::Air;
 }
 
 AircraftUnit::~AircraftUnit()

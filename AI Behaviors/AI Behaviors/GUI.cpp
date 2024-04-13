@@ -319,7 +319,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 		{
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
-				std::cout << "You have selected Headquarters " << building->getBuildingID() << std::endl;
+				std::cout << "You have selected Headquarters " /*<< building->getBuildingCount()*/ << std::endl;
 				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
@@ -338,7 +338,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 		{
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
-				std::cout << "You have selected Barracks " << building->getBuildingID() << std::endl;
+				std::cout << "You have selected Barracks " /*<< building->getBuildingCount()*/ << std::endl;
 				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
@@ -357,7 +357,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 		{
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
-				std::cout << "You have selected Vehicle " << building->getBuildingID() << std::endl;
+				std::cout << "You have selected Vehicle " /*<< building->getBuildingCount()*/ << std::endl;
 				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)
@@ -375,7 +375,7 @@ void GUI::handleBuildingSelection(sf::Vector2f m_mousePosition)
 		{
 			if (building->getBuildingSprite().getGlobalBounds().contains(m_mousePosition))
 			{
-				std::cout << "You have selected Aircraft " << building->getBuildingID() << std::endl;
+				std::cout << "You have selected Aircraft " /*<< building->getBuildingCount()*/ << std::endl;
 				m_selectedBuilding = building;
 				m_showSlider = !m_showSlider;
 				if (m_showSlider)

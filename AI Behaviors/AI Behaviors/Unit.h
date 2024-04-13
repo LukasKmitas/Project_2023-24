@@ -9,11 +9,18 @@
 #include "Building.h"
 #include "Tile.h"
 
-enum class UnitType
+enum class UnitTypeClass
 {
     Infantry,
     Vehicle,
     Air
+};
+
+enum class UnitType
+{
+    Rifleman, 
+    Harvester, Buggy, TankAurora, 
+    Hammerhead, Firehawk
 };
 
 class Unit
@@ -26,7 +33,10 @@ public:
     virtual void update(sf::Time t_deltaTime, std::vector<Unit*>& allyUnits);
     virtual void render(sf::RenderWindow& m_window);
 
+    virtual UnitType getUnitType() const = 0;
+
     void setPosition(const sf::Vector2f& m_position);
+    void setHealth(float m_setHealth);
     void moveTo(const sf::Vector2f& m_targetPos);
     void setSelected(bool m_selected);
     void setTargetPosition(const sf::Vector2f& m_targetPos);
@@ -72,7 +82,7 @@ public:
 
 protected:
 
-    UnitType m_unitType;
+    UnitTypeClass m_unitTypeClass;
     ParticleSystem m_particleSystem;
 
     std::vector<Unit*>* m_enemyUnits = nullptr;

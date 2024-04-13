@@ -2,7 +2,7 @@
 
 VehicleUnit::VehicleUnit()
 {
-    m_unitType = UnitType::Vehicle;
+    m_unitTypeClass = UnitTypeClass::Vehicle;
 }
 
 VehicleUnit::~VehicleUnit()

@@ -10,6 +10,8 @@ public:
 	void update(sf::Time t_deltaTime, std::vector<Unit*>& m_allyUnits) override;
 	void render(sf::RenderWindow& m_window) override;
 
+	UnitType getUnitType() const override { return UnitType::Hammerhead; }
+
 private:
 
 	void initHammerhead();

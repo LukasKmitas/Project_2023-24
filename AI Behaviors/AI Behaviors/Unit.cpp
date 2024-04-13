@@ -113,8 +113,8 @@ void Unit::avoidCollisionsWithUnits(std::vector<Unit*>& m_allyUnits)
     {
         if (unit == this) continue;
 
-        if ((m_unitType == UnitType::Air && (unit->m_unitType == UnitType::Vehicle || unit->m_unitType == UnitType::Infantry)) ||
-            (unit->m_unitType == UnitType::Air && (m_unitType == UnitType::Vehicle || m_unitType == UnitType::Infantry)))
+        if ((m_unitTypeClass == UnitTypeClass::Air && (unit->m_unitTypeClass == UnitTypeClass::Vehicle || unit->m_unitTypeClass == UnitTypeClass::Infantry)) ||
+            (unit->m_unitTypeClass == UnitTypeClass::Air && (m_unitTypeClass == UnitTypeClass::Vehicle || m_unitTypeClass == UnitTypeClass::Infantry)))
         {
             continue; 
         }
@@ -314,6 +314,15 @@ void Unit::setPosition(const sf::Vector2f& position)
 {
     m_position = position;
     m_unitSprite.setPosition(position);
+}
+
+/// <summary>
+/// Stes health for laoding
+/// </summary>
+/// <param name="m_setHealth"></param>
+void Unit::setHealth(float m_setHealth)
+{
+    m_health = m_setHealth;
 }
 
 /// <summary>

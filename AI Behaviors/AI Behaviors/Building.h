@@ -2,12 +2,13 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "Global.h"
+#include "BuildingType.h"
 
 class Building
 {
 public:
 
-    Building();
+    Building(BuildingType m_type);
     virtual ~Building();
 
     virtual void update(sf::Time t_deltaTime);
@@ -19,16 +20,20 @@ public:
     sf::Vector2f getPosition();
  
     int getCost() const;
-    int getBuildingID() const;
+    //int getBuildingCount() const;
     float getHealth() const;
+    BuildingType getType() const;
 
     bool checkAffordability();
 
     void setPlacementRadiusSize(float m_radius);
+    void setHealth(float newHealth);
 
     const sf::Sprite& getBuildingSprite() const;
     const sf::Texture& getBuildingTexture() const;
     const sf::CircleShape& getPlacementRadius() const;
+
+    void updateHealthBar();
 
 protected:
 
@@ -46,8 +51,10 @@ protected:
     int m_health = 100;
     int m_maxHealth = 100;
     int m_cost = 100;
-    static int m_buildingCount;
-    int m_buildingID = 0;
+    //static int m_buildingCount;
+    //int m_numBuildingCount = 0;
+
+    BuildingType m_type;
 
     bool m_placementRadiusVisible = false;
 };

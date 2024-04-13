@@ -1,6 +1,6 @@
 #include "Barracks.h"
 
-Barracks::Barracks()
+Barracks::Barracks() : Building(BuildingType::Barracks)
 {
 	setupSprite();
 	setPlacementRadiusSize(100.0f);

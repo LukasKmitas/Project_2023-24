@@ -22,6 +22,7 @@ public:
 	void setBuildings(const std::vector<Building*>& m_buildings);
 
 	State m_currentState = Idle;
+	UnitType getUnitType() const override { return UnitType::Harvester; }
 
 private:
 

@@ -1,6 +1,6 @@
 #include "Headquarters.h"
 
-Headquarters::Headquarters()
+Headquarters::Headquarters() : Building(BuildingType::Headquarters)
 {
 	setupSprite();
 	setPlacementRadiusSize(250);

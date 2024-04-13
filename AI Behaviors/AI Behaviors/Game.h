@@ -122,6 +122,10 @@ private:
 	void renderPauseMenu(sf::RenderWindow& m_window);
 	void saveGameMatch();
 	void loadGameMatch(const std::string& filename);
+	void loadBuildings(std::ifstream& loadFile, int buildingCount, std::vector<Building*>& buildings);
+	void loadUnits(std::ifstream& loadFile, int unitCount, std::vector<Unit*>& units, std::vector<Unit*> m_setEnemyUnits, std::vector<Building*> m_setPlacedEnemyBuildings);
+	Building* createBuildingByType(BuildingType type);
+	Unit* createUnitByType(UnitType type);
 
 	void gameReset();
 	void clearGameEntities();
@@ -214,6 +218,7 @@ private:
 
 	// Pause stuff
 	bool m_pausedGame = false;
+	bool m_friendly = true;
 	sf::Sprite m_pauseBackgroundSprite;
 	sf::Texture m_pauseBackgroundTexture;
 	sf::Text m_pauseText;

@@ -13,6 +13,8 @@ public:
 
 	void initSquad();
 
+	UnitType getUnitType() const override { return UnitType::Rifleman; }
+
 private:
 
 	void initRifleman();

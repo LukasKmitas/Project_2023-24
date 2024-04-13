@@ -1,6 +1,6 @@
 #include "AirCraft.h"
 
-AirCraft::AirCraft()
+AirCraft::AirCraft() : Building(BuildingType::AirCraft)
 {
 	setupSprite();
 	setPlacementRadiusSize(200.0f);

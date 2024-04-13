@@ -1,11 +1,13 @@
 #include "Building.h"
 
-int Building::m_buildingCount = 0;
+//int Building::m_buildingCount = 0;
 
-Building::Building()
+Building::Building(BuildingType type) 
+	:
+	m_type(type)
 {
-	m_buildingCount++;
-	m_buildingID = m_buildingCount;
+	//m_buildingCount++;
+	//m_numBuildingCount = m_buildingCount;
 
 	m_healthBarBackground.setSize(sf::Vector2f(50, 5));
 	m_healthBarBackground.setFillColor(sf::Color(0, 0, 0));
@@ -70,14 +72,19 @@ int Building::getCost() const
 	return m_cost;
 }
 
-int Building::getBuildingID() const
-{
-	return m_buildingID;
-}
+//int Building::getBuildingCount() const
+//{
+//	return m_numBuildingCount;
+//}
 
 float Building::getHealth() const
 {
 	return m_health;
+}
+
+BuildingType Building::getType() const
+{
+	return m_type;
 }
 
 /// <summary>
@@ -113,6 +120,16 @@ void Building::setPlacementRadiusSize(float m_radius)
 	m_placementRadius.setOutlineThickness(1); // temp
 }
 
+/// <summary>
+/// Sets the health for laoding
+/// </summary>
+/// <param name="newHealth"></param>
+void Building::setHealth(float newHealth)
+{
+	m_health = newHealth;
+	updateHealthBar();
+}
+
 const sf::Sprite& Building::getBuildingSprite() const
 {
 	return m_buildingSprite;
@@ -126,4 +143,16 @@ const sf::Texture& Building::getBuildingTexture() const
 const sf::CircleShape& Building::getPlacementRadius() const
 {
 	return m_placementRadius;
+}
+
+/// <summary>
+/// Updates the health bar when its set for loading the building
+/// </summary>
+void Building::updateHealthBar() 
+{
+	if (m_healthBarBackground.getSize().x > 0)
+	{ 
+		float healthPercentage = static_cast<float>(m_health) / m_maxHealth;
+		m_healthBar.setSize(sf::Vector2f(m_healthBarBackground.getSize().x * healthPercentage, m_healthBar.getSize().y));
+	}
 }

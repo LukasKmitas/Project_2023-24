@@ -116,7 +116,7 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
         m_button.m_sprite.setTextureRect(sf::IntRect(1, 1, 30, 22));
         m_riflemanIconPosition = sf::Vector2f(m_xPosition, m_yPosition);
     }
-    else if (inftantryType == InfantryType::GrenadeSquad)
+    /*else if (inftantryType == InfantryType::GrenadeSquad)
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(34, 1, 30, 22));
     }
@@ -127,7 +127,7 @@ void SideBar::addInfantryButton(const sf::Texture& texture, InfantryType inftant
     else
     {
         m_button.m_sprite.setTextureRect(sf::IntRect(133, 1, 30, 22));
-    }
+    }*/
 
     m_button.m_sprite.setPosition(m_xPosition, m_yPosition);
     m_button.m_text.setString(buttonText);
