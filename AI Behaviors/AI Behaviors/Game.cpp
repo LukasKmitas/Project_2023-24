@@ -296,17 +296,21 @@ void Game::processKeys(sf::Event t_event)
 		{
 			resetZoom();
 		}
-		if (sf::Keyboard::Escape == t_event.key.code)
+		if (t_event.type == sf::Event::KeyPressed && t_event.key.code == sf::Keyboard::Escape)
 		{
-			m_selectedUnit = nullptr;
+			bool m_anyUnitSelected = false;
+			// Check if any unit is selected and deselect them
 			for (Unit* unit : m_playerUnits)
 			{
-				unit->setSelected(false);
+				if (unit->isSelected) 
+				{
+					m_anyUnitSelected = true;
+					unit->setSelected(false);
+				}
 			}
-		}
-		if (t_event.type == sf::Event::KeyPressed)
-		{
-			if (t_event.key.code == sf::Keyboard::Escape)
+
+			// If no unit was selected, toggle the pause state
+			if (!m_anyUnitSelected)
 			{
 				m_pausedGame = !m_pausedGame;
 			}

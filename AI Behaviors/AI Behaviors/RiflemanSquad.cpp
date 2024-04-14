@@ -193,6 +193,8 @@ void RiflemanSquad::squadEntityRegain()
 /// <param name="m_enemyUnits"></param>
 void RiflemanSquad::aimAt(const std::vector<Unit*>& m_enemyUnits)
 {
+    m_targetPositions.clear();  // Clear previous target positions at the beginning
+
     if (m_isReloading || m_fireTimer > 0.0f)
     {
         return;
@@ -224,7 +226,7 @@ void RiflemanSquad::aimAt(const std::vector<Unit*>& m_enemyUnits)
             float angleToEnemy = acos(dotProduct) * (180.0f / PI);
 
             std::vector<sf::Sprite> allShootingEntities = m_entities;
-            allShootingEntities.push_back(m_unitSprite); // Including the unit and the entities in shooting
+            allShootingEntities.push_back(m_unitSprite); // to shoot units and buildings
 
             if (angleToEnemy <= 45.0f)
             {
