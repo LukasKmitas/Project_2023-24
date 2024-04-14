@@ -43,6 +43,7 @@
     <ClCompile Include="Refinery.cpp" />
     <ClCompile Include="RiflemanSquad.cpp" />
     <ClCompile Include="SideBar.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="TankAurora.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Unit.cpp" />
@@ -58,6 +59,7 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingType.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="WinLoseState.h" />
     <ClInclude Include="EnemyAIState.h" />
     <ClInclude Include="Firehawk.h" />

@@ -193,6 +193,7 @@ void Buggy::shootAtEnemy()
         m_bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
         m_shotsFired++;
         m_fireTimer = m_fireRate;
+        SoundManager::getInstance().playSound("Laser1");
 
         if (m_shotsFired >= m_clip)
         {

@@ -4,6 +4,9 @@ MainMenu::MainMenu()
 {
 	initButtons();
     initBackgroundImage();
+
+    SoundManager::getInstance().loadMusic("MenuMusic", "Assets\\Audio\\Cleyton RX - Underwater.mp3");
+    SoundManager::getInstance().playMusic("MenuMusic", true);
 }
 
 /// <summary>
@@ -54,6 +57,8 @@ void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState&
     if (m_playButton.getGlobalBounds().contains(m_mousePosition))
     {
         m_gameState = GameState::PlayGame;
+        SoundManager::getInstance().stopMusic("MenuMusic");
+        SoundManager::getInstance().playNextTrack();
     }
     else if (m_editorButton.getGlobalBounds().contains(m_mousePosition))
     {

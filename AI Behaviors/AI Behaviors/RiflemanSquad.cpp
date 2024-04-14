@@ -241,6 +241,7 @@ void RiflemanSquad::aimAt(const std::vector<Unit*>& m_enemyUnits)
 
                     sf::Vector2f bulletStartPosition = entity.getPosition() + sprayedDirection * 10.0f;
                     m_bullets.emplace_back(bulletStartPosition, sprayedDirection, m_bulletSpeed);
+                    SoundManager::getInstance().playSound("Laser3");
                 }
                 m_shotsFired++;
                 m_fireTimer = m_fireRate;

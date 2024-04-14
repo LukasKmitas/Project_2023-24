@@ -127,8 +127,13 @@ private:
 	Building* createBuildingByType(BuildingType type);
 	Unit* createUnitByType(UnitType type);
 
+	// reset stuff
 	void gameReset();
 	void clearGameEntities();
+
+	// Music stuff 
+	void initPlaylistForGameplay();
+	void initSoundInGameplay();
 
 	int calculateGridSize(int m_numberOfUnits);
 

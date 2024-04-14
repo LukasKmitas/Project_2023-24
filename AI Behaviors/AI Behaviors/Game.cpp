@@ -31,6 +31,8 @@ Game::Game() :
 	initParticles();
 	initWinLosePanel();
 	initPauseMenu();
+	initPlaylistForGameplay();
+	initSoundInGameplay();
 
 	createBase();
 	createEnemyStarterBase();
@@ -358,6 +360,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
+		SoundManager::getInstance().updateMusicTrack();
 		if (m_pausedGame) 
 		{
 			return;
@@ -672,31 +675,34 @@ void Game::updatePlayerAssets(sf::Time t_deltaTime)
 
 			for (auto& enemyUnit : m_enemyUnits)
 			{
-				if (missile.m_missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
+				if (missile.m_active && missile.m_missileSprite.getGlobalBounds().intersects(enemyUnit->getSprite().getGlobalBounds()))
 				{
 					missile.m_active = false;
+					hit = true;
 					enemyUnit->takeDamage(missile.m_damage);
 					if (enemyUnit->getHealth() <= 0)
 					{
 						enemyUnit->m_active = false;
 					}
 					spawnExplosionParticle(missile.m_position);
-				}
-			}
-			for (auto& enemyBuilding : m_placedEnemyBuildings)
-			{
-				if (missile.m_missileSprite.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
-				{
-					missile.m_active = false;
-					enemyBuilding->takeDamage(unit->getDamage());
-					hit = true;
-					spawnExplosionParticle(missile.m_position);
+					SoundManager::getInstance().playSound("RocketExplosion");
 					break;
 				}
 			}
-			if (hit)
+			if (!hit)
 			{
-				continue;
+				for (auto& enemyBuilding : m_placedEnemyBuildings)
+				{
+					if (missile.m_active && missile.m_missileSprite.getGlobalBounds().intersects(enemyBuilding->getBuildingSprite().getGlobalBounds()))
+					{
+						missile.m_active = false;
+						enemyBuilding->takeDamage(unit->getDamage());
+						hit = true;
+						spawnExplosionParticle(missile.m_position);
+						SoundManager::getInstance().playSound("RocketExplosion");
+						break;
+					}
+				}
 			}
 		}
 
@@ -1310,6 +1316,7 @@ void Game::handleWinLosePanel(const sf::Vector2f& m_mousePosition)
 		m_currentState = GameState::MainMenu;
 		m_levelLoaded = false;
 		gameReset();
+		SoundManager::getInstance().playMusic("MenuMusic", true);
 		std::cout << "Back to Main menu" << std::endl;
 	}
 }
@@ -1335,6 +1342,40 @@ void Game::resetZoom()
 
 	m_gameView.setSize(initialWidth, initialHeight);
 	updateViewWithMouse();
+}
+
+/// <summary>
+/// A playlist of songs that plays only in gameplay mode 
+/// </summary>
+void Game::initPlaylistForGameplay()
+{
+	SoundManager::getInstance().loadMusic("track1", "Assets\\Audio\\underwaterTheme.ogg");
+	SoundManager::getInstance().loadMusic("track2", "Assets\\Audio\\Underwater Theme II.mp3");
+	SoundManager::getInstance().loadMusic("track3", "Assets\\Audio\\Underwater World.mp3");
+
+	SoundManager::getInstance().addToPlaylist("track1");
+	SoundManager::getInstance().addToPlaylist("track2");
+	SoundManager::getInstance().addToPlaylist("track3");
+}
+
+void Game::initSoundInGameplay()
+{
+	SoundManager::getInstance().setGlobalMusicVolume(20);
+	SoundManager::getInstance().setGlobalSoundVolume(100);
+
+	SoundManager::getInstance().loadSound("EvilLaugh", "Assets\\Audio\\evilLaughBig.wav");
+
+	// Rocket
+	SoundManager::getInstance().loadSound("RocketFired", "Assets\\Audio\\Weapons\\rocket.wav");
+	SoundManager::getInstance().loadSound("RocketExplosion", "Assets\\Audio\\Weapons\\explosion.wav");
+	// TankAurora
+	SoundManager::getInstance().loadSound("EMPCharge", "Assets\\Audio\\Weapons\\laserCharge.wav");
+	SoundManager::getInstance().loadSound("EnergyWave", "Assets\\Audio\\Weapons\\plasmaSound.wav");
+	// Bullets
+	SoundManager::getInstance().loadSound("Laser1", "Assets\\Audio\\Weapons\\laser5.wav");
+	SoundManager::getInstance().loadSound("Laser2", "Assets\\Audio\\Weapons\\laser6.wav");
+	SoundManager::getInstance().loadSound("Laser3", "Assets\\Audio\\Weapons\\laser3.wav");
+
 }
 
 int Game::calculateGridSize(int m_numberOfUnits)
@@ -1374,11 +1415,13 @@ void Game::checkVictoryConditions()
 		m_showWinLosePanel = true;
 		m_winLoseText.setString("Victory!");
 	}
-	else if (m_placedPlayerBuildings.empty())
+	if (m_placedPlayerBuildings.empty())
 	{
 		m_gameWinLose = WinLoseState::LOSE;
 		m_showWinLosePanel = true;
 		m_winLoseText.setString("Game Over\nYou lost");
+		SoundManager::getInstance().playSound("EvilLaugh");
+		SoundManager::getInstance().setGlobalMusicVolume(30);
 	}
 }
 
@@ -1399,14 +1442,14 @@ void Game::createEnemyStarterBase()
 
 	sf::Vector2f spawnPosition = sf::Vector2f(2000.0f, 2150.0f);
 
-	/*Harvester* newHarvester = new Harvester();
+	Harvester* newHarvester = new Harvester();
 	newHarvester->setPosition(spawnPosition);
 	newHarvester->setTargetPosition(spawnPosition + m_targetPositionOffset);
 	newHarvester->setBuildings(m_placedEnemyBuildings);
 	newHarvester->setTiles(m_levelEditor.m_tiles);
 	newHarvester->m_currentState = newHarvester->MovingToResource;
 	newHarvester->m_isEnemy = true;
-	m_enemyUnits.push_back(newHarvester);*/
+	m_enemyUnits.push_back(newHarvester);
 
 	std::cout << "Enemy Base Initilised" << std::endl;
 	updateBuildingCounts();
@@ -1605,22 +1648,6 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 			}
 		}
 
-		for (auto& missile : eUnits->m_missiles)
-		{
-			for (auto& playerUnit : m_playerUnits)
-			{
-				if (missile.m_missileSprite.getGlobalBounds().intersects(playerUnit->getSprite().getGlobalBounds()))
-				{
-					missile.m_active = false;
-					playerUnit->takeDamage(missile.m_damage);
-					if (playerUnit->getHealth() <= 0)
-					{
-						playerUnit->m_active = false;
-					}
-					spawnExplosionParticle(missile.m_position);
-				}
-			}
-		}
 		for (auto& missile : eUnits->m_missiles) // MISSILES
 		{
 			bool hit = false;
@@ -1636,6 +1663,7 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 						playerUnit->m_active = false;
 					}
 					spawnExplosionParticle(missile.m_position);
+					SoundManager::getInstance().playSound("RocketExplosion");
 				}
 			}
 			for (auto& playerBuilding : m_placedPlayerBuildings)
@@ -1646,6 +1674,7 @@ void Game::updateEnemyAssets(sf::Time t_deltaTime)
 					playerBuilding->takeDamage(eUnits->getDamage());
 					hit = true;
 					spawnExplosionParticle(missile.m_position);
+					SoundManager::getInstance().playSound("RocketExplosion");
 					break;
 				}
 			}
@@ -2261,6 +2290,7 @@ void Game::handlePauseMenu(const sf::Vector2f& m_mousePosition)
 		m_pausedGame = false;
 		gameReset();
 		m_currentState = GameState::PlayGame;
+		SoundManager::getInstance().setGlobalMusicVolume(10);
 	}
 	if (m_saveGameButton.getGlobalBounds().contains(m_mousePosition))
 	{
@@ -2271,6 +2301,8 @@ void Game::handlePauseMenu(const sf::Vector2f& m_mousePosition)
 		m_levelLoaded = false;
 		m_pausedGame = false;
 		gameReset();
+		SoundManager::getInstance().playMusic("MenuMusic", true);
+		SoundManager::getInstance().setGlobalMusicVolume(10);
 		m_currentState = GameState::MainMenu;
 	}
 }
@@ -2439,7 +2471,7 @@ void Game::loadGameMatch(const std::string& filename)
 }
 
 /// <summary>
-/// Loads the buildings
+/// Loads the buildings for both sides
 /// </summary>
 /// <param name="loadFile"></param>
 /// <param name="buildingCount"></param>
@@ -2464,11 +2496,13 @@ void Game::loadBuildings(std::ifstream& loadFile, int buildingCount, std::vector
 }
 
 /// <summary>
-/// Loads the units 
+/// Loads the units for player and enemy side
 /// </summary>
 /// <param name="loadFile"></param>
 /// <param name="unitCount"></param>
 /// <param name="units"></param>
+/// <param name="m_setEnemyUnits"></param>
+/// <param name="m_setPlacedEnemyBuildings"></param>
 void Game::loadUnits(std::ifstream& loadFile, int unitCount, std::vector<Unit*>& units, std::vector<Unit*> m_setEnemyUnits, std::vector<Building*> m_setPlacedEnemyBuildings)
 {
 	units.clear();
@@ -2484,15 +2518,16 @@ void Game::loadUnits(std::ifstream& loadFile, int unitCount, std::vector<Unit*>&
 			unit->setPosition(sf::Vector2f(posX, posY));
 			unit->setTargetPosition(sf::Vector2f(tarX, tarY));
 			unit->setHealth(health);
-			unit->setEnemyUnits(m_setEnemyUnits);
 			unit->setEnemyBuildings(m_setPlacedEnemyBuildings);
 			unit->setTiles(m_levelEditor.m_tiles);
 			if (m_friendly)
 			{
 				unit->m_isEnemy = false;
+				unit->setEnemyUnits(m_enemyUnits);
 			}
 			{
 				unit->m_isEnemy = true;
+				unit->setEnemyUnits(m_playerUnits);
 			}
 			units.push_back(unit);
 		}

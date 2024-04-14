@@ -9,6 +9,7 @@ Firehawk::Firehawk()
 	m_orbitRadius = 50.0f;
 	m_orbitSpeed = 80.0f;
 	m_viewRadius = 500;
+	m_damage = 40;
 }
 
 Firehawk::~Firehawk()
@@ -217,5 +218,6 @@ void Firehawk::launchMissile(const sf::Vector2f& m_targetPos)
 	sf::Vector2f missileDirection = sf::Vector2f(cos(angle), sin(angle));
 
 	m_missiles.emplace_back(m_position, missileDirection, 200.0f, m_missileTexture);
+	SoundManager::getInstance().playSound("RocketFired");
 	m_missilesFiredInBurst++;
 }

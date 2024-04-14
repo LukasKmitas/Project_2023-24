@@ -227,6 +227,7 @@ void TankAurora::startEMPCharge()
 {
     m_isChargingEMPWave = true;
     m_currentChargeTime = 0.0f;
+    SoundManager::getInstance().playSound("EMPCharge");
 }
 
 /// <summary>
@@ -258,6 +259,7 @@ void TankAurora::emitEMP()
                 m_energyWaveSprite.setRotation(m_unitSprite.getRotation() - 90);
                 m_energyWaveSprite.setScale(m_energyWaveSize, m_energyWaveSize);
 
+                SoundManager::getInstance().playSound("EnergyWave");
                 break; 
             }
         }

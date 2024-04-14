@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Global.h"
 #include "GameState.h"
+#include "SoundManager.h"
 
 class MainMenu
 {

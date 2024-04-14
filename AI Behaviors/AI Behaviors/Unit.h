@@ -8,6 +8,7 @@
 #include "ParticleSystem.h"
 #include "Building.h"
 #include "Tile.h"
+#include "SoundManager.h"
 
 enum class UnitTypeClass
 {

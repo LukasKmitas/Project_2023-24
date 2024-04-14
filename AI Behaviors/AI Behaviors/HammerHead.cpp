@@ -250,6 +250,8 @@ void HammerHead::shootAtEnemy()
         sf::Vector2f bulletStartPosition2 = m_rightGunSprite.getPosition();
 
         m_bullets.emplace_back(bulletStartPosition1, sprayedDirection, m_bulletSpeed);
+        SoundManager::getInstance().playSound("Laser2");
         m_bullets.emplace_back(bulletStartPosition2, sprayedDirection, m_bulletSpeed);
+        SoundManager::getInstance().playSound("Laser2");
     }
 }
