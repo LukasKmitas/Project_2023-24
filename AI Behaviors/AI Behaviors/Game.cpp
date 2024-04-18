@@ -364,6 +364,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_menu.update(t_deltaTime);
 		break;
 	case GameState::PlayGame:
+		checkVictoryConditions();
 		SoundManager::getInstance().updateMusicTrack();
 		if (m_pausedGame) 
 		{
@@ -388,7 +389,6 @@ void Game::update(sf::Time t_deltaTime)
 		}
 		m_levelEditor.animationForResources();
 		m_levelEditor.animationForWeed();
-		checkVictoryConditions();
 		break;
 	case GameState::LevelEditor:
 		m_previousState = GameState::LevelEditor;
@@ -1364,7 +1364,7 @@ void Game::initPlaylistForGameplay()
 
 void Game::initSoundInGameplay()
 {
-	SoundManager::getInstance().setGlobalMusicVolume(20);
+	SoundManager::getInstance().setGlobalMusicVolume(30);
 	SoundManager::getInstance().setGlobalSoundVolume(100);
 
 	SoundManager::getInstance().loadSound("EvilLaugh", "Assets\\Audio\\evilLaughBig.wav");
@@ -1424,8 +1424,12 @@ void Game::checkVictoryConditions()
 		m_gameWinLose = WinLoseState::LOSE;
 		m_showWinLosePanel = true;
 		m_winLoseText.setString("Game Over\nYou lost");
-		SoundManager::getInstance().playSound("EvilLaugh");
-		SoundManager::getInstance().setGlobalMusicVolume(30);
+		if (m_playOnce)
+		{
+			SoundManager::getInstance().playSound("EvilLaugh");
+			SoundManager::getInstance().setGlobalMusicVolume(20);
+			m_playOnce = false;
+		}
 	}
 }
 
@@ -2294,7 +2298,7 @@ void Game::handlePauseMenu(const sf::Vector2f& m_mousePosition)
 		m_pausedGame = false;
 		gameReset();
 		m_currentState = GameState::PlayGame;
-		SoundManager::getInstance().setGlobalMusicVolume(10);
+		SoundManager::getInstance().setGlobalMusicVolume(30);
 	}
 	if (m_saveGameButton.getGlobalBounds().contains(m_mousePosition))
 	{
@@ -2306,7 +2310,7 @@ void Game::handlePauseMenu(const sf::Vector2f& m_mousePosition)
 		m_pausedGame = false;
 		gameReset();
 		SoundManager::getInstance().playMusic("MenuMusic", true);
-		SoundManager::getInstance().setGlobalMusicVolume(10);
+		SoundManager::getInstance().setGlobalMusicVolume(30);
 		m_currentState = GameState::MainMenu;
 	}
 }
@@ -2607,6 +2611,7 @@ void Game::gameReset()
 	clearGameEntities();
 	createBase();
 	createEnemyStarterBase();
+	m_playOnce = true;
 }
 
 /// <summary>

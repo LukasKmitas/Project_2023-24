@@ -175,6 +175,7 @@ private:
 	float m_sizeParticle;
 	sf::Color m_colorParticle;
 
+	bool m_playOnce = true;
 	bool m_levelLoaded = false;
 	bool m_exitGame;
 
