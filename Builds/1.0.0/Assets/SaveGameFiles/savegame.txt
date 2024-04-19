@@ -1,0 +1,26 @@
+# Player Currency
+5000
+# Enemy Currency
+10000
+# Player Unit Stats
+0
+# Player Building Stats
+0
+# Enemy Unit Stats
+0
+# Enemy Building Stats
+0
+# Game Duration in Seconds
+5.45585
+# Player Buildings
+1
+2 500 350 100
+# Enemy Buildings
+2
+2 1900 2100 100
+1 2100 2300 100
+# Player Units
+0
+# Enemy Units
+1
+1 2237.74 2278.01 2325 2325 100 4
