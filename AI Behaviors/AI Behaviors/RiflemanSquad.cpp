@@ -10,7 +10,7 @@ RiflemanSquad::RiflemanSquad()
     m_viewRadius = 300;
     m_speed = 90;
     m_maxForce = 100;
-    m_damage = 1.0f;
+    m_damage = 3.0f;
     m_bulletSpeed = 300.0f;
 }
 

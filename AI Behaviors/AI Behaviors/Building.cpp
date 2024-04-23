@@ -14,6 +14,8 @@ Building::Building(BuildingType type)
 
 	m_healthBar.setSize(sf::Vector2f(50, 5)); 
 	m_healthBar.setFillColor(sf::Color(0, 255, 0));
+
+	initSmokeEffect();
 }
 
 Building::~Building()
@@ -22,10 +24,15 @@ Building::~Building()
 
 void Building::update(sf::Time t_deltaTime)
 {
+	m_smokeEffect.update(t_deltaTime);
+
+	spawnSmokeEffect();
 }
 
-void Building::render(sf::RenderWindow& m_window) const
+void Building::render(sf::RenderWindow& m_window)
 {
+	m_smokeEffect.render(m_window);
+
 	m_window.draw(m_buildingSprite);
 	m_window.draw(m_placementRadius);
 
@@ -155,4 +162,43 @@ void Building::updateHealthBar()
 		float healthPercentage = static_cast<float>(m_health) / m_maxHealth;
 		m_healthBar.setSize(sf::Vector2f(m_healthBarBackground.getSize().x * healthPercentage, m_healthBar.getSize().y));
 	}
+}
+
+void Building::initSmokeEffect()
+{
+	if (!m_smokeTexture.loadFromFile("Assets\\Images\\Particles\\Smoke.png"))
+	{
+		std::cout << "Error - loading smoke texture" << std::endl;
+	}
+}
+
+/// <summary>
+/// Spawns smoke when health on the building is low
+/// </summary>
+void Building::spawnSmokeEffect()
+{
+	if (m_health <= 0.6 * m_maxHealth) // 60% health the smoke starts to appear 
+    {
+        int numParticles = static_cast<int>((1 - (static_cast<float>(m_health) / (0.6 * m_maxHealth))) * 10);
+        float healthRatio = static_cast<float>(m_health) / (0.6 * m_maxHealth);
+
+        for (int i = 0; i < numParticles; ++i)
+        {
+            float verticalVelocity = -1.0f * (rand() % 20 + 10 * (1 - healthRatio));
+            float horizontalVelocity = (rand() % 20 - 10) * (1 - healthRatio);
+            
+            sf::Vector2f velocity(horizontalVelocity, verticalVelocity);
+
+            int alpha = 100 + static_cast<int>(150 * (1 - healthRatio));
+            sf::Color color = healthRatio > 0.5 ? sf::Color(255, 140, 0, alpha) : sf::Color(105, 105, 105, alpha);
+
+            float particleSize = 5 + (15 * (1 - healthRatio));
+
+            sf::Vector2f positionOffset(rand() % 20 - 15, rand() % 20 - 15);
+            sf::Vector2f position = m_buildingSprite.getPosition() + positionOffset;
+
+            Particle smokeParticle(position, velocity, color, 3.0f + 2 * (1 - healthRatio), particleSize, &m_smokeTexture);
+            m_smokeEffect.addParticle(smokeParticle);
+        }
+    }
 }

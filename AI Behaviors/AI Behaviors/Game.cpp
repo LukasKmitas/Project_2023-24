@@ -315,6 +315,15 @@ void Game::processKeys(sf::Event t_event)
 				m_pausedGame = !m_pausedGame;
 			}
 		}
+		// For Demo and debug purposes
+		if (t_event.key.code == sf::Keyboard::Num8)
+		{
+			getMoney();
+		}
+		if (t_event.key.code == sf::Keyboard::Num9)
+		{
+			spawnEnemyNearBase();
+		}
 		break;
 	case GameState::LevelEditor:
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
@@ -788,14 +797,14 @@ void Game::initNeuralNetwork()
 	m_outputSprite.setOrigin(m_outputSprite.getGlobalBounds().width / 2, m_outputSprite.getGlobalBounds().height / 2);
 	m_outputSprite.setTexture(m_outputTexture);
 
-	for (size_t i = 1; i < m_neuralNetwork.size() - 1; ++i)
+	for (int i = 1; i < m_neuralNetwork.size() - 1; ++i)
 	{
 		m_neuralNetwork[i].resize(m_biasNeurons[i] + m_hiddenNeurons[i - 1], 0);
 	}
 
-	for (size_t i = 0; i < m_weights.size(); ++i)
+	for (int i = 0; i < m_weights.size(); ++i)
 	{
-		size_t m_layerSize = m_neuralNetwork[i + 1].size() - (i < m_weights.size() - 1 ? m_biasNeurons[i + 1] : 0);
+		int m_layerSize = m_neuralNetwork[i + 1].size() - (i < m_weights.size() - 1 ? m_biasNeurons[i + 1] : 0);
 		m_weights[i].resize(m_layerSize, vector_1d(m_neuralNetwork[i].size()));
 
 		for (auto& m_weightLayer : m_weights[i])
@@ -809,7 +818,7 @@ void Game::initNeuralNetwork()
 
 	m_errors.resize(m_weights.size());
 
-	for (size_t i = 0; i < m_errors.size(); ++i)
+	for (int i = 0; i < m_errors.size(); ++i)
 	{
 		m_errors[i].resize(m_weights[i].size(), 0);
 	}
@@ -1382,6 +1391,23 @@ void Game::initSoundInGameplay()
 
 }
 
+void Game::spawnEnemyNearBase()
+{
+	Buggy* newBuggy = new Buggy();
+	newBuggy->setPosition(sf::Vector2f(200.0f, 100.0f));
+	newBuggy->setTargetPosition(sf::Vector2f(300.0f, 300.0f));
+	newBuggy->setEnemyUnits(m_playerUnits);
+	newBuggy->setEnemyBuildings(m_placedPlayerBuildings);
+	newBuggy->setTiles(m_levelEditor.m_tiles);
+
+	m_enemyUnits.push_back(newBuggy);
+}
+
+void Game::getMoney()
+{
+	Global::playerCurrency += 1000;
+}
+
 int Game::calculateGridSize(int m_numberOfUnits)
 {
 	return std::ceil(std::sqrt(m_numberOfUnits));
@@ -1474,7 +1500,7 @@ void Game::updateEnemyAIDecisionOnCreating(sf::Time t_deltaTime)
 	std::vector<BuildingType> m_availableBuildings;
 
 	// Every few seconds the enemy will try to make either a unit or building
-	if (m_enemyProductionTimer > sf::seconds(8))
+	if (m_enemyProductionTimer > sf::seconds(4))
 	{
 		updateBuildingCounts();
 
@@ -1584,7 +1610,7 @@ void Game::updateEnemyAIUnitDecisionState(sf::Time t_deltaTime)
 		}
 		else
 		{
-			enemyExploring(t_deltaTime);
+			//enemyExploring(t_deltaTime);
 		}
 		break;
 	case EnemyAIState::Grouping:
@@ -2602,7 +2628,7 @@ void Game::gameReset()
 	m_levelEditor.resetFogOfWar();
 	m_gameWinLose = WinLoseState::NONE;
 	Global::playerCurrency = 5000;
-	Global::enemyCurrency = 10000;
+	Global::enemyCurrency = 50000;
 	m_playerUnitStatCount = 0;
 	m_playerBuildingStatCount = 0;
 	m_enemyUnitStatCount = 0;

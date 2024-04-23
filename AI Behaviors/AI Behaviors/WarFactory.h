@@ -8,7 +8,7 @@ public:
 	~WarFactory();
 
 	void update(sf::Time t_deltaTime) override;
-	void render(sf::RenderWindow& m_window) const override;
+	void render(sf::RenderWindow& m_window) override;
 
 private:
 

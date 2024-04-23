@@ -13,9 +13,10 @@ Refinery::~Refinery()
 
 void Refinery::update(sf::Time t_deltaTime)
 {
+	Building::update(t_deltaTime);
 }
 
-void Refinery::render(sf::RenderWindow& m_window) const
+void Refinery::render(sf::RenderWindow& m_window)
 {
 	Building::render(m_window);
 }

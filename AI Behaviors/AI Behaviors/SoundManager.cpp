@@ -12,6 +12,11 @@ SoundManager::~SoundManager()
     }
 }
 
+/// <summary>
+/// Loads the sound 
+/// </summary>
+/// <param name="name"></param>
+/// <param name="filename"></param>
 void SoundManager::loadSound(const std::string& name, const std::string& filename)
 {
     sf::SoundBuffer buffer;
@@ -22,6 +27,10 @@ void SoundManager::loadSound(const std::string& name, const std::string& filenam
     }
 }
 
+/// <summary>
+/// plays the sound
+/// </summary>
+/// <param name="name"></param>
 void SoundManager::playSound(const std::string& name) 
 {
     if (sounds.find(name) != sounds.end()) 
@@ -31,6 +40,10 @@ void SoundManager::playSound(const std::string& name)
     }
 }
 
+/// <summary>
+/// to stop the sound playing
+/// </summary>
+/// <param name="name"></param>
 void SoundManager::stopSound(const std::string& name)
 {
     if (sounds.find(name) != sounds.end())
@@ -39,6 +52,11 @@ void SoundManager::stopSound(const std::string& name)
     }
 }
 
+/// <summary>
+/// sets the volume
+/// </summary>
+/// <param name="name"></param>
+/// <param name="volume"></param>
 void SoundManager::setSoundVolume(const std::string& name, float volume)
 {
     if (sounds.find(name) != sounds.end()) 
@@ -47,6 +65,10 @@ void SoundManager::setSoundVolume(const std::string& name, float volume)
     }
 }
 
+/// <summary>
+/// stes all sounds volume
+/// </summary>
+/// <param name="volume"></param>
 void SoundManager::setGlobalSoundVolume(float volume) 
 {
     globalSoundVolume = volume;
@@ -56,6 +78,11 @@ void SoundManager::setGlobalSoundVolume(float volume)
     }
 }
 
+/// <summary>
+/// Loads music
+/// </summary>
+/// <param name="name"></param>
+/// <param name="filename"></param>
 void SoundManager::loadMusic(const std::string& name, const std::string& filename)
 {
     sf::Music* music = new sf::Music();
@@ -65,6 +92,11 @@ void SoundManager::loadMusic(const std::string& name, const std::string& filenam
     }
 }
 
+/// <summary>
+/// plays music
+/// </summary>
+/// <param name="name"></param>
+/// <param name="loop"></param>
 void SoundManager::playMusic(const std::string& name, bool loop)
 {
     auto it = musics.find(name);
@@ -75,6 +107,10 @@ void SoundManager::playMusic(const std::string& name, bool loop)
     }
 }
 
+/// <summary>
+/// stops music
+/// </summary>
+/// <param name="name"></param>
 void SoundManager::stopMusic(const std::string& name)
 {
     if (musics.find(name) != musics.end())
@@ -83,6 +119,11 @@ void SoundManager::stopMusic(const std::string& name)
     }
 }
 
+/// <summary>
+/// sets music volume
+/// </summary>
+/// <param name="name"></param>
+/// <param name="volume"></param>
 void SoundManager::setMusicVolume(const std::string& name, float volume)
 {
     if (musics.find(name) != musics.end())
@@ -91,6 +132,10 @@ void SoundManager::setMusicVolume(const std::string& name, float volume)
     }
 }
 
+/// <summary>
+/// sets all music volume
+/// </summary>
+/// <param name="volume"></param>
 void SoundManager::setGlobalMusicVolume(float volume)
 {
     globalMusicVolume = volume;
@@ -103,6 +148,10 @@ void SoundManager::setGlobalMusicVolume(float volume)
     }
 }
 
+/// <summary>
+/// adds music to playlist 
+/// </summary>
+/// <param name="name"></param>
 void SoundManager::addToPlaylist(const std::string& name)
 {
     if (musics.find(name) != musics.end())
@@ -111,6 +160,9 @@ void SoundManager::addToPlaylist(const std::string& name)
     }
 }
 
+/// <summary>
+/// plays the next track for music if there is any
+/// </summary>
 void SoundManager::playNextTrack()
 {
     if (!playlist.empty()) 
@@ -128,6 +180,9 @@ void SoundManager::playNextTrack()
     }
 }
 
+/// <summary>
+/// updates the track when the current one stops playing
+/// </summary>
 void SoundManager::updateMusicTrack()
 {
     if (!currentTrack.empty() && musics[currentTrack]->getStatus() != sf::Music::Playing) 
@@ -136,6 +191,9 @@ void SoundManager::updateMusicTrack()
     }
 }
 
+/// <summary>
+/// stops the music
+/// </summary>
 void SoundManager::stopAllMusic()
 {
     for (auto& music : musics) 

@@ -7,7 +7,7 @@ HammerHead::HammerHead()
 	m_health = 100;
     m_viewRadius = 310;
     m_speed = 150;
-
+    m_damage = 10.0f;
 	m_slowingRadius = 100.0f;
     m_rotationSpeed = 80;
     m_maxForce = 200;

@@ -13,9 +13,10 @@ Barracks::~Barracks()
 
 void Barracks::update(sf::Time t_deltaTime)
 {
+	Building::update(t_deltaTime);
 }
 
-void Barracks::render(sf::RenderWindow& m_window) const
+void Barracks::render(sf::RenderWindow& m_window)
 {
 	Building::render(m_window);
 }

@@ -135,6 +135,10 @@ private:
 	void initPlaylistForGameplay();
 	void initSoundInGameplay();
 
+	// For debug/demo purpose 
+	void spawnEnemyNearBase();
+	void getMoney();
+
 	int calculateGridSize(int m_numberOfUnits);
 
 	sf::RenderWindow m_window;

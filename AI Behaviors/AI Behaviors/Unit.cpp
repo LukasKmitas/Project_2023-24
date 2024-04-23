@@ -149,8 +149,8 @@ void Unit::avoidCollisionsWithWalls()
         return;
     }
 
-    const float m_distanceAhead = 60.0f; // Distance to check ahead for walls
-    const float m_distanceSides = 30.0f;  // Distance to check to the sides
+    const float m_distanceAhead = 50.0f; // Distance to check ahead for walls
+    const float m_distanceSides = 20.0f;  // Distance to check to the sides
     sf::Vector2f m_currentPosition = getPosition();
 
     std::vector<float> checkAngles = { 0, 30.0f, -30.0f, 60.0f, -60.0f, 90.0f, -90.0f };

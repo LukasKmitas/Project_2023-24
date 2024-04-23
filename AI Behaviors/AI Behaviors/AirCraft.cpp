@@ -13,9 +13,10 @@ AirCraft::~AirCraft()
 
 void AirCraft::update(sf::Time t_deltaTime)
 {
+	Building::update(t_deltaTime);
 }
 
-void AirCraft::render(sf::RenderWindow& m_window) const
+void AirCraft::render(sf::RenderWindow& m_window)
 {
 	Building::render(m_window);
 }

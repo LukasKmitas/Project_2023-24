@@ -3,6 +3,7 @@
 #include "SFML/Graphics.hpp"
 #include "Global.h"
 #include "BuildingType.h"
+#include "ParticleSystem.h"
 
 class Building
 {
@@ -12,7 +13,7 @@ public:
     virtual ~Building();
 
     virtual void update(sf::Time t_deltaTime);
-    virtual void render(sf::RenderWindow& m_window) const;
+    virtual void render(sf::RenderWindow& m_window);
 
     void takeDamage(float m_damageAmount);
     void setPosition(const sf::Vector2f& m_position);
@@ -36,6 +37,12 @@ public:
     void updateHealthBar();
 
 protected:
+
+    void initSmokeEffect();
+    void spawnSmokeEffect();
+
+    ParticleSystem m_smokeEffect;
+    sf::Texture m_smokeTexture;
 
     sf::Vector2f m_position;
     std::string m_name;

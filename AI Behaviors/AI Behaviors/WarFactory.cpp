@@ -13,9 +13,10 @@ WarFactory::~WarFactory()
 
 void WarFactory::update(sf::Time t_deltaTime)
 {
+	Building::update(t_deltaTime);
 }
 
-void WarFactory::render(sf::RenderWindow& m_window) const
+void WarFactory::render(sf::RenderWindow& m_window)
 {
 	Building::render(m_window);
 }

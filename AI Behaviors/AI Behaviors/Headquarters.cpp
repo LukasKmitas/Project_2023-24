@@ -12,9 +12,10 @@ Headquarters::~Headquarters()
 
 void Headquarters::update(sf::Time t_deltaTime)
 {
+	Building::update(t_deltaTime);
 }
 
-void Headquarters::render(sf::RenderWindow& m_window) const
+void Headquarters::render(sf::RenderWindow& m_window)
 {
 	Building::render(m_window);
 }

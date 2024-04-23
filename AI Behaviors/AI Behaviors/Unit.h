@@ -121,7 +121,7 @@ protected:
     float m_health = 100.0f;
     const float m_maxHealth = 100.0f;
     float m_viewRadius = 100.0f;
-    float m_damage = 4.0f;
+    float m_damage = 5.0f;
 
     float m_speed = 100.0f;
     float m_stoppingDistance = 20;
