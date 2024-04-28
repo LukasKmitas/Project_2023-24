@@ -33,7 +33,7 @@ void MainMenu::render(sf::RenderWindow& m_window)
     m_window.draw(m_playButton);
     m_window.draw(m_editorButton);
     m_window.draw(m_loadLevelButton);
-    m_window.draw(m_NeuralNetworkButton);
+    //m_window.draw(m_NeuralNetworkButton);
     m_window.draw(m_exitButton);
     m_window.draw(m_playText);
     m_window.draw(m_editorText);
@@ -68,10 +68,10 @@ void MainMenu::handleButtonClick(const sf::Vector2f& m_mousePosition, GameState&
     {
         m_gameState = GameState::LevelLoad;
     }
-    else if (m_NeuralNetworkButton.getGlobalBounds().contains(m_mousePosition))
+    /*else if (m_NeuralNetworkButton.getGlobalBounds().contains(m_mousePosition))
     {
         m_gameState = GameState::NeuralNetworks;
-    }
+    }*/
     else if (m_exitButton.getGlobalBounds().contains(m_mousePosition))
     {
         m_gameState = GameState::Exit;
@@ -181,7 +181,7 @@ void MainMenu::initButtons()
     m_exitText.setPosition(m_exitButton.getPosition().x, m_exitButton.getPosition().y - 5);
 
     // Neural Network Button
-    m_NeuralNetworkButton.setSize(sf::Vector2f(320, 85));
+   /* m_NeuralNetworkButton.setSize(sf::Vector2f(320, 85));
     m_NeuralNetworkButton.setOrigin(m_NeuralNetworkButton.getSize().x / 2, m_NeuralNetworkButton.getSize().y / 2);
     m_NeuralNetworkButton.setPosition(Global::S_WIDTH / 2 - 600, Global::S_HEIGHT / 2 + 250);
     m_NeuralNetworkButton.setTexture(&m_buttonTexture);
@@ -192,7 +192,7 @@ void MainMenu::initButtons()
     m_neuralNetworkText.setOutlineColor(sf::Color::Red);
     m_neuralNetworkText.setOutlineThickness(1.0f);
     m_neuralNetworkText.setOrigin(m_neuralNetworkText.getGlobalBounds().width / 2, m_neuralNetworkText.getGlobalBounds().height / 2);
-    m_neuralNetworkText.setPosition(m_NeuralNetworkButton.getPosition().x, m_NeuralNetworkButton.getPosition().y - 5);
+    m_neuralNetworkText.setPosition(m_NeuralNetworkButton.getPosition().x, m_NeuralNetworkButton.getPosition().y - 5);*/
 
 }
 
@@ -249,10 +249,10 @@ void MainMenu::buttonTabAnimation(sf::RenderWindow& m_window, sf::Time t_deltaTi
     {
         animateTab(m_loadLevelButton);
     }
-    else if (m_NeuralNetworkButton.getGlobalBounds().contains(mousePos))
+    /*else if (m_NeuralNetworkButton.getGlobalBounds().contains(mousePos))
     {
         animateTab(m_NeuralNetworkButton);
-    }
+    }*/
     else if (m_exitButton.getGlobalBounds().contains(mousePos)) 
     {
         animateTab(m_exitButton);

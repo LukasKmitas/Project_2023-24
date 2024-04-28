@@ -194,7 +194,7 @@ void NeuralNetworks::backPropagation(const std::vector<float>& m_target, std::ve
 
 				for (int k = 0; k < m_neuralNetwork[i - 1].size(); k++)
 				{
-					m_weights[i - 1][j - m_biasNeurons][k] -= LEARNING_RATE * m_errors[i - 1][j - m_biasNeurons] * m_neuralNetwork[i - 1][k] * activationFunction(1, m_neuronOutput);
+					m_weights[i - 1][j - m_biasNeurons][k] -= LEARNING_RATE * m_errors[i - 1][j - m_biasNeurons] * m_neuralNetwork[i - 1][k] * activationFunctionSigmoid(1, m_neuronOutput);
 				}
 			}
 		}
@@ -249,7 +249,7 @@ std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::v
 					m_neuralNetwork[1 + i][j + m_biasNeurons] += m_neuralNetwork[i][k] * m_weights[i][j][k];
 				}
 
-				m_neuralNetwork[1 + i][j + m_biasNeurons] = activationFunction(0, m_neuralNetwork[1 + i][j + m_biasNeurons]);
+				m_neuralNetwork[1 + i][j + m_biasNeurons] = activationFunctionSigmoid(0, m_neuralNetwork[1 + i][j + m_biasNeurons]);
 			}
 		}
 		return m_neuralNetwork[m_neuralNetwork.size() - 1];
@@ -290,7 +290,7 @@ std::vector<float> NeuralNetworks::forwardPropagation(bool m_state, const std::v
 					m_newNeuralNetwork[1 + i][j + bias_neurons] += m_newNeuralNetwork[i][k] * m_weights[i][j][k];
 				}
 
-				m_newNeuralNetwork[1 + i][j + bias_neurons] = activationFunction(0, m_newNeuralNetwork[1 + i][j + bias_neurons]);
+				m_newNeuralNetwork[1 + i][j + bias_neurons] = activationFunctionSigmoid(0, m_newNeuralNetwork[1 + i][j + bias_neurons]);
 			}
 		}
 		return m_newNeuralNetwork[m_newNeuralNetwork.size() - 1];
@@ -401,38 +401,6 @@ void NeuralNetworks::initMouseDotCircle()
 	m_mouseDotCircle.setFillColor(sf::Color::White);
 	m_mouseDotCircle.setOutlineColor(sf::Color::Black);
 	m_mouseDotCircle.setOutlineThickness(2.0f);
-}
-
-/// <summary>
-/// To have non-linearities into the network
-/// </summary>
-/// <param name="m_derivative"></param>
-/// <param name="m_input"></param>
-/// <returns></returns>
-float NeuralNetworks::activationFunction(bool m_derivative, float m_input)
-{
-	if (m_derivative == 0)
-	{
-		if (m_input <= 0)
-		{
-			return std::pow(2, m_input - 1);
-		}
-		else
-		{
-			return 1 - std::pow(2, -1 - m_input);
-		}
-	}
-	else
-	{
-		if (m_input <= 0)
-		{
-			return std::log(2) * std::pow(2, m_input - 1);
-		}
-		else
-		{
-			return std::log(2) * std::pow(2, -1 - m_input);
-		}
-	}
 }
 
 /// <summary>

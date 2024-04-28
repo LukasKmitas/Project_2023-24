@@ -40,7 +40,6 @@ private:
     void initBackButton();
     void initMouseDotCircle();
 
-    float activationFunction(bool m_derivative, float m_input);
     float activationFunctionSigmoid(bool m_derivative, float m_input);
 
     float get_min_element(const std::vector<float>& m_vector);

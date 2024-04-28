@@ -26,8 +26,6 @@ private:
 	void squadEntityRegain() override;
 
 	void aimAt(const std::vector<Unit*>& m_enemyUnits);
-	void fireAtEnemies(const sf::Vector2f& m_toTarget);
-	void shoot(sf::Sprite& m_entity, const sf::Vector2f& m_direction);
 
 	std::vector<sf::Sprite> m_entities;
 	std::vector<sf::Vector2f> m_offsets;
