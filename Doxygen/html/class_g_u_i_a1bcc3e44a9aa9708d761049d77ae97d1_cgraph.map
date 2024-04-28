@@ -1,0 +1,13 @@
+<map id="GUI::handleBuildingSelection" name="GUI::handleBuildingSelection">
+<area shape="rect" id="Node000001" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="5,107,195,133"/>
+<area shape="rect" id="Node000002" href="$class_side_bar.html#a8bfd240baf0383a6fa11822cf1c5776f" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="244,5,422,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,104,176,73,242,42,261,35,263,40,244,46,178,78,125,108"/>
+<area shape="rect" id="Node000003" href="$class_side_bar.html#a0a755f0ea7a46f3d6f0478b82f3d8ad5" title="Adds the building buttons for the sidebar." alt="" coords="243,56,423,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,103,253,84,254,89,165,109"/>
+<area shape="rect" id="Node000004" href="$class_side_bar.html#a38a8e07a7b7fd8da23825dd193d659a3" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="245,107,421,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,117,229,117,229,123,195,123"/>
+<area shape="rect" id="Node000005" href="$class_side_bar.html#a41846d720598c76c51371c790145a515" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="244,157,422,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="165,131,254,151,253,156,164,137"/>
+<area shape="rect" id="Node000006" href="$class_side_bar.html#ad45013b35dc68cfc580bc8a35352dd63" title="Just to clear everything." alt="" coords="259,208,407,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="125,132,178,162,244,194,263,200,261,205,242,198,176,167,122,136"/>
+</map>

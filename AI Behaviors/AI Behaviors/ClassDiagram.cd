@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Game" Collapsed="true">
+    <Position X="17.5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>GV4RZinytO/EJvS1hyBkemSR+RiZ3UECTekyedQUB7c=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Firehawk" Collapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAEABAAAAAAAAAAAAEIACACMAKBCAAAJAEFhIA=</HashCode>
+      <FileName>Firehawk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirCraft" Collapsed="true">
+    <Position X="1.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAUAAA=</HashCode>
+      <FileName>AirCraft.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AircraftUnit" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAUAAA=</HashCode>
+      <FileName>AircraftUnit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Barracks" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAUEAA=</HashCode>
+      <FileName>Barracks.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buggy" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAFIAAACAAAEAAAAmAAAAAACIAAAAAEBIA=</HashCode>
+      <FileName>Buggy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Building" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAoAJB1QAKAAgAAAAAAACQQSgxAAEACKIAACAAAUAAA=</HashCode>
+      <FileName>Building.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="15.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCgQAAAAgQAAIAAAAAAAABQAAAAAEAAUAAA=</HashCode>
+      <FileName>Bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI" Collapsed="true">
+    <Position X="19.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GggQAARIQQAFYDAAQAAAIEKgNFJMhABggIAGJAAUgQE=</HashCode>
+      <FileName>GUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HammerHead" Collapsed="true">
+    <Position X="2" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A0AAAAAAAAAEAAIEAAAQAAAAAiAAAAAACAAAAAAUBQA=</HashCode>
+      <FileName>HammerHead.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Harvester" Collapsed="true">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIBhEAQAEIAAACAAAAQEAASAQAKACAAAAAAAEBQA=</HashCode>
+      <FileName>Harvester.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Headquarters" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAGAAAEAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>Headquarters.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfantryUnit" Collapsed="true">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAUAAQ=</HashCode>
+      <FileName>InfantryUnit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelEditor" Collapsed="true">
+    <Position X="21" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CJokSIIBIAoAIhERKBwggFRgEAADIeiCgGECBYGWgSI=</HashCode>
+      <FileName>LevelEditor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelLoader" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAIAAIAECABAEAAQgIEQCEACAAAEQgAAAACAUAAA=</HashCode>
+      <FileName>LevelLoader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAEIoAIAAQAhAEWQCIAQQREAAAAQBAACAABAEWEAA=</HashCode>
+      <FileName>MainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Missile" Collapsed="true">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAiCgQAAAAgQIAIAAAAAAAAhQCAAAAAACUAAA=</HashCode>
+      <FileName>Missile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuralNetworks" Collapsed="true">
+    <Position X="21" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAEG8BACCBAAAAABgEaAEEgAAAIQgAMgJAIUSIA=</HashCode>
+      <FileName>NeuralNetworks.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleSystem" Collapsed="true">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>ParticleSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Refinery" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAUAAA=</HashCode>
+      <FileName>Refinery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RiflemanSquad" Collapsed="true">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEIAAkEAAFAgAAACAAAAQCAgEAIIAAGIBACAAUBAE=</HashCode>
+      <FileName>RiflemanSquad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideBar" Collapsed="true">
+    <Position X="17.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAOBKBSoB0VABAiABSIAACEBICAEAGCgICAQII0BEQ=</HashCode>
+      <FileName>SideBar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="19.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQEAASBAIAAQQgAAAAAKAIMACQgAAAgEACAkAA=</HashCode>
+      <FileName>SoundManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TankAurora" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QDAAEAKhAAAkAEEAAiIAAAIEAiAgAAAAAEAAQEEVBgk=</HashCode>
+      <FileName>TankAurora.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tile" Collapsed="true">
+    <Position X="21" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAACAAAAAAAAAAASEAAAAAwA=</HashCode>
+      <FileName>Tile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unit" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>LIOLeRCSDKEUhwIV4BKBAZTyoWCRox3CaUISCQSchsI=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VehicleUnit" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAUAIA=</HashCode>
+      <FileName>VehicleUnit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WarFactory" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAUIAA=</HashCode>
+      <FileName>WarFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Button" Collapsed="true">
+    <Position X="15.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAgAAgAAAAAAAAAgAgAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SideBar.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Global" Collapsed="true">
+    <Position X="17.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAEAAgAAAAAAAACAAA=</HashCode>
+      <FileName>Global.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Particle" Collapsed="true">
+    <Position X="19.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAACAAAgAAAAAAAAAAAAAQAAAAAAAoAAAA=</HashCode>
+      <FileName>ParticleSystem.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TrailPart" Collapsed="true">
+    <Position X="21" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAgAAAAAAAAAAAGIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Missile.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="AirCraftType" Collapsed="true">
+    <Position X="15.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>AirCraftType.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BuildingType" Collapsed="true">
+    <Position X="17.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAMAA=</HashCode>
+      <FileName>BuildingType.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EnemyAIState" Collapsed="true">
+    <Position X="19.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>EnemyAIState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="21" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAEAQAAAAAAAAIAAAIBAAAAA=</HashCode>
+      <FileName>GameState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="InfantryType" Collapsed="true">
+    <Position X="15.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>InfantryType.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnitType" Collapsed="true">
+    <Position X="17.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAIAAACAAAAAAAAAAgAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnitTypeClass" Collapsed="true">
+    <Position X="19.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAJAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Unit.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="VehicleType" Collapsed="true">
+    <Position X="21" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAACAAAAAAAAAAgAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>VehicleType.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WinLoseState" Collapsed="true">
+    <Position X="15.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>WinLoseState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

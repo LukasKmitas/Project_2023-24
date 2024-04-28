@@ -1,0 +1,5 @@
+<map id="Building::checkAffordability" name="Building::checkAffordability">
+<area shape="rect" id="Node000001" title="checks if it can be bought" alt="" coords="251,5,428,32"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#a7878b88debc5991513f46ce2665f5f70" title="This is more for the ghost buildings and confirms placement." alt="" coords="5,5,203,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,21,203,21,203,16,235,16"/>
+</map>

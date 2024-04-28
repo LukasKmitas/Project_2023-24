@@ -1,0 +1,105 @@
+\doxysection{GUI.\+h}
+\hypertarget{_g_u_i_8h_source}{}\label{_g_u_i_8h_source}\index{AI Behaviors/GUI.h@{AI Behaviors/GUI.h}}
+\mbox{\hyperlink{_g_u_i_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_type_8h}{BuildingType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_infantry_type_8h}{InfantryType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_side_bar_8h}{SideBar.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_headquarters_8h}{Headquarters.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_refinery_8h}{Refinery.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_barracks_8h}{Barracks.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_war_factory_8h}{WarFactory.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_air_craft_8h}{AirCraft.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_level_editor_8h}{LevelEditor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rifleman_squad_8h}{RiflemanSquad.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_harvester_8h}{Harvester.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buggy_8h}{Buggy.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tank_aurora_8h}{TankAurora.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hammer_head_8h}{HammerHead.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_firehawk_8h}{Firehawk.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00026}\mbox{\hyperlink{class_g_u_i}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00028}00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00030}\mbox{\hyperlink{class_g_u_i_af9566fe6b02393397e69b1809867fdc2}{00030}}\ \ \ \ \ \mbox{\hyperlink{class_refinery}{Refinery}}*\ \mbox{\hyperlink{class_g_u_i_af9566fe6b02393397e69b1809867fdc2}{m\_refinery}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00031}\mbox{\hyperlink{class_g_u_i_ab9f0fc18b5c02e2df080e9cbe2b24dba}{00031}}\ \ \ \ \ \mbox{\hyperlink{class_barracks}{Barracks}}*\ \mbox{\hyperlink{class_g_u_i_ab9f0fc18b5c02e2df080e9cbe2b24dba}{m\_barracks}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00032}\mbox{\hyperlink{class_g_u_i_a252e79751490fdb39319570ff384d0a4}{00032}}\ \ \ \ \ \mbox{\hyperlink{class_war_factory}{WarFactory}}*\ \mbox{\hyperlink{class_g_u_i_a252e79751490fdb39319570ff384d0a4}{m\_warFactory}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00033}\mbox{\hyperlink{class_g_u_i_ad375dda792cca31e41fdecf8bd3fddc1}{00033}}\ \ \ \ \ \mbox{\hyperlink{class_air_craft}{AirCraft}}*\ \mbox{\hyperlink{class_g_u_i_ad375dda792cca31e41fdecf8bd3fddc1}{m\_airCraft}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00034}\mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{00034}}\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00035}\mbox{\hyperlink{class_g_u_i_a186755c6854c61c0834b83ed12c5cf5f}{00035}}\ \ \ \ \ \mbox{\hyperlink{class_level_editor}{LevelEditor}}\ \mbox{\hyperlink{class_g_u_i_a186755c6854c61c0834b83ed12c5cf5f}{levelEditor}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00036}\mbox{\hyperlink{class_g_u_i_ac4d43c86265d443c5e38f52b72eba619}{00036}}\ \ \ \ \ std::vector<Building*>\&\ \mbox{\hyperlink{class_g_u_i_ac4d43c86265d443c5e38f52b72eba619}{m\_placedBuildings}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00037}\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{00037}}\ \ \ \ \ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\&\ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00039}\mbox{\hyperlink{class_g_u_i_a46e8bfdb20e5b638c0a595517c274de2}{00039}}\ \ \ \ \ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81}{InfantryType}}\ \mbox{\hyperlink{class_g_u_i_a46e8bfdb20e5b638c0a595517c274de2}{m\_selectedInfantryType}}\ =\ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81a6adf97f83acf6453d4a6a4b1070f3754}{InfantryType::None}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00040}\mbox{\hyperlink{class_g_u_i_a6e03b2873290cdc818e6f27c87a13479}{00040}}\ \ \ \ \ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afa}{VehicleType}}\ \mbox{\hyperlink{class_g_u_i_a6e03b2873290cdc818e6f27c87a13479}{m\_selectedVehicleType}}\ =\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa6adf97f83acf6453d4a6a4b1070f3754}{VehicleType::None}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00041}\mbox{\hyperlink{class_g_u_i_ac164457ca000e8298fa06c82097e6815}{00041}}\ \ \ \ \ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79}{AirCraftType}}\ \mbox{\hyperlink{class_g_u_i_ac164457ca000e8298fa06c82097e6815}{m\_selectedAircraftType}}\ =\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79a6adf97f83acf6453d4a6a4b1070f3754}{AirCraftType::None}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00043}\mbox{\hyperlink{class_g_u_i_a7f2a4b0d51812d4c9d7beb6dd9b1cf6a}{00043}}\ \ \ \ \ \mbox{\hyperlink{class_rifleman_squad}{RiflemanSquad}}\ \mbox{\hyperlink{class_g_u_i_a7f2a4b0d51812d4c9d7beb6dd9b1cf6a}{m\_riflemanSquad}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00044}\mbox{\hyperlink{class_g_u_i_add53db335335cd1783d98d77d5df3bed}{00044}}\ \ \ \ \ \mbox{\hyperlink{class_harvester}{Harvester}}\ \mbox{\hyperlink{class_g_u_i_add53db335335cd1783d98d77d5df3bed}{m\_harvester}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00045}\mbox{\hyperlink{class_g_u_i_a1f4e50e76ce4b080ea639782721b12b2}{00045}}\ \ \ \ \ \mbox{\hyperlink{class_buggy}{Buggy}}\ \mbox{\hyperlink{class_g_u_i_a1f4e50e76ce4b080ea639782721b12b2}{m\_buggy}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00046}\mbox{\hyperlink{class_g_u_i_a4f72a195c6a40bb6761dde6affa48c97}{00046}}\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora}{TankAurora}}\ \mbox{\hyperlink{class_g_u_i_a4f72a195c6a40bb6761dde6affa48c97}{m\_tankAurora}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00047}\mbox{\hyperlink{class_g_u_i_a1abc744668d9ab7b4dbbc1f4278a8baf}{00047}}\ \ \ \ \ \mbox{\hyperlink{class_hammer_head}{HammerHead}}\ \mbox{\hyperlink{class_g_u_i_a1abc744668d9ab7b4dbbc1f4278a8baf}{m\_hammerHead}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00048}\mbox{\hyperlink{class_g_u_i_afd2e97394854d6fbf437fbfb29382b5b}{00048}}\ \ \ \ \ \mbox{\hyperlink{class_firehawk}{Firehawk}}\ \mbox{\hyperlink{class_g_u_i_afd2e97394854d6fbf437fbfb29382b5b}{m\_firehawk}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a617cbe16962f0fe4b74bd66f716a482b}{GUI}}(std::vector<Building*>\&\ m\_buildings,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\&\ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}},\ std::vector<std::vector<Tile>>\&\ m\_tiles);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}{\string~GUI}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479}{update}}(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7}{handleMouseClick}}(sf::Vector2i\ m\_mousePosition,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a7878b88debc5991513f46ce2665f5f70}{handleBuildingPlacement}}(sf::Vector2i\ m\_mousePosition,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1}{handleBuildingSelection}}(sf::Vector2f\ m\_mousePosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00059}\mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{00059}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00060}\mbox{\hyperlink{class_g_u_i_a39c22a2361d3b62878e057195d4ead42}{00060}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_a39c22a2361d3b62878e057195d4ead42}{m\_confirmed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00061}\mbox{\hyperlink{class_g_u_i_a869f2765d4fae5fcf4e6b6af5d9c65fb}{00061}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_a869f2765d4fae5fcf4e6b6af5d9c65fb}{m\_unitConfirmed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}{IsPlacementValid}}(sf::Vector2f\&\ m\_position,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8}{IsPlacementValidForTiles}}(sf::Vector2f\&\ m\_position);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00066}00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_tile}{Tile}}\ m\_tile;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{class_side_bar}{SideBar}}\ m\_sideBar\{\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00071}00071\ \ \ \ \ std::vector<std::vector<Tile>>\&\ m\_tilesReference;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ initTopBar();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCurrency();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ loadIcons();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ sellBuilding();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00078}00078\ \ \ \ \ sf::View\ m\_guiView;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00080}00080\ \ \ \ \ sf::RectangleShape\ m\_topBar;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00081}00081\ \ \ \ \ sf::Texture\ m\_topBarTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00083}00083\ \ \ \ \ sf::Font\ m\_currencyFont;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00084}00084\ \ \ \ \ sf::Text\ m\_currencyText;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00086}00086\ \ \ \ \ sf::Texture\ m\_BuildingTexture1;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00087}00087\ \ \ \ \ sf::Texture\ m\_BuildingTexture2;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00088}00088\ \ \ \ \ sf::Texture\ m\_unitInfantryTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00089}00089\ \ \ \ \ sf::Texture\ m\_unitVehicleTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00090}00090\ \ \ \ \ sf::Texture\ m\_unitAirCraftTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00092}00092\ \ \ \ \ sf::Texture\ m\_harvesterIconTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00094}00094\ \ \ \ \ sf::Sprite\ m\_ghostBuildingSprite;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00095}00095\ \ \ \ \ sf::Texture\ m\_ghostBuildingTexture;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_showSlider\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_placementValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8h_source_l00099}00099\ \};}
+
+\end{DoxyCode}

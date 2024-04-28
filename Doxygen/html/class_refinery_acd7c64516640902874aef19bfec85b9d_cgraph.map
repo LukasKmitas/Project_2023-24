@@ -1,0 +1,7 @@
+<map id="Refinery::render" name="Refinery::render">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,118,32"/>
+<area shape="rect" id="Node000002" href="$class_building.html#a17f70ec3c6e96f935fa63fa4108901a2" title=" " alt="" coords="166,5,277,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+<area shape="rect" id="Node000003" href="$class_particle_system.html#a12f342988eeb7d9ac023e279b8b9dd8c" title="Renders the particles into existence." alt="" coords="325,5,479,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,16,310,16,310,21,278,21"/>
+</map>

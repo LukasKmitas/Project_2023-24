@@ -1,0 +1,21 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_unit.html" title=" " alt="" coords="5,107,50,133"/>
+<area shape="rect" id="Node000001" href="$class_aircraft_unit.html" title=" " alt="" coords="99,56,184,83"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="63,102,108,81,110,86,65,106"/>
+<area shape="rect" id="Node000004" href="$class_infantry_unit.html" title=" " alt="" coords="98,107,185,133"/>
+<area shape="poly" id="edge9_Node000000_Node000004" title=" " alt="" coords="66,117,98,117,98,123,66,123"/>
+<area shape="rect" id="Node000006" href="$class_vehicle_unit.html" title=" " alt="" coords="98,183,185,209"/>
+<area shape="poly" id="edge11_Node000000_Node000006" title=" " alt="" coords="63,140,121,180,118,184,60,145"/>
+<area shape="rect" id="Node000002" href="$class_firehawk.html" title=" " alt="" coords="251,5,324,32"/>
+<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="195,48,249,29,251,34,197,53"/>
+<area shape="rect" id="Node000003" href="$class_hammer_head.html" title=" " alt="" coords="237,56,337,83"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="200,67,237,67,237,72,200,72"/>
+<area shape="rect" id="Node000005" href="$class_rifleman_squad.html" title=" " alt="" coords="233,107,341,133"/>
+<area shape="poly" id="edge10_Node000004_Node000005" title=" " alt="" coords="200,117,233,117,233,123,200,123"/>
+<area shape="rect" id="Node000007" href="$class_buggy.html" title=" " alt="" coords="258,157,316,184"/>
+<area shape="poly" id="edge12_Node000006_Node000007" title=" " alt="" coords="200,183,257,173,258,178,201,188"/>
+<area shape="rect" id="Node000008" href="$class_harvester.html" title=" " alt="" coords="250,208,325,235"/>
+<area shape="poly" id="edge13_Node000006_Node000008" title=" " alt="" coords="201,204,250,212,249,217,200,209"/>
+<area shape="rect" id="Node000009" href="$class_tank_aurora.html" title=" " alt="" coords="244,259,331,285"/>
+<area shape="poly" id="edge14_Node000006_Node000009" title=" " alt="" coords="181,215,234,244,257,256,255,261,232,249,179,220"/>
+</map>

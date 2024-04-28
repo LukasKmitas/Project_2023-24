@@ -1,0 +1,9 @@
+<map id="MainMenu::MainMenu" name="MainMenu::MainMenu">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,155,83"/>
+<area shape="rect" id="Node000002" href="$class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="203,5,386,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,53,220,34,221,39,140,58"/>
+<area shape="rect" id="Node000003" href="$class_sound_manager.html#afa1471a3f32972e3c5dc7529fdc1115e" title="Loads music." alt="" coords="207,56,382,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,67,191,67,191,72,155,72"/>
+<area shape="rect" id="Node000004" href="$class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="207,107,382,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,81,221,100,220,105,139,86"/>
+</map>

@@ -1,0 +1,368 @@
+\doxysection{Level\+Editor Class Reference}
+\hypertarget{class_level_editor}{}\label{class_level_editor}\index{LevelEditor@{LevelEditor}}
+
+
+{\ttfamily \#include $<$Level\+Editor.\+h$>$}
+
+
+
+Collaboration diagram for Level\+Editor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c}{Level\+Editor}} ()
+\item 
+void \mbox{\hyperlink{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e}{update}} (sf\+::\+Time t\+\_\+delta\+Time, sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Updates the level editor content changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws everything in the level editor mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d}{render\+Loaded\+Level}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the level -\/ used in gameplay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a26d8447a407783226ce313e52bb39798}{handle\+Mouse\+Input}} (sf\+::\+Vector2i m\+\_\+mouse\+Position, \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&m\+\_\+game\+State, sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em handles the mouse input inside the level editor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605}{handle\+Rotation\+Input}} (sf\+::\+Event m\+\_\+event)
+\begin{DoxyCompactList}\small\item\em able to rotate the first tile you place \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d}{save\+Level\+To\+File}} (const std\+::string \&m\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em Saves the level with the correct m\+\_\+tiles properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a50af4550cd28b70941afa18ca2e79147}{load\+Level\+From\+File}} (const std\+::string \&m\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em Loads the level with the correct m\+\_\+tile properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc}{load\+Level\+For\+Level\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em Loads the level in the "{}selection level"{} state ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_acb7bd789273b991637241051ab0161b9}{animation\+For\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em animates the resources tiles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a1926deb0a57ce800e6ab2e78be150f28}{animation\+For\+Weed}} ()
+\begin{DoxyCompactList}\small\item\em Animates the weed tiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a840bd660617f00ca6733bf3a52fe1055}{release\+Drag\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em reset the stuff for drag\+Rectangle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a984362b83939349a692676df1450ee3e}{reset\+Fog\+Of\+War}} ()
+\begin{DoxyCompactList}\small\item\em Resets the fog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_tile}{Tile}} $>$ $>$ \mbox{\hyperlink{class_level_editor_a14eb3a75162c0543bd9483495fddb421}{m\+\_\+tiles}}
+\item 
+const int \mbox{\hyperlink{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}{m\+\_\+num\+Rows}} = 50
+\item 
+const int \mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{m\+\_\+num\+Cols}} = 50
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00010}{10}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c}\label{class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c} 
+\index{LevelEditor@{LevelEditor}!LevelEditor@{LevelEditor}}
+\index{LevelEditor@{LevelEditor}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{LevelEditor()}{LevelEditor()}}
+{\footnotesize\ttfamily Level\+Editor\+::\+Level\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_level_editor_acb7bd789273b991637241051ab0161b9}\label{class_level_editor_acb7bd789273b991637241051ab0161b9} 
+\index{LevelEditor@{LevelEditor}!animationForResources@{animationForResources}}
+\index{animationForResources@{animationForResources}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{animationForResources()}{animationForResources()}}
+{\footnotesize\ttfamily void Level\+Editor\+::animation\+For\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+animates the resources tiles 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00684}{684}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_acb7bd789273b991637241051ab0161b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a1926deb0a57ce800e6ab2e78be150f28}\label{class_level_editor_a1926deb0a57ce800e6ab2e78be150f28} 
+\index{LevelEditor@{LevelEditor}!animationForWeed@{animationForWeed}}
+\index{animationForWeed@{animationForWeed}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{animationForWeed()}{animationForWeed()}}
+{\footnotesize\ttfamily void Level\+Editor\+::animation\+For\+Weed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Animates the weed tiles. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00706}{706}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a26d8447a407783226ce313e52bb39798}\label{class_level_editor_a26d8447a407783226ce313e52bb39798} 
+\index{LevelEditor@{LevelEditor}!handleMouseInput@{handleMouseInput}}
+\index{handleMouseInput@{handleMouseInput}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{handleMouseInput()}{handleMouseInput()}}
+{\footnotesize\ttfamily void Level\+Editor\+::handle\+Mouse\+Input (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{m\+\_\+mouse\+Position,  }\item[{\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&}]{m\+\_\+game\+State,  }\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+handles the mouse input inside the level editor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mouse\+Position} & \\
+\hline
+{\em m\+\_\+game\+State} & \\
+\hline
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605}\label{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605} 
+\index{LevelEditor@{LevelEditor}!handleRotationInput@{handleRotationInput}}
+\index{handleRotationInput@{handleRotationInput}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{handleRotationInput()}{handleRotationInput()}}
+{\footnotesize\ttfamily void Level\+Editor\+::handle\+Rotation\+Input (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{m\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+able to rotate the first tile you place 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc}\label{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc} 
+\index{LevelEditor@{LevelEditor}!loadLevelForLevelEditor@{loadLevelForLevelEditor}}
+\index{loadLevelForLevelEditor@{loadLevelForLevelEditor}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{loadLevelForLevelEditor()}{loadLevelForLevelEditor()}}
+{\footnotesize\ttfamily void Level\+Editor\+::load\+Level\+For\+Level\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the level in the "{}selection level"{} state ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00657}{657}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a50af4550cd28b70941afa18ca2e79147}\label{class_level_editor_a50af4550cd28b70941afa18ca2e79147} 
+\index{LevelEditor@{LevelEditor}!loadLevelFromFile@{loadLevelFromFile}}
+\index{loadLevelFromFile@{loadLevelFromFile}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{loadLevelFromFile()}{loadLevelFromFile()}}
+{\footnotesize\ttfamily void Level\+Editor\+::load\+Level\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m\+\_\+filename }\end{DoxyParamCaption})}
+
+
+
+Loads the level with the correct m\+\_\+tile properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00617}{617}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a840bd660617f00ca6733bf3a52fe1055}\label{class_level_editor_a840bd660617f00ca6733bf3a52fe1055} 
+\index{LevelEditor@{LevelEditor}!releaseDragRect@{releaseDragRect}}
+\index{releaseDragRect@{releaseDragRect}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{releaseDragRect()}{releaseDragRect()}}
+{\footnotesize\ttfamily void Level\+Editor\+::release\+Drag\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset the stuff for drag\+Rectangle 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00728}{728}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060}\label{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060} 
+\index{LevelEditor@{LevelEditor}!render@{render}}
+\index{render@{render}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Level\+Editor\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws everything in the level editor mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d}\label{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d} 
+\index{LevelEditor@{LevelEditor}!renderLoadedLevel@{renderLoadedLevel}}
+\index{renderLoadedLevel@{renderLoadedLevel}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{renderLoadedLevel()}{renderLoadedLevel()}}
+{\footnotesize\ttfamily void Level\+Editor\+::render\+Loaded\+Level (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the level -\/ used in gameplay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_a984362b83939349a692676df1450ee3e}\label{class_level_editor_a984362b83939349a692676df1450ee3e} 
+\index{LevelEditor@{LevelEditor}!resetFogOfWar@{resetFogOfWar}}
+\index{resetFogOfWar@{resetFogOfWar}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{resetFogOfWar()}{resetFogOfWar()}}
+{\footnotesize\ttfamily void Level\+Editor\+::reset\+Fog\+Of\+War (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the fog. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00754}{754}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_level_editor_a984362b83939349a692676df1450ee3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d}\label{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d} 
+\index{LevelEditor@{LevelEditor}!saveLevelToFile@{saveLevelToFile}}
+\index{saveLevelToFile@{saveLevelToFile}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{saveLevelToFile()}{saveLevelToFile()}}
+{\footnotesize\ttfamily void Level\+Editor\+::save\+Level\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m\+\_\+filename }\end{DoxyParamCaption})}
+
+
+
+Saves the level with the correct m\+\_\+tiles properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00563}{563}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+\Hypertarget{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e}\label{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e} 
+\index{LevelEditor@{LevelEditor}!update@{update}}
+\index{update@{update}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Level\+Editor\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Updates the level editor content changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_level_editor_abc0159c134c50f060cc23f78036a2615}\label{class_level_editor_abc0159c134c50f060cc23f78036a2615} 
+\index{LevelEditor@{LevelEditor}!m\_numCols@{m\_numCols}}
+\index{m\_numCols@{m\_numCols}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_numCols}{m\_numCols}}
+{\footnotesize\ttfamily const int Level\+Editor\+::m\+\_\+num\+Cols = 50}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00035}{35}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}\label{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c} 
+\index{LevelEditor@{LevelEditor}!m\_numRows@{m\_numRows}}
+\index{m\_numRows@{m\_numRows}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_numRows}{m\_numRows}}
+{\footnotesize\ttfamily const int Level\+Editor\+::m\+\_\+num\+Rows = 50}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00034}{34}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a14eb3a75162c0543bd9483495fddb421}\label{class_level_editor_a14eb3a75162c0543bd9483495fddb421} 
+\index{LevelEditor@{LevelEditor}!m\_tiles@{m\_tiles}}
+\index{m\_tiles@{m\_tiles}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_tiles}{m\_tiles}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{class_tile}{Tile}}$>$ $>$ Level\+Editor\+::m\+\_\+tiles}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00032}{32}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_level_editor_8h}{Level\+Editor.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_level_editor_8cpp}{Level\+Editor.\+cpp}}\end{DoxyCompactItemize}

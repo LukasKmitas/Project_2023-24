@@ -1,0 +1,509 @@
+\doxysection{Side\+Bar Class Reference}
+\hypertarget{class_side_bar}{}\label{class_side_bar}\index{SideBar@{SideBar}}
+
+
+{\ttfamily \#include $<$Side\+Bar.\+h$>$}
+
+
+
+Collaboration diagram for Side\+Bar\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}{Side\+Bar}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \&m\+\_\+selected\+Building\+Type)
+\item 
+void \mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+void \mbox{\hyperlink{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the side\+Bar UI in gameplay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{add\+Building\+Button}} (const sf\+::\+Texture \&texture, \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} building\+Type, int gridX, int gridY, const std\+::string \&button\+Text)
+\begin{DoxyCompactList}\small\item\em Adds the building buttons for the sidebar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}{add\+Infantry\+Button}} (const sf\+::\+Texture \&texture, \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81}{Infantry\+Type}} inftantry\+Type, int gridX, int gridY, const std\+::string \&button\+Text)
+\begin{DoxyCompactList}\small\item\em Adds the buttons for the infantry when barracks building is clicked on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{add\+Vehicle\+Button}} (const sf\+::\+Texture \&texture, \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afa}{Vehicle\+Type}} vehicle\+Type, int gridX, int gridY, const std\+::string \&button\+Text)
+\begin{DoxyCompactList}\small\item\em Adds the buttons for vehicles when the warfactory building is clicked on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{add\+Air\+Craft\+Button}} (const sf\+::\+Texture \&texture, \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79}{Air\+Craft\+Type}} aircraft\+Type, int gridX, int gridY, const std\+::string \&button\+Text)
+\begin{DoxyCompactList}\small\item\em Adds the buttons for the air units when the aircraft building is clicked on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clear\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Just to clear everything. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a8095fb8c494a0830365c243583496ca1}{get\+Refinery\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}{get\+Barracks\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}{get\+Vehicle\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}{get\+Air\+Craft\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}{get\+Rifleman\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}{get\+Harvester\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_ad1b03caf2f481402bd547db44173741d}{get\+Buggy\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}{get\+Tank\+Aurora\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_aba78ce197b2069026a62dd77bde88e14}{get\+Firehawk\+Icon\+Position}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}{get\+Hammer\+Head\+Icon\+Position}} () const
+\item 
+const sf\+::\+Rectangle\+Shape \& \mbox{\hyperlink{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}{get\+Side\+Bar\+Rect}} () const
+\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224461d9d83c}{get\+Sell\+Sprite}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_button}{Button}} $>$ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\+\_\+buttons}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00020}{20}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}\label{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f} 
+\index{SideBar@{SideBar}!SideBar@{SideBar}}
+\index{SideBar@{SideBar}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{SideBar()}{SideBar()}}
+{\footnotesize\ttfamily Side\+Bar\+::\+Side\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \&}]{m\+\_\+selected\+Building\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}\label{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f} 
+\index{SideBar@{SideBar}!addAirCraftButton@{addAirCraftButton}}
+\index{addAirCraftButton@{addAirCraftButton}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{addAirCraftButton()}{addAirCraftButton()}}
+{\footnotesize\ttfamily void Side\+Bar\+::add\+Air\+Craft\+Button (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{texture,  }\item[{\mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79}{Air\+Craft\+Type}}}]{aircraft\+Type,  }\item[{int}]{gridX,  }\item[{int}]{gridY,  }\item[{const std\+::string \&}]{button\+Text }\end{DoxyParamCaption})}
+
+
+
+Adds the buttons for the air units when the aircraft building is clicked on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+{\em aircraft\+Type} & \\
+\hline
+{\em gridX} & \\
+\hline
+{\em gridY} & \\
+\hline
+{\em button\+Text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00201}{201}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}\label{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5} 
+\index{SideBar@{SideBar}!addBuildingButton@{addBuildingButton}}
+\index{addBuildingButton@{addBuildingButton}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{addBuildingButton()}{addBuildingButton()}}
+{\footnotesize\ttfamily void Side\+Bar\+::add\+Building\+Button (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{texture,  }\item[{\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}}]{building\+Type,  }\item[{int}]{gridX,  }\item[{int}]{gridY,  }\item[{const std\+::string \&}]{button\+Text }\end{DoxyParamCaption})}
+
+
+
+Adds the building buttons for the sidebar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+{\em building\+Type} & \\
+\hline
+{\em gridX} & \\
+\hline
+{\em gridY} & \\
+\hline
+{\em button\+Text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}\label{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3} 
+\index{SideBar@{SideBar}!addInfantryButton@{addInfantryButton}}
+\index{addInfantryButton@{addInfantryButton}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{addInfantryButton()}{addInfantryButton()}}
+{\footnotesize\ttfamily void Side\+Bar\+::add\+Infantry\+Button (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{texture,  }\item[{\mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81}{Infantry\+Type}}}]{inftantry\+Type,  }\item[{int}]{gridX,  }\item[{int}]{gridY,  }\item[{const std\+::string \&}]{button\+Text }\end{DoxyParamCaption})}
+
+
+
+Adds the buttons for the infantry when barracks building is clicked on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+{\em inftantry\+Type} & \\
+\hline
+{\em gridX} & \\
+\hline
+{\em gridY} & \\
+\hline
+{\em button\+Text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a41846d720598c76c51371c790145a515}\label{class_side_bar_a41846d720598c76c51371c790145a515} 
+\index{SideBar@{SideBar}!addVehicleButton@{addVehicleButton}}
+\index{addVehicleButton@{addVehicleButton}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{addVehicleButton()}{addVehicleButton()}}
+{\footnotesize\ttfamily void Side\+Bar\+::add\+Vehicle\+Button (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{texture,  }\item[{\mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afa}{Vehicle\+Type}}}]{vehicle\+Type,  }\item[{int}]{gridX,  }\item[{int}]{gridY,  }\item[{const std\+::string \&}]{button\+Text }\end{DoxyParamCaption})}
+
+
+
+Adds the buttons for vehicles when the warfactory building is clicked on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+{\em vehicle\+Type} & \\
+\hline
+{\em gridX} & \\
+\hline
+{\em gridY} & \\
+\hline
+{\em button\+Text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a41846d720598c76c51371c790145a515_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}\label{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63} 
+\index{SideBar@{SideBar}!clearButtons@{clearButtons}}
+\index{clearButtons@{clearButtons}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{clearButtons()}{clearButtons()}}
+{\footnotesize\ttfamily void Side\+Bar\+::clear\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Just to clear everything. 
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}\label{class_side_bar_a6fe150acbd921f8aab7080a5711d063b} 
+\index{SideBar@{SideBar}!getAirCraftIconPosition@{getAirCraftIconPosition}}
+\index{getAirCraftIconPosition@{getAirCraftIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getAirCraftIconPosition()}{getAirCraftIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Air\+Craft\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}\label{class_side_bar_a784d3c48ee380edca17a40fd5bb34343} 
+\index{SideBar@{SideBar}!getBarracksIconPosition@{getBarracksIconPosition}}
+\index{getBarracksIconPosition@{getBarracksIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getBarracksIconPosition()}{getBarracksIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Barracks\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_ad1b03caf2f481402bd547db44173741d}\label{class_side_bar_ad1b03caf2f481402bd547db44173741d} 
+\index{SideBar@{SideBar}!getBuggyIconPosition@{getBuggyIconPosition}}
+\index{getBuggyIconPosition@{getBuggyIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getBuggyIconPosition()}{getBuggyIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Buggy\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_aba78ce197b2069026a62dd77bde88e14}\label{class_side_bar_aba78ce197b2069026a62dd77bde88e14} 
+\index{SideBar@{SideBar}!getFirehawkIconPosition@{getFirehawkIconPosition}}
+\index{getFirehawkIconPosition@{getFirehawkIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getFirehawkIconPosition()}{getFirehawkIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Firehawk\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}\label{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab} 
+\index{SideBar@{SideBar}!getHammerHeadIconPosition@{getHammerHeadIconPosition}}
+\index{getHammerHeadIconPosition@{getHammerHeadIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getHammerHeadIconPosition()}{getHammerHeadIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Hammer\+Head\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}\label{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62} 
+\index{SideBar@{SideBar}!getHarvesterIconPosition@{getHarvesterIconPosition}}
+\index{getHarvesterIconPosition@{getHarvesterIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getHarvesterIconPosition()}{getHarvesterIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Harvester\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a8095fb8c494a0830365c243583496ca1}\label{class_side_bar_a8095fb8c494a0830365c243583496ca1} 
+\index{SideBar@{SideBar}!getRefineryIconPosition@{getRefineryIconPosition}}
+\index{getRefineryIconPosition@{getRefineryIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getRefineryIconPosition()}{getRefineryIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Refinery\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}\label{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5} 
+\index{SideBar@{SideBar}!getRiflemanIconPosition@{getRiflemanIconPosition}}
+\index{getRiflemanIconPosition@{getRiflemanIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getRiflemanIconPosition()}{getRiflemanIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Rifleman\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a8cadba8295bec933be8c224461d9d83c}\label{class_side_bar_a8cadba8295bec933be8c224461d9d83c} 
+\index{SideBar@{SideBar}!getSellSprite@{getSellSprite}}
+\index{getSellSprite@{getSellSprite}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getSellSprite()}{getSellSprite()}}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Side\+Bar\+::get\+Sell\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}\label{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f} 
+\index{SideBar@{SideBar}!getSideBarRect@{getSideBarRect}}
+\index{getSideBarRect@{getSideBarRect}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getSideBarRect()}{getSideBarRect()}}
+{\footnotesize\ttfamily const sf\+::\+Rectangle\+Shape \& Side\+Bar\+::get\+Side\+Bar\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}\label{class_side_bar_aa20184b6fa227eedb85a17f5013b7868} 
+\index{SideBar@{SideBar}!getTankAuroraIconPosition@{getTankAuroraIconPosition}}
+\index{getTankAuroraIconPosition@{getTankAuroraIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getTankAuroraIconPosition()}{getTankAuroraIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Tank\+Aurora\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}\label{class_side_bar_af2cf493e577385cc8e83bd5b02de4000} 
+\index{SideBar@{SideBar}!getVehicleIconPosition@{getVehicleIconPosition}}
+\index{getVehicleIconPosition@{getVehicleIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{getVehicleIconPosition()}{getVehicleIconPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::get\+Vehicle\+Icon\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}\label{class_side_bar_add5b055604b08b68d3cd8778c760d8b1} 
+\index{SideBar@{SideBar}!render@{render}}
+\index{render@{render}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Side\+Bar\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the side\+Bar UI in gameplay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a689859a607ae1f109e8ae619c26ada48}\label{class_side_bar_a689859a607ae1f109e8ae619c26ada48} 
+\index{SideBar@{SideBar}!update@{update}}
+\index{update@{update}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Side\+Bar\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_side_bar_aed289dbfb922a4edb57d308a38cde001}\label{class_side_bar_aed289dbfb922a4edb57d308a38cde001} 
+\index{SideBar@{SideBar}!m\_buttons@{m\_buttons}}
+\index{m\_buttons@{m\_buttons}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_buttons}{m\_buttons}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_button}{Button}}$>$ Side\+Bar\+::m\+\_\+buttons}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00035}{35}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_side_bar_8h}{Side\+Bar.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_side_bar_8cpp}{Side\+Bar.\+cpp}}\end{DoxyCompactItemize}

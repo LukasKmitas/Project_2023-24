@@ -1,0 +1,5 @@
+<map id="Building::spawnSmokeEffect" name="Building::spawnSmokeEffect">
+<area shape="rect" id="Node000001" title="Spawns smoke when health on the building is low." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="Node000002" href="$class_particle_system.html#a5a3f496f17c45823c1afb465f903c531" title="Adds the particle into the vector." alt="" coords="240,5,423,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,16,224,16,224,21,192,21"/>
+</map>

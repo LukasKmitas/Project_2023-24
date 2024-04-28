@@ -1,0 +1,11 @@
+<map id="Headquarters::update" name="Headquarters::update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,151,57"/>
+<area shape="rect" id="Node000002" href="$class_building.html#a92ed9c2981dbc964248a031cbef4fbec" title=" " alt="" coords="199,31,313,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,41,183,41,183,47,151,47"/>
+<area shape="rect" id="Node000003" href="$class_building.html#ab9d7d236e9684d09ea362dee94c36604" title="Spawns smoke when health on the building is low." alt="" coords="361,5,547,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,34,345,30,346,35,314,39"/>
+<area shape="rect" id="Node000005" href="$class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="376,56,533,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="314,49,360,55,359,60,313,54"/>
+<area shape="rect" id="Node000004" href="$class_particle_system.html#a5a3f496f17c45823c1afb465f903c531" title="Adds the particle into the vector." alt="" coords="595,5,779,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="548,16,580,16,580,21,548,21"/>
+</map>

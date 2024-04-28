@@ -1,0 +1,9 @@
+<map id="Building::update" name="Building::update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,120,57"/>
+<area shape="rect" id="Node000002" href="$class_building.html#ab9d7d236e9684d09ea362dee94c36604" title="Spawns smoke when health on the building is low." alt="" coords="168,5,354,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,34,152,30,152,35,120,39"/>
+<area shape="rect" id="Node000004" href="$class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="182,56,340,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="120,49,167,55,166,60,120,54"/>
+<area shape="rect" id="Node000003" href="$class_particle_system.html#a5a3f496f17c45823c1afb465f903c531" title="Adds the particle into the vector." alt="" coords="402,5,585,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,16,387,16,387,21,354,21"/>
+</map>

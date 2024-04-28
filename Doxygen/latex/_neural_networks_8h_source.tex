@@ -1,0 +1,77 @@
+\doxysection{Neural\+Networks.\+h}
+\hypertarget{_neural_networks_8h_source}{}\label{_neural_networks_8h_source}\index{AI Behaviors/NeuralNetworks.h@{AI Behaviors/NeuralNetworks.h}}
+\mbox{\hyperlink{_neural_networks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8h}{GameState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00008}\mbox{\hyperlink{class_neural_networks}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_neural_networks}{NeuralNetworks}}}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00010}00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9}{NeuralNetworks}}();}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_neural_networks_ad39368b6d1ff687abc586cc64c8f2c10}{\string~NeuralNetworks}}();}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a1c2641e0ed7e38cccd472c83f374a20a}{update}}(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_ac980e791320e7b15937e40f13162a702}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b}{drawNeuralPerceptron}}(sf::RenderWindow\&\ m\_window,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\_2d}}\&\ m\_neuralNetwork,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_global_8h_ac7f9d4c1845ffe288f791cfcf62ddb16}{vector\_3d}}\&\ m\_weights);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc}{drawWeightText}}(\textcolor{keywordtype}{int}\ m\_x,\ \textcolor{keywordtype}{int}\ m\_y,\ \textcolor{keyword}{const}\ std::string\&\ m\_text,\ \textcolor{keyword}{const}\ sf::Color\&\ m\_color,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_abb3351a7f806c8702b7441bf597d89d5}{backPropagation}}(\textcolor{keyword}{const}\ std::vector<float>\&\ m\_target,\ std::vector<std::vector<float>>\&\ m\_errors,\ \textcolor{keyword}{const}\ std::vector<std::vector<float>>\&\ m\_neuralNetwork,\ std::vector<std::vector<std::vector<float>>>\&\ m\_weights);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00021}00021\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c}{forwardPropagation}}(\textcolor{keywordtype}{bool}\ m\_state,\ \textcolor{keyword}{const}\ std::vector<float>\&\ m\_inputs,\ std::vector<std::vector<float>>\&\ m\_neuralNetwork,\ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<float>>>\&\ m\_weights);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a7932bac035bfde3145908e05ee54b912}{addInput}}(\textcolor{keywordtype}{float}\ m\_dot\_x,\ \textcolor{keywordtype}{float}\ m\_dot\_y);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc}{addTargetOutput}}(\textcolor{keywordtype}{float}\ m\_r,\ \textcolor{keywordtype}{float}\ m\_g,\ \textcolor{keywordtype}{float}\ m\_b);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neural_networks_a45fe05f3c7c2c973e0c8a69893572959}{goToMainMenu}}(sf::Vector2i\ m\_mousePosition,\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\&\ m\_gameState);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00028}00028\ \ \ \ \ std::array<int,\ 2>\ \mbox{\hyperlink{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9}{getHiddenNeurons}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00029}00029\ \ \ \ \ std::array<int,\ 3>\ \mbox{\hyperlink{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc}{getBiasNeurons}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<float>>\&\ \mbox{\hyperlink{class_neural_networks_acaa870434f86c76dba132996cbb98c09}{getInputs}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<float>>\&\ \mbox{\hyperlink{class_neural_networks_ae3de6a3086535fcf73609b4fea83c434}{getTargetOutputs}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00034}\mbox{\hyperlink{class_neural_networks_a5182e3363e6c68d414b19285465db947}{00034}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_neural_networks_a5182e3363e6c68d414b19285465db947}{INPUT\_NEURONS}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00035}\mbox{\hyperlink{class_neural_networks_aa4d507402fd96fcd5177194d901976f1}{00035}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_neural_networks_aa4d507402fd96fcd5177194d901976f1}{OUTPUT\_NEURONS}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00037}00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ initNeuralCircle();}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ initBackButton();}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ initMouseDotCircle();}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{float}\ activationFunctionSigmoid(\textcolor{keywordtype}{bool}\ m\_derivative,\ \textcolor{keywordtype}{float}\ m\_input);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_min\_element(\textcolor{keyword}{const}\ std::vector<float>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_min\_element(\textcolor{keyword}{const}\ std::vector<std::vector<float>>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_min\_element(\textcolor{keyword}{const}\ std::vector<std::vector<std::vector<float>>>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_max\_element(\textcolor{keyword}{const}\ std::vector<float>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_max\_element(\textcolor{keyword}{const}\ std::vector<std::vector<float>>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_max\_element(\textcolor{keyword}{const}\ std::vector<std::vector<std::vector<float>>>\&\ m\_vector);}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00053}00053\ \ \ \ \ sf::CircleShape\ m\_neuronCircle;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00054}00054\ \ \ \ \ sf::CircleShape\ m\_mouseDotCircle;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00056}00056\ \ \ \ \ sf::RectangleShape\ m\_toGoBackButton;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00057}00057\ \ \ \ \ sf::Texture\ m\_buttonTexture;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00059}00059\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00060}00060\ \ \ \ \ sf::Text\ m\_toGoBackText;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00061}00061\ \ \ \ \ sf::Text\ m\_neuralWeightText;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ LEARNING\_RATE\ =\ 0.03f;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00065}00065\ \ \ \ \ std::vector<std::vector<float>>\ m\_inputs;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00066}00066\ \ \ \ \ std::vector<std::vector<float>>\ m\_target\_outputs;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00068}00068\ \ \ \ \ std::array<int,\ 2>\ HIDDEN\_NEURONS;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00069}00069\ \ \ \ \ std::array<int,\ 3>\ BIAS\_NEURONS;}
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_neural_networks_8h_source_l00071}00071\ \};}
+
+\end{DoxyCode}

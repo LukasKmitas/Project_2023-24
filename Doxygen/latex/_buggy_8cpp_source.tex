@@ -1,0 +1,197 @@
+\doxysection{Buggy.\+cpp}
+\hypertarget{_buggy_8cpp_source}{}\label{_buggy_8cpp_source}\index{AI Behaviors/Buggy.cpp@{AI Behaviors/Buggy.cpp}}
+\mbox{\hyperlink{_buggy_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buggy_8h}{Buggy.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00003}\mbox{\hyperlink{class_buggy_ae2101e9bcfab75ec4faa2cb2a8000bdb}{00003}}\ \mbox{\hyperlink{class_buggy_ae2101e9bcfab75ec4faa2cb2a8000bdb}{Buggy::Buggy}}()}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00005}00005\ \ \ \ \ setupBuggy();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 700;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 300;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ =\ 120;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{m\_damage}}\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}}\ =\ 150;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\_bulletSpeed}}\ =\ 300.0f;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}{m\_rotationSpeed}}\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00018}\mbox{\hyperlink{class_buggy_a8e5f35948fc3111929fb1de860aae868}{00018}}\ \mbox{\hyperlink{class_buggy_a8e5f35948fc3111929fb1de860aae868}{Buggy::\string~Buggy}}()}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00022}\mbox{\hyperlink{class_buggy_a14e9377226ef591039712bc6f0cfa061}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_buggy_a14e9377226ef591039712bc6f0cfa061}{Buggy::update}}(sf::Time\ t\_deltaTime,\ std::vector<Unit*>\&\ m\_allyUnits)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_vehicle_unit_a8509cb11b318348f4953dae4932ea071}{VehicleUnit::update}}(t\_deltaTime,\ m\_allyUnits);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00026}00026\ \ \ \ \ movement(t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setPosition(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getPosition());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fireTimer\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ m\_fireTimer\ -\/=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Handle\ reloading}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{isReloading}})\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ m\_reloadTimer\ -\/=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_reloadTimer\ <=\ 0.0f)\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{isReloading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ aimWeapon(*\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00053}00053\ \textcolor{keywordtype}{void}\ Buggy::setupBuggy()}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)buggy.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ buggy\ Texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setTexture(\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setRotation(180);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setOrigin(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setScale(0.12,\ 0.12);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)weapon1.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ buggy\ weapon\ Texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setTexture(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setOrigin(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().x\ /\ 2,\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setScale(0.1,\ 0.1);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00078}00078\ \textcolor{keywordtype}{void}\ Buggy::movement(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <\ \mbox{\hyperlink{class_unit_a9e915880914d55051f833c2754127825}{m\_arrivalTolerance}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ sf::Vector2f(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ =\ sf::Vector2f(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00088}00088\ \ \ \ \ sf::Vector2f\ desiredDirection\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ speed\ *=\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ /\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00096}00096\ \ \ \ \ sf::Vector2f\ desiredVelocity\ =\ desiredDirection\ *\ speed;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00097}00097\ \ \ \ \ sf::Vector2f\ steeringForce\ =\ desiredVelocity\ -\/\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00098}00098\ \ \ \ \ steeringForce\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(steeringForce)\ *\ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ =\ steeringForce;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ +=\ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ *\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ >\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ *\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ +=\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ *\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{setPosition}}(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{comment}{//\ Orient\ the\ sprite\ towards\ the\ direction\ of\ movement}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00112}00112\ \ \ \ \ \mbox{\hyperlink{class_unit_a9262163e015dca7a29a114798b7ede32}{orientSpriteToMovement}}(t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00119}00119\ \textcolor{keywordtype}{void}\ Buggy::aimWeapon(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ m\_enemyUnits)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00120}00120\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}}.empty())}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00126}00126\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance}}\ =\ std::numeric\_limits<float>::max();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{m\_closestBuildingDistance}}\ =\ std::numeric\_limits<float>::max();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_unit}{Unit}}*\ enemy\ :\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ this-\/>\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ enemy-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance}})\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\_closestEnemy}}\ =\ enemy;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_building}{Building}}*\ building\ :\ *\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ this-\/>\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ building-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <\ \mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{m\_closestBuildingDistance}})}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{m\_closestBuildingDistance}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}\ =\ building;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\_closestEnemy}}\ \&\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance\ <=\ this-\/>}}\mbox{\hyperlink{class_unit_aeb9649177dd580377a03cbf4fa7f9056}{getViewRadius}}()\ -\/\ 50)\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00155}00155\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\_closestEnemy}}-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}()\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{this}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ =\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ shootAtEnemy();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}\ \&\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestBuildingDistance\ <=\ this-\/>}}\mbox{\hyperlink{class_unit_aeb9649177dd580377a03cbf4fa7f9056}{getViewRadius}}()\ -\/\ 50)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00162}00162\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}-\/>\mbox{\hyperlink{class_building_a8cc6ca1bae44a7414a8385b2a54ea3df}{getPosition}}()\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{this}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ =\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ shootAtEnemy();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00169}00169\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00172}00172\ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00177}00177\ \textcolor{keywordtype}{void}\ Buggy::shootAtEnemy()}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{isReloading}}\ \&\&\ m\_fireTimer\ <=\ 0.0f)\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00180}00180\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ a\ random\ spray\ between\ -\/2.5\ to\ 2.5\ degrees}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}}\ =\ (std::rand()\ \%\ 6\ -\/\ 2.5)\ *\ (3.14159265\ /\ 180);}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}\ =\ std::cos(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}}\ =\ std::sin(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}}\ =\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}\ -\/\ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}},}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}}\ +\ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition}}\ =\ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\_bulletSpeed}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ m\_shotsFired++;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ m\_fireTimer\ =\ m\_fireRate;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}Laser1"{}});}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_shotsFired\ >=\ m\_clip)}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{isReloading}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ m\_shotsFired\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ m\_reloadTimer\ =\ m\_reloadTime;}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_buggy_8cpp_source_l00205}00205\ \}}
+
+\end{DoxyCode}

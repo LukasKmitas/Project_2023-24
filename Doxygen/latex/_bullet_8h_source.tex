@@ -1,0 +1,45 @@
+\doxysection{Bullet.\+h}
+\hypertarget{_bullet_8h_source}{}\label{_bullet_8h_source}\index{AI Behaviors/Bullet.h@{AI Behaviors/Bullet.h}}
+\mbox{\hyperlink{_bullet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00005}\mbox{\hyperlink{class_bullet}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bullet}{Bullet}}}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00007}00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_bullet_a2168d6be98781a6bee3f6d0317064144}{Bullet}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_startPosition,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetDirection,\ \textcolor{keywordtype}{float}\ m\_speed);}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bullet_af0888cd2bef42055c1f23efa01bd7654}{update}}(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bullet_a811074fd46bf95b7a7e75a75ac5df188}{render}}(sf::RenderWindow\&\ m\_window,\ \textcolor{keyword}{const}\ sf::Shader\&\ m\_glowShader)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00014}\mbox{\hyperlink{class_bullet_a2826b566024cc17fe2fbb1937615c4c7}{00014}}\ \ \ \ \ sf::CircleShape\ \mbox{\hyperlink{class_bullet_a2826b566024cc17fe2fbb1937615c4c7}{m\_bulletShape}};}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00016}\mbox{\hyperlink{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}{00016}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00018}\mbox{\hyperlink{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c}{00018}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c}{m\_active}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00020}00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{struct\ }TrailPart}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ sf::CircleShape\ m\_trialShape;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_lifetime\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00026}00026\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00028}00028\ \ \ \ \ sf::Vector2f\ normalize(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_source);}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00030}00030\ \ \ \ \ std::deque<TrailPart>\ m\_trail;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00032}00032\ \ \ \ \ sf::Vector2f\ m\_velocity;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_lifetime\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_trailMaxLifetime\ =\ 0.3f;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_timeSinceLastTrailPart\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_addTrailPartInterval\ =\ 0.03f;}
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_bullet_8h_source_l00039}00039\ \};}
+
+\end{DoxyCode}

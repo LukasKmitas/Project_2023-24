@@ -1,0 +1,9 @@
+<map id="Unit::Unit" name="Unit::Unit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,81,83"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#aa9c0487be6bedf93c5f79e068f215be6" title="initializes health bar" alt="" coords="129,5,255,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,54,135,35,137,40,82,59"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#a64e556f3bd178fcbfece63883b990153" title="initializes shaders" alt="" coords="137,56,247,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,67,122,67,122,72,81,72"/>
+<area shape="rect" id="Node000004" href="$class_unit.html#a6b409acedf32f53bb1c080cf29c8e999" title="initializes view" alt="" coords="143,107,241,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="82,80,137,99,135,104,80,85"/>
+</map>

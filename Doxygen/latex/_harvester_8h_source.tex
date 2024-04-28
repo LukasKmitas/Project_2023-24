@@ -1,0 +1,62 @@
+\doxysection{Harvester.\+h}
+\hypertarget{_harvester_8h_source}{}\label{_harvester_8h_source}\index{AI Behaviors/Harvester.h@{AI Behaviors/Harvester.h}}
+\mbox{\hyperlink{_harvester_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vehicle_unit_8h}{VehicleUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_refinery_8h}{Refinery.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00005}\mbox{\hyperlink{class_harvester}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_harvester}{Harvester}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vehicle_unit}{VehicleUnit}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00007}00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00008}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0}{00008}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0}{State}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00010}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a52288c8ac988527f57a309fea64e11be}{00010}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a52288c8ac988527f57a309fea64e11be}{Idle}},}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00011}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0aa66f3ff27f1e90451a5ad72e54550a7c}{00011}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0aa66f3ff27f1e90451a5ad72e54550a7c}{MovingToResource}},}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00012}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a0b798ed3eb23f9239d8b085687d1ad4e}{00012}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a0b798ed3eb23f9239d8b085687d1ad4e}{CollectingResource}},}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00013}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a046501aa2f10d8b501ae0a9b91cad834}{00013}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a046501aa2f10d8b501ae0a9b91cad834}{MovingToRefinery}},}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a05468f3d2f6c213909c475046289fcca}{UnloadingResource}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00015}\mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a05468f3d2f6c213909c475046289fcca}{00015}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_harvester_aa28e963eb2df851da302a3ce7b352b42}{Harvester}}();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_harvester_ae43faf60d0235e05f9d682d5cd135b67}{\string~Harvester}}();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_harvester_ac6e106e888fc20099bba4f57f833c216}{update}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_harvester_a7a6a5b0826a1529970c24826f7cb0610}{setBuildings}}(\textcolor{keyword}{const}\ std::vector<Building*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_buildings}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00024}\mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{00024}}\ \ \ \ \ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0}{State}}\ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a52288c8ac988527f57a309fea64e11be}{Idle}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00025}\mbox{\hyperlink{class_harvester_a7a71f71834a3a8c7997cb0652aba60d9}{00025}}\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ \mbox{\hyperlink{class_harvester_a7a71f71834a3a8c7997cb0652aba60d9}{getUnitType}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a7410e2846a61f309b4a1e0a57a6a1d48}{UnitType::Harvester}};\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00027}00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_refinery}{Refinery}}*\ m\_targetRefinery\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ movement(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ findNearestResourceTile();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ findNearestRefinery();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ gettingResourcePosition(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_resourcePos}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ moveToRefinery(\mbox{\hyperlink{class_refinery}{Refinery}}*\ m\_refinery);}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ unloadResources(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ isAtTargetPosition();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ isAtRefinery();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ initHarvester();}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00046}00046\ \ \ \ \ sf::Vector2f\ m\_resourcePosition;}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Building*>*\ m\_allBuildings;}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_collectionRate\ =\ 4.0f;\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_maxResourceCapacity\ =\ 100.0f;\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_currentResourceLoad\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_foundResource\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{_harvester_8h_source_l00056}00056\ }
+
+\end{DoxyCode}

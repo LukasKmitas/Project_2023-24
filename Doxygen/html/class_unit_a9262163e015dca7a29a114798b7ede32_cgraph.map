@@ -1,0 +1,7 @@
+<map id="Unit::orientSpriteToMovement" name="Unit::orientSpriteToMovement">
+<area shape="rect" id="Node000001" title="it just orientates the sprite a bit" alt="" coords="5,31,197,57"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="245,5,357,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,29,229,25,230,30,197,34"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#a1eb792473a50b709972cf726a693186b" title=" " alt="" coords="245,56,357,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,54,230,58,229,63,197,59"/>
+</map>

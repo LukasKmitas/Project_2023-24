@@ -1,0 +1,159 @@
+\doxysection{Tile Class Reference}
+\hypertarget{class_tile}{}\label{class_tile}\index{Tile@{Tile}}
+
+
+{\ttfamily \#include $<$Tile.\+h$>$}
+
+
+
+Collaboration diagram for Tile\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_tile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870}{Fog\+Status}} \{ \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870ab2b5e4d6aa4bd81161489b2ee2c7b778}{Unexplored}}
+, \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aae1f26f8b07a89ba8a7a85a4d860274b}{Explored}}
+, \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aec24d78ce33048dc73a2b6b1a0690192}{Visible}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}{Tile}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870}{Fog\+Status}} \mbox{\hyperlink{class_tile_a2024e949181bfa604c8eb22e70b0ca7a}{m\+\_\+fog\+Status}} = \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870ab2b5e4d6aa4bd81161489b2ee2c7b778}{Fog\+Status\+::\+Unexplored}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_tile_a269fd8b79131de9eb73dbc6c5a6704fd}{m\+\_\+tile}}
+\item 
+int \mbox{\hyperlink{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}{m\+\_\+tile\+Size}} = 50
+\item 
+bool \mbox{\hyperlink{class_tile_a8f4c9ad2a19b98401b824bc44133cf5b}{m\+\_\+is\+Wall}}
+\item 
+bool \mbox{\hyperlink{class_tile_abcc4f2154aa296e7c1a2ad56e81d6cea}{m\+\_\+is\+Resource}}
+\item 
+bool \mbox{\hyperlink{class_tile_a16edab10e0525bbaa465aeed22417f50}{m\+\_\+animation\+Weed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00004}{4}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870}\label{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870} 
+\index{Tile@{Tile}!FogStatus@{FogStatus}}
+\index{FogStatus@{FogStatus}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{FogStatus}{FogStatus}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870}{Tile\+::\+Fog\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unexplored@{Unexplored}!Tile@{Tile}}\index{Tile@{Tile}!Unexplored@{Unexplored}}}\Hypertarget{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870ab2b5e4d6aa4bd81161489b2ee2c7b778}\label{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870ab2b5e4d6aa4bd81161489b2ee2c7b778} 
+Unexplored&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Explored@{Explored}!Tile@{Tile}}\index{Tile@{Tile}!Explored@{Explored}}}\Hypertarget{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aae1f26f8b07a89ba8a7a85a4d860274b}\label{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aae1f26f8b07a89ba8a7a85a4d860274b} 
+Explored&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Visible@{Visible}!Tile@{Tile}}\index{Tile@{Tile}!Visible@{Visible}}}\Hypertarget{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aec24d78ce33048dc73a2b6b1a0690192}\label{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aec24d78ce33048dc73a2b6b1a0690192} 
+Visible&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00009}{9}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}\label{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{Tile()}{Tile()}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_tile_8cpp_source}{Tile.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tile_a16edab10e0525bbaa465aeed22417f50}\label{class_tile_a16edab10e0525bbaa465aeed22417f50} 
+\index{Tile@{Tile}!m\_animationWeed@{m\_animationWeed}}
+\index{m\_animationWeed@{m\_animationWeed}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_animationWeed}{m\_animationWeed}}
+{\footnotesize\ttfamily bool Tile\+::m\+\_\+animation\+Weed}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00016}{16}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+\Hypertarget{class_tile_a2024e949181bfa604c8eb22e70b0ca7a}\label{class_tile_a2024e949181bfa604c8eb22e70b0ca7a} 
+\index{Tile@{Tile}!m\_fogStatus@{m\_fogStatus}}
+\index{m\_fogStatus@{m\_fogStatus}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_fogStatus}{m\_fogStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870}{Fog\+Status}} Tile\+::m\+\_\+fog\+Status = \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870ab2b5e4d6aa4bd81161489b2ee2c7b778}{Fog\+Status\+::\+Unexplored}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00010}{10}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+\Hypertarget{class_tile_abcc4f2154aa296e7c1a2ad56e81d6cea}\label{class_tile_abcc4f2154aa296e7c1a2ad56e81d6cea} 
+\index{Tile@{Tile}!m\_isResource@{m\_isResource}}
+\index{m\_isResource@{m\_isResource}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_isResource}{m\_isResource}}
+{\footnotesize\ttfamily bool Tile\+::m\+\_\+is\+Resource}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00015}{15}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+\Hypertarget{class_tile_a8f4c9ad2a19b98401b824bc44133cf5b}\label{class_tile_a8f4c9ad2a19b98401b824bc44133cf5b} 
+\index{Tile@{Tile}!m\_isWall@{m\_isWall}}
+\index{m\_isWall@{m\_isWall}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_isWall}{m\_isWall}}
+{\footnotesize\ttfamily bool Tile\+::m\+\_\+is\+Wall}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00014}{14}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+\Hypertarget{class_tile_a269fd8b79131de9eb73dbc6c5a6704fd}\label{class_tile_a269fd8b79131de9eb73dbc6c5a6704fd} 
+\index{Tile@{Tile}!m\_tile@{m\_tile}}
+\index{m\_tile@{m\_tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_tile}{m\_tile}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Tile\+::m\+\_\+tile}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00012}{12}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+\Hypertarget{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}\label{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b} 
+\index{Tile@{Tile}!m\_tileSize@{m\_tileSize}}
+\index{m\_tileSize@{m\_tileSize}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_tileSize}{m\_tileSize}}
+{\footnotesize\ttfamily int Tile\+::m\+\_\+tile\+Size = 50}
+
+
+
+Definition at line \mbox{\hyperlink{_tile_8h_source_l00013}{13}} of file \mbox{\hyperlink{_tile_8h_source}{Tile.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_tile_8h}{Tile.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_tile_8cpp}{Tile.\+cpp}}\end{DoxyCompactItemize}

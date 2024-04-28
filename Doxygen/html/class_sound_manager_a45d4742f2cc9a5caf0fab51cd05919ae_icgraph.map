@@ -1,0 +1,7 @@
+<map id="SoundManager::getInstance" name="SoundManager::getInstance">
+<area shape="rect" id="Node000001" title=" " alt="" coords="248,31,431,57"/>
+<area shape="rect" id="Node000002" href="$class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="5,5,200,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,35,200,32,200,26,232,30"/>
+<area shape="rect" id="Node000003" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="28,56,177,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,58,178,64,177,59,232,53"/>
+</map>

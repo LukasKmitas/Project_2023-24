@@ -1,0 +1,55 @@
+\doxysection{Rifleman\+Squad.\+h}
+\hypertarget{_rifleman_squad_8h_source}{}\label{_rifleman_squad_8h_source}\index{AI Behaviors/RiflemanSquad.h@{AI Behaviors/RiflemanSquad.h}}
+\mbox{\hyperlink{_rifleman_squad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_infantry_unit_8h}{InfantryUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00004}\mbox{\hyperlink{class_rifleman_squad}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rifleman_squad}{RiflemanSquad}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_infantry_unit}{InfantryUnit}}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_rifleman_squad_a14fff6075c2fae71bee70654d251f341}{RiflemanSquad}}();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_rifleman_squad_ad573f038c50bc1a497ff1b7129f1fe9a}{\string~RiflemanSquad}}();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34}{update}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c}{render}}(sf::RenderWindow\&\ m\_window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc}{initSquad}}();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00016}\mbox{\hyperlink{class_rifleman_squad_a2a26c952ec93d222bc6f2e3ba5420f17}{00016}}\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ \mbox{\hyperlink{class_rifleman_squad_a2a26c952ec93d222bc6f2e3ba5420f17}{getUnitType}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a31c1d9a12034eafdf9210253785dc8f2}{UnitType::Rifleman}};\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ initRifleman();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ movement(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ updateFormation();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ takeDamageSquad();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ squadEntityRemoval()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ squadEntityRegain()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ aimAt(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00030}00030\ \ \ \ \ std::vector<sf::Sprite>\ m\_entities;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00031}00031\ \ \ \ \ std::vector<sf::Vector2f>\ m\_offsets;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00033}00033\ \ \ \ \ std::vector<sf::Vector2f>\ m\_targetPositions;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00035}00035\ \ \ \ \ sf::Vector2f\ m\_previousPosition;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_numberOfSoldiers\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_scatterRadius\ =\ 30.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_shotsFired\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_clipSize\ =\ 4;\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_reloadTime\ =\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fireRate\ =\ 0.2f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fireTimer\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_reloadTimer\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isReloading\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8h_source_l00049}00049\ }
+
+\end{DoxyCode}

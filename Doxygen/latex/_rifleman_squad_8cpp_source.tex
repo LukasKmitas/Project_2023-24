@@ -1,0 +1,246 @@
+\doxysection{Rifleman\+Squad.\+cpp}
+\hypertarget{_rifleman_squad_8cpp_source}{}\label{_rifleman_squad_8cpp_source}\index{AI Behaviors/RiflemanSquad.cpp@{AI Behaviors/RiflemanSquad.cpp}}
+\mbox{\hyperlink{_rifleman_squad_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rifleman_squad_8h}{RiflemanSquad.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00003}\mbox{\hyperlink{class_rifleman_squad_a14fff6075c2fae71bee70654d251f341}{00003}}\ \mbox{\hyperlink{class_rifleman_squad_a14fff6075c2fae71bee70654d251f341}{RiflemanSquad::RiflemanSquad}}()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00005}00005\ \ \ \ \ initRifleman();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc}{initSquad}}();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00007}00007\ \ \ \ \ m\_previousPosition\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 300;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ =\ 90;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{m\_damage}}\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\_bulletSpeed}}\ =\ 300.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00017}\mbox{\hyperlink{class_rifleman_squad_ad573f038c50bc1a497ff1b7129f1fe9a}{00017}}\ \mbox{\hyperlink{class_rifleman_squad_ad573f038c50bc1a497ff1b7129f1fe9a}{RiflemanSquad::\string~RiflemanSquad}}()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00021}\mbox{\hyperlink{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34}{RiflemanSquad::update}}(sf::Time\ t\_deltaTime,\ std::vector<Unit*>\&\ m\_allyUnits)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_infantry_unit_aabd1427d781ff0e5ae2b21bbe67e4c84}{InfantryUnit::update}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00025}00025\ \ \ \ \ movement(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00027}00027\ \ \ \ \ updateFormation();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fireTimer\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ m\_fireTimer\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isReloading)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ m\_reloadTimer\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_reloadTimer\ <=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ m\_isReloading\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ m\_shotsFired\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ aimAt(*\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00049}\mbox{\hyperlink{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c}{RiflemanSquad::render}}(sf::RenderWindow\&\ m\_window)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_infantry_unit_aca40a05689745fe6a675009dc9c27f22}{InfantryUnit::render}}(m\_window);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{soldier}}\ :\ m\_entities)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{soldier}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00062}\mbox{\hyperlink{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc}{00062}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc}{RiflemanSquad::initSquad}}()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleStep}}\ =\ 360.0f\ /\ m\_numberOfSoldiers;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ =\ 0;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ <\ m\_numberOfSoldiers;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}++)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{soldier}}\ =\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angle}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleStep}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angle}}\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.0f);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{offset}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}})\ *\ m\_scatterRadius,\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}})\ *\ m\_scatterRadius);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ m\_offsets.push\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{offset}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{soldier}}.setPosition(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getPosition()\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{offset}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ m\_entities.push\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{soldier}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00082}00082\ \textcolor{keywordtype}{void}\ RiflemanSquad::initRifleman()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00083}00083\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)Rifleman.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ Tank\ Aurora\ Texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setTexture(\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setRotation(180);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setOrigin(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setScale(0.15,\ 0.15);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00099}00099\ \textcolor{keywordtype}{void}\ RiflemanSquad::movement(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00100}00100\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ >\ \mbox{\hyperlink{class_unit_a9e915880914d55051f833c2754127825}{m\_arrivalTolerance}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredDirection}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{speed}}\ =\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{speed}}\ *=\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ /\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredVelocity}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredDirection}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{speed}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{steeringForce}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredVelocity}}\ -\/\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{steeringForce}})\ *\ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ +=\ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ >\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ *\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ +=\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{setPosition}}(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ sf::Vector2f(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ =\ sf::Vector2f(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{class_unit_a9262163e015dca7a29a114798b7ede32}{orientSpriteToMovement}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00137}00137\ \textcolor{keywordtype}{void}\ RiflemanSquad::updateFormation()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00138}00138\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ =\ 0;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ <\ m\_entities.size();\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}++)\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00140}00140\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ m\_entities[\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}].setPosition(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getPosition()\ +\ m\_offsets[\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}]);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ m\_entities[\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}].setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00149}00149\ \textcolor{keywordtype}{void}\ RiflemanSquad::takeDamageSquad()\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00150}00150\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{healthPercentage}}\ =\ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ /\ \mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{m\_maxHealth}};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newActiveEntitiesCount}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::ceil(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{healthPercentage}}\ *\ m\_numberOfSoldiers));}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newActiveEntitiesCount}}\ =\ std::max(0,\ std::min(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newActiveEntitiesCount}},\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(m\_entities.size())));}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{while}\ (m\_entities.size()\ >\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newActiveEntitiesCount}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ m\_entities.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00165}00165\ \textcolor{keywordtype}{void}\ RiflemanSquad::squadEntityRemoval()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((\mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ /\ \mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{m\_maxHealth}})\ *\ m\_numberOfSoldiers);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}}\ <\ m\_entities.size())\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00169}00169\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ m\_entities.erase(m\_entities.begin()\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}},\ m\_entities.end());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00172}00172\ \ \ \ \ updateFormation();}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00178}00178\ \textcolor{keywordtype}{void}\ RiflemanSquad::squadEntityRegain()}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00179}00179\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((\mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ /\ \mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{m\_maxHealth}})\ *\ m\_numberOfSoldiers);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}}\ =\ std::min(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}},\ m\_numberOfSoldiers);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{while}\ (m\_entities.size()\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{activeEntities}})\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00184}00184\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newEntity}}\ =\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}};\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ m\_entities.push\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newEntity}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00194}00194\ \textcolor{keywordtype}{void}\ RiflemanSquad::aimAt(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ m\_enemyUnits)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00195}00195\ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00196}00196\ \ \ \ \ m\_targetPositions.clear();\ \ \textcolor{comment}{//\ Clear\ previous\ target\ positions\ at\ the\ beginning}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isReloading\ ||\ m\_fireTimer\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00199}00199\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00201}00201\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_enemyInRange}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00204}00204\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}}\ =\ \mbox{\hyperlink{class_unit_acabd56084730e0bb32811ab6b7be625a}{rotateVector}}(sf::Vector2f(0,\ -\/1),\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_unit}{Unit}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}\ :\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00207}00207\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ m\_targetPositions.push\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}\ :\ *\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ m\_targetPositions.push\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{targetPos}}\ :\ m\_targetPositions)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00219}00219\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{targetPos}}\ -\/\ this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{targetPos}}\ -\/\ this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}());}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <=\ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ -\/\ 20)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{dotProduct}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.x\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.y;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleToEnemy}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{acos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{dotProduct}})\ *\ (180.0f\ /\ \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<sf::Sprite>\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{allShootingEntities}}\ =\ m\_entities;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{allShootingEntities}}.push\_back(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}});\ \textcolor{comment}{//\ to\ shoot\ units\ and\ buildings}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleToEnemy}}\ <=\ 45.0f)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_enemyInRange}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{entity}}\ :\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{allShootingEntities}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}}\ =\ (std::rand()\ \%\ 11\ -\/\ 5)\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.0f);}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(sf::Vector2f(}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}},}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}}\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toTarget}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}));}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{entity}}.getPosition()\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}}\ *\ 10.0f;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\_bulletSpeed}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}Laser3"{}});}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_shotsFired++;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fireTimer\ =\ m\_fireRate;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_shotsFired\ >=\ m\_clipSize)}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_isReloading\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_reloadTimer\ =\ m\_reloadTime;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_shotsFired\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00260}00260\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_enemyInRange}})}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00263}00263\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ m\_fireTimer\ =\ m\_fireRate;}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00265}00265\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rifleman_squad_8cpp_source_l00266}00266\ \}}
+
+\end{DoxyCode}

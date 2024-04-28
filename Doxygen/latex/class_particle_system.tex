@@ -1,0 +1,127 @@
+\doxysection{Particle\+System Class Reference}
+\hypertarget{class_particle_system}{}\label{class_particle_system}\index{ParticleSystem@{ParticleSystem}}
+
+
+{\ttfamily \#include $<$Particle\+System.\+h$>$}
+
+
+
+Collaboration diagram for Particle\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{class_particle_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_particle_system_ad395c1ed8a4e35546ab040dc75955732}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+void \mbox{\hyperlink{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the particles into existence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_system_a5a3f496f17c45823c1afb465f903c531}{add\+Particle}} (const \mbox{\hyperlink{struct_particle}{Particle}} \&m\+\_\+particle)
+\begin{DoxyCompactList}\small\item\em Adds the particle into the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_particle}{Particle}} $>$ \mbox{\hyperlink{class_particle_system_a02b4ca8842616469e280ae8da56d3876}{m\+\_\+particles}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_particle_system_8h_source_l00017}{17}} of file \mbox{\hyperlink{_particle_system_8h_source}{Particle\+System.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_particle_system_a5a3f496f17c45823c1afb465f903c531}\label{class_particle_system_a5a3f496f17c45823c1afb465f903c531} 
+\index{ParticleSystem@{ParticleSystem}!addParticle@{addParticle}}
+\index{addParticle@{addParticle}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{addParticle()}{addParticle()}}
+{\footnotesize\ttfamily void Particle\+System\+::add\+Particle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_particle}{Particle}} \&}]{m\+\_\+particle }\end{DoxyParamCaption})}
+
+
+
+Adds the particle into the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+particle} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_particle_system_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_particle_system_8cpp_source}{Particle\+System.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_particle_system_a5a3f496f17c45823c1afb465f903c531_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c}\label{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c} 
+\index{ParticleSystem@{ParticleSystem}!render@{render}}
+\index{render@{render}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Particle\+System\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the particles into existence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_particle_system_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_particle_system_8cpp_source}{Particle\+System.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_particle_system_ad395c1ed8a4e35546ab040dc75955732}\label{class_particle_system_ad395c1ed8a4e35546ab040dc75955732} 
+\index{ParticleSystem@{ParticleSystem}!update@{update}}
+\index{update@{update}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Particle\+System\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_particle_system_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_particle_system_8cpp_source}{Particle\+System.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_particle_system_ad395c1ed8a4e35546ab040dc75955732_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_particle_system_a02b4ca8842616469e280ae8da56d3876}\label{class_particle_system_a02b4ca8842616469e280ae8da56d3876} 
+\index{ParticleSystem@{ParticleSystem}!m\_particles@{m\_particles}}
+\index{m\_particles@{m\_particles}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{m\_particles}{m\_particles}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_particle}{Particle}}$>$ Particle\+System\+::m\+\_\+particles}
+
+
+
+Definition at line \mbox{\hyperlink{_particle_system_8h_source_l00020}{20}} of file \mbox{\hyperlink{_particle_system_8h_source}{Particle\+System.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_particle_system_8h}{Particle\+System.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_particle_system_8cpp}{Particle\+System.\+cpp}}\end{DoxyCompactItemize}

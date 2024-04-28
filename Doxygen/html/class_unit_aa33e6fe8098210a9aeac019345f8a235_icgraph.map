@@ -1,0 +1,29 @@
+<map id="Unit::getPosition" name="Unit::getPosition">
+<area shape="rect" id="Node000001" title=" " alt="" coords="776,76,893,103"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="532,127,726,153"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="763,110,687,129,685,123,762,104"/>
+<area shape="rect" id="Node000010" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="16,5,150,32"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="767,75,727,67,565,46,404,33,150,22,151,17,405,28,566,41,728,61,768,69"/>
+<area shape="rect" id="Node000013" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="530,76,728,103"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="760,92,728,92,728,87,760,87"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="391,127,482,153"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="517,143,483,143,483,137,517,137"/>
+<area shape="rect" id="Node000004" href="$class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="210,208,342,235"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="396,163,305,210,303,205,393,159"/>
+<area shape="rect" id="Node000007" href="$class_infantry_unit.html#aabd1427d781ff0e5ae2b21bbe67e4c84" title=" " alt="" coords="209,132,343,159"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="375,145,343,146,343,140,375,139"/>
+<area shape="rect" id="Node000009" href="$class_vehicle_unit.html#a8509cb11b318348f4953dae4932ea071" title=" " alt="" coords="209,81,343,108"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="375,126,325,111,326,106,377,120"/>
+<area shape="rect" id="Node000005" href="$class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="23,259,143,285"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,242,137,261,136,255,207,237"/>
+<area shape="rect" id="Node000006" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="9,208,157,235"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="194,224,157,224,157,219,194,219"/>
+<area shape="rect" id="Node000008" href="$class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="5,157,161,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="194,159,162,163,161,158,193,153"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="231,77,160,46,128,35,129,30,162,42,233,72"/>
+<area shape="rect" id="Node000011" href="$class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="30,107,136,133"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="194,108,136,116,135,110,193,103"/>
+<area shape="rect" id="Node000012" href="$class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="22,56,144,83"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="193,87,144,80,145,75,194,81"/>
+<area shape="poly" id="edge13_Node000013_Node000003" title=" " alt="" coords="559,110,531,117,483,130,482,125,530,112,558,105"/>
+</map>

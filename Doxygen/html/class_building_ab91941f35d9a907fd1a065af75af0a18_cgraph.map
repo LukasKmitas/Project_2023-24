@@ -1,0 +1,5 @@
+<map id="Building::setHealth" name="Building::setHealth">
+<area shape="rect" id="Node000001" title="Sets the health for laoding." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="Node000002" href="$class_building.html#a06a21d1eb6a49a39f0fe7146fbb70a7f" title="Updates the health bar when its set for loading the building." alt="" coords="184,5,355,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,16,168,16,168,21,136,21"/>
+</map>

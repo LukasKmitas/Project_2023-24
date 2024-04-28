@@ -1,0 +1,365 @@
+\doxysection{Side\+Bar.\+cpp}
+\hypertarget{_side_bar_8cpp_source}{}\label{_side_bar_8cpp_source}\index{AI Behaviors/SideBar.cpp@{AI Behaviors/SideBar.cpp}}
+\mbox{\hyperlink{_side_bar_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_side_bar_8h}{SideBar.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00003}\mbox{\hyperlink{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}{00003}}\ \mbox{\hyperlink{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}{SideBar::SideBar}}(\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\&\ m\_selectedBuildingType)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00004}00004\ \ \ \ \ :}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00005}00005\ \ \ \ \ m\_selectedBuildingType(m\_selectedBuildingType)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00007}00007\ \ \ \ \ initFont();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00008}00008\ \ \ \ \ initButton();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00009}00009\ \ \ \ \ initSlider();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00012}\mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{SideBar::update}}(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ time\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00015}00015\ \ \ \ \ time\ +=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00016}00016\ \ \ \ \ m\_colorShiftShader.setUniform(\textcolor{stringliteral}{"{}time"{}},\ time);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{/*m\_rippleShader.setUniform("{}center"{},\ sf::Glsl::Vec2(0.5,\ 0.5));}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00018}00018\ \textcolor{comment}{\ \ \ \ m\_rippleShader.setUniform("{}frequency"{},\ 10.0f);}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00019}00019\ \textcolor{comment}{\ \ \ \ m\_rippleShader.setUniform("{}amplitude"{},\ 0.05f);*/}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00026}\mbox{\hyperlink{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}{SideBar::render}}(sf::RenderWindow\&\ m\_window)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00028}00028\ \ \ \ \ m\_window.draw(m\_background);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00029}00029\ \ \ \ \ m\_window.draw(m\_bottomBackground);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00030}00030\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00031}00031\ \ \ \ \ m\_window.draw(m\_sellSprite,\ \&m\_colorShiftShader);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00032}00032\ \ \ \ \ m\_window.draw(m\_sellText);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00034}00034\ \ \ \ \ drawGrid(m\_window);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ buttonData\ :\ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ m\_window.draw(buttonData.m\_sprite);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ m\_window.draw(buttonData.m\_text);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00051}\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{SideBar::addBuildingButton}}(\textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\ buildingType,\ \textcolor{keywordtype}{int}\ gridX,\ \textcolor{keywordtype}{int}\ gridY,\ \textcolor{keyword}{const}\ std::string\&\ buttonText)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00053}00053\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00054}00054\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(0.82,\ 0.81);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00056}00056\ \ \ \ \ m\_buttonWidth\ =\ m\_bottomBackground.getSize().x\ /\ m\_gridCols;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00057}00057\ \ \ \ \ m\_buttonHeight\ =\ m\_bottomBackground.getSize().y\ /\ m\_gridRows;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00058}00058\ \ \ \ \ m\_xPosition\ =\ (m\_bottomBackground.getPosition().x\ +\ gridX\ *\ m\_buttonWidth)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00059}00059\ \ \ \ \ m\_yPosition\ =\ (m\_bottomBackground.getPosition().y\ +\ gridY\ *\ m\_buttonHeight)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingType\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aa7a49e134b1aa7245707794ce21b7725}{BuildingType::Refinery}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(250,\ 277,\ 120,\ 92));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ m\_refineryIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buildingType\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(250,\ 649,\ 120,\ 92));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ m\_barracksIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buildingType\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(0,\ 0,\ 64,\ 48));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(1.53,\ 1.56);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ m\_vehicleIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(250,\ 464,\ 120,\ 92));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ m\_airCraftIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00083}00083\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setPosition(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00084}00084\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setString(buttonText);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00085}00085\ \ \ \ \ m\_textPosition\ =\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00086}00086\ \ \ \ \ m\_textPosition.x\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().width\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00087}00087\ \ \ \ \ m\_textPosition.y\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().height\ -\/\ 8;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00088}00088\ \ \ \ \ m\_textBounds\ =\ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00089}00089\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOrigin(m\_textBounds.width\ /\ 2,\ m\_textBounds.height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00090}00090\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setPosition(m\_textPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00091}00091\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ac01e6dc9c58aa1e509514116109d37a0}{m\_buildingType}}\ =\ buildingType;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}}.push\_back(m\_button);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00104}\mbox{\hyperlink{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}{00104}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}{SideBar::addInfantryButton}}(\textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81}{InfantryType}}\ inftantryType,\ \textcolor{keywordtype}{int}\ gridX,\ \textcolor{keywordtype}{int}\ gridY,\ \textcolor{keyword}{const}\ std::string\&\ buttonText)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00105}00105\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00106}00106\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00107}00107\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(3.26,\ 3.39);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00109}00109\ \ \ \ \ \ m\_buttonWidth\ =\ m\_bottomBackground.getSize().x\ /\ m\_gridCols;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00110}00110\ \ \ \ \ \ m\_buttonHeight\ =\ m\_bottomBackground.getSize().y\ /\ m\_gridRows;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00111}00111\ \ \ \ \ \ m\_xPosition\ =\ (m\_bottomBackground.getPosition().x\ +\ gridX\ *\ m\_buttonWidth)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00112}00112\ \ \ \ \ \ m\_yPosition\ =\ (m\_bottomBackground.getPosition().y\ +\ gridY\ *\ m\_buttonHeight)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (inftantryType\ ==\ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81a3d281904fdbe1b5750a0338431641bc9}{InfantryType::RifleSquad}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(1,\ 1,\ 30,\ 22));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ m\_riflemanIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{comment}{/*else\ if\ (inftantryType\ ==\ InfantryType::GrenadeSquad)}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00120}00120\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00121}00121\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_button.m\_sprite.setTextureRect(sf::IntRect(34,\ 1,\ 30,\ 22));}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00122}00122\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00123}00123\ \textcolor{comment}{\ \ \ \ else\ if\ (inftantryType\ ==\ InfantryType::RocketSquad)}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00124}00124\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00125}00125\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_button.m\_sprite.setTextureRect(sf::IntRect(67,\ 1,\ 30,\ 22));}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00126}00126\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00127}00127\ \textcolor{comment}{\ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00128}00128\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00129}00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_button.m\_sprite.setTextureRect(sf::IntRect(133,\ 1,\ 30,\ 22));}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00130}00130\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00132}00132\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setPosition(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00133}00133\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setString(buttonText);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00134}00134\ \ \ \ \ m\_textPosition\ =\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00135}00135\ \ \ \ \ m\_textPosition.x\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().width\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00136}00136\ \ \ \ \ m\_textPosition.y\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().height\ -\/\ 8;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00137}00137\ \ \ \ \ m\_textBounds\ =\ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00138}00138\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOrigin(m\_textBounds.width\ /\ 2,\ m\_textBounds.height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00139}00139\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setPosition(m\_textPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00140}00140\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_a9da2ab27b43c9d48d7068c4efde8d6e7}{m\_infantryType}}\ =\ inftantryType;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}}.push\_back(m\_button);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00153}\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{00153}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{SideBar::addVehicleButton}}(\textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afa}{VehicleType}}\ vehicleType,\ \textcolor{keywordtype}{int}\ gridX,\ \textcolor{keywordtype}{int}\ gridY,\ \textcolor{keyword}{const}\ std::string\&\ buttonText)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00154}00154\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00155}00155\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00156}00156\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(3.26,\ 3.39);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00158}00158\ \ \ \ \ \ m\_buttonWidth\ =\ m\_bottomBackground.getSize().x\ /\ m\_gridCols;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00159}00159\ \ \ \ \ \ m\_buttonHeight\ =\ m\_bottomBackground.getSize().y\ /\ m\_gridRows;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00160}00160\ \ \ \ \ \ m\_xPosition\ =\ (m\_bottomBackground.getPosition().x\ +\ gridX\ *\ m\_buttonWidth)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00161}00161\ \ \ \ \ \ m\_yPosition\ =\ (m\_bottomBackground.getPosition().y\ +\ gridY\ *\ m\_buttonHeight)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{if}\ (vehicleType\ ==\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa7410e2846a61f309b4a1e0a57a6a1d48}{VehicleType::Harvester}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00164}00164\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(0.096,\ 0.075);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(0,\ 0,\ 1024,\ 1000));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ m\_harvesterIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (vehicleType\ ==\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa01e3a933906494de42d7a1d6a09bbb3a}{VehicleType::Buggy}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00170}00170\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(133,\ 1,\ 30,\ 22));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ m\_buggyIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00175}00175\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(1,\ 1,\ 30,\ 22));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ m\_tankAuroraIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00180}00180\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setPosition(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00181}00181\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setString(buttonText);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00182}00182\ \ \ \ \ m\_textPosition\ =\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00183}00183\ \ \ \ \ m\_textPosition.x\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().width\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00184}00184\ \ \ \ \ m\_textPosition.y\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().height\ -\/\ 8;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00185}00185\ \ \ \ \ m\_textBounds\ =\ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00186}00186\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOrigin(m\_textBounds.width\ /\ 2,\ m\_textBounds.height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00187}00187\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setPosition(m\_textPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00188}00188\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_aafb4949ef365deb3610807eccdce78e6}{m\_vehicleType}}\ =\ vehicleType;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}}.push\_back(m\_button);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00191}00191\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00201}\mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{00201}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{SideBar::addAirCraftButton}}(\textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79}{AirCraftType}}\ aircraftType,\ \textcolor{keywordtype}{int}\ gridX,\ \textcolor{keywordtype}{int}\ gridY,\ \textcolor{keyword}{const}\ std::string\&\ buttonText)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00202}00202\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00203}00203\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00204}00204\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setScale(3.26,\ 3.39);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00206}00206\ \ \ \ \ m\_buttonWidth\ =\ m\_bottomBackground.getSize().x\ /\ m\_gridCols;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00207}00207\ \ \ \ \ m\_buttonHeight\ =\ m\_bottomBackground.getSize().y\ /\ m\_gridRows;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00208}00208\ \ \ \ \ m\_xPosition\ =\ (m\_bottomBackground.getPosition().x\ +\ gridX\ *\ m\_buttonWidth)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00209}00209\ \ \ \ \ m\_yPosition\ =\ (m\_bottomBackground.getPosition().y\ +\ gridY\ *\ m\_buttonHeight)\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (aircraftType\ ==\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79af916dcf184c71fb5f4e071fd971c522a}{AirCraftType::HammerHead}})}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00212}00212\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(34,\ 1,\ 30,\ 22));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ m\_hammerHeadIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00217}00217\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setTextureRect(sf::IntRect(100,\ 1,\ 30,\ 22));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ m\_firehawkIconPosition\ =\ sf::Vector2f(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00222}00222\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.setPosition(m\_xPosition,\ m\_yPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00223}00223\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setString(buttonText);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00224}00224\ \ \ \ \ m\_textPosition\ =\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00225}00225\ \ \ \ \ m\_textPosition.x\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().width\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00226}00226\ \ \ \ \ m\_textPosition.y\ +=\ m\_button.\mbox{\hyperlink{struct_button_ae1a3ed6b9734633074e127efad4100dd}{m\_sprite}}.getGlobalBounds().height\ -\/\ 10;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00227}00227\ \ \ \ \ m\_textBounds\ =\ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00228}00228\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOrigin(m\_textBounds.width\ /\ 2,\ m\_textBounds.height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00229}00229\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setPosition(m\_textPosition);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00230}00230\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_a0b5f4061232088ceb718bc993738949b}{m\_airCraftType}}\ =\ aircraftType;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}}.push\_back(m\_button);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00233}00233\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00235}\mbox{\hyperlink{class_side_bar_a8095fb8c494a0830365c243583496ca1}{00235}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a8095fb8c494a0830365c243583496ca1}{SideBar::getRefineryIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00236}00236\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_refineryIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00240}\mbox{\hyperlink{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}{00240}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}{SideBar::getBarracksIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00241}00241\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_barracksIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00243}00243\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00245}\mbox{\hyperlink{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}{00245}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}{SideBar::getVehicleIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00246}00246\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_vehicleIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00248}00248\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00250}\mbox{\hyperlink{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}{00250}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}{SideBar::getAirCraftIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00251}00251\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_airCraftIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00253}00253\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00255}\mbox{\hyperlink{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}{00255}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}{SideBar::getRiflemanIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00256}00256\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_riflemanIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00260}\mbox{\hyperlink{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}{00260}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}{SideBar::getHarvesterIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00261}00261\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_harvesterIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00265}\mbox{\hyperlink{class_side_bar_ad1b03caf2f481402bd547db44173741d}{00265}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_ad1b03caf2f481402bd547db44173741d}{SideBar::getBuggyIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00266}00266\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_buggyIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00268}00268\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00270}\mbox{\hyperlink{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}{00270}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}{SideBar::getTankAuroraIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00271}00271\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tankAuroraIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00273}00273\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00275}\mbox{\hyperlink{class_side_bar_aba78ce197b2069026a62dd77bde88e14}{00275}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_aba78ce197b2069026a62dd77bde88e14}{SideBar::getFirehawkIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00276}00276\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00277}00277\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_firehawkIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00278}00278\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00280}\mbox{\hyperlink{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}{00280}}\ sf::Vector2f\ \mbox{\hyperlink{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}{SideBar::getHammerHeadIconPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00281}00281\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00282}00282\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_hammerHeadIconPosition;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00283}00283\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00285}\mbox{\hyperlink{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}{00285}}\ \textcolor{keyword}{const}\ sf::RectangleShape\&\ \mbox{\hyperlink{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}{SideBar::getSideBarRect}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00286}00286\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_background;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00288}00288\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00290}\mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224461d9d83c}{00290}}\ \textcolor{keyword}{const}\ sf::Sprite\&\ \mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224461d9d83c}{SideBar::getSellSprite}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00291}00291\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_sellSprite;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00293}00293\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00298}00298\ \textcolor{keywordtype}{void}\ SideBar::initSlider()}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00299}00299\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_backgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Panel\_1.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00301}00301\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ problem\ loading\ font"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00303}00303\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_bottomBackgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Card\ X2.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00305}00305\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ problem\ loading\ font"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00307}00307\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_sellTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)GenericPanel.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00309}00309\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ problem\ loading\ font"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00311}00311\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00312}00312\ \ \ \ \ \textcolor{comment}{//\ Shaders}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00313}00313\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_colorShiftShader.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)colorShiftShader.frag"{}},\ sf::Shader::Fragment))\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00314}00314\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Failed\ to\ load\ shader"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00316}00316\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00317}00317\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_rippleShader.loadFromFile(\textcolor{stringliteral}{"{}Assets/Shaders/rippleShader.frag"{}},\ sf::Shader::Fragment))}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00318}00318\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Failed\ to\ load\ fragment\ shader"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00320}00320\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00322}00322\ \ \ \ \ m\_background.setSize(sf::Vector2f(400,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ -\/\ 50));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00323}00323\ \ \ \ \ m\_background.setOutlineColor(sf::Color(200,\ 100,\ 100,\ 200));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00324}00324\ \ \ \ \ m\_background.setOutlineThickness(2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00325}00325\ \ \ \ \ m\_background.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 400,\ 53);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00326}00326\ \ \ \ \ m\_background.setTexture(\&m\_backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00328}00328\ \ \ \ \ m\_bottomBackground.setSize(sf::Vector2f(300,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ -\/\ 620));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00329}00329\ \ \ \ \ m\_bottomBackground.setFillColor(sf::Color(150,\ 150,\ 150,\ 255));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00330}00330\ \ \ \ \ m\_bottomBackground.setOutlineColor(sf::Color(185,\ 232,\ 234));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00331}00331\ \ \ \ \ m\_bottomBackground.setOutlineThickness(2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00332}00332\ \ \ \ \ m\_bottomBackground.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 350,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00333}00333\ \ \ \ \ m\_bottomBackground.setTexture(\&m\_bottomBackgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00335}00335\ \ \ \ \ m\_sellSprite.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 270,\ 400);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00336}00336\ \ \ \ \ m\_sellSprite.setTexture(m\_sellTexture);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00337}00337\ \ \ \ \ m\_sellSprite.setOrigin(m\_sellSprite.getLocalBounds().width\ /\ 2,\ m\_sellSprite.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00338}00338\ \ \ \ \ m\_sellSprite.setScale(2,\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00339}00339\ \ \ \ \ m\_sellText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00340}00340\ \ \ \ \ m\_sellText.setString(\textcolor{stringliteral}{"{}Sell"{}});}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00341}00341\ \ \ \ \ m\_sellText.setPosition(m\_sellSprite.getPosition().x,\ m\_sellSprite.getPosition().y\ -\/\ 10);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00342}00342\ \ \ \ \ m\_sellText.setOrigin(m\_sellText.getGlobalBounds().width\ /\ 2,\ m\_sellText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00343}00343\ \ \ \ \ m\_sellText.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00344}00344\ \ \ \ \ m\_sellText.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00345}00345\ \ \ \ \ m\_sellText.setOutlineThickness(1);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00353}00353\ \textcolor{keywordtype}{void}\ SideBar::initFont()}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00354}00354\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_font.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00356}00356\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}problem\ loading\ font"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00358}00358\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00359}00359\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00365}00365\ \textcolor{keywordtype}{void}\ SideBar::drawGrid(sf::RenderWindow\&\ m\_window)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00366}00366\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{keywordtype}{float}\ cellWidth\ =\ m\_bottomBackground.getSize().x\ /\ m\_gridCols;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keywordtype}{float}\ cellHeight\ =\ m\_bottomBackground.getSize().y\ /\ m\_gridRows;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00370}00370\ \ \ \ \ sf::Color\ gridColor\ =\ sf::Color(63,\ 208,\ 212);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00371}00371\ \ \ \ \ \textcolor{keywordtype}{float}\ gridThickness\ =\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{comment}{//\ Vertical\ lines}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ m\_gridCols;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00375}00375\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ sf::RectangleShape\ line(sf::Vector2f(gridThickness,\ m\_bottomBackground.getSize().y));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ line.setPosition(m\_bottomBackground.getPosition().x\ +\ i\ *\ cellWidth,\ m\_bottomBackground.getPosition().y);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ line.setFillColor(gridColor);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ m\_window.draw(line);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00380}00380\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00382}00382\ \ \ \ \ \textcolor{comment}{//\ Horizontal\ lines}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00383}00383\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ m\_gridRows;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00384}00384\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ sf::RectangleShape\ line(sf::Vector2f(m\_bottomBackground.getSize().x,\ gridThickness));}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ line.setPosition(m\_bottomBackground.getPosition().x,\ m\_bottomBackground.getPosition().y\ +\ i\ *\ cellHeight);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ line.setFillColor(gridColor);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ m\_window.draw(line);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00389}00389\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00390}00390\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00395}00395\ \textcolor{keywordtype}{void}\ SideBar::initButton()}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00396}00396\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00397}00397\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00398}00398\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setCharacterSize(12);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00399}00399\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setFillColor(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00400}00400\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOutlineColor(sf::Color::Black);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00401}00401\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setOutlineThickness(1);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00402}00402\ \ \ \ \ m\_button.\mbox{\hyperlink{struct_button_adcd0e53c0712aed48b7bd29d33eacf5b}{m\_text}}.setStyle(sf::Text::Bold);}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00403}00403\ \}}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00408}\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{00408}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{SideBar::clearButtons}}()}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00409}00409\ \{}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00410}00410\ \ \ \ \ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\_buttons}}.clear();}
+\DoxyCodeLine{\Hypertarget{_side_bar_8cpp_source_l00411}00411\ \}}
+
+\end{DoxyCode}

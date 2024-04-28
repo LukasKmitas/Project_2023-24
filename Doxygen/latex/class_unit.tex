@@ -1,0 +1,1572 @@
+\doxysection{Unit Class Reference}
+\hypertarget{class_unit}{}\label{class_unit}\index{Unit@{Unit}}
+
+
+{\ttfamily \#include $<$Unit.\+h$>$}
+
+
+
+Inheritance diagram for Unit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Unit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_unit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_a8e46f663a95736c8002d85ab271a7581}{Unit}} ()
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{class_unit_a6353fc4c0a329997ad4abcf0dcb4eb27}{\texorpdfstring{$\sim$}{\string~}\+Unit}} ()
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a1170c0150d547432074d11e0a5896494}{update}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}}, std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{ally\+Units}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the units and anything related to it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}} \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{get\+Unit\+Type}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} =0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{set\+Position}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\+\_\+position}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_afc42897a756596a69586c1c245e18d63}{set\+Health}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+set\+Health}})
+\begin{DoxyCompactList}\small\item\em Stes health for laoding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_ad143c65e05fde4571ec2f10ab87f7539}{move\+To}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}})
+\begin{DoxyCompactList}\small\item\em Gives the target position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a197aa5ef2e646616b3b5d7ce685ef0f5}{set\+Selected}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+selected}})
+\begin{DoxyCompactList}\small\item\em Checks if its selected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a3912a4c04f4c43bd1e10567ff4bafec8}{set\+Target\+Position}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}})
+\begin{DoxyCompactList}\small\item\em sets target position for the start of being created \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a8fece643656faf7497caf90462ec3977}{take\+Damage}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+damage\+Amount}})
+\begin{DoxyCompactList}\small\item\em this is how it takes damage takes away health \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a1b1d7fd6c2aad49af42dd68b47b6cf12}{add\+Health}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+health\+Amount}})
+\begin{DoxyCompactList}\small\item\em Adds health to the unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a6746ed3c50b3eed52375876dcca5b533}{apply\+Slow\+Effect}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+speed\+Factor}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+duration}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+post\+Slow\+Wait}})
+\begin{DoxyCompactList}\small\item\em This slows down the enemy slowly to a stop. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a761155ef13610b48b7964cb5b89d99f6}{set\+Enemy\+Units}} (std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\+\_\+enemy\+Units}})
+\begin{DoxyCompactList}\small\item\em sets the enemies \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a173c7cc96f39a6251fc399da66abac8d}{set\+Enemy\+Buildings}} (std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\+\_\+enemy\+Buildings}})
+\begin{DoxyCompactList}\small\item\em sets the buildings \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a613905487b9c2ec26620fcc820da81e9}{set\+Tiles}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_tile}{Tile}} $>$ $>$ \&\mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{m\+\_\+tiles}})
+\begin{DoxyCompactList}\small\item\em Sets the tiles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Sprite \& \mbox{\hyperlink{class_unit_aebf27e3e885f6f6638339c7f3cd25c98}{get\+Sprite}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{get\+Position}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a654772b672c5c5a24a8cd17e6dacccda}{get\+Target\+Position}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+source}})
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a717bca7d26b5632119fe20b9dfa24f75}{steer\+Towards}} (sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target}})
+\begin{DoxyCompactList}\small\item\em Makes it slowly steer towards that direction. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acabd56084730e0bb32811ab6b7be625a}{rotate\+Vector}} (sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+vector}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+angle\+Degrees}})
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a2ee0326af0abc525deadf772e485f657}{lerp}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+start}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+end}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+time}})
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{find\+Avoidance\+Direction}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+current\+Position}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+check\+Ahead\+Distance}})
+\begin{DoxyCompactList}\small\item\em This looks for a suitable direction to avoid walls when a direct path is blocked It tries various angles to find a clear path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angle\+From\+Vector}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+vector}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_aeb9649177dd580377a03cbf4fa7f9056}{get\+View\+Radius}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{a}}, \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{b}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{v}}) \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a5f2ed821fbdf910a3c51112ee1be880f}{get\+Health}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a1eb792473a50b709972cf726a693186b}{to\+Degrees}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_afd48ec71b5e55bb537244ff2c38dc570}{angle\+Between\+Vectors}} (sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{vec1}}, sf\+::\+Vector2f \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{vec2}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a0e1e874abeb77fbf55c154e0fc73decd}{get\+Damage}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{check\+Affordability}} ()
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{is\+Active}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bullet}{Bullet}} $>$ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\+\_\+bullets}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_missile}{Missile}} $>$ \mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{m\+\_\+missiles}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_unit_a53acc02abba2e10408f594a773b0c484}{m\+\_\+unit\+Index}} = 0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a9a50a2b9299a27c15079924985e2938e}{is\+Selected}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a379a6747751f51625a437e939ffe8ea6}{m\+\_\+active}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{true}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\+\_\+is\+Enemy}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a6b409acedf32f53bb1c080cf29c8e999}{init\+View}} ()
+\begin{DoxyCompactList}\small\item\em initializes view \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_aa9c0487be6bedf93c5f79e068f215be6}{init\+Health\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em initializes health bar \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a64e556f3bd178fcbfece63883b990153}{init\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em initializes shaders \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a5a0d56542c689f13276b9db77c1b36d8}{avoid\+Collisions\+With\+Units}} (std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+ally\+Units}})
+\begin{DoxyCompactList}\small\item\em its to avoid colliding with each other \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_ae5032b9bfa0290392ae1a33c2525a18f}{avoid\+Collisions\+With\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em To avoid walls for units. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a9262163e015dca7a29a114798b7ede32}{orient\+Sprite\+To\+Movement}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em it just orientates the sprite a bit \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_a9404b2fd942b1ada3796dd00ab7855c1}{squad\+Entity\+Removal}} ()
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_unit_af7a77a1a93ec9b047a84435989890e86}{squad\+Entity\+Regain}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{Unit\+Type\+Class}} \mbox{\hyperlink{class_unit_a23ee5914f77c04556070cf70471302ab}{m\+\_\+unit\+Type\+Class}}
+\item 
+\mbox{\hyperlink{class_particle_system}{Particle\+System}} \mbox{\hyperlink{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}{m\+\_\+particle\+System}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\+\_\+enemy\+Units}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\+\_\+enemy\+Buildings}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}
+\item 
+\mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\+\_\+closest\+Enemy}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}
+\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\+\_\+closest\+Building}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_tile}{Tile}} $>$ $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{m\+\_\+tiles}}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_unit_a6fa23c268f89ca4d1c2efc7486fe01d7}{m\+\_\+debug\+Rays}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\+\_\+unit\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\+\_\+unit\+Sprite}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_unit_af7ab855e38c0b1759499047f780f3a21}{m\+\_\+health\+Bar\+Background}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_unit_a2c56c8a42fc19dbe114360839fb9aff6}{m\+\_\+health\+Bar\+Foreground}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\+\_\+weapon\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\+\_\+weapon\+Sprite}}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_unit_a080c37ab2ff3feb57021b3c9fd601f19}{m\+\_\+view\+Circle\+Shape}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_unit_a89d6d2a6b24335717a99eaff3926dc9b}{m\+\_\+glow\+Shader}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\+\_\+cost}} = 100
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\+\_\+health}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{m\+\_\+max\+Health}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\+\_\+view\+Radius}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{m\+\_\+damage}} = 5.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\+\_\+speed}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a42a4113cb820dc60f204e0a391506212}{m\+\_\+stopping\+Distance}} = 20
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\+\_\+slowing\+Radius}} = 100
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\+\_\+max\+Force}} = 1.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}{m\+\_\+rotation\+Speed}} = 250.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\+\_\+bullet\+Speed}} = 100
+\item 
+float \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+closest\+Distance}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{m\+\_\+closest\+Building\+Distance}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a9e915880914d55051f833c2754127825}{m\+\_\+arrival\+Tolerance}} = 5.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}} = 3.\+14159265358979323846\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}{is\+Orbiting}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{is\+Reloading}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\+\_\+position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\+\_\+target\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\+\_\+velocity}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\+\_\+direction\+To\+Enemy}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\+\_\+acceleration}} = sf\+::\+Vector2f(0.\+0f, 0.\+0f)
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_unit_a382eb6e89f1d9a35334e04f93631faea}{m\+\_\+slow\+Effect\+Clock}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_abf1f00c046d7db435cba0e688c6054c8}{m\+\_\+is\+Slowed}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a87f44e8e6c444a20eefdb7f944fefc64}{m\+\_\+is\+Gradually\+Slowed}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ae140814d7fde9080eeba6314d53ace3a}{m\+\_\+in\+Post\+Slow\+Wait}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a120b13694ee9c6f66d3f9bf99e61d908}{m\+\_\+slow\+Down\+Start\+Time}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a3d8391ca46209e113f4440d3d4886b20}{m\+\_\+minimum\+Speed\+Factor}} = 0.\+1\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_aefeea3df7327dd0a74b4f4fa8dfde01e}{m\+\_\+slow\+Effect\+Duration}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a901188dc69a856e0319c95d0f6029c8b}{m\+\_\+original\+Speed}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_unit_a6a9d706366d45383ab63194432eb9ebe}{m\+\_\+post\+Slow\+Wait\+Duration}} = 3.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00027}{27}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_unit_a8e46f663a95736c8002d85ab271a7581}\label{class_unit_a8e46f663a95736c8002d85ab271a7581} 
+\index{Unit@{Unit}!Unit@{Unit}}
+\index{Unit@{Unit}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily Unit\+::\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_unit_a8e46f663a95736c8002d85ab271a7581_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a6353fc4c0a329997ad4abcf0dcb4eb27}\label{class_unit_a6353fc4c0a329997ad4abcf0dcb4eb27} 
+\index{Unit@{Unit}!````~Unit@{\texorpdfstring{$\sim$}{\string~}Unit}}
+\index{````~Unit@{\texorpdfstring{$\sim$}{\string~}Unit}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Unit()}{\string~Unit()}}
+{\footnotesize\ttfamily Unit\+::\texorpdfstring{$\sim$}{\string~}\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_unit_a1b1d7fd6c2aad49af42dd68b47b6cf12}\label{class_unit_a1b1d7fd6c2aad49af42dd68b47b6cf12} 
+\index{Unit@{Unit}!addHealth@{addHealth}}
+\index{addHealth@{addHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{addHealth()}{addHealth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::add\+Health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+health\+Amount }\end{DoxyParamCaption})}
+
+
+
+Adds health to the unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+health\+Amount} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00254}{254}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_unit_a1b1d7fd6c2aad49af42dd68b47b6cf12_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_afd48ec71b5e55bb537244ff2c38dc570}\label{class_unit_afd48ec71b5e55bb537244ff2c38dc570} 
+\index{Unit@{Unit}!angleBetweenVectors@{angleBetweenVectors}}
+\index{angleBetweenVectors@{angleBetweenVectors}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{angleBetweenVectors()}{angleBetweenVectors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::angle\+Between\+Vectors (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{vec1,  }\item[{sf\+::\+Vector2f}]{vec2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00376}{376}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}\label{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009} 
+\index{Unit@{Unit}!angleFromVector@{angleFromVector}}
+\index{angleFromVector@{angleFromVector}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{angleFromVector()}{angleFromVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::angle\+From\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00527}{527}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a6746ed3c50b3eed52375876dcca5b533}\label{class_unit_a6746ed3c50b3eed52375876dcca5b533} 
+\index{Unit@{Unit}!applySlowEffect@{applySlowEffect}}
+\index{applySlowEffect@{applySlowEffect}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{applySlowEffect()}{applySlowEffect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::apply\+Slow\+Effect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+speed\+Factor,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+duration,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+post\+Slow\+Wait }\end{DoxyParamCaption})}
+
+
+
+This slows down the enemy slowly to a stop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+speed\+Factor} & \\
+\hline
+{\em m\+\_\+duration} & \\
+\hline
+{\em m\+\_\+post\+Slow\+Wait} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a5a0d56542c689f13276b9db77c1b36d8}\label{class_unit_a5a0d56542c689f13276b9db77c1b36d8} 
+\index{Unit@{Unit}!avoidCollisionsWithUnits@{avoidCollisionsWithUnits}}
+\index{avoidCollisionsWithUnits@{avoidCollisionsWithUnits}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{avoidCollisionsWithUnits()}{avoidCollisionsWithUnits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::avoid\+Collisions\+With\+Units (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+ally\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+its to avoid colliding with each other 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+ally\+Units} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a5a0d56542c689f13276b9db77c1b36d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a5a0d56542c689f13276b9db77c1b36d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_ae5032b9bfa0290392ae1a33c2525a18f}\label{class_unit_ae5032b9bfa0290392ae1a33c2525a18f} 
+\index{Unit@{Unit}!avoidCollisionsWithWalls@{avoidCollisionsWithWalls}}
+\index{avoidCollisionsWithWalls@{avoidCollisionsWithWalls}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{avoidCollisionsWithWalls()}{avoidCollisionsWithWalls()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::avoid\+Collisions\+With\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+To avoid walls for units. 
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_ae5032b9bfa0290392ae1a33c2525a18f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_ae5032b9bfa0290392ae1a33c2525a18f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}\label{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9} 
+\index{Unit@{Unit}!checkAffordability@{checkAffordability}}
+\index{checkAffordability@{checkAffordability}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{checkAffordability()}{checkAffordability()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::check\+Affordability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00428}{428}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a7101070923fae272f484c94e6455312f}\label{class_unit_a7101070923fae272f484c94e6455312f} 
+\index{Unit@{Unit}!distance@{distance}}
+\index{distance@{distance}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{a,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a7101070923fae272f484c94e6455312f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a42777458d8e2ae32407212027719b6d2}\label{class_unit_a42777458d8e2ae32407212027719b6d2} 
+\index{Unit@{Unit}!findAvoidanceDirection@{findAvoidanceDirection}}
+\index{findAvoidanceDirection@{findAvoidanceDirection}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{findAvoidanceDirection()}{findAvoidanceDirection()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::find\+Avoidance\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+current\+Position,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+check\+Ahead\+Distance }\end{DoxyParamCaption})}
+
+
+
+This looks for a suitable direction to avoid walls when a direct path is blocked It tries various angles to find a clear path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+current\+Position} & \\
+\hline
+{\em m\+\_\+check\+Ahead\+Distance} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00549}{549}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_unit_a42777458d8e2ae32407212027719b6d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a42777458d8e2ae32407212027719b6d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a0e1e874abeb77fbf55c154e0fc73decd}\label{class_unit_a0e1e874abeb77fbf55c154e0fc73decd} 
+\index{Unit@{Unit}!getDamage@{getDamage}}
+\index{getDamage@{getDamage}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getDamage()}{getDamage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00384}{384}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a5f2ed821fbdf910a3c51112ee1be880f}\label{class_unit_a5f2ed821fbdf910a3c51112ee1be880f} 
+\index{Unit@{Unit}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00366}{366}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_aa33e6fe8098210a9aeac019345f8a235}\label{class_unit_aa33e6fe8098210a9aeac019345f8a235} 
+\index{Unit@{Unit}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00459}{459}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_aa33e6fe8098210a9aeac019345f8a235_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_aebf27e3e885f6f6638339c7f3cd25c98}\label{class_unit_aebf27e3e885f6f6638339c7f3cd25c98} 
+\index{Unit@{Unit}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Sprite \& Unit\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00308}{308}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a654772b672c5c5a24a8cd17e6dacccda}\label{class_unit_a654772b672c5c5a24a8cd17e6dacccda} 
+\index{Unit@{Unit}!getTargetPosition@{getTargetPosition}}
+\index{getTargetPosition@{getTargetPosition}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getTargetPosition()}{getTargetPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::get\+Target\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00464}{464}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}\label{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c} 
+\index{Unit@{Unit}!getUnitType@{getUnitType}}
+\index{getUnitType@{getUnitType}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getUnitType()}{getUnitType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{virtual}} \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}} Unit\+::get\+Unit\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_buggy_a58013ae81cfcf4d522badea528c1ead3}{Buggy}}, \mbox{\hyperlink{class_firehawk_aef0eaabeee939997fb8cfa9debf0b9e4}{Firehawk}}, \mbox{\hyperlink{class_hammer_head_a3fa56ce18acb66b1a6d9a206fc5c409d}{Hammer\+Head}}, \mbox{\hyperlink{class_harvester_a7a71f71834a3a8c7997cb0652aba60d9}{Harvester}}, \mbox{\hyperlink{class_rifleman_squad_a2a26c952ec93d222bc6f2e3ba5420f17}{Rifleman\+Squad}}, and \mbox{\hyperlink{class_tank_aurora_a9187e6706ad11c4a9ade30b1222490f0}{Tank\+Aurora}}.
+
+\Hypertarget{class_unit_aeb9649177dd580377a03cbf4fa7f9056}\label{class_unit_aeb9649177dd580377a03cbf4fa7f9056} 
+\index{Unit@{Unit}!getViewRadius@{getViewRadius}}
+\index{getViewRadius@{getViewRadius}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getViewRadius()}{getViewRadius()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::get\+View\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00532}{532}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_aa9c0487be6bedf93c5f79e068f215be6}\label{class_unit_aa9c0487be6bedf93c5f79e068f215be6} 
+\index{Unit@{Unit}!initHealthBar@{initHealthBar}}
+\index{initHealthBar@{initHealthBar}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{initHealthBar()}{initHealthBar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::init\+Health\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initializes health bar 
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00403}{403}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_unit_aa9c0487be6bedf93c5f79e068f215be6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a64e556f3bd178fcbfece63883b990153}\label{class_unit_a64e556f3bd178fcbfece63883b990153} 
+\index{Unit@{Unit}!initShader@{initShader}}
+\index{initShader@{initShader}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{initShader()}{initShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::init\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initializes shaders 
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00417}{417}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_unit_a64e556f3bd178fcbfece63883b990153_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a6b409acedf32f53bb1c080cf29c8e999}\label{class_unit_a6b409acedf32f53bb1c080cf29c8e999} 
+\index{Unit@{Unit}!initView@{initView}}
+\index{initView@{initView}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{initView()}{initView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::init\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initializes view 
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00392}{392}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_unit_a6b409acedf32f53bb1c080cf29c8e999_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_ac092caf6ec920688a210b1d556633113}\label{class_unit_ac092caf6ec920688a210b1d556633113} 
+\index{Unit@{Unit}!isActive@{isActive}}
+\index{isActive@{isActive}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00454}{454}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a2ee0326af0abc525deadf772e485f657}\label{class_unit_a2ee0326af0abc525deadf772e485f657} 
+\index{Unit@{Unit}!lerp@{lerp}}
+\index{lerp@{lerp}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::lerp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+start,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+end,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00537}{537}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a2ee0326af0abc525deadf772e485f657_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a90612b354704a618a5647ec4742b427b}\label{class_unit_a90612b354704a618a5647ec4742b427b} 
+\index{Unit@{Unit}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{magnitude()}{magnitude()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::magnitude (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00361}{361}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a90612b354704a618a5647ec4742b427b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_ad143c65e05fde4571ec2f10ab87f7539}\label{class_unit_ad143c65e05fde4571ec2f10ab87f7539} 
+\index{Unit@{Unit}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::move\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos }\end{DoxyParamCaption})}
+
+
+
+Gives the target position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00332}{332}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a829181674d469a36b7e0a6a975d9f66f}\label{class_unit_a829181674d469a36b7e0a6a975d9f66f} 
+\index{Unit@{Unit}!normalize@{normalize}}
+\index{normalize@{normalize}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f}]{m\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00469}{469}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a829181674d469a36b7e0a6a975d9f66f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a9262163e015dca7a29a114798b7ede32}\label{class_unit_a9262163e015dca7a29a114798b7ede32} 
+\index{Unit@{Unit}!orientSpriteToMovement@{orientSpriteToMovement}}
+\index{orientSpriteToMovement@{orientSpriteToMovement}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{orientSpriteToMovement()}{orientSpriteToMovement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::orient\+Sprite\+To\+Movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+it just orientates the sprite a bit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_unit_a9262163e015dca7a29a114798b7ede32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a9262163e015dca7a29a114798b7ede32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a}\label{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a} 
+\index{Unit@{Unit}!render@{render}}
+\index{render@{render}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the units and anything related to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_aircraft_unit_a021587d41ae653ddc0b0effafd353007}{Aircraft\+Unit}}, \mbox{\hyperlink{class_hammer_head_aa38a617a5666307ff1c02f52bf6fb8d9}{Hammer\+Head}}, \mbox{\hyperlink{class_infantry_unit_aca40a05689745fe6a675009dc9c27f22}{Infantry\+Unit}}, \mbox{\hyperlink{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c}{Rifleman\+Squad}}, \mbox{\hyperlink{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17}{Tank\+Aurora}}, and \mbox{\hyperlink{class_vehicle_unit_ae308c42a1dde64acaa2a7d18d8333c90}{Vehicle\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_acabd56084730e0bb32811ab6b7be625a}\label{class_unit_acabd56084730e0bb32811ab6b7be625a} 
+\index{Unit@{Unit}!rotateVector@{rotateVector}}
+\index{rotateVector@{rotateVector}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{rotateVector()}{rotateVector()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::rotate\+Vector (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{m\+\_\+vector,  }\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+angle\+Degrees }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00517}{517}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_acabd56084730e0bb32811ab6b7be625a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a173c7cc96f39a6251fc399da66abac8d}\label{class_unit_a173c7cc96f39a6251fc399da66abac8d} 
+\index{Unit@{Unit}!setEnemyBuildings@{setEnemyBuildings}}
+\index{setEnemyBuildings@{setEnemyBuildings}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setEnemyBuildings()}{setEnemyBuildings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Enemy\+Buildings (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+enemy\+Buildings }\end{DoxyParamCaption})}
+
+
+
+sets the buildings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+enemy\+Buildings} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a761155ef13610b48b7964cb5b89d99f6}\label{class_unit_a761155ef13610b48b7964cb5b89d99f6} 
+\index{Unit@{Unit}!setEnemyUnits@{setEnemyUnits}}
+\index{setEnemyUnits@{setEnemyUnits}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setEnemyUnits()}{setEnemyUnits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Enemy\+Units (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+enemy\+Units }\end{DoxyParamCaption})}
+
+
+
+sets the enemies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+enemy\+Units} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_afc42897a756596a69586c1c245e18d63}\label{class_unit_afc42897a756596a69586c1c245e18d63} 
+\index{Unit@{Unit}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+set\+Health }\end{DoxyParamCaption})}
+
+
+
+Stes health for laoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+set\+Health} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00323}{323}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a94f9c83e2b207b12547f651736fc7c22}\label{class_unit_a94f9c83e2b207b12547f651736fc7c22} 
+\index{Unit@{Unit}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a197aa5ef2e646616b3b5d7ce685ef0f5}\label{class_unit_a197aa5ef2e646616b3b5d7ce685ef0f5} 
+\index{Unit@{Unit}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}}}]{m\+\_\+selected }\end{DoxyParamCaption})}
+
+
+
+Checks if its selected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+selected} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a3912a4c04f4c43bd1e10567ff4bafec8}\label{class_unit_a3912a4c04f4c43bd1e10567ff4bafec8} 
+\index{Unit@{Unit}!setTargetPosition@{setTargetPosition}}
+\index{setTargetPosition@{setTargetPosition}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setTargetPosition()}{setTargetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Target\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos }\end{DoxyParamCaption})}
+
+
+
+sets target position for the start of being created 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00230}{230}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_a613905487b9c2ec26620fcc820da81e9}\label{class_unit_a613905487b9c2ec26620fcc820da81e9} 
+\index{Unit@{Unit}!setTiles@{setTiles}}
+\index{setTiles@{setTiles}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{setTiles()}{setTiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::set\+Tiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_tile}{Tile}} $>$ $>$ \&}]{m\+\_\+tiles }\end{DoxyParamCaption})}
+
+
+
+Sets the tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+tiles} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00303}{303}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+\Hypertarget{class_unit_af7a77a1a93ec9b047a84435989890e86}\label{class_unit_af7a77a1a93ec9b047a84435989890e86} 
+\index{Unit@{Unit}!squadEntityRegain@{squadEntityRegain}}
+\index{squadEntityRegain@{squadEntityRegain}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{squadEntityRegain()}{squadEntityRegain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::squad\+Entity\+Regain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_unit_af7a77a1a93ec9b047a84435989890e86_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a9404b2fd942b1ada3796dd00ab7855c1}\label{class_unit_a9404b2fd942b1ada3796dd00ab7855c1} 
+\index{Unit@{Unit}!squadEntityRemoval@{squadEntityRemoval}}
+\index{squadEntityRemoval@{squadEntityRemoval}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{squadEntityRemoval()}{squadEntityRemoval()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::squad\+Entity\+Removal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_unit_a9404b2fd942b1ada3796dd00ab7855c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a717bca7d26b5632119fe20b9dfa24f75}\label{class_unit_a717bca7d26b5632119fe20b9dfa24f75} 
+\index{Unit@{Unit}!steerTowards@{steerTowards}}
+\index{steerTowards@{steerTowards}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{steerTowards()}{steerTowards()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::steer\+Towards (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{m\+\_\+target }\end{DoxyParamCaption})}
+
+
+
+Makes it slowly steer towards that direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_unit_a717bca7d26b5632119fe20b9dfa24f75_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a8fece643656faf7497caf90462ec3977}\label{class_unit_a8fece643656faf7497caf90462ec3977} 
+\index{Unit@{Unit}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::take\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{m\+\_\+damage\+Amount }\end{DoxyParamCaption})}
+
+
+
+this is how it takes damage takes away health 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+damage\+Amount} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_unit_a8fece643656faf7497caf90462ec3977_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a1eb792473a50b709972cf726a693186b}\label{class_unit_a1eb792473a50b709972cf726a693186b} 
+\index{Unit@{Unit}!toDegrees@{toDegrees}}
+\index{toDegrees@{toDegrees}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{toDegrees()}{toDegrees()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::to\+Degrees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}}}]{radians }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00371}{371}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a1eb792473a50b709972cf726a693186b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_unit_a1170c0150d547432074d11e0a5896494}\label{class_unit_a1170c0150d547432074d11e0a5896494} 
+\index{Unit@{Unit}!update@{update}}
+\index{update@{update}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Unit\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{ally\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_tank_aurora_a929635e820b74db6381f9ea239b57178}{Tank\+Aurora}}, \mbox{\hyperlink{class_aircraft_unit_a383a50ac692f739ef21306ba9860c4e5}{Aircraft\+Unit}}, \mbox{\hyperlink{class_buggy_a14e9377226ef591039712bc6f0cfa061}{Buggy}}, \mbox{\hyperlink{class_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a}{Firehawk}}, \mbox{\hyperlink{class_hammer_head_a57c18e3d80cb32b40aa995bf76f59949}{Hammer\+Head}}, \mbox{\hyperlink{class_harvester_ac6e106e888fc20099bba4f57f833c216}{Harvester}}, \mbox{\hyperlink{class_infantry_unit_aabd1427d781ff0e5ae2b21bbe67e4c84}{Infantry\+Unit}}, \mbox{\hyperlink{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34}{Rifleman\+Squad}}, and \mbox{\hyperlink{class_vehicle_unit_a8509cb11b318348f4953dae4932ea071}{Vehicle\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_unit_8cpp_source}{Unit.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a1170c0150d547432074d11e0a5896494_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_a1170c0150d547432074d11e0a5896494_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}\label{class_unit_ae7b465206eca7bb4e8dcb30a889bb794} 
+\index{Unit@{Unit}!isOrbiting@{isOrbiting}}
+\index{isOrbiting@{isOrbiting}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isOrbiting}{isOrbiting}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::is\+Orbiting = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00138}{138}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a61e8ee3346479fcec34afde9d8b15836}\label{class_unit_a61e8ee3346479fcec34afde9d8b15836} 
+\index{Unit@{Unit}!isReloading@{isReloading}}
+\index{isReloading@{isReloading}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isReloading}{isReloading}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::is\+Reloading = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00139}{139}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a9a50a2b9299a27c15079924985e2938e}\label{class_unit_a9a50a2b9299a27c15079924985e2938e} 
+\index{Unit@{Unit}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::is\+Selected = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00080}{80}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}\label{class_unit_a563b1b881bb65d88996bf07f96a9c5d5} 
+\index{Unit@{Unit}!m\_acceleration@{m\_acceleration}}
+\index{m\_acceleration@{m\_acceleration}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_acceleration}{m\_acceleration}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::m\+\_\+acceleration = sf\+::\+Vector2f(0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00145}{145}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a379a6747751f51625a437e939ffe8ea6}\label{class_unit_a379a6747751f51625a437e939ffe8ea6} 
+\index{Unit@{Unit}!m\_active@{m\_active}}
+\index{m\_active@{m\_active}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_active}{m\_active}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::m\+\_\+active = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{true}}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00081}{81}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a9e915880914d55051f833c2754127825}\label{class_unit_a9e915880914d55051f833c2754127825} 
+\index{Unit@{Unit}!m\_arrivalTolerance@{m\_arrivalTolerance}}
+\index{m\_arrivalTolerance@{m\_arrivalTolerance}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_arrivalTolerance}{m\_arrivalTolerance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+arrival\+Tolerance = 5.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00134}{134}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}\label{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c} 
+\index{Unit@{Unit}!m\_bullets@{m\_bullets}}
+\index{m\_bullets@{m\_bullets}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_bullets}{m\_bullets}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_bullet}{Bullet}}$>$ Unit\+::m\+\_\+bullets}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00062}{62}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a477a61ed668a849b71539ae279eb2228}\label{class_unit_a477a61ed668a849b71539ae279eb2228} 
+\index{Unit@{Unit}!m\_bulletSpeed@{m\_bulletSpeed}}
+\index{m\_bulletSpeed@{m\_bulletSpeed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_bulletSpeed}{m\_bulletSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+bullet\+Speed = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00131}{131}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}\label{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67} 
+\index{Unit@{Unit}!m\_closestBuilding@{m\_closestBuilding}}
+\index{m\_closestBuilding@{m\_closestBuilding}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_closestBuilding}{m\_closestBuilding}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*} Unit\+::m\+\_\+closest\+Building = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00092}{92}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_aaae758956c71f692c08d0c4d3cc66c36}\label{class_unit_aaae758956c71f692c08d0c4d3cc66c36} 
+\index{Unit@{Unit}!m\_closestBuildingDistance@{m\_closestBuildingDistance}}
+\index{m\_closestBuildingDistance@{m\_closestBuildingDistance}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_closestBuildingDistance}{m\_closestBuildingDistance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+closest\+Building\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00133}{133}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_acd26d74df16d66f42c4f2752b58ef88c}\label{class_unit_acd26d74df16d66f42c4f2752b58ef88c} 
+\index{Unit@{Unit}!m\_closestDistance@{m\_closestDistance}}
+\index{m\_closestDistance@{m\_closestDistance}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_closestDistance}{m\_closestDistance}}
+{\footnotesize\ttfamily float Unit\+::m\+\_\+closest\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00132}{132}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}\label{class_unit_ac5d703e440ca13ebbde10c4edbaa0993} 
+\index{Unit@{Unit}!m\_closestEnemy@{m\_closestEnemy}}
+\index{m\_closestEnemy@{m\_closestEnemy}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_closestEnemy}{m\_closestEnemy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit}{Unit}}\texorpdfstring{$\ast$}{*} Unit\+::m\+\_\+closest\+Enemy = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00091}{91}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}\label{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7} 
+\index{Unit@{Unit}!m\_cost@{m\_cost}}
+\index{m\_cost@{m\_cost}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_cost}{m\_cost}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Unit\+::m\+\_\+cost = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00120}{120}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}\label{class_unit_adaff82fa34f1475a78f1778f2eeba2f6} 
+\index{Unit@{Unit}!m\_damage@{m\_damage}}
+\index{m\_damage@{m\_damage}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_damage}{m\_damage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+damage = 5.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00124}{124}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a6fa23c268f89ca4d1c2efc7486fe01d7}\label{class_unit_a6fa23c268f89ca4d1c2efc7486fe01d7} 
+\index{Unit@{Unit}!m\_debugRays@{m\_debugRays}}
+\index{m\_debugRays@{m\_debugRays}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_debugRays}{m\_debugRays}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Vector2f$>$ Unit\+::m\+\_\+debug\+Rays\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00095}{95}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a58dabe8ca107051cae574489c5ebab87}\label{class_unit_a58dabe8ca107051cae574489c5ebab87} 
+\index{Unit@{Unit}!m\_directionToEnemy@{m\_directionToEnemy}}
+\index{m\_directionToEnemy@{m\_directionToEnemy}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_directionToEnemy}{m\_directionToEnemy}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::m\+\_\+direction\+To\+Enemy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00144}{144}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a119e21ec363c1923ef438d1c3cad11f2}\label{class_unit_a119e21ec363c1923ef438d1c3cad11f2} 
+\index{Unit@{Unit}!m\_enemyBuildings@{m\_enemyBuildings}}
+\index{m\_enemyBuildings@{m\_enemyBuildings}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_enemyBuildings}{m\_enemyBuildings}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} Unit\+::m\+\_\+enemy\+Buildings = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00090}{90}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_acdb9e12bef013e48d11020ef1813c9d1}\label{class_unit_acdb9e12bef013e48d11020ef1813c9d1} 
+\index{Unit@{Unit}!m\_enemyUnits@{m\_enemyUnits}}
+\index{m\_enemyUnits@{m\_enemyUnits}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_enemyUnits}{m\_enemyUnits}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_unit}{Unit}}\texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} Unit\+::m\+\_\+enemy\+Units = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00089}{89}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a89d6d2a6b24335717a99eaff3926dc9b}\label{class_unit_a89d6d2a6b24335717a99eaff3926dc9b} 
+\index{Unit@{Unit}!m\_glowShader@{m\_glowShader}}
+\index{m\_glowShader@{m\_glowShader}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_glowShader}{m\_glowShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Unit\+::m\+\_\+glow\+Shader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00118}{118}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a2fb910438e195e536fa971f09d0636df}\label{class_unit_a2fb910438e195e536fa971f09d0636df} 
+\index{Unit@{Unit}!m\_health@{m\_health}}
+\index{m\_health@{m\_health}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_health}{m\_health}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+health = 100.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00121}{121}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_af7ab855e38c0b1759499047f780f3a21}\label{class_unit_af7ab855e38c0b1759499047f780f3a21} 
+\index{Unit@{Unit}!m\_healthBarBackground@{m\_healthBarBackground}}
+\index{m\_healthBarBackground@{m\_healthBarBackground}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_healthBarBackground}{m\_healthBarBackground}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Unit\+::m\+\_\+health\+Bar\+Background\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00111}{111}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a2c56c8a42fc19dbe114360839fb9aff6}\label{class_unit_a2c56c8a42fc19dbe114360839fb9aff6} 
+\index{Unit@{Unit}!m\_healthBarForeground@{m\_healthBarForeground}}
+\index{m\_healthBarForeground@{m\_healthBarForeground}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_healthBarForeground}{m\_healthBarForeground}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Unit\+::m\+\_\+health\+Bar\+Foreground\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00112}{112}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ae140814d7fde9080eeba6314d53ace3a}\label{class_unit_ae140814d7fde9080eeba6314d53ace3a} 
+\index{Unit@{Unit}!m\_inPostSlowWait@{m\_inPostSlowWait}}
+\index{m\_inPostSlowWait@{m\_inPostSlowWait}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_inPostSlowWait}{m\_inPostSlowWait}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::m\+\_\+in\+Post\+Slow\+Wait = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00150}{150}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}\label{class_unit_ad35ac8605f1b8096de7d1aa72222b43c} 
+\index{Unit@{Unit}!m\_isEnemy@{m\_isEnemy}}
+\index{m\_isEnemy@{m\_isEnemy}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_isEnemy}{m\_isEnemy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::m\+\_\+is\+Enemy = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00082}{82}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a87f44e8e6c444a20eefdb7f944fefc64}\label{class_unit_a87f44e8e6c444a20eefdb7f944fefc64} 
+\index{Unit@{Unit}!m\_isGraduallySlowed@{m\_isGraduallySlowed}}
+\index{m\_isGraduallySlowed@{m\_isGraduallySlowed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_isGraduallySlowed}{m\_isGraduallySlowed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::m\+\_\+is\+Gradually\+Slowed = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00149}{149}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_abf1f00c046d7db435cba0e688c6054c8}\label{class_unit_abf1f00c046d7db435cba0e688c6054c8} 
+\index{Unit@{Unit}!m\_isSlowed@{m\_isSlowed}}
+\index{m\_isSlowed@{m\_isSlowed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_isSlowed}{m\_isSlowed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Unit\+::m\+\_\+is\+Slowed = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00148}{148}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}\label{class_unit_a3f8c10d5fc8253594119f4b51f298e9d} 
+\index{Unit@{Unit}!m\_maxForce@{m\_maxForce}}
+\index{m\_maxForce@{m\_maxForce}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_maxForce}{m\_maxForce}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+max\+Force = 1.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00129}{129}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}\label{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1} 
+\index{Unit@{Unit}!m\_maxHealth@{m\_maxHealth}}
+\index{m\_maxHealth@{m\_maxHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_maxHealth}{m\_maxHealth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+max\+Health = 100.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00122}{122}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a3d8391ca46209e113f4440d3d4886b20}\label{class_unit_a3d8391ca46209e113f4440d3d4886b20} 
+\index{Unit@{Unit}!m\_minimumSpeedFactor@{m\_minimumSpeedFactor}}
+\index{m\_minimumSpeedFactor@{m\_minimumSpeedFactor}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_minimumSpeedFactor}{m\_minimumSpeedFactor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+minimum\+Speed\+Factor = 0.\+1\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00152}{152}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}\label{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8} 
+\index{Unit@{Unit}!m\_missiles@{m\_missiles}}
+\index{m\_missiles@{m\_missiles}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_missiles}{m\_missiles}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_missile}{Missile}}$>$ Unit\+::m\+\_\+missiles}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00063}{63}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a901188dc69a856e0319c95d0f6029c8b}\label{class_unit_a901188dc69a856e0319c95d0f6029c8b} 
+\index{Unit@{Unit}!m\_originalSpeed@{m\_originalSpeed}}
+\index{m\_originalSpeed@{m\_originalSpeed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_originalSpeed}{m\_originalSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+original\+Speed = 100.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00154}{154}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}\label{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46} 
+\index{Unit@{Unit}!m\_particleSystem@{m\_particleSystem}}
+\index{m\_particleSystem@{m\_particleSystem}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_particleSystem}{m\_particleSystem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_particle_system}{Particle\+System}} Unit\+::m\+\_\+particle\+System\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00087}{87}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ab164c16d57455e049dcc135764ba04a8}\label{class_unit_ab164c16d57455e049dcc135764ba04a8} 
+\index{Unit@{Unit}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00141}{141}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a6a9d706366d45383ab63194432eb9ebe}\label{class_unit_a6a9d706366d45383ab63194432eb9ebe} 
+\index{Unit@{Unit}!m\_postSlowWaitDuration@{m\_postSlowWaitDuration}}
+\index{m\_postSlowWaitDuration@{m\_postSlowWaitDuration}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_postSlowWaitDuration}{m\_postSlowWaitDuration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+post\+Slow\+Wait\+Duration = 3.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00155}{155}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}\label{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95} 
+\index{Unit@{Unit}!m\_rotationSpeed@{m\_rotationSpeed}}
+\index{m\_rotationSpeed@{m\_rotationSpeed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_rotationSpeed}{m\_rotationSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+rotation\+Speed = 250.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00130}{130}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a120b13694ee9c6f66d3f9bf99e61d908}\label{class_unit_a120b13694ee9c6f66d3f9bf99e61d908} 
+\index{Unit@{Unit}!m\_slowDownStartTime@{m\_slowDownStartTime}}
+\index{m\_slowDownStartTime@{m\_slowDownStartTime}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_slowDownStartTime}{m\_slowDownStartTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+slow\+Down\+Start\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00151}{151}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a382eb6e89f1d9a35334e04f93631faea}\label{class_unit_a382eb6e89f1d9a35334e04f93631faea} 
+\index{Unit@{Unit}!m\_slowEffectClock@{m\_slowEffectClock}}
+\index{m\_slowEffectClock@{m\_slowEffectClock}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_slowEffectClock}{m\_slowEffectClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Unit\+::m\+\_\+slow\+Effect\+Clock\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00147}{147}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_aefeea3df7327dd0a74b4f4fa8dfde01e}\label{class_unit_aefeea3df7327dd0a74b4f4fa8dfde01e} 
+\index{Unit@{Unit}!m\_slowEffectDuration@{m\_slowEffectDuration}}
+\index{m\_slowEffectDuration@{m\_slowEffectDuration}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_slowEffectDuration}{m\_slowEffectDuration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+slow\+Effect\+Duration = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00153}{153}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}\label{class_unit_a72403e6fe66f794ba89a6e17a570cdeb} 
+\index{Unit@{Unit}!m\_slowingRadius@{m\_slowingRadius}}
+\index{m\_slowingRadius@{m\_slowingRadius}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_slowingRadius}{m\_slowingRadius}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+slowing\+Radius = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00128}{128}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}\label{class_unit_af3a3d9e915125553fdcd4c9ae24550ae} 
+\index{Unit@{Unit}!m\_speed@{m\_speed}}
+\index{m\_speed@{m\_speed}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_speed}{m\_speed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+speed = 100.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00126}{126}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a42a4113cb820dc60f204e0a391506212}\label{class_unit_a42a4113cb820dc60f204e0a391506212} 
+\index{Unit@{Unit}!m\_stoppingDistance@{m\_stoppingDistance}}
+\index{m\_stoppingDistance@{m\_stoppingDistance}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_stoppingDistance}{m\_stoppingDistance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+stopping\+Distance = 20\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00127}{127}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a1f49ad61bd0bd9387118f91403fdd131}\label{class_unit_a1f49ad61bd0bd9387118f91403fdd131} 
+\index{Unit@{Unit}!m\_targetPosition@{m\_targetPosition}}
+\index{m\_targetPosition@{m\_targetPosition}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_targetPosition}{m\_targetPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::m\+\_\+target\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00142}{142}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}\label{class_unit_aadf659bbcaee9704fbac241e0f6ecdce} 
+\index{Unit@{Unit}!m\_tiles@{m\_tiles}}
+\index{m\_tiles@{m\_tiles}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_tiles}{m\_tiles}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{class_tile}{Tile}}$>$ $>$\texorpdfstring{$\ast$}{*} Unit\+::m\+\_\+tiles\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00093}{93}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a53acc02abba2e10408f594a773b0c484}\label{class_unit_a53acc02abba2e10408f594a773b0c484} 
+\index{Unit@{Unit}!m\_unitIndex@{m\_unitIndex}}
+\index{m\_unitIndex@{m\_unitIndex}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_unitIndex}{m\_unitIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Unit\+::m\+\_\+unit\+Index = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00078}{78}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_ad71f1c3eddf2505597ca1292170afacb}\label{class_unit_ad71f1c3eddf2505597ca1292170afacb} 
+\index{Unit@{Unit}!m\_unitSprite@{m\_unitSprite}}
+\index{m\_unitSprite@{m\_unitSprite}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_unitSprite}{m\_unitSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Unit\+::m\+\_\+unit\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00109}{109}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}\label{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3} 
+\index{Unit@{Unit}!m\_unitTexture@{m\_unitTexture}}
+\index{m\_unitTexture@{m\_unitTexture}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_unitTexture}{m\_unitTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Unit\+::m\+\_\+unit\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00108}{108}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a23ee5914f77c04556070cf70471302ab}\label{class_unit_a23ee5914f77c04556070cf70471302ab} 
+\index{Unit@{Unit}!m\_unitTypeClass@{m\_unitTypeClass}}
+\index{m\_unitTypeClass@{m\_unitTypeClass}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_unitTypeClass}{m\_unitTypeClass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{Unit\+Type\+Class}} Unit\+::m\+\_\+unit\+Type\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00086}{86}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}\label{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87} 
+\index{Unit@{Unit}!m\_velocity@{m\_velocity}}
+\index{m\_velocity@{m\_velocity}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_velocity}{m\_velocity}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Unit\+::m\+\_\+velocity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00143}{143}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a080c37ab2ff3feb57021b3c9fd601f19}\label{class_unit_a080c37ab2ff3feb57021b3c9fd601f19} 
+\index{Unit@{Unit}!m\_viewCircleShape@{m\_viewCircleShape}}
+\index{m\_viewCircleShape@{m\_viewCircleShape}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_viewCircleShape}{m\_viewCircleShape}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Unit\+::m\+\_\+view\+Circle\+Shape\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00117}{117}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_abb14fe0d6712ae4eb9622953660733a3}\label{class_unit_abb14fe0d6712ae4eb9622953660733a3} 
+\index{Unit@{Unit}!m\_viewRadius@{m\_viewRadius}}
+\index{m\_viewRadius@{m\_viewRadius}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_viewRadius}{m\_viewRadius}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::m\+\_\+view\+Radius = 100.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00123}{123}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}\label{class_unit_a3ae23f50fe7abcd86ef677f99158ae02} 
+\index{Unit@{Unit}!m\_weaponSprite@{m\_weaponSprite}}
+\index{m\_weaponSprite@{m\_weaponSprite}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_weaponSprite}{m\_weaponSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Unit\+::m\+\_\+weapon\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00115}{115}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a19c5eee06150c3d810d98ab918e61c88}\label{class_unit_a19c5eee06150c3d810d98ab918e61c88} 
+\index{Unit@{Unit}!m\_weaponTexture@{m\_weaponTexture}}
+\index{m\_weaponTexture@{m\_weaponTexture}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{m\_weaponTexture}{m\_weaponTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Unit\+::m\+\_\+weapon\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00114}{114}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}\label{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0} 
+\index{Unit@{Unit}!PI@{PI}}
+\index{PI@{PI}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Unit\+::\+PI = 3.\+14159265358979323846\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00136}{136}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_unit_8h}{Unit.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_unit_8cpp}{Unit.\+cpp}}\end{DoxyCompactItemize}

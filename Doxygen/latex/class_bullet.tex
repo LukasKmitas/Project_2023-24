@@ -1,0 +1,115 @@
+\doxysection{Bullet Class Reference}
+\hypertarget{class_bullet}{}\label{class_bullet}\index{Bullet@{Bullet}}
+
+
+{\ttfamily \#include $<$Bullet.\+h$>$}
+
+
+
+Collaboration diagram for Bullet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bullet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bullet_a2168d6be98781a6bee3f6d0317064144}{Bullet}} (const sf\+::\+Vector2f \&m\+\_\+start\+Position, const sf\+::\+Vector2f \&m\+\_\+target\+Direction, float m\+\_\+speed)
+\item 
+void \mbox{\hyperlink{class_bullet_af0888cd2bef42055c1f23efa01bd7654}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+void \mbox{\hyperlink{class_bullet_a811074fd46bf95b7a7e75a75ac5df188}{render}} (sf\+::\+Render\+Window \&m\+\_\+window, const sf\+::\+Shader \&m\+\_\+glow\+Shader) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_bullet_a2826b566024cc17fe2fbb1937615c4c7}{m\+\_\+bullet\+Shape}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}{m\+\_\+position}}
+\item 
+bool \mbox{\hyperlink{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c}{m\+\_\+active}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00005}{5}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_bullet_a2168d6be98781a6bee3f6d0317064144}\label{class_bullet_a2168d6be98781a6bee3f6d0317064144} 
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{Bullet()}{Bullet()}}
+{\footnotesize\ttfamily Bullet\+::\+Bullet (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+start\+Position,  }\item[{const sf\+::\+Vector2f \&}]{m\+\_\+target\+Direction,  }\item[{float}]{m\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_bullet_8cpp_source}{Bullet.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bullet_a811074fd46bf95b7a7e75a75ac5df188}\label{class_bullet_a811074fd46bf95b7a7e75a75ac5df188} 
+\index{Bullet@{Bullet}!render@{render}}
+\index{render@{render}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Bullet\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window,  }\item[{const sf\+::\+Shader \&}]{m\+\_\+glow\+Shader }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_bullet_8cpp_source}{Bullet.\+cpp}}.
+
+\Hypertarget{class_bullet_af0888cd2bef42055c1f23efa01bd7654}\label{class_bullet_af0888cd2bef42055c1f23efa01bd7654} 
+\index{Bullet@{Bullet}!update@{update}}
+\index{update@{update}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Bullet\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_bullet_8cpp_source}{Bullet.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c}\label{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c} 
+\index{Bullet@{Bullet}!m\_active@{m\_active}}
+\index{m\_active@{m\_active}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_active}{m\_active}}
+{\footnotesize\ttfamily bool Bullet\+::m\+\_\+active = true}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00018}{18}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a2826b566024cc17fe2fbb1937615c4c7}\label{class_bullet_a2826b566024cc17fe2fbb1937615c4c7} 
+\index{Bullet@{Bullet}!m\_bulletShape@{m\_bulletShape}}
+\index{m\_bulletShape@{m\_bulletShape}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_bulletShape}{m\_bulletShape}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Bullet\+::m\+\_\+bullet\+Shape}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00014}{14}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}\label{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21} 
+\index{Bullet@{Bullet}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Bullet\+::m\+\_\+position}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00016}{16}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_bullet_8h}{Bullet.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_bullet_8cpp}{Bullet.\+cpp}}\end{DoxyCompactItemize}

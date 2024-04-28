@@ -1,0 +1,9 @@
+<map id="AircraftUnit" name="AircraftUnit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="251,2107,717,2240"/>
+<area shape="rect" id="Node000003" href="$class_firehawk.html" title=" " alt="" coords="5,2299,472,2432"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="389,2251,325,2301,322,2297,386,2247"/>
+<area shape="rect" id="Node000004" href="$class_hammer_head.html" title=" " alt="" coords="496,2288,963,2443"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="582,2247,633,2286,630,2290,579,2251"/>
+<area shape="rect" id="Node000002" href="$class_unit.html" title=" " alt="" coords="170,5,798,2059"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="487,2074,487,2107,481,2107,481,2074"/>
+</map>

@@ -1,0 +1,207 @@
+\doxysection{Level\+Loader Class Reference}
+\hypertarget{class_level_loader}{}\label{class_level_loader}\index{LevelLoader@{LevelLoader}}
+
+
+{\ttfamily \#include $<$Level\+Loader.\+h$>$}
+
+
+
+Collaboration diagram for Level\+Loader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_loader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20}{Level\+Loader}} ()
+\item 
+\mbox{\hyperlink{class_level_loader_af91d5b5441640c5be1ef096e9dfb84e8}{\texorpdfstring{$\sim$}{\string~}\+Level\+Loader}} ()
+\item 
+void \mbox{\hyperlink{class_level_loader_aaa7dcd75aee8d103054a546ede7cbf33}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the level loader to load the level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_loader_a3f5b453ba22665815889a8f3b365ae0b}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders everything in level loader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_loader_ab79716edefc643bd943256d3a1b96d98}{init\+Level\+Selection\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Initializes buttons to select what level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_loader_ac4863ff62c05dda297d9a3943b0cf8c4}{go\+To\+Main\+Menu}} (sf\+::\+Vector2i m\+\_\+mouse\+Position, \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&m\+\_\+game\+State)
+\begin{DoxyCompactList}\small\item\em To go back to main menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_loader_a99d2eaf66b8b70793e4eed64f134d23e}{handle\+Level\+Selection\+Mouse\+Input}} (sf\+::\+Vector2i m\+\_\+mouse\+Position)
+\begin{DoxyCompactList}\small\item\em handles the mouse press for the buttons to load the level \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\+\_\+level\+Filenames}}
+\item 
+int \mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\+\_\+selected\+Button\+Index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8h_source_l00011}{11}} of file \mbox{\hyperlink{_level_loader_8h_source}{Level\+Loader.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20}\label{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20} 
+\index{LevelLoader@{LevelLoader}!LevelLoader@{LevelLoader}}
+\index{LevelLoader@{LevelLoader}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{LevelLoader()}{LevelLoader()}}
+{\footnotesize\ttfamily Level\+Loader\+::\+Level\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_loader_af91d5b5441640c5be1ef096e9dfb84e8}\label{class_level_loader_af91d5b5441640c5be1ef096e9dfb84e8} 
+\index{LevelLoader@{LevelLoader}!````~LevelLoader@{\texorpdfstring{$\sim$}{\string~}LevelLoader}}
+\index{````~LevelLoader@{\texorpdfstring{$\sim$}{\string~}LevelLoader}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LevelLoader()}{\string~LevelLoader()}}
+{\footnotesize\ttfamily Level\+Loader\+::\texorpdfstring{$\sim$}{\string~}\+Level\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_level_loader_ac4863ff62c05dda297d9a3943b0cf8c4}\label{class_level_loader_ac4863ff62c05dda297d9a3943b0cf8c4} 
+\index{LevelLoader@{LevelLoader}!goToMainMenu@{goToMainMenu}}
+\index{goToMainMenu@{goToMainMenu}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{goToMainMenu()}{goToMainMenu()}}
+{\footnotesize\ttfamily void Level\+Loader\+::go\+To\+Main\+Menu (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{m\+\_\+mouse\+Position,  }\item[{\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&}]{m\+\_\+game\+State }\end{DoxyParamCaption})}
+
+
+
+To go back to main menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Position} & \\
+\hline
+{\em m\+\_\+game\+State} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+\Hypertarget{class_level_loader_a99d2eaf66b8b70793e4eed64f134d23e}\label{class_level_loader_a99d2eaf66b8b70793e4eed64f134d23e} 
+\index{LevelLoader@{LevelLoader}!handleLevelSelectionMouseInput@{handleLevelSelectionMouseInput}}
+\index{handleLevelSelectionMouseInput@{handleLevelSelectionMouseInput}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{handleLevelSelectionMouseInput()}{handleLevelSelectionMouseInput()}}
+{\footnotesize\ttfamily void Level\+Loader\+::handle\+Level\+Selection\+Mouse\+Input (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{m\+\_\+mouse\+Position }\end{DoxyParamCaption})}
+
+
+
+handles the mouse press for the buttons to load the level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+\Hypertarget{class_level_loader_ab79716edefc643bd943256d3a1b96d98}\label{class_level_loader_ab79716edefc643bd943256d3a1b96d98} 
+\index{LevelLoader@{LevelLoader}!initLevelSelectionButtons@{initLevelSelectionButtons}}
+\index{initLevelSelectionButtons@{initLevelSelectionButtons}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{initLevelSelectionButtons()}{initLevelSelectionButtons()}}
+{\footnotesize\ttfamily void Level\+Loader\+::init\+Level\+Selection\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes buttons to select what level. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_loader_ab79716edefc643bd943256d3a1b96d98_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_loader_a3f5b453ba22665815889a8f3b365ae0b}\label{class_level_loader_a3f5b453ba22665815889a8f3b365ae0b} 
+\index{LevelLoader@{LevelLoader}!render@{render}}
+\index{render@{render}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Level\+Loader\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders everything in level loader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+\Hypertarget{class_level_loader_aaa7dcd75aee8d103054a546ede7cbf33}\label{class_level_loader_aaa7dcd75aee8d103054a546ede7cbf33} 
+\index{LevelLoader@{LevelLoader}!update@{update}}
+\index{update@{update}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Level\+Loader\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Updates the level loader to load the level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_level_loader_8cpp_source}{Level\+Loader.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}\label{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679} 
+\index{LevelLoader@{LevelLoader}!m\_levelFilenames@{m\_levelFilenames}}
+\index{m\_levelFilenames@{m\_levelFilenames}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{m\_levelFilenames}{m\_levelFilenames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Level\+Loader\+::m\+\_\+level\+Filenames}
+
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8h_source_l00026}{26}} of file \mbox{\hyperlink{_level_loader_8h_source}{Level\+Loader.\+h}}.
+
+\Hypertarget{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}\label{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a} 
+\index{LevelLoader@{LevelLoader}!m\_selectedButtonIndex@{m\_selectedButtonIndex}}
+\index{m\_selectedButtonIndex@{m\_selectedButtonIndex}!LevelLoader@{LevelLoader}}
+\doxysubsubsection{\texorpdfstring{m\_selectedButtonIndex}{m\_selectedButtonIndex}}
+{\footnotesize\ttfamily int Level\+Loader\+::m\+\_\+selected\+Button\+Index}
+
+
+
+Definition at line \mbox{\hyperlink{_level_loader_8h_source_l00028}{28}} of file \mbox{\hyperlink{_level_loader_8h_source}{Level\+Loader.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_level_loader_8h}{Level\+Loader.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_level_loader_8cpp}{Level\+Loader.\+cpp}}\end{DoxyCompactItemize}

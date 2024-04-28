@@ -1,0 +1,5 @@
+<map id="NeuralNetworks::drawWeightText" name="NeuralNetworks::drawWeightText">
+<area shape="rect" id="Node000001" title="Draws the text for the weight on each perceptron." alt="" coords="301,5,514,32"/>
+<area shape="rect" id="Node000002" href="$class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="5,5,253,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,21,253,21,253,16,285,16"/>
+</map>

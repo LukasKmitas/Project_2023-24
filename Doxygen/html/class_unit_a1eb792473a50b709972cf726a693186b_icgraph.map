@@ -1,0 +1,7 @@
+<map id="Unit::toDegrees" name="Unit::toDegrees">
+<area shape="rect" id="Node000001" title=" " alt="" coords="440,5,551,32"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a9262163e015dca7a29a114798b7ede32" title="it just orientates the sprite a bit" alt="" coords="201,5,392,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,21,392,21,392,16,424,16"/>
+<area shape="rect" id="Node000003" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="5,5,153,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+</map>

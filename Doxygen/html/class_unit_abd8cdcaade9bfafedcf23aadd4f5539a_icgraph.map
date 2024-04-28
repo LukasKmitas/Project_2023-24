@@ -1,0 +1,15 @@
+<map id="Unit::render" name="Unit::render">
+<area shape="rect" id="Node000001" title="Renders the units and anything related to it." alt="" coords="385,56,473,83"/>
+<area shape="rect" id="Node000002" href="$class_aircraft_unit.html#a021587d41ae653ddc0b0effafd353007" title="Renders the units and anything related to it." alt="" coords="207,5,336,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="370,53,315,35,316,30,372,48"/>
+<area shape="rect" id="Node000004" href="$class_infantry_unit.html#aca40a05689745fe6a675009dc9c27f22" title="Renders the units and anything related to it." alt="" coords="206,56,337,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="370,72,337,72,337,67,370,67"/>
+<area shape="rect" id="Node000006" href="$class_vehicle_unit.html#ae308c42a1dde64acaa2a7d18d8333c90" title="Renders the units and anything related to it." alt="" coords="206,107,337,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="372,91,316,109,315,104,370,85"/>
+<area shape="rect" id="Node000003" href="$class_hammer_head.html#aa38a617a5666307ff1c02f52bf6fb8d9" title="Renders the units and anything related to it." alt="" coords="9,5,154,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,21,154,21,154,16,191,16"/>
+<area shape="rect" id="Node000005" href="$class_rifleman_squad.html#a68f0295ba704a7db0cb475369e48c42c" title="Renders the units and anything related to it." alt="" coords="5,56,158,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="190,72,158,72,158,67,190,67"/>
+<area shape="rect" id="Node000007" href="$class_tank_aurora.html#ae64a175ca2527c56289658bc29ae3c17" title="Renders the units and anything related to it." alt="" coords="16,107,147,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="190,123,148,123,148,117,190,117"/>
+</map>

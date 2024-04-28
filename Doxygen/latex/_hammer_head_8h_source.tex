@@ -1,0 +1,37 @@
+\doxysection{Hammer\+Head.\+h}
+\hypertarget{_hammer_head_8h_source}{}\label{_hammer_head_8h_source}\index{AI Behaviors/HammerHead.h@{AI Behaviors/HammerHead.h}}
+\mbox{\hyperlink{_hammer_head_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_aircraft_unit_8h}{AircraftUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00004}\mbox{\hyperlink{class_hammer_head}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hammer_head}{HammerHead}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_aircraft_unit}{AircraftUnit}}}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a4cc10f20d33cd80da97491fdc43fc852}{HammerHead}}();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a91b01fa74882675c75a872549fb578ef}{\string~HammerHead}}();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_a57c18e3d80cb32b40aa995bf76f59949}{update}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_aa38a617a5666307ff1c02f52bf6fb8d9}{render}}(sf::RenderWindow\&\ m\_window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00013}\mbox{\hyperlink{class_hammer_head_a3fa56ce18acb66b1a6d9a206fc5c409d}{00013}}\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ \mbox{\hyperlink{class_hammer_head_a3fa56ce18acb66b1a6d9a206fc5c409d}{getUnitType}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a0c16f53185256508e19f47f6c3a0b165}{UnitType::Hammerhead}};\ \}}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ initHammerhead();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnParticleExhaustEffect();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ movement(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ aimWeapons(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ shootAtEnemy();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00025}00025\ \ \ \ \ sf::Sprite\ m\_leftGunSprite;}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00026}00026\ \ \ \ \ sf::Sprite\ m\_rightGunSprite;}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fireRate\ =\ 0.2f;\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fireTimer\ =\ 0.0f;\ }
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_bulletSpeed\ =\ 300.0f;}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8h_source_l00031}00031\ \};}
+
+\end{DoxyCode}

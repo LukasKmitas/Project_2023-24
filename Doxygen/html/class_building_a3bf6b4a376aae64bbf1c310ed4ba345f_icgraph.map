@@ -1,0 +1,13 @@
+<map id="Building::setPlacementRadiusSize" name="Building::setPlacementRadiusSize">
+<area shape="rect" id="Node000001" title="sets the placement radius" alt="" coords="237,107,458,133"/>
+<area shape="rect" id="Node000002" href="$class_air_craft.html#a7ffbd6f4da5c11951b751cc2767e6e0f" title=" " alt="" coords="39,5,155,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,102,251,74,188,46,153,35,155,30,190,42,253,69,309,97"/>
+<area shape="rect" id="Node000003" href="$class_barracks.html#a3a46faa94ab87e28b376f37ef186c795" title=" " alt="" coords="30,56,164,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="262,106,164,85,165,80,263,100"/>
+<area shape="rect" id="Node000004" href="$class_headquarters.html#a47ada4046d4b5feaadc63d64439420ab" title=" " alt="" coords="5,107,189,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,123,189,123,189,117,221,117"/>
+<area shape="rect" id="Node000005" href="$class_refinery.html#ab6f3fa0385a031bd4e5314aedc74eca4" title=" " alt="" coords="35,157,159,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="263,140,160,161,159,156,262,134"/>
+<area shape="rect" id="Node000006" href="$class_war_factory.html#a0a7077f16ad2e9556a585904fd71618f" title=" " alt="" coords="14,208,180,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="309,143,253,171,190,198,155,210,153,205,188,194,251,166,306,138"/>
+</map>

@@ -1,0 +1,66 @@
+\doxysection{Main\+Menu.\+h}
+\hypertarget{_main_menu_8h_source}{}\label{_main_menu_8h_source}\index{AI Behaviors/MainMenu.h@{AI Behaviors/MainMenu.h}}
+\mbox{\hyperlink{_main_menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8h}{GameState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sound_manager_8h}{SoundManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00008}\mbox{\hyperlink{class_main_menu}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu}{MainMenu}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00010}00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{MainMenu}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6}{update}}(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a21a5eef38283b271749a28bc954fbddd}{handleButtonClick}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_mousePosition,\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\&\ m\_gameState);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ initButtons();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ initBackgroundImage();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ buttonTabAnimation(sf::RenderWindow\&\ m\_window,\ sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ titleAnimation(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ m\_currentState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{GameState::MainMenu}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00027}00027\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00029}00029\ \ \ \ \ sf::Text\ m\_titleText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00030}00030\ \ \ \ \ sf::Text\ m\_outlineText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00031}00031\ \ \ \ \ sf::Text\ m\_playText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00032}00032\ \ \ \ \ sf::Text\ m\_editorText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00033}00033\ \ \ \ \ sf::Text\ m\_loadLevelText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00034}00034\ \ \ \ \ sf::Text\ m\_neuralNetworkText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00035}00035\ \ \ \ \ sf::Text\ m\_exitText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00037}00037\ \ \ \ \ sf::RectangleShape\ m\_playButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00038}00038\ \ \ \ \ sf::RectangleShape\ m\_editorButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00039}00039\ \ \ \ \ sf::RectangleShape\ m\_loadLevelButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//sf::RectangleShape\ m\_NeuralNetworkButton;}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00041}00041\ \ \ \ \ sf::RectangleShape\ m\_exitButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00042}00042\ \ \ \ \ sf::Texture\ m\_buttonTexture;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00043}00043\ \ \ \ \ sf::Sprite\ m\_buttonTabSprite;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00044}00044\ \ \ \ \ sf::Texture\ m\_buttonTabTexture;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00045}00045\ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00046}00046\ \ \ \ \ sf::Texture\ m\_backgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00047}00047\ \ \ \ \ sf::Sprite\ m\_backgroundSprite;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00049}00049\ \ \ \ \ sf::Shader\ m\_titleShader;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00050}00050\ \ \ \ \ sf::Shader\ m\_backgroundShader;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00052}00052\ \ \ \ \ sf::Vector2f\ m\_mousePos;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00053}00053\ \ \ \ \ sf::Time\ m\_deltaTime;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_titleAnimationTime\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_titleMaxScale\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_titleMinScale\ =\ 0.8f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_titleAnimationSpeed\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8h_source_l00060}00060\ \};}
+
+\end{DoxyCode}

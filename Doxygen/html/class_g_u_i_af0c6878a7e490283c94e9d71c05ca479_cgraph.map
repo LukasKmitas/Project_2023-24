@@ -1,0 +1,5 @@
+<map id="GUI::update" name="GUI::update">
+<area shape="rect" id="Node000001" title="updates GUi content" alt="" coords="5,5,96,32"/>
+<area shape="rect" id="Node000002" href="$class_side_bar.html#a689859a607ae1f109e8ae619c26ada48" title=" " alt="" coords="144,5,258,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,16,128,16,128,21,96,21"/>
+</map>

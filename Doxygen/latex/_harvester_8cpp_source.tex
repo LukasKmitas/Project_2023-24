@@ -1,0 +1,258 @@
+\doxysection{Harvester.\+cpp}
+\hypertarget{_harvester_8cpp_source}{}\label{_harvester_8cpp_source}\index{AI Behaviors/Harvester.cpp@{AI Behaviors/Harvester.cpp}}
+\mbox{\hyperlink{_harvester_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_harvester_8h}{Harvester.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00003}\mbox{\hyperlink{class_harvester_aa28e963eb2df851da302a3ce7b352b42}{00003}}\ \mbox{\hyperlink{class_harvester_aa28e963eb2df851da302a3ce7b352b42}{Harvester::Harvester}}()}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00005}00005\ \ \ \ \ initHarvester();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 1600;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ =\ 70;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}}\ =\ 70;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00013}\mbox{\hyperlink{class_harvester_ae43faf60d0235e05f9d682d5cd135b67}{00013}}\ \mbox{\hyperlink{class_harvester_ae43faf60d0235e05f9d682d5cd135b67}{Harvester::\string~Harvester}}()}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00017}\mbox{\hyperlink{class_harvester_ac6e106e888fc20099bba4f57f833c216}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_harvester_ac6e106e888fc20099bba4f57f833c216}{Harvester::update}}(sf::Time\ t\_deltaTime,\ std::vector<Unit*>\&\ m\_allyUnits)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a52288c8ac988527f57a309fea64e11be}{Idle}}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0aa66f3ff27f1e90451a5ad72e54550a7c}{MovingToResource}}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ findNearestResourceTile();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isAtTargetPosition()\ \&\&\ m\_foundResource)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a0b798ed3eb23f9239d8b085687d1ad4e}{CollectingResource}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a0b798ed3eb23f9239d8b085687d1ad4e}{CollectingResource}}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ m\_currentResourceLoad\ +=\ m\_collectionRate\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Current\ resource\ collected:\ "{}\ <<\ currentResourceLoad\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_currentResourceLoad\ >=\ m\_maxResourceCapacity)\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ m\_currentResourceLoad\ =\ m\_maxResourceCapacity;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a046501aa2f10d8b501ae0a9b91cad834}{MovingToRefinery}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a046501aa2f10d8b501ae0a9b91cad834}{MovingToRefinery}}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ findNearestRefinery();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isAtRefinery())\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a05468f3d2f6c213909c475046289fcca}{UnloadingResource}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a05468f3d2f6c213909c475046289fcca}{UnloadingResource}}:}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ unloadResources(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_currentResourceLoad\ <=\ 0)\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0aa66f3ff27f1e90451a5ad72e54550a7c}{MovingToResource}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_vehicle_unit_a8509cb11b318348f4953dae4932ea071}{VehicleUnit::update}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00056}00056\ \ \ \ \ movement(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00059}00059\ \textcolor{keywordtype}{void}\ Harvester::movement(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ ==\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}},\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ <\ 5.0f)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ sf::Vector2f(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00074}00074\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{steeringForce}}\ =\ \mbox{\hyperlink{class_unit_a717bca7d26b5632119fe20b9dfa24f75}{steerTowards}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00075}00075\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{acceleration}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{steeringForce}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ +=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{acceleration}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ <\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{decelerationSpeed}}\ =\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ *\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ /\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{decelerationSpeed}}\ =\ std::max(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{decelerationSpeed}},\ 10.0f);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{decelerationSpeed}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ >\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}})\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ *\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ +=\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{setPosition}}(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Gradually\ rotate\ the\ unit\ to\ face\ its\ direction\ of\ travel}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}})\ >\ 0)\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredAngle}}\ =\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentAngle}}\ =\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}}\ =\ \mbox{\hyperlink{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}{m\_rotationSpeed}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredAngle}}\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentAngle}}\ +\ 90;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ <\ -\/180)\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ +=\ 360;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ >\ 180)\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ -\/=\ 360;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}}\ =\ std::min(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}}\ =\ std::max(-\/\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDifference}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentAngle}}\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rotationStep}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00121}00121\ \textcolor{keywordtype}{void}\ Harvester::initHarvester()}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)Harvester.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ harvester\ Texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setTexture(\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setTextureRect(sf::IntRect(0,\ 0,\ 136,\ 215));}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setRotation(180);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setOrigin(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setScale(0.2,\ 0.2);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00138}00138\ \textcolor{keywordtype}{void}\ Harvester::findNearestRefinery()}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00139}00139\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ =\ std::numeric\_limits<float>::max();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00141}00141\ \ \ \ \ \mbox{\hyperlink{class_refinery}{Refinery}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestRefinery}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}\ :\ *m\_allBuildings)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00144}00144\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_refinery}{Refinery}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{refinery}}\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_refinery}{Refinery}}*\textcolor{keyword}{>}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}))\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ this-\/>\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{refinery}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}})\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestRefinery}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{refinery}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestRefinery}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ this-\/>moveToRefinery(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestRefinery}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00165}00165\ \textcolor{keywordtype}{void}\ Harvester::findNearestResourceTile()}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ =\ std::numeric\_limits<float>::max();}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00168}00168\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestResourcePos}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}}\ =\ 0;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}}\ <\ \mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{m\_tiles}}-\/>size();\ ++\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}}\ =\ 0;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}}\ <\ (*m\_tiles)[0].size();\ ++\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_tile}{Tile}}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}\ =\ (*m\_tiles)[\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}}][\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}}];}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\_isEnemy}}\ \&\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_isResource\ \&\&\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_fogStatus\ ==\ \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aec24d78ce33048dc73a2b6b1a0690192}{Tile::FogStatus::Visible}}\ ||\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_fogStatus\ ==\ \mbox{\hyperlink{class_tile_a3bd139a5e2ca6c6f1b040a4eaf739870aae1f26f8b07a89ba8a7a85a4d860274b}{Tile::FogStatus::Explored}}))}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_tileSize,\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_tileSize);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ this-\/>\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestResourcePos}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\_isEnemy}}\ \&\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_isResource)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{x}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_tileSize,\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{y}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tile}}.m\_tileSize);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ this-\/>\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestResourcePos}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{tilePos}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{minDistance}}\ !=\ std::numeric\_limits<float>::max())}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00199}00199\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ gettingResourcePosition(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nearestResourcePos}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00201}00201\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00202}00202\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00208}00208\ \textcolor{keywordtype}{void}\ Harvester::unloadResources(sf::Time\ t\_deltaTime)\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00209}00209\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unloadingRate}}\ =\ 6.0f;\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unloadedResources}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unloadingRate}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00212}00212\ \ \ \ \ m\_currentResourceLoad\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unloadedResources}};\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00213}00213\ \ \ \ \ m\_currentResourceLoad\ =\ std::max(0.0f,\ m\_currentResourceLoad);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{conversionRate}}\ =\ 14;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{addedCurrency}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unloadedResources}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{conversionRate}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\_isEnemy}})}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00218}00218\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_global_a4c064d079037cc1ff7296a6106ada540}{Global::enemyCurrency}}\ +=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{addedCurrency}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00222}00222\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}\ +=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{addedCurrency}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00225}00225\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00231}00231\ \textcolor{keywordtype}{void}\ Harvester::moveToRefinery(\mbox{\hyperlink{class_refinery}{Refinery}}*\ m\_refinery)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00232}00232\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00233}00233\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_refinery)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00234}00234\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ m\_targetRefinery\ =\ m\_refinery;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}{m\_currentState}}\ =\ \mbox{\hyperlink{class_harvester_ad6d0142beaa12c5bfb53c86cd821eee0a046501aa2f10d8b501ae0a9b91cad834}{MovingToRefinery}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ad143c65e05fde4571ec2f10ab87f7539}{moveTo}}(m\_refinery-\/>\mbox{\hyperlink{class_building_a8cc6ca1bae44a7414a8385b2a54ea3df}{getPosition}}());}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00238}00238\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00239}00239\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00245}00245\ \textcolor{keywordtype}{void}\ Harvester::gettingResourcePosition(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_resourcePos)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00246}00246\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_resourcePos}}\ +\ sf::Vector2f(25,25);}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Resource\ tile\ found\ at:\ "{}\ <<\ m\_targetPosition.x\ <<\ "{}\ "{}\ <<\ m\_targetPosition.y\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00249}00249\ \ \ \ \ m\_foundResource\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00256}00256\ \textcolor{keywordtype}{bool}\ Harvester::isAtTargetPosition()\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00257}00257\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}});}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{arrivalThreshold}}\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00260}00260\ \ \ \ \ \textcolor{keywordflow}{return}\ distanceToTarget\ <=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{arrivalThreshold}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00261}00261\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00267}00267\ \textcolor{keywordtype}{bool}\ Harvester::isAtRefinery()\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00268}00268\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_targetRefinery\ !=\ \textcolor{keyword}{nullptr})\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00270}00270\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToRefinery}}\ =\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}(),\ m\_targetRefinery-\/>\mbox{\hyperlink{class_building_a8cc6ca1bae44a7414a8385b2a54ea3df}{getPosition}}());}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{arrivalThreshold}}\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToRefinery}}\ <=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{arrivalThreshold}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00276}00276\ \}}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00282}\mbox{\hyperlink{class_harvester_a7a6a5b0826a1529970c24826f7cb0610}{00282}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_harvester_a7a6a5b0826a1529970c24826f7cb0610}{Harvester::setBuildings}}(\textcolor{keyword}{const}\ std::vector<Building*>\&\ m\_allyUnits)}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00283}00283\ \{}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00284}00284\ \ \ \ \ this-\/>m\_allBuildings\ =\ \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}};}
+\DoxyCodeLine{\Hypertarget{_harvester_8cpp_source_l00285}00285\ \}}
+
+\end{DoxyCode}

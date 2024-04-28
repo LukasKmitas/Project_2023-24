@@ -1,0 +1,23 @@
+<map id="AI Behaviors/SideBar.h" name="AI Behaviors/SideBar.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="332,5,486,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,143,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,35,148,79,147,74,349,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="166,80,238,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="374,35,253,77,251,72,372,30"/>
+<area shape="rect" id="Node000004" href="$_global_8h.html" title=" " alt="" coords="262,80,331,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="391,35,330,74,327,69,388,30"/>
+<area shape="rect" id="Node000008" href="$_building_type_8h.html" title=" " alt="" coords="356,80,462,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="411,33,411,64,406,64,406,33"/>
+<area shape="rect" id="Node000009" href="$_infantry_type_8h.html" title=" " alt="" coords="486,80,588,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="432,30,502,70,500,74,430,35"/>
+<area shape="rect" id="Node000010" href="$_vehicle_type_8h.html" title=" " alt="" coords="612,80,715,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="454,30,605,73,604,78,452,35"/>
+<area shape="rect" id="Node000011" href="$_air_craft_type_8h.html" title=" " alt="" coords="740,80,843,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="476,30,725,77,724,82,475,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="192,155,247,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="285,109,246,146,242,142,281,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="272,155,322,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="299,107,299,139,294,139,294,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="347,155,407,181"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="312,105,354,142,350,146,309,109"/>
+</map>

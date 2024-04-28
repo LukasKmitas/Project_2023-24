@@ -1,0 +1,5 @@
+<map id="SideBar::render" name="SideBar::render">
+<area shape="rect" id="Node000001" title="Renders the sideBar UI in gameplay." alt="" coords="141,5,252,32"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#a76807a6a90963f9971d165eb3c77cc57" title="Renders GUI." alt="" coords="5,5,93,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
+</map>

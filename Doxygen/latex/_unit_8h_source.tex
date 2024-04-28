@@ -1,0 +1,164 @@
+\doxysection{Unit.\+h}
+\hypertarget{_unit_8h_source}{}\label{_unit_8h_source}\index{AI Behaviors/Unit.h@{AI Behaviors/Unit.h}}
+\mbox{\hyperlink{_unit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cmath>}\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bullet_8h}{Bullet.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_missile_8h}{Missile.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_particle_system_8h}{ParticleSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sound_manager_8h}{SoundManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00013}\mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{00013}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{UnitTypeClass}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da2d4d10b89e4acc9edad2054cff3d9703}{Infantry}},}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867dad6af9c1eaff2a89ebd3f8d0c542be12b}{Vehicle}},}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da71c546fa61f3964d72bdf25223b78669}{Air}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00018}00018\ \};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00020}\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{00020}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a31c1d9a12034eafdf9210253785dc8f2}{Rifleman}},\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a7410e2846a61f309b4a1e0a57a6a1d48}{Harvester}},\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a01e3a933906494de42d7a1d6a09bbb3a}{Buggy}},\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a47673932bdc6d472a40ba3d390332b5b}{TankAurora}},\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a0c16f53185256508e19f47f6c3a0b165}{Hammerhead}},\ \mbox{\hyperlink{class_firehawk}{Firehawk}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00025}00025\ \};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00027}\mbox{\hyperlink{class_unit}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unit}{Unit}}}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_unit_a8e46f663a95736c8002d85ab271a7581}{Unit}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_unit_a6353fc4c0a329997ad4abcf0dcb4eb27}{\string~Unit}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a1170c0150d547432074d11e0a5896494}{update}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{allyUnits}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00037}\mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{00037}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{getUnitType}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{setPosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_afc42897a756596a69586c1c245e18d63}{setHealth}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_setHealth}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_ad143c65e05fde4571ec2f10ab87f7539}{moveTo}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a197aa5ef2e646616b3b5d7ce685ef0f5}{setSelected}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_selected}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a3912a4c04f4c43bd1e10567ff4bafec8}{setTargetPosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a8fece643656faf7497caf90462ec3977}{takeDamage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_damageAmount}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a1b1d7fd6c2aad49af42dd68b47b6cf12}{addHealth}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_healthAmount}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a6746ed3c50b3eed52375876dcca5b533}{applySlowEffect}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_speedFactor}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_duration}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_postSlowWait}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a761155ef13610b48b7964cb5b89d99f6}{setEnemyUnits}}(std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a173c7cc96f39a6251fc399da66abac8d}{setEnemyBuildings}}(std::vector<Building*>\&\ \mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a613905487b9c2ec26620fcc820da81e9}{setTiles}}(\textcolor{keyword}{const}\ std::vector<std::vector<Tile>>\&\ \mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{m\_tiles}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{const}\ sf::Sprite\&\ \mbox{\hyperlink{class_unit_aebf27e3e885f6f6638339c7f3cd25c98}{getSprite}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00054}00054\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00055}00055\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a654772b672c5c5a24a8cd17e6dacccda}{getTargetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00056}00056\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\textcolor{keyword}{const}\ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_source}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00057}00057\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a717bca7d26b5632119fe20b9dfa24f75}{steerTowards}}(sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_target}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00058}00058\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acabd56084730e0bb32811ab6b7be625a}{rotateVector}}(sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_vector}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_angleDegrees}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00059}00059\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a2ee0326af0abc525deadf772e485f657}{lerp}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_start}},\ \textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_end}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_time}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00060}00060\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{findAvoidanceDirection}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_currentPosition}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_checkAheadDistance}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00062}\mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{00062}}\ \ \ \ \ std::vector<Bullet>\ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00063}\mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{00063}}\ \ \ \ \ std::vector<Missile>\ \mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{m\_missiles}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_vector}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_aeb9649177dd580377a03cbf4fa7f9056}{getViewRadius}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{a}},\ \textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{b}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{v}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a5f2ed821fbdf910a3c51112ee1be880f}{getHealth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a1eb792473a50b709972cf726a693186b}{toDegrees}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_afd48ec71b5e55bb537244ff2c38dc570}{angleBetweenVectors}}(sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{vec1}},\ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{vec2}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a0e1e874abeb77fbf55c154e0fc73decd}{getDamage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{checkAffordability}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{isActive}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00078}\mbox{\hyperlink{class_unit_a53acc02abba2e10408f594a773b0c484}{00078}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_a53acc02abba2e10408f594a773b0c484}{m\_unitIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00080}\mbox{\hyperlink{class_unit_a9a50a2b9299a27c15079924985e2938e}{00080}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a9a50a2b9299a27c15079924985e2938e}{isSelected}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00081}\mbox{\hyperlink{class_unit_a379a6747751f51625a437e939ffe8ea6}{00081}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a379a6747751f51625a437e939ffe8ea6}{m\_active}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00082}\mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{00082}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\_isEnemy}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00084}00084\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00086}\mbox{\hyperlink{class_unit_a23ee5914f77c04556070cf70471302ab}{00086}}\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{UnitTypeClass}}\ \mbox{\hyperlink{class_unit_a23ee5914f77c04556070cf70471302ab}{m\_unitTypeClass}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00087}\mbox{\hyperlink{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}{00087}}\ \ \ \ \ \mbox{\hyperlink{class_particle_system}{ParticleSystem}}\ \mbox{\hyperlink{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}{m\_particleSystem}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00089}\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{00089}}\ \ \ \ \ std::vector<Unit*>*\ \mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00090}\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{00090}}\ \ \ \ \ std::vector<Building*>*\ \mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00091}\mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{00091}}\ \ \ \ \ \mbox{\hyperlink{class_unit}{Unit}}*\ \mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\_closestEnemy}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00092}\mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{00092}}\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00093}\mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{00093}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<Tile>>*\ \mbox{\hyperlink{class_unit_aadf659bbcaee9704fbac241e0f6ecdce}{m\_tiles}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00095}\mbox{\hyperlink{class_unit_a6fa23c268f89ca4d1c2efc7486fe01d7}{00095}}\ \ \ \ \ std::vector<sf::Vector2f>\ \mbox{\hyperlink{class_unit_a6fa23c268f89ca4d1c2efc7486fe01d7}{m\_debugRays}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a6b409acedf32f53bb1c080cf29c8e999}{initView}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_aa9c0487be6bedf93c5f79e068f215be6}{initHealthBar}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a64e556f3bd178fcbfece63883b990153}{initShader}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a5a0d56542c689f13276b9db77c1b36d8}{avoidCollisionsWithUnits}}(std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_ae5032b9bfa0290392ae1a33c2525a18f}{avoidCollisionsWithWalls}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a9262163e015dca7a29a114798b7ede32}{orientSpriteToMovement}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_a9404b2fd942b1ada3796dd00ab7855c1}{squadEntityRemoval}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unit_af7a77a1a93ec9b047a84435989890e86}{squadEntityRegain}}();}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00108}\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{00108}}\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00109}\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{00109}}\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00111}\mbox{\hyperlink{class_unit_af7ab855e38c0b1759499047f780f3a21}{00111}}\ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{class_unit_af7ab855e38c0b1759499047f780f3a21}{m\_healthBarBackground}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00112}\mbox{\hyperlink{class_unit_a2c56c8a42fc19dbe114360839fb9aff6}{00112}}\ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{class_unit_a2c56c8a42fc19dbe114360839fb9aff6}{m\_healthBarForeground}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00114}\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{00114}}\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00115}\mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{00115}}\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_unit_a3ae23f50fe7abcd86ef677f99158ae02}{m\_weaponSprite}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00117}\mbox{\hyperlink{class_unit_a080c37ab2ff3feb57021b3c9fd601f19}{00117}}\ \ \ \ \ sf::CircleShape\ \mbox{\hyperlink{class_unit_a080c37ab2ff3feb57021b3c9fd601f19}{m\_viewCircleShape}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00118}\mbox{\hyperlink{class_unit_a89d6d2a6b24335717a99eaff3926dc9b}{00118}}\ \ \ \ \ sf::Shader\ \mbox{\hyperlink{class_unit_a89d6d2a6b24335717a99eaff3926dc9b}{m\_glowShader}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00120}\mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{00120}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00121}\mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{00121}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00122}\mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{00122}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a1a40b804d217baa0a4327f1e7fe3dfa1}{m\_maxHealth}}\ =\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00123}\mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{00123}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00124}\mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{00124}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{m\_damage}}\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00126}\mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{00126}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ =\ 100.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00127}\mbox{\hyperlink{class_unit_a42a4113cb820dc60f204e0a391506212}{00127}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a42a4113cb820dc60f204e0a391506212}{m\_stoppingDistance}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00128}\mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{00128}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a72403e6fe66f794ba89a6e17a570cdeb}{m\_slowingRadius}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00129}\mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{00129}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a3f8c10d5fc8253594119f4b51f298e9d}{m\_maxForce}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00130}\mbox{\hyperlink{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}{00130}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a04567f882831a80d6f2ee2e6bc3e7d95}{m\_rotationSpeed}}\ =\ 250.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00131}\mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{00131}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a477a61ed668a849b71539ae279eb2228}{m\_bulletSpeed}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00132}\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{00132}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00133}\mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{00133}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_aaae758956c71f692c08d0c4d3cc66c36}{m\_closestBuildingDistance}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00134}\mbox{\hyperlink{class_unit_a9e915880914d55051f833c2754127825}{00134}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a9e915880914d55051f833c2754127825}{m\_arrivalTolerance}}\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00136}\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{00136}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ =\ 3.14159265358979323846f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00138}\mbox{\hyperlink{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}{00138}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}{isOrbiting}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00139}\mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{00139}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a61e8ee3346479fcec34afde9d8b15836}{isReloading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00141}\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{00141}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00142}\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{00142}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00143}\mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{00143}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a2f2fc7edeac5d725d3eae378afa3aa87}{m\_velocity}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00144}\mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{00144}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00145}\mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{00145}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_a563b1b881bb65d88996bf07f96a9c5d5}{m\_acceleration}}\ =\ sf::Vector2f(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00147}\mbox{\hyperlink{class_unit_a382eb6e89f1d9a35334e04f93631faea}{00147}}\ \ \ \ \ sf::Clock\ \mbox{\hyperlink{class_unit_a382eb6e89f1d9a35334e04f93631faea}{m\_slowEffectClock}};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00148}\mbox{\hyperlink{class_unit_abf1f00c046d7db435cba0e688c6054c8}{00148}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_abf1f00c046d7db435cba0e688c6054c8}{m\_isSlowed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00149}\mbox{\hyperlink{class_unit_a87f44e8e6c444a20eefdb7f944fefc64}{00149}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a87f44e8e6c444a20eefdb7f944fefc64}{m\_isGraduallySlowed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00150}\mbox{\hyperlink{class_unit_ae140814d7fde9080eeba6314d53ace3a}{00150}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_ae140814d7fde9080eeba6314d53ace3a}{m\_inPostSlowWait}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00151}\mbox{\hyperlink{class_unit_a120b13694ee9c6f66d3f9bf99e61d908}{00151}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a120b13694ee9c6f66d3f9bf99e61d908}{m\_slowDownStartTime}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00152}\mbox{\hyperlink{class_unit_a3d8391ca46209e113f4440d3d4886b20}{00152}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a3d8391ca46209e113f4440d3d4886b20}{m\_minimumSpeedFactor}}\ =\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00153}\mbox{\hyperlink{class_unit_aefeea3df7327dd0a74b4f4fa8dfde01e}{00153}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_aefeea3df7327dd0a74b4f4fa8dfde01e}{m\_slowEffectDuration}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00154}\mbox{\hyperlink{class_unit_a901188dc69a856e0319c95d0f6029c8b}{00154}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a901188dc69a856e0319c95d0f6029c8b}{m\_originalSpeed}}\ =\ 100.0f;\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00155}\mbox{\hyperlink{class_unit_a6a9d706366d45383ab63194432eb9ebe}{00155}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a6a9d706366d45383ab63194432eb9ebe}{m\_postSlowWaitDuration}}\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00157}00157\ \};}
+\DoxyCodeLine{\Hypertarget{_unit_8h_source_l00158}00158\ }
+
+\end{DoxyCode}

@@ -1,0 +1,5 @@
+<map id="Unit::squadEntityRegain" name="Unit::squadEntityRegain">
+<area shape="rect" id="Node000001" title=" " alt="" coords="164,5,325,32"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a1b1d7fd6c2aad49af42dd68b47b6cf12" title="Adds health to the unit." alt="" coords="5,5,116,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,21,116,21,116,16,148,16"/>
+</map>

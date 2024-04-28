@@ -1,0 +1,10 @@
+<map id="TankAurora::render" name="TankAurora::render">
+<area shape="rect" id="Node000001" title="Renders the units and anything related to it." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$class_particle_system.html#a12f342988eeb7d9ac023e279b8b9dd8c" title="Renders the particles into existence." alt="" coords="500,5,655,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,485,16,485,21,137,21"/>
+<area shape="rect" id="Node000003" href="$class_vehicle_unit.html#ae308c42a1dde64acaa2a7d18d8333c90" title="Renders the units and anything related to it." alt="" coords="185,31,316,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,25,170,30,169,35,137,31"/>
+<area shape="rect" id="Node000004" href="$class_unit.html#abd8cdcaade9bfafedcf23aadd4f5539a" title="Renders the units and anything related to it." alt="" coords="364,31,452,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="317,41,348,41,348,47,317,47"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="452,35,485,30,486,35,453,40"/>
+</map>

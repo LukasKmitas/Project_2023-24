@@ -1,0 +1,5 @@
+<map id="InfantryUnit::render" name="InfantryUnit::render">
+<area shape="rect" id="Node000001" title="Renders the units and anything related to it." alt="" coords="206,5,336,32"/>
+<area shape="rect" id="Node000002" href="$class_rifleman_squad.html#a68f0295ba704a7db0cb475369e48c42c" title="Renders the units and anything related to it." alt="" coords="5,5,158,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,21,158,21,158,16,190,16"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Unit::magnitude" name="Unit::magnitude">
+<area shape="rect" id="Node000001" title=" " alt="" coords="440,56,552,83"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a9262163e015dca7a29a114798b7ede32" title="it just orientates the sprite a bit" alt="" coords="201,5,392,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="425,54,351,35,353,30,426,49"/>
+<area shape="rect" id="Node000004" href="$class_unit.html#a717bca7d26b5632119fe20b9dfa24f75" title="Makes it slowly steer towards that direction." alt="" coords="232,56,361,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,72,361,72,361,67,424,67"/>
+<area shape="rect" id="Node000005" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="229,107,364,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="426,90,353,109,351,103,425,85"/>
+<area shape="rect" id="Node000003" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="5,5,153,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+</map>

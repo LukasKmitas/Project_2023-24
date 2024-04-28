@@ -1,0 +1,5 @@
+<map id="VehicleUnit::render" name="VehicleUnit::render">
+<area shape="rect" id="Node000001" title="Renders the units and anything related to it." alt="" coords="185,5,316,32"/>
+<area shape="rect" id="Node000002" href="$class_tank_aurora.html#ae64a175ca2527c56289658bc29ae3c17" title="Renders the units and anything related to it." alt="" coords="5,5,137,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,21,137,21,137,16,169,16"/>
+</map>

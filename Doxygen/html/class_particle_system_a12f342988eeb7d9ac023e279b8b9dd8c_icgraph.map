@@ -1,0 +1,30 @@
+<map id="ParticleSystem::render" name="ParticleSystem::render">
+<area shape="rect" id="Node000001" title="Renders the particles into existence." alt="" coords="555,309,710,336"/>
+<area shape="rect" id="Node000002" href="$class_building.html#a17f70ec3c6e96f935fa63fa4108901a2" title=" " alt="" coords="396,132,507,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="605,300,465,161,469,157,608,296"/>
+<area shape="rect" id="Node000008" href="$class_unit.html#abd8cdcaade9bfafedcf23aadd4f5539a" title="Renders the units and anything related to it." alt="" coords="408,309,496,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="540,325,496,325,496,320,540,320"/>
+<area shape="rect" id="Node000014" href="$class_tank_aurora.html#ae64a175ca2527c56289658bc29ae3c17" title="Renders the units and anything related to it." alt="" coords="16,385,147,412"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="579,344,473,376,411,390,348,401,242,408,147,406,147,401,242,403,348,396,410,385,472,370,577,339"/>
+<area shape="rect" id="Node000003" href="$class_air_craft.html#aaa852c2bf3f7fd53b7795989ff89501e" title=" " alt="" coords="223,5,331,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="429,122,393,83,347,46,324,35,327,30,349,42,396,79,432,118"/>
+<area shape="rect" id="Node000004" href="$class_barracks.html#ab3f973b61dfb08a47667762d4e8d7c8b" title=" " alt="" coords="218,56,336,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="410,127,347,97,318,86,320,81,349,92,412,122"/>
+<area shape="rect" id="Node000005" href="$class_headquarters.html#a17cca0c747ab5c0ec19a773a036c1ae7" title=" " alt="" coords="206,107,348,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="380,138,348,133,349,128,381,132"/>
+<area shape="rect" id="Node000006" href="$class_refinery.html#acd7c64516640902874aef19bfec85b9d" title=" " alt="" coords="221,157,333,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="381,158,334,165,333,160,380,153"/>
+<area shape="rect" id="Node000007" href="$class_war_factory.html#ad09683b78d19ae3f5b52db16bc659c80" title=" " alt="" coords="210,208,344,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="412,169,349,198,320,210,318,205,347,194,410,164"/>
+<area shape="rect" id="Node000009" href="$class_aircraft_unit.html#a021587d41ae653ddc0b0effafd353007" title="Renders the units and anything related to it." alt="" coords="212,259,342,285"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="392,308,324,288,326,283,393,303"/>
+<area shape="rect" id="Node000011" href="$class_infantry_unit.html#aca40a05689745fe6a675009dc9c27f22" title="Renders the units and anything related to it." alt="" coords="212,309,342,336"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="392,325,342,325,342,320,392,320"/>
+<area shape="rect" id="Node000013" href="$class_vehicle_unit.html#ae308c42a1dde64acaa2a7d18d8333c90" title="Renders the units and anything related to it." alt="" coords="211,360,343,387"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="393,342,326,362,324,357,392,337"/>
+<area shape="rect" id="Node000010" href="$class_hammer_head.html#aa38a617a5666307ff1c02f52bf6fb8d9" title="Renders the units and anything related to it." alt="" coords="9,259,154,285"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="197,275,154,275,154,269,197,269"/>
+<area shape="rect" id="Node000012" href="$class_rifleman_squad.html#a68f0295ba704a7db0cb475369e48c42c" title="Renders the units and anything related to it." alt="" coords="5,309,158,336"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="196,325,158,325,158,320,196,320"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="196,386,148,393,147,387,195,381"/>
+</map>

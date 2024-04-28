@@ -1,0 +1,5 @@
+<map id="SoundManager::playNextTrack" name="SoundManager::playNextTrack">
+<area shape="rect" id="Node000001" title="plays the next track for music if there is any" alt="" coords="5,5,205,32"/>
+<area shape="rect" id="Node000002" href="$class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="253,5,428,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,16,237,16,237,21,205,21"/>
+</map>

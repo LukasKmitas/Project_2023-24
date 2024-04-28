@@ -1,0 +1,11 @@
+<map id="VehicleUnit" name="VehicleUnit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="496,2107,963,2240"/>
+<area shape="rect" id="Node000003" href="$class_buggy.html" title=" " alt="" coords="5,2299,472,2432"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="547,2248,409,2301,407,2296,545,2243"/>
+<area shape="rect" id="Node000004" href="$class_harvester.html" title=" " alt="" coords="496,2288,963,2443"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="732,2255,732,2288,727,2288,727,2255"/>
+<area shape="rect" id="Node000005" href="$class_tank_aurora.html" title=" " alt="" coords="987,2288,1447,2443"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="913,2243,1023,2286,1021,2291,911,2248"/>
+<area shape="rect" id="Node000002" href="$class_unit.html" title=" " alt="" coords="415,5,1043,2059"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="732,2074,732,2107,727,2107,727,2074"/>
+</map>

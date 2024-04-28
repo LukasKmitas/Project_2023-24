@@ -1,0 +1,406 @@
+\doxysection{Sound\+Manager Class Reference}
+\hypertarget{class_sound_manager}{}\label{class_sound_manager}\index{SoundManager@{SoundManager}}
+
+
+{\ttfamily \#include $<$Sound\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Sound\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sound_manager_a8dd42da84f176f55f385f923c1385987}{load\+Sound}} (const std\+::string \&name, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{play\+Sound}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em plays the sound \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a424f8bbce87dfe6bb72a4b96e8f4eb2f}{stop\+Sound}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em to stop the sound playing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_ace6d5e0463f4c2cf53705c376cc89b4f}{set\+Sound\+Volume}} (const std\+::string \&name, float volume)
+\begin{DoxyCompactList}\small\item\em sets the volume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20}{set\+Global\+Sound\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em stes all sounds volume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e}{load\+Music}} (const std\+::string \&name, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a680ef232be763e1f839892e18937d74b}{play\+Music}} (const std\+::string \&name, bool loop)
+\begin{DoxyCompactList}\small\item\em plays music \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_abc224f0e248785f6dcfc09e115996329}{stop\+Music}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em stops music \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_aca506cc6fbd72f435dbf87d6682b554d}{set\+Music\+Volume}} (const std\+::string \&name, float volume)
+\begin{DoxyCompactList}\small\item\em sets music volume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a72e2018710caaa14b4b3b7d821121655}{set\+Global\+Music\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em sets all music volume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5}{add\+To\+Playlist}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em adds music to playlist \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3}{play\+Next\+Track}} ()
+\begin{DoxyCompactList}\small\item\em plays the next track for music if there is any \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a237964589201c404a015660fe601eff5}{update\+Music\+Track}} ()
+\begin{DoxyCompactList}\small\item\em updates the track when the current one stops playing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_manager_a23aa7cfec4a6801ba5da92cbfc1bfc39}{stop\+All\+Music}} ()
+\begin{DoxyCompactList}\small\item\em stops the music \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sound_manager_aac4b48cfc4d394c547f5efec7d451165}{Sound\+Manager}} (const \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \& \mbox{\hyperlink{class_sound_manager_a5792dd09a6293846f738e7f9418d9085}{operator=}} (const \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \& \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00006}{6}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sound_manager_aac4b48cfc4d394c547f5efec7d451165}\label{class_sound_manager_aac4b48cfc4d394c547f5efec7d451165} 
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{SoundManager()}{SoundManager()}}
+{\footnotesize\ttfamily Sound\+Manager\+::\+Sound\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5}\label{class_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5} 
+\index{SoundManager@{SoundManager}!addToPlaylist@{addToPlaylist}}
+\index{addToPlaylist@{addToPlaylist}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{addToPlaylist()}{addToPlaylist()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::add\+To\+Playlist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+adds music to playlist 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}\label{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae} 
+\index{SoundManager@{SoundManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \& Sound\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00010}{10}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e}\label{class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e} 
+\index{SoundManager@{SoundManager}!loadMusic@{loadMusic}}
+\index{loadMusic@{loadMusic}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{loadMusic()}{loadMusic()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::load\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads music. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sound_manager_a8dd42da84f176f55f385f923c1385987}\label{class_sound_manager_a8dd42da84f176f55f385f923c1385987} 
+\index{SoundManager@{SoundManager}!loadSound@{loadSound}}
+\index{loadSound@{loadSound}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{loadSound()}{loadSound()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::load\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads the sound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a5792dd09a6293846f738e7f9418d9085}\label{class_sound_manager_a5792dd09a6293846f738e7f9418d9085} 
+\index{SoundManager@{SoundManager}!operator=@{operator=}}
+\index{operator=@{operator=}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \& Sound\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_sound_manager_a680ef232be763e1f839892e18937d74b}\label{class_sound_manager_a680ef232be763e1f839892e18937d74b} 
+\index{SoundManager@{SoundManager}!playMusic@{playMusic}}
+\index{playMusic@{playMusic}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{playMusic()}{playMusic()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::play\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+
+plays music 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em loop} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3}\label{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3} 
+\index{SoundManager@{SoundManager}!playNextTrack@{playNextTrack}}
+\index{playNextTrack@{playNextTrack}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{playNextTrack()}{playNextTrack()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::play\+Next\+Track (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+plays the next track for music if there is any 
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}\label{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351} 
+\index{SoundManager@{SoundManager}!playSound@{playSound}}
+\index{playSound@{playSound}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{playSound()}{playSound()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::play\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+plays the sound 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a72e2018710caaa14b4b3b7d821121655}\label{class_sound_manager_a72e2018710caaa14b4b3b7d821121655} 
+\index{SoundManager@{SoundManager}!setGlobalMusicVolume@{setGlobalMusicVolume}}
+\index{setGlobalMusicVolume@{setGlobalMusicVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{setGlobalMusicVolume()}{setGlobalMusicVolume()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::set\+Global\+Music\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+sets all music volume 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20}\label{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20} 
+\index{SoundManager@{SoundManager}!setGlobalSoundVolume@{setGlobalSoundVolume}}
+\index{setGlobalSoundVolume@{setGlobalSoundVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{setGlobalSoundVolume()}{setGlobalSoundVolume()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::set\+Global\+Sound\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+stes all sounds volume 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_aca506cc6fbd72f435dbf87d6682b554d}\label{class_sound_manager_aca506cc6fbd72f435dbf87d6682b554d} 
+\index{SoundManager@{SoundManager}!setMusicVolume@{setMusicVolume}}
+\index{setMusicVolume@{setMusicVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{setMusicVolume()}{setMusicVolume()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::set\+Music\+Volume (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+sets music volume 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em volume} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_ace6d5e0463f4c2cf53705c376cc89b4f}\label{class_sound_manager_ace6d5e0463f4c2cf53705c376cc89b4f} 
+\index{SoundManager@{SoundManager}!setSoundVolume@{setSoundVolume}}
+\index{setSoundVolume@{setSoundVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{setSoundVolume()}{setSoundVolume()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::set\+Sound\+Volume (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+sets the volume 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em volume} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a23aa7cfec4a6801ba5da92cbfc1bfc39}\label{class_sound_manager_a23aa7cfec4a6801ba5da92cbfc1bfc39} 
+\index{SoundManager@{SoundManager}!stopAllMusic@{stopAllMusic}}
+\index{stopAllMusic@{stopAllMusic}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{stopAllMusic()}{stopAllMusic()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::stop\+All\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stops the music 
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_abc224f0e248785f6dcfc09e115996329}\label{class_sound_manager_abc224f0e248785f6dcfc09e115996329} 
+\index{SoundManager@{SoundManager}!stopMusic@{stopMusic}}
+\index{stopMusic@{stopMusic}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{stopMusic()}{stopMusic()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::stop\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+stops music 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sound_manager_a424f8bbce87dfe6bb72a4b96e8f4eb2f}\label{class_sound_manager_a424f8bbce87dfe6bb72a4b96e8f4eb2f} 
+\index{SoundManager@{SoundManager}!stopSound@{stopSound}}
+\index{stopSound@{stopSound}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{stopSound()}{stopSound()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::stop\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+to stop the sound playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_a237964589201c404a015660fe601eff5}\label{class_sound_manager_a237964589201c404a015660fe601eff5} 
+\index{SoundManager@{SoundManager}!updateMusicTrack@{updateMusicTrack}}
+\index{updateMusicTrack@{updateMusicTrack}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{updateMusicTrack()}{updateMusicTrack()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::update\+Music\+Track (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+updates the track when the current one stops playing 
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a237964589201c404a015660fe601eff5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_sound_manager_8h}{Sound\+Manager.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_sound_manager_8cpp}{Sound\+Manager.\+cpp}}\end{DoxyCompactItemize}

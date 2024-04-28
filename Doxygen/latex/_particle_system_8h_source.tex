@@ -1,0 +1,34 @@
+\doxysection{Particle\+System.\+h}
+\hypertarget{_particle_system_8h_source}{}\label{_particle_system_8h_source}\index{AI Behaviors/ParticleSystem.h@{AI Behaviors/ParticleSystem.h}}
+\mbox{\hyperlink{_particle_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00004}\mbox{\hyperlink{struct_particle}{00004}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_particle}{Particle}}\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00006}\mbox{\hyperlink{struct_particle_a4581cc1d476f359066a4fd67c42260e2}{00006}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{struct_particle_a4581cc1d476f359066a4fd67c42260e2}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00007}\mbox{\hyperlink{struct_particle_ad6674fcfaa43b503906348bec1fd6201}{00007}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{struct_particle_ad6674fcfaa43b503906348bec1fd6201}{m\_velocity}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00008}\mbox{\hyperlink{struct_particle_ae46bfd81716ed19e54bc295d4d56d3dd}{00008}}\ \ \ \ \ sf::Color\ \mbox{\hyperlink{struct_particle_ae46bfd81716ed19e54bc295d4d56d3dd}{m\_color}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00009}\mbox{\hyperlink{struct_particle_a7df4214bf3c1123fc66fc002ea699ccc}{00009}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_particle_a7df4214bf3c1123fc66fc002ea699ccc}{m\_lifetime}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00010}\mbox{\hyperlink{struct_particle_acf841a001a93c2c613b13402e3947c16}{00010}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_particle_acf841a001a93c2c613b13402e3947c16}{m\_size}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00011}\mbox{\hyperlink{struct_particle_a989a7ac8bd950af1c764d61ab5d8c056}{00011}}\ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture*\ \mbox{\hyperlink{struct_particle_a989a7ac8bd950af1c764d61ab5d8c056}{m\_texture}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00013}\mbox{\hyperlink{struct_particle_a1b427adde0c53203c62f99a220889ede}{00013}}\ \ \ \ \ \mbox{\hyperlink{struct_particle_a1b427adde0c53203c62f99a220889ede}{Particle}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ position,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ velocity,\ \textcolor{keyword}{const}\ sf::Color\&\ color,\ \textcolor{keywordtype}{float}\ lifetime,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keyword}{const}\ sf::Texture*\ texture\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_particle_a4581cc1d476f359066a4fd67c42260e2}{m\_position}}(position),\ \mbox{\hyperlink{struct_particle_ad6674fcfaa43b503906348bec1fd6201}{m\_velocity}}(velocity),\ \mbox{\hyperlink{struct_particle_ae46bfd81716ed19e54bc295d4d56d3dd}{m\_color}}(color),\ \mbox{\hyperlink{struct_particle_a7df4214bf3c1123fc66fc002ea699ccc}{m\_lifetime}}(lifetime),\ \mbox{\hyperlink{struct_particle_acf841a001a93c2c613b13402e3947c16}{m\_size}}(size),\ \mbox{\hyperlink{struct_particle_a989a7ac8bd950af1c764d61ab5d8c056}{m\_texture}}(texture)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00017}\mbox{\hyperlink{class_particle_system}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_particle_system}{ParticleSystem}}}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00020}\mbox{\hyperlink{class_particle_system_a02b4ca8842616469e280ae8da56d3876}{00020}}\ \ \ \ \ std::vector<Particle>\ \mbox{\hyperlink{class_particle_system_a02b4ca8842616469e280ae8da56d3876}{m\_particles}};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_ad395c1ed8a4e35546ab040dc75955732}{update}}(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a5a3f496f17c45823c1afb465f903c531}{addParticle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_particle}{Particle}}\&\ m\_particle);}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{_particle_system_8h_source_l00028}00028\ }
+
+\end{DoxyCode}

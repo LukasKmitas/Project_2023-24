@@ -1,0 +1,5 @@
+<map id="Game::run" name="Game::run">
+<area shape="rect" id="Node000001" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

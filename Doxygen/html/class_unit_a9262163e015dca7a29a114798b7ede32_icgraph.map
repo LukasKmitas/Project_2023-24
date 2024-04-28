@@ -1,0 +1,5 @@
+<map id="Unit::orientSpriteToMovement" name="Unit::orientSpriteToMovement">
+<area shape="rect" id="Node000001" title="it just orientates the sprite a bit" alt="" coords="201,5,392,32"/>
+<area shape="rect" id="Node000002" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="5,5,153,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+</map>

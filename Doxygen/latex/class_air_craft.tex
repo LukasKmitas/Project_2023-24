@@ -1,0 +1,195 @@
+\doxysection{Air\+Craft Class Reference}
+\hypertarget{class_air_craft}{}\label{class_air_craft}\index{AirCraft@{AirCraft}}
+
+
+{\ttfamily \#include $<$Air\+Craft.\+h$>$}
+
+
+
+Inheritance diagram for Air\+Craft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_air_craft__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Air\+Craft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_air_craft__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_air_craft_a7ffbd6f4da5c11951b751cc2767e6e0f}{Air\+Craft}} ()
+\item 
+\mbox{\hyperlink{class_air_craft_a674d4edcf77e4b9a8a09006184b114f0}{\texorpdfstring{$\sim$}{\string~}\+Air\+Craft}} ()
+\item 
+void \mbox{\hyperlink{class_air_craft_a6f035076036ee054bbe29b8d8cb5028e}{update}} (sf\+::\+Time t\+\_\+delta\+Time) override
+\item 
+void \mbox{\hyperlink{class_air_craft_aaa852c2bf3f7fd53b7795989ff89501e}{render}} (sf\+::\+Render\+Window \&m\+\_\+window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_aaf8696ced1bdba012bf486de4dbee78f}{Building}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \mbox{\hyperlink{class_building_afe7931d0c4026686742e697579ffff52}{m\+\_\+type}})
+\item 
+virtual \mbox{\hyperlink{class_building_ab675c6a382e110b84031956cda708439}{\texorpdfstring{$\sim$}{\string~}\+Building}} ()
+\item 
+void \mbox{\hyperlink{class_building_a4b141d3aedc50724ce47c0f9879e7ea3}{take\+Damage}} (float m\+\_\+damage\+Amount)
+\begin{DoxyCompactList}\small\item\em building to take damage \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_ae4822e73026457c2831c0cb0b5a25434}{set\+Position}} (const sf\+::\+Vector2f \&\mbox{\hyperlink{class_building_ab5d638f3c69cd55a0eea268992c5405c}{m\+\_\+position}})
+\begin{DoxyCompactList}\small\item\em sets position of the building \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_building_a8cc6ca1bae44a7414a8385b2a54ea3df}{get\+Position}} ()
+\item 
+int \mbox{\hyperlink{class_building_a1f7ac7c50ddf4e02fe8f36950f28d2c5}{get\+Cost}} () const
+\item 
+float \mbox{\hyperlink{class_building_a69f26425437a4081e9fc8296668211fd}{get\+Health}} () const
+\item 
+\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \mbox{\hyperlink{class_building_a0d462d5914f684de91e641a7fb118b81}{get\+Type}} () const
+\item 
+bool \mbox{\hyperlink{class_building_a1d7272aa95009f1e624986f70b2d694e}{check\+Affordability}} ()
+\begin{DoxyCompactList}\small\item\em checks if it can be bought \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_a3bf6b4a376aae64bbf1c310ed4ba345f}{set\+Placement\+Radius\+Size}} (float m\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em sets the placement radius \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_building_ab91941f35d9a907fd1a065af75af0a18}{set\+Health}} (float new\+Health)
+\begin{DoxyCompactList}\small\item\em Sets the health for laoding. \end{DoxyCompactList}\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_building_af8054c0e09c73c99e820073a203623be}{get\+Building\+Sprite}} () const
+\item 
+const sf\+::\+Texture \& \mbox{\hyperlink{class_building_a1ac080b316367855b1631003ed64b747}{get\+Building\+Texture}} () const
+\item 
+const sf\+::\+Circle\+Shape \& \mbox{\hyperlink{class_building_a74dc98b4b4f7c446bebaa92ad7a5df09}{get\+Placement\+Radius}} () const
+\item 
+void \mbox{\hyperlink{class_building_a06a21d1eb6a49a39f0fe7146fbb70a7f}{update\+Health\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Updates the health bar when its set for loading the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_building_a488363634e023f16ea32ed6a605c98df}{init\+Smoke\+Effect}} ()
+\item 
+void \mbox{\hyperlink{class_building_ab9d7d236e9684d09ea362dee94c36604}{spawn\+Smoke\+Effect}} ()
+\begin{DoxyCompactList}\small\item\em Spawns smoke when health on the building is low. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_particle_system}{Particle\+System}} \mbox{\hyperlink{class_building_ad9eeb5718abeeaa28770be8776a44a24}{m\+\_\+smoke\+Effect}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_building_a961bd0c8818fda9c75ca15b8a72b4830}{m\+\_\+smoke\+Texture}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_building_ab5d638f3c69cd55a0eea268992c5405c}{m\+\_\+position}}
+\item 
+std\+::string \mbox{\hyperlink{class_building_a72af0fa7d3e13fdf0bbc7b77ef6389d0}{m\+\_\+name}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_building_aa012d0c7d9144b585fdf18b3fb8bb113}{m\+\_\+building\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_building_a240d51be302ce23b280ab93baa9ea7c6}{m\+\_\+building\+Sprite}}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_building_ad0cfdcdca7abafa7b7053fc99110eb0f}{m\+\_\+placement\+Radius}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_building_a07961940f980cf0234834433442cdb6f}{m\+\_\+health\+Bar}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_building_afb77759a7f950afef78ff9d80d597db9}{m\+\_\+health\+Bar\+Background}}
+\item 
+int \mbox{\hyperlink{class_building_ae2478b7433cf9186cd5b77e94f7a2748}{m\+\_\+health}} = 100
+\item 
+int \mbox{\hyperlink{class_building_aea94f2eb732f852820fdde5c37fbb32a}{m\+\_\+max\+Health}} = 100
+\item 
+int \mbox{\hyperlink{class_building_adf34e00bc1a2fda13a016544433c10d7}{m\+\_\+cost}} = 100
+\item 
+\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \mbox{\hyperlink{class_building_afe7931d0c4026686742e697579ffff52}{m\+\_\+type}}
+\item 
+bool \mbox{\hyperlink{class_building_ae80abeff18659be51e11696e7392fae1}{m\+\_\+placement\+Radius\+Visible}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_air_craft_8h_source_l00004}{4}} of file \mbox{\hyperlink{_air_craft_8h_source}{Air\+Craft.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_air_craft_a7ffbd6f4da5c11951b751cc2767e6e0f}\label{class_air_craft_a7ffbd6f4da5c11951b751cc2767e6e0f} 
+\index{AirCraft@{AirCraft}!AirCraft@{AirCraft}}
+\index{AirCraft@{AirCraft}!AirCraft@{AirCraft}}
+\doxysubsubsection{\texorpdfstring{AirCraft()}{AirCraft()}}
+{\footnotesize\ttfamily Air\+Craft\+::\+Air\+Craft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_air_craft_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_air_craft_8cpp_source}{Air\+Craft.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_air_craft_a7ffbd6f4da5c11951b751cc2767e6e0f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_air_craft_a674d4edcf77e4b9a8a09006184b114f0}\label{class_air_craft_a674d4edcf77e4b9a8a09006184b114f0} 
+\index{AirCraft@{AirCraft}!````~AirCraft@{\texorpdfstring{$\sim$}{\string~}AirCraft}}
+\index{````~AirCraft@{\texorpdfstring{$\sim$}{\string~}AirCraft}!AirCraft@{AirCraft}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AirCraft()}{\string~AirCraft()}}
+{\footnotesize\ttfamily Air\+Craft\+::\texorpdfstring{$\sim$}{\string~}\+Air\+Craft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_air_craft_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_air_craft_8cpp_source}{Air\+Craft.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_air_craft_aaa852c2bf3f7fd53b7795989ff89501e}\label{class_air_craft_aaa852c2bf3f7fd53b7795989ff89501e} 
+\index{AirCraft@{AirCraft}!render@{render}}
+\index{render@{render}!AirCraft@{AirCraft}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Air\+Craft\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_building_a17f70ec3c6e96f935fa63fa4108901a2}{Building}}.
+
+
+
+Definition at line \mbox{\hyperlink{_air_craft_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_air_craft_8cpp_source}{Air\+Craft.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_air_craft_aaa852c2bf3f7fd53b7795989ff89501e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_air_craft_a6f035076036ee054bbe29b8d8cb5028e}\label{class_air_craft_a6f035076036ee054bbe29b8d8cb5028e} 
+\index{AirCraft@{AirCraft}!update@{update}}
+\index{update@{update}!AirCraft@{AirCraft}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Air\+Craft\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_building_a92ed9c2981dbc964248a031cbef4fbec}{Building}}.
+
+
+
+Definition at line \mbox{\hyperlink{_air_craft_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_air_craft_8cpp_source}{Air\+Craft.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_air_craft_a6f035076036ee054bbe29b8d8cb5028e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_air_craft_8h}{Air\+Craft.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_air_craft_8cpp}{Air\+Craft.\+cpp}}\end{DoxyCompactItemize}

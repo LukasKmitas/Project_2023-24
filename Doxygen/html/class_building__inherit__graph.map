@@ -1,0 +1,13 @@
+<map id="Building" name="Building">
+<area shape="rect" id="Node000001" title=" " alt="" coords="689,5,1017,736"/>
+<area shape="rect" id="Node000002" href="$class_air_craft.html" title=" " alt="" coords="5,784,325,917"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="679,496,261,786,258,782,676,492"/>
+<area shape="rect" id="Node000003" href="$class_barracks.html" title=" " alt="" coords="349,784,669,917"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="683,613,558,786,554,783,678,610"/>
+<area shape="rect" id="Node000004" href="$class_headquarters.html" title=" " alt="" coords="693,784,1013,917"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="856,751,856,784,851,784,851,751"/>
+<area shape="rect" id="Node000005" href="$class_refinery.html" title=" " alt="" coords="1037,784,1357,917"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1028,610,1153,783,1148,786,1024,613"/>
+<area shape="rect" id="Node000006" href="$class_war_factory.html" title=" " alt="" coords="1381,784,1701,917"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1031,492,1449,782,1446,786,1028,496"/>
+</map>

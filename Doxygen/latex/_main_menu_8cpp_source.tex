@@ -1,0 +1,259 @@
+\doxysection{Main\+Menu.\+cpp}
+\hypertarget{_main_menu_8cpp_source}{}\label{_main_menu_8cpp_source}\index{AI Behaviors/MainMenu.cpp@{AI Behaviors/MainMenu.cpp}}
+\mbox{\hyperlink{_main_menu_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_main_menu_8h}{MainMenu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00003}\mbox{\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{00003}}\ \mbox{\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{MainMenu::MainMenu}}()}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00005}00005\ \ \ \ \ initButtons();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00006}00006\ \ \ \ \ initBackgroundImage();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e}{loadMusic}}(\textcolor{stringliteral}{"{}MenuMusic"{}},\ \textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Audio\(\backslash\)\(\backslash\)Cleyton\ RX\ -\/\ Underwater.mp3"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a680ef232be763e1f839892e18937d74b}{playMusic}}(\textcolor{stringliteral}{"{}MenuMusic"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00016}\mbox{\hyperlink{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6}{MainMenu::update}}(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00018}00018\ \ \ \ \ titleAnimation(t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00019}00019\ \ \ \ \ m\_deltaTime\ =\ t\_deltaTime;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ time\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00022}00022\ \ \ \ \ time\ +=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00023}00023\ \ \ \ \ m\_backgroundShader.setUniform(\textcolor{stringliteral}{"{}time"{}},\ time);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00030}\mbox{\hyperlink{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b}{MainMenu::render}}(sf::RenderWindow\&\ m\_window)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00032}00032\ \ \ \ \ m\_window.draw(m\_backgroundSprite,\ \&m\_backgroundShader);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00033}00033\ \ \ \ \ m\_window.draw(m\_playButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00034}00034\ \ \ \ \ m\_window.draw(m\_editorButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00035}00035\ \ \ \ \ m\_window.draw(m\_loadLevelButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//m\_window.draw(m\_NeuralNetworkButton);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00037}00037\ \ \ \ \ m\_window.draw(m\_exitButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00038}00038\ \ \ \ \ m\_window.draw(m\_playText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00039}00039\ \ \ \ \ m\_window.draw(m\_editorText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00040}00040\ \ \ \ \ m\_window.draw(m\_loadLevelText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00041}00041\ \ \ \ \ m\_window.draw(m\_neuralNetworkText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00042}00042\ \ \ \ \ m\_window.draw(m\_exitText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00044}00044\ \ \ \ \ m\_window.draw(m\_outlineText);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00045}00045\ \ \ \ \ m\_window.draw(m\_titleText,\ \&m\_titleShader);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00047}00047\ \ \ \ \ buttonTabAnimation(m\_window,\ m\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00055}\mbox{\hyperlink{class_main_menu_a21a5eef38283b271749a28bc954fbddd}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a21a5eef38283b271749a28bc954fbddd}{MainMenu::handleButtonClick}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_mousePosition,\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\&\ m\_gameState)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_playButton.getGlobalBounds().contains(m\_mousePosition))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ m\_gameState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285a2b72748a2883e2d950831bb0c0349259}{GameState::PlayGame}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_abc224f0e248785f6dcfc09e115996329}{stopMusic}}(\textcolor{stringliteral}{"{}MenuMusic"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3}{playNextTrack}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_editorButton.getGlobalBounds().contains(m\_mousePosition))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ m\_gameState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285a89b097c4ee6b6e3da5a3bdc2f61dc0c5}{GameState::LevelEditor}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_loadLevelButton.getGlobalBounds().contains(m\_mousePosition))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ m\_gameState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285ac9205968b395a9f14add91260b394534}{GameState::LevelLoad}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{comment}{/*else\ if\ (m\_NeuralNetworkButton.getGlobalBounds().contains(m\_mousePosition))}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_gameState\ =\ GameState::NeuralNetworks;}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_exitButton.getGlobalBounds().contains(m\_mousePosition))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ m\_gameState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285afef46e5063ce3dc78b8ae64fa474241d}{GameState::Exit}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00084}00084\ \textcolor{keywordtype}{void}\ MainMenu::initButtons()}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_font.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ font\ in\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_titleShader.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)titleEffect.frag"{}},\ sf::Shader::Fragment))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ shader"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_backgroundShader.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)backgroundEffect.frag"{}},\ sf::Shader::Fragment))\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ background\ shader"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_buttonTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)buttonStock2.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ button\ texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_buttonTabTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)tab\_selected1.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00107}00107\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ buttonTab\ texture"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00111}00111\ \ \ \ \ m\_buttonTabSprite.setTexture(m\_buttonTabTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00112}00112\ \ \ \ \ m\_buttonTabSprite.setOrigin(m\_buttonTabSprite.getLocalBounds().width\ /\ 2,\ m\_buttonTabSprite.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//\ Title\ message}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00115}00115\ \ \ \ \ m\_titleText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00116}00116\ \ \ \ \ m\_titleText.setString(\textcolor{stringliteral}{"{}Gills\ \&\ Glory"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00117}00117\ \ \ \ \ m\_titleText.setStyle(sf::Text::Italic\ |\ sf::Text::Bold);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00118}00118\ \ \ \ \ m\_titleText.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 10);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00119}00119\ \ \ \ \ m\_titleText.setCharacterSize(80U);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00120}00120\ \ \ \ \ m\_titleText.setFillColor(sf::Color(10,\ 10,\ 80));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00121}00121\ \ \ \ \ m\_titleText.setOrigin(m\_titleText.getGlobalBounds().width\ /\ 2,\ m\_titleText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00122}00122\ \ \ \ \ m\_outlineText\ =\ m\_titleText;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00123}00123\ \ \ \ \ m\_outlineText.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00124}00124\ \ \ \ \ m\_outlineText.setOutlineColor(sf::Color(255,\ 215,\ 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00125}00125\ \ \ \ \ m\_outlineText.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//\ Play\ Button}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00128}00128\ \ \ \ \ m\_playButton.setSize(sf::Vector2f(300,\ 85));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00129}00129\ \ \ \ \ m\_playButton.setOrigin(m\_playButton.getSize().x\ /\ 2,\ m\_playButton.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00130}00130\ \ \ \ \ m\_playButton.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2\ -\/\ 200);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00131}00131\ \ \ \ \ m\_playButton.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00132}00132\ \ \ \ \ m\_playText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00133}00133\ \ \ \ \ m\_playText.setString(\textcolor{stringliteral}{"{}Play"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00134}00134\ \ \ \ \ m\_playText.setCharacterSize(35);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00135}00135\ \ \ \ \ m\_playText.setFillColor(sf::Color(225,245,255));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00136}00136\ \ \ \ \ m\_playText.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00137}00137\ \ \ \ \ m\_playText.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00138}00138\ \ \ \ \ m\_playText.setOrigin(m\_playText.getGlobalBounds().width\ /\ 2,\ m\_playText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00139}00139\ \ \ \ \ m\_playText.setPosition(m\_playButton.getPosition().x,\ m\_playButton.getPosition().y\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ Level\ Editor\ Button}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00142}00142\ \ \ \ \ m\_editorButton.setSize(sf::Vector2f(300,\ 85));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00143}00143\ \ \ \ \ m\_editorButton.setOrigin(m\_editorButton.getSize().x\ /\ 2,\ m\_editorButton.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00144}00144\ \ \ \ \ m\_editorButton.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2\ -\/\ 50);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00145}00145\ \ \ \ \ m\_editorButton.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00146}00146\ \ \ \ \ m\_editorText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00147}00147\ \ \ \ \ m\_editorText.setString(\textcolor{stringliteral}{"{}Level\ Editor"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00148}00148\ \ \ \ \ m\_editorText.setCharacterSize(35);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00149}00149\ \ \ \ \ m\_editorText.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00150}00150\ \ \ \ \ m\_editorText.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00151}00151\ \ \ \ \ m\_editorText.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00152}00152\ \ \ \ \ m\_editorText.setOrigin(m\_editorText.getGlobalBounds().width\ /\ 2,\ m\_editorText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00153}00153\ \ \ \ \ m\_editorText.setPosition(m\_editorButton.getPosition().x,\ m\_editorButton.getPosition().y\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{comment}{//\ Load\ Level\ Button}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00156}00156\ \ \ \ \ m\_loadLevelButton.setSize(sf::Vector2f(300,\ 85));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00157}00157\ \ \ \ \ m\_loadLevelButton.setOrigin(m\_loadLevelButton.getSize().x\ /\ 2,\ m\_loadLevelButton.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00158}00158\ \ \ \ \ m\_loadLevelButton.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2\ +\ 100);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00159}00159\ \ \ \ \ m\_loadLevelButton.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00160}00160\ \ \ \ \ m\_loadLevelText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00161}00161\ \ \ \ \ m\_loadLevelText.setString(\textcolor{stringliteral}{"{}Load\ Level"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00162}00162\ \ \ \ \ m\_loadLevelText.setCharacterSize(35);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00163}00163\ \ \ \ \ m\_loadLevelText.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00164}00164\ \ \ \ \ m\_loadLevelText.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00165}00165\ \ \ \ \ m\_loadLevelText.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00166}00166\ \ \ \ \ m\_loadLevelText.setOrigin(m\_loadLevelText.getGlobalBounds().width\ /\ 2,\ m\_loadLevelText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00167}00167\ \ \ \ \ m\_loadLevelText.setPosition(m\_loadLevelButton.getPosition().x,\ m\_loadLevelButton.getPosition().y\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{comment}{//\ Exit\ Button}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00170}00170\ \ \ \ \ m\_exitButton.setSize(sf::Vector2f(300,\ 85));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00171}00171\ \ \ \ \ m\_exitButton.setOrigin(m\_exitButton.getSize().x\ /\ 2,\ m\_exitButton.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00172}00172\ \ \ \ \ m\_exitButton.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2\ +\ 250);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00173}00173\ \ \ \ \ m\_exitButton.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00174}00174\ \ \ \ \ m\_exitText.setFont(m\_font);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00175}00175\ \ \ \ \ m\_exitText.setString(\textcolor{stringliteral}{"{}Exit"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00176}00176\ \ \ \ \ m\_exitText.setCharacterSize(35);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00177}00177\ \ \ \ \ m\_exitText.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00178}00178\ \ \ \ \ m\_exitText.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00179}00179\ \ \ \ \ m\_exitText.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00180}00180\ \ \ \ \ m\_exitText.setOrigin(m\_exitText.getGlobalBounds().width\ /\ 2,\ m\_exitText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00181}00181\ \ \ \ \ m\_exitText.setPosition(m\_exitButton.getPosition().x,\ m\_exitButton.getPosition().y\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{comment}{//\ Neural\ Network\ Button}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00184}00184\ \ \ \ \textcolor{comment}{/*\ m\_NeuralNetworkButton.setSize(sf::Vector2f(320,\ 85));}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00185}00185\ \textcolor{comment}{\ \ \ \ m\_NeuralNetworkButton.setOrigin(m\_NeuralNetworkButton.getSize().x\ /\ 2,\ m\_NeuralNetworkButton.getSize().y\ /\ 2);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00186}00186\ \textcolor{comment}{\ \ \ \ m\_NeuralNetworkButton.setPosition(Global::S\_WIDTH\ /\ 2\ -\/\ 600,\ Global::S\_HEIGHT\ /\ 2\ +\ 250);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00187}00187\ \textcolor{comment}{\ \ \ \ m\_NeuralNetworkButton.setTexture(\&m\_buttonTexture);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00188}00188\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setFont(m\_font);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00189}00189\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setString("{}Neural\ Networks"{});}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00190}00190\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setCharacterSize(30);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00191}00191\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setFillColor(sf::Color(225,\ 245,\ 255));}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00192}00192\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setOutlineColor(sf::Color::Red);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00193}00193\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setOutlineThickness(1.0f);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00194}00194\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setOrigin(m\_neuralNetworkText.getGlobalBounds().width\ /\ 2,\ m\_neuralNetworkText.getGlobalBounds().height\ /\ 2);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00195}00195\ \textcolor{comment}{\ \ \ \ m\_neuralNetworkText.setPosition(m\_NeuralNetworkButton.getPosition().x,\ m\_NeuralNetworkButton.getPosition().y\ -\/\ 5);*/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00197}00197\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00202}00202\ \textcolor{keywordtype}{void}\ MainMenu::initBackgroundImage()}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00203}00203\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_backgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Menu\(\backslash\)\(\backslash\)Down\ the\ Tubes.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00205}00205\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Failed\ to\ load\ background\ image"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00209}00209\ \ \ \ \ m\_backgroundSprite.setTexture(m\_backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00211}00211\ \ \ \ \ m\_backgroundSprite.setScale(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}})\ /\ m\_backgroundSprite.getGlobalBounds().width,}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}})\ /\ m\_backgroundSprite.getGlobalBounds().height);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00220}00220\ \textcolor{keywordtype}{void}\ MainMenu::buttonTabAnimation(sf::RenderWindow\&\ m\_window,\ sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00221}00221\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ animationTime\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00223}00223\ \ \ \ \ animationTime\ +=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordtype}{float}\ offset\ =\ sin(animationTime\ *\ 0.08)\ *\ 20;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00227}00227\ \ \ \ \ sf::Vector2f\ mousePos\ =\ \textcolor{keyword}{static\_cast<}sf::Vector2f\textcolor{keyword}{>}(sf::Mouse::getPosition(m\_window));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keyword}{auto}\ animateTab\ =\ [\&](\textcolor{keyword}{const}\ sf::RectangleShape\&\ button)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buttonTabSprite.setPosition((button.getPosition().x\ -\/\ button.getSize().x\ /\ 2)\ -\/\ 50\ +\ offset,\ button.getPosition().y);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buttonTabSprite.setScale(1.5f,\ 1.5f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ m\_window.draw(m\_buttonTabSprite);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buttonTabSprite.setPosition((button.getPosition().x\ +\ button.getSize().x\ /\ 2)\ +\ 50\ -\/\ offset,\ button.getPosition().y);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buttonTabSprite.setScale(-\/1.5f,\ 1.5f);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ m\_window.draw(m\_buttonTabSprite);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_playButton.getGlobalBounds().contains(mousePos))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00241}00241\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ animateTab(m\_playButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00243}00243\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_editorButton.getGlobalBounds().contains(mousePos))\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00245}00245\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ animateTab(m\_editorButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_loadLevelButton.getGlobalBounds().contains(mousePos))}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00249}00249\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ animateTab(m\_loadLevelButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00251}00251\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{comment}{/*else\ if\ (m\_NeuralNetworkButton.getGlobalBounds().contains(mousePos))}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00253}00253\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ animateTab(m\_NeuralNetworkButton);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00255}00255\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00256}00256\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_exitButton.getGlobalBounds().contains(mousePos))\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00257}00257\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ animateTab(m\_exitButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00260}00260\ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00266}00266\ \textcolor{keywordtype}{void}\ MainMenu::titleAnimation(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00267}00267\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00268}00268\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ time\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00269}00269\ \ \ \ \ time\ +=\ t\_deltaTime.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00271}00271\ \ \ \ \ m\_titleShader.setUniform(\textcolor{stringliteral}{"{}texture"{}},\ sf::Shader::CurrentTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00272}00272\ \ \ \ \ m\_titleShader.setUniform(\textcolor{stringliteral}{"{}fillColor"{}},\ sf::Glsl::Vec3(m\_titleText.getFillColor().r\ /\ 255.f,\ m\_titleText.getFillColor().g\ /\ 255.f,\ m\_titleText.getFillColor().b\ /\ 255.f));}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00273}00273\ \ \ \ \ m\_titleShader.setUniform(\textcolor{stringliteral}{"{}time"{}},\ time);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00275}00275\ \ \ \ \ m\_titleAnimationTime\ +=\ t\_deltaTime.asSeconds()\ *\ m\_titleAnimationSpeed;}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ m\_titleMinScale\ +\ (sin(m\_titleAnimationTime)\ +\ 1)\ /\ 2\ *\ (m\_titleMaxScale\ -\/\ m\_titleMinScale);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00277}00277\ \ \ \ \ m\_titleText.setScale(scale,\ scale);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00278}00278\ \ \ \ \ m\_titleText.setOrigin(m\_titleText.getLocalBounds().width\ /\ 2,\ m\_titleText.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00279}00279\ \ \ \ \ m\_outlineText.setScale(scale,\ scale);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00280}00280\ \ \ \ \ m\_outlineText.setOrigin(m\_outlineText.getLocalBounds().width\ /\ 2,\ m\_outlineText.getLocalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_8cpp_source_l00281}00281\ \}}
+
+\end{DoxyCode}

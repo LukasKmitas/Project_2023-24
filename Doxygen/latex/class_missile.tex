@@ -1,0 +1,139 @@
+\doxysection{Missile Class Reference}
+\hypertarget{class_missile}{}\label{class_missile}\index{Missile@{Missile}}
+
+
+{\ttfamily \#include $<$Missile.\+h$>$}
+
+
+
+Collaboration diagram for Missile\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_missile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_missile_a25d8466b301870323b86fdc0e35c77d1}{Missile}} (const sf\+::\+Vector2f \&m\+\_\+start\+Position, const sf\+::\+Vector2f \&m\+\_\+target\+Direction, float m\+\_\+speed, const sf\+::\+Texture \&m\+\_\+texture)
+\item 
+void \mbox{\hyperlink{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+void \mbox{\hyperlink{class_missile_a3cdc5856688cad7c20ca665d4c41fd95}{render}} (sf\+::\+Render\+Window \&m\+\_\+window) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_missile_abf5d5f4c81b664e09c50fe9f86a09af0}{m\+\_\+missile\+Sprite}}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{struct_trail_part}{Trail\+Part}} $>$ \mbox{\hyperlink{class_missile_adf7d4afadcf566497356538cdbbd4efa}{m\+\_\+trail}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_aee138dea114b6d8f0aec3bb95ea71f50}{m\+\_\+position}}
+\item 
+float \mbox{\hyperlink{class_missile_aafe7b25d0667b74143dbfdd07554a405}{m\+\_\+damage}} = 80.\+0f
+\item 
+bool \mbox{\hyperlink{class_missile_a5a76ffc8a6a752422cd49a278bcb410e}{m\+\_\+active}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00014}{14}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_missile_a25d8466b301870323b86fdc0e35c77d1}\label{class_missile_a25d8466b301870323b86fdc0e35c77d1} 
+\index{Missile@{Missile}!Missile@{Missile}}
+\index{Missile@{Missile}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{Missile()}{Missile()}}
+{\footnotesize\ttfamily Missile\+::\+Missile (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+start\+Position,  }\item[{const sf\+::\+Vector2f \&}]{m\+\_\+target\+Direction,  }\item[{float}]{m\+\_\+speed,  }\item[{const sf\+::\+Texture \&}]{m\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_missile_a3cdc5856688cad7c20ca665d4c41fd95}\label{class_missile_a3cdc5856688cad7c20ca665d4c41fd95} 
+\index{Missile@{Missile}!render@{render}}
+\index{render@{render}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Missile\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+\Hypertarget{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc}\label{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc} 
+\index{Missile@{Missile}!update@{update}}
+\index{update@{update}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Missile\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_missile_a5a76ffc8a6a752422cd49a278bcb410e}\label{class_missile_a5a76ffc8a6a752422cd49a278bcb410e} 
+\index{Missile@{Missile}!m\_active@{m\_active}}
+\index{m\_active@{m\_active}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_active}{m\_active}}
+{\footnotesize\ttfamily bool Missile\+::m\+\_\+active = true}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00030}{30}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_aafe7b25d0667b74143dbfdd07554a405}\label{class_missile_aafe7b25d0667b74143dbfdd07554a405} 
+\index{Missile@{Missile}!m\_damage@{m\_damage}}
+\index{m\_damage@{m\_damage}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_damage}{m\_damage}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+damage = 80.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00028}{28}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_abf5d5f4c81b664e09c50fe9f86a09af0}\label{class_missile_abf5d5f4c81b664e09c50fe9f86a09af0} 
+\index{Missile@{Missile}!m\_missileSprite@{m\_missileSprite}}
+\index{m\_missileSprite@{m\_missileSprite}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_missileSprite}{m\_missileSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Missile\+::m\+\_\+missile\+Sprite}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00023}{23}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_aee138dea114b6d8f0aec3bb95ea71f50}\label{class_missile_aee138dea114b6d8f0aec3bb95ea71f50} 
+\index{Missile@{Missile}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::m\+\_\+position}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00026}{26}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_adf7d4afadcf566497356538cdbbd4efa}\label{class_missile_adf7d4afadcf566497356538cdbbd4efa} 
+\index{Missile@{Missile}!m\_trail@{m\_trail}}
+\index{m\_trail@{m\_trail}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_trail}{m\_trail}}
+{\footnotesize\ttfamily std\+::deque$<$\mbox{\hyperlink{struct_trail_part}{Trail\+Part}}$>$ Missile\+::m\+\_\+trail}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00024}{24}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_missile_8h}{Missile.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_missile_8cpp}{Missile.\+cpp}}\end{DoxyCompactItemize}

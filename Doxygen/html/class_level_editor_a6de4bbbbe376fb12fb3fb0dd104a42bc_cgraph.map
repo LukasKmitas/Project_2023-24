@@ -1,0 +1,5 @@
+<map id="LevelEditor::loadLevelForLevelEditor" name="LevelEditor::loadLevelForLevelEditor">
+<area shape="rect" id="Node000001" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="5,5,233,32"/>
+<area shape="rect" id="Node000002" href="$class_level_editor.html#a50af4550cd28b70941afa18ca2e79147" title="Loads the level with the correct m_tile properties." alt="" coords="281,5,477,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,16,265,16,265,21,233,21"/>
+</map>

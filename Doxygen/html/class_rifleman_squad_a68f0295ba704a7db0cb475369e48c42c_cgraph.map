@@ -1,0 +1,9 @@
+<map id="RiflemanSquad::render" name="RiflemanSquad::render">
+<area shape="rect" id="Node000001" title="Renders the units and anything related to it." alt="" coords="5,5,158,32"/>
+<area shape="rect" id="Node000002" href="$class_infantry_unit.html#aca40a05689745fe6a675009dc9c27f22" title="Renders the units and anything related to it." alt="" coords="206,5,336,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,16,190,16,190,21,158,21"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#abd8cdcaade9bfafedcf23aadd4f5539a" title="Renders the units and anything related to it." alt="" coords="384,5,472,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,16,368,16,368,21,336,21"/>
+<area shape="rect" id="Node000004" href="$class_particle_system.html#a12f342988eeb7d9ac023e279b8b9dd8c" title="Renders the particles into existence." alt="" coords="520,5,675,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="473,16,505,16,505,21,473,21"/>
+</map>

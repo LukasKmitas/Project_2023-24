@@ -1,0 +1,382 @@
+\doxysection{Neural\+Networks Class Reference}
+\hypertarget{class_neural_networks}{}\label{class_neural_networks}\index{NeuralNetworks@{NeuralNetworks}}
+
+
+{\ttfamily \#include $<$Neural\+Networks.\+h$>$}
+
+
+
+Collaboration diagram for Neural\+Networks\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_neural_networks__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9}{Neural\+Networks}} ()
+\item 
+\mbox{\hyperlink{class_neural_networks_ad39368b6d1ff687abc586cc64c8f2c10}{\texorpdfstring{$\sim$}{\string~}\+Neural\+Networks}} ()
+\item 
+void \mbox{\hyperlink{class_neural_networks_a1c2641e0ed7e38cccd472c83f374a20a}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+void \mbox{\hyperlink{class_neural_networks_ac980e791320e7b15937e40f13162a702}{render}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em renders neural networks stuff \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b}{draw\+Neural\+Perceptron}} (sf\+::\+Render\+Window \&m\+\_\+window, const \mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\+\_\+2d}} \&m\+\_\+neural\+Network, const \mbox{\hyperlink{_global_8h_ac7f9d4c1845ffe288f791cfcf62ddb16}{vector\+\_\+3d}} \&m\+\_\+weights)
+\begin{DoxyCompactList}\small\item\em Draws the Neural Perceptrons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc}{draw\+Weight\+Text}} (int m\+\_\+x, int m\+\_\+y, const std\+::string \&m\+\_\+text, const sf\+::\+Color \&m\+\_\+color, sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the text for the weight on each perceptron. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_abb3351a7f806c8702b7441bf597d89d5}{back\+Propagation}} (const std\+::vector$<$ float $>$ \&m\+\_\+target, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&m\+\_\+errors, const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&m\+\_\+neural\+Network, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ float $>$ $>$ $>$ \&m\+\_\+weights)
+\begin{DoxyCompactList}\small\item\em this is a method used for training the neural network, where the error between the predicted output and the actual output is computed and propagated back through the network. This process adjusts the weights and biases to minimize the error, effectively "{}learning"{} from the data \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c}{forward\+Propagation}} (bool m\+\_\+state, const std\+::vector$<$ float $>$ \&m\+\_\+inputs, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&m\+\_\+neural\+Network, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ float $>$ $>$ $>$ \&m\+\_\+weights)
+\begin{DoxyCompactList}\small\item\em This is a process where input data is passed through the network, layer by layer, until it reaches the output layer. Each neuron in the network processes the input by performing a weighted sum followed by an "{}activation function"{}, which that introduces non-\/linearity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_a7932bac035bfde3145908e05ee54b912}{add\+Input}} (float m\+\_\+dot\+\_\+x, float m\+\_\+dot\+\_\+y)
+\begin{DoxyCompactList}\small\item\em adds the input \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc}{add\+Target\+Output}} (float m\+\_\+r, float m\+\_\+g, float m\+\_\+b)
+\begin{DoxyCompactList}\small\item\em adds the target\+Output thats the circle things for visualization \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neural_networks_a45fe05f3c7c2c973e0c8a69893572959}{go\+To\+Main\+Menu}} (sf\+::\+Vector2i m\+\_\+mouse\+Position, \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&m\+\_\+game\+State)
+\begin{DoxyCompactList}\small\item\em To go back to main menu screen. \end{DoxyCompactList}\item 
+std\+::array$<$ int, 2 $>$ \mbox{\hyperlink{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9}{get\+Hidden\+Neurons}} () const
+\item 
+std\+::array$<$ int, 3 $>$ \mbox{\hyperlink{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc}{get\+Bias\+Neurons}} () const
+\item 
+const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \& \mbox{\hyperlink{class_neural_networks_acaa870434f86c76dba132996cbb98c09}{get\+Inputs}} () const
+\item 
+const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \& \mbox{\hyperlink{class_neural_networks_ae3de6a3086535fcf73609b4fea83c434}{get\+Target\+Outputs}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_neural_networks_a5182e3363e6c68d414b19285465db947}{INPUT\+\_\+\+NEURONS}} = 2
+\item 
+const int \mbox{\hyperlink{class_neural_networks_aa4d507402fd96fcd5177194d901976f1}{OUTPUT\+\_\+\+NEURONS}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8h_source_l00008}{8}} of file \mbox{\hyperlink{_neural_networks_8h_source}{Neural\+Networks.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9}\label{class_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9} 
+\index{NeuralNetworks@{NeuralNetworks}!NeuralNetworks@{NeuralNetworks}}
+\index{NeuralNetworks@{NeuralNetworks}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{NeuralNetworks()}{NeuralNetworks()}}
+{\footnotesize\ttfamily Neural\+Networks\+::\+Neural\+Networks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_ad39368b6d1ff687abc586cc64c8f2c10}\label{class_neural_networks_ad39368b6d1ff687abc586cc64c8f2c10} 
+\index{NeuralNetworks@{NeuralNetworks}!````~NeuralNetworks@{\texorpdfstring{$\sim$}{\string~}NeuralNetworks}}
+\index{````~NeuralNetworks@{\texorpdfstring{$\sim$}{\string~}NeuralNetworks}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NeuralNetworks()}{\string~NeuralNetworks()}}
+{\footnotesize\ttfamily Neural\+Networks\+::\texorpdfstring{$\sim$}{\string~}\+Neural\+Networks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_neural_networks_a7932bac035bfde3145908e05ee54b912}\label{class_neural_networks_a7932bac035bfde3145908e05ee54b912} 
+\index{NeuralNetworks@{NeuralNetworks}!addInput@{addInput}}
+\index{addInput@{addInput}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{addInput()}{addInput()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::add\+Input (\begin{DoxyParamCaption}\item[{float}]{m\+\_\+dot\+\_\+x,  }\item[{float}]{m\+\_\+dot\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+adds the input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+dot\+\_\+x} & \\
+\hline
+{\em m\+\_\+dot\+\_\+y} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00305}{305}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc}\label{class_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc} 
+\index{NeuralNetworks@{NeuralNetworks}!addTargetOutput@{addTargetOutput}}
+\index{addTargetOutput@{addTargetOutput}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{addTargetOutput()}{addTargetOutput()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::add\+Target\+Output (\begin{DoxyParamCaption}\item[{float}]{m\+\_\+r,  }\item[{float}]{m\+\_\+g,  }\item[{float}]{m\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+adds the target\+Output thats the circle things for visualization 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+r} & \\
+\hline
+{\em m\+\_\+g} & \\
+\hline
+{\em m\+\_\+b} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00316}{316}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_abb3351a7f806c8702b7441bf597d89d5}\label{class_neural_networks_abb3351a7f806c8702b7441bf597d89d5} 
+\index{NeuralNetworks@{NeuralNetworks}!backPropagation@{backPropagation}}
+\index{backPropagation@{backPropagation}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{backPropagation()}{backPropagation()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::back\+Propagation (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{m\+\_\+target,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{m\+\_\+errors,  }\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{m\+\_\+neural\+Network,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ float $>$ $>$ $>$ \&}]{m\+\_\+weights }\end{DoxyParamCaption})}
+
+
+
+this is a method used for training the neural network, where the error between the predicted output and the actual output is computed and propagated back through the network. This process adjusts the weights and biases to minimize the error, effectively "{}learning"{} from the data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target} & \\
+\hline
+{\em m\+\_\+errors} & \\
+\hline
+{\em m\+\_\+neural\+Network} & \\
+\hline
+{\em m\+\_\+weights} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b}\label{class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b} 
+\index{NeuralNetworks@{NeuralNetworks}!drawNeuralPerceptron@{drawNeuralPerceptron}}
+\index{drawNeuralPerceptron@{drawNeuralPerceptron}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{drawNeuralPerceptron()}{drawNeuralPerceptron()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::draw\+Neural\+Perceptron (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window,  }\item[{const \mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\+\_\+2d}} \&}]{m\+\_\+neural\+Network,  }\item[{const \mbox{\hyperlink{_global_8h_ac7f9d4c1845ffe288f791cfcf62ddb16}{vector\+\_\+3d}} \&}]{m\+\_\+weights }\end{DoxyParamCaption})}
+
+
+
+Draws the Neural Perceptrons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+{\em m\+\_\+neural\+Network} & \\
+\hline
+{\em m\+\_\+weights} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc}\label{class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc} 
+\index{NeuralNetworks@{NeuralNetworks}!drawWeightText@{drawWeightText}}
+\index{drawWeightText@{drawWeightText}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{drawWeightText()}{drawWeightText()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::draw\+Weight\+Text (\begin{DoxyParamCaption}\item[{int}]{m\+\_\+x,  }\item[{int}]{m\+\_\+y,  }\item[{const std\+::string \&}]{m\+\_\+text,  }\item[{const sf\+::\+Color \&}]{m\+\_\+color,  }\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the text for the weight on each perceptron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+x} & \\
+\hline
+{\em m\+\_\+y} & \\
+\hline
+{\em m\+\_\+text} & \\
+\hline
+{\em m\+\_\+color} & \\
+\hline
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c}\label{class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c} 
+\index{NeuralNetworks@{NeuralNetworks}!forwardPropagation@{forwardPropagation}}
+\index{forwardPropagation@{forwardPropagation}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{forwardPropagation()}{forwardPropagation()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Neural\+Networks\+::forward\+Propagation (\begin{DoxyParamCaption}\item[{bool}]{m\+\_\+state,  }\item[{const std\+::vector$<$ float $>$ \&}]{m\+\_\+inputs,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{m\+\_\+neural\+Network,  }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ float $>$ $>$ $>$ \&}]{m\+\_\+weights }\end{DoxyParamCaption})}
+
+
+
+This is a process where input data is passed through the network, layer by layer, until it reaches the output layer. Each neuron in the network processes the input by performing a weighted sum followed by an "{}activation function"{}, which that introduces non-\/linearity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+state} & \\
+\hline
+{\em m\+\_\+inputs} & \\
+\hline
+{\em m\+\_\+neural\+Network} & \\
+\hline
+{\em m\+\_\+weights} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc}\label{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc} 
+\index{NeuralNetworks@{NeuralNetworks}!getBiasNeurons@{getBiasNeurons}}
+\index{getBiasNeurons@{getBiasNeurons}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{getBiasNeurons()}{getBiasNeurons()}}
+{\footnotesize\ttfamily std\+::array$<$ int, 3 $>$ Neural\+Networks\+::get\+Bias\+Neurons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00339}{339}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9}\label{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9} 
+\index{NeuralNetworks@{NeuralNetworks}!getHiddenNeurons@{getHiddenNeurons}}
+\index{getHiddenNeurons@{getHiddenNeurons}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{getHiddenNeurons()}{getHiddenNeurons()}}
+{\footnotesize\ttfamily std\+::array$<$ int, 2 $>$ Neural\+Networks\+::get\+Hidden\+Neurons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00334}{334}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_neural_networks_acaa870434f86c76dba132996cbb98c09}\label{class_neural_networks_acaa870434f86c76dba132996cbb98c09} 
+\index{NeuralNetworks@{NeuralNetworks}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \& Neural\+Networks\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00344}{344}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_ae3de6a3086535fcf73609b4fea83c434}\label{class_neural_networks_ae3de6a3086535fcf73609b4fea83c434} 
+\index{NeuralNetworks@{NeuralNetworks}!getTargetOutputs@{getTargetOutputs}}
+\index{getTargetOutputs@{getTargetOutputs}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{getTargetOutputs()}{getTargetOutputs()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \& Neural\+Networks\+::get\+Target\+Outputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_a45fe05f3c7c2c973e0c8a69893572959}\label{class_neural_networks_a45fe05f3c7c2c973e0c8a69893572959} 
+\index{NeuralNetworks@{NeuralNetworks}!goToMainMenu@{goToMainMenu}}
+\index{goToMainMenu@{goToMainMenu}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{goToMainMenu()}{goToMainMenu()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::go\+To\+Main\+Menu (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{m\+\_\+mouse\+Position,  }\item[{\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&}]{m\+\_\+game\+State }\end{DoxyParamCaption})}
+
+
+
+To go back to main menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mouse\+Position} & \\
+\hline
+{\em m\+\_\+game\+State} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_ac980e791320e7b15937e40f13162a702}\label{class_neural_networks_ac980e791320e7b15937e40f13162a702} 
+\index{NeuralNetworks@{NeuralNetworks}!render@{render}}
+\index{render@{render}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+renders neural networks stuff 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+\Hypertarget{class_neural_networks_a1c2641e0ed7e38cccd472c83f374a20a}\label{class_neural_networks_a1c2641e0ed7e38cccd472c83f374a20a} 
+\index{NeuralNetworks@{NeuralNetworks}!update@{update}}
+\index{update@{update}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Neural\+Networks\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_neural_networks_8cpp_source}{Neural\+Networks.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_neural_networks_a5182e3363e6c68d414b19285465db947}\label{class_neural_networks_a5182e3363e6c68d414b19285465db947} 
+\index{NeuralNetworks@{NeuralNetworks}!INPUT\_NEURONS@{INPUT\_NEURONS}}
+\index{INPUT\_NEURONS@{INPUT\_NEURONS}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{INPUT\_NEURONS}{INPUT\_NEURONS}}
+{\footnotesize\ttfamily const int Neural\+Networks\+::\+INPUT\+\_\+\+NEURONS = 2}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8h_source_l00034}{34}} of file \mbox{\hyperlink{_neural_networks_8h_source}{Neural\+Networks.\+h}}.
+
+\Hypertarget{class_neural_networks_aa4d507402fd96fcd5177194d901976f1}\label{class_neural_networks_aa4d507402fd96fcd5177194d901976f1} 
+\index{NeuralNetworks@{NeuralNetworks}!OUTPUT\_NEURONS@{OUTPUT\_NEURONS}}
+\index{OUTPUT\_NEURONS@{OUTPUT\_NEURONS}!NeuralNetworks@{NeuralNetworks}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_NEURONS}{OUTPUT\_NEURONS}}
+{\footnotesize\ttfamily const int Neural\+Networks\+::\+OUTPUT\+\_\+\+NEURONS = 3}
+
+
+
+Definition at line \mbox{\hyperlink{_neural_networks_8h_source_l00035}{35}} of file \mbox{\hyperlink{_neural_networks_8h_source}{Neural\+Networks.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+AI Behaviors/\mbox{\hyperlink{_neural_networks_8h}{Neural\+Networks.\+h}}\item 
+AI Behaviors/\mbox{\hyperlink{_neural_networks_8cpp}{Neural\+Networks.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+<map id="SoundManager::playMusic" name="SoundManager::playMusic">
+<area shape="rect" id="Node000001" title="plays music" alt="" coords="523,31,698,57"/>
+<area shape="rect" id="Node000002" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="301,5,450,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,36,450,29,451,24,508,30"/>
+<area shape="rect" id="Node000003" href="$class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="276,56,475,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="508,58,476,61,475,56,507,52"/>
+<area shape="rect" id="Node000004" href="$class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="19,31,214,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,61,214,56,214,51,260,55"/>
+<area shape="rect" id="Node000005" href="$class_sound_manager.html#a237964589201c404a015660fe601eff5" title="updates the track when the current one stops playing" alt="" coords="5,81,228,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="261,83,228,86,228,81,260,78"/>
+</map>

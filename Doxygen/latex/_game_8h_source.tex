@@ -1,0 +1,250 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{AI Behaviors/Game.h@{AI Behaviors/Game.h}}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ GAME\_HPP}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ GAME\_HPP}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8h}{GameState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_main_menu_8h}{MainMenu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_level_editor_8h}{LevelEditor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_level_loader_8h}{LevelLoader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_g_u_i_8h}{GUI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_type_8h}{BuildingType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_particle_system_8h}{ParticleSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_neural_networks_8h}{NeuralNetworks.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_a_i_state_8h}{EnemyAIState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_win_lose_state_8h}{WinLoseState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00020}00020\ \textcolor{keyword}{namespace\ }fs\ =\ std::experimental::filesystem;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00022}\mbox{\hyperlink{class_game}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ m\_currentState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{GameState::MainMenu}};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549af}{WinLoseState}}\ m\_gameWinLose\ =\ \mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549afab50339a10e1de285ac99d4c3990b8693}{WinLoseState::NONE}};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ m\_previousState;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_main_menu}{MainMenu}}\ m\_menu;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_tile}{Tile}}\ m\_tiles;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_level_editor}{LevelEditor}}\ m\_levelEditor;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_level_loader}{LevelLoader}}\ m\_levelLoader;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_g_u_i}{GUI}}\ m\_gui\{\ m\_placedPlayerBuildings,\ m\_selectedBuildingType,\ m\_levelEditor.\mbox{\hyperlink{class_level_editor_a14eb3a75162c0543bd9483495fddb421}{m\_tiles}}\ \};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\ m\_selectedBuildingType\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{BuildingType::None}};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_particle_system}{ParticleSystem}}\ m\_particleSystem;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_neural_networks}{NeuralNetworks}}\ m\_neural\_network;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_unit}{Unit}}*\ m\_selectedUnit\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00044}00044\ \ \ \ \ std::vector<Building*>\ m\_placedPlayerBuildings;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00045}00045\ \ \ \ \ std::vector<Building*>\ m\_placedEnemyBuildings;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00046}00046\ \ \ \ \ std::vector<Unit*>\ m\_playerUnits;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00047}00047\ \ \ \ \ std::vector<Unit*>\ m\_enemyUnits;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00048}00048\ \ \ \ \ std::map<BuildingType,\ int>\ m\_enemyBuildingCounts;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ processKeys(sf::Event\ t\_event);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Player\ stuff\ }}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ createBuilding(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ createBase();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ updatePlayerAssets(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ createUnit();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ selectUnitAt(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_mousePos);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ selectUnitsInBox();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ saveMapLevel();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ loadMapLevel(\textcolor{keyword}{const}\ std::string\&\ m\_filename);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ checkVictoryConditions();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ Enemy\ AI\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fc}{EnemyAIState}}\ m\_enemyAIState\ =\ \mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fca06a209c1f2f572d1ecfaf94e0a73d13b}{EnemyAIState::Exploring}};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ createEnemyStarterBase();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ updateEnemyAIDecisionOnCreating(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{void}\ updateEnemyAIUnitDecisionState(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ updateEnemyAssets(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ createEnemyUnit(\textcolor{keyword}{const}\ std::string\&\ m\_unitType);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ createEnemyHarvesterUnit();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ updateBuildingCounts();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ decideNextEnemyBuilding();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{void}\ placeEnemyBuilding(\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\ m\_type);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ moveEnemyUnits();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ enemyExploring(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ enemyGroupUnits(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ enemyAttacking(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkPositionWithinMap(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_position);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{float}\ distanceBetweenPoints(\textcolor{keyword}{const}\ sf::Vector2f\&\ p1,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ p2);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00084}00084\ \ \ \ \ sf::Vector2f\ findNearestPlayerObjectPosition(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_enemyPosition);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00085}00085\ \ \ \ \ sf::Vector2f\ findPlacementPositionNearExistingBuilding();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00086}00086\ \ \ \ \ std::vector<sf::Vector2f>\ getValidExplorationTargets();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00087}00087\ \ \ \ \ sf::Vector2f\ findEnemyHeadquartersPosition();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ newEnemyBuilding\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00089}00089\ \ \ \ \ sf::Vector2f\ enemyRefineryBuildingPosition;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00090}00090\ \ \ \ \ std::vector<sf::Vector2f>\ m\_validTargets;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00091}00091\ \ \ \ \ sf::Time\ m\_enemyStateTimer\ =\ sf::seconds(0);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ m\_windows/camera/view\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ moveCamera(sf::Vector2f\ m\_mousePosition);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{void}\ updateViewWithMouse();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{void}\ resetView();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{void}\ resetZoom();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//Neural\ networks\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{void}\ initNeuralNetwork();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{void}\ updateNeuralNetwork();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ drawNeuralNetwork(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ fog\ of\ war\ }}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ updateFogOfWarBasedOnBuildings(\textcolor{keyword}{const}\ std::vector<Building*>\&\ m\_buildings);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{void}\ updateFogOfWarBasedOnUnits(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ m\_units);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ Particle\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{void}\ initParticles();\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnBubbleParticles();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnBulletSparkParticles(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_position);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnExplosionParticle(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_position);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//WinLose\ }}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ initWinLosePanel();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{void}\ renderWinLosePanel(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ handleWinLosePanel(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_mousePosition);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00118}00118\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ Pause\ menu}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{void}\ initPauseMenu();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{void}\ handlePauseMenu(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_mousePosition);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{void}\ renderPauseMenu(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{void}\ saveGameMatch();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ loadGameMatch(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{void}\ loadBuildings(std::ifstream\&\ loadFile,\ \textcolor{keywordtype}{int}\ buildingCount,\ std::vector<Building*>\&\ buildings);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{void}\ loadUnits(std::ifstream\&\ loadFile,\ \textcolor{keywordtype}{int}\ unitCount,\ std::vector<Unit*>\&\ units,\ std::vector<Unit*>\ m\_setEnemyUnits,\ std::vector<Building*>\ m\_setPlacedEnemyBuildings);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ createBuildingByType(\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{BuildingType}}\ type);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{class_unit}{Unit}}*\ createUnitByType(\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ type);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//\ reset\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{void}\ gameReset();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{void}\ clearGameEntities();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//\ Music\ stuff\ }}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00135}00135\ \ \ \ \ \textcolor{keywordtype}{void}\ initPlaylistForGameplay();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00136}00136\ \ \ \ \ \textcolor{keywordtype}{void}\ initSoundInGameplay();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//\ For\ debug/demo\ purpose\ }}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00139}00139\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnEnemyNearBase();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{void}\ getMoney();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{int}\ calculateGridSize(\textcolor{keywordtype}{int}\ m\_numberOfUnits);}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00144}00144\ \ \ \ \ sf::RenderWindow\ m\_window;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00145}00145\ \ \ \ \ sf::View\ m\_gameView;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00146}00146\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00147}00147\ \ \ \ \ sf::Font\ m\_normalfont;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00149}00149\ \ \ \ \ sf::Texture\ m\_bubbleTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00150}00150\ \ \ \ \ sf::Texture\ m\_bulletSparksTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00152}00152\ \ \ \ \ sf::Texture\ m\_cursorTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00153}00153\ \ \ \ \ sf::Sprite\ m\_cursorSprite;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00155}00155\ \ \ \ \ sf::Vector2f\ m\_viewCenter\ =\ m\_gameView.getCenter();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00156}00156\ \ \ \ \ sf::Vector2i\ m\_guiMousePosition;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00157}00157\ \ \ \ \ sf::Vector2f\ m\_worldMousePosition;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00158}00158\ \ \ \ \ sf::Vector2f\ m\_cameraVelocity;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00159}00159\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ m\_minZoomLevel\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00160}00160\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ m\_maxZoomLevel\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00161}00161\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_currentZoomLevel\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00162}00162\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_viewMoveSpeed\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00163}00163\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_minX\ =\ 950;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00164}00164\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_minY\ =\ 530;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00165}00165\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_maxX\ =\ 1550;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00166}00166\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_maxY\ =\ 1970;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00167}00167\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_mapWidth\ =\ 2400;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00168}00168\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_mapHeight\ =\ 2400;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isDragging\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00171}00171\ \ \ \ \ sf::Vector2f\ m\_dragStart;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00172}00172\ \ \ \ \ sf::Vector2f\ m\_dragEnd;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00173}00173\ \ \ \ \ sf::RectangleShape\ m\_selectionBox;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00175}00175\ \ \ \ \ \textcolor{comment}{//\ Particles\ variables}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00176}00176\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_angleParticle;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_speedParticle;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_lifetimeParticle;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_sizeParticle;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00180}00180\ \ \ \ \ sf::Color\ m\_colorParticle;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00182}00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_playOnce\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_levelLoaded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00184}00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_exitGame;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//\ Neural\ Network\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00187}00187\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_mousePosX;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00188}00188\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_mousePosY;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00189}00189\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_outputHeight\ =\ 64;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00190}00190\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_outputWidth\ =\ 64;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00191}00191\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_totalErrors\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00192}00192\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_dotX;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00193}00193\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_dotY;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00194}00194\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ TRAININGS\_PER\_FRAME\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00195}00195\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_train\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00196}00196\ \ \ \ \ \mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\_2d}}\ m\_errors;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00197}00197\ \ \ \ \ std::vector<std::vector<float>>\ m\_neuralNetwork;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00198}00198\ \ \ \ \ std::vector<std::vector<std::vector<float>>>\ m\_weights;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00199}00199\ \ \ \ \ std::array<int,\ 2>\ m\_hiddenNeurons\ =\ m\_neural\_network.\mbox{\hyperlink{class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9}{getHiddenNeurons}}();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00200}00200\ \ \ \ \ std::array<int,\ 3>\ m\_biasNeurons\ =\ m\_neural\_network.\mbox{\hyperlink{class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc}{getBiasNeurons}}();}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00201}00201\ \ \ \ \ std::mt19937\_64\ m\_random;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00202}00202\ \ \ \ \ sf::Text\ m\_errorText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00203}00203\ \ \ \ \ sf::Image\ m\_outputImage;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00204}00204\ \ \ \ \ sf::Sprite\ m\_outputSprite;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00205}00205\ \ \ \ \ sf::Texture\ m\_outputTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00207}00207\ \ \ \ \ \textcolor{comment}{//\ Win/Lose\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00208}00208\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_showWinLosePanel\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00209}00209\ \ \ \ \ sf::Sprite\ m\_panelBackgroundSprite;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00210}00210\ \ \ \ \ sf::Texture\ m\_panelBackgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00211}00211\ \ \ \ \ sf::Text\ m\_winLoseText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00212}00212\ \ \ \ \ sf::Text\ m\_playAgainText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00213}00213\ \ \ \ \ sf::Text\ m\_exitText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00214}00214\ \ \ \ \ sf::RectangleShape\ m\_playAgainButton;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00215}00215\ \ \ \ \ sf::RectangleShape\ m\_exitButton;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00216}00216\ \ \ \ \ sf::Text\ m\_playerStatsText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00217}00217\ \ \ \ \ sf::Text\ m\_enemyStatsText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00218}00218\ \ \ \ \ sf::Text\ m\_gameDurationText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00219}00219\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_playerUnitStatCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00220}00220\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_playerBuildingStatCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00221}00221\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_enemyUnitStatCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_enemyBuildingStatCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00223}00223\ \ \ \ \ sf::Clock\ m\_gameDurationClock;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00224}00224\ \ \ \ \ sf::Time\ m\_gameDurationTime;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00225}00225\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_minutes\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_seconds\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00229}00229\ \ \ \ \ \textcolor{comment}{//\ Pause\ stuff}}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00230}00230\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_pausedGame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00231}00231\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_friendly\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00232}00232\ \ \ \ \ sf::Sprite\ m\_pauseBackgroundSprite;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00233}00233\ \ \ \ \ sf::Texture\ m\_pauseBackgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00234}00234\ \ \ \ \ sf::Text\ m\_pauseText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00235}00235\ \ \ \ \ sf::Text\ m\_restartText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00236}00236\ \ \ \ \ sf::Text\ m\_exitGameText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00237}00237\ \ \ \ \ sf::Text\ m\_saveGameText;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00238}00238\ \ \ \ \ sf::RectangleShape\ m\_restartButton;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00239}00239\ \ \ \ \ sf::RectangleShape\ m\_exitGameButton;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00240}00240\ \ \ \ \ sf::RectangleShape\ m\_saveGameButton;}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00242}00242\ \};}
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_game_8h_source_l00244}00244\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

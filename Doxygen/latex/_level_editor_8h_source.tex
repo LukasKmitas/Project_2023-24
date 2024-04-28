@@ -1,0 +1,141 @@
+\doxysection{Level\+Editor.\+h}
+\hypertarget{_level_editor_8h_source}{}\label{_level_editor_8h_source}\index{AI Behaviors/LevelEditor.h@{AI Behaviors/LevelEditor.h}}
+\mbox{\hyperlink{_level_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8h}{GameState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00010}\mbox{\hyperlink{class_level_editor}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_editor}{LevelEditor}}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c}{LevelEditor}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e}{update}}(sf::Time\ t\_deltaTime,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060}{render}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d}{renderLoadedLevel}}(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a26d8447a407783226ce313e52bb39798}{handleMouseInput}}(sf::Vector2i\ m\_mousePosition,\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\&\ m\_gameState,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605}{handleRotationInput}}(sf::Event\ m\_event);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d}{saveLevelToFile}}(\textcolor{keyword}{const}\ std::string\&\ m\_filename);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a50af4550cd28b70941afa18ca2e79147}{loadLevelFromFile}}(\textcolor{keyword}{const}\ std::string\&\ m\_filename);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc}{loadLevelForLevelEditor}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_acb7bd789273b991637241051ab0161b9}{animationForResources}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a1926deb0a57ce800e6ab2e78be150f28}{animationForWeed}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a840bd660617f00ca6733bf3a52fe1055}{releaseDragRect}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a984362b83939349a692676df1450ee3e}{resetFogOfWar}}();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00032}\mbox{\hyperlink{class_level_editor_a14eb3a75162c0543bd9483495fddb421}{00032}}\ \ \ \ \ std::vector<std::vector<Tile>>\ \mbox{\hyperlink{class_level_editor_a14eb3a75162c0543bd9483495fddb421}{m\_tiles}};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00034}\mbox{\hyperlink{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}{00034}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}{m\_numRows}}\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00035}\mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{00035}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{m\_numCols}}\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00037}00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00039}00039\ \ \ \ \ sf::View\ m\_levelEditorView;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ initGrid();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ randomGenerateLevel();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ initBar();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ initbuttonsForToolEditor();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ initButtonsForToolSet();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ initBackButton();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ initDragRectangle();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ handleTileButtons(sf::Vector2f\ m\_guiMousePosition,\ sf::Vector2f\ m\_worldMousePosition,\ sf::Sprite\ m\_buttons[],\ \textcolor{keywordtype}{int}\&\ m\_lastClickedIndex,\ \textcolor{keywordtype}{int}\&\ m\_selectedIndex);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ handleTilePlacement(sf::Vector2f\ m\_worldMousePosition,\ \textcolor{keywordtype}{int}\ m\_selectedIndex);}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ placeTilesInDragRectangle();}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\_numButtons\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedButtonIndex\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_lastClickedButtonIndex\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedTileX;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedTileY;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_offset\ =\ 25.0f;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isTileSelected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isButtonClicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00064}00064\ \ \ \ \ sf::Vector2f\ m\_newMousePos;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00065}00065\ \ \ \ \ sf::Vector2f\ m\_startMousePos;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00067}00067\ \ \ \ \ sf::RectangleShape\ m\_backgroundForTilesTools;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00068}00068\ \ \ \ \ sf::RectangleShape\ m\_toGoBackButton;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00069}00069\ \ \ \ \ sf::RectangleShape\ m\_backgroundForBTF[4];}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00070}00070\ \ \ \ \ sf::RectangleShape\ m\_dragRectangle;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00072}00072\ \ \ \ \ sf::Sprite\ m\_buttons[m\_numButtons];}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00074}00074\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00076}00076\ \ \ \ \ sf::Text\ m\_toGoBackText;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00077}00077\ \ \ \ \ sf::Text\ m\_walkableText;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00078}00078\ \ \ \ \ sf::Text\ m\_WallText;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00079}00079\ \ \ \ \ sf::Text\ m\_ResourceText;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00080}00080\ \ \ \ \ sf::Text\ m\_MiscText;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00082}00082\ \ \ \ \ sf::Texture\ m\_underWaterTexture;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00083}00083\ \ \ \ \ sf::Texture\ m\_buttonTexture;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00084}00084\ \ \ \ \ sf::Texture\ m\_buttonTexture1;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00086}00086\ \ \ \ \ sf::IntRect\ m\_buttonAreaForWalkable[4]\ =\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \{17,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \{33,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \{49,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \{49,\ 1792,\ 16,\ 16\}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00092}00092\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00093}00093\ \ \ \ \ sf::IntRect\ m\_buttonAreaForWalls[5]\ =\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \{49,\ 1695,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \{242,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \{257,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \{226,\ 1776,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \{258,\ 1792,\ 16,\ 16\}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00100}00100\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00101}00101\ \ \ \ \ sf::IntRect\ m\_buttonAreaForResources\ =\ \{\ 971,\ 1798,\ 16,\ 16\ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00102}00102\ \ \ \ \ sf::IntRect\ m\_buttonAreaForMiscs[2]\ =}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \{971,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \{854,\ 1776,\ 16,\ 16\}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00106}00106\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//animation\ stuff}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\_numTileFrames\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_currentResourceTileAnimationFrame\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00111}00111\ \ \ \ \ sf::Clock\ m\_tileResourceAnimationClock;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00112}00112\ \ \ \ \ sf::IntRect\ m\_tileResourceAnimationFrames[4]\ =\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \{971,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \{988,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \{1005,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \{1022,\ 1798,\ 16,\ 16\}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00118}00118\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00119}00119\ \ \ \ \ sf::Clock\ m\_tileAnimationClock;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_currentTileWeedAnimationFrame\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00121}00121\ \ \ \ \ sf::IntRect\ m\_tileWeedAnimationFrames[4]\ =}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \{971,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \{988,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \{1005,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \{1022,\ 1764,\ 16,\ 16\}}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00127}00127\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00129}00129\ \ \ \ \ sf::Sprite\ m\_buttonSelectedSprite;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00130}00130\ \ \ \ \ sf::Texture\ m\_buttonSelectedTexture;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00131}00131\ \ \ \ \ sf::Clock\ m\_buttonSelectedAnimationClock;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_currentAnimationFrame\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_animationSpeed\ =\ 0.2f;}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00134}00134\ \};}
+\DoxyCodeLine{\Hypertarget{_level_editor_8h_source_l00135}00135\ }
+
+\end{DoxyCode}

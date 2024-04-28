@@ -1,0 +1,11 @@
+<map id="AirCraft::update" name="AirCraft::update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,117,57"/>
+<area shape="rect" id="Node000002" href="$class_building.html#a92ed9c2981dbc964248a031cbef4fbec" title=" " alt="" coords="165,31,279,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,41,149,41,149,47,117,47"/>
+<area shape="rect" id="Node000003" href="$class_building.html#ab9d7d236e9684d09ea362dee94c36604" title="Spawns smoke when health on the building is low." alt="" coords="327,5,513,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,34,311,30,312,35,280,39"/>
+<area shape="rect" id="Node000005" href="$class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="342,56,499,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="280,49,326,55,325,60,279,54"/>
+<area shape="rect" id="Node000004" href="$class_particle_system.html#a5a3f496f17c45823c1afb465f903c531" title="Adds the particle into the vector." alt="" coords="561,5,745,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="514,16,546,16,546,21,514,21"/>
+</map>

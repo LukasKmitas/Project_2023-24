@@ -1,0 +1,63 @@
+\doxysection{Tank\+Aurora.\+h}
+\hypertarget{_tank_aurora_8h_source}{}\label{_tank_aurora_8h_source}\index{AI Behaviors/TankAurora.h@{AI Behaviors/TankAurora.h}}
+\mbox{\hyperlink{_tank_aurora_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vehicle_unit_8h}{VehicleUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00004}\mbox{\hyperlink{class_tank_aurora}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tank_aurora}{TankAurora}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vehicle_unit}{VehicleUnit}}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a4dba6b620a77200fd848d7125ec1969b}{TankAurora}}();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6fe01a0a60f567e8e3bf88dd452c264e}{\string~TankAurora}}();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_a929635e820b74db6381f9ea239b57178}{update}}(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ std::vector<Unit*>\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allUnits}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17}{render}}(sf::RenderWindow\&\ m\_window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00013}\mbox{\hyperlink{class_tank_aurora_a9187e6706ad11c4a9ade30b1222490f0}{00013}}\ \ \ \ \ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{UnitType}}\ \mbox{\hyperlink{class_tank_aurora_a9187e6706ad11c4a9ade30b1222490f0}{getUnitType}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a47673932bdc6d472a40ba3d390332b5b}{UnitType::TankAurora}};\ \}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setupTankAurora();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ setupHealingAura();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ setupEnergyWave();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ movement(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnElectricalParticleEffect(sf::Time\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ startEMPCharge();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ emitEMP();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ resetEnergyWave();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00028}00028\ \ \ \ \ sf::CircleShape\ m\_healingAura;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00029}00029\ \ \ \ \ sf::Shader\ m\_healingAuraShader;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00030}00030\ \ \ \ \ sf::Clock\ m\_shaderClock;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00032}00032\ \ \ \ \ sf::Sprite\ m\_energyWaveSprite;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00033}00033\ \ \ \ \ sf::Texture\ m\_energyWaveTexture;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00034}00034\ \ \ \ \ sf::Texture\ m\_lightningTexture;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00036}00036\ \ \ \ \ sf::Vector2f\ m\_directionToEnemy;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_healingRange\ =\ 150.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Electicity\ stuff}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isChargingEMPWave\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_empChargeTime\ =\ 6.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_currentChargeTime\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_empExpandArea\ =\ 15.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Energy\ Wave\ stuff}}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00047}00047\ \ \ \ \ sf::Shader\ m\_waveShader;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00048}00048\ \ \ \ \ sf::Clock\ m\_clock;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isFiringEnergyWave\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00051}00051\ \ \ \ \ sf::Vector2f\ m\_energyWavePosition;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_energyWaveSpeed\ =\ 200.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_energyWaveSize\ =\ 0.4f;\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_energyWaveMaxSize\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_energyWaveGrowthRate\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00056}00056\ \};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8h_source_l00057}00057\ }
+
+\end{DoxyCode}

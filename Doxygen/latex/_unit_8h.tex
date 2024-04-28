@@ -1,0 +1,112 @@
+\doxysection{AI Behaviors/\+Unit.h File Reference}
+\hypertarget{_unit_8h}{}\label{_unit_8h}\index{AI Behaviors/Unit.h@{AI Behaviors/Unit.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}SFML/\+Graphics.\+hpp"{}}\newline
+{\ttfamily \#include "{}Global.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include "{}Bullet.\+h"{}}\newline
+{\ttfamily \#include "{}Missile.\+h"{}}\newline
+{\ttfamily \#include "{}Particle\+System.\+h"{}}\newline
+{\ttfamily \#include "{}Building.\+h"{}}\newline
+{\ttfamily \#include "{}Tile.\+h"{}}\newline
+{\ttfamily \#include "{}Sound\+Manager.\+h"{}}\newline
+Include dependency graph for Unit.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_unit_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_unit_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_unit}{Unit}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{Unit\+Type\+Class}} \{ \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da2d4d10b89e4acc9edad2054cff3d9703}{Infantry}}
+, \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867dad6af9c1eaff2a89ebd3f8d0c542be12b}{Vehicle}}
+, \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da71c546fa61f3964d72bdf25223b78669}{Air}}
+ \}
+\item 
+enum class \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}} \{ \newline
+\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a31c1d9a12034eafdf9210253785dc8f2}{Rifleman}}
+, \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a7410e2846a61f309b4a1e0a57a6a1d48}{Harvester}}
+, \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a01e3a933906494de42d7a1d6a09bbb3a}{Buggy}}
+, \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a47673932bdc6d472a40ba3d390332b5b}{Tank\+Aurora}}
+, \newline
+\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a0c16f53185256508e19f47f6c3a0b165}{Hammerhead}}
+, \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214a6fa8c174318ad586a74af110d2704624}{Firehawk}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214} 
+\index{Unit.h@{Unit.h}!UnitType@{UnitType}}
+\index{UnitType@{UnitType}!Unit.h@{Unit.h}}
+\doxysubsubsection{\texorpdfstring{UnitType}{UnitType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rifleman@{Rifleman}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Rifleman@{Rifleman}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a31c1d9a12034eafdf9210253785dc8f2}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a31c1d9a12034eafdf9210253785dc8f2} 
+Rifleman&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Harvester@{Harvester}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Harvester@{Harvester}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a7410e2846a61f309b4a1e0a57a6a1d48}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a7410e2846a61f309b4a1e0a57a6a1d48} 
+Harvester&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Buggy@{Buggy}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Buggy@{Buggy}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a01e3a933906494de42d7a1d6a09bbb3a}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a01e3a933906494de42d7a1d6a09bbb3a} 
+Buggy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TankAurora@{TankAurora}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!TankAurora@{TankAurora}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a47673932bdc6d472a40ba3d390332b5b}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a47673932bdc6d472a40ba3d390332b5b} 
+Tank\+Aurora&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hammerhead@{Hammerhead}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Hammerhead@{Hammerhead}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a0c16f53185256508e19f47f6c3a0b165}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a0c16f53185256508e19f47f6c3a0b165} 
+Hammerhead&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Firehawk@{Firehawk}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Firehawk@{Firehawk}}}\Hypertarget{_unit_8h_a31cf478374cb056e841f841a3ba0f214a6fa8c174318ad586a74af110d2704624}\label{_unit_8h_a31cf478374cb056e841f841a3ba0f214a6fa8c174318ad586a74af110d2704624} 
+Firehawk&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00020}{20}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
+\Hypertarget{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}\label{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d} 
+\index{Unit.h@{Unit.h}!UnitTypeClass@{UnitTypeClass}}
+\index{UnitTypeClass@{UnitTypeClass}!Unit.h@{Unit.h}}
+\doxysubsubsection{\texorpdfstring{UnitTypeClass}{UnitTypeClass}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_unit_8h_a8094ea339f7deb7d4dcd7500412f867d}{Unit\+Type\+Class}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infantry@{Infantry}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Infantry@{Infantry}}}\Hypertarget{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da2d4d10b89e4acc9edad2054cff3d9703}\label{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da2d4d10b89e4acc9edad2054cff3d9703} 
+Infantry&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vehicle@{Vehicle}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Vehicle@{Vehicle}}}\Hypertarget{_unit_8h_a8094ea339f7deb7d4dcd7500412f867dad6af9c1eaff2a89ebd3f8d0c542be12b}\label{_unit_8h_a8094ea339f7deb7d4dcd7500412f867dad6af9c1eaff2a89ebd3f8d0c542be12b} 
+Vehicle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Air@{Air}!Unit.h@{Unit.h}}\index{Unit.h@{Unit.h}!Air@{Air}}}\Hypertarget{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da71c546fa61f3964d72bdf25223b78669}\label{_unit_8h_a8094ea339f7deb7d4dcd7500412f867da71c546fa61f3964d72bdf25223b78669} 
+Air&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_unit_8h_source_l00013}{13}} of file \mbox{\hyperlink{_unit_8h_source}{Unit.\+h}}.
+
