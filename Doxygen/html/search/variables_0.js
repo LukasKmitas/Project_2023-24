@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enemycurrency_0',['enemyCurrency',['../struct_global.html#a4c064d079037cc1ff7296a6106ada540',1,'Global']]]
+  ['bias_5fneurons_0',['BIAS_NEURONS',['../class_neural_networks.html#aebef9faa8584aa742b0115922ad5edce',1,'NeuralNetworks']]]
 ];

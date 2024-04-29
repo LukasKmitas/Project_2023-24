@@ -6,17 +6,18 @@
 
 
 
-Collaboration diagram for Side\+Bar\+:\nopagebreak
+Collaboration diagram for Side\+Bar\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_side_bar__coll__graph}
+\includegraphics[width=149pt]{class_side_bar__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}{Side\+Bar}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \&m\+\_\+selected\+Building\+Type)
+\mbox{\hyperlink{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f}{Side\+Bar}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \&\mbox{\hyperlink{class_side_bar_a59f41003e7312ad0e8ed2bb7ee9bea67}{m\+\_\+selected\+Building\+Type}})
 \item 
 void \mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
 \item 
@@ -61,6 +62,84 @@ const sf\+::\+Sprite \& \mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224
 \item 
 std\+::vector$<$ \mbox{\hyperlink{struct_button}{Button}} $>$ \mbox{\hyperlink{class_side_bar_aed289dbfb922a4edb57d308a38cde001}{m\+\_\+buttons}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_side_bar_adc235f6aea789729fdf3ddca64e88ce6}{init\+Slider}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the slider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_ac447136660295b82cd30487d37e1cce6}{init\+Font}} ()
+\begin{DoxyCompactList}\small\item\em Initializes fonts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_af27706211ab45d7a8b285ca44245e270}{draw\+Grid}} (sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the grid thats where the buttons are in the sidebar \doxylink{class_g_u_i}{GUI}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_bar_a7c4172e0fac4f8b98b8049877de14fb2}{init\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Initializes button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \& \mbox{\hyperlink{class_side_bar_a59f41003e7312ad0e8ed2bb7ee9bea67}{m\+\_\+selected\+Building\+Type}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_side_bar_a6bbdb7efa84e1c84ad99e3464761c6ca}{m\+\_\+font}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_side_bar_a7dc87463cefb45fe670f7acdd70d5012}{m\+\_\+sell\+Text}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_side_bar_a00ffaf6943b23a1d57fce90d5cceed34}{m\+\_\+background}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_side_bar_a0a4f6c6a15850982cc89038e806fcef5}{m\+\_\+background\+Texture}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_side_bar_a7bc8459c5654ba15ba9a03d1ef586180}{m\+\_\+bottom\+Background}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_side_bar_a531676fd8c468d5c91395d4a76aa0f30}{m\+\_\+bottom\+Background\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_side_bar_ac2cce3d01f8ed3a2c61ce4d15e6f9f33}{m\+\_\+sell\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_side_bar_a46dd9e0faf4b0724dc2c18a395877fb7}{m\+\_\+sell\+Texture}}
+\item 
+\mbox{\hyperlink{struct_button}{Button}} \mbox{\hyperlink{class_side_bar_a160d709909c6463a049f426ab498251a}{m\+\_\+button}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_side_bar_a15a7bed26ef8fb26e935d74295f97fec}{m\+\_\+color\+Shift\+Shader}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_side_bar_a3662d4fa2f1bb1d27c90b5f2dc4df3f2}{m\+\_\+ripple\+Shader}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a49abad59c62658130641e9ac236e6b03}{m\+\_\+refinery\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_abfbfb709d5cf60b25a4087c88ac60e1d}{m\+\_\+barracks\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_aa12e2ad04efd037b1118ecd0df686a60}{m\+\_\+vehicle\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a1fef4619cddbaca2ba124eef1de36cda}{m\+\_\+air\+Craft\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_aac037a4e81b8d49d7c234dce1ad96235}{m\+\_\+rifleman\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a5f49eae510ca69c627ce6c635d53b90e}{m\+\_\+harvester\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a7fea1de439a89fca1ccb79dcf5c136e3}{m\+\_\+buggy\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_acfbb58f0020c2f18ed9a9faecd34950a}{m\+\_\+tank\+Aurora\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_abe1d5636263b4f005cff67927543e5cd}{m\+\_\+hammer\+Head\+Icon\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_ad5a70014cc71a93820100c02fa8b1b0b}{m\+\_\+firehawk\+Icon\+Position}}
+\item 
+int \mbox{\hyperlink{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}{m\+\_\+grid\+Cols}} = 3
+\item 
+int \mbox{\hyperlink{class_side_bar_a67925b55f045f8c5506b69102444831c}{m\+\_\+grid\+Rows}} = 6
+\item 
+float \mbox{\hyperlink{class_side_bar_a3d5188fe87d48f1c2525a437599d0d96}{m\+\_\+cell\+Width}} = m\+\_\+bottom\+Background.\+get\+Size().x / \mbox{\hyperlink{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}{m\+\_\+grid\+Cols}}
+\item 
+float \mbox{\hyperlink{class_side_bar_aec1a80312fdee39b41d6d02010fb4131}{m\+\_\+cell\+Height}} = m\+\_\+bottom\+Background.\+get\+Size().y / \mbox{\hyperlink{class_side_bar_a67925b55f045f8c5506b69102444831c}{m\+\_\+grid\+Rows}}
+\item 
+float \mbox{\hyperlink{class_side_bar_ae3fae6d7d1bfaf21c4a8bdfae95fcff1}{m\+\_\+button\+Width}} = m\+\_\+bottom\+Background.\+get\+Size().x / \mbox{\hyperlink{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}{m\+\_\+grid\+Cols}}
+\item 
+float \mbox{\hyperlink{class_side_bar_a51bea30dc0855937909c952a2846dec2}{m\+\_\+button\+Height}} = m\+\_\+bottom\+Background.\+get\+Size().y / \mbox{\hyperlink{class_side_bar_a67925b55f045f8c5506b69102444831c}{m\+\_\+grid\+Rows}}
+\item 
+float \mbox{\hyperlink{class_side_bar_ab3fbfb291e241365c06d652017ca7858}{m\+\_\+x\+Position}}
+\item 
+float \mbox{\hyperlink{class_side_bar_adcadf4a4da5b68b826e3f21a7068e5b8}{m\+\_\+y\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_side_bar_a4cf5a3d5335c95cba7830bd15e2c146c}{m\+\_\+text\+Position}} = m\+\_\+button.\+m\+\_\+sprite.\+get\+Position()
+\item 
+sf\+::\+Float\+Rect \mbox{\hyperlink{class_side_bar_ae61c3903c46b67cb6a5ae278c0a3b415}{m\+\_\+text\+Bounds}} = m\+\_\+button.\+m\+\_\+text.\+get\+Local\+Bounds()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -81,6 +160,14 @@ Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00020}{20}} of file \mb
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
@@ -111,7 +198,8 @@ Adds the buttons for the air units when the aircraft building is clicked on.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00201}{201}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -145,7 +233,8 @@ Adds the building buttons for the sidebar.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -179,7 +268,8 @@ Adds the buttons for the infantry when barracks building is clicked on.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -213,7 +303,8 @@ Adds the buttons for vehicles when the warfactory building is clicked on.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -234,11 +325,39 @@ Just to clear everything.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_af27706211ab45d7a8b285ca44245e270}\label{class_side_bar_af27706211ab45d7a8b285ca44245e270} 
+\index{SideBar@{SideBar}!drawGrid@{drawGrid}}
+\index{drawGrid@{drawGrid}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{drawGrid()}{drawGrid()}}
+{\footnotesize\ttfamily void Side\+Bar\+::draw\+Grid (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the grid thats where the buttons are in the sidebar \doxylink{class_g_u_i}{GUI}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00365}{365}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_af27706211ab45d7a8b285ca44245e270_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}\label{class_side_bar_a6fe150acbd921f8aab7080a5711d063b} 
@@ -251,7 +370,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -268,7 +388,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -285,7 +406,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -302,7 +424,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -319,7 +442,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -336,7 +460,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -353,7 +478,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -370,7 +496,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -387,11 +514,12 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{class_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph}
+\includegraphics[width=350pt]{class_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}\label{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f} 
@@ -404,7 +532,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -421,7 +550,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -438,11 +568,78 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_a7c4172e0fac4f8b98b8049877de14fb2}\label{class_side_bar_a7c4172e0fac4f8b98b8049877de14fb2} 
+\index{SideBar@{SideBar}!initButton@{initButton}}
+\index{initButton@{initButton}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{initButton()}{initButton()}}
+{\footnotesize\ttfamily void Side\+Bar\+::init\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes button. 
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_side_bar_a7c4172e0fac4f8b98b8049877de14fb2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_ac447136660295b82cd30487d37e1cce6}\label{class_side_bar_ac447136660295b82cd30487d37e1cce6} 
+\index{SideBar@{SideBar}!initFont@{initFont}}
+\index{initFont@{initFont}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{initFont()}{initFont()}}
+{\footnotesize\ttfamily void Side\+Bar\+::init\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes fonts. 
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_side_bar_ac447136660295b82cd30487d37e1cce6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_bar_adc235f6aea789729fdf3ddca64e88ce6}\label{class_side_bar_adc235f6aea789729fdf3ddca64e88ce6} 
+\index{SideBar@{SideBar}!initSlider@{initSlider}}
+\index{initSlider@{initSlider}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{initSlider()}{initSlider()}}
+{\footnotesize\ttfamily void Side\+Bar\+::init\+Slider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the slider. 
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00298}{298}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_side_bar_adc235f6aea789729fdf3ddca64e88ce6_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}\label{class_side_bar_add5b055604b08b68d3cd8778c760d8b1} 
@@ -464,11 +661,20 @@ Renders the side\+Bar UI in gameplay.
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=265pt]{class_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph}
+\includegraphics[width=294pt]{class_side_bar_add5b055604b08b68d3cd8778c760d8b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_side_bar_a689859a607ae1f109e8ae619c26ada48}\label{class_side_bar_a689859a607ae1f109e8ae619c26ada48} 
@@ -481,16 +687,107 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_side_bar_8cpp_source}{Side\+Bar.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{class_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph}
+\includegraphics[width=350pt]{class_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_side_bar_a1fef4619cddbaca2ba124eef1de36cda}\label{class_side_bar_a1fef4619cddbaca2ba124eef1de36cda} 
+\index{SideBar@{SideBar}!m\_airCraftIconPosition@{m\_airCraftIconPosition}}
+\index{m\_airCraftIconPosition@{m\_airCraftIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_airCraftIconPosition}{m\_airCraftIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+air\+Craft\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00085}{85}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a00ffaf6943b23a1d57fce90d5cceed34}\label{class_side_bar_a00ffaf6943b23a1d57fce90d5cceed34} 
+\index{SideBar@{SideBar}!m\_background@{m\_background}}
+\index{m\_background@{m\_background}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_background}{m\_background}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Side\+Bar\+::m\+\_\+background\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00068}{68}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a0a4f6c6a15850982cc89038e806fcef5}\label{class_side_bar_a0a4f6c6a15850982cc89038e806fcef5} 
+\index{SideBar@{SideBar}!m\_backgroundTexture@{m\_backgroundTexture}}
+\index{m\_backgroundTexture@{m\_backgroundTexture}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundTexture}{m\_backgroundTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Side\+Bar\+::m\+\_\+background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00069}{69}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_abfbfb709d5cf60b25a4087c88ac60e1d}\label{class_side_bar_abfbfb709d5cf60b25a4087c88ac60e1d} 
+\index{SideBar@{SideBar}!m\_barracksIconPosition@{m\_barracksIconPosition}}
+\index{m\_barracksIconPosition@{m\_barracksIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_barracksIconPosition}{m\_barracksIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+barracks\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00083}{83}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a7bc8459c5654ba15ba9a03d1ef586180}\label{class_side_bar_a7bc8459c5654ba15ba9a03d1ef586180} 
+\index{SideBar@{SideBar}!m\_bottomBackground@{m\_bottomBackground}}
+\index{m\_bottomBackground@{m\_bottomBackground}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_bottomBackground}{m\_bottomBackground}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Side\+Bar\+::m\+\_\+bottom\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00070}{70}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a531676fd8c468d5c91395d4a76aa0f30}\label{class_side_bar_a531676fd8c468d5c91395d4a76aa0f30} 
+\index{SideBar@{SideBar}!m\_bottomBackgroundTexture@{m\_bottomBackgroundTexture}}
+\index{m\_bottomBackgroundTexture@{m\_bottomBackgroundTexture}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_bottomBackgroundTexture}{m\_bottomBackgroundTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Side\+Bar\+::m\+\_\+bottom\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00071}{71}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a7fea1de439a89fca1ccb79dcf5c136e3}\label{class_side_bar_a7fea1de439a89fca1ccb79dcf5c136e3} 
+\index{SideBar@{SideBar}!m\_buggyIconPosition@{m\_buggyIconPosition}}
+\index{m\_buggyIconPosition@{m\_buggyIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_buggyIconPosition}{m\_buggyIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+buggy\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00090}{90}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a160d709909c6463a049f426ab498251a}\label{class_side_bar_a160d709909c6463a049f426ab498251a} 
+\index{SideBar@{SideBar}!m\_button@{m\_button}}
+\index{m\_button@{m\_button}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_button}{m\_button}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_button}{Button}} Side\+Bar\+::m\+\_\+button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00076}{76}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a51bea30dc0855937909c952a2846dec2}\label{class_side_bar_a51bea30dc0855937909c952a2846dec2} 
+\index{SideBar@{SideBar}!m\_buttonHeight@{m\_buttonHeight}}
+\index{m\_buttonHeight@{m\_buttonHeight}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_buttonHeight}{m\_buttonHeight}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+button\+Height = m\+\_\+bottom\+Background.\+get\+Size().y / \mbox{\hyperlink{class_side_bar_a67925b55f045f8c5506b69102444831c}{m\+\_\+grid\+Rows}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00102}{102}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
 \Hypertarget{class_side_bar_aed289dbfb922a4edb57d308a38cde001}\label{class_side_bar_aed289dbfb922a4edb57d308a38cde001} 
 \index{SideBar@{SideBar}!m\_buttons@{m\_buttons}}
 \index{m\_buttons@{m\_buttons}!SideBar@{SideBar}}
@@ -501,9 +798,239 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00035}{35}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
 
+\Hypertarget{class_side_bar_ae3fae6d7d1bfaf21c4a8bdfae95fcff1}\label{class_side_bar_ae3fae6d7d1bfaf21c4a8bdfae95fcff1} 
+\index{SideBar@{SideBar}!m\_buttonWidth@{m\_buttonWidth}}
+\index{m\_buttonWidth@{m\_buttonWidth}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_buttonWidth}{m\_buttonWidth}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+button\+Width = m\+\_\+bottom\+Background.\+get\+Size().x / \mbox{\hyperlink{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}{m\+\_\+grid\+Cols}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00101}{101}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_aec1a80312fdee39b41d6d02010fb4131}\label{class_side_bar_aec1a80312fdee39b41d6d02010fb4131} 
+\index{SideBar@{SideBar}!m\_cellHeight@{m\_cellHeight}}
+\index{m\_cellHeight@{m\_cellHeight}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_cellHeight}{m\_cellHeight}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+cell\+Height = m\+\_\+bottom\+Background.\+get\+Size().y / \mbox{\hyperlink{class_side_bar_a67925b55f045f8c5506b69102444831c}{m\+\_\+grid\+Rows}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00099}{99}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a3d5188fe87d48f1c2525a437599d0d96}\label{class_side_bar_a3d5188fe87d48f1c2525a437599d0d96} 
+\index{SideBar@{SideBar}!m\_cellWidth@{m\_cellWidth}}
+\index{m\_cellWidth@{m\_cellWidth}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_cellWidth}{m\_cellWidth}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+cell\+Width = m\+\_\+bottom\+Background.\+get\+Size().x / \mbox{\hyperlink{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}{m\+\_\+grid\+Cols}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00098}{98}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a15a7bed26ef8fb26e935d74295f97fec}\label{class_side_bar_a15a7bed26ef8fb26e935d74295f97fec} 
+\index{SideBar@{SideBar}!m\_colorShiftShader@{m\_colorShiftShader}}
+\index{m\_colorShiftShader@{m\_colorShiftShader}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_colorShiftShader}{m\_colorShiftShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Side\+Bar\+::m\+\_\+color\+Shift\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00078}{78}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_ad5a70014cc71a93820100c02fa8b1b0b}\label{class_side_bar_ad5a70014cc71a93820100c02fa8b1b0b} 
+\index{SideBar@{SideBar}!m\_firehawkIconPosition@{m\_firehawkIconPosition}}
+\index{m\_firehawkIconPosition@{m\_firehawkIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_firehawkIconPosition}{m\_firehawkIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+firehawk\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00094}{94}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a6bbdb7efa84e1c84ad99e3464761c6ca}\label{class_side_bar_a6bbdb7efa84e1c84ad99e3464761c6ca} 
+\index{SideBar@{SideBar}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font Side\+Bar\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00065}{65}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49}\label{class_side_bar_a33d7f3f8fc51f28f49cc77064aa33a49} 
+\index{SideBar@{SideBar}!m\_gridCols@{m\_gridCols}}
+\index{m\_gridCols@{m\_gridCols}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_gridCols}{m\_gridCols}}
+{\footnotesize\ttfamily int Side\+Bar\+::m\+\_\+grid\+Cols = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00096}{96}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a67925b55f045f8c5506b69102444831c}\label{class_side_bar_a67925b55f045f8c5506b69102444831c} 
+\index{SideBar@{SideBar}!m\_gridRows@{m\_gridRows}}
+\index{m\_gridRows@{m\_gridRows}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_gridRows}{m\_gridRows}}
+{\footnotesize\ttfamily int Side\+Bar\+::m\+\_\+grid\+Rows = 6\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00097}{97}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_abe1d5636263b4f005cff67927543e5cd}\label{class_side_bar_abe1d5636263b4f005cff67927543e5cd} 
+\index{SideBar@{SideBar}!m\_hammerHeadIconPosition@{m\_hammerHeadIconPosition}}
+\index{m\_hammerHeadIconPosition@{m\_hammerHeadIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_hammerHeadIconPosition}{m\_hammerHeadIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+hammer\+Head\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00093}{93}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a5f49eae510ca69c627ce6c635d53b90e}\label{class_side_bar_a5f49eae510ca69c627ce6c635d53b90e} 
+\index{SideBar@{SideBar}!m\_harvesterIconPosition@{m\_harvesterIconPosition}}
+\index{m\_harvesterIconPosition@{m\_harvesterIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_harvesterIconPosition}{m\_harvesterIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+harvester\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00089}{89}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a49abad59c62658130641e9ac236e6b03}\label{class_side_bar_a49abad59c62658130641e9ac236e6b03} 
+\index{SideBar@{SideBar}!m\_refineryIconPosition@{m\_refineryIconPosition}}
+\index{m\_refineryIconPosition@{m\_refineryIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_refineryIconPosition}{m\_refineryIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+refinery\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00082}{82}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_aac037a4e81b8d49d7c234dce1ad96235}\label{class_side_bar_aac037a4e81b8d49d7c234dce1ad96235} 
+\index{SideBar@{SideBar}!m\_riflemanIconPosition@{m\_riflemanIconPosition}}
+\index{m\_riflemanIconPosition@{m\_riflemanIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_riflemanIconPosition}{m\_riflemanIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+rifleman\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00087}{87}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a3662d4fa2f1bb1d27c90b5f2dc4df3f2}\label{class_side_bar_a3662d4fa2f1bb1d27c90b5f2dc4df3f2} 
+\index{SideBar@{SideBar}!m\_rippleShader@{m\_rippleShader}}
+\index{m\_rippleShader@{m\_rippleShader}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_rippleShader}{m\_rippleShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Side\+Bar\+::m\+\_\+ripple\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00079}{79}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a59f41003e7312ad0e8ed2bb7ee9bea67}\label{class_side_bar_a59f41003e7312ad0e8ed2bb7ee9bea67} 
+\index{SideBar@{SideBar}!m\_selectedBuildingType@{m\_selectedBuildingType}}
+\index{m\_selectedBuildingType@{m\_selectedBuildingType}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_selectedBuildingType}{m\_selectedBuildingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}\& Side\+Bar\+::m\+\_\+selected\+Building\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00063}{63}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_ac2cce3d01f8ed3a2c61ce4d15e6f9f33}\label{class_side_bar_ac2cce3d01f8ed3a2c61ce4d15e6f9f33} 
+\index{SideBar@{SideBar}!m\_sellSprite@{m\_sellSprite}}
+\index{m\_sellSprite@{m\_sellSprite}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_sellSprite}{m\_sellSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Side\+Bar\+::m\+\_\+sell\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00073}{73}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a7dc87463cefb45fe670f7acdd70d5012}\label{class_side_bar_a7dc87463cefb45fe670f7acdd70d5012} 
+\index{SideBar@{SideBar}!m\_sellText@{m\_sellText}}
+\index{m\_sellText@{m\_sellText}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_sellText}{m\_sellText}}
+{\footnotesize\ttfamily sf\+::\+Text Side\+Bar\+::m\+\_\+sell\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00066}{66}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a46dd9e0faf4b0724dc2c18a395877fb7}\label{class_side_bar_a46dd9e0faf4b0724dc2c18a395877fb7} 
+\index{SideBar@{SideBar}!m\_sellTexture@{m\_sellTexture}}
+\index{m\_sellTexture@{m\_sellTexture}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_sellTexture}{m\_sellTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Side\+Bar\+::m\+\_\+sell\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00074}{74}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_acfbb58f0020c2f18ed9a9faecd34950a}\label{class_side_bar_acfbb58f0020c2f18ed9a9faecd34950a} 
+\index{SideBar@{SideBar}!m\_tankAuroraIconPosition@{m\_tankAuroraIconPosition}}
+\index{m\_tankAuroraIconPosition@{m\_tankAuroraIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_tankAuroraIconPosition}{m\_tankAuroraIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+tank\+Aurora\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00091}{91}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_ae61c3903c46b67cb6a5ae278c0a3b415}\label{class_side_bar_ae61c3903c46b67cb6a5ae278c0a3b415} 
+\index{SideBar@{SideBar}!m\_textBounds@{m\_textBounds}}
+\index{m\_textBounds@{m\_textBounds}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_textBounds}{m\_textBounds}}
+{\footnotesize\ttfamily sf\+::\+Float\+Rect Side\+Bar\+::m\+\_\+text\+Bounds = m\+\_\+button.\+m\+\_\+text.\+get\+Local\+Bounds()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00107}{107}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_a4cf5a3d5335c95cba7830bd15e2c146c}\label{class_side_bar_a4cf5a3d5335c95cba7830bd15e2c146c} 
+\index{SideBar@{SideBar}!m\_textPosition@{m\_textPosition}}
+\index{m\_textPosition@{m\_textPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_textPosition}{m\_textPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+text\+Position = m\+\_\+button.\+m\+\_\+sprite.\+get\+Position()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00106}{106}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_aa12e2ad04efd037b1118ecd0df686a60}\label{class_side_bar_aa12e2ad04efd037b1118ecd0df686a60} 
+\index{SideBar@{SideBar}!m\_vehicleIconPosition@{m\_vehicleIconPosition}}
+\index{m\_vehicleIconPosition@{m\_vehicleIconPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_vehicleIconPosition}{m\_vehicleIconPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Side\+Bar\+::m\+\_\+vehicle\+Icon\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00084}{84}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_ab3fbfb291e241365c06d652017ca7858}\label{class_side_bar_ab3fbfb291e241365c06d652017ca7858} 
+\index{SideBar@{SideBar}!m\_xPosition@{m\_xPosition}}
+\index{m\_xPosition@{m\_xPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_xPosition}{m\_xPosition}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+x\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00103}{103}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
+\Hypertarget{class_side_bar_adcadf4a4da5b68b826e3f21a7068e5b8}\label{class_side_bar_adcadf4a4da5b68b826e3f21a7068e5b8} 
+\index{SideBar@{SideBar}!m\_yPosition@{m\_yPosition}}
+\index{m\_yPosition@{m\_yPosition}!SideBar@{SideBar}}
+\doxysubsubsection{\texorpdfstring{m\_yPosition}{m\_yPosition}}
+{\footnotesize\ttfamily float Side\+Bar\+::m\+\_\+y\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_side_bar_8h_source_l00104}{104}} of file \mbox{\hyperlink{_side_bar_8h_source}{Side\+Bar.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_side_bar_8h}{Side\+Bar.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_side_bar_8cpp}{Side\+Bar.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_side_bar_8h}{Side\+Bar.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_side_bar_8cpp}{Side\+Bar.\+cpp}}\end{DoxyCompactItemize}

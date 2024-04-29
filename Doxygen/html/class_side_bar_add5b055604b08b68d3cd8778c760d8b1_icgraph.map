@@ -1,5 +1,11 @@
 <map id="SideBar::render" name="SideBar::render">
-<area shape="rect" id="Node000001" title="Renders the sideBar UI in gameplay." alt="" coords="141,5,252,32"/>
-<area shape="rect" id="Node000002" href="$class_g_u_i.html#a76807a6a90963f9971d165eb3c77cc57" title="Renders GUI." alt="" coords="5,5,93,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
+<area shape="rect" id="Node000001" title="Renders the sideBar UI in gameplay." alt="" coords="517,5,628,32"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#a76807a6a90963f9971d165eb3c77cc57" title="Renders GUI." alt="" coords="381,5,469,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="501,21,469,21,469,16,501,16"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

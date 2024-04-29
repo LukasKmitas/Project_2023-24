@@ -6,6 +6,7 @@ var class_tile =
       [ "Visible", "class_tile.html#a3bd139a5e2ca6c6f1b040a4eaf739870aec24d78ce33048dc73a2b6b1a0690192", null ]
     ] ],
     [ "Tile", "class_tile.html#aeeb5593bb6b75aae2edfcccbc84ab378", null ],
+    [ "initTile", "class_tile.html#acc114cb62b680e3577c36b2378289fa7", null ],
     [ "m_animationWeed", "class_tile.html#a16edab10e0525bbaa465aeed22417f50", null ],
     [ "m_fogStatus", "class_tile.html#a2024e949181bfa604c8eb22e70b0ca7a", null ],
     [ "m_isResource", "class_tile.html#abcc4f2154aa296e7c1a2ad56e81d6cea", null ],

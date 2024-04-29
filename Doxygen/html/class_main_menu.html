@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -94,17 +94,14 @@ $(function(){initNavTree('class_main_menu.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_main_menu-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MainMenu Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for MainMenu:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_main_menu__coll__graph.svg" width="560" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -119,6 +116,76 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a21a5eef38283b271749a28bc954fbddd" id="r_a21a5eef38283b271749a28bc954fbddd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21a5eef38283b271749a28bc954fbddd">handleButtonClick</a> (const sf::Vector2f &amp;m_mousePosition, <a class="el" href="_game_state_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> &amp;m_gameState)</td></tr>
 <tr class="memdesc:a21a5eef38283b271749a28bc954fbddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">handles the button presses  <br /></td></tr>
 <tr class="separator:a21a5eef38283b271749a28bc954fbddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8a34aa9b064157f970374a3ad7e3c42e" id="r_a8a34aa9b064157f970374a3ad7e3c42e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a34aa9b064157f970374a3ad7e3c42e">initButtons</a> ()</td></tr>
+<tr class="memdesc:a8a34aa9b064157f970374a3ad7e3c42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the buttons.  <br /></td></tr>
+<tr class="separator:a8a34aa9b064157f970374a3ad7e3c42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5631843fc7d98f4ffeb15e0a807c9120" id="r_a5631843fc7d98f4ffeb15e0a807c9120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5631843fc7d98f4ffeb15e0a807c9120">initBackgroundImage</a> ()</td></tr>
+<tr class="memdesc:a5631843fc7d98f4ffeb15e0a807c9120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes background.  <br /></td></tr>
+<tr class="separator:a5631843fc7d98f4ffeb15e0a807c9120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea8765b45e061943f556a5b6580a1be" id="r_aaea8765b45e061943f556a5b6580a1be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaea8765b45e061943f556a5b6580a1be">buttonTabAnimation</a> (sf::RenderWindow &amp;m_window, sf::Time t_deltaTime)</td></tr>
+<tr class="memdesc:aaea8765b45e061943f556a5b6580a1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes an animation when mouse is over the button.  <br /></td></tr>
+<tr class="separator:aaea8765b45e061943f556a5b6580a1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6df431176833e3c362867b3c1e822f02" id="r_a6df431176833e3c362867b3c1e822f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6df431176833e3c362867b3c1e822f02">titleAnimation</a> (sf::Time t_deltaTime)</td></tr>
+<tr class="memdesc:a6df431176833e3c362867b3c1e822f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animates the title to make it more fancy.  <br /></td></tr>
+<tr class="separator:a6df431176833e3c362867b3c1e822f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a65fa2cf63a86a1434222299c12f1c74b" id="r_a65fa2cf63a86a1434222299c12f1c74b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_game_state_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65fa2cf63a86a1434222299c12f1c74b">m_currentState</a> = <a class="el" href="_game_state_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b">GameState::MainMenu</a></td></tr>
+<tr class="separator:a65fa2cf63a86a1434222299c12f1c74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4004e88b914219c4f05229453a468713" id="r_a4004e88b914219c4f05229453a468713"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4004e88b914219c4f05229453a468713">m_font</a></td></tr>
+<tr class="separator:a4004e88b914219c4f05229453a468713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3952a634ba96a2d9f0062e2a7a17384c" id="r_a3952a634ba96a2d9f0062e2a7a17384c"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3952a634ba96a2d9f0062e2a7a17384c">m_titleText</a></td></tr>
+<tr class="separator:a3952a634ba96a2d9f0062e2a7a17384c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab578412f76ef8d2f0066499b486ff20e" id="r_ab578412f76ef8d2f0066499b486ff20e"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab578412f76ef8d2f0066499b486ff20e">m_outlineText</a></td></tr>
+<tr class="separator:ab578412f76ef8d2f0066499b486ff20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a24b0ee0629bd1092a0dd030fa3631" id="r_aa2a24b0ee0629bd1092a0dd030fa3631"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a24b0ee0629bd1092a0dd030fa3631">m_playText</a></td></tr>
+<tr class="separator:aa2a24b0ee0629bd1092a0dd030fa3631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21900005da51f204e782704f1211c4d1" id="r_a21900005da51f204e782704f1211c4d1"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21900005da51f204e782704f1211c4d1">m_editorText</a></td></tr>
+<tr class="separator:a21900005da51f204e782704f1211c4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165557a1b636e7948d287804de7d3ec0" id="r_a165557a1b636e7948d287804de7d3ec0"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a165557a1b636e7948d287804de7d3ec0">m_loadLevelText</a></td></tr>
+<tr class="separator:a165557a1b636e7948d287804de7d3ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90bef9ee3bf6fe7f7ac95916f66ca93b" id="r_a90bef9ee3bf6fe7f7ac95916f66ca93b"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90bef9ee3bf6fe7f7ac95916f66ca93b">m_neuralNetworkText</a></td></tr>
+<tr class="separator:a90bef9ee3bf6fe7f7ac95916f66ca93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01233b4c6f777cad26488c5d4cb9056f" id="r_a01233b4c6f777cad26488c5d4cb9056f"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01233b4c6f777cad26488c5d4cb9056f">m_exitText</a></td></tr>
+<tr class="separator:a01233b4c6f777cad26488c5d4cb9056f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7581ab8f5f4b9dcc36be52326c3238b4" id="r_a7581ab8f5f4b9dcc36be52326c3238b4"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7581ab8f5f4b9dcc36be52326c3238b4">m_playButton</a></td></tr>
+<tr class="separator:a7581ab8f5f4b9dcc36be52326c3238b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38737b0b7ec4b61f41b5c1e8ade614bb" id="r_a38737b0b7ec4b61f41b5c1e8ade614bb"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38737b0b7ec4b61f41b5c1e8ade614bb">m_editorButton</a></td></tr>
+<tr class="separator:a38737b0b7ec4b61f41b5c1e8ade614bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b568eaef7f0df5ce984e786e98f228" id="r_a69b568eaef7f0df5ce984e786e98f228"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b568eaef7f0df5ce984e786e98f228">m_loadLevelButton</a></td></tr>
+<tr class="separator:a69b568eaef7f0df5ce984e786e98f228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b24573ed79f502b8e33a2f93172585" id="r_a56b24573ed79f502b8e33a2f93172585"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56b24573ed79f502b8e33a2f93172585">m_exitButton</a></td></tr>
+<tr class="separator:a56b24573ed79f502b8e33a2f93172585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38264070cb55554eae625f49956f8c7" id="r_ab38264070cb55554eae625f49956f8c7"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab38264070cb55554eae625f49956f8c7">m_buttonTexture</a></td></tr>
+<tr class="separator:ab38264070cb55554eae625f49956f8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3733c47ebff6e59dd4f302cbab381067" id="r_a3733c47ebff6e59dd4f302cbab381067"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3733c47ebff6e59dd4f302cbab381067">m_buttonTabSprite</a></td></tr>
+<tr class="separator:a3733c47ebff6e59dd4f302cbab381067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6491d7f35293a67833a0868bf83d3f05" id="r_a6491d7f35293a67833a0868bf83d3f05"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6491d7f35293a67833a0868bf83d3f05">m_buttonTabTexture</a></td></tr>
+<tr class="separator:a6491d7f35293a67833a0868bf83d3f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a97c1dd0e9eaa1d2f969f136bf4060c" id="r_a7a97c1dd0e9eaa1d2f969f136bf4060c"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a97c1dd0e9eaa1d2f969f136bf4060c">m_backgroundTexture</a></td></tr>
+<tr class="separator:a7a97c1dd0e9eaa1d2f969f136bf4060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d8f9a8dbed7e77d318ca283d05abce" id="r_aa9d8f9a8dbed7e77d318ca283d05abce"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9d8f9a8dbed7e77d318ca283d05abce">m_backgroundSprite</a></td></tr>
+<tr class="separator:aa9d8f9a8dbed7e77d318ca283d05abce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf78187fe399d86a74f25265bf9fde1" id="r_aebf78187fe399d86a74f25265bf9fde1"><td class="memItemLeft" align="right" valign="top">sf::Shader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebf78187fe399d86a74f25265bf9fde1">m_titleShader</a></td></tr>
+<tr class="separator:aebf78187fe399d86a74f25265bf9fde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad422e4025a32840e17ec6cc2b27016ad" id="r_ad422e4025a32840e17ec6cc2b27016ad"><td class="memItemLeft" align="right" valign="top">sf::Shader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad422e4025a32840e17ec6cc2b27016ad">m_backgroundShader</a></td></tr>
+<tr class="separator:ad422e4025a32840e17ec6cc2b27016ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a1e2e6f0f3def48905303a9f54d533" id="r_a52a1e2e6f0f3def48905303a9f54d533"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52a1e2e6f0f3def48905303a9f54d533">m_mousePos</a></td></tr>
+<tr class="separator:a52a1e2e6f0f3def48905303a9f54d533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184e3ef3f4581385d80e7ee6627e7885" id="r_a184e3ef3f4581385d80e7ee6627e7885"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a184e3ef3f4581385d80e7ee6627e7885">m_deltaTime</a></td></tr>
+<tr class="separator:a184e3ef3f4581385d80e7ee6627e7885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00808ca7f88bc7df7a1d47cd6f104001" id="r_a00808ca7f88bc7df7a1d47cd6f104001"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00808ca7f88bc7df7a1d47cd6f104001">m_titleAnimationTime</a> = 0.0f</td></tr>
+<tr class="separator:a00808ca7f88bc7df7a1d47cd6f104001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59459d58f30727d28d5d55122884367a" id="r_a59459d58f30727d28d5d55122884367a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59459d58f30727d28d5d55122884367a">m_titleMaxScale</a> = 1.0f</td></tr>
+<tr class="separator:a59459d58f30727d28d5d55122884367a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b87c2d3c5ec4fba7b9dec151068124" id="r_aa6b87c2d3c5ec4fba7b9dec151068124"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6b87c2d3c5ec4fba7b9dec151068124">m_titleMinScale</a> = 0.8f</td></tr>
+<tr class="separator:aa6b87c2d3c5ec4fba7b9dec151068124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e294bddd073ab3bb519004f336d639e" id="r_a1e294bddd073ab3bb519004f336d639e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e294bddd073ab3bb519004f336d639e">m_titleAnimationSpeed</a> = 1.0f</td></tr>
+<tr class="separator:a1e294bddd073ab3bb519004f336d639e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -143,12 +210,81 @@ Public Member Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf_cgraph.svg" width="392" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf_cgraph.png" border="0" usemap="#aclass_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf_cgraph" alt=""/></div>
+<map name="aclass_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf_cgraph" id="aclass_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,123,155,149"/>
+<area shape="rect" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="203,5,386,32"/>
+<area shape="poly" title=" " alt="" coords="94,120,140,81,201,42,216,35,218,40,204,46,143,86,98,124"/>
+<area shape="rect" href="class_main_menu.html#a5631843fc7d98f4ffeb15e0a807c9120" title="Initializes background." alt="" coords="207,56,382,99"/>
+<area shape="poly" title=" " alt="" coords="131,120,199,101,200,106,132,125"/>
+<area shape="rect" href="class_main_menu.html#a8a34aa9b064157f970374a3ad7e3c42e" title="Initializes the buttons." alt="" coords="219,123,370,149"/>
+<area shape="poly" title=" " alt="" coords="155,133,203,133,203,139,155,139"/>
+<area shape="rect" href="class_sound_manager.html#afa1471a3f32972e3c5dc7529fdc1115e" title="Loads music." alt="" coords="207,173,382,200"/>
+<area shape="poly" title=" " alt="" coords="140,147,221,167,220,172,139,153"/>
+<area shape="rect" href="class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="207,224,382,251"/>
+<area shape="poly" title=" " alt="" coords="101,148,147,179,204,210,220,216,218,221,202,214,144,183,98,152"/>
+</map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaea8765b45e061943f556a5b6580a1be" name="aaea8765b45e061943f556a5b6580a1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea8765b45e061943f556a5b6580a1be">&#9670;&#160;</a></span>buttonTabAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenu::buttonTabAnimation </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>m_window</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Makes an animation when mouse is over the button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_window</td><td></td></tr>
+    <tr><td class="paramname">t_deltaTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00220">220</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_aaea8765b45e061943f556a5b6580a1be_icgraph.png" border="0" usemap="#aclass_main_menu_aaea8765b45e061943f556a5b6580a1be_icgraph" alt=""/></div>
+<map name="aclass_main_menu_aaea8765b45e061943f556a5b6580a1be_icgraph" id="aclass_main_menu_aaea8765b45e061943f556a5b6580a1be_icgraph">
+<area shape="rect" title="Makes an animation when mouse is over the button." alt="" coords="555,5,759,32"/>
+<area shape="rect" href="class_main_menu.html#a86efa09cf7c689299b4f65016ac86a2b" title="renders main menu content" alt="" coords="381,5,507,32"/>
+<area shape="poly" title=" " alt="" coords="539,21,507,21,507,16,539,16"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a21a5eef38283b271749a28bc954fbddd" name="a21a5eef38283b271749a28bc954fbddd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21a5eef38283b271749a28bc954fbddd">&#9670;&#160;</a></span>handleButtonClick()</h2>
 
@@ -181,7 +317,110 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph.png" border="0" usemap="#aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph" alt=""/></div>
+<map name="aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph" id="aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph">
+<area shape="rect" title="handles the button presses" alt="" coords="5,56,200,83"/>
+<area shape="rect" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="256,5,439,32"/>
+<area shape="poly" title=" " alt="" coords="170,53,264,33,265,38,171,58"/>
+<area shape="rect" href="class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="248,56,447,83"/>
+<area shape="poly" title=" " alt="" coords="200,67,232,67,232,72,200,72"/>
+<area shape="rect" href="class_sound_manager.html#abc224f0e248785f6dcfc09e115996329" title="stops music" alt="" coords="259,107,436,133"/>
+<area shape="poly" title=" " alt="" coords="171,81,265,100,264,106,170,86"/>
+<area shape="rect" href="class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="495,56,670,83"/>
+<area shape="poly" title=" " alt="" coords="447,67,480,67,480,72,447,72"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a21a5eef38283b271749a28bc954fbddd_icgraph.png" border="0" usemap="#aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_icgraph" alt=""/></div>
+<map name="aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_icgraph" id="aclass_main_menu_a21a5eef38283b271749a28bc954fbddd_icgraph">
+<area shape="rect" title="handles the button presses" alt="" coords="430,5,625,32"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5631843fc7d98f4ffeb15e0a807c9120" name="a5631843fc7d98f4ffeb15e0a807c9120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5631843fc7d98f4ffeb15e0a807c9120">&#9670;&#160;</a></span>initBackgroundImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenu::initBackgroundImage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes background. </p>
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00202">202</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a5631843fc7d98f4ffeb15e0a807c9120_icgraph.png" border="0" usemap="#aclass_main_menu_a5631843fc7d98f4ffeb15e0a807c9120_icgraph" alt=""/></div>
+<map name="aclass_main_menu_a5631843fc7d98f4ffeb15e0a807c9120_icgraph" id="aclass_main_menu_a5631843fc7d98f4ffeb15e0a807c9120_icgraph">
+<area shape="rect" title="Initializes background." alt="" coords="203,5,378,48"/>
+<area shape="rect" href="class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="5,13,155,40"/>
+<area shape="poly" title=" " alt="" coords="187,29,155,29,155,24,187,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8a34aa9b064157f970374a3ad7e3c42e" name="a8a34aa9b064157f970374a3ad7e3c42e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a34aa9b064157f970374a3ad7e3c42e">&#9670;&#160;</a></span>initButtons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenu::initButtons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the buttons. </p>
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00084">84</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e_icgraph.png" border="0" usemap="#aclass_main_menu_a8a34aa9b064157f970374a3ad7e3c42e_icgraph" alt=""/></div>
+<map name="aclass_main_menu_a8a34aa9b064157f970374a3ad7e3c42e_icgraph" id="aclass_main_menu_a8a34aa9b064157f970374a3ad7e3c42e_icgraph">
+<area shape="rect" title="Initializes the buttons." alt="" coords="203,5,354,32"/>
+<area shape="rect" href="class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="5,5,155,32"/>
+<area shape="poly" title=" " alt="" coords="187,21,155,21,155,16,187,16"/>
+</map>
 </div>
 
 </div>
@@ -210,6 +449,81 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00030">30</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a86efa09cf7c689299b4f65016ac86a2b_cgraph.png" border="0" usemap="#aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_cgraph" alt=""/></div>
+<map name="aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_cgraph" id="aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_cgraph">
+<area shape="rect" title="renders main menu content" alt="" coords="5,5,131,32"/>
+<area shape="rect" href="class_main_menu.html#aaea8765b45e061943f556a5b6580a1be" title="Makes an animation when mouse is over the button." alt="" coords="179,5,383,32"/>
+<area shape="poly" title=" " alt="" coords="131,16,163,16,163,21,131,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a86efa09cf7c689299b4f65016ac86a2b_icgraph.png" border="0" usemap="#aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_icgraph" alt=""/></div>
+<map name="aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_icgraph" id="aclass_main_menu_a86efa09cf7c689299b4f65016ac86a2b_icgraph">
+<area shape="rect" title="renders main menu content" alt="" coords="381,5,507,32"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6df431176833e3c362867b3c1e822f02" name="a6df431176833e3c362867b3c1e822f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df431176833e3c362867b3c1e822f02">&#9670;&#160;</a></span>titleAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenu::titleAnimation </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Animates the title to make it more fancy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_deltaTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00266">266</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_a6df431176833e3c362867b3c1e822f02_icgraph.png" border="0" usemap="#aclass_main_menu_a6df431176833e3c362867b3c1e822f02_icgraph" alt=""/></div>
+<map name="aclass_main_menu_a6df431176833e3c362867b3c1e822f02_icgraph" id="aclass_main_menu_a6df431176833e3c362867b3c1e822f02_icgraph">
+<area shape="rect" title="Animates the title to make it more fancy." alt="" coords="561,5,729,32"/>
+<area shape="rect" href="class_main_menu.html#afd2d5fff22a91bd8deb42683ab3e04a6" title="Updates main menu." alt="" coords="384,5,513,32"/>
+<area shape="poly" title=" " alt="" coords="545,21,513,21,513,16,545,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -237,12 +551,661 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_main_menu_8cpp_source.html#l00016">16</a> of file <a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_cgraph.png" border="0" usemap="#aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_cgraph" alt=""/></div>
+<map name="aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_cgraph" id="aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_cgraph">
+<area shape="rect" title="Updates main menu." alt="" coords="5,5,134,32"/>
+<area shape="rect" href="class_main_menu.html#a6df431176833e3c362867b3c1e822f02" title="Animates the title to make it more fancy." alt="" coords="182,5,350,32"/>
+<area shape="poly" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_icgraph.png" border="0" usemap="#aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_icgraph" alt=""/></div>
+<map name="aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_icgraph" id="aclass_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_icgraph">
+<area shape="rect" title="Updates main menu." alt="" coords="384,5,513,32"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad422e4025a32840e17ec6cc2b27016ad" name="ad422e4025a32840e17ec6cc2b27016ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad422e4025a32840e17ec6cc2b27016ad">&#9670;&#160;</a></span>m_backgroundShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Shader MainMenu::m_backgroundShader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00050">50</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9d8f9a8dbed7e77d318ca283d05abce" name="aa9d8f9a8dbed7e77d318ca283d05abce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d8f9a8dbed7e77d318ca283d05abce">&#9670;&#160;</a></span>m_backgroundSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite MainMenu::m_backgroundSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00047">47</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7a97c1dd0e9eaa1d2f969f136bf4060c" name="a7a97c1dd0e9eaa1d2f969f136bf4060c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a97c1dd0e9eaa1d2f969f136bf4060c">&#9670;&#160;</a></span>m_backgroundTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture MainMenu::m_backgroundTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00046">46</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3733c47ebff6e59dd4f302cbab381067" name="a3733c47ebff6e59dd4f302cbab381067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3733c47ebff6e59dd4f302cbab381067">&#9670;&#160;</a></span>m_buttonTabSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite MainMenu::m_buttonTabSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00043">43</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a6491d7f35293a67833a0868bf83d3f05" name="a6491d7f35293a67833a0868bf83d3f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6491d7f35293a67833a0868bf83d3f05">&#9670;&#160;</a></span>m_buttonTabTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture MainMenu::m_buttonTabTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00044">44</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab38264070cb55554eae625f49956f8c7" name="ab38264070cb55554eae625f49956f8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38264070cb55554eae625f49956f8c7">&#9670;&#160;</a></span>m_buttonTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture MainMenu::m_buttonTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00042">42</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a65fa2cf63a86a1434222299c12f1c74b" name="a65fa2cf63a86a1434222299c12f1c74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fa2cf63a86a1434222299c12f1c74b">&#9670;&#160;</a></span>m_currentState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_game_state_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> MainMenu::m_currentState = <a class="el" href="_game_state_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b">GameState::MainMenu</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00025">25</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a184e3ef3f4581385d80e7ee6627e7885" name="a184e3ef3f4581385d80e7ee6627e7885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184e3ef3f4581385d80e7ee6627e7885">&#9670;&#160;</a></span>m_deltaTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Time MainMenu::m_deltaTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00053">53</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a38737b0b7ec4b61f41b5c1e8ade614bb" name="a38737b0b7ec4b61f41b5c1e8ade614bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38737b0b7ec4b61f41b5c1e8ade614bb">&#9670;&#160;</a></span>m_editorButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape MainMenu::m_editorButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00038">38</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a21900005da51f204e782704f1211c4d1" name="a21900005da51f204e782704f1211c4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21900005da51f204e782704f1211c4d1">&#9670;&#160;</a></span>m_editorText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_editorText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00032">32</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a56b24573ed79f502b8e33a2f93172585" name="a56b24573ed79f502b8e33a2f93172585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b24573ed79f502b8e33a2f93172585">&#9670;&#160;</a></span>m_exitButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape MainMenu::m_exitButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00041">41</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a01233b4c6f777cad26488c5d4cb9056f" name="a01233b4c6f777cad26488c5d4cb9056f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01233b4c6f777cad26488c5d4cb9056f">&#9670;&#160;</a></span>m_exitText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_exitText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00035">35</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a4004e88b914219c4f05229453a468713" name="a4004e88b914219c4f05229453a468713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4004e88b914219c4f05229453a468713">&#9670;&#160;</a></span>m_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font MainMenu::m_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00027">27</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a69b568eaef7f0df5ce984e786e98f228" name="a69b568eaef7f0df5ce984e786e98f228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b568eaef7f0df5ce984e786e98f228">&#9670;&#160;</a></span>m_loadLevelButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape MainMenu::m_loadLevelButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00039">39</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a165557a1b636e7948d287804de7d3ec0" name="a165557a1b636e7948d287804de7d3ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165557a1b636e7948d287804de7d3ec0">&#9670;&#160;</a></span>m_loadLevelText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_loadLevelText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00033">33</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a52a1e2e6f0f3def48905303a9f54d533" name="a52a1e2e6f0f3def48905303a9f54d533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a1e2e6f0f3def48905303a9f54d533">&#9670;&#160;</a></span>m_mousePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f MainMenu::m_mousePos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00052">52</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a90bef9ee3bf6fe7f7ac95916f66ca93b" name="a90bef9ee3bf6fe7f7ac95916f66ca93b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90bef9ee3bf6fe7f7ac95916f66ca93b">&#9670;&#160;</a></span>m_neuralNetworkText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_neuralNetworkText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00034">34</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab578412f76ef8d2f0066499b486ff20e" name="ab578412f76ef8d2f0066499b486ff20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab578412f76ef8d2f0066499b486ff20e">&#9670;&#160;</a></span>m_outlineText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_outlineText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00030">30</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7581ab8f5f4b9dcc36be52326c3238b4" name="a7581ab8f5f4b9dcc36be52326c3238b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7581ab8f5f4b9dcc36be52326c3238b4">&#9670;&#160;</a></span>m_playButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape MainMenu::m_playButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00037">37</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2a24b0ee0629bd1092a0dd030fa3631" name="aa2a24b0ee0629bd1092a0dd030fa3631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a24b0ee0629bd1092a0dd030fa3631">&#9670;&#160;</a></span>m_playText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_playText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00031">31</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e294bddd073ab3bb519004f336d639e" name="a1e294bddd073ab3bb519004f336d639e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e294bddd073ab3bb519004f336d639e">&#9670;&#160;</a></span>m_titleAnimationSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainMenu::m_titleAnimationSpeed = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00058">58</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a00808ca7f88bc7df7a1d47cd6f104001" name="a00808ca7f88bc7df7a1d47cd6f104001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00808ca7f88bc7df7a1d47cd6f104001">&#9670;&#160;</a></span>m_titleAnimationTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainMenu::m_titleAnimationTime = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00055">55</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a59459d58f30727d28d5d55122884367a" name="a59459d58f30727d28d5d55122884367a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59459d58f30727d28d5d55122884367a">&#9670;&#160;</a></span>m_titleMaxScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainMenu::m_titleMaxScale = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00056">56</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6b87c2d3c5ec4fba7b9dec151068124" name="aa6b87c2d3c5ec4fba7b9dec151068124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b87c2d3c5ec4fba7b9dec151068124">&#9670;&#160;</a></span>m_titleMinScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainMenu::m_titleMinScale = 0.8f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00057">57</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="aebf78187fe399d86a74f25265bf9fde1" name="aebf78187fe399d86a74f25265bf9fde1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf78187fe399d86a74f25265bf9fde1">&#9670;&#160;</a></span>m_titleShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Shader MainMenu::m_titleShader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00049">49</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3952a634ba96a2d9f0062e2a7a17384c" name="a3952a634ba96a2d9f0062e2a7a17384c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3952a634ba96a2d9f0062e2a7a17384c">&#9670;&#160;</a></span>m_titleText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text MainMenu::m_titleText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_8h_source.html#l00029">29</a> of file <a class="el" href="_main_menu_8h_source.html">MainMenu.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_main_menu_8h_source.html">MainMenu.h</a></li>
-<li>AI Behaviors/<a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_main_menu_8h_source.html">MainMenu.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_main_menu_8cpp_source.html">MainMenu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

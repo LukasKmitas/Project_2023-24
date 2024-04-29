@@ -1,5 +1,12 @@
 <map id="LevelEditor::animationForWeed" name="LevelEditor::animationForWeed">
-<area shape="rect" id="Node000001" title="Animates the weed tiles." alt="" coords="185,5,386,32"/>
-<area shape="rect" id="Node000002" href="$class_level_editor.html#a75a95293d67fba7fcb0b547992c3ad6e" title="Updates the level editor content changes." alt="" coords="5,5,137,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,21,137,21,137,16,169,16"/>
+<area shape="rect" id="Node000001" title="Animates the weed tiles." alt="" coords="564,5,765,32"/>
+<area shape="rect" id="Node000002" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="548,21,337,21,337,16,548,16"/>
+<area shape="rect" id="Node000005" href="$class_level_editor.html#a75a95293d67fba7fcb0b547992c3ad6e" title="Updates the level editor content changes." alt="" coords="384,31,516,57"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="549,35,516,39,516,34,548,30"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="369,34,336,29,337,24,369,29"/>
 </map>

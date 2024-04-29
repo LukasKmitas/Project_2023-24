@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -95,17 +95,14 @@ $(function(){initNavTree('class_sound_manager.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_sound_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SoundManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for SoundManager:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager__coll__graph.svg" width="431" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -160,13 +157,37 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a45d4742f2cc9a5caf0fab51cd05919ae" id="r_a45d4742f2cc9a5caf0fab51cd05919ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45d4742f2cc9a5caf0fab51cd05919ae">getInstance</a> ()</td></tr>
 <tr class="separator:a45d4742f2cc9a5caf0fab51cd05919ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abcc1fbf3488be5788a42c9a4fe56df35" id="r_abcc1fbf3488be5788a42c9a4fe56df35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcc1fbf3488be5788a42c9a4fe56df35">SoundManager</a> ()</td></tr>
+<tr class="separator:abcc1fbf3488be5788a42c9a4fe56df35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5dbf8eab22db48ff8f3db51b02f8938" id="r_ad5dbf8eab22db48ff8f3db51b02f8938"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5dbf8eab22db48ff8f3db51b02f8938">~SoundManager</a> ()</td></tr>
+<tr class="separator:ad5dbf8eab22db48ff8f3db51b02f8938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aca164f0c4120c8aebca9ba6b2289a6ae" id="r_aca164f0c4120c8aebca9ba6b2289a6ae"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, sf::SoundBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca164f0c4120c8aebca9ba6b2289a6ae">soundBuffers</a></td></tr>
+<tr class="separator:aca164f0c4120c8aebca9ba6b2289a6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b5619ac3af93344d3d830506c4d1ce" id="r_ac9b5619ac3af93344d3d830506c4d1ce"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, sf::Sound &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b5619ac3af93344d3d830506c4d1ce">sounds</a></td></tr>
+<tr class="separator:ac9b5619ac3af93344d3d830506c4d1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac803877c4a733e920bc348bf5c7e2b4d" id="r_ac803877c4a733e920bc348bf5c7e2b4d"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, sf::Music * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac803877c4a733e920bc348bf5c7e2b4d">musics</a></td></tr>
+<tr class="separator:ac803877c4a733e920bc348bf5c7e2b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0267b9d05552b093f91996e84b55d931" id="r_a0267b9d05552b093f91996e84b55d931"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0267b9d05552b093f91996e84b55d931">playlist</a></td></tr>
+<tr class="separator:a0267b9d05552b093f91996e84b55d931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab51048d5f9bd8cf1df7995ec25fe416" id="r_aab51048d5f9bd8cf1df7995ec25fe416"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab51048d5f9bd8cf1df7995ec25fe416">currentTrack</a></td></tr>
+<tr class="separator:aab51048d5f9bd8cf1df7995ec25fe416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd7c02cf458cdd911a475fa7a4f6df0" id="r_adcd7c02cf458cdd911a475fa7a4f6df0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcd7c02cf458cdd911a475fa7a4f6df0">globalSoundVolume</a> = 100.0f</td></tr>
+<tr class="separator:adcd7c02cf458cdd911a475fa7a4f6df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837af56f46e6062590d6c74d4ea31fae" id="r_a837af56f46e6062590d6c74d4ea31fae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a837af56f46e6062590d6c74d4ea31fae">globalMusicVolume</a> = 100.0f</td></tr>
+<tr class="separator:a837af56f46e6062590d6c74d4ea31fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00006">6</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac4b48cfc4d394c547f5efec7d451165" name="aac4b48cfc4d394c547f5efec7d451165"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac4b48cfc4d394c547f5efec7d451165">&#9670;&#160;</a></span>SoundManager()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4b48cfc4d394c547f5efec7d451165">&#9670;&#160;</a></span>SoundManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,6 +208,60 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcc1fbf3488be5788a42c9a4fe56df35" name="abcc1fbf3488be5788a42c9a4fe56df35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc1fbf3488be5788a42c9a4fe56df35">&#9670;&#160;</a></span>SoundManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SoundManager::SoundManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00003">3</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad5dbf8eab22db48ff8f3db51b02f8938" name="ad5dbf8eab22db48ff8f3db51b02f8938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5dbf8eab22db48ff8f3db51b02f8938">&#9670;&#160;</a></span>~SoundManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SoundManager::~SoundManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00007">7</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,6 +290,18 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00155">155</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5_icgraph.png" border="0" usemap="#aclass_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5_icgraph" id="aclass_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5_icgraph">
+<area shape="rect" title="adds music to playlist" alt="" coords="403,5,597,32"/>
+<area shape="rect" href="class_game.html#ac70268e7febf34867b9181091ca03073" title="A playlist of songs that plays only in gameplay mode." alt="" coords="153,5,355,32"/>
+<area shape="poly" title=" " alt="" coords="387,21,356,21,356,16,387,16"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -245,7 +332,76 @@ Static Public Member Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph.svg" width="436" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph.png" border="0" usemap="#aclass_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph" id="aclass_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae_icgraph">
+<area shape="rect" title=" " alt="" coords="794,385,977,412"/>
+<area shape="rect" href="class_rifleman_squad.html#afe03ca4ff7509dd205e6ba283541e532" title="Tries to aim and shoots at the target with the squad members." alt="" coords="569,5,720,32"/>
+<area shape="poly" title=" " alt="" coords="879,370,869,303,846,215,828,169,806,124,778,82,744,46,719,31,722,27,747,42,782,79,810,121,833,167,851,214,874,302,884,369"/>
+<area shape="rect" href="class_game.html#a4107bc7f3cf933a2e64cbc7586ac8140" title="Checks the victory and lose conditions." alt="" coords="544,56,745,83"/>
+<area shape="poly" title=" " alt="" coords="876,371,862,314,837,242,798,168,773,133,744,103,714,86,717,81,747,99,777,130,802,165,841,240,867,313,881,369"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="345,157,448,184"/>
+<area shape="poly" title=" " alt="" coords="876,371,861,319,836,257,819,225,798,195,773,169,744,148,705,130,662,121,619,118,575,122,494,138,431,159,430,154,492,133,574,116,618,113,663,115,706,125,747,143,777,165,802,192,823,222,841,254,866,318,881,369"/>
+<area shape="rect" href="class_tank_aurora.html#ae91336895cbe9bb067a991215fd9cd75" title="After charging the emp it shoots out the energy wave to slow down enemies." alt="" coords="322,588,471,615"/>
+<area shape="poly" title=" " alt="" coords="877,428,860,470,832,519,795,567,772,587,747,604,709,620,670,630,629,635,588,636,511,630,448,618,449,613,512,625,588,631,628,630,669,624,708,614,744,599,769,583,791,563,828,516,855,467,872,426"/>
+<area shape="rect" href="class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="547,259,742,285"/>
+<area shape="poly" title=" " alt="" coords="856,377,806,337,745,300,714,288,716,283,747,295,809,333,859,373"/>
+<area shape="rect" href="class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="559,309,730,336"/>
+<area shape="poly" title=" " alt="" coords="834,382,745,351,704,339,705,334,746,345,836,377"/>
+<area shape="rect" href="class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="551,360,738,387"/>
+<area shape="poly" title=" " alt="" coords="778,390,738,386,739,381,779,385"/>
+<area shape="rect" href="class_game.html#ac70268e7febf34867b9181091ca03073" title="A playlist of songs that plays only in gameplay mode." alt="" coords="543,563,746,589"/>
+<area shape="poly" title=" " alt="" coords="869,427,820,490,786,524,747,553,722,565,720,560,744,548,782,520,816,487,865,423"/>
+<area shape="rect" href="class_game.html#aeb5d0d8c72297e1ea468facac9c8383d" title=" " alt="" coords="551,461,738,488"/>
+<area shape="poly" title=" " alt="" coords="836,421,746,452,705,463,704,458,745,447,834,416"/>
+<area shape="rect" href="class_firehawk.html#a9508b9506242d3292ec9f213019d84a3" title="shoots out the missles" alt="" coords="564,664,725,691"/>
+<area shape="poly" title=" " alt="" coords="878,427,861,475,834,534,797,595,773,623,747,647,715,666,712,661,744,643,770,619,792,592,830,532,856,473,873,426"/>
+<area shape="rect" href="class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="570,512,719,539"/>
+<area shape="poly" title=" " alt="" coords="859,425,809,465,747,502,716,514,714,509,745,498,806,460,856,421"/>
+<area shape="rect" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b" title="shoots the bullet" alt="" coords="568,715,721,741"/>
+<area shape="poly" title=" " alt="" coords="882,428,869,486,844,561,826,600,804,639,778,674,747,705,722,719,720,715,744,701,774,670,800,636,821,598,839,559,864,485,877,427"/>
+<area shape="rect" href="class_hammer_head.html#a15dac54664c12ac1e26bf51160cea5f2" title="shoots bullets" alt="" coords="547,765,742,792"/>
+<area shape="poly" title=" " alt="" coords="884,428,874,495,851,584,833,630,810,676,782,718,747,755,730,767,727,763,744,751,778,715,806,673,828,628,846,582,869,494,879,427"/>
+<area shape="rect" href="class_tank_aurora.html#a11461db52d4c53a679968b628d1732a4" title="starts the charge up for the EMP" alt="" coords="549,411,740,437"/>
+<area shape="poly" title=" " alt="" coords="778,413,741,417,740,411,778,407"/>
+<area shape="rect" href="class_game.html#a37d3b5d22bb0643d8bf0da2c85e9c40e" title="Updates the enemies stuff like buildings, units to bullets and particle effects on them." alt="" coords="552,157,737,184"/>
+<area shape="poly" title=" " alt="" coords="871,372,852,333,824,285,788,238,744,198,723,187,725,182,747,194,792,234,829,282,856,330,875,370"/>
+<area shape="rect" href="class_game.html#ab96b2f1df650ce4edf1b756d89fc7e7c" title="Updates the players buildings, units and the weapons for the unit." alt="" coords="554,208,735,235"/>
+<area shape="poly" title=" " alt="" coords="865,374,816,310,782,277,744,249,720,238,722,233,747,244,786,273,820,307,869,371"/>
+<area shape="rect" href="class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="319,5,474,32"/>
+<area shape="poly" title=" " alt="" coords="554,21,475,21,475,16,554,16"/>
+<area shape="poly" title=" " alt="" coords="582,90,544,104,480,132,425,159,423,154,477,127,542,99,580,85"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="135,208,218,235"/>
+<area shape="poly" title=" " alt="" coords="331,188,219,215,217,209,330,183"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,208,55,235"/>
+<area shape="poly" title=" " alt="" coords="120,224,55,224,55,219,120,219"/>
+<area shape="rect" href="class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="109,487,244,513"/>
+<area shape="poly" title=" " alt="" coords="351,584,206,516,209,511,353,579"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="322,284,471,311"/>
+<area shape="poly" title=" " alt="" coords="532,286,472,292,472,287,532,281"/>
+<area shape="poly" title=" " alt="" coords="341,281,217,238,219,233,342,276"/>
+<area shape="poly" title=" " alt="" coords="543,315,471,308,472,302,544,310"/>
+<area shape="poly" title=" " alt="" coords="570,358,543,351,434,314,436,309,544,345,571,353"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="347,487,446,513"/>
+<area shape="poly" title=" " alt="" coords="570,561,543,553,434,516,436,511,544,548,571,556"/>
+<area shape="poly" title=" " alt="" coords="536,488,447,498,447,492,535,483"/>
+<area shape="rect" href="class_firehawk.html#a695f22839d141aba8fecabbe5b14fce7" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="303,664,491,691"/>
+<area shape="poly" title=" " alt="" coords="549,680,491,680,491,675,549,675"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="116,664,237,691"/>
+<area shape="poly" title=" " alt="" coords="287,680,237,680,237,675,287,675"/>
+<area shape="rect" href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4" title="Aims the weapon towards enemy." alt="" coords="329,715,464,741"/>
+<area shape="poly" title=" " alt="" coords="553,731,465,731,465,725,553,725"/>
+<area shape="rect" href="class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="124,715,229,741"/>
+<area shape="poly" title=" " alt="" coords="314,731,230,731,230,725,314,725"/>
+<area shape="rect" href="class_hammer_head.html#abfc0a243da104f4fe34b5abc4e602669" title="Makes it aim at the enemy." alt="" coords="305,765,489,792"/>
+<area shape="poly" title=" " alt="" coords="532,781,489,781,489,776,532,776"/>
+<area shape="rect" href="class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="103,765,250,792"/>
+<area shape="poly" title=" " alt="" coords="289,781,250,781,250,776,289,776"/>
+<area shape="rect" href="class_tank_aurora.html#aac051b243c0cf10ff00e9b8af42d50de" title="Reset the energy wave." alt="" coords="298,436,495,463"/>
+<area shape="poly" title=" " alt="" coords="534,438,496,442,496,437,533,433"/>
+<area shape="poly" title=" " alt="" coords="321,469,238,489,237,483,320,464"/>
+<area shape="poly" title=" " alt="" coords="536,173,449,173,449,168,536,168"/>
+<area shape="poly" title=" " alt="" coords="560,207,448,184,449,179,561,202"/>
+</map>
 </div>
 
 </div>
@@ -282,7 +438,16 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph.svg" width="384" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph.png" border="0" usemap="#aclass_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph" id="aclass_sound_manager_afa1471a3f32972e3c5dc7529fdc1115e_icgraph">
+<area shape="rect" title="Loads music." alt="" coords="403,31,578,57"/>
+<area shape="rect" href="class_game.html#ac70268e7febf34867b9181091ca03073" title="A playlist of songs that plays only in gameplay mode." alt="" coords="153,5,355,32"/>
+<area shape="poly" title=" " alt="" coords="388,36,355,32,356,27,388,30"/>
+<area shape="rect" href="class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="179,56,329,83"/>
+<area shape="poly" title=" " alt="" coords="388,58,329,64,329,59,388,52"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
 </div>
 
 </div>
@@ -316,6 +481,18 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00020">20</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a8dd42da84f176f55f385f923c1385987_icgraph.png" border="0" usemap="#aclass_sound_manager_a8dd42da84f176f55f385f923c1385987_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a8dd42da84f176f55f385f923c1385987_icgraph" id="aclass_sound_manager_a8dd42da84f176f55f385f923c1385987_icgraph">
+<area shape="rect" title="Loads the sound." alt="" coords="388,5,565,32"/>
+<area shape="rect" href="class_game.html#aeb5d0d8c72297e1ea468facac9c8383d" title=" " alt="" coords="153,5,340,32"/>
+<area shape="poly" title=" " alt="" coords="373,21,340,21,340,16,373,16"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -376,7 +553,33 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph.png" border="0" usemap="#aclass_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph" id="aclass_sound_manager_a680ef232be763e1f839892e18937d74b_icgraph">
+<area shape="rect" title="plays music" alt="" coords="920,81,1095,108"/>
+<area shape="rect" href="class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="442,5,613,32"/>
+<area shape="poly" title=" " alt="" coords="962,77,919,60,871,47,805,35,736,27,614,21,614,16,737,22,805,29,873,41,921,55,964,72"/>
+<area shape="rect" href="class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="679,56,866,83"/>
+<area shape="poly" title=" " alt="" coords="904,86,866,82,866,77,905,81"/>
+<area shape="rect" href="class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="698,107,847,133"/>
+<area shape="poly" title=" " alt="" coords="905,108,848,115,847,109,904,103"/>
+<area shape="rect" href="class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="673,157,872,184"/>
+<area shape="poly" title=" " alt="" coords="959,117,873,148,833,159,831,154,871,143,957,112"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,81,382,108"/>
+<area shape="poly" title=" " alt="" coords="470,40,431,53,348,83,346,78,429,48,469,35"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,111,185,137"/>
+<area shape="poly" title=" " alt="" coords="218,113,186,119,185,114,217,108"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,111,55,137"/>
+<area shape="poly" title=" " alt="" coords="87,127,55,127,55,121,87,121"/>
+<area shape="poly" title=" " alt="" coords="664,78,383,93,383,88,663,73"/>
+<area shape="rect" href="class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="430,107,625,133"/>
+<area shape="poly" title=" " alt="" coords="689,156,595,137,596,131,690,151"/>
+<area shape="rect" href="class_sound_manager.html#a237964589201c404a015660fe601eff5" title="updates the track when the current one stops playing" alt="" coords="432,157,623,200"/>
+<area shape="poly" title=" " alt="" coords="657,177,623,178,623,173,657,172"/>
+<area shape="poly" title=" " alt="" coords="415,110,383,106,383,101,416,104"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,136,359,163"/>
+<area shape="poly" title=" " alt="" coords="417,167,359,159,360,154,418,161"/>
+<area shape="poly" title=" " alt="" coords="240,142,185,133,186,128,241,136"/>
+</map>
 </div>
 
 </div>
@@ -402,12 +605,33 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph.svg" width="434" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph.png" border="0" usemap="#aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph" alt=""/></div>
+<map name="aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph" id="aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph">
+<area shape="rect" title="plays the next track for music if there is any" alt="" coords="5,5,205,32"/>
+<area shape="rect" href="class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="253,5,428,32"/>
+<area shape="poly" title=" " alt="" coords="205,16,237,16,237,21,205,21"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph.svg" width="480" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph.png" border="0" usemap="#aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph" id="aclass_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_icgraph">
+<area shape="rect" title="plays the next track for music if there is any" alt="" coords="673,35,872,61"/>
+<area shape="rect" href="class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="430,5,625,32"/>
+<area shape="poly" title=" " alt="" coords="657,37,625,33,625,28,657,32"/>
+<area shape="rect" href="class_sound_manager.html#a237964589201c404a015660fe601eff5" title="updates the track when the current one stops playing" alt="" coords="432,56,623,99"/>
+<area shape="poly" title=" " alt="" coords="658,64,623,69,623,63,657,59"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,8,382,35"/>
+<area shape="poly" title=" " alt="" coords="415,23,383,23,383,18,415,17"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,35,185,61"/>
+<area shape="poly" title=" " alt="" coords="218,39,186,44,185,39,217,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,35,55,61"/>
+<area shape="poly" title=" " alt="" coords="87,51,55,51,55,45,87,45"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,60,359,87"/>
+<area shape="poly" title=" " alt="" coords="417,78,359,77,360,72,417,73"/>
+<area shape="poly" title=" " alt="" coords="240,66,185,57,186,52,241,60"/>
+</map>
 </div>
 
 </div>
@@ -436,6 +660,59 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00034">34</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351_icgraph.png" border="0" usemap="#aclass_sound_manager_a92e1d1ffad59deceff7e77e4bd032351_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a92e1d1ffad59deceff7e77e4bd032351_icgraph" id="aclass_sound_manager_a92e1d1ffad59deceff7e77e4bd032351_icgraph">
+<area shape="rect" title="plays the sound" alt="" coords="793,208,970,235"/>
+<area shape="rect" href="class_rifleman_squad.html#afe03ca4ff7509dd205e6ba283541e532" title="Tries to aim and shoots at the target with the squad members." alt="" coords="569,5,719,32"/>
+<area shape="poly" title=" " alt="" coords="865,196,845,161,818,121,784,80,743,46,718,34,721,29,746,42,787,76,822,117,850,158,869,193"/>
+<area shape="rect" href="class_game.html#a4107bc7f3cf933a2e64cbc7586ac8140" title="Checks the victory and lose conditions." alt="" coords="543,56,745,83"/>
+<area shape="poly" title=" " alt="" coords="858,198,809,146,778,120,743,97,717,86,719,81,746,92,781,115,813,142,862,194"/>
+<area shape="rect" href="class_tank_aurora.html#ae91336895cbe9bb067a991215fd9cd75" title="After charging the emp it shoots out the energy wave to slow down enemies." alt="" coords="322,259,471,285"/>
+<area shape="poly" title=" " alt="" coords="799,241,745,249,600,264,472,272,472,266,599,258,744,244,798,235"/>
+<area shape="rect" href="class_firehawk.html#a9508b9506242d3292ec9f213019d84a3" title="shoots out the missles" alt="" coords="564,208,724,235"/>
+<area shape="poly" title=" " alt="" coords="777,224,725,224,725,219,777,219"/>
+<area shape="rect" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b" title="shoots the bullet" alt="" coords="568,360,720,387"/>
+<area shape="poly" title=" " alt="" coords="862,249,813,300,781,327,746,350,719,362,717,357,743,346,778,323,809,296,858,245"/>
+<area shape="rect" href="class_hammer_head.html#a15dac54664c12ac1e26bf51160cea5f2" title="shoots bullets" alt="" coords="547,411,741,437"/>
+<area shape="poly" title=" " alt="" coords="869,250,850,284,822,325,787,366,746,401,723,413,721,408,743,396,784,362,818,322,845,281,865,247"/>
+<area shape="rect" href="class_tank_aurora.html#a11461db52d4c53a679968b628d1732a4" title="starts the charge up for the EMP" alt="" coords="548,309,740,336"/>
+<area shape="poly" title=" " alt="" coords="844,245,746,293,695,311,693,306,744,288,842,240"/>
+<area shape="rect" href="class_game.html#a37d3b5d22bb0643d8bf0da2c85e9c40e" title="Updates the enemies stuff like buildings, units to bullets and particle effects on them." alt="" coords="551,107,737,133"/>
+<area shape="poly" title=" " alt="" coords="845,202,798,174,744,148,709,136,711,131,746,143,801,169,848,197"/>
+<area shape="rect" href="class_game.html#ab96b2f1df650ce4edf1b756d89fc7e7c" title="Updates the players buildings, units and the weapons for the unit." alt="" coords="553,157,735,184"/>
+<area shape="poly" title=" " alt="" coords="800,207,709,187,710,182,801,202"/>
+<area shape="rect" href="class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="319,5,474,32"/>
+<area shape="poly" title=" " alt="" coords="553,21,475,21,475,16,553,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="345,107,448,133"/>
+<area shape="poly" title=" " alt="" coords="561,89,450,112,448,107,560,84"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="135,107,218,133"/>
+<area shape="poly" title=" " alt="" coords="330,123,218,123,218,117,330,117"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,107,55,133"/>
+<area shape="poly" title=" " alt="" coords="120,123,55,123,55,117,120,117"/>
+<area shape="rect" href="class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="109,284,244,311"/>
+<area shape="poly" title=" " alt="" coords="307,285,244,292,244,287,306,280"/>
+<area shape="rect" href="class_firehawk.html#a695f22839d141aba8fecabbe5b14fce7" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="303,208,491,235"/>
+<area shape="poly" title=" " alt="" coords="548,224,491,224,491,219,548,219"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="116,208,237,235"/>
+<area shape="poly" title=" " alt="" coords="287,224,237,224,237,219,287,219"/>
+<area shape="rect" href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4" title="Aims the weapon towards enemy." alt="" coords="329,360,464,387"/>
+<area shape="poly" title=" " alt="" coords="552,376,465,376,465,371,552,371"/>
+<area shape="rect" href="class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="124,360,229,387"/>
+<area shape="poly" title=" " alt="" coords="314,376,230,376,230,371,314,371"/>
+<area shape="rect" href="class_hammer_head.html#abfc0a243da104f4fe34b5abc4e602669" title="Makes it aim at the enemy." alt="" coords="305,411,489,437"/>
+<area shape="poly" title=" " alt="" coords="531,427,489,427,489,421,531,421"/>
+<area shape="rect" href="class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="103,411,250,437"/>
+<area shape="poly" title=" " alt="" coords="289,427,250,427,250,421,289,421"/>
+<area shape="rect" href="class_tank_aurora.html#aac051b243c0cf10ff00e9b8af42d50de" title="Reset the energy wave." alt="" coords="298,309,495,336"/>
+<area shape="poly" title=" " alt="" coords="533,325,496,325,496,320,533,320"/>
+<area shape="poly" title=" " alt="" coords="283,312,243,308,244,302,283,307"/>
+<area shape="poly" title=" " alt="" coords="536,123,449,123,449,117,536,117"/>
+<area shape="poly" title=" " alt="" coords="560,156,448,133,450,128,561,151"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -463,6 +740,31 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00139">139</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a72e2018710caaa14b4b3b7d821121655_icgraph.png" border="0" usemap="#aclass_sound_manager_a72e2018710caaa14b4b3b7d821121655_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a72e2018710caaa14b4b3b7d821121655_icgraph" id="aclass_sound_manager_a72e2018710caaa14b4b3b7d821121655_icgraph">
+<area shape="rect" title="sets all music volume" alt="" coords="680,48,886,91"/>
+<area shape="rect" href="class_game.html#a4107bc7f3cf933a2e64cbc7586ac8140" title="Checks the victory and lose conditions." alt="" coords="430,5,632,32"/>
+<area shape="poly" title=" " alt="" coords="664,48,600,35,601,30,665,43"/>
+<area shape="rect" href="class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="445,56,617,83"/>
+<area shape="poly" title=" " alt="" coords="664,72,617,72,617,67,664,67"/>
+<area shape="rect" href="class_game.html#aeb5d0d8c72297e1ea468facac9c8383d" title=" " alt="" coords="437,107,625,133"/>
+<area shape="poly" title=" " alt="" coords="665,96,601,109,600,103,664,91"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,5,359,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,360,21,360,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,31,185,57"/>
+<area shape="poly" title=" " alt="" coords="241,32,186,40,185,35,240,26"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,56,382,83"/>
+<area shape="poly" title=" " alt="" coords="430,72,383,72,383,67,430,67"/>
+<area shape="poly" title=" " alt="" coords="217,58,185,53,186,48,218,53"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="258,107,357,133"/>
+<area shape="poly" title=" " alt="" coords="421,123,358,123,358,117,421,117"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -490,6 +792,18 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_sound_manager_8cpp_source.html#l00072">72</a> of file <a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20_icgraph.png" border="0" usemap="#aclass_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20_icgraph" id="aclass_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20_icgraph">
+<area shape="rect" title="stes all sounds volume" alt="" coords="388,5,596,48"/>
+<area shape="rect" href="class_game.html#aeb5d0d8c72297e1ea468facac9c8383d" title=" " alt="" coords="153,13,340,40"/>
+<area shape="poly" title=" " alt="" coords="372,29,341,29,341,24,372,24"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,13,105,40"/>
+<area shape="poly" title=" " alt="" coords="137,29,105,29,105,24,137,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -605,7 +919,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph.svg" width="430" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph.png" border="0" usemap="#aclass_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph" id="aclass_sound_manager_abc224f0e248785f6dcfc09e115996329_icgraph">
+<area shape="rect" title="stops music" alt="" coords="673,5,849,32"/>
+<area shape="rect" href="class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="430,5,625,32"/>
+<area shape="poly" title=" " alt="" coords="657,21,625,21,625,16,657,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -658,14 +983,204 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sound_manager_a237964589201c404a015660fe601eff5_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_sound_manager_a237964589201c404a015660fe601eff5_cgraph.png" border="0" usemap="#aclass_sound_manager_a237964589201c404a015660fe601eff5_cgraph" alt=""/></div>
+<map name="aclass_sound_manager_a237964589201c404a015660fe601eff5_cgraph" id="aclass_sound_manager_a237964589201c404a015660fe601eff5_cgraph">
+<area shape="rect" title="updates the track when the current one stops playing" alt="" coords="5,5,196,48"/>
+<area shape="rect" href="class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="244,13,443,40"/>
+<area shape="poly" title=" " alt="" coords="196,24,228,24,228,29,196,29"/>
+<area shape="rect" href="class_sound_manager.html#a680ef232be763e1f839892e18937d74b" title="plays music" alt="" coords="491,13,666,40"/>
+<area shape="poly" title=" " alt="" coords="443,24,476,24,476,29,443,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sound_manager_a237964589201c404a015660fe601eff5_icgraph.png" border="0" usemap="#aclass_sound_manager_a237964589201c404a015660fe601eff5_icgraph" alt=""/></div>
+<map name="aclass_sound_manager_a237964589201c404a015660fe601eff5_icgraph" id="aclass_sound_manager_a237964589201c404a015660fe601eff5_icgraph">
+<area shape="rect" title="updates the track when the current one stops playing" alt="" coords="384,5,575,48"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,13,336,40"/>
+<area shape="poly" title=" " alt="" coords="369,29,337,29,337,24,369,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aab51048d5f9bd8cf1df7995ec25fe416" name="aab51048d5f9bd8cf1df7995ec25fe416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab51048d5f9bd8cf1df7995ec25fe416">&#9670;&#160;</a></span>currentTrack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SoundManager::currentTrack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00048">48</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="a837af56f46e6062590d6c74d4ea31fae" name="a837af56f46e6062590d6c74d4ea31fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837af56f46e6062590d6c74d4ea31fae">&#9670;&#160;</a></span>globalMusicVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SoundManager::globalMusicVolume = 100.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00050">50</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="adcd7c02cf458cdd911a475fa7a4f6df0" name="adcd7c02cf458cdd911a475fa7a4f6df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd7c02cf458cdd911a475fa7a4f6df0">&#9670;&#160;</a></span>globalSoundVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SoundManager::globalSoundVolume = 100.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00049">49</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="ac803877c4a733e920bc348bf5c7e2b4d" name="ac803877c4a733e920bc348bf5c7e2b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac803877c4a733e920bc348bf5c7e2b4d">&#9670;&#160;</a></span>musics</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, sf::Music*&gt; SoundManager::musics</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00046">46</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="a0267b9d05552b093f91996e84b55d931" name="a0267b9d05552b093f91996e84b55d931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0267b9d05552b093f91996e84b55d931">&#9670;&#160;</a></span>playlist</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::string&gt; SoundManager::playlist</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00047">47</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="aca164f0c4120c8aebca9ba6b2289a6ae" name="aca164f0c4120c8aebca9ba6b2289a6ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca164f0c4120c8aebca9ba6b2289a6ae">&#9670;&#160;</a></span>soundBuffers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, sf::SoundBuffer&gt; SoundManager::soundBuffers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00044">44</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9b5619ac3af93344d3d830506c4d1ce" name="ac9b5619ac3af93344d3d830506c4d1ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b5619ac3af93344d3d830506c4d1ce">&#9670;&#160;</a></span>sounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, sf::Sound&gt; SoundManager::sounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_sound_manager_8h_source.html#l00045">45</a> of file <a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a></li>
-<li>AI Behaviors/<a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_sound_manager_8cpp_source.html">SoundManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

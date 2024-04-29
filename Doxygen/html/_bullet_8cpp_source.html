@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gills &amp; Glory: AI Behaviors/Bullet.cpp Source File</title>
+<title>Gills &amp; Glory: E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/Bullet.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -106,7 +106,7 @@ $(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_bullet.html#a2168d6be98781a6bee3f6d0317064144">    3</a></span><a class="code hl_function" href="class_bullet.html#a2168d6be98781a6bee3f6d0317064144">Bullet::Bullet</a>(<span class="keyword">const</span> sf::Vector2f&amp; m_startPosition, <span class="keyword">const</span> sf::Vector2f&amp; m_targetDirection, <span class="keywordtype">float</span> m_speed)</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_variable" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">m_position</a> = m_startPosition;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    m_velocity = normalize(m_targetDirection) * m_speed;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_variable" href="class_bullet.html#a5ff781b721a87eba76e76f51c808a405">m_velocity</a> = <a class="code hl_function" href="class_bullet.html#aaa2b76eb249f2350ad11efc3ced06845">normalize</a>(m_targetDirection) * m_speed;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.setRadius(2.0f);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.setOrigin(2, 2);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.setPosition(<a class="code hl_variable" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">m_position</a>);</div>
@@ -117,30 +117,30 @@ $(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_bullet.html#af0888cd2bef42055c1f23efa01bd7654">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_bullet.html#af0888cd2bef42055c1f23efa01bd7654">Bullet::update</a>(sf::Time t_deltaTime)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">m_position</a> += m_velocity * t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">m_position</a> += <a class="code hl_variable" href="class_bullet.html#a5ff781b721a87eba76e76f51c808a405">m_velocity</a> * t_deltaTime.asSeconds();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.setPosition(<a class="code hl_variable" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">m_position</a>);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; part : m_trail) </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; part : <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>) </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        part.m_lifetime -= t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        part.m_trialShape.setFillColor(sf::Color(255, 0, 0, <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(255 * (part.m_lifetime / m_trailMaxLifetime))));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        part.m_trialShape.setFillColor(sf::Color(255, 0, 0, <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(255 * (part.m_lifetime / <a class="code hl_variable" href="class_bullet.html#a1206ca5013fe8c054aa97e551857550b">m_trailMaxLifetime</a>))));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    m_trail.erase(std::remove_if(m_trail.begin(), m_trail.end(), [](<span class="keyword">const</span> TrailPart&amp; part) { return part.m_lifetime &lt;= 0; }), m_trail.end());</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>.erase(std::remove_if(<a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>.begin(), <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>.end(), [](<span class="keyword">const</span> <a class="code hl_struct" href="struct_bullet_1_1_trail_part.html">TrailPart</a>&amp; part) { return part.m_lifetime &lt;= 0; }), <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>.end());</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    m_timeSinceLastTrailPart += t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (m_timeSinceLastTrailPart &gt;= m_addTrailPartInterval) </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="class_bullet.html#a9feefdf2acadc0067620c05ac9ceb214">m_timeSinceLastTrailPart</a> += t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_bullet.html#a9feefdf2acadc0067620c05ac9ceb214">m_timeSinceLastTrailPart</a> &gt;= <a class="code hl_variable" href="class_bullet.html#a74ab02666d7fe828d679d31040545d6a">m_addTrailPartInterval</a>) </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        TrailPart newPart;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        newPart.m_trialShape = <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        newPart.m_trialShape.setRadius(<a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.getRadius() * 0.6f);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        newPart.m_lifetime = m_trailMaxLifetime;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        m_trail.push_front(newPart);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_struct" href="struct_bullet_1_1_trail_part.html">TrailPart</a> newPart;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        newPart.<a class="code hl_variable" href="struct_bullet_1_1_trail_part.html#a857b0c7a21908db4609c9313e92665fd">m_trialShape</a> = <a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        newPart.<a class="code hl_variable" href="struct_bullet_1_1_trail_part.html#a857b0c7a21908db4609c9313e92665fd">m_trialShape</a>.setRadius(<a class="code hl_variable" href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">m_bulletShape</a>.getRadius() * 0.6f);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        newPart.<a class="code hl_variable" href="struct_bullet_1_1_trail_part.html#af8e849de79462ec5bcb1a2187e27ffc4">m_lifetime</a> = <a class="code hl_variable" href="class_bullet.html#a1206ca5013fe8c054aa97e551857550b">m_trailMaxLifetime</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>.push_front(newPart);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        m_timeSinceLastTrailPart = 0.0f;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="class_bullet.html#a9feefdf2acadc0067620c05ac9ceb214">m_timeSinceLastTrailPart</a> = 0.0f;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    m_lifetime -= t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (m_lifetime &lt;= 0.0f)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_variable" href="class_bullet.html#a35a92fe3123f4c7b1b175eadcaf33f17">m_lifetime</a> -= t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_bullet.html#a35a92fe3123f4c7b1b175eadcaf33f17">m_lifetime</a> &lt;= 0.0f)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_variable" href="class_bullet.html#ab21ea0edf0bd34fc1eae2945b5a7223c">m_active</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
@@ -150,7 +150,7 @@ $(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_bullet.html#a811074fd46bf95b7a7e75a75ac5df188">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_bullet.html#a811074fd46bf95b7a7e75a75ac5df188">Bullet::render</a>(sf::RenderWindow&amp; m_window, <span class="keyword">const</span> sf::Shader&amp; m_glowShader)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; part : m_trail)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; part : <a class="code hl_variable" href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a>)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        m_window.draw(part.m_trialShape);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
@@ -158,7 +158,8 @@ $(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>sf::Vector2f Bullet::normalize(<span class="keyword">const</span> sf::Vector2f&amp; m_source)</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_bullet.html#aaa2b76eb249f2350ad11efc3ced06845">   53</a></span>sf::Vector2f <a class="code hl_function" href="class_bullet.html#aaa2b76eb249f2350ad11efc3ced06845">Bullet::normalize</a>(<span class="keyword">const</span> sf::Vector2f&amp; m_source)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">float</span> length = std::sqrt(m_source.x * m_source.x + m_source.y * m_source.y);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (length != 0)</div>
@@ -170,19 +171,30 @@ $(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> m_source;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
 <div class="ttc" id="a_bullet_8h_html"><div class="ttname"><a href="_bullet_8h.html">Bullet.h</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a1206ca5013fe8c054aa97e551857550b"><div class="ttname"><a href="class_bullet.html#a1206ca5013fe8c054aa97e551857550b">Bullet::m_trailMaxLifetime</a></div><div class="ttdeci">float m_trailMaxLifetime</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00035">Bullet.h:35</a></div></div>
 <div class="ttc" id="aclass_bullet_html_a2168d6be98781a6bee3f6d0317064144"><div class="ttname"><a href="class_bullet.html#a2168d6be98781a6bee3f6d0317064144">Bullet::Bullet</a></div><div class="ttdeci">Bullet(const sf::Vector2f &amp;m_startPosition, const sf::Vector2f &amp;m_targetDirection, float m_speed)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">Bullet.cpp:3</a></div></div>
 <div class="ttc" id="aclass_bullet_html_a2826b566024cc17fe2fbb1937615c4c7"><div class="ttname"><a href="class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7">Bullet::m_bulletShape</a></div><div class="ttdeci">sf::CircleShape m_bulletShape</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00014">Bullet.h:14</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a35a92fe3123f4c7b1b175eadcaf33f17"><div class="ttname"><a href="class_bullet.html#a35a92fe3123f4c7b1b175eadcaf33f17">Bullet::m_lifetime</a></div><div class="ttdeci">float m_lifetime</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00034">Bullet.h:34</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a5ff781b721a87eba76e76f51c808a405"><div class="ttname"><a href="class_bullet.html#a5ff781b721a87eba76e76f51c808a405">Bullet::m_velocity</a></div><div class="ttdeci">sf::Vector2f m_velocity</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00032">Bullet.h:32</a></div></div>
 <div class="ttc" id="aclass_bullet_html_a68d311a87ea5a50966fbfa6ace4cbb21"><div class="ttname"><a href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">Bullet::m_position</a></div><div class="ttdeci">sf::Vector2f m_position</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00016">Bullet.h:16</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a74ab02666d7fe828d679d31040545d6a"><div class="ttname"><a href="class_bullet.html#a74ab02666d7fe828d679d31040545d6a">Bullet::m_addTrailPartInterval</a></div><div class="ttdeci">float m_addTrailPartInterval</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00037">Bullet.h:37</a></div></div>
 <div class="ttc" id="aclass_bullet_html_a811074fd46bf95b7a7e75a75ac5df188"><div class="ttname"><a href="class_bullet.html#a811074fd46bf95b7a7e75a75ac5df188">Bullet::render</a></div><div class="ttdeci">void render(sf::RenderWindow &amp;m_window, const sf::Shader &amp;m_glowShader) const</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Bullet.cpp:44</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a8d45e22de1c6ee3e729aa968ed2c7963"><div class="ttname"><a href="class_bullet.html#a8d45e22de1c6ee3e729aa968ed2c7963">Bullet::m_trail</a></div><div class="ttdeci">std::deque&lt; TrailPart &gt; m_trail</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00030">Bullet.h:30</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a9feefdf2acadc0067620c05ac9ceb214"><div class="ttname"><a href="class_bullet.html#a9feefdf2acadc0067620c05ac9ceb214">Bullet::m_timeSinceLastTrailPart</a></div><div class="ttdeci">float m_timeSinceLastTrailPart</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00036">Bullet.h:36</a></div></div>
+<div class="ttc" id="aclass_bullet_html_aaa2b76eb249f2350ad11efc3ced06845"><div class="ttname"><a href="class_bullet.html#aaa2b76eb249f2350ad11efc3ced06845">Bullet::normalize</a></div><div class="ttdeci">sf::Vector2f normalize(const sf::Vector2f &amp;m_source)</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Bullet.cpp:53</a></div></div>
 <div class="ttc" id="aclass_bullet_html_ab21ea0edf0bd34fc1eae2945b5a7223c"><div class="ttname"><a href="class_bullet.html#ab21ea0edf0bd34fc1eae2945b5a7223c">Bullet::m_active</a></div><div class="ttdeci">bool m_active</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00018">Bullet.h:18</a></div></div>
 <div class="ttc" id="aclass_bullet_html_af0888cd2bef42055c1f23efa01bd7654"><div class="ttname"><a href="class_bullet.html#af0888cd2bef42055c1f23efa01bd7654">Bullet::update</a></div><div class="ttdeci">void update(sf::Time t_deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">Bullet.cpp:13</a></div></div>
+<div class="ttc" id="astruct_bullet_1_1_trail_part_html"><div class="ttname"><a href="struct_bullet_1_1_trail_part.html">Bullet::TrailPart</a></div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00022">Bullet.h:23</a></div></div>
+<div class="ttc" id="astruct_bullet_1_1_trail_part_html_a857b0c7a21908db4609c9313e92665fd"><div class="ttname"><a href="struct_bullet_1_1_trail_part.html#a857b0c7a21908db4609c9313e92665fd">Bullet::TrailPart::m_trialShape</a></div><div class="ttdeci">sf::CircleShape m_trialShape</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00024">Bullet.h:24</a></div></div>
+<div class="ttc" id="astruct_bullet_1_1_trail_part_html_af8e849de79462ec5bcb1a2187e27ffc4"><div class="ttname"><a href="struct_bullet_1_1_trail_part.html#af8e849de79462ec5bcb1a2187e27ffc4">Bullet::TrailPart::m_lifetime</a></div><div class="ttdeci">float m_lifetime</div><div class="ttdef"><b>Definition</b> <a href="_bullet_8h_source.html#l00025">Bullet.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_33717ad4dff91f638445dba7568e7039.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_bullet_8cpp.html">Bullet.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_885cc87fac2d91e269af0a5a959fa5f6.html">E:</a></li><li class="navelem"><a class="el" href="dir_2cd24535ff6ed7a32c82ca94efcc6676.html">Program Files E</a></li><li class="navelem"><a class="el" href="dir_8133eb955d7181d927d4f19e94bdcaeb.html">Year 4</a></li><li class="navelem"><a class="el" href="dir_a4f2779e29224cb0f9f4eca3b25d67e7.html">Project</a></li><li class="navelem"><a class="el" href="dir_217157b70a1fef1b681d630434b82690.html">Project_2023-24</a></li><li class="navelem"><a class="el" href="dir_a75a1f3404be674e32d34e7eb4eac1dc.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="dir_6189a53f1b132c13fcae49b93e82a108.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_bullet_8cpp.html">Bullet.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

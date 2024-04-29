@@ -9,7 +9,7 @@ var annotated_dup =
     [ "Button", "struct_button.html", "struct_button" ],
     [ "Firehawk", "class_firehawk.html", "class_firehawk" ],
     [ "Game", "class_game.html", "class_game" ],
-    [ "Global", "struct_global.html", null ],
+    [ "Global", "struct_global.html", "struct_global" ],
     [ "GUI", "class_g_u_i.html", "class_g_u_i" ],
     [ "HammerHead", "class_hammer_head.html", "class_hammer_head" ],
     [ "Harvester", "class_harvester.html", "class_harvester" ],

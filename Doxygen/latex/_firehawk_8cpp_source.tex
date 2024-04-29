@@ -1,17 +1,17 @@
 \doxysection{Firehawk.\+cpp}
-\hypertarget{_firehawk_8cpp_source}{}\label{_firehawk_8cpp_source}\index{AI Behaviors/Firehawk.cpp@{AI Behaviors/Firehawk.cpp}}
+\hypertarget{_firehawk_8cpp_source}{}\label{_firehawk_8cpp_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/Firehawk.cpp@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/Firehawk.cpp}}
 \mbox{\hyperlink{_firehawk_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_firehawk_8h}{Firehawk.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00003}\mbox{\hyperlink{class_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac}{00003}}\ \mbox{\hyperlink{class_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac}{Firehawk::Firehawk}}()}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00004}00004\ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00005}00005\ \ \ \ \ initFirehawk();}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_firehawk_a3ca243ce35364951f45c99330956e03b}{initFirehawk}}();}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 1500;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_unit_af3a3d9e915125553fdcd4c9ae24550ae}{m\_speed}}\ =\ 130;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 160;}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00009}00009\ \ \ \ \ m\_orbitRadius\ =\ 50.0f;}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00010}00010\ \ \ \ \ m\_orbitSpeed\ =\ 80.0f;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_firehawk_a8167d00be5583abb167df2b04b3d200b}{m\_orbitRadius}}\ =\ 50.0f;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_firehawk_ad084db06d7c84e66eea21194835b6418}{m\_orbitSpeed}}\ =\ 80.0f;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 500;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_unit_adaff82fa34f1475a78f1778f2eeba2f6}{m\_damage}}\ =\ 40;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00013}00013\ \}}
@@ -26,35 +26,35 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}{isOrbiting}})\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00024}00024\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ approachTarget(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a244c37330dde83d34e4ca60a244c6910}{approachTarget}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00026}00026\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00028}00028\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ orbitTarget(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e}{orbitTarget}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00030}00030\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_phase\ ==\ 1\ \&\&\ m\_phaseTimer\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\_phase}}\ ==\ 1\ \&\&\ \mbox{\hyperlink{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}{m\_phaseTimer}}\ >\ 0.0f)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00034}00034\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ m\_phaseTimer\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}{m\_phaseTimer}}\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00036}00036\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_reloadCooldown\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\_reloadCooldown}}\ >\ 0.0f)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00039}00039\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ m\_reloadCooldown\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_reloadCooldown\ <=\ 0.0f)\ }
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\_reloadCooldown}}\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\_reloadCooldown}}\ <=\ 0.0f)\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\_missilesFiredInBurst\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00045}00045\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00046}00046\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{targetFound}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemyUnit}}\ :\ *this-\/>\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00049}00049\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isTargetWithinRange(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemyUnit}}-\/>getPosition()))}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}{isTargetWithinRange}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemyUnit}}-\/>getPosition()))}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ fireMissileAtTarget(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemyUnit}}-\/>getPosition());}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{targetFound}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}{fireMissileAtTarget}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemyUnit}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ targetFound\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00056}00056\ \ \ \ \ \}}
@@ -63,9 +63,9 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00059}00059\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}\ :\ *this-\/>\mbox{\hyperlink{class_unit_a119e21ec363c1923ef438d1c3cad11f2}{m\_enemyBuildings}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isTargetWithinRange(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}-\/>getPosition()))}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}{isTargetWithinRange}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}-\/>getPosition()))}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fireMissileAtTarget(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}-\/>getPosition());}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}{fireMissileAtTarget}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{building}}-\/>getPosition());}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
@@ -73,16 +73,16 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00069}00069\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missile}}\ :\ \mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{m\_missiles}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00071}00071\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missile}}.update(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missile}}.update(t\_deltaTime);}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00073}00073\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00074}00074\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00081}00081\ \textcolor{keywordtype}{void}\ Firehawk::approachTarget(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos,\ sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00081}\mbox{\hyperlink{class_firehawk_a244c37330dde83d34e4ca60a244c6910}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firehawk_a244c37330dde83d34e4ca60a244c6910}{Firehawk::approachTarget}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos,\ sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00082}00082\ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00083}00083\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ <\ m\_orbitRadius)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ <\ \mbox{\hyperlink{class_firehawk_a8167d00be5583abb167df2b04b3d200b}{m\_orbitRadius}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00087}00087\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ae7b465206eca7bb4e8dcb30a889bb794}{isOrbiting}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00089}00089\ \ \ \ \ \}}
@@ -101,16 +101,16 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00102}00102\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00103}00103\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00109}00109\ \textcolor{keywordtype}{void}\ Firehawk::orbitTarget(sf::Time\ t\_deltaTime)\ }
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00109}\mbox{\hyperlink{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e}{00109}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e}{Firehawk::orbitTarget}}(sf::Time\ t\_deltaTime)\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00110}00110\ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00111}00111\ \ \ \ \ m\_currentOrbitAngle\ +=\ m\_orbitSpeed\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_currentOrbitAngle\ >=\ 360.f)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\_currentOrbitAngle}}\ +=\ \mbox{\hyperlink{class_firehawk_ad084db06d7c84e66eea21194835b6418}{m\_orbitSpeed}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\_currentOrbitAngle}}\ >=\ 360.f)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00113}00113\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ m\_currentOrbitAngle\ -\/=\ 360.f;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\_currentOrbitAngle}}\ -\/=\ 360.f;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00115}00115\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}.x\ =\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}.x\ +\ m\_orbitRadius\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(m\_currentOrbitAngle\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.f));}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}.y\ =\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}.y\ +\ m\_orbitRadius\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(m\_currentOrbitAngle\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.f));}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}.x\ =\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}.x\ +\ \mbox{\hyperlink{class_firehawk_a8167d00be5583abb167df2b04b3d200b}{m\_orbitRadius}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\_currentOrbitAngle}}\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.f));}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}.y\ =\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}.y\ +\ \mbox{\hyperlink{class_firehawk_a8167d00be5583abb167df2b04b3d200b}{m\_orbitRadius}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\_currentOrbitAngle}}\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.f));}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00119}00119\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00120}00120\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ -\/\ \mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{desiredAngle}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{atan2}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}.y,\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}.x)\ *\ (180\ /\ \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}})\ +\ 90;}
@@ -121,7 +121,7 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{newAngle}}\ +\ 90);\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00127}00127\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00128}00128\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00132}00132\ \textcolor{keywordtype}{void}\ Firehawk::initFirehawk()}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00132}\mbox{\hyperlink{class_firehawk_a3ca243ce35364951f45c99330956e03b}{00132}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firehawk_a3ca243ce35364951f45c99330956e03b}{Firehawk::initFirehawk}}()}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00133}00133\ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)Firehawk.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00135}00135\ \ \ \ \ \{}
@@ -132,46 +132,46 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setOrigin(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().height\ /\ 2);}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00141}00141\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setScale(0.1,\ 0.1);}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00142}00142\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_missileTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets/Images/Units/Missile.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_firehawk_a3dd2823c53448089e9dc3912175bb817}{m\_missileTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets/Images/Units/Missile.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00144}00144\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ Missile\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00146}00146\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00147}00147\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00148}00148\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00153}00153\ \textcolor{keywordtype}{void}\ Firehawk::fireMissileAtTarget(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00153}\mbox{\hyperlink{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}{00153}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}{Firehawk::fireMissileAtTarget}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00154}00154\ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_reloadCooldown\ <=\ 0.0f\ \&\&\ m\_missilesFiredInBurst\ <\ m\_burstSize)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\_reloadCooldown}}\ <=\ 0.0f\ \&\&\ \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ <\ \mbox{\hyperlink{class_firehawk_aaeeff8fb8372ac5e48bf760c060a5f4a}{m\_burstSize}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00156}00156\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_missilesFiredInBurst\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ ==\ 0)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ m\_phase\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ m\_phaseTimer\ =\ m\_phaseDelay;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\_phase}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}{m\_phaseTimer}}\ =\ \mbox{\hyperlink{class_firehawk_a93a891c617406186c88c164c270ca939}{m\_phaseDelay}};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00162}00162\ }
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ phase\ of\ firing}}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_phase\ ==\ 0\ \&\&\ m\_missilesFiredInBurst\ <\ 2)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\_phase}}\ ==\ 0\ \&\&\ \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ <\ 2)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ launchMissile(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_missilesFiredInBurst\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a9508b9506242d3292ec9f213019d84a3}{launchMissile}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ ==\ 2)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_phase\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\_phase}}\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Second\ phase\ after\ the\ delay}}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_phase\ ==\ 1\ \&\&\ m\_phaseTimer\ <=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\_phase}}\ ==\ 1\ \&\&\ \mbox{\hyperlink{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}{m\_phaseTimer}}\ <=\ 0.0f)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ launchMissile(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a9508b9506242d3292ec9f213019d84a3}{launchMissile}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00177}00177\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_missilesFiredInBurst\ >=\ m\_burstSize)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ >=\ \mbox{\hyperlink{class_firehawk_aaeeff8fb8372ac5e48bf760c060a5f4a}{m\_burstSize}})}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ m\_reloadCooldown\ =\ m\_reloadCooldownTime;}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ m\_missilesFiredInBurst\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\_reloadCooldown}}\ =\ \mbox{\hyperlink{class_firehawk_af92dc2abce3340db1e19142b277ea9fc}{m\_reloadCooldownTime}};}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00183}00183\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00184}00184\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00191}00191\ \textcolor{keywordtype}{bool}\ Firehawk::isTargetWithinRange(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00191}\mbox{\hyperlink{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}{00191}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}{Firehawk::isTargetWithinRange}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00192}00192\ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToTarget}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00194}00194\ }
@@ -189,16 +189,16 @@
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00207}00207\ \}}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00208}00208\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00213}00213\ \textcolor{keywordtype}{void}\ Firehawk::launchMissile(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00213}\mbox{\hyperlink{class_firehawk_a9508b9506242d3292ec9f213019d84a3}{00213}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firehawk_a9508b9506242d3292ec9f213019d84a3}{Firehawk::launchMissile}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetPos)}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00214}00214\ \{}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{spray}}\ =\ (std::rand()\ \%\ 10\ -\/\ 5)\ *\ (\mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}}\ /\ 180.0f);}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00216}00216\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_targetPos}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angle}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{atan2}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}.y,\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{direction}}.x)\ +\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{spray}};}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00218}00218\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missileDirection}}\ =\ sf::Vector2f(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angle}}),\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angle}}));}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00219}00219\ }
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{m\_missiles}}.emplace\_back(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missileDirection}},\ 200.0f,\ m\_missileTexture);}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{class_unit_ac5cb66a0ee3d89bf388cd7caf12055a8}{m\_missiles}}.emplace\_back(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{missileDirection}},\ 200.0f,\ \mbox{\hyperlink{class_firehawk_a3dd2823c53448089e9dc3912175bb817}{m\_missileTexture}});}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}RocketFired"{}});}
-\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00222}00222\ \ \ \ \ m\_missilesFiredInBurst++;}
+\DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00222}00222\ \ \ \ \ \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\_missilesFiredInBurst}}++;}
 \DoxyCodeLine{\Hypertarget{_firehawk_8cpp_source_l00223}00223\ \}}
 
 \end{DoxyCode}

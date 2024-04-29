@@ -22,6 +22,7 @@ var hierarchy =
     [ "SideBar", "class_side_bar.html", null ],
     [ "SoundManager", "class_sound_manager.html", null ],
     [ "Tile", "class_tile.html", null ],
+    [ "Bullet::TrailPart", "struct_bullet_1_1_trail_part.html", null ],
     [ "TrailPart", "struct_trail_part.html", null ],
     [ "Unit", "class_unit.html", [
       [ "AircraftUnit", "class_aircraft_unit.html", [

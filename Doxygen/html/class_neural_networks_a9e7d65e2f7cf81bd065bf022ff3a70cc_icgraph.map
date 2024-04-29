@@ -1,5 +1,13 @@
 <map id="NeuralNetworks::drawWeightText" name="NeuralNetworks::drawWeightText">
-<area shape="rect" id="Node000001" title="Draws the text for the weight on each perceptron." alt="" coords="301,5,514,32"/>
-<area shape="rect" id="Node000002" href="$class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="5,5,253,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,21,253,21,253,16,285,16"/>
+<area shape="rect" id="Node000001" title="Draws the text for the weight on each perceptron." alt="" coords="837,13,1050,40"/>
+<area shape="rect" id="Node000002" href="$class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="605,5,789,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="821,29,789,29,789,24,821,24"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="381,13,557,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="589,29,557,29,557,24,589,24"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" id="Node000005" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>

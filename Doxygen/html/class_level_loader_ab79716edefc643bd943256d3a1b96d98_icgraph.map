@@ -1,5 +1,23 @@
 <map id="LevelLoader::initLevelSelectionButtons" name="LevelLoader::initLevelSelectionButtons">
-<area shape="rect" id="Node000001" title="Initializes buttons to select what level." alt="" coords="219,5,461,32"/>
-<area shape="rect" id="Node000002" href="$class_level_loader.html#a2aa6f1f2116e8ded74f8f88cf26dbc20" title=" " alt="" coords="5,5,171,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,21,171,21,171,16,203,16"/>
+<area shape="rect" id="Node000001" title="Initializes buttons to select what level." alt="" coords="1056,48,1254,91"/>
+<area shape="rect" id="Node000002" href="$class_level_loader.html#a2aa6f1f2116e8ded74f8f88cf26dbc20" title=" " alt="" coords="843,31,1008,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1041,59,1008,56,1009,50,1042,54"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a96bbebea386baefbbc4d7401bbd7989b" title="Resets the view back to normal." alt="" coords="865,81,986,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1041,85,987,91,986,85,1041,79"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a9de86d1081ce3a5decd86a3c543598b6" title="To reset the game and undo all the properties for a new game." alt="" coords="665,56,795,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="850,88,795,80,796,75,850,82"/>
+<area shape="rect" id="Node000010" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,107,359,133"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="850,100,360,121,360,115,849,95"/>
+<area shape="rect" id="Node000005" href="$class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="438,5,609,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="657,54,580,35,581,30,658,49"/>
+<area shape="rect" id="Node000009" href="$class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="430,56,617,83"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="649,72,617,72,617,67,649,67"/>
+<area shape="rect" id="Node000006" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,56,382,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="449,39,368,58,367,53,448,34"/>
+<area shape="rect" id="Node000007" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,81,185,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="218,86,186,91,185,86,217,81"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,81,55,108"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="415,72,383,72,383,67,415,67"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="240,112,185,104,186,98,241,107"/>
 </map>

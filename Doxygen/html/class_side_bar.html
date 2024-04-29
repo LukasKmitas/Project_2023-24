@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +95,8 @@ $(function(){initNavTree('class_side_bar.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_side_bar-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SideBar Class Reference</div></div>
 </div><!--header-->
@@ -104,12 +106,17 @@ $(function(){initNavTree('class_side_bar.html',''); initResizable(); });
 <div class="dynheader">
 Collaboration diagram for SideBar:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_side_bar__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_side_bar__coll__graph.png" border="0" usemap="#a_side_bar_coll__map" alt="Collaboration graph"/></div>
+<map name="a_side_bar_coll__map" id="a_side_bar_coll__map">
+<area shape="rect" title=" " alt="" coords="5,96,73,123"/>
+<area shape="rect" href="struct_button.html" title=" " alt="" coords="9,5,69,32"/>
+<area shape="poly" title=" " alt="" coords="42,48,42,95,36,95,36,48"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50bda4781ac0cb16f6bec1e5ec5f835f" id="r_a50bda4781ac0cb16f6bec1e5ec5f835f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50bda4781ac0cb16f6bec1e5ec5f835f">SideBar</a> (<a class="el" href="_building_type_8h.html#aba2b45f536f3c9719aea96bb472784a4">BuildingType</a> &amp;m_selectedBuildingType)</td></tr>
+<tr class="memitem:a50bda4781ac0cb16f6bec1e5ec5f835f" id="r_a50bda4781ac0cb16f6bec1e5ec5f835f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50bda4781ac0cb16f6bec1e5ec5f835f">SideBar</a> (<a class="el" href="_building_type_8h.html#aba2b45f536f3c9719aea96bb472784a4">BuildingType</a> &amp;<a class="el" href="#a59f41003e7312ad0e8ed2bb7ee9bea67">m_selectedBuildingType</a>)</td></tr>
 <tr class="separator:a50bda4781ac0cb16f6bec1e5ec5f835f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a689859a607ae1f109e8ae619c26ada48" id="r_a689859a607ae1f109e8ae619c26ada48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a689859a607ae1f109e8ae619c26ada48">update</a> (sf::Time t_deltaTime)</td></tr>
 <tr class="separator:a689859a607ae1f109e8ae619c26ada48"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +167,88 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aed289dbfb922a4edb57d308a38cde001" id="r_aed289dbfb922a4edb57d308a38cde001"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_button.html">Button</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed289dbfb922a4edb57d308a38cde001">m_buttons</a></td></tr>
 <tr class="separator:aed289dbfb922a4edb57d308a38cde001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adc235f6aea789729fdf3ddca64e88ce6" id="r_adc235f6aea789729fdf3ddca64e88ce6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc235f6aea789729fdf3ddca64e88ce6">initSlider</a> ()</td></tr>
+<tr class="memdesc:adc235f6aea789729fdf3ddca64e88ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the slider.  <br /></td></tr>
+<tr class="separator:adc235f6aea789729fdf3ddca64e88ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac447136660295b82cd30487d37e1cce6" id="r_ac447136660295b82cd30487d37e1cce6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac447136660295b82cd30487d37e1cce6">initFont</a> ()</td></tr>
+<tr class="memdesc:ac447136660295b82cd30487d37e1cce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes fonts.  <br /></td></tr>
+<tr class="separator:ac447136660295b82cd30487d37e1cce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27706211ab45d7a8b285ca44245e270" id="r_af27706211ab45d7a8b285ca44245e270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af27706211ab45d7a8b285ca44245e270">drawGrid</a> (sf::RenderWindow &amp;m_window)</td></tr>
+<tr class="memdesc:af27706211ab45d7a8b285ca44245e270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the grid thats where the buttons are in the sidebar <a class="el" href="class_g_u_i.html">GUI</a>.  <br /></td></tr>
+<tr class="separator:af27706211ab45d7a8b285ca44245e270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4172e0fac4f8b98b8049877de14fb2" id="r_a7c4172e0fac4f8b98b8049877de14fb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c4172e0fac4f8b98b8049877de14fb2">initButton</a> ()</td></tr>
+<tr class="memdesc:a7c4172e0fac4f8b98b8049877de14fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes button.  <br /></td></tr>
+<tr class="separator:a7c4172e0fac4f8b98b8049877de14fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a59f41003e7312ad0e8ed2bb7ee9bea67" id="r_a59f41003e7312ad0e8ed2bb7ee9bea67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_building_type_8h.html#aba2b45f536f3c9719aea96bb472784a4">BuildingType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59f41003e7312ad0e8ed2bb7ee9bea67">m_selectedBuildingType</a></td></tr>
+<tr class="separator:a59f41003e7312ad0e8ed2bb7ee9bea67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbdb7efa84e1c84ad99e3464761c6ca" id="r_a6bbdb7efa84e1c84ad99e3464761c6ca"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bbdb7efa84e1c84ad99e3464761c6ca">m_font</a></td></tr>
+<tr class="separator:a6bbdb7efa84e1c84ad99e3464761c6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc87463cefb45fe670f7acdd70d5012" id="r_a7dc87463cefb45fe670f7acdd70d5012"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dc87463cefb45fe670f7acdd70d5012">m_sellText</a></td></tr>
+<tr class="separator:a7dc87463cefb45fe670f7acdd70d5012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00ffaf6943b23a1d57fce90d5cceed34" id="r_a00ffaf6943b23a1d57fce90d5cceed34"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00ffaf6943b23a1d57fce90d5cceed34">m_background</a></td></tr>
+<tr class="separator:a00ffaf6943b23a1d57fce90d5cceed34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a4f6c6a15850982cc89038e806fcef5" id="r_a0a4f6c6a15850982cc89038e806fcef5"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a4f6c6a15850982cc89038e806fcef5">m_backgroundTexture</a></td></tr>
+<tr class="separator:a0a4f6c6a15850982cc89038e806fcef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc8459c5654ba15ba9a03d1ef586180" id="r_a7bc8459c5654ba15ba9a03d1ef586180"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc8459c5654ba15ba9a03d1ef586180">m_bottomBackground</a></td></tr>
+<tr class="separator:a7bc8459c5654ba15ba9a03d1ef586180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531676fd8c468d5c91395d4a76aa0f30" id="r_a531676fd8c468d5c91395d4a76aa0f30"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a531676fd8c468d5c91395d4a76aa0f30">m_bottomBackgroundTexture</a></td></tr>
+<tr class="separator:a531676fd8c468d5c91395d4a76aa0f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2cce3d01f8ed3a2c61ce4d15e6f9f33" id="r_ac2cce3d01f8ed3a2c61ce4d15e6f9f33"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2cce3d01f8ed3a2c61ce4d15e6f9f33">m_sellSprite</a></td></tr>
+<tr class="separator:ac2cce3d01f8ed3a2c61ce4d15e6f9f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46dd9e0faf4b0724dc2c18a395877fb7" id="r_a46dd9e0faf4b0724dc2c18a395877fb7"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46dd9e0faf4b0724dc2c18a395877fb7">m_sellTexture</a></td></tr>
+<tr class="separator:a46dd9e0faf4b0724dc2c18a395877fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a160d709909c6463a049f426ab498251a" id="r_a160d709909c6463a049f426ab498251a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_button.html">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a160d709909c6463a049f426ab498251a">m_button</a></td></tr>
+<tr class="separator:a160d709909c6463a049f426ab498251a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a7bed26ef8fb26e935d74295f97fec" id="r_a15a7bed26ef8fb26e935d74295f97fec"><td class="memItemLeft" align="right" valign="top">sf::Shader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15a7bed26ef8fb26e935d74295f97fec">m_colorShiftShader</a></td></tr>
+<tr class="separator:a15a7bed26ef8fb26e935d74295f97fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3662d4fa2f1bb1d27c90b5f2dc4df3f2" id="r_a3662d4fa2f1bb1d27c90b5f2dc4df3f2"><td class="memItemLeft" align="right" valign="top">sf::Shader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3662d4fa2f1bb1d27c90b5f2dc4df3f2">m_rippleShader</a></td></tr>
+<tr class="separator:a3662d4fa2f1bb1d27c90b5f2dc4df3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49abad59c62658130641e9ac236e6b03" id="r_a49abad59c62658130641e9ac236e6b03"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49abad59c62658130641e9ac236e6b03">m_refineryIconPosition</a></td></tr>
+<tr class="separator:a49abad59c62658130641e9ac236e6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbfb709d5cf60b25a4087c88ac60e1d" id="r_abfbfb709d5cf60b25a4087c88ac60e1d"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfbfb709d5cf60b25a4087c88ac60e1d">m_barracksIconPosition</a></td></tr>
+<tr class="separator:abfbfb709d5cf60b25a4087c88ac60e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa12e2ad04efd037b1118ecd0df686a60" id="r_aa12e2ad04efd037b1118ecd0df686a60"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa12e2ad04efd037b1118ecd0df686a60">m_vehicleIconPosition</a></td></tr>
+<tr class="separator:aa12e2ad04efd037b1118ecd0df686a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fef4619cddbaca2ba124eef1de36cda" id="r_a1fef4619cddbaca2ba124eef1de36cda"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fef4619cddbaca2ba124eef1de36cda">m_airCraftIconPosition</a></td></tr>
+<tr class="separator:a1fef4619cddbaca2ba124eef1de36cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac037a4e81b8d49d7c234dce1ad96235" id="r_aac037a4e81b8d49d7c234dce1ad96235"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac037a4e81b8d49d7c234dce1ad96235">m_riflemanIconPosition</a></td></tr>
+<tr class="separator:aac037a4e81b8d49d7c234dce1ad96235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f49eae510ca69c627ce6c635d53b90e" id="r_a5f49eae510ca69c627ce6c635d53b90e"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f49eae510ca69c627ce6c635d53b90e">m_harvesterIconPosition</a></td></tr>
+<tr class="separator:a5f49eae510ca69c627ce6c635d53b90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fea1de439a89fca1ccb79dcf5c136e3" id="r_a7fea1de439a89fca1ccb79dcf5c136e3"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fea1de439a89fca1ccb79dcf5c136e3">m_buggyIconPosition</a></td></tr>
+<tr class="separator:a7fea1de439a89fca1ccb79dcf5c136e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbb58f0020c2f18ed9a9faecd34950a" id="r_acfbb58f0020c2f18ed9a9faecd34950a"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfbb58f0020c2f18ed9a9faecd34950a">m_tankAuroraIconPosition</a></td></tr>
+<tr class="separator:acfbb58f0020c2f18ed9a9faecd34950a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1d5636263b4f005cff67927543e5cd" id="r_abe1d5636263b4f005cff67927543e5cd"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe1d5636263b4f005cff67927543e5cd">m_hammerHeadIconPosition</a></td></tr>
+<tr class="separator:abe1d5636263b4f005cff67927543e5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a70014cc71a93820100c02fa8b1b0b" id="r_ad5a70014cc71a93820100c02fa8b1b0b"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5a70014cc71a93820100c02fa8b1b0b">m_firehawkIconPosition</a></td></tr>
+<tr class="separator:ad5a70014cc71a93820100c02fa8b1b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d7f3f8fc51f28f49cc77064aa33a49" id="r_a33d7f3f8fc51f28f49cc77064aa33a49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33d7f3f8fc51f28f49cc77064aa33a49">m_gridCols</a> = 3</td></tr>
+<tr class="separator:a33d7f3f8fc51f28f49cc77064aa33a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67925b55f045f8c5506b69102444831c" id="r_a67925b55f045f8c5506b69102444831c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67925b55f045f8c5506b69102444831c">m_gridRows</a> = 6</td></tr>
+<tr class="separator:a67925b55f045f8c5506b69102444831c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5188fe87d48f1c2525a437599d0d96" id="r_a3d5188fe87d48f1c2525a437599d0d96"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d5188fe87d48f1c2525a437599d0d96">m_cellWidth</a> = m_bottomBackground.getSize().x / <a class="el" href="#a33d7f3f8fc51f28f49cc77064aa33a49">m_gridCols</a></td></tr>
+<tr class="separator:a3d5188fe87d48f1c2525a437599d0d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1a80312fdee39b41d6d02010fb4131" id="r_aec1a80312fdee39b41d6d02010fb4131"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec1a80312fdee39b41d6d02010fb4131">m_cellHeight</a> = m_bottomBackground.getSize().y / <a class="el" href="#a67925b55f045f8c5506b69102444831c">m_gridRows</a></td></tr>
+<tr class="separator:aec1a80312fdee39b41d6d02010fb4131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fae6d7d1bfaf21c4a8bdfae95fcff1" id="r_ae3fae6d7d1bfaf21c4a8bdfae95fcff1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3fae6d7d1bfaf21c4a8bdfae95fcff1">m_buttonWidth</a> = m_bottomBackground.getSize().x / <a class="el" href="#a33d7f3f8fc51f28f49cc77064aa33a49">m_gridCols</a></td></tr>
+<tr class="separator:ae3fae6d7d1bfaf21c4a8bdfae95fcff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bea30dc0855937909c952a2846dec2" id="r_a51bea30dc0855937909c952a2846dec2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51bea30dc0855937909c952a2846dec2">m_buttonHeight</a> = m_bottomBackground.getSize().y / <a class="el" href="#a67925b55f045f8c5506b69102444831c">m_gridRows</a></td></tr>
+<tr class="separator:a51bea30dc0855937909c952a2846dec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fbfb291e241365c06d652017ca7858" id="r_ab3fbfb291e241365c06d652017ca7858"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3fbfb291e241365c06d652017ca7858">m_xPosition</a></td></tr>
+<tr class="separator:ab3fbfb291e241365c06d652017ca7858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcadf4a4da5b68b826e3f21a7068e5b8" id="r_adcadf4a4da5b68b826e3f21a7068e5b8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcadf4a4da5b68b826e3f21a7068e5b8">m_yPosition</a></td></tr>
+<tr class="separator:adcadf4a4da5b68b826e3f21a7068e5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf5a3d5335c95cba7830bd15e2c146c" id="r_a4cf5a3d5335c95cba7830bd15e2c146c"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cf5a3d5335c95cba7830bd15e2c146c">m_textPosition</a> = m_button.m_sprite.getPosition()</td></tr>
+<tr class="separator:a4cf5a3d5335c95cba7830bd15e2c146c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61c3903c46b67cb6a5ae278c0a3b415" id="r_ae61c3903c46b67cb6a5ae278c0a3b415"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae61c3903c46b67cb6a5ae278c0a3b415">m_textBounds</a> = m_button.m_text.getLocalBounds()</td></tr>
+<tr class="separator:ae61c3903c46b67cb6a5ae278c0a3b415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -181,6 +270,20 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00003">3</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f_cgraph.png" border="0" usemap="#aclass_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f_cgraph" alt=""/></div>
+<map name="aclass_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f_cgraph" id="aclass_side_bar_a50bda4781ac0cb16f6bec1e5ec5f835f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,127,83"/>
+<area shape="rect" href="class_side_bar.html#a7c4172e0fac4f8b98b8049877de14fb2" title="Initializes button." alt="" coords="175,5,305,32"/>
+<area shape="poly" title=" " alt="" coords="114,53,176,34,178,39,115,58"/>
+<area shape="rect" href="class_side_bar.html#ac447136660295b82cd30487d37e1cce6" title="Initializes fonts." alt="" coords="181,56,299,83"/>
+<area shape="poly" title=" " alt="" coords="127,67,165,67,165,72,127,72"/>
+<area shape="rect" href="class_side_bar.html#adc235f6aea789729fdf3ddca64e88ce6" title="Initializes the slider." alt="" coords="177,107,303,133"/>
+<area shape="poly" title=" " alt="" coords="115,81,178,99,176,104,114,86"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -235,7 +338,20 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph.svg" width="631" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph.png" border="0" usemap="#aclass_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph" id="aclass_side_bar_a8bfd240baf0383a6fa11822cf1c5776f_icgraph">
+<area shape="rect" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="873,5,1050,32"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="poly" title=" " alt="" coords="857,21,826,21,826,16,857,16"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -290,7 +406,20 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph.svg" width="634" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph.png" border="0" usemap="#aclass_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph" id="aclass_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5_icgraph">
+<area shape="rect" title="Adds the building buttons for the sidebar." alt="" coords="873,5,1053,32"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="poly" title=" " alt="" coords="858,21,825,21,825,16,858,16"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -345,7 +474,20 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph.svg" width="630" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph.png" border="0" usemap="#aclass_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph" id="aclass_side_bar_a38a8e07a7b7fd8da23825dd193d659a3_icgraph">
+<area shape="rect" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="873,5,1049,32"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="poly" title=" " alt="" coords="858,21,826,21,826,16,858,16"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -400,7 +542,20 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a41846d720598c76c51371c790145a515_icgraph.svg" width="631" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a41846d720598c76c51371c790145a515_icgraph.png" border="0" usemap="#aclass_side_bar_a41846d720598c76c51371c790145a515_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a41846d720598c76c51371c790145a515_icgraph" id="aclass_side_bar_a41846d720598c76c51371c790145a515_icgraph">
+<area shape="rect" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="873,5,1050,32"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="poly" title=" " alt="" coords="857,21,826,21,826,16,857,16"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -426,7 +581,73 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph.svg" width="602" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph.png" border="0" usemap="#aclass_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph" alt=""/></div>
+<map name="aclass_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph" id="aclass_side_bar_ad45013b35dc68cfc580bc8a35352dd63_icgraph">
+<area shape="rect" title="Just to clear everything." alt="" coords="873,5,1021,32"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="poly" title=" " alt="" coords="858,21,826,21,826,16,858,16"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af27706211ab45d7a8b285ca44245e270" name="af27706211ab45d7a8b285ca44245e270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27706211ab45d7a8b285ca44245e270">&#9670;&#160;</a></span>drawGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SideBar::drawGrid </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>m_window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the grid thats where the buttons are in the sidebar <a class="el" href="class_g_u_i.html">GUI</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_window</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00365">365</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_af27706211ab45d7a8b285ca44245e270_icgraph.png" border="0" usemap="#aclass_side_bar_af27706211ab45d7a8b285ca44245e270_icgraph" alt=""/></div>
+<map name="aclass_side_bar_af27706211ab45d7a8b285ca44245e270_icgraph" id="aclass_side_bar_af27706211ab45d7a8b285ca44245e270_icgraph">
+<area shape="rect" title="Draws the grid thats where the buttons are in the sidebar GUI." alt="" coords="676,5,802,32"/>
+<area shape="rect" href="class_side_bar.html#add5b055604b08b68d3cd8778c760d8b1" title="Renders the sideBar UI in gameplay." alt="" coords="517,5,628,32"/>
+<area shape="poly" title=" " alt="" coords="661,21,628,21,628,16,661,16"/>
+<area shape="rect" href="class_g_u_i.html#a76807a6a90963f9971d165eb3c77cc57" title="Renders GUI." alt="" coords="381,5,469,32"/>
+<area shape="poly" title=" " alt="" coords="501,21,469,21,469,16,501,16"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -450,7 +671,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph.png" border="0" usemap="#aclass_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph" id="aclass_side_bar_a6fe150acbd921f8aab7080a5711d063b_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,796,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -474,7 +706,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph.svg" width="432" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph.png" border="0" usemap="#aclass_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph" id="aclass_side_bar_a784d3c48ee380edca17a40fd5bb34343_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,805,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -498,7 +741,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph.svg" width="418" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph.png" border="0" usemap="#aclass_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph" alt=""/></div>
+<map name="aclass_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph" id="aclass_side_bar_ad1b03caf2f481402bd547db44173741d_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,837,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -522,7 +776,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph.svg" width="432" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph.png" border="0" usemap="#aclass_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph" alt=""/></div>
+<map name="aclass_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph" id="aclass_side_bar_aba78ce197b2069026a62dd77bde88e14_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,805,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -546,7 +811,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph.svg" width="460" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph.png" border="0" usemap="#aclass_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph" id="aclass_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,832,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -570,7 +846,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph.svg" width="435" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph.png" border="0" usemap="#aclass_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph" id="aclass_side_bar_a1ecc06b775217732365fbad6f6bbbf62_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,807,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -594,7 +881,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph.svg" width="428" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph.png" border="0" usemap="#aclass_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph" id="aclass_side_bar_a8095fb8c494a0830365c243583496ca1_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,800,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -618,7 +916,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph.svg" width="431" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph.png" border="0" usemap="#aclass_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph" id="aclass_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,803,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -642,7 +951,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph.svg" width="366" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph.png" border="0" usemap="#aclass_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph" id="aclass_side_bar_a8cadba8295bec933be8c224461d9d83c_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,785,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -666,7 +986,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph.png" border="0" usemap="#aclass_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph" id="aclass_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,802,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -690,7 +1021,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph.svg" width="447" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph.png" border="0" usemap="#aclass_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph" alt=""/></div>
+<map name="aclass_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph" id="aclass_side_bar_aa20184b6fa227eedb85a17f5013b7868_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,819,48"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -714,7 +1056,135 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph.png" border="0" usemap="#aclass_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph" alt=""/></div>
+<map name="aclass_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph" id="aclass_side_bar_af2cf493e577385cc8e83bd5b02de4000_icgraph">
+<area shape="rect" title=" " alt="" coords="636,5,843,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="621,21,588,21,588,16,621,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c4172e0fac4f8b98b8049877de14fb2" name="a7c4172e0fac4f8b98b8049877de14fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4172e0fac4f8b98b8049877de14fb2">&#9670;&#160;</a></span>initButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SideBar::initButton </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes button. </p>
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00395">395</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_a7c4172e0fac4f8b98b8049877de14fb2_icgraph.png" border="0" usemap="#aclass_side_bar_a7c4172e0fac4f8b98b8049877de14fb2_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a7c4172e0fac4f8b98b8049877de14fb2_icgraph" id="aclass_side_bar_a7c4172e0fac4f8b98b8049877de14fb2_icgraph">
+<area shape="rect" title="Initializes button." alt="" coords="175,5,305,32"/>
+<area shape="rect" href="class_side_bar.html#a50bda4781ac0cb16f6bec1e5ec5f835f" title=" " alt="" coords="5,5,127,32"/>
+<area shape="poly" title=" " alt="" coords="159,21,127,21,127,16,159,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac447136660295b82cd30487d37e1cce6" name="ac447136660295b82cd30487d37e1cce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac447136660295b82cd30487d37e1cce6">&#9670;&#160;</a></span>initFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SideBar::initFont </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes fonts. </p>
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00353">353</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_ac447136660295b82cd30487d37e1cce6_icgraph.png" border="0" usemap="#aclass_side_bar_ac447136660295b82cd30487d37e1cce6_icgraph" alt=""/></div>
+<map name="aclass_side_bar_ac447136660295b82cd30487d37e1cce6_icgraph" id="aclass_side_bar_ac447136660295b82cd30487d37e1cce6_icgraph">
+<area shape="rect" title="Initializes fonts." alt="" coords="175,5,293,32"/>
+<area shape="rect" href="class_side_bar.html#a50bda4781ac0cb16f6bec1e5ec5f835f" title=" " alt="" coords="5,5,127,32"/>
+<area shape="poly" title=" " alt="" coords="159,21,127,21,127,16,159,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adc235f6aea789729fdf3ddca64e88ce6" name="adc235f6aea789729fdf3ddca64e88ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc235f6aea789729fdf3ddca64e88ce6">&#9670;&#160;</a></span>initSlider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SideBar::initSlider </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the slider. </p>
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00298">298</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_adc235f6aea789729fdf3ddca64e88ce6_icgraph.png" border="0" usemap="#aclass_side_bar_adc235f6aea789729fdf3ddca64e88ce6_icgraph" alt=""/></div>
+<map name="aclass_side_bar_adc235f6aea789729fdf3ddca64e88ce6_icgraph" id="aclass_side_bar_adc235f6aea789729fdf3ddca64e88ce6_icgraph">
+<area shape="rect" title="Initializes the slider." alt="" coords="175,5,300,32"/>
+<area shape="rect" href="class_side_bar.html#a50bda4781ac0cb16f6bec1e5ec5f835f" title=" " alt="" coords="5,5,127,32"/>
+<area shape="poly" title=" " alt="" coords="159,21,127,21,127,16,159,16"/>
+</map>
 </div>
 
 </div>
@@ -744,9 +1214,30 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_side_bar_8cpp_source.html#l00026">26</a> of file <a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a>.</p>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_side_bar_add5b055604b08b68d3cd8778c760d8b1_cgraph.png" border="0" usemap="#aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_cgraph" alt=""/></div>
+<map name="aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_cgraph" id="aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_cgraph">
+<area shape="rect" title="Renders the sideBar UI in gameplay." alt="" coords="5,5,117,32"/>
+<area shape="rect" href="class_side_bar.html#af27706211ab45d7a8b285ca44245e270" title="Draws the grid thats where the buttons are in the sidebar GUI." alt="" coords="165,5,291,32"/>
+<area shape="poly" title=" " alt="" coords="117,16,149,16,149,21,117,21"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph.svg" width="258" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph.png" border="0" usemap="#aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph" alt=""/></div>
+<map name="aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph" id="aclass_side_bar_add5b055604b08b68d3cd8778c760d8b1_icgraph">
+<area shape="rect" title="Renders the sideBar UI in gameplay." alt="" coords="517,5,628,32"/>
+<area shape="rect" href="class_g_u_i.html#a76807a6a90963f9971d165eb3c77cc57" title="Renders GUI." alt="" coords="381,5,469,32"/>
+<area shape="poly" title=" " alt="" coords="501,21,469,21,469,16,501,16"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -770,12 +1261,239 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph.svg" width="264" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph.png" border="0" usemap="#aclass_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph" alt=""/></div>
+<map name="aclass_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph" id="aclass_side_bar_a689859a607ae1f109e8ae619c26ada48_icgraph">
+<area shape="rect" title=" " alt="" coords="523,5,637,32"/>
+<area shape="rect" href="class_g_u_i.html#af0c6878a7e490283c94e9d71c05ca479" title="updates GUi content" alt="" coords="384,5,475,32"/>
+<area shape="poly" title=" " alt="" coords="507,21,475,21,475,16,507,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1fef4619cddbaca2ba124eef1de36cda" name="a1fef4619cddbaca2ba124eef1de36cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fef4619cddbaca2ba124eef1de36cda">&#9670;&#160;</a></span>m_airCraftIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_airCraftIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00085">85</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a00ffaf6943b23a1d57fce90d5cceed34" name="a00ffaf6943b23a1d57fce90d5cceed34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ffaf6943b23a1d57fce90d5cceed34">&#9670;&#160;</a></span>m_background</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape SideBar::m_background</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00068">68</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a4f6c6a15850982cc89038e806fcef5" name="a0a4f6c6a15850982cc89038e806fcef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4f6c6a15850982cc89038e806fcef5">&#9670;&#160;</a></span>m_backgroundTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture SideBar::m_backgroundTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00069">69</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="abfbfb709d5cf60b25a4087c88ac60e1d" name="abfbfb709d5cf60b25a4087c88ac60e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbfb709d5cf60b25a4087c88ac60e1d">&#9670;&#160;</a></span>m_barracksIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_barracksIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00083">83</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bc8459c5654ba15ba9a03d1ef586180" name="a7bc8459c5654ba15ba9a03d1ef586180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc8459c5654ba15ba9a03d1ef586180">&#9670;&#160;</a></span>m_bottomBackground</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape SideBar::m_bottomBackground</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00070">70</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a531676fd8c468d5c91395d4a76aa0f30" name="a531676fd8c468d5c91395d4a76aa0f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a531676fd8c468d5c91395d4a76aa0f30">&#9670;&#160;</a></span>m_bottomBackgroundTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture SideBar::m_bottomBackgroundTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00071">71</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a7fea1de439a89fca1ccb79dcf5c136e3" name="a7fea1de439a89fca1ccb79dcf5c136e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fea1de439a89fca1ccb79dcf5c136e3">&#9670;&#160;</a></span>m_buggyIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_buggyIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00090">90</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a160d709909c6463a049f426ab498251a" name="a160d709909c6463a049f426ab498251a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a160d709909c6463a049f426ab498251a">&#9670;&#160;</a></span>m_button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_button.html">Button</a> SideBar::m_button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00076">76</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a51bea30dc0855937909c952a2846dec2" name="a51bea30dc0855937909c952a2846dec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51bea30dc0855937909c952a2846dec2">&#9670;&#160;</a></span>m_buttonHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_buttonHeight = m_bottomBackground.getSize().y / <a class="el" href="#a67925b55f045f8c5506b69102444831c">m_gridRows</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00102">102</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
 <a id="aed289dbfb922a4edb57d308a38cde001" name="aed289dbfb922a4edb57d308a38cde001"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed289dbfb922a4edb57d308a38cde001">&#9670;&#160;</a></span>m_buttons</h2>
 
@@ -792,9 +1510,561 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="ae3fae6d7d1bfaf21c4a8bdfae95fcff1" name="ae3fae6d7d1bfaf21c4a8bdfae95fcff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fae6d7d1bfaf21c4a8bdfae95fcff1">&#9670;&#160;</a></span>m_buttonWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_buttonWidth = m_bottomBackground.getSize().x / <a class="el" href="#a33d7f3f8fc51f28f49cc77064aa33a49">m_gridCols</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00101">101</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="aec1a80312fdee39b41d6d02010fb4131" name="aec1a80312fdee39b41d6d02010fb4131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1a80312fdee39b41d6d02010fb4131">&#9670;&#160;</a></span>m_cellHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_cellHeight = m_bottomBackground.getSize().y / <a class="el" href="#a67925b55f045f8c5506b69102444831c">m_gridRows</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00099">99</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d5188fe87d48f1c2525a437599d0d96" name="a3d5188fe87d48f1c2525a437599d0d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5188fe87d48f1c2525a437599d0d96">&#9670;&#160;</a></span>m_cellWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_cellWidth = m_bottomBackground.getSize().x / <a class="el" href="#a33d7f3f8fc51f28f49cc77064aa33a49">m_gridCols</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00098">98</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a15a7bed26ef8fb26e935d74295f97fec" name="a15a7bed26ef8fb26e935d74295f97fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a7bed26ef8fb26e935d74295f97fec">&#9670;&#160;</a></span>m_colorShiftShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Shader SideBar::m_colorShiftShader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00078">78</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5a70014cc71a93820100c02fa8b1b0b" name="ad5a70014cc71a93820100c02fa8b1b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a70014cc71a93820100c02fa8b1b0b">&#9670;&#160;</a></span>m_firehawkIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_firehawkIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00094">94</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a6bbdb7efa84e1c84ad99e3464761c6ca" name="a6bbdb7efa84e1c84ad99e3464761c6ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bbdb7efa84e1c84ad99e3464761c6ca">&#9670;&#160;</a></span>m_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font SideBar::m_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00065">65</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a33d7f3f8fc51f28f49cc77064aa33a49" name="a33d7f3f8fc51f28f49cc77064aa33a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d7f3f8fc51f28f49cc77064aa33a49">&#9670;&#160;</a></span>m_gridCols</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SideBar::m_gridCols = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00096">96</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a67925b55f045f8c5506b69102444831c" name="a67925b55f045f8c5506b69102444831c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67925b55f045f8c5506b69102444831c">&#9670;&#160;</a></span>m_gridRows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SideBar::m_gridRows = 6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00097">97</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="abe1d5636263b4f005cff67927543e5cd" name="abe1d5636263b4f005cff67927543e5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe1d5636263b4f005cff67927543e5cd">&#9670;&#160;</a></span>m_hammerHeadIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_hammerHeadIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00093">93</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f49eae510ca69c627ce6c635d53b90e" name="a5f49eae510ca69c627ce6c635d53b90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f49eae510ca69c627ce6c635d53b90e">&#9670;&#160;</a></span>m_harvesterIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_harvesterIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00089">89</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a49abad59c62658130641e9ac236e6b03" name="a49abad59c62658130641e9ac236e6b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49abad59c62658130641e9ac236e6b03">&#9670;&#160;</a></span>m_refineryIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_refineryIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00082">82</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="aac037a4e81b8d49d7c234dce1ad96235" name="aac037a4e81b8d49d7c234dce1ad96235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac037a4e81b8d49d7c234dce1ad96235">&#9670;&#160;</a></span>m_riflemanIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_riflemanIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00087">87</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a3662d4fa2f1bb1d27c90b5f2dc4df3f2" name="a3662d4fa2f1bb1d27c90b5f2dc4df3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3662d4fa2f1bb1d27c90b5f2dc4df3f2">&#9670;&#160;</a></span>m_rippleShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Shader SideBar::m_rippleShader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00079">79</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a59f41003e7312ad0e8ed2bb7ee9bea67" name="a59f41003e7312ad0e8ed2bb7ee9bea67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f41003e7312ad0e8ed2bb7ee9bea67">&#9670;&#160;</a></span>m_selectedBuildingType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_building_type_8h.html#aba2b45f536f3c9719aea96bb472784a4">BuildingType</a>&amp; SideBar::m_selectedBuildingType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00063">63</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2cce3d01f8ed3a2c61ce4d15e6f9f33" name="ac2cce3d01f8ed3a2c61ce4d15e6f9f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2cce3d01f8ed3a2c61ce4d15e6f9f33">&#9670;&#160;</a></span>m_sellSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite SideBar::m_sellSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00073">73</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a7dc87463cefb45fe670f7acdd70d5012" name="a7dc87463cefb45fe670f7acdd70d5012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc87463cefb45fe670f7acdd70d5012">&#9670;&#160;</a></span>m_sellText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text SideBar::m_sellText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00066">66</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a46dd9e0faf4b0724dc2c18a395877fb7" name="a46dd9e0faf4b0724dc2c18a395877fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46dd9e0faf4b0724dc2c18a395877fb7">&#9670;&#160;</a></span>m_sellTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture SideBar::m_sellTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00074">74</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="acfbb58f0020c2f18ed9a9faecd34950a" name="acfbb58f0020c2f18ed9a9faecd34950a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfbb58f0020c2f18ed9a9faecd34950a">&#9670;&#160;</a></span>m_tankAuroraIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_tankAuroraIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00091">91</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="ae61c3903c46b67cb6a5ae278c0a3b415" name="ae61c3903c46b67cb6a5ae278c0a3b415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61c3903c46b67cb6a5ae278c0a3b415">&#9670;&#160;</a></span>m_textBounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::FloatRect SideBar::m_textBounds = m_button.m_text.getLocalBounds()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00107">107</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="a4cf5a3d5335c95cba7830bd15e2c146c" name="a4cf5a3d5335c95cba7830bd15e2c146c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf5a3d5335c95cba7830bd15e2c146c">&#9670;&#160;</a></span>m_textPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_textPosition = m_button.m_sprite.getPosition()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00106">106</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa12e2ad04efd037b1118ecd0df686a60" name="aa12e2ad04efd037b1118ecd0df686a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12e2ad04efd037b1118ecd0df686a60">&#9670;&#160;</a></span>m_vehicleIconPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f SideBar::m_vehicleIconPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00084">84</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3fbfb291e241365c06d652017ca7858" name="ab3fbfb291e241365c06d652017ca7858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fbfb291e241365c06d652017ca7858">&#9670;&#160;</a></span>m_xPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_xPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00103">103</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
+<a id="adcadf4a4da5b68b826e3f21a7068e5b8" name="adcadf4a4da5b68b826e3f21a7068e5b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcadf4a4da5b68b826e3f21a7068e5b8">&#9670;&#160;</a></span>m_yPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SideBar::m_yPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_side_bar_8h_source.html#l00104">104</a> of file <a class="el" href="_side_bar_8h_source.html">SideBar.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_side_bar_8h_source.html">SideBar.h</a></li>
-<li>AI Behaviors/<a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_side_bar_8h_source.html">SideBar.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_side_bar_8cpp_source.html">SideBar.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

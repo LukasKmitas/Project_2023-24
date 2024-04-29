@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Buggy\+:\nopagebreak
+Inheritance diagram for Buggy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_buggy__inherit__graph}
+\includegraphics[width=146pt]{class_buggy__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Buggy\+:\nopagebreak
+Collaboration diagram for Buggy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_buggy__coll__graph}
+\includegraphics[width=268pt]{class_buggy__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -108,6 +110,32 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{check\+Affordability}} ()
 \item 
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{is\+Active}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_buggy_ad59fb07eb85ead43eaea25c1dc9add50}{setup\+Buggy}} ()
+\begin{DoxyCompactList}\small\item\em Initializes buggy unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_buggy_ae2adb67675ce96a31ee4a0a35f71946b}{movement}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em movement for this unit \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_buggy_aa66a23404f5ac841651c4618e6dfe8b4}{aim\+Weapon}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\+\_\+enemy\+Units}})
+\begin{DoxyCompactList}\small\item\em Aims the weapon towards enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_buggy_a85aa75b1681264a3389346cfd4fcfa0b}{shoot\+At\+Enemy}} ()
+\begin{DoxyCompactList}\small\item\em shoots the bullet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_buggy_a007612bf45813c55ebd6ccf90a700c39}{m\+\_\+shots\+Fired}} = 0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_buggy_aecda1b511f27d58507a9310d31902dde}{m\+\_\+clip}} = 8
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_buggy_a091de9f541096266e5759fd0cd63c46c}{m\+\_\+reload\+Time}} = 2.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_buggy_a92682aa62ccab18a91f692717f9705f5}{m\+\_\+reload\+Timer}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_buggy_a0b296c7ff4b6012a6bfacd4f80275a28}{m\+\_\+fire\+Rate}} = 0.\+2\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_buggy_a4d2306f46fbf9f675417d29c79345dca}{m\+\_\+fire\+Timer}} = 0.\+0f
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
@@ -261,6 +289,14 @@ Definition at line \mbox{\hyperlink{_buggy_8h_source_l00004}{4}} of file \mbox{\
 
 Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_buggy_ae2101e9bcfab75ec4faa2cb2a8000bdb_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_buggy_a8e5f35948fc3111929fb1de860aae868}\label{class_buggy_a8e5f35948fc3111929fb1de860aae868} 
 \index{Buggy@{Buggy}!````~Buggy@{\texorpdfstring{$\sim$}{\string~}Buggy}}
 \index{````~Buggy@{\texorpdfstring{$\sim$}{\string~}Buggy}!Buggy@{Buggy}}
@@ -274,6 +310,41 @@ Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00018}{18}} of file \mbo
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_buggy_aa66a23404f5ac841651c4618e6dfe8b4}\label{class_buggy_aa66a23404f5ac841651c4618e6dfe8b4} 
+\index{Buggy@{Buggy}!aimWeapon@{aimWeapon}}
+\index{aimWeapon@{aimWeapon}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{aimWeapon()}{aimWeapon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Buggy\+::aim\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+enemy\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aims the weapon towards enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+enemy\+Units} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buggy_aa66a23404f5ac841651c4618e6dfe8b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_buggy_aa66a23404f5ac841651c4618e6dfe8b4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_buggy_a58013ae81cfcf4d522badea528c1ead3}\label{class_buggy_a58013ae81cfcf4d522badea528c1ead3} 
 \index{Buggy@{Buggy}!getUnitType@{getUnitType}}
 \index{getUnitType@{getUnitType}!Buggy@{Buggy}}
@@ -288,6 +359,93 @@ Implements \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{Unit}}
 
 Definition at line \mbox{\hyperlink{_buggy_8h_source_l00012}{12}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
 
+\Hypertarget{class_buggy_ae2adb67675ce96a31ee4a0a35f71946b}\label{class_buggy_ae2adb67675ce96a31ee4a0a35f71946b} 
+\index{Buggy@{Buggy}!movement@{movement}}
+\index{movement@{movement}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{movement()}{movement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Buggy\+::movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+movement for this unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buggy_ae2adb67675ce96a31ee4a0a35f71946b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_buggy_ae2adb67675ce96a31ee4a0a35f71946b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_buggy_ad59fb07eb85ead43eaea25c1dc9add50}\label{class_buggy_ad59fb07eb85ead43eaea25c1dc9add50} 
+\index{Buggy@{Buggy}!setupBuggy@{setupBuggy}}
+\index{setupBuggy@{setupBuggy}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{setupBuggy()}{setupBuggy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Buggy\+::setup\+Buggy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes buggy unit. 
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_buggy_ad59fb07eb85ead43eaea25c1dc9add50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_buggy_a85aa75b1681264a3389346cfd4fcfa0b}\label{class_buggy_a85aa75b1681264a3389346cfd4fcfa0b} 
+\index{Buggy@{Buggy}!shootAtEnemy@{shootAtEnemy}}
+\index{shootAtEnemy@{shootAtEnemy}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{shootAtEnemy()}{shootAtEnemy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Buggy\+::shoot\+At\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+shoots the bullet 
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buggy_a85aa75b1681264a3389346cfd4fcfa0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buggy_a85aa75b1681264a3389346cfd4fcfa0b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_buggy_a14e9377226ef591039712bc6f0cfa061}\label{class_buggy_a14e9377226ef591039712bc6f0cfa061} 
 \index{Buggy@{Buggy}!update@{update}}
 \index{update@{update}!Buggy@{Buggy}}
@@ -302,7 +460,8 @@ Reimplemented from \mbox{\hyperlink{class_unit_a1170c0150d547432074d11e0a5896494
 
 Definition at line \mbox{\hyperlink{_buggy_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_buggy_8cpp_source}{Buggy.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -311,7 +470,70 @@ Here is the call graph for this function\+:\nopagebreak
 \end{figure}
 
 
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_buggy_aecda1b511f27d58507a9310d31902dde}\label{class_buggy_aecda1b511f27d58507a9310d31902dde} 
+\index{Buggy@{Buggy}!m\_clip@{m\_clip}}
+\index{m\_clip@{m\_clip}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_clip}{m\_clip}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Buggy\+::m\+\_\+clip = 8\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00024}{24}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+\Hypertarget{class_buggy_a0b296c7ff4b6012a6bfacd4f80275a28}\label{class_buggy_a0b296c7ff4b6012a6bfacd4f80275a28} 
+\index{Buggy@{Buggy}!m\_fireRate@{m\_fireRate}}
+\index{m\_fireRate@{m\_fireRate}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_fireRate}{m\_fireRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Buggy\+::m\+\_\+fire\+Rate = 0.\+2\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00027}{27}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+\Hypertarget{class_buggy_a4d2306f46fbf9f675417d29c79345dca}\label{class_buggy_a4d2306f46fbf9f675417d29c79345dca} 
+\index{Buggy@{Buggy}!m\_fireTimer@{m\_fireTimer}}
+\index{m\_fireTimer@{m\_fireTimer}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_fireTimer}{m\_fireTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Buggy\+::m\+\_\+fire\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00028}{28}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+\Hypertarget{class_buggy_a091de9f541096266e5759fd0cd63c46c}\label{class_buggy_a091de9f541096266e5759fd0cd63c46c} 
+\index{Buggy@{Buggy}!m\_reloadTime@{m\_reloadTime}}
+\index{m\_reloadTime@{m\_reloadTime}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_reloadTime}{m\_reloadTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Buggy\+::m\+\_\+reload\+Time = 2.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00025}{25}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+\Hypertarget{class_buggy_a92682aa62ccab18a91f692717f9705f5}\label{class_buggy_a92682aa62ccab18a91f692717f9705f5} 
+\index{Buggy@{Buggy}!m\_reloadTimer@{m\_reloadTimer}}
+\index{m\_reloadTimer@{m\_reloadTimer}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_reloadTimer}{m\_reloadTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Buggy\+::m\+\_\+reload\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00026}{26}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+\Hypertarget{class_buggy_a007612bf45813c55ebd6ccf90a700c39}\label{class_buggy_a007612bf45813c55ebd6ccf90a700c39} 
+\index{Buggy@{Buggy}!m\_shotsFired@{m\_shotsFired}}
+\index{m\_shotsFired@{m\_shotsFired}!Buggy@{Buggy}}
+\doxysubsubsection{\texorpdfstring{m\_shotsFired}{m\_shotsFired}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Buggy\+::m\+\_\+shots\+Fired = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_buggy_8h_source_l00023}{23}} of file \mbox{\hyperlink{_buggy_8h_source}{Buggy.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_buggy_8h}{Buggy.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_buggy_8cpp}{Buggy.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_buggy_8h}{Buggy.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_buggy_8cpp}{Buggy.\+cpp}}\end{DoxyCompactItemize}

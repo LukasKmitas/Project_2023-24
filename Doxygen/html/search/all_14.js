@@ -16,8 +16,9 @@ var searchData=
   ['_7eneuralnetworks_13',['~NeuralNetworks',['../class_neural_networks.html#ad39368b6d1ff687abc586cc64c8f2c10',1,'NeuralNetworks']]],
   ['_7erefinery_14',['~Refinery',['../class_refinery.html#a18ffb2867cb23eb3549bf11246f6ed03',1,'Refinery']]],
   ['_7eriflemansquad_15',['~RiflemanSquad',['../class_rifleman_squad.html#ad573f038c50bc1a497ff1b7129f1fe9a',1,'RiflemanSquad']]],
-  ['_7etankaurora_16',['~TankAurora',['../class_tank_aurora.html#a6fe01a0a60f567e8e3bf88dd452c264e',1,'TankAurora']]],
-  ['_7eunit_17',['~Unit',['../class_unit.html#a6353fc4c0a329997ad4abcf0dcb4eb27',1,'Unit']]],
-  ['_7evehicleunit_18',['~VehicleUnit',['../class_vehicle_unit.html#a12457c9b6162415216a328bdd6d80fd4',1,'VehicleUnit']]],
-  ['_7ewarfactory_19',['~WarFactory',['../class_war_factory.html#a7cd40dd2c7974a06a9a8e462a58fbb2c',1,'WarFactory']]]
+  ['_7esoundmanager_16',['~SoundManager',['../class_sound_manager.html#ad5dbf8eab22db48ff8f3db51b02f8938',1,'SoundManager']]],
+  ['_7etankaurora_17',['~TankAurora',['../class_tank_aurora.html#a6fe01a0a60f567e8e3bf88dd452c264e',1,'TankAurora']]],
+  ['_7eunit_18',['~Unit',['../class_unit.html#a6353fc4c0a329997ad4abcf0dcb4eb27',1,'Unit']]],
+  ['_7evehicleunit_19',['~VehicleUnit',['../class_vehicle_unit.html#a12457c9b6162415216a328bdd6d80fd4',1,'VehicleUnit']]],
+  ['_7ewarfactory_20',['~WarFactory',['../class_war_factory.html#a7cd40dd2c7974a06a9a8e462a58fbb2c',1,'WarFactory']]]
 ];

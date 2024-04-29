@@ -1,9 +1,9 @@
 <map id="Unit::avoidCollisionsWithUnits" name="Unit::avoidCollisionsWithUnits">
-<area shape="rect" id="Node000001" title="its to avoid colliding with each other" alt="" coords="5,56,200,83"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="256,5,357,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,53,240,32,241,38,160,58"/>
-<area shape="rect" id="Node000003" href="$class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="248,56,365,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,67,232,67,232,72,200,72"/>
-<area shape="rect" id="Node000004" href="$class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="252,107,361,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,81,238,100,236,105,159,86"/>
+<area shape="rect" id="Node000001" title="its to avoid colliding with each other" alt="" coords="5,48,170,91"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="226,5,327,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,45,210,34,212,39,170,50"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="218,56,335,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,67,202,67,202,72,170,72"/>
+<area shape="rect" id="Node000004" href="$class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="222,107,331,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,89,210,100,208,105,169,94"/>
 </map>

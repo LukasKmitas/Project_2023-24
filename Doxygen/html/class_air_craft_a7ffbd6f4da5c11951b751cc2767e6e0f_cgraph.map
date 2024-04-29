@@ -1,5 +1,7 @@
 <map id="AirCraft::AirCraft" name="AirCraft::AirCraft">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,121,57"/>
 <area shape="rect" id="Node000002" href="$class_building.html#a3bf6b4a376aae64bbf1c310ed4ba345f" title="sets the placement radius" alt="" coords="169,5,390,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,16,153,16,153,21,121,21"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,35,153,31,153,36,121,40"/>
+<area shape="rect" id="Node000003" href="$class_air_craft.html#af94e9bcfb39834a42508de0af3edadb0" title="initializes the aircraft building" alt="" coords="210,56,349,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,48,195,57,194,62,121,53"/>
 </map>

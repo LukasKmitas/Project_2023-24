@@ -1,5 +1,9 @@
 <map id="LevelLoader::LevelLoader" name="LevelLoader::LevelLoader">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,171,32"/>
-<area shape="rect" id="Node000002" href="$class_level_loader.html#ab79716edefc643bd943256d3a1b96d98" title="Initializes buttons to select what level." alt="" coords="219,5,461,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,16,203,16,203,21,171,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,171,83"/>
+<area shape="rect" id="Node000002" href="$class_level_loader.html#a63806b1c3eb34f1e8d8712d67ba8bf32" title="Initializes back button." alt="" coords="226,5,409,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,53,238,33,239,39,152,58"/>
+<area shape="rect" id="Node000003" href="$class_level_loader.html#a01fa4201fa01e3cfbea86d23bf627881" title="Initializes background." alt="" coords="226,56,409,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,67,210,67,210,72,171,72"/>
+<area shape="rect" id="Node000004" href="$class_level_loader.html#ab79716edefc643bd943256d3a1b96d98" title="Initializes buttons to select what level." alt="" coords="219,107,416,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,81,217,100,216,105,142,86"/>
 </map>

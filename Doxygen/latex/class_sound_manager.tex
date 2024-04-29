@@ -4,15 +4,6 @@
 
 {\ttfamily \#include $<$Sound\+Manager.\+h$>$}
 
-
-
-Collaboration diagram for Sound\+Manager\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_sound_manager__coll__graph}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,6 +44,30 @@ void \mbox{\hyperlink{class_sound_manager_a23aa7cfec4a6801ba5da92cbfc1bfc39}{sto
 \item 
 static \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \& \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{get\+Instance}} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}{Sound\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_sound_manager_ad5dbf8eab22db48ff8f3db51b02f8938}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Manager}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Sound\+Buffer $>$ \mbox{\hyperlink{class_sound_manager_aca164f0c4120c8aebca9ba6b2289a6ae}{sound\+Buffers}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Sound $>$ \mbox{\hyperlink{class_sound_manager_ac9b5619ac3af93344d3d830506c4d1ce}{sounds}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Music \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_sound_manager_ac803877c4a733e920bc348bf5c7e2b4d}{musics}}
+\item 
+std\+::queue$<$ std\+::string $>$ \mbox{\hyperlink{class_sound_manager_a0267b9d05552b093f91996e84b55d931}{playlist}}
+\item 
+std\+::string \mbox{\hyperlink{class_sound_manager_aab51048d5f9bd8cf1df7995ec25fe416}{current\+Track}}
+\item 
+float \mbox{\hyperlink{class_sound_manager_adcd7c02cf458cdd911a475fa7a4f6df0}{global\+Sound\+Volume}} = 100.\+0f
+\item 
+float \mbox{\hyperlink{class_sound_manager_a837af56f46e6062590d6c74d4ea31fae}{global\+Music\+Volume}} = 100.\+0f
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -66,8 +81,28 @@ Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00006}{6}} of file
 \Hypertarget{class_sound_manager_aac4b48cfc4d394c547f5efec7d451165}\label{class_sound_manager_aac4b48cfc4d394c547f5efec7d451165} 
 \index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
 \index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
-\doxysubsubsection{\texorpdfstring{SoundManager()}{SoundManager()}}
+\doxysubsubsection{\texorpdfstring{SoundManager()}{SoundManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Sound\+Manager\+::\+Sound\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}\label{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35} 
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{SoundManager()}{SoundManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sound\+Manager\+::\+Sound\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{class_sound_manager_ad5dbf8eab22db48ff8f3db51b02f8938}\label{class_sound_manager_ad5dbf8eab22db48ff8f3db51b02f8938} 
+\index{SoundManager@{SoundManager}!````~SoundManager@{\texorpdfstring{$\sim$}{\string~}SoundManager}}
+\index{````~SoundManager@{\texorpdfstring{$\sim$}{\string~}SoundManager}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundManager()}{\string~SoundManager()}}
+{\footnotesize\ttfamily Sound\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
 
 
@@ -91,6 +126,14 @@ adds music to playlist
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a19b821bab9d4c9e078a7ee68530fdeb5_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}\label{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae} 
 \index{SoundManager@{SoundManager}!getInstance@{getInstance}}
 \index{getInstance@{getInstance}!SoundManager@{SoundManager}}
@@ -101,7 +144,8 @@ Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00155}{155}} of 
 
 Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00010}{10}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -129,7 +173,8 @@ Loads music.
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -157,6 +202,14 @@ Loads the sound.
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a8dd42da84f176f55f385f923c1385987_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sound_manager_a5792dd09a6293846f738e7f9418d9085}\label{class_sound_manager_a5792dd09a6293846f738e7f9418d9085} 
 \index{SoundManager@{SoundManager}!operator=@{operator=}}
 \index{operator=@{operator=}!SoundManager@{SoundManager}}
@@ -184,7 +237,8 @@ plays music
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -205,14 +259,16 @@ plays the next track for music if there is any
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_sound_manager_a4df606df9541a5513e5dcfd16f4b68b3_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -238,6 +294,14 @@ plays the sound
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sound_manager_a72e2018710caaa14b4b3b7d821121655}\label{class_sound_manager_a72e2018710caaa14b4b3b7d821121655} 
 \index{SoundManager@{SoundManager}!setGlobalMusicVolume@{setGlobalMusicVolume}}
 \index{setGlobalMusicVolume@{setGlobalMusicVolume}!SoundManager@{SoundManager}}
@@ -257,6 +321,14 @@ sets all music volume
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a72e2018710caaa14b4b3b7d821121655_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20}\label{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20} 
 \index{SoundManager@{SoundManager}!setGlobalSoundVolume@{setGlobalSoundVolume}}
 \index{setGlobalSoundVolume@{setGlobalSoundVolume}!SoundManager@{SoundManager}}
@@ -276,6 +348,14 @@ stes all sounds volume
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a04cc55fe14afbad98dbad4cba8e02e20_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sound_manager_aca506cc6fbd72f435dbf87d6682b554d}\label{class_sound_manager_aca506cc6fbd72f435dbf87d6682b554d} 
 \index{SoundManager@{SoundManager}!setMusicVolume@{setMusicVolume}}
 \index{setMusicVolume@{setMusicVolume}!SoundManager@{SoundManager}}
@@ -351,7 +431,8 @@ stops music
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -391,16 +472,98 @@ updates the track when the current one stops playing
 
 Definition at line \mbox{\hyperlink{_sound_manager_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{_sound_manager_8cpp_source}{Sound\+Manager.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_sound_manager_a237964589201c404a015660fe601eff5_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sound_manager_a237964589201c404a015660fe601eff5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sound_manager_aab51048d5f9bd8cf1df7995ec25fe416}\label{class_sound_manager_aab51048d5f9bd8cf1df7995ec25fe416} 
+\index{SoundManager@{SoundManager}!currentTrack@{currentTrack}}
+\index{currentTrack@{currentTrack}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{currentTrack}{currentTrack}}
+{\footnotesize\ttfamily std\+::string Sound\+Manager\+::current\+Track\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00048}{48}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_a837af56f46e6062590d6c74d4ea31fae}\label{class_sound_manager_a837af56f46e6062590d6c74d4ea31fae} 
+\index{SoundManager@{SoundManager}!globalMusicVolume@{globalMusicVolume}}
+\index{globalMusicVolume@{globalMusicVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{globalMusicVolume}{globalMusicVolume}}
+{\footnotesize\ttfamily float Sound\+Manager\+::global\+Music\+Volume = 100.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00050}{50}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_adcd7c02cf458cdd911a475fa7a4f6df0}\label{class_sound_manager_adcd7c02cf458cdd911a475fa7a4f6df0} 
+\index{SoundManager@{SoundManager}!globalSoundVolume@{globalSoundVolume}}
+\index{globalSoundVolume@{globalSoundVolume}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{globalSoundVolume}{globalSoundVolume}}
+{\footnotesize\ttfamily float Sound\+Manager\+::global\+Sound\+Volume = 100.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00049}{49}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_ac803877c4a733e920bc348bf5c7e2b4d}\label{class_sound_manager_ac803877c4a733e920bc348bf5c7e2b4d} 
+\index{SoundManager@{SoundManager}!musics@{musics}}
+\index{musics@{musics}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{musics}{musics}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Music\texorpdfstring{$\ast$}{*}$>$ Sound\+Manager\+::musics\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00046}{46}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_a0267b9d05552b093f91996e84b55d931}\label{class_sound_manager_a0267b9d05552b093f91996e84b55d931} 
+\index{SoundManager@{SoundManager}!playlist@{playlist}}
+\index{playlist@{playlist}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{playlist}{playlist}}
+{\footnotesize\ttfamily std\+::queue$<$std\+::string$>$ Sound\+Manager\+::playlist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00047}{47}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_aca164f0c4120c8aebca9ba6b2289a6ae}\label{class_sound_manager_aca164f0c4120c8aebca9ba6b2289a6ae} 
+\index{SoundManager@{SoundManager}!soundBuffers@{soundBuffers}}
+\index{soundBuffers@{soundBuffers}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{soundBuffers}{soundBuffers}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Sound\+Buffer$>$ Sound\+Manager\+::sound\+Buffers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00044}{44}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
+\Hypertarget{class_sound_manager_ac9b5619ac3af93344d3d830506c4d1ce}\label{class_sound_manager_ac9b5619ac3af93344d3d830506c4d1ce} 
+\index{SoundManager@{SoundManager}!sounds@{sounds}}
+\index{sounds@{sounds}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{sounds}{sounds}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Sound$>$ Sound\+Manager\+::sounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_sound_manager_8h_source_l00045}{45}} of file \mbox{\hyperlink{_sound_manager_8h_source}{Sound\+Manager.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_sound_manager_8h}{Sound\+Manager.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_sound_manager_8cpp}{Sound\+Manager.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_sound_manager_8h}{Sound\+Manager.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_sound_manager_8cpp}{Sound\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,17 +1,17 @@
 \doxysection{Level\+Loader.\+cpp}
-\hypertarget{_level_loader_8cpp_source}{}\label{_level_loader_8cpp_source}\index{AI Behaviors/LevelLoader.cpp@{AI Behaviors/LevelLoader.cpp}}
+\hypertarget{_level_loader_8cpp_source}{}\label{_level_loader_8cpp_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/LevelLoader.cpp@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/LevelLoader.cpp}}
 \mbox{\hyperlink{_level_loader_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_level_loader_8h}{LevelLoader.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00003}\mbox{\hyperlink{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20}{00003}}\ \mbox{\hyperlink{class_level_loader_a2aa6f1f2116e8ded74f8f88cf26dbc20}{LevelLoader::LevelLoader}}()}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00004}00004\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_font.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_loader_a87ffbd03b41374c98604c3aa49fca852}{m\_font}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}}))}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00006}00006\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ problem\ loading\ font\ in\ Level\ Editor"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00008}00008\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00009}00009\ \ \ \ \ initBackButton();}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00010}00010\ \ \ \ \ initBackground();}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a63806b1c3eb34f1e8d8712d67ba8bf32}{initBackButton}}();}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a01fa4201fa01e3cfbea86d23bf627881}{initBackground}}();}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_level_loader_ab79716edefc643bd943256d3a1b96d98}{initLevelSelectionButtons}}();}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00012}00012\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00013}00013\ }
@@ -21,40 +21,40 @@
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00022}\mbox{\hyperlink{class_level_loader_aaa7dcd75aee8d103054a546ede7cbf33}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_aaa7dcd75aee8d103054a546ede7cbf33}{LevelLoader::update}}(sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00023}00023\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00024}00024\ \ \ \ \ loadLevel(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}]);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_level_loader_aa6c5402832b1ed33275002a7c2fba529}{loadLevel}}(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}]);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00025}00025\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00031}\mbox{\hyperlink{class_level_loader_a3f5b453ba22665815889a8f3b365ae0b}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_a3f5b453ba22665815889a8f3b365ae0b}{LevelLoader::render}}(sf::RenderWindow\&\ m\_window)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00032}00032\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00033}00033\ \ \ \ \ m\_window.draw(m\_backgroundSprite);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00034}00034\ \ \ \ \ m\_window.draw(m\_toGoBackButton);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00035}00035\ \ \ \ \ m\_window.draw(m\_toGoBackText);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00033}00033\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_level_loader_a5121c8b12ae9b54901789c5efbbd7c1c}{m\_backgroundSprite}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00034}00034\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00035}00035\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}});}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ button\ :\ m\_levelSelectionButtons)}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ button\ :\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}})}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00038}00038\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ m\_window.draw(button);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00040}00040\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ m\_levelSelectionButtons.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}.size();\ ++i)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00042}00042\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ m\_window.draw(m\_levelSelectionButtons[i]);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setString(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[i]);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textX\ =\ m\_levelSelectionButtons[i].getPosition().x\ +\ (m\_buttonWidth\ -\/\ m\_levelSelectionButtonText.getGlobalBounds().width)\ /\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textY\ =\ m\_levelSelectionButtons[i].getPosition().y\ +\ (m\_buttonHeight\ -\/\ m\_levelSelectionButtonText.getGlobalBounds().height)\ /\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setPosition(textX,\ textY);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ m\_window.draw(m\_levelSelectionButtonText);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[i]);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setString(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[i]);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textX\ =\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[i].getPosition().x\ +\ (\mbox{\hyperlink{class_level_loader_aed324a4a9f61360f530485cea0b71da6}{m\_buttonWidth}}\ -\/\ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.getGlobalBounds().width)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textY\ =\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[i].getPosition().y\ +\ (\mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}\ -\/\ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.getGlobalBounds().height)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setPosition(textX,\ textY);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}});}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00049}00049\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00050}00050\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00051}00051\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00055}\mbox{\hyperlink{class_level_loader_ab79716edefc643bd943256d3a1b96d98}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_ab79716edefc643bd943256d3a1b96d98}{LevelLoader::initLevelSelectionButtons}}()}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00056}00056\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00057}00057\ \ \ \ \ m\_levelSelectionButtons.clear();}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}.clear();}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}.clear();}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00059}00059\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ saveFilesPath\ =\ \textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)SaveFiles\(\backslash\)\(\backslash\)"{}};}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00061}00061\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{float}\ buttonSpacing\ =\ 30.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{float}\ startX\ =\ (\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ m\_buttonWidth)\ /\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{float}\ startY\ =\ (\mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ -\/\ (m\_buttonHeight\ +\ buttonSpacing)\ *\ m\_levelSelectionButtons.size())\ /\ 2.0f\ -\/\ 200;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{float}\ startX\ =\ (\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ \mbox{\hyperlink{class_level_loader_aed324a4a9f61360f530485cea0b71da6}{m\_buttonWidth}})\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{float}\ startY\ =\ (\mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ -\/\ (\mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}\ +\ buttonSpacing)\ *\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}.size())\ /\ 2.0f\ -\/\ 200;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00065}00065\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::directory\_iterator(saveFilesPath))}
@@ -65,8 +65,8 @@
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ filename\ =\ entry.path().filename().stem().string();}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}.push\_back(filename);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ sf::RectangleShape\ button(sf::Vector2f(m\_buttonWidth,\ m\_buttonHeight));}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ button.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ sf::RectangleShape\ button(sf::Vector2f(\mbox{\hyperlink{class_level_loader_aed324a4a9f61360f530485cea0b71da6}{m\_buttonWidth}},\ \mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ button.setTexture(\&\mbox{\hyperlink{class_level_loader_aa245c1d72d34edf5b06d7bff205a886f}{m\_buttonTexture}});}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ button.setFillColor(sf::Color(255,\ 80,\ 80,\ 255));}
@@ -76,17 +76,17 @@
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ button.setFillColor(sf::Color(100,\ 100,\ 150,\ 255));}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ button.setPosition(startX,\ startY\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i)\ *\ (m\_buttonHeight\ +\ buttonSpacing));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ button.setPosition(startX,\ startY\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i)\ *\ (\mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}\ +\ buttonSpacing));}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setFont(m\_font);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setString(filename);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setCharacterSize(20);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setFillColor(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setFont(\mbox{\hyperlink{class_level_loader_a87ffbd03b41374c98604c3aa49fca852}{m\_font}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setString(filename);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setCharacterSize(20);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setFillColor(sf::Color::White);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textX\ =\ startX\ +\ (m\_buttonWidth\ -\/\ m\_levelSelectionButtonText.getGlobalBounds().width)\ /\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textY\ =\ startY\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i)\ *\ (m\_buttonHeight\ +\ buttonSpacing)\ +\ (m\_buttonHeight\ -\/\ m\_levelSelectionButtonText.getGlobalBounds().height)\ /\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtonText.setPosition(textX,\ textY);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtons.push\_back(button);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textX\ =\ startX\ +\ (\mbox{\hyperlink{class_level_loader_aed324a4a9f61360f530485cea0b71da6}{m\_buttonWidth}}\ -\/\ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.getGlobalBounds().width)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textY\ =\ startY\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i)\ *\ (\mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}\ +\ buttonSpacing)\ +\ (\mbox{\hyperlink{class_level_loader_af9434221b67d9a388401ec29d5b97875}{m\_buttonHeight}}\ -\/\ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.getGlobalBounds().height)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aca632e981ab4d1f7d87025c698003dd3}{m\_levelSelectionButtonText}}.setPosition(textX,\ textY);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}.push\_back(button);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ ++i;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00099}00099\ \ \ \ \ \}}
@@ -95,70 +95,70 @@
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00102}00102\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00108}\mbox{\hyperlink{class_level_loader_ac4863ff62c05dda297d9a3943b0cf8c4}{00108}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_ac4863ff62c05dda297d9a3943b0cf8c4}{LevelLoader::goToMainMenu}}(sf::Vector2i\ m\_mousePosition,\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\&\ m\_gameState)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00109}00109\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_toGoBackButton.getGlobalBounds().contains(m\_mousePosition.x,\ m\_mousePosition.y))}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.getGlobalBounds().contains(m\_mousePosition.x,\ m\_mousePosition.y))}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00111}00111\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ m\_gameState\ =\ \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{GameState::MainMenu}};}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00113}00113\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00114}00114\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00115}00115\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00119}00119\ \textcolor{keywordtype}{void}\ LevelLoader::initBackground()}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00119}\mbox{\hyperlink{class_level_loader_a01fa4201fa01e3cfbea86d23bf627881}{00119}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_a01fa4201fa01e3cfbea86d23bf627881}{LevelLoader::initBackground}}()}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00120}00120\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_backgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Menu\(\backslash\)\(\backslash\)Underwater\ BG\ Blank.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_loader_aa822e3f70b2cd36bbaccac3c48678184}{m\_backgroundTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Menu\(\backslash\)\(\backslash\)Underwater\ BG\ Blank.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00122}00122\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Failed\ to\ load\ background\ image"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00124}00124\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00125}00125\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00126}00126\ \ \ \ \ m\_backgroundSprite.setTexture(m\_backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a5121c8b12ae9b54901789c5efbbd7c1c}{m\_backgroundSprite}}.setTexture(\mbox{\hyperlink{class_level_loader_aa822e3f70b2cd36bbaccac3c48678184}{m\_backgroundTexture}});}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00128}00128\ \ \ \ \ m\_backgroundSprite.setScale(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}})\ /\ m\_backgroundSprite.getGlobalBounds().width,}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}})\ /\ m\_backgroundSprite.getGlobalBounds().height);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a5121c8b12ae9b54901789c5efbbd7c1c}{m\_backgroundSprite}}.setScale(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}})\ /\ \mbox{\hyperlink{class_level_loader_a5121c8b12ae9b54901789c5efbbd7c1c}{m\_backgroundSprite}}.getGlobalBounds().width,}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}})\ /\ \mbox{\hyperlink{class_level_loader_a5121c8b12ae9b54901789c5efbbd7c1c}{m\_backgroundSprite}}.getGlobalBounds().height);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00130}00130\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00135}00135\ \textcolor{keywordtype}{void}\ LevelLoader::initBackButton()}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00135}\mbox{\hyperlink{class_level_loader_a63806b1c3eb34f1e8d8712d67ba8bf32}{00135}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_a63806b1c3eb34f1e8d8712d67ba8bf32}{LevelLoader::initBackButton}}()}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00136}00136\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_buttonTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)buttonStock2.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_loader_aa245c1d72d34edf5b06d7bff205a886f}{m\_buttonTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)buttonStock2.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00138}00138\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ loading\ button\ texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00140}00140\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00142}00142\ \ \ \ \ m\_toGoBackButton.setSize(sf::Vector2f(100,\ 50));}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00143}00143\ \ \ \ \ m\_toGoBackButton.setPosition(80,\ 50);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00144}00144\ \ \ \ \ m\_toGoBackButton.setOrigin(m\_toGoBackButton.getGlobalBounds().width\ /\ 2,\ m\_toGoBackButton.getGlobalBounds().height\ /\ 2);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00145}00145\ \ \ \ \ m\_toGoBackButton.setTexture(\&m\_buttonTexture);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.setSize(sf::Vector2f(100,\ 50));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00143}00143\ \ \ \ \ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.setPosition(80,\ 50);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.setOrigin(\mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.getGlobalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.setTexture(\&\mbox{\hyperlink{class_level_loader_aa245c1d72d34edf5b06d7bff205a886f}{m\_buttonTexture}});}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00146}00146\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00147}00147\ \ \ \ \ m\_toGoBackText.setFont(m\_font);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00148}00148\ \ \ \ \ m\_toGoBackText.setString(\textcolor{stringliteral}{"{}Back"{}});}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00149}00149\ \ \ \ \ m\_toGoBackText.setPosition(m\_toGoBackButton.getPosition().x,\ m\_toGoBackButton.getPosition().y\ -\/\ 5);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00150}00150\ \ \ \ \ m\_toGoBackText.setCharacterSize(25U);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00151}00151\ \ \ \ \ m\_toGoBackText.setFillColor(sf::Color(225,\ 245,\ 255));}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00152}00152\ \ \ \ \ m\_toGoBackText.setOutlineColor(sf::Color::Blue);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00153}00153\ \ \ \ \ m\_toGoBackText.setOutlineThickness(1.0f);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00154}00154\ \ \ \ \ m\_toGoBackText.setOrigin(m\_toGoBackText.getGlobalBounds().width\ /\ 2,\ m\_toGoBackText.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setFont(\mbox{\hyperlink{class_level_loader_a87ffbd03b41374c98604c3aa49fca852}{m\_font}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setString(\textcolor{stringliteral}{"{}Back"{}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setPosition(\mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.getPosition().x,\ \mbox{\hyperlink{class_level_loader_abc4364e6008804053f3fb07f733431c0}{m\_toGoBackButton}}.getPosition().y\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setCharacterSize(25U);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00152}00152\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00154}00154\ \ \ \ \ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.setOrigin(\mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.getGlobalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_level_loader_a88a95d4b06b6579ea289012041618292}{m\_toGoBackText}}.getGlobalBounds().height\ /\ 2);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00155}00155\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00156}00156\ }
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00161}\mbox{\hyperlink{class_level_loader_a99d2eaf66b8b70793e4eed64f134d23e}{00161}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_a99d2eaf66b8b70793e4eed64f134d23e}{LevelLoader::handleLevelSelectionMouseInput}}(sf::Vector2i\ m\_mousePosition)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00162}00162\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ m\_levelSelectionButtons.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}.size();\ ++i)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00164}00164\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_levelSelectionButtons[i].getGlobalBounds().contains(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_mousePosition.x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_mousePosition.y)))}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[i].getGlobalBounds().contains(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_mousePosition.x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m\_mousePosition.y)))}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtons[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}].setFillColor(sf::Color(100,\ 100,\ 150,\ 255));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}].setFillColor(sf::Color(100,\ 100,\ 150,\ 255));}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtons[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}].setFillColor(sf::Color(255,\ 80,\ 80,\ 255));}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelSelectionButtons[i].setTexture(\&m\_buttonTexture);}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ m\_levelLoaded\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ loadLevel(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}]);}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}].setFillColor(sf::Color(255,\ 80,\ 80,\ 255));}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a086fc66c6cf29f74941dc24859362296}{m\_levelSelectionButtons}}[i].setTexture(\&\mbox{\hyperlink{class_level_loader_aa245c1d72d34edf5b06d7bff205a886f}{m\_buttonTexture}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a518e0e58ff10d8aeab0e63c53feea712}{m\_levelLoaded}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_aa6c5402832b1ed33275002a7c2fba529}{loadLevel}}(\mbox{\hyperlink{class_level_loader_a68d28b0633ad4aa84fec04a7928d3679}{m\_levelFilenames}}[\mbox{\hyperlink{class_level_loader_a008bf5791abbd7b082bffbe17a1b447a}{m\_selectedButtonIndex}}]);}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00175}00175\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00176}00176\ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00177}00177\ }
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00182}00182\ \textcolor{keywordtype}{void}\ LevelLoader::loadLevel(\textcolor{keyword}{const}\ std::string\&\ m\_filename)}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00182}\mbox{\hyperlink{class_level_loader_aa6c5402832b1ed33275002a7c2fba529}{00182}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_loader_aa6c5402832b1ed33275002a7c2fba529}{LevelLoader::loadLevel}}(\textcolor{keyword}{const}\ std::string\&\ m\_filename)}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00183}00183\ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_levelLoaded)}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_level_loader_a518e0e58ff10d8aeab0e63c53feea712}{m\_levelLoaded}})}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00185}00185\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ m\_levelEditor.\mbox{\hyperlink{class_level_editor_a50af4550cd28b70941afa18ca2e79147}{loadLevelFromFile}}(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)SaveFiles\(\backslash\)\(\backslash\)"{}}\ +\ m\_filename\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
-\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ m\_levelLoaded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a315f57bedd26ebf1e6ff7eb4dbf8c0ba}{m\_levelEditor}}.\mbox{\hyperlink{class_level_editor_a50af4550cd28b70941afa18ca2e79147}{loadLevelFromFile}}(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)SaveFiles\(\backslash\)\(\backslash\)"{}}\ +\ m\_filename\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_loader_a518e0e58ff10d8aeab0e63c53feea712}{m\_levelLoaded}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00188}00188\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_level_loader_8cpp_source_l00189}00189\ \}}
 

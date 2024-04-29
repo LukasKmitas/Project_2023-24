@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output_5fneurons_0',['OUTPUT_NEURONS',['../class_neural_networks.html#aa4d507402fd96fcd5177194d901976f1',1,'NeuralNetworks']]]
+  ['hidden_5fneurons_0',['HIDDEN_NEURONS',['../class_neural_networks.html#af8fd2cf96453247030ef6286c0ebc5be',1,'NeuralNetworks']]]
 ];

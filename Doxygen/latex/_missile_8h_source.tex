@@ -1,5 +1,5 @@
 \doxysection{Missile.\+h}
-\hypertarget{_missile_8h_source}{}\label{_missile_8h_source}\index{AI Behaviors/Missile.h@{AI Behaviors/Missile.h}}
+\hypertarget{_missile_8h_source}{}\label{_missile_8h_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/Missile.h@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/Missile.h}}
 \mbox{\hyperlink{_missile_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -19,7 +19,7 @@
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00015}00015\ \{}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_missile_a25d8466b301870323b86fdc0e35c77d1}{Missile}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_startPosition,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetDirection,\ \textcolor{keywordtype}{float}\ m\_speed,\ \textcolor{keyword}{const}\ sf::Texture\&\ m\_texture);}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_missile_a25d8466b301870323b86fdc0e35c77d1}{Missile}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_startPosition,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ m\_targetDirection,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}{m\_speed}},\ \textcolor{keyword}{const}\ sf::Texture\&\ m\_texture);}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc}{update}}(sf::Time\ t\_deltaTime);}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_missile_a3cdc5856688cad7c20ca665d4c41fd95}{render}}(sf::RenderWindow\&\ m\_window)\ \textcolor{keyword}{const};}
@@ -35,18 +35,18 @@
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00034}00034\ \ \ \ \ sf::Vector2f\ normalize(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_source)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ updateTrail(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00034}00034\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_missile_ab164b28b9ea28828cd2f95b2b171f57d}{normalize}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ m\_source)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311}{updateTrail}}(sf::Time\ t\_deltaTime);}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00037}00037\ \ \ \ \ sf::Color\ lerpColor(\textcolor{keyword}{const}\ sf::Color\&\ m\_start,\ \textcolor{keyword}{const}\ sf::Color\&\ m\_end,\ \textcolor{keywordtype}{float}\ m\_lifeTime);}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00037}00037\ \ \ \ \ sf::Color\ \mbox{\hyperlink{class_missile_ac379538d83d074fb53e5354ba7edb05a}{lerpColor}}(\textcolor{keyword}{const}\ sf::Color\&\ m\_start,\ \textcolor{keyword}{const}\ sf::Color\&\ m\_end,\ \textcolor{keywordtype}{float}\ m\_lifeTime);}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00039}00039\ \ \ \ \ sf::Vector2f\ m\_velocity;}
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_speed;}
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_lifetime\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00039}\mbox{\hyperlink{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}{00039}}\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}{m\_velocity}};}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00040}\mbox{\hyperlink{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}{00040}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00041}\mbox{\hyperlink{class_missile_a7bc5442b92cff6c9350b5496bfc2ae3e}{00041}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_a7bc5442b92cff6c9350b5496bfc2ae3e}{m\_lifetime}}\ =\ 3.0f;}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_trailMaxLifetime\ =\ 2.0f;}
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_timeSinceLastTrailPart\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_addTrailPartInterval\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00043}\mbox{\hyperlink{class_missile_a6ccf607f9d2fe8044b86182c3c9710c9}{00043}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_a6ccf607f9d2fe8044b86182c3c9710c9}{m\_trailMaxLifetime}}\ =\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00044}\mbox{\hyperlink{class_missile_a83edd34480c21b85b0003866e26b47f1}{00044}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_a83edd34480c21b85b0003866e26b47f1}{m\_timeSinceLastTrailPart}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_missile_8h_source_l00045}\mbox{\hyperlink{class_missile_a970cb70efd57dfa44e3fc57e5d1ff035}{00045}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_missile_a970cb70efd57dfa44e3fc57e5d1ff035}{m\_addTrailPartInterval}}\ =\ 0.05f;}
 \DoxyCodeLine{\Hypertarget{_missile_8h_source_l00046}00046\ \};}
 
 \end{DoxyCode}

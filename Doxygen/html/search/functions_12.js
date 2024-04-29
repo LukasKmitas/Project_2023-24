@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warfactory_0',['WarFactory',['../class_war_factory.html#a0a7077f16ad2e9556a585904fd71618f',1,'WarFactory']]]
+  ['vehicleunit_0',['VehicleUnit',['../class_vehicle_unit.html#aa6600b8b2481a017ceef4c33b36ca3ec',1,'VehicleUnit']]]
 ];

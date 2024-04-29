@@ -1,7 +1,7 @@
 <map id="Unit::lerp" name="Unit::lerp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="776,107,849,133"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="530,107,728,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="760,123,728,123,728,117,760,117"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="743,107,816,133"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="530,99,695,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="727,123,695,123,695,117,727,117"/>
 <area shape="rect" id="Node000003" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="391,107,482,133"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="515,123,483,123,483,117,515,117"/>
 <area shape="rect" id="Node000004" href="$class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="210,56,342,83"/>

@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title="Renders GUI." alt="" coords="5,5,93,32"/>
 <area shape="rect" id="Node000002" href="$class_side_bar.html#add5b055604b08b68d3cd8778c760d8b1" title="Renders the sideBar UI in gameplay." alt="" coords="141,5,252,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+<area shape="rect" id="Node000003" href="$class_side_bar.html#af27706211ab45d7a8b285ca44245e270" title="Draws the grid thats where the buttons are in the sidebar GUI." alt="" coords="300,5,426,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,16,284,16,284,21,252,21"/>
 </map>

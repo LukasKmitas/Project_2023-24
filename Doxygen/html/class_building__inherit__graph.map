@@ -1,13 +1,13 @@
 <map id="Building" name="Building">
-<area shape="rect" id="Node000001" title=" " alt="" coords="689,5,1017,736"/>
-<area shape="rect" id="Node000002" href="$class_air_craft.html" title=" " alt="" coords="5,784,325,917"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="679,496,261,786,258,782,676,492"/>
-<area shape="rect" id="Node000003" href="$class_barracks.html" title=" " alt="" coords="349,784,669,917"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="683,613,558,786,554,783,678,610"/>
-<area shape="rect" id="Node000004" href="$class_headquarters.html" title=" " alt="" coords="693,784,1013,917"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="856,751,856,784,851,784,851,751"/>
-<area shape="rect" id="Node000005" href="$class_refinery.html" title=" " alt="" coords="1037,784,1357,917"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1028,610,1153,783,1148,786,1024,613"/>
-<area shape="rect" id="Node000006" href="$class_war_factory.html" title=" " alt="" coords="1381,784,1701,917"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1031,492,1449,782,1446,786,1028,496"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="207,5,274,32"/>
+<area shape="rect" id="Node000002" href="$class_air_craft.html" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,40,71,83,69,78,191,35"/>
+<area shape="rect" id="Node000003" href="$class_barracks.html" title=" " alt="" coords="94,80,168,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,43,151,82,149,77,207,39"/>
+<area shape="rect" id="Node000004" href="$class_headquarters.html" title=" " alt="" coords="191,80,289,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,48,243,80,238,80,238,48"/>
+<area shape="rect" id="Node000005" href="$class_refinery.html" title=" " alt="" coords="314,80,382,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="273,39,331,77,328,82,270,43"/>
+<area shape="rect" id="Node000006" href="$class_war_factory.html" title=" " alt="" coords="406,80,496,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="290,34,415,77,413,82,288,39"/>
 </map>

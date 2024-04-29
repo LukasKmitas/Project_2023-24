@@ -1,5 +1,5 @@
 <map id="Unit::avoidCollisionsWithUnits" name="Unit::avoidCollisionsWithUnits">
-<area shape="rect" id="Node000001" title="its to avoid colliding with each other" alt="" coords="530,107,725,133"/>
+<area shape="rect" id="Node000001" title="its to avoid colliding with each other" alt="" coords="530,99,695,141"/>
 <area shape="rect" id="Node000002" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="391,107,482,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="515,123,483,123,483,117,515,117"/>
 <area shape="rect" id="Node000003" href="$class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="210,56,342,83"/>

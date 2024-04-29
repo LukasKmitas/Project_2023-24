@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['findavoidancedirection_0',['findAvoidanceDirection',['../class_unit.html#a42777458d8e2ae32407212027719b6d2',1,'Unit']]],
-  ['firehawk_1',['Firehawk',['../class_firehawk.html#ad406c6d04de228c7e8c5fd19e69b85ac',1,'Firehawk']]],
-  ['forwardpropagation_2',['forwardPropagation',['../class_neural_networks.html#ab9abc0b8a4c01d84f3be7eeeba0bf21c',1,'NeuralNetworks']]]
+  ['emitemp_0',['emitEMP',['../class_tank_aurora.html#ae91336895cbe9bb067a991215fd9cd75',1,'TankAurora']]],
+  ['enemyattacking_1',['enemyAttacking',['../class_game.html#aa7b687e26434179b94657751ff5c1b75',1,'Game']]],
+  ['enemyexploring_2',['enemyExploring',['../class_game.html#a0d560a61982bdc8684f8643bfeb8e73f',1,'Game']]],
+  ['enemygroupunits_3',['enemyGroupUnits',['../class_game.html#a6754a603fdd1cc442d214c68c3b458a7',1,'Game']]]
 ];

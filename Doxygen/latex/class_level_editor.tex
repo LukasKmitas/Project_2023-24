@@ -4,15 +4,6 @@
 
 {\ttfamily \#include $<$Level\+Editor.\+h$>$}
 
-
-
-Collaboration diagram for Level\+Editor\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_level_editor__coll__graph}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,6 +43,117 @@ const int \mbox{\hyperlink{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}
 \item 
 const int \mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{m\+\_\+num\+Cols}} = 50
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_level_editor_a41cbfc818ddec9659e204d98bd731812}{init\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em initializes the grid m\+\_\+tiles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_af0d5ca755f0a13efe9c2ed5dd6cdda50}{random\+Generate\+Level}} ()
+\begin{DoxyCompactList}\small\item\em to randomise the map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4}{init\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em initializes the UI bar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a402203d6bc51c4c093c640ef3aa3f847}{initbuttons\+For\+Tool\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em initializes the tool editor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0}{init\+Buttons\+For\+Tool\+Set}} ()
+\begin{DoxyCompactList}\small\item\em initializes the buttons for the UI \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a3c7a873bfacdf71daae80f742989ce36}{init\+Back\+Button}} ()
+\begin{DoxyCompactList}\small\item\em initializes the back button \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a818107a288e6e742c83cf456e93ffb41}{init\+Drag\+Rectangle}} ()
+\begin{DoxyCompactList}\small\item\em initializes the drag\+Rectangle shape \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_ac4c0e1472ea2675e655dc581b0a52551}{handle\+Tile\+Buttons}} (sf\+::\+Vector2f m\+\_\+gui\+Mouse\+Position, sf\+::\+Vector2f m\+\_\+world\+Mouse\+Position, sf\+::\+Sprite \mbox{\hyperlink{class_level_editor_ad3a1a28ad10d0ef179860d701c99dabf}{m\+\_\+buttons}}\mbox{[}$\,$\mbox{]}, int \&m\+\_\+last\+Clicked\+Index, int \&m\+\_\+selected\+Index)
+\begin{DoxyCompactList}\small\item\em Handles the selection of button presses for the bottom UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65}{handle\+Tile\+Placement}} (sf\+::\+Vector2f m\+\_\+world\+Mouse\+Position, int m\+\_\+selected\+Index)
+\begin{DoxyCompactList}\small\item\em handles the placement for the tiles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a754e4fae529e8da045512acb5fb561c0}{place\+Tiles\+In\+Drag\+Rectangle}} ()
+\begin{DoxyCompactList}\small\item\em Adds all the texture inside the drag\+Rectangle shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+View \mbox{\hyperlink{class_level_editor_a37285179793c1fa6cd10af4a123672c7}{m\+\_\+level\+Editor\+View}}
+\item 
+int \mbox{\hyperlink{class_level_editor_a3982066b345a27ca026d142f1ee59464}{m\+\_\+selected\+Button\+Index}} = -\/1
+\item 
+int \mbox{\hyperlink{class_level_editor_a90b3bd14d50a7a407d98e5c7bff67606}{m\+\_\+last\+Clicked\+Button\+Index}} = -\/1
+\item 
+int \mbox{\hyperlink{class_level_editor_a5808c8e2aface2e269eb44b2e58648db}{m\+\_\+selected\+TileX}}
+\item 
+int \mbox{\hyperlink{class_level_editor_a2167eab4cc2cf52b90a5b7ddbc625011}{m\+\_\+selected\+TileY}}
+\item 
+float \mbox{\hyperlink{class_level_editor_ab5c13f312bc0f3148990bc5463322174}{m\+\_\+offset}} = 25.\+0f
+\item 
+bool \mbox{\hyperlink{class_level_editor_ade5a96a3ed8ad102e1bb44032ce2d657}{m\+\_\+is\+Tile\+Selected}} = false
+\item 
+bool \mbox{\hyperlink{class_level_editor_ab2576b5aa813b23e16f0cf81016327ed}{m\+\_\+is\+Button\+Clicked}} = false
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_level_editor_a1281d2bb2b9bf7c5fa9d91a154bd317c}{m\+\_\+new\+Mouse\+Pos}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_level_editor_aecf9e5606d7546c5ea4d5c69baf0657e}{m\+\_\+start\+Mouse\+Pos}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_level_editor_ae330dfb4a66587b831a8878e99a4ba90}{m\+\_\+background\+For\+Tiles\+Tools}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_level_editor_a64d17b896a412396c9826510a7edf549}{m\+\_\+to\+Go\+Back\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_level_editor_a274a8fa0ed93cdf9e125357b56191984}{m\+\_\+background\+For\+BTF}} \mbox{[}4\mbox{]}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_level_editor_a05e2d116469a6f3df0f18f92fa322144}{m\+\_\+drag\+Rectangle}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_level_editor_ad3a1a28ad10d0ef179860d701c99dabf}{m\+\_\+buttons}} \mbox{[}\mbox{\hyperlink{class_level_editor_ac37421833184d77bf267f966b42eff2d}{m\+\_\+num\+Buttons}}\mbox{]}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_level_editor_a5089e21b53c88af04f9e1390bce76557}{m\+\_\+font}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_level_editor_a4ca8d33e1106aff9d9119297daff76e4}{m\+\_\+to\+Go\+Back\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_level_editor_aa30602f7d740cddeb595b645aee491ee}{m\+\_\+walkable\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_level_editor_a319e99575ad1bde444d6014cf466d44f}{m\+\_\+\+Wall\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_level_editor_a74159781418598a4997c83397f49efbd}{m\+\_\+\+Resource\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_level_editor_a38a17b3b530d71d546d9ea46086e0617}{m\+\_\+\+Misc\+Text}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_level_editor_a062089f81afa20931d8cee5a659ee5f2}{m\+\_\+under\+Water\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_level_editor_abdfb2406587c63752946035e532ebbb2}{m\+\_\+button\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_level_editor_a5b8bae31638e17b511df20f0132e1ba1}{m\+\_\+button\+Texture1}}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_a0403b51d2703cce90e4f85971367433a}{m\+\_\+button\+Area\+For\+Walkable}} \mbox{[}4\mbox{]}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_a458fad0627b34e47befe9a2959506a81}{m\+\_\+button\+Area\+For\+Walls}} \mbox{[}5\mbox{]}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_adec02fb8b067d411a83ab2e242c068af}{m\+\_\+button\+Area\+For\+Resources}} = \{ 971, 1798, 16, 16 \}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_a54ebed9c51da047f6974c3009653e94e}{m\+\_\+button\+Area\+For\+Miscs}} \mbox{[}2\mbox{]}
+\item 
+const int \mbox{\hyperlink{class_level_editor_a8d82a5e38031cf92152a1b6c32074915}{m\+\_\+num\+Tile\+Frames}} = 4
+\item 
+int \mbox{\hyperlink{class_level_editor_ae2741ae6160ca40ed532cf405c72a6a4}{m\+\_\+current\+Resource\+Tile\+Animation\+Frame}} = 0
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_level_editor_a0392e50e00fe0c6722432e3da30dd5a1}{m\+\_\+tile\+Resource\+Animation\+Clock}}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_afadef1c42c40da81086f3e9592b7d4f7}{m\+\_\+tile\+Resource\+Animation\+Frames}} \mbox{[}4\mbox{]}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_level_editor_a5e35c60a48b8340b50a210fb26d9d1d1}{m\+\_\+tile\+Animation\+Clock}}
+\item 
+int \mbox{\hyperlink{class_level_editor_abfc97347d1da15bad0dabb9864281eb9}{m\+\_\+current\+Tile\+Weed\+Animation\+Frame}} = 0
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_level_editor_a05301269e2632e68513fa9bf341b8e67}{m\+\_\+tile\+Weed\+Animation\+Frames}} \mbox{[}4\mbox{]}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_level_editor_ac426fc0083cf273e090bea39a163af6b}{m\+\_\+button\+Selected\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_level_editor_a288c30a58a61d26c22f6bcf181668785}{m\+\_\+button\+Selected\+Texture}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_level_editor_a1e0b001e78f05df6a6f852e569afaf2c}{m\+\_\+button\+Selected\+Animation\+Clock}}
+\item 
+int \mbox{\hyperlink{class_level_editor_afe9e2b4b28f445e25c93e0eb2b4f83b9}{m\+\_\+current\+Animation\+Frame}} = 0
+\item 
+float \mbox{\hyperlink{class_level_editor_a0ead590768e9c76f9ab0443004f1668c}{m\+\_\+animation\+Speed}} = 0.\+2f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_level_editor_ac37421833184d77bf267f966b42eff2d}{m\+\_\+num\+Buttons}} = 12
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,6 +174,14 @@ Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00010}{10}} of file
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
@@ -89,7 +199,8 @@ animates the resources tiles
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00684}{684}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -110,7 +221,8 @@ Animates the weed tiles.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00706}{706}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -140,6 +252,22 @@ handles the mouse input inside the level editor
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a26d8447a407783226ce313e52bb39798_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a26d8447a407783226ce313e52bb39798_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605}\label{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605} 
 \index{LevelEditor@{LevelEditor}!handleRotationInput@{handleRotationInput}}
 \index{handleRotationInput@{handleRotationInput}!LevelEditor@{LevelEditor}}
@@ -159,6 +287,226 @@ able to rotate the first tile you place
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_ac4c0e1472ea2675e655dc581b0a52551}\label{class_level_editor_ac4c0e1472ea2675e655dc581b0a52551} 
+\index{LevelEditor@{LevelEditor}!handleTileButtons@{handleTileButtons}}
+\index{handleTileButtons@{handleTileButtons}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{handleTileButtons()}{handleTileButtons()}}
+{\footnotesize\ttfamily void Level\+Editor\+::handle\+Tile\+Buttons (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{m\+\_\+gui\+Mouse\+Position,  }\item[{sf\+::\+Vector2f}]{m\+\_\+world\+Mouse\+Position,  }\item[{sf\+::\+Sprite}]{m\+\_\+buttons\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{m\+\_\+last\+Clicked\+Index,  }\item[{int \&}]{m\+\_\+selected\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the selection of button presses for the bottom UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gui\+Mouse\+Position} & \\
+\hline
+{\em world\+Mouse\+Position} & \\
+\hline
+{\em buttons} & \\
+\hline
+{\em last\+Clicked\+Index} & \\
+\hline
+{\em selected\+Index} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00180}{180}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_ac4c0e1472ea2675e655dc581b0a52551_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_ac4c0e1472ea2675e655dc581b0a52551_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65}\label{class_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65} 
+\index{LevelEditor@{LevelEditor}!handleTilePlacement@{handleTilePlacement}}
+\index{handleTilePlacement@{handleTilePlacement}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{handleTilePlacement()}{handleTilePlacement()}}
+{\footnotesize\ttfamily void Level\+Editor\+::handle\+Tile\+Placement (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{m\+\_\+world\+Mouse\+Position,  }\item[{int}]{m\+\_\+selected\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the placement for the tiles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+world\+Mouse\+Position} & \\
+\hline
+{\em m\+\_\+selected\+Index} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00211}{211}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a3c7a873bfacdf71daae80f742989ce36}\label{class_level_editor_a3c7a873bfacdf71daae80f742989ce36} 
+\index{LevelEditor@{LevelEditor}!initBackButton@{initBackButton}}
+\index{initBackButton@{initBackButton}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initBackButton()}{initBackButton()}}
+{\footnotesize\ttfamily void Level\+Editor\+::init\+Back\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the back button 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00542}{542}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a3c7a873bfacdf71daae80f742989ce36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4}\label{class_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4} 
+\index{LevelEditor@{LevelEditor}!initBar@{initBar}}
+\index{initBar@{initBar}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initBar()}{initBar()}}
+{\footnotesize\ttfamily void Level\+Editor\+::init\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the UI bar 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00363}{363}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a402203d6bc51c4c093c640ef3aa3f847}\label{class_level_editor_a402203d6bc51c4c093c640ef3aa3f847} 
+\index{LevelEditor@{LevelEditor}!initbuttonsForToolEditor@{initbuttonsForToolEditor}}
+\index{initbuttonsForToolEditor@{initbuttonsForToolEditor}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initbuttonsForToolEditor()}{initbuttonsForToolEditor()}}
+{\footnotesize\ttfamily void Level\+Editor\+::initbuttons\+For\+Tool\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the tool editor 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_level_editor_a402203d6bc51c4c093c640ef3aa3f847_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_level_editor_a402203d6bc51c4c093c640ef3aa3f847_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0}\label{class_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0} 
+\index{LevelEditor@{LevelEditor}!initButtonsForToolSet@{initButtonsForToolSet}}
+\index{initButtonsForToolSet@{initButtonsForToolSet}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initButtonsForToolSet()}{initButtonsForToolSet()}}
+{\footnotesize\ttfamily void Level\+Editor\+::init\+Buttons\+For\+Tool\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the buttons for the UI 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a818107a288e6e742c83cf456e93ffb41}\label{class_level_editor_a818107a288e6e742c83cf456e93ffb41} 
+\index{LevelEditor@{LevelEditor}!initDragRectangle@{initDragRectangle}}
+\index{initDragRectangle@{initDragRectangle}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initDragRectangle()}{initDragRectangle()}}
+{\footnotesize\ttfamily void Level\+Editor\+::init\+Drag\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the drag\+Rectangle shape 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00742}{742}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a818107a288e6e742c83cf456e93ffb41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_a41cbfc818ddec9659e204d98bd731812}\label{class_level_editor_a41cbfc818ddec9659e204d98bd731812} 
+\index{LevelEditor@{LevelEditor}!initGrid@{initGrid}}
+\index{initGrid@{initGrid}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{initGrid()}{initGrid()}}
+{\footnotesize\ttfamily void Level\+Editor\+::init\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the grid m\+\_\+tiles 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_level_editor_a41cbfc818ddec9659e204d98bd731812_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc}\label{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc} 
 \index{LevelEditor@{LevelEditor}!loadLevelForLevelEditor@{loadLevelForLevelEditor}}
 \index{loadLevelForLevelEditor@{loadLevelForLevelEditor}!LevelEditor@{LevelEditor}}
@@ -174,11 +522,20 @@ Loads the level in the "{}selection level"{} state ~\newline
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00657}{657}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_level_editor_a50af4550cd28b70941afa18ca2e79147}\label{class_level_editor_a50af4550cd28b70941afa18ca2e79147} 
@@ -200,13 +557,50 @@ Loads the level with the correct m\+\_\+tile properties.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00617}{617}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_level_editor_a754e4fae529e8da045512acb5fb561c0}\label{class_level_editor_a754e4fae529e8da045512acb5fb561c0} 
+\index{LevelEditor@{LevelEditor}!placeTilesInDragRectangle@{placeTilesInDragRectangle}}
+\index{placeTilesInDragRectangle@{placeTilesInDragRectangle}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{placeTilesInDragRectangle()}{placeTilesInDragRectangle()}}
+{\footnotesize\ttfamily void Level\+Editor\+::place\+Tiles\+In\+Drag\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds all the texture inside the drag\+Rectangle shape. 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a754e4fae529e8da045512acb5fb561c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_editor_af0d5ca755f0a13efe9c2ed5dd6cdda50}\label{class_level_editor_af0d5ca755f0a13efe9c2ed5dd6cdda50} 
+\index{LevelEditor@{LevelEditor}!randomGenerateLevel@{randomGenerateLevel}}
+\index{randomGenerateLevel@{randomGenerateLevel}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{randomGenerateLevel()}{randomGenerateLevel()}}
+{\footnotesize\ttfamily void Level\+Editor\+::random\+Generate\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+to randomise the map 
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00337}{337}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
+
 \Hypertarget{class_level_editor_a840bd660617f00ca6733bf3a52fe1055}\label{class_level_editor_a840bd660617f00ca6733bf3a52fe1055} 
 \index{LevelEditor@{LevelEditor}!releaseDragRect@{releaseDragRect}}
 \index{releaseDragRect@{releaseDragRect}!LevelEditor@{LevelEditor}}
@@ -221,6 +615,22 @@ reset the stuff for drag\+Rectangle
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00728}{728}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a840bd660617f00ca6733bf3a52fe1055_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a840bd660617f00ca6733bf3a52fe1055_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060}\label{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060} 
 \index{LevelEditor@{LevelEditor}!render@{render}}
 \index{render@{render}!LevelEditor@{LevelEditor}}
@@ -240,6 +650,14 @@ Draws everything in the level editor mode.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d}\label{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d} 
 \index{LevelEditor@{LevelEditor}!renderLoadedLevel@{renderLoadedLevel}}
 \index{renderLoadedLevel@{renderLoadedLevel}!LevelEditor@{LevelEditor}}
@@ -259,6 +677,14 @@ Draws the level -\/ used in gameplay.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_a984362b83939349a692676df1450ee3e}\label{class_level_editor_a984362b83939349a692676df1450ee3e} 
 \index{LevelEditor@{LevelEditor}!resetFogOfWar@{resetFogOfWar}}
 \index{resetFogOfWar@{resetFogOfWar}!LevelEditor@{LevelEditor}}
@@ -273,11 +699,12 @@ Resets the fog.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00754}{754}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=326pt]{class_level_editor_a984362b83939349a692676df1450ee3e_icgraph}
+\includegraphics[width=350pt]{class_level_editor_a984362b83939349a692676df1450ee3e_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d}\label{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d} 
@@ -299,6 +726,14 @@ Saves the level with the correct m\+\_\+tiles properties.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00563}{563}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e}\label{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e} 
 \index{LevelEditor@{LevelEditor}!update@{update}}
 \index{update@{update}!LevelEditor@{LevelEditor}}
@@ -320,16 +755,307 @@ Updates the level editor content changes.
 
 Definition at line \mbox{\hyperlink{_level_editor_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_level_editor_8cpp_source}{Level\+Editor.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_level_editor_a0ead590768e9c76f9ab0443004f1668c}\label{class_level_editor_a0ead590768e9c76f9ab0443004f1668c} 
+\index{LevelEditor@{LevelEditor}!m\_animationSpeed@{m\_animationSpeed}}
+\index{m\_animationSpeed@{m\_animationSpeed}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_animationSpeed}{m\_animationSpeed}}
+{\footnotesize\ttfamily float Level\+Editor\+::m\+\_\+animation\+Speed = 0.\+2f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00133}{133}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a274a8fa0ed93cdf9e125357b56191984}\label{class_level_editor_a274a8fa0ed93cdf9e125357b56191984} 
+\index{LevelEditor@{LevelEditor}!m\_backgroundForBTF@{m\_backgroundForBTF}}
+\index{m\_backgroundForBTF@{m\_backgroundForBTF}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundForBTF}{m\_backgroundForBTF}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Level\+Editor\+::m\+\_\+background\+For\+BTF\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00069}{69}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ae330dfb4a66587b831a8878e99a4ba90}\label{class_level_editor_ae330dfb4a66587b831a8878e99a4ba90} 
+\index{LevelEditor@{LevelEditor}!m\_backgroundForTilesTools@{m\_backgroundForTilesTools}}
+\index{m\_backgroundForTilesTools@{m\_backgroundForTilesTools}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundForTilesTools}{m\_backgroundForTilesTools}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Level\+Editor\+::m\+\_\+background\+For\+Tiles\+Tools\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00067}{67}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a54ebed9c51da047f6974c3009653e94e}\label{class_level_editor_a54ebed9c51da047f6974c3009653e94e} 
+\index{LevelEditor@{LevelEditor}!m\_buttonAreaForMiscs@{m\_buttonAreaForMiscs}}
+\index{m\_buttonAreaForMiscs@{m\_buttonAreaForMiscs}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonAreaForMiscs}{m\_buttonAreaForMiscs}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+button\+Area\+For\+Miscs\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{971,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{854,\ 1776,\ 16,\ 16\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00102}{102}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_adec02fb8b067d411a83ab2e242c068af}\label{class_level_editor_adec02fb8b067d411a83ab2e242c068af} 
+\index{LevelEditor@{LevelEditor}!m\_buttonAreaForResources@{m\_buttonAreaForResources}}
+\index{m\_buttonAreaForResources@{m\_buttonAreaForResources}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonAreaForResources}{m\_buttonAreaForResources}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+button\+Area\+For\+Resources = \{ 971, 1798, 16, 16 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00101}{101}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a0403b51d2703cce90e4f85971367433a}\label{class_level_editor_a0403b51d2703cce90e4f85971367433a} 
+\index{LevelEditor@{LevelEditor}!m\_buttonAreaForWalkable@{m\_buttonAreaForWalkable}}
+\index{m\_buttonAreaForWalkable@{m\_buttonAreaForWalkable}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonAreaForWalkable}{m\_buttonAreaForWalkable}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+button\+Area\+For\+Walkable\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ }
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{17,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{33,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{49,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{49,\ 1792,\ 16,\ 16\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00086}{86}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a458fad0627b34e47befe9a2959506a81}\label{class_level_editor_a458fad0627b34e47befe9a2959506a81} 
+\index{LevelEditor@{LevelEditor}!m\_buttonAreaForWalls@{m\_buttonAreaForWalls}}
+\index{m\_buttonAreaForWalls@{m\_buttonAreaForWalls}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonAreaForWalls}{m\_buttonAreaForWalls}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+button\+Area\+For\+Walls\mbox{[}5\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ }
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{49,\ 1695,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{242,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{257,\ 1808,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{226,\ 1776,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{258,\ 1792,\ 16,\ 16\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00093}{93}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ad3a1a28ad10d0ef179860d701c99dabf}\label{class_level_editor_ad3a1a28ad10d0ef179860d701c99dabf} 
+\index{LevelEditor@{LevelEditor}!m\_buttons@{m\_buttons}}
+\index{m\_buttons@{m\_buttons}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttons}{m\_buttons}}
+{\footnotesize\ttfamily sf\+::\+Sprite Level\+Editor\+::m\+\_\+buttons\mbox{[}\mbox{\hyperlink{class_level_editor_ac37421833184d77bf267f966b42eff2d}{m\+\_\+num\+Buttons}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00072}{72}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a1e0b001e78f05df6a6f852e569afaf2c}\label{class_level_editor_a1e0b001e78f05df6a6f852e569afaf2c} 
+\index{LevelEditor@{LevelEditor}!m\_buttonSelectedAnimationClock@{m\_buttonSelectedAnimationClock}}
+\index{m\_buttonSelectedAnimationClock@{m\_buttonSelectedAnimationClock}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonSelectedAnimationClock}{m\_buttonSelectedAnimationClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Level\+Editor\+::m\+\_\+button\+Selected\+Animation\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00131}{131}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ac426fc0083cf273e090bea39a163af6b}\label{class_level_editor_ac426fc0083cf273e090bea39a163af6b} 
+\index{LevelEditor@{LevelEditor}!m\_buttonSelectedSprite@{m\_buttonSelectedSprite}}
+\index{m\_buttonSelectedSprite@{m\_buttonSelectedSprite}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonSelectedSprite}{m\_buttonSelectedSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Level\+Editor\+::m\+\_\+button\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00129}{129}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a288c30a58a61d26c22f6bcf181668785}\label{class_level_editor_a288c30a58a61d26c22f6bcf181668785} 
+\index{LevelEditor@{LevelEditor}!m\_buttonSelectedTexture@{m\_buttonSelectedTexture}}
+\index{m\_buttonSelectedTexture@{m\_buttonSelectedTexture}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonSelectedTexture}{m\_buttonSelectedTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Level\+Editor\+::m\+\_\+button\+Selected\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00130}{130}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_abdfb2406587c63752946035e532ebbb2}\label{class_level_editor_abdfb2406587c63752946035e532ebbb2} 
+\index{LevelEditor@{LevelEditor}!m\_buttonTexture@{m\_buttonTexture}}
+\index{m\_buttonTexture@{m\_buttonTexture}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTexture}{m\_buttonTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Level\+Editor\+::m\+\_\+button\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00083}{83}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a5b8bae31638e17b511df20f0132e1ba1}\label{class_level_editor_a5b8bae31638e17b511df20f0132e1ba1} 
+\index{LevelEditor@{LevelEditor}!m\_buttonTexture1@{m\_buttonTexture1}}
+\index{m\_buttonTexture1@{m\_buttonTexture1}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTexture1}{m\_buttonTexture1}}
+{\footnotesize\ttfamily sf\+::\+Texture Level\+Editor\+::m\+\_\+button\+Texture1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00084}{84}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_afe9e2b4b28f445e25c93e0eb2b4f83b9}\label{class_level_editor_afe9e2b4b28f445e25c93e0eb2b4f83b9} 
+\index{LevelEditor@{LevelEditor}!m\_currentAnimationFrame@{m\_currentAnimationFrame}}
+\index{m\_currentAnimationFrame@{m\_currentAnimationFrame}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_currentAnimationFrame}{m\_currentAnimationFrame}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+current\+Animation\+Frame = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00132}{132}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ae2741ae6160ca40ed532cf405c72a6a4}\label{class_level_editor_ae2741ae6160ca40ed532cf405c72a6a4} 
+\index{LevelEditor@{LevelEditor}!m\_currentResourceTileAnimationFrame@{m\_currentResourceTileAnimationFrame}}
+\index{m\_currentResourceTileAnimationFrame@{m\_currentResourceTileAnimationFrame}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_currentResourceTileAnimationFrame}{m\_currentResourceTileAnimationFrame}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+current\+Resource\+Tile\+Animation\+Frame = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00110}{110}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_abfc97347d1da15bad0dabb9864281eb9}\label{class_level_editor_abfc97347d1da15bad0dabb9864281eb9} 
+\index{LevelEditor@{LevelEditor}!m\_currentTileWeedAnimationFrame@{m\_currentTileWeedAnimationFrame}}
+\index{m\_currentTileWeedAnimationFrame@{m\_currentTileWeedAnimationFrame}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_currentTileWeedAnimationFrame}{m\_currentTileWeedAnimationFrame}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+current\+Tile\+Weed\+Animation\+Frame = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00120}{120}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a05e2d116469a6f3df0f18f92fa322144}\label{class_level_editor_a05e2d116469a6f3df0f18f92fa322144} 
+\index{LevelEditor@{LevelEditor}!m\_dragRectangle@{m\_dragRectangle}}
+\index{m\_dragRectangle@{m\_dragRectangle}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_dragRectangle}{m\_dragRectangle}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Level\+Editor\+::m\+\_\+drag\+Rectangle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00070}{70}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a5089e21b53c88af04f9e1390bce76557}\label{class_level_editor_a5089e21b53c88af04f9e1390bce76557} 
+\index{LevelEditor@{LevelEditor}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font Level\+Editor\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00074}{74}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ab2576b5aa813b23e16f0cf81016327ed}\label{class_level_editor_ab2576b5aa813b23e16f0cf81016327ed} 
+\index{LevelEditor@{LevelEditor}!m\_isButtonClicked@{m\_isButtonClicked}}
+\index{m\_isButtonClicked@{m\_isButtonClicked}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_isButtonClicked}{m\_isButtonClicked}}
+{\footnotesize\ttfamily bool Level\+Editor\+::m\+\_\+is\+Button\+Clicked = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00062}{62}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ade5a96a3ed8ad102e1bb44032ce2d657}\label{class_level_editor_ade5a96a3ed8ad102e1bb44032ce2d657} 
+\index{LevelEditor@{LevelEditor}!m\_isTileSelected@{m\_isTileSelected}}
+\index{m\_isTileSelected@{m\_isTileSelected}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_isTileSelected}{m\_isTileSelected}}
+{\footnotesize\ttfamily bool Level\+Editor\+::m\+\_\+is\+Tile\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00061}{61}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a90b3bd14d50a7a407d98e5c7bff67606}\label{class_level_editor_a90b3bd14d50a7a407d98e5c7bff67606} 
+\index{LevelEditor@{LevelEditor}!m\_lastClickedButtonIndex@{m\_lastClickedButtonIndex}}
+\index{m\_lastClickedButtonIndex@{m\_lastClickedButtonIndex}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_lastClickedButtonIndex}{m\_lastClickedButtonIndex}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+last\+Clicked\+Button\+Index = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00057}{57}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a37285179793c1fa6cd10af4a123672c7}\label{class_level_editor_a37285179793c1fa6cd10af4a123672c7} 
+\index{LevelEditor@{LevelEditor}!m\_levelEditorView@{m\_levelEditorView}}
+\index{m\_levelEditorView@{m\_levelEditorView}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_levelEditorView}{m\_levelEditorView}}
+{\footnotesize\ttfamily sf\+::\+View Level\+Editor\+::m\+\_\+level\+Editor\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00039}{39}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a38a17b3b530d71d546d9ea46086e0617}\label{class_level_editor_a38a17b3b530d71d546d9ea46086e0617} 
+\index{LevelEditor@{LevelEditor}!m\_MiscText@{m\_MiscText}}
+\index{m\_MiscText@{m\_MiscText}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_MiscText}{m\_MiscText}}
+{\footnotesize\ttfamily sf\+::\+Text Level\+Editor\+::m\+\_\+\+Misc\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00080}{80}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a1281d2bb2b9bf7c5fa9d91a154bd317c}\label{class_level_editor_a1281d2bb2b9bf7c5fa9d91a154bd317c} 
+\index{LevelEditor@{LevelEditor}!m\_newMousePos@{m\_newMousePos}}
+\index{m\_newMousePos@{m\_newMousePos}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_newMousePos}{m\_newMousePos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Level\+Editor\+::m\+\_\+new\+Mouse\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00064}{64}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ac37421833184d77bf267f966b42eff2d}\label{class_level_editor_ac37421833184d77bf267f966b42eff2d} 
+\index{LevelEditor@{LevelEditor}!m\_numButtons@{m\_numButtons}}
+\index{m\_numButtons@{m\_numButtons}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_numButtons}{m\_numButtons}}
+{\footnotesize\ttfamily const int Level\+Editor\+::m\+\_\+num\+Buttons = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00054}{54}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
 \Hypertarget{class_level_editor_abc0159c134c50f060cc23f78036a2615}\label{class_level_editor_abc0159c134c50f060cc23f78036a2615} 
 \index{LevelEditor@{LevelEditor}!m\_numCols@{m\_numCols}}
 \index{m\_numCols@{m\_numCols}!LevelEditor@{LevelEditor}}
@@ -350,6 +1076,117 @@ Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00035}{35}} of file
 
 Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00034}{34}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
 
+\Hypertarget{class_level_editor_a8d82a5e38031cf92152a1b6c32074915}\label{class_level_editor_a8d82a5e38031cf92152a1b6c32074915} 
+\index{LevelEditor@{LevelEditor}!m\_numTileFrames@{m\_numTileFrames}}
+\index{m\_numTileFrames@{m\_numTileFrames}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_numTileFrames}{m\_numTileFrames}}
+{\footnotesize\ttfamily const int Level\+Editor\+::m\+\_\+num\+Tile\+Frames = 4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00109}{109}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_ab5c13f312bc0f3148990bc5463322174}\label{class_level_editor_ab5c13f312bc0f3148990bc5463322174} 
+\index{LevelEditor@{LevelEditor}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily float Level\+Editor\+::m\+\_\+offset = 25.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00060}{60}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a74159781418598a4997c83397f49efbd}\label{class_level_editor_a74159781418598a4997c83397f49efbd} 
+\index{LevelEditor@{LevelEditor}!m\_ResourceText@{m\_ResourceText}}
+\index{m\_ResourceText@{m\_ResourceText}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ResourceText}{m\_ResourceText}}
+{\footnotesize\ttfamily sf\+::\+Text Level\+Editor\+::m\+\_\+\+Resource\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00079}{79}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a3982066b345a27ca026d142f1ee59464}\label{class_level_editor_a3982066b345a27ca026d142f1ee59464} 
+\index{LevelEditor@{LevelEditor}!m\_selectedButtonIndex@{m\_selectedButtonIndex}}
+\index{m\_selectedButtonIndex@{m\_selectedButtonIndex}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_selectedButtonIndex}{m\_selectedButtonIndex}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+selected\+Button\+Index = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00056}{56}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a5808c8e2aface2e269eb44b2e58648db}\label{class_level_editor_a5808c8e2aface2e269eb44b2e58648db} 
+\index{LevelEditor@{LevelEditor}!m\_selectedTileX@{m\_selectedTileX}}
+\index{m\_selectedTileX@{m\_selectedTileX}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_selectedTileX}{m\_selectedTileX}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+selected\+TileX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00058}{58}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a2167eab4cc2cf52b90a5b7ddbc625011}\label{class_level_editor_a2167eab4cc2cf52b90a5b7ddbc625011} 
+\index{LevelEditor@{LevelEditor}!m\_selectedTileY@{m\_selectedTileY}}
+\index{m\_selectedTileY@{m\_selectedTileY}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_selectedTileY}{m\_selectedTileY}}
+{\footnotesize\ttfamily int Level\+Editor\+::m\+\_\+selected\+TileY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00059}{59}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_aecf9e5606d7546c5ea4d5c69baf0657e}\label{class_level_editor_aecf9e5606d7546c5ea4d5c69baf0657e} 
+\index{LevelEditor@{LevelEditor}!m\_startMousePos@{m\_startMousePos}}
+\index{m\_startMousePos@{m\_startMousePos}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_startMousePos}{m\_startMousePos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Level\+Editor\+::m\+\_\+start\+Mouse\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00065}{65}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a5e35c60a48b8340b50a210fb26d9d1d1}\label{class_level_editor_a5e35c60a48b8340b50a210fb26d9d1d1} 
+\index{LevelEditor@{LevelEditor}!m\_tileAnimationClock@{m\_tileAnimationClock}}
+\index{m\_tileAnimationClock@{m\_tileAnimationClock}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_tileAnimationClock}{m\_tileAnimationClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Level\+Editor\+::m\+\_\+tile\+Animation\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00119}{119}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a0392e50e00fe0c6722432e3da30dd5a1}\label{class_level_editor_a0392e50e00fe0c6722432e3da30dd5a1} 
+\index{LevelEditor@{LevelEditor}!m\_tileResourceAnimationClock@{m\_tileResourceAnimationClock}}
+\index{m\_tileResourceAnimationClock@{m\_tileResourceAnimationClock}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_tileResourceAnimationClock}{m\_tileResourceAnimationClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Level\+Editor\+::m\+\_\+tile\+Resource\+Animation\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00111}{111}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_afadef1c42c40da81086f3e9592b7d4f7}\label{class_level_editor_afadef1c42c40da81086f3e9592b7d4f7} 
+\index{LevelEditor@{LevelEditor}!m\_tileResourceAnimationFrames@{m\_tileResourceAnimationFrames}}
+\index{m\_tileResourceAnimationFrames@{m\_tileResourceAnimationFrames}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_tileResourceAnimationFrames}{m\_tileResourceAnimationFrames}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+tile\+Resource\+Animation\+Frames\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ }
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{971,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{988,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1005,\ 1798,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1022,\ 1798,\ 16,\ 16\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00112}{112}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
 \Hypertarget{class_level_editor_a14eb3a75162c0543bd9483495fddb421}\label{class_level_editor_a14eb3a75162c0543bd9483495fddb421} 
 \index{LevelEditor@{LevelEditor}!m\_tiles@{m\_tiles}}
 \index{m\_tiles@{m\_tiles}!LevelEditor@{LevelEditor}}
@@ -360,9 +1197,80 @@ Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00034}{34}} of file
 
 Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00032}{32}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
 
+\Hypertarget{class_level_editor_a05301269e2632e68513fa9bf341b8e67}\label{class_level_editor_a05301269e2632e68513fa9bf341b8e67} 
+\index{LevelEditor@{LevelEditor}!m\_tileWeedAnimationFrames@{m\_tileWeedAnimationFrames}}
+\index{m\_tileWeedAnimationFrames@{m\_tileWeedAnimationFrames}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_tileWeedAnimationFrames}{m\_tileWeedAnimationFrames}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Level\+Editor\+::m\+\_\+tile\+Weed\+Animation\+Frames\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{971,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{988,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1005,\ 1764,\ 16,\ 16\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1022,\ 1764,\ 16,\ 16\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00121}{121}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a64d17b896a412396c9826510a7edf549}\label{class_level_editor_a64d17b896a412396c9826510a7edf549} 
+\index{LevelEditor@{LevelEditor}!m\_toGoBackButton@{m\_toGoBackButton}}
+\index{m\_toGoBackButton@{m\_toGoBackButton}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_toGoBackButton}{m\_toGoBackButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Level\+Editor\+::m\+\_\+to\+Go\+Back\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00068}{68}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a4ca8d33e1106aff9d9119297daff76e4}\label{class_level_editor_a4ca8d33e1106aff9d9119297daff76e4} 
+\index{LevelEditor@{LevelEditor}!m\_toGoBackText@{m\_toGoBackText}}
+\index{m\_toGoBackText@{m\_toGoBackText}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_toGoBackText}{m\_toGoBackText}}
+{\footnotesize\ttfamily sf\+::\+Text Level\+Editor\+::m\+\_\+to\+Go\+Back\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00076}{76}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a062089f81afa20931d8cee5a659ee5f2}\label{class_level_editor_a062089f81afa20931d8cee5a659ee5f2} 
+\index{LevelEditor@{LevelEditor}!m\_underWaterTexture@{m\_underWaterTexture}}
+\index{m\_underWaterTexture@{m\_underWaterTexture}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_underWaterTexture}{m\_underWaterTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Level\+Editor\+::m\+\_\+under\+Water\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00082}{82}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_aa30602f7d740cddeb595b645aee491ee}\label{class_level_editor_aa30602f7d740cddeb595b645aee491ee} 
+\index{LevelEditor@{LevelEditor}!m\_walkableText@{m\_walkableText}}
+\index{m\_walkableText@{m\_walkableText}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_walkableText}{m\_walkableText}}
+{\footnotesize\ttfamily sf\+::\+Text Level\+Editor\+::m\+\_\+walkable\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00077}{77}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
+\Hypertarget{class_level_editor_a319e99575ad1bde444d6014cf466d44f}\label{class_level_editor_a319e99575ad1bde444d6014cf466d44f} 
+\index{LevelEditor@{LevelEditor}!m\_WallText@{m\_WallText}}
+\index{m\_WallText@{m\_WallText}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{m\_WallText}{m\_WallText}}
+{\footnotesize\ttfamily sf\+::\+Text Level\+Editor\+::m\+\_\+\+Wall\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_level_editor_8h_source_l00078}{78}} of file \mbox{\hyperlink{_level_editor_8h_source}{Level\+Editor.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_level_editor_8h}{Level\+Editor.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_level_editor_8cpp}{Level\+Editor.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_level_editor_8h}{Level\+Editor.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_level_editor_8cpp}{Level\+Editor.\+cpp}}\end{DoxyCompactItemize}

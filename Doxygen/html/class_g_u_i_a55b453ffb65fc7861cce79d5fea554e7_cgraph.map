@@ -1,41 +1,45 @@
 <map id="GUI::handleMouseClick" name="GUI::handleMouseClick">
-<area shape="rect" id="Node000001" title="handles the mouse clicks for GUI related stuff" alt="" coords="5,335,163,361"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#a8ed00bb67423863eafa5a0e483fd2dd9" title=" " alt="" coords="255,5,410,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,334,92,279,112,200,128,157,149,115,176,76,209,42,239,25,242,30,212,46,180,79,154,117,133,159,117,202,97,281,89,335"/>
-<area shape="rect" id="Node000003" href="$class_side_bar.html#a6fe150acbd921f8aab7080a5711d063b" title=" " alt="" coords="229,56,436,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,334,96,287,119,221,135,186,156,152,180,120,209,93,215,88,219,92,212,97,184,123,160,155,140,189,124,223,101,289,90,335"/>
-<area shape="rect" id="Node000004" href="$class_side_bar.html#a784d3c48ee380edca17a40fd5bb34343" title=" " alt="" coords="224,107,441,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,334,101,295,126,243,162,189,184,164,209,143,217,138,220,143,212,147,188,168,166,192,131,246,106,297,92,335"/>
-<area shape="rect" id="Node000005" href="$class_side_bar.html#ad1b03caf2f481402bd547db44173741d" title=" " alt="" coords="232,157,433,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="90,333,107,304,134,266,168,226,209,194,220,188,222,193,212,198,172,230,138,269,112,306,95,336"/>
-<area shape="rect" id="Node000006" href="$class_side_bar.html#aba78ce197b2069026a62dd77bde88e14" title=" " alt="" coords="224,208,441,235"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="96,332,143,288,175,264,209,244,226,237,228,242,212,249,178,269,147,292,100,336"/>
-<area shape="rect" id="Node000007" href="$class_side_bar.html#a122e9445ca95cb0a3fd1ace6c11416ab" title=" " alt="" coords="211,259,454,285"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="114,332,210,295,239,287,241,292,211,300,116,337"/>
-<area shape="rect" id="Node000008" href="$class_side_bar.html#a1ecc06b775217732365fbad6f6bbbf62" title=" " alt="" coords="223,309,442,336"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="163,337,207,333,208,338,163,343"/>
-<area shape="rect" id="Node000009" href="$class_side_bar.html#a8095fb8c494a0830365c243583496ca1" title=" " alt="" coords="227,360,438,387"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="163,353,212,358,211,364,163,359"/>
-<area shape="rect" id="Node000010" href="$class_side_bar.html#a9559e88577ccabcd20cbb1c47a6cc1b5" title=" " alt="" coords="225,411,440,437"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="116,359,211,396,241,404,239,409,210,401,114,364"/>
-<area shape="rect" id="Node000011" href="$class_side_bar.html#a8cadba8295bec933be8c224461d9d83c" title=" " alt="" coords="258,461,407,488"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="100,360,147,404,178,427,212,447,244,459,242,464,210,452,175,432,143,408,96,364"/>
-<area shape="rect" id="Node000012" href="$class_side_bar.html#a1fbb645d9d6a779d07fb55a1cef56b4f" title=" " alt="" coords="249,512,416,539"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="95,360,112,390,138,427,172,466,212,498,236,509,233,514,209,502,168,470,134,430,107,392,90,363"/>
-<area shape="rect" id="Node000013" href="$class_side_bar.html#aa20184b6fa227eedb85a17f5013b7868" title=" " alt="" coords="217,563,448,589"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="92,361,106,399,131,450,166,504,188,528,212,549,220,553,217,558,209,553,184,532,162,507,126,453,101,401,87,362"/>
-<area shape="rect" id="Node000014" href="$class_side_bar.html#af2cf493e577385cc8e83bd5b02de4000" title=" " alt="" coords="229,613,436,640"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="90,361,101,407,124,473,140,507,160,541,184,573,212,599,219,604,215,608,209,603,180,576,156,544,135,510,119,475,96,409,85,362"/>
-<area shape="rect" id="Node000015" href="$class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="238,664,427,691"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="89,361,97,415,117,494,133,537,154,579,180,617,212,650,225,659,222,663,209,654,176,620,149,581,128,539,112,496,92,417,84,362"/>
-<area shape="rect" id="Node000016" href="$class_side_bar.html#a8bfd240baf0383a6fa11822cf1c5776f" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="504,563,681,589"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="426,661,453,650,467,638,476,626,485,612,500,599,511,593,514,598,504,604,489,616,480,629,471,642,455,654,428,666"/>
-<area shape="rect" id="Node000017" href="$class_side_bar.html#a0a755f0ea7a46f3d6f0478b82f3d8ad5" title="Adds the building buttons for the sidebar." alt="" coords="502,613,682,640"/>
-<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="404,661,505,641,506,646,405,666"/>
-<area shape="rect" id="Node000018" href="$class_side_bar.html#a38a8e07a7b7fd8da23825dd193d659a3" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="504,664,680,691"/>
-<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="428,675,488,675,488,680,428,680"/>
-<area shape="rect" id="Node000019" href="$class_side_bar.html#a41846d720598c76c51371c790145a515" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="504,715,681,741"/>
-<area shape="poly" id="edge18_Node000015_Node000019" title=" " alt="" coords="405,689,506,709,505,714,404,694"/>
-<area shape="rect" id="Node000020" href="$class_side_bar.html#ad45013b35dc68cfc580bc8a35352dd63" title="Just to clear everything." alt="" coords="518,765,666,792"/>
-<area shape="poly" id="edge19_Node000015_Node000020" title=" " alt="" coords="362,689,426,719,503,751,524,758,522,763,501,756,424,724,360,694"/>
+<area shape="rect" id="Node000001" title="handles the mouse clicks for GUI related stuff" alt="" coords="5,448,163,475"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a8ed00bb67423863eafa5a0e483fd2dd9" title=" " alt="" coords="237,5,392,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,448,84,376,90,325,99,267,115,207,137,147,168,91,209,42,222,32,225,37,213,46,172,94,142,149,120,208,104,268,95,325,90,377,88,448"/>
+<area shape="rect" id="Node000003" href="$class_side_bar.html#a6fe150acbd921f8aab7080a5711d063b" title=" " alt="" coords="234,56,395,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,447,90,387,109,296,125,246,146,196,174,150,209,109,219,100,223,104,213,113,178,153,151,199,130,248,114,297,95,387,89,448"/>
+<area shape="rect" id="Node000004" href="$class_side_bar.html#a784d3c48ee380edca17a40fd5bb34343" title=" " alt="" coords="230,123,399,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,447,95,397,117,324,133,284,154,245,179,208,209,175,215,170,218,174,212,179,183,211,158,247,138,286,122,326,100,398,90,448"/>
+<area shape="rect" id="Node000005" href="$class_side_bar.html#ad1b03caf2f481402bd547db44173741d" title=" " alt="" coords="214,189,415,216"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="86,447,99,404,122,344,158,280,182,251,209,226,215,221,219,226,212,230,186,255,163,283,127,346,104,406,91,449"/>
+<area shape="rect" id="Node000006" href="$class_side_bar.html#aba78ce197b2069026a62dd77bde88e14" title=" " alt="" coords="230,240,399,283"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="90,446,133,373,167,330,209,293,216,288,219,293,212,297,171,334,137,376,94,449"/>
+<area shape="rect" id="Node000007" href="$class_side_bar.html#a122e9445ca95cb0a3fd1ace6c11416ab" title=" " alt="" coords="216,307,413,349"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="97,445,145,403,176,380,209,359,221,353,223,358,212,364,179,384,148,408,101,449"/>
+<area shape="rect" id="Node000008" href="$class_side_bar.html#a1ecc06b775217732365fbad6f6bbbf62" title=" " alt="" coords="229,373,400,416"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="132,445,223,418,224,423,134,450"/>
+<area shape="rect" id="Node000009" href="$class_side_bar.html#a8095fb8c494a0830365c243583496ca1" title=" " alt="" coords="232,440,397,483"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="163,459,217,459,217,464,163,464"/>
+<area shape="rect" id="Node000010" href="$class_side_bar.html#a9559e88577ccabcd20cbb1c47a6cc1b5" title=" " alt="" coords="231,507,398,549"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="134,473,224,499,223,504,132,478"/>
+<area shape="rect" id="Node000011" href="$class_side_bar.html#a8cadba8295bec933be8c224461d9d83c" title=" " alt="" coords="240,573,389,600"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="100,473,147,516,178,539,212,559,227,565,225,570,209,564,175,544,144,520,97,477"/>
+<area shape="rect" id="Node000012" href="$class_side_bar.html#a1fbb645d9d6a779d07fb55a1cef56b4f" title=" " alt="" coords="231,624,398,651"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="95,474,139,540,172,578,212,610,222,615,219,620,209,614,169,582,134,543,90,477"/>
+<area shape="rect" id="Node000013" href="$class_side_bar.html#aa20184b6fa227eedb85a17f5013b7868" title=" " alt="" coords="223,675,406,717"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="92,474,107,511,132,561,167,615,189,639,212,661,218,664,215,669,209,665,185,643,163,618,128,564,102,513,88,476"/>
+<area shape="rect" id="Node000014" href="$class_side_bar.html#af2cf493e577385cc8e83bd5b02de4000" title=" " alt="" coords="211,741,418,768"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="90,474,101,523,123,592,139,629,159,665,183,698,212,727,218,731,214,735,209,731,179,702,154,668,134,631,118,593,95,524,85,476"/>
+<area shape="rect" id="Node000015" href="$class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="220,792,409,819"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="89,475,97,531,116,613,132,658,153,702,180,743,212,778,217,782,214,786,209,782,175,746,149,705,127,660,111,615,91,532,84,475"/>
+<area shape="rect" id="Node000021" href="$class_g_u_i.html#a752ab2883141a8f72db193dec149cfd6" title="sell the building off" alt="" coords="256,868,373,895"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="89,475,96,537,116,630,132,682,153,734,180,784,213,829,232,846,254,859,251,863,229,850,209,832,175,787,148,737,127,684,111,632,91,538,84,476"/>
+<area shape="rect" id="Node000016" href="$class_side_bar.html#a8bfd240baf0383a6fa11822cf1c5776f" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="468,665,645,692"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="396,789,416,778,432,760,440,741,447,721,464,702,472,697,475,701,468,706,452,724,445,743,437,763,420,782,398,794"/>
+<area shape="rect" id="Node000017" href="$class_side_bar.html#a0a755f0ea7a46f3d6f0478b82f3d8ad5" title="Adds the building buttons for the sidebar." alt="" coords="466,716,646,743"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="381,789,417,778,441,765,465,752,484,745,486,750,467,757,443,770,419,782,383,794"/>
+<area shape="rect" id="Node000018" href="$class_side_bar.html#a38a8e07a7b7fd8da23825dd193d659a3" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="468,767,644,793"/>
+<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="409,793,452,788,453,794,410,798"/>
+<area shape="rect" id="Node000019" href="$class_side_bar.html#a41846d720598c76c51371c790145a515" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="468,817,645,844"/>
+<area shape="poly" id="edge18_Node000015_Node000019" title=" " alt="" coords="410,813,452,817,452,822,409,818"/>
+<area shape="rect" id="Node000020" href="$class_side_bar.html#ad45013b35dc68cfc580bc8a35352dd63" title="Just to clear everything." alt="" coords="482,868,630,895"/>
+<area shape="poly" id="edge19_Node000015_Node000020" title=" " alt="" coords="356,817,467,853,491,861,489,866,465,859,354,822"/>
+<area shape="rect" id="Node000022" href="$class_building.html#a1f7ac7c50ddf4e02fe8f36950f28d2c5" title=" " alt="" coords="496,919,616,945"/>
+<area shape="poly" id="edge21_Node000021_Node000022" title=" " alt="" coords="374,891,481,914,480,919,373,896"/>
 </map>

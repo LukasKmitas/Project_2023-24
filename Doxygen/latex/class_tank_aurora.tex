@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Tank\+Aurora\+:\nopagebreak
+Inheritance diagram for Tank\+Aurora\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_tank_aurora__inherit__graph}
+\includegraphics[width=146pt]{class_tank_aurora__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Tank\+Aurora\+:\nopagebreak
+Collaboration diagram for Tank\+Aurora\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_tank_aurora__coll__graph}
+\includegraphics[width=268pt]{class_tank_aurora__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -110,6 +112,68 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{check\+Affordability}} ()
 \item 
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{is\+Active}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c}{setup\+Tank\+Aurora}} ()
+\begin{DoxyCompactList}\small\item\em Initialize tank Aurora. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_af312708da025ff43ee484aadd8e235bc}{setup\+Healing\+Aura}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the healing aura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8}{setup\+Energy\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the energy wave. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb}{movement}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em Makes this unit move. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d}{spawn\+Electrical\+Particle\+Effect}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em Creates the energy particle effect to charge up the wave attack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_a11461db52d4c53a679968b628d1732a4}{start\+EMPCharge}} ()
+\begin{DoxyCompactList}\small\item\em starts the charge up for the EMP \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75}{emit\+EMP}} ()
+\begin{DoxyCompactList}\small\item\em After charging the emp it shoots out the energy wave to slow down enemies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de}{reset\+Energy\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Reset the energy wave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\+\_\+healing\+Aura}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}{m\+\_\+healing\+Aura\+Shader}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_tank_aurora_abc79e2beb2ad320a8023249ac7f735c6}{m\+\_\+shader\+Clock}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\+\_\+energy\+Wave\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_tank_aurora_acdf5f78ad923541541c3ea09e7f6c6d2}{m\+\_\+energy\+Wave\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_tank_aurora_a666472b393de7406abda991e76849092}{m\+\_\+lightning\+Texture}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2}{m\+\_\+direction\+To\+Enemy}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}{m\+\_\+healing\+Range}} = 150.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3}{m\+\_\+is\+Charging\+EMPWave}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{true}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a1fdb7abbbc93e96f9f9b622c937c9dbc}{m\+\_\+emp\+Charge\+Time}} = 6.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\+\_\+current\+Charge\+Time}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a1b09454d7528bd1c8c08c0d7ce76f362}{m\+\_\+emp\+Expand\+Area}} = 15.\+0f
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea}{m\+\_\+wave\+Shader}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_tank_aurora_a1139a518f19bd2f9c070214d1ff6e62c}{m\+\_\+clock}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}{m\+\_\+is\+Firing\+Energy\+Wave}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}{m\+\_\+energy\+Wave\+Position}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a444dec7ee172501d701a0703fd017591}{m\+\_\+energy\+Wave\+Speed}} = 200.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\+\_\+energy\+Wave\+Size}} = 0.\+4\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_ac424d733660a9ab34cfd322ccf9bc4ef}{m\+\_\+energy\+Wave\+Max\+Size}} = 1.\+5\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_tank_aurora_a3f8d97cda0e2e40b6baa42162d14d960}{m\+\_\+energy\+Wave\+Growth\+Rate}} = 0.\+5\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
@@ -263,6 +327,14 @@ Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00004}{4}} of file \
 
 Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a4dba6b620a77200fd848d7125ec1969b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_tank_aurora_a6fe01a0a60f567e8e3bf88dd452c264e}\label{class_tank_aurora_a6fe01a0a60f567e8e3bf88dd452c264e} 
 \index{TankAurora@{TankAurora}!````~TankAurora@{\texorpdfstring{$\sim$}{\string~}TankAurora}}
 \index{````~TankAurora@{\texorpdfstring{$\sim$}{\string~}TankAurora}!TankAurora@{TankAurora}}
@@ -276,6 +348,36 @@ Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00015}{15}} of fil
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75}\label{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75} 
+\index{TankAurora@{TankAurora}!emitEMP@{emitEMP}}
+\index{emitEMP@{emitEMP}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{emitEMP()}{emitEMP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::emit\+EMP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+After charging the emp it shoots out the energy wave to slow down enemies. 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00236}{236}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_tank_aurora_a9187e6706ad11c4a9ade30b1222490f0}\label{class_tank_aurora_a9187e6706ad11c4a9ade30b1222490f0} 
 \index{TankAurora@{TankAurora}!getUnitType@{getUnitType}}
 \index{getUnitType@{getUnitType}!TankAurora@{TankAurora}}
@@ -290,6 +392,41 @@ Implements \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{Unit}}
 
 Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00013}{13}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
 
+\Hypertarget{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb}\label{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb} 
+\index{TankAurora@{TankAurora}!movement@{movement}}
+\index{movement@{movement}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{movement()}{movement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes this unit move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17}\label{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17} 
 \index{TankAurora@{TankAurora}!render@{render}}
 \index{render@{render}!TankAurora@{TankAurora}}
@@ -313,11 +450,173 @@ Reimplemented from \mbox{\hyperlink{class_unit_abd8cdcaade9bfafedcf23aadd4f5539a
 
 Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de}\label{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de} 
+\index{TankAurora@{TankAurora}!resetEnergyWave@{resetEnergyWave}}
+\index{resetEnergyWave@{resetEnergyWave}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{resetEnergyWave()}{resetEnergyWave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::reset\+Energy\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reset the energy wave. 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8}\label{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8} 
+\index{TankAurora@{TankAurora}!setupEnergyWave@{setupEnergyWave}}
+\index{setupEnergyWave@{setupEnergyWave}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{setupEnergyWave()}{setupEnergyWave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::setup\+Energy\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the energy wave. 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_af312708da025ff43ee484aadd8e235bc}\label{class_tank_aurora_af312708da025ff43ee484aadd8e235bc} 
+\index{TankAurora@{TankAurora}!setupHealingAura@{setupHealingAura}}
+\index{setupHealingAura@{setupHealingAura}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{setupHealingAura()}{setupHealingAura()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::setup\+Healing\+Aura (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the healing aura. 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_af312708da025ff43ee484aadd8e235bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c}\label{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c} 
+\index{TankAurora@{TankAurora}!setupTankAurora@{setupTankAurora}}
+\index{setupTankAurora@{setupTankAurora}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{setupTankAurora()}{setupTankAurora()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::setup\+Tank\+Aurora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize tank Aurora. 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d}\label{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d} 
+\index{TankAurora@{TankAurora}!spawnElectricalParticleEffect@{spawnElectricalParticleEffect}}
+\index{spawnElectricalParticleEffect@{spawnElectricalParticleEffect}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{spawnElectricalParticleEffect()}{spawnElectricalParticleEffect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::spawn\+Electrical\+Particle\+Effect (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the energy particle effect to charge up the wave attack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_tank_aurora_a11461db52d4c53a679968b628d1732a4}\label{class_tank_aurora_a11461db52d4c53a679968b628d1732a4} 
+\index{TankAurora@{TankAurora}!startEMPCharge@{startEMPCharge}}
+\index{startEMPCharge@{startEMPCharge}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{startEMPCharge()}{startEMPCharge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Tank\+Aurora\+::start\+EMPCharge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+starts the charge up for the EMP 
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a11461db52d4c53a679968b628d1732a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tank_aurora_a11461db52d4c53a679968b628d1732a4_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_tank_aurora_a929635e820b74db6381f9ea239b57178}\label{class_tank_aurora_a929635e820b74db6381f9ea239b57178} 
@@ -334,7 +633,8 @@ Reimplemented from \mbox{\hyperlink{class_unit_a1170c0150d547432074d11e0a5896494
 
 Definition at line \mbox{\hyperlink{_tank_aurora_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_tank_aurora_8cpp_source}{Tank\+Aurora.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -343,7 +643,210 @@ Here is the call graph for this function\+:\nopagebreak
 \end{figure}
 
 
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tank_aurora_a1139a518f19bd2f9c070214d1ff6e62c}\label{class_tank_aurora_a1139a518f19bd2f9c070214d1ff6e62c} 
+\index{TankAurora@{TankAurora}!m\_clock@{m\_clock}}
+\index{m\_clock@{m\_clock}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_clock}{m\_clock}}
+{\footnotesize\ttfamily sf\+::\+Clock Tank\+Aurora\+::m\+\_\+clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00048}{48}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}\label{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619} 
+\index{TankAurora@{TankAurora}!m\_currentChargeTime@{m\_currentChargeTime}}
+\index{m\_currentChargeTime@{m\_currentChargeTime}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_currentChargeTime}{m\_currentChargeTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+current\+Charge\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00043}{43}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2}\label{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2} 
+\index{TankAurora@{TankAurora}!m\_directionToEnemy@{m\_directionToEnemy}}
+\index{m\_directionToEnemy@{m\_directionToEnemy}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_directionToEnemy}{m\_directionToEnemy}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tank\+Aurora\+::m\+\_\+direction\+To\+Enemy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00036}{36}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a1fdb7abbbc93e96f9f9b622c937c9dbc}\label{class_tank_aurora_a1fdb7abbbc93e96f9f9b622c937c9dbc} 
+\index{TankAurora@{TankAurora}!m\_empChargeTime@{m\_empChargeTime}}
+\index{m\_empChargeTime@{m\_empChargeTime}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_empChargeTime}{m\_empChargeTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+emp\+Charge\+Time = 6.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00042}{42}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a1b09454d7528bd1c8c08c0d7ce76f362}\label{class_tank_aurora_a1b09454d7528bd1c8c08c0d7ce76f362} 
+\index{TankAurora@{TankAurora}!m\_empExpandArea@{m\_empExpandArea}}
+\index{m\_empExpandArea@{m\_empExpandArea}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_empExpandArea}{m\_empExpandArea}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+emp\+Expand\+Area = 15.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00044}{44}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a3f8d97cda0e2e40b6baa42162d14d960}\label{class_tank_aurora_a3f8d97cda0e2e40b6baa42162d14d960} 
+\index{TankAurora@{TankAurora}!m\_energyWaveGrowthRate@{m\_energyWaveGrowthRate}}
+\index{m\_energyWaveGrowthRate@{m\_energyWaveGrowthRate}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveGrowthRate}{m\_energyWaveGrowthRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+energy\+Wave\+Growth\+Rate = 0.\+5\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00055}{55}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_ac424d733660a9ab34cfd322ccf9bc4ef}\label{class_tank_aurora_ac424d733660a9ab34cfd322ccf9bc4ef} 
+\index{TankAurora@{TankAurora}!m\_energyWaveMaxSize@{m\_energyWaveMaxSize}}
+\index{m\_energyWaveMaxSize@{m\_energyWaveMaxSize}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveMaxSize}{m\_energyWaveMaxSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+energy\+Wave\+Max\+Size = 1.\+5\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00054}{54}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}\label{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e} 
+\index{TankAurora@{TankAurora}!m\_energyWavePosition@{m\_energyWavePosition}}
+\index{m\_energyWavePosition@{m\_energyWavePosition}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWavePosition}{m\_energyWavePosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tank\+Aurora\+::m\+\_\+energy\+Wave\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00051}{51}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}\label{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826} 
+\index{TankAurora@{TankAurora}!m\_energyWaveSize@{m\_energyWaveSize}}
+\index{m\_energyWaveSize@{m\_energyWaveSize}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveSize}{m\_energyWaveSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+energy\+Wave\+Size = 0.\+4\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00053}{53}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a444dec7ee172501d701a0703fd017591}\label{class_tank_aurora_a444dec7ee172501d701a0703fd017591} 
+\index{TankAurora@{TankAurora}!m\_energyWaveSpeed@{m\_energyWaveSpeed}}
+\index{m\_energyWaveSpeed@{m\_energyWaveSpeed}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveSpeed}{m\_energyWaveSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+energy\+Wave\+Speed = 200.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00052}{52}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}\label{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838} 
+\index{TankAurora@{TankAurora}!m\_energyWaveSprite@{m\_energyWaveSprite}}
+\index{m\_energyWaveSprite@{m\_energyWaveSprite}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveSprite}{m\_energyWaveSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Tank\+Aurora\+::m\+\_\+energy\+Wave\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00032}{32}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_acdf5f78ad923541541c3ea09e7f6c6d2}\label{class_tank_aurora_acdf5f78ad923541541c3ea09e7f6c6d2} 
+\index{TankAurora@{TankAurora}!m\_energyWaveTexture@{m\_energyWaveTexture}}
+\index{m\_energyWaveTexture@{m\_energyWaveTexture}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_energyWaveTexture}{m\_energyWaveTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Tank\+Aurora\+::m\+\_\+energy\+Wave\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00033}{33}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}\label{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a} 
+\index{TankAurora@{TankAurora}!m\_healingAura@{m\_healingAura}}
+\index{m\_healingAura@{m\_healingAura}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_healingAura}{m\_healingAura}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Tank\+Aurora\+::m\+\_\+healing\+Aura\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00028}{28}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}\label{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f} 
+\index{TankAurora@{TankAurora}!m\_healingAuraShader@{m\_healingAuraShader}}
+\index{m\_healingAuraShader@{m\_healingAuraShader}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_healingAuraShader}{m\_healingAuraShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Tank\+Aurora\+::m\+\_\+healing\+Aura\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00029}{29}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}\label{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431} 
+\index{TankAurora@{TankAurora}!m\_healingRange@{m\_healingRange}}
+\index{m\_healingRange@{m\_healingRange}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_healingRange}{m\_healingRange}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Tank\+Aurora\+::m\+\_\+healing\+Range = 150.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00038}{38}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3}\label{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3} 
+\index{TankAurora@{TankAurora}!m\_isChargingEMPWave@{m\_isChargingEMPWave}}
+\index{m\_isChargingEMPWave@{m\_isChargingEMPWave}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_isChargingEMPWave}{m\_isChargingEMPWave}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Tank\+Aurora\+::m\+\_\+is\+Charging\+EMPWave = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{true}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00041}{41}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}\label{class_tank_aurora_a99ff9d56d1b17316d3053db687690756} 
+\index{TankAurora@{TankAurora}!m\_isFiringEnergyWave@{m\_isFiringEnergyWave}}
+\index{m\_isFiringEnergyWave@{m\_isFiringEnergyWave}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_isFiringEnergyWave}{m\_isFiringEnergyWave}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Tank\+Aurora\+::m\+\_\+is\+Firing\+Energy\+Wave = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00050}{50}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a666472b393de7406abda991e76849092}\label{class_tank_aurora_a666472b393de7406abda991e76849092} 
+\index{TankAurora@{TankAurora}!m\_lightningTexture@{m\_lightningTexture}}
+\index{m\_lightningTexture@{m\_lightningTexture}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_lightningTexture}{m\_lightningTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Tank\+Aurora\+::m\+\_\+lightning\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00034}{34}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_abc79e2beb2ad320a8023249ac7f735c6}\label{class_tank_aurora_abc79e2beb2ad320a8023249ac7f735c6} 
+\index{TankAurora@{TankAurora}!m\_shaderClock@{m\_shaderClock}}
+\index{m\_shaderClock@{m\_shaderClock}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_shaderClock}{m\_shaderClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Tank\+Aurora\+::m\+\_\+shader\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00030}{30}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+\Hypertarget{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea}\label{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea} 
+\index{TankAurora@{TankAurora}!m\_waveShader@{m\_waveShader}}
+\index{m\_waveShader@{m\_waveShader}!TankAurora@{TankAurora}}
+\doxysubsubsection{\texorpdfstring{m\_waveShader}{m\_waveShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Tank\+Aurora\+::m\+\_\+wave\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tank_aurora_8h_source_l00047}{47}} of file \mbox{\hyperlink{_tank_aurora_8h_source}{Tank\+Aurora.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_tank_aurora_8h}{Tank\+Aurora.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_tank_aurora_8cpp}{Tank\+Aurora.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_tank_aurora_8h}{Tank\+Aurora.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_tank_aurora_8cpp}{Tank\+Aurora.\+cpp}}\end{DoxyCompactItemize}

@@ -1,29 +1,53 @@
 <map id="Unit::getPosition" name="Unit::getPosition">
-<area shape="rect" id="Node000001" title=" " alt="" coords="776,76,893,103"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="532,127,726,153"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="763,110,687,129,685,123,762,104"/>
-<area shape="rect" id="Node000010" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="16,5,150,32"/>
-<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="767,75,727,67,565,46,404,33,150,22,151,17,405,28,566,41,728,61,768,69"/>
-<area shape="rect" id="Node000013" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="530,76,728,103"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="760,92,728,92,728,87,760,87"/>
-<area shape="rect" id="Node000003" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="391,127,482,153"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="517,143,483,143,483,137,517,137"/>
-<area shape="rect" id="Node000004" href="$class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="210,208,342,235"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="396,163,305,210,303,205,393,159"/>
-<area shape="rect" id="Node000007" href="$class_infantry_unit.html#aabd1427d781ff0e5ae2b21bbe67e4c84" title=" " alt="" coords="209,132,343,159"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="375,145,343,146,343,140,375,139"/>
-<area shape="rect" id="Node000009" href="$class_vehicle_unit.html#a8509cb11b318348f4953dae4932ea071" title=" " alt="" coords="209,81,343,108"/>
-<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="375,126,325,111,326,106,377,120"/>
-<area shape="rect" id="Node000005" href="$class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="23,259,143,285"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,242,137,261,136,255,207,237"/>
-<area shape="rect" id="Node000006" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="9,208,157,235"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="194,224,157,224,157,219,194,219"/>
-<area shape="rect" id="Node000008" href="$class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="5,157,161,184"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="194,159,162,163,161,158,193,153"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="231,77,160,46,128,35,129,30,162,42,233,72"/>
-<area shape="rect" id="Node000011" href="$class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="30,107,136,133"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="194,108,136,116,135,110,193,103"/>
-<area shape="rect" id="Node000012" href="$class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="22,56,144,83"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="193,87,144,80,145,75,194,81"/>
-<area shape="poly" id="edge13_Node000013_Node000003" title=" " alt="" coords="559,110,531,117,483,130,482,125,530,112,558,105"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="936,316,1053,343"/>
+<area shape="rect" id="Node000002" href="$class_rifleman_squad.html#afe03ca4ff7509dd205e6ba283541e532" title="Tries to aim and shoots at the target with the squad members." alt="" coords="503,12,653,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="989,301,982,246,966,178,953,142,935,109,913,78,886,53,859,36,830,24,767,11,705,9,649,14,648,9,705,3,768,5,832,19,862,31,889,48,917,75,940,106,957,140,971,176,988,245,994,300"/>
+<area shape="rect" id="Node000004" href="$class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4" title="Aims the weapon towards enemy." alt="" coords="738,256,873,283"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="935,313,849,286,851,280,936,308"/>
+<area shape="rect" id="Node000006" href="$class_hammer_head.html#abfc0a243da104f4fe34b5abc4e602669" title="Makes it aim at the enemy." alt="" coords="228,164,413,191"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="969,307,932,274,887,246,826,224,763,207,634,185,513,176,413,175,413,170,514,171,635,180,764,202,828,219,889,241,936,270,972,303"/>
+<area shape="rect" id="Node000008" href="$class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="723,129,888,172"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="975,304,938,249,914,219,886,193,858,175,861,170,889,188,918,215,943,245,980,301"/>
+<area shape="rect" id="Node000014" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="16,316,150,343"/>
+<area shape="poly" id="edge30_Node000001_Node000014" title=" " alt="" coords="920,332,151,332,151,327,920,327"/>
+<area shape="rect" id="Node000016" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="723,63,888,105"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="983,302,971,261,950,213,922,163,886,119,870,108,874,104,889,115,927,160,955,210,976,260,988,300"/>
+<area shape="rect" id="Node000017" href="$class_tank_aurora.html#ae91336895cbe9bb067a991215fd9cd75" title="After charging the emp it shoots out the energy wave to slow down enemies." alt="" coords="731,367,880,393"/>
+<area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="928,350,859,368,857,363,926,345"/>
+<area shape="rect" id="Node000018" href="$class_harvester.html#a629f240ea9ef21e216d12c0bd091de18" title="finds the nearest refinery building" alt="" coords="480,417,675,444"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="970,355,934,384,889,408,835,423,780,433,676,438,676,433,779,427,834,418,887,403,931,379,967,351"/>
+<area shape="rect" id="Node000019" href="$class_harvester.html#aad7a6421a668ae260ddc1e22288ec247" title="To find the nearest resource tile." alt="" coords="209,468,432,495"/>
+<area shape="poly" id="edge24_Node000001_Node000019" title=" " alt="" coords="979,357,942,403,917,425,889,442,831,465,770,482,707,494,645,501,526,504,425,498,425,493,526,499,644,496,707,489,769,477,829,460,886,437,914,421,938,399,974,354"/>
+<area shape="rect" id="Node000020" href="$class_harvester.html#a00dff9d40d7ed37de424052e3dad5986" title="checks if its at the refinery building" alt="" coords="501,519,654,545"/>
+<area shape="poly" id="edge26_Node000001_Node000020" title=" " alt="" coords="987,358,974,392,953,432,925,471,889,502,861,517,832,528,770,542,709,546,655,544,655,539,709,541,770,536,830,523,859,512,886,498,921,467,949,429,969,390,982,356"/>
+<area shape="rect" id="Node000021" href="$class_harvester.html#a5abe99ee36568b600fbc3001f2f87c9f" title="checks if its at target" alt="" coords="483,569,672,596"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="991,358,980,402,961,455,931,507,912,530,889,550,838,577,782,592,726,597,673,597,673,592,725,592,781,586,836,572,886,546,908,527,927,504,956,452,975,400,986,357"/>
+<area shape="rect" id="Node000003" href="$class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="5,37,161,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,32,161,49,161,44,487,27"/>
+<area shape="rect" id="Node000005" href="$class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="30,240,136,267"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="722,267,432,256,136,255,136,250,432,251,722,262"/>
+<area shape="rect" id="Node000007" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="9,164,157,191"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="213,180,157,180,157,175,213,175"/>
+<area shape="rect" id="Node000009" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="532,113,623,140"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="707,143,623,134,624,129,708,138"/>
+<area shape="rect" id="Node000010" href="$class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="254,113,387,140"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="517,129,387,129,387,124,517,124"/>
+<area shape="rect" id="Node000012" href="$class_infantry_unit.html#aabd1427d781ff0e5ae2b21bbe67e4c84" title=" " alt="" coords="254,63,387,89"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="516,117,387,91,388,86,517,112"/>
+<area shape="rect" id="Node000013" href="$class_vehicle_unit.html#a8509cb11b318348f4953dae4932ea071" title=" " alt="" coords="253,265,388,292"/>
+<area shape="poly" id="edge14_Node000009_Node000013" title=" " alt="" coords="542,150,346,267,343,262,539,146"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="240,146,149,166,148,161,239,141"/>
+<area shape="rect" id="Node000011" href="$class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="23,113,143,140"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="239,129,144,129,144,124,239,124"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="238,70,161,61,161,56,238,64"/>
+<area shape="poly" id="edge16_Node000013_Node000005" title=" " alt="" coords="238,272,136,261,136,256,238,267"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="240,298,149,318,148,313,239,293"/>
+<area shape="rect" id="Node000015" href="$class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="22,468,144,495"/>
+<area shape="poly" id="edge17_Node000013_Node000015" title=" " alt="" coords="293,304,102,470,98,466,290,300"/>
+<area shape="poly" id="edge19_Node000016_Node000009" title=" " alt="" coords="709,105,624,121,623,115,708,99"/>
+<area shape="poly" id="edge21_Node000017_Node000014" title=" " alt="" coords="715,380,485,371,208,350,150,343,151,338,209,345,485,366,715,375"/>
+<area shape="poly" id="edge23_Node000018_Node000015" title=" " alt="" coords="465,437,341,445,209,458,145,470,144,465,208,453,341,439,464,432"/>
+<area shape="poly" id="edge25_Node000019_Node000015" title=" " alt="" coords="193,484,145,484,145,479,193,479"/>
+<area shape="poly" id="edge27_Node000020_Node000015" title=" " alt="" coords="485,532,354,524,208,509,144,498,145,493,209,504,354,519,486,526"/>
+<area shape="poly" id="edge29_Node000021_Node000015" title=" " alt="" coords="467,577,342,562,208,534,156,517,112,498,114,493,158,512,209,529,343,557,468,572"/>
 </map>

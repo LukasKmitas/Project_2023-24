@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -94,6 +94,8 @@ $(function(){initNavTree('class_firehawk.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_firehawk-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Firehawk Class Reference</div></div>
 </div><!--header-->
@@ -103,12 +105,32 @@ $(function(){initNavTree('class_firehawk.html',''); initResizable(); });
 <div class="dynheader">
 Inheritance diagram for Firehawk:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_firehawk__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_firehawk__inherit__graph.png" border="0" usemap="#a_firehawk_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_firehawk_inherit__map" id="a_firehawk_inherit__map">
+<area shape="rect" title=" " alt="" coords="11,155,85,181"/>
+<area shape="rect" href="class_aircraft_unit.html" title=" " alt="" coords="5,80,91,107"/>
+<area shape="poly" title=" " alt="" coords="51,122,51,154,45,154,45,122"/>
+<area shape="rect" href="class_unit.html" title=" " alt="" coords="26,5,70,32"/>
+<area shape="poly" title=" " alt="" coords="51,48,51,80,45,80,45,48"/>
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Firehawk:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_firehawk__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_firehawk__coll__graph.png" border="0" usemap="#a_firehawk_coll__map" alt="Collaboration graph"/></div>
+<map name="a_firehawk_coll__map" id="a_firehawk_coll__map">
+<area shape="rect" title=" " alt="" coords="24,339,97,365"/>
+<area shape="rect" href="class_aircraft_unit.html" title=" " alt="" coords="18,263,103,289"/>
+<area shape="poly" title=" " alt="" coords="63,304,63,338,58,338,58,304"/>
+<area shape="rect" href="class_unit.html" title=" " alt="" coords="38,187,83,213"/>
+<area shape="poly" title=" " alt="" coords="63,228,63,262,58,262,58,228"/>
+<area shape="poly" title=" " alt="" coords="100,192,109,200,101,208,83,209,83,204,99,204,104,200,97,196"/>
+<area shape="rect" href="class_particle_system.html" title=" " alt="" coords="5,5,116,32"/>
+<area shape="poly" title=" " alt="" coords="59,48,55,84,54,123,61,186,56,187,49,123,49,83,53,47"/>
+<area shape="rect" href="class_building.html" title=" " alt="" coords="172,96,240,123"/>
+<area shape="poly" title=" " alt="" coords="95,38,186,93,184,98,93,43"/>
+<area shape="poly" title=" " alt="" coords="174,133,83,188,80,184,171,129"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -204,6 +226,52 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8ed00bb67423863eafa5a0e483fd2dd9 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac092caf6ec920688a210b1d556633113 inherit pub_methods_class_unit" id="r_ac092caf6ec920688a210b1d556633113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ac092caf6ec920688a210b1d556633113">isActive</a> () <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a></td></tr>
 <tr class="separator:ac092caf6ec920688a210b1d556633113 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a244c37330dde83d34e4ca60a244c6910" id="r_a244c37330dde83d34e4ca60a244c6910"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a244c37330dde83d34e4ca60a244c6910">approachTarget</a> (<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_targetPos</a>, sf::Time <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">t_deltaTime</a>)</td></tr>
+<tr class="memdesc:a244c37330dde83d34e4ca60a244c6910"><td class="mdescLeft">&#160;</td><td class="mdescRight">makes the unit move  <br /></td></tr>
+<tr class="separator:a244c37330dde83d34e4ca60a244c6910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72737c3583aa14ea71fdc737c1d0a83e" id="r_a72737c3583aa14ea71fdc737c1d0a83e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72737c3583aa14ea71fdc737c1d0a83e">orbitTarget</a> (sf::Time <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">t_deltaTime</a>)</td></tr>
+<tr class="memdesc:a72737c3583aa14ea71fdc737c1d0a83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the unit orbit around an area.  <br /></td></tr>
+<tr class="separator:a72737c3583aa14ea71fdc737c1d0a83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca243ce35364951f45c99330956e03b" id="r_a3ca243ce35364951f45c99330956e03b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ca243ce35364951f45c99330956e03b">initFirehawk</a> ()</td></tr>
+<tr class="memdesc:a3ca243ce35364951f45c99330956e03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes firehawk unit  <br /></td></tr>
+<tr class="separator:a3ca243ce35364951f45c99330956e03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695f22839d141aba8fecabbe5b14fce7" id="r_a695f22839d141aba8fecabbe5b14fce7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a695f22839d141aba8fecabbe5b14fce7">fireMissileAtTarget</a> (<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_targetPos</a>)</td></tr>
+<tr class="memdesc:a695f22839d141aba8fecabbe5b14fce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">shoots missles in a 2 phases 2 rockets and then 2 more after a while  <br /></td></tr>
+<tr class="separator:a695f22839d141aba8fecabbe5b14fce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f4ce8bd6242264918c8910e92e5445" id="r_aa7f4ce8bd6242264918c8910e92e5445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7f4ce8bd6242264918c8910e92e5445">isTargetWithinRange</a> (<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_targetPos</a>)</td></tr>
+<tr class="memdesc:aa7f4ce8bd6242264918c8910e92e5445"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target needs to be in line of sight to be able to shoot.  <br /></td></tr>
+<tr class="separator:aa7f4ce8bd6242264918c8910e92e5445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9508b9506242d3292ec9f213019d84a3" id="r_a9508b9506242d3292ec9f213019d84a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9508b9506242d3292ec9f213019d84a3">launchMissile</a> (<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_targetPos</a>)</td></tr>
+<tr class="memdesc:a9508b9506242d3292ec9f213019d84a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">shoots out the missles  <br /></td></tr>
+<tr class="separator:a9508b9506242d3292ec9f213019d84a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3dd2823c53448089e9dc3912175bb817" id="r_a3dd2823c53448089e9dc3912175bb817"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dd2823c53448089e9dc3912175bb817">m_missileTexture</a></td></tr>
+<tr class="separator:a3dd2823c53448089e9dc3912175bb817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8167d00be5583abb167df2b04b3d200b" id="r_a8167d00be5583abb167df2b04b3d200b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8167d00be5583abb167df2b04b3d200b">m_orbitRadius</a> = 150.0f</td></tr>
+<tr class="separator:a8167d00be5583abb167df2b04b3d200b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad084db06d7c84e66eea21194835b6418" id="r_ad084db06d7c84e66eea21194835b6418"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad084db06d7c84e66eea21194835b6418">m_orbitSpeed</a> = 0.0f</td></tr>
+<tr class="separator:ad084db06d7c84e66eea21194835b6418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e1a855c3a1b2be9e7bd8346aacb1b5" id="r_ab0e1a855c3a1b2be9e7bd8346aacb1b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e1a855c3a1b2be9e7bd8346aacb1b5">m_currentOrbitAngle</a> = 0.0f</td></tr>
+<tr class="separator:ab0e1a855c3a1b2be9e7bd8346aacb1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6a9cd6671be9b743cd6c350d43baae" id="r_aef6a9cd6671be9b743cd6c350d43baae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6a9cd6671be9b743cd6c350d43baae">m_reloadCooldown</a> = 0.0f</td></tr>
+<tr class="separator:aef6a9cd6671be9b743cd6c350d43baae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92dc2abce3340db1e19142b277ea9fc" id="r_af92dc2abce3340db1e19142b277ea9fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af92dc2abce3340db1e19142b277ea9fc">m_reloadCooldownTime</a> = 5.0f</td></tr>
+<tr class="separator:af92dc2abce3340db1e19142b277ea9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ab1ee66ae09f050235950a09afa6dd" id="r_a72ab1ee66ae09f050235950a09afa6dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72ab1ee66ae09f050235950a09afa6dd">m_missilesFiredInBurst</a> = 0</td></tr>
+<tr class="separator:a72ab1ee66ae09f050235950a09afa6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeeff8fb8372ac5e48bf760c060a5f4a" id="r_aaeeff8fb8372ac5e48bf760c060a5f4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeeff8fb8372ac5e48bf760c060a5f4a">m_burstSize</a> = 4</td></tr>
+<tr class="separator:aaeeff8fb8372ac5e48bf760c060a5f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e55157c02b4b3fe0c6adc72c94e4299" id="r_a2e55157c02b4b3fe0c6adc72c94e4299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e55157c02b4b3fe0c6adc72c94e4299">m_phase</a> = 0</td></tr>
+<tr class="separator:a2e55157c02b4b3fe0c6adc72c94e4299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4982697edc8e054d0b4baff6e66d05a0" id="r_a4982697edc8e054d0b4baff6e66d05a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4982697edc8e054d0b4baff6e66d05a0">m_phaseTimer</a> = 0.0f</td></tr>
+<tr class="separator:a4982697edc8e054d0b4baff6e66d05a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a891c617406186c88c164c270ca939" id="r_a93a891c617406186c88c164c270ca939"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a891c617406186c88c164c270ca939">m_phaseDelay</a> = 1.0f</td></tr>
+<tr class="separator:a93a891c617406186c88c164c270ca939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -359,6 +427,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00003">3</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac_cgraph.png" border="0" usemap="#aclass_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac_cgraph" alt=""/></div>
+<map name="aclass_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac_cgraph" id="aclass_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" href="class_firehawk.html#a3ca243ce35364951f45c99330956e03b" title="initializes firehawk unit" alt="" coords="187,5,337,32"/>
+<area shape="poly" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -382,6 +460,131 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a244c37330dde83d34e4ca60a244c6910" name="a244c37330dde83d34e4ca60a244c6910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244c37330dde83d34e4ca60a244c6910">&#9670;&#160;</a></span>approachTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Firehawk::approachTarget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_targetPos</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>makes the unit move </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_targetPos</td><td></td></tr>
+    <tr><td class="paramname">t_deltaTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00081">81</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a244c37330dde83d34e4ca60a244c6910_cgraph.png" border="0" usemap="#aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_cgraph" alt=""/></div>
+<map name="aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_cgraph" id="aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_cgraph">
+<area shape="rect" title="makes the unit move" alt="" coords="5,56,176,83"/>
+<area shape="rect" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009" title=" " alt="" coords="224,5,375,32"/>
+<area shape="poly" title=" " alt="" coords="148,53,226,34,227,39,149,58"/>
+<area shape="rect" href="class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="243,56,356,83"/>
+<area shape="poly" title=" " alt="" coords="176,67,228,67,228,72,176,72"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="245,107,354,133"/>
+<area shape="poly" title=" " alt="" coords="149,81,231,101,230,106,148,86"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a244c37330dde83d34e4ca60a244c6910_icgraph.png" border="0" usemap="#aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_icgraph" alt=""/></div>
+<map name="aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_icgraph" id="aclass_firehawk_a244c37330dde83d34e4ca60a244c6910_icgraph">
+<area shape="rect" title="makes the unit move" alt="" coords="174,5,344,32"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="5,5,126,32"/>
+<area shape="poly" title=" " alt="" coords="158,21,126,21,126,16,158,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a695f22839d141aba8fecabbe5b14fce7" name="a695f22839d141aba8fecabbe5b14fce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695f22839d141aba8fecabbe5b14fce7">&#9670;&#160;</a></span>fireMissileAtTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Firehawk::fireMissileAtTarget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_targetPos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shoots missles in a 2 phases 2 rockets and then 2 more after a while </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_targetPos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00153">153</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a695f22839d141aba8fecabbe5b14fce7_cgraph.png" border="0" usemap="#aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_cgraph" alt=""/></div>
+<map name="aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_cgraph" id="aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_cgraph">
+<area shape="rect" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="5,56,194,83"/>
+<area shape="rect" href="class_firehawk.html#a9508b9506242d3292ec9f213019d84a3" title="shoots out the missles" alt="" coords="242,56,402,83"/>
+<area shape="poly" title=" " alt="" coords="194,67,226,67,226,72,194,72"/>
+<area shape="rect" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="450,5,633,32"/>
+<area shape="poly" title=" " alt="" coords="382,53,465,33,467,39,384,58"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="488,56,596,83"/>
+<area shape="poly" title=" " alt="" coords="402,67,473,67,473,72,402,72"/>
+<area shape="rect" href="class_sound_manager.html#a92e1d1ffad59deceff7e77e4bd032351" title="plays the sound" alt="" coords="453,107,630,133"/>
+<area shape="poly" title=" " alt="" coords="384,81,467,100,465,105,382,86"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a695f22839d141aba8fecabbe5b14fce7_icgraph.png" border="0" usemap="#aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_icgraph" alt=""/></div>
+<map name="aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_icgraph" id="aclass_firehawk_a695f22839d141aba8fecabbe5b14fce7_icgraph">
+<area shape="rect" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="174,5,362,32"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="5,5,126,32"/>
+<area shape="poly" title=" " alt="" coords="158,21,126,21,126,16,158,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aef0eaabeee939997fb8cfa9debf0b9e4" name="aef0eaabeee939997fb8cfa9debf0b9e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef0eaabeee939997fb8cfa9debf0b9e4">&#9670;&#160;</a></span>getUnitType()</h2>
 
@@ -408,6 +611,211 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_unit.html#a6ac8b67a7364fcfc0f3b2a0b4a43ce2c">Unit</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00012">12</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ca243ce35364951f45c99330956e03b" name="a3ca243ce35364951f45c99330956e03b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca243ce35364951f45c99330956e03b">&#9670;&#160;</a></span>initFirehawk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Firehawk::initFirehawk </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes firehawk unit </p>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00132">132</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a3ca243ce35364951f45c99330956e03b_icgraph.png" border="0" usemap="#aclass_firehawk_a3ca243ce35364951f45c99330956e03b_icgraph" alt=""/></div>
+<map name="aclass_firehawk_a3ca243ce35364951f45c99330956e03b_icgraph" id="aclass_firehawk_a3ca243ce35364951f45c99330956e03b_icgraph">
+<area shape="rect" title="initializes firehawk unit" alt="" coords="187,5,337,32"/>
+<area shape="rect" href="class_firehawk.html#ad406c6d04de228c7e8c5fd19e69b85ac" title=" " alt="" coords="5,5,139,32"/>
+<area shape="poly" title=" " alt="" coords="171,21,139,21,139,16,171,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7f4ce8bd6242264918c8910e92e5445" name="aa7f4ce8bd6242264918c8910e92e5445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f4ce8bd6242264918c8910e92e5445">&#9670;&#160;</a></span>isTargetWithinRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a> Firehawk::isTargetWithinRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_targetPos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The target needs to be in line of sight to be able to shoot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_targetPos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00191">191</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_aa7f4ce8bd6242264918c8910e92e5445_cgraph.png" border="0" usemap="#aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_cgraph" alt=""/></div>
+<map name="aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_cgraph" id="aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_cgraph">
+<area shape="rect" title="The target needs to be in line of sight to be able to shoot." alt="" coords="5,48,170,91"/>
+<area shape="rect" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009" title=" " alt="" coords="218,5,369,32"/>
+<area shape="poly" title=" " alt="" coords="170,46,221,34,222,39,171,52"/>
+<area shape="rect" href="class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="237,56,350,83"/>
+<area shape="poly" title=" " alt="" coords="170,67,222,67,222,72,170,72"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="239,107,348,133"/>
+<area shape="poly" title=" " alt="" coords="171,87,224,100,223,106,170,92"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_aa7f4ce8bd6242264918c8910e92e5445_icgraph.png" border="0" usemap="#aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_icgraph" alt=""/></div>
+<map name="aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_icgraph" id="aclass_firehawk_aa7f4ce8bd6242264918c8910e92e5445_icgraph">
+<area shape="rect" title="The target needs to be in line of sight to be able to shoot." alt="" coords="174,5,338,48"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="5,13,126,40"/>
+<area shape="poly" title=" " alt="" coords="158,29,126,29,126,24,158,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9508b9506242d3292ec9f213019d84a3" name="a9508b9506242d3292ec9f213019d84a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9508b9506242d3292ec9f213019d84a3">&#9670;&#160;</a></span>launchMissile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Firehawk::launchMissile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_targetPos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shoots out the missles </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00213">213</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a9508b9506242d3292ec9f213019d84a3_cgraph.png" border="0" usemap="#aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_cgraph" alt=""/></div>
+<map name="aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_cgraph" id="aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_cgraph">
+<area shape="rect" title="shoots out the missles" alt="" coords="5,56,166,83"/>
+<area shape="rect" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="214,5,397,32"/>
+<area shape="poly" title=" " alt="" coords="146,53,229,33,230,39,147,58"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="251,56,360,83"/>
+<area shape="poly" title=" " alt="" coords="166,67,236,67,236,72,166,72"/>
+<area shape="rect" href="class_sound_manager.html#a92e1d1ffad59deceff7e77e4bd032351" title="plays the sound" alt="" coords="217,107,394,133"/>
+<area shape="poly" title=" " alt="" coords="147,81,230,100,229,105,146,86"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a9508b9506242d3292ec9f213019d84a3_icgraph.png" border="0" usemap="#aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_icgraph" alt=""/></div>
+<map name="aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_icgraph" id="aclass_firehawk_a9508b9506242d3292ec9f213019d84a3_icgraph">
+<area shape="rect" title="shoots out the missles" alt="" coords="410,5,570,32"/>
+<area shape="rect" href="class_firehawk.html#a695f22839d141aba8fecabbe5b14fce7" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="174,5,362,32"/>
+<area shape="poly" title=" " alt="" coords="394,21,363,21,363,16,394,16"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="5,5,126,32"/>
+<area shape="poly" title=" " alt="" coords="158,21,126,21,126,16,158,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a72737c3583aa14ea71fdc737c1d0a83e" name="a72737c3583aa14ea71fdc737c1d0a83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72737c3583aa14ea71fdc737c1d0a83e">&#9670;&#160;</a></span>orbitTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Firehawk::orbitTarget </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Makes the unit orbit around an area. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_deltaTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8cpp_source.html#l00109">109</a> of file <a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e_icgraph.png" border="0" usemap="#aclass_firehawk_a72737c3583aa14ea71fdc737c1d0a83e_icgraph" alt=""/></div>
+<map name="aclass_firehawk_a72737c3583aa14ea71fdc737c1d0a83e_icgraph" id="aclass_firehawk_a72737c3583aa14ea71fdc737c1d0a83e_icgraph">
+<area shape="rect" title="Makes the unit orbit around an area." alt="" coords="174,5,316,32"/>
+<area shape="rect" href="class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="5,5,126,32"/>
+<area shape="poly" title=" " alt="" coords="158,21,126,21,126,16,158,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -444,14 +852,331 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a_cgraph.svg" width="100%" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a_cgraph.png" border="0" usemap="#aclass_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a_cgraph" alt=""/></div>
+<map name="aclass_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a_cgraph" id="aclass_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,194,126,220"/>
+<area shape="rect" href="class_firehawk.html#a244c37330dde83d34e4ca60a244c6910" title="makes the unit move" alt="" coords="183,48,353,75"/>
+<area shape="poly" title=" " alt="" coords="75,191,114,144,142,118,172,94,201,79,204,83,175,98,145,122,118,148,79,195"/>
+<area shape="rect" href="class_firehawk.html#a695f22839d141aba8fecabbe5b14fce7" title="shoots missles in a 2 phases 2 rockets and then 2 more after a while" alt="" coords="174,194,362,220"/>
+<area shape="poly" title=" " alt="" coords="126,204,158,204,158,210,126,210"/>
+<area shape="rect" href="class_firehawk.html#aa7f4ce8bd6242264918c8910e92e5445" title="The target needs to be in line of sight to be able to shoot." alt="" coords="186,108,350,151"/>
+<area shape="poly" title=" " alt="" coords="102,191,195,154,197,159,103,195"/>
+<area shape="rect" href="class_firehawk.html#a72737c3583aa14ea71fdc737c1d0a83e" title="Makes the unit orbit around an area." alt="" coords="197,295,339,322"/>
+<area shape="poly" title=" " alt="" coords="84,218,124,250,175,280,190,287,188,292,172,285,121,254,81,223"/>
+<area shape="rect" href="class_aircraft_unit.html#a383a50ac692f739ef21306ba9860c4e5" title=" " alt="" coords="202,244,334,271"/>
+<area shape="poly" title=" " alt="" coords="123,218,197,237,196,242,121,223"/>
+<area shape="rect" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009" title=" " alt="" coords="415,78,566,104"/>
+<area shape="poly" title=" " alt="" coords="354,70,400,76,399,82,353,75"/>
+<area shape="rect" href="class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="434,27,546,54"/>
+<area shape="poly" title=" " alt="" coords="353,51,419,44,419,50,354,56"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="1088,306,1196,332"/>
+<area shape="poly" title=" " alt="" coords="301,45,351,27,410,12,490,3,526,5,571,12,709,42,815,74,864,96,915,123,1034,199,1061,221,1085,245,1124,291,1120,295,1081,249,1057,225,1030,204,912,127,862,101,813,79,708,47,570,17,525,10,490,8,410,17,353,32,302,50"/>
+<area shape="rect" href="class_firehawk.html#a9508b9506242d3292ec9f213019d84a3" title="shoots out the missles" alt="" coords="410,204,570,231"/>
+<area shape="poly" title=" " alt="" coords="362,209,394,210,394,216,362,214"/>
+<area shape="poly" title=" " alt="" coords="521,229,566,248,619,266,743,289,868,304,981,312,1072,316,1072,321,981,318,867,310,742,295,618,271,564,253,518,234"/>
+<area shape="rect" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="618,230,802,256"/>
+<area shape="poly" title=" " alt="" coords="571,224,603,228,602,233,570,229"/>
+<area shape="rect" href="class_sound_manager.html#a92e1d1ffad59deceff7e77e4bd032351" title="plays the sound" alt="" coords="621,179,799,206"/>
+<area shape="poly" title=" " alt="" coords="570,206,606,202,606,207,571,211"/>
+<area shape="poly" title=" " alt="" coords="350,113,399,104,400,109,351,118"/>
+<area shape="poly" title=" " alt="" coords="316,105,409,63,427,56,429,61,411,68,318,110"/>
+<area shape="poly" title=" " alt="" coords="350,124,444,124,557,129,681,141,802,164,890,192,975,228,1105,295,1103,300,973,232,888,197,801,169,680,146,557,134,443,129,350,129"/>
+<area shape="rect" href="class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="445,450,536,476"/>
+<area shape="poly" title=" " alt="" coords="336,267,363,281,403,316,436,357,461,399,479,434,474,436,457,401,431,360,399,320,361,285,333,272"/>
+<area shape="rect" href="class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="628,391,792,434"/>
+<area shape="poly" title=" " alt="" coords="536,450,612,432,613,437,537,455"/>
+<area shape="rect" href="class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="628,475,792,518"/>
+<area shape="poly" title=" " alt="" coords="537,467,613,479,612,484,536,472"/>
+<area shape="rect" href="class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="631,542,789,568"/>
+<area shape="poly" title=" " alt="" coords="515,474,563,501,619,527,639,534,637,539,617,532,560,505,513,479"/>
+<area shape="poly" title=" " alt="" coords="776,388,849,367,966,343,1071,326,1072,331,967,348,850,372,777,393"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="890,382,992,408"/>
+<area shape="poly" title=" " alt="" coords="792,403,874,397,874,402,793,409"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="882,432,1000,459"/>
+<area shape="poly" title=" " alt="" coords="793,421,867,432,866,437,792,427"/>
+<area shape="poly" title=" " alt="" coords="793,505,849,508,910,504,973,492,1031,469,1064,443,1091,410,1112,376,1127,345,1132,348,1117,378,1096,413,1068,447,1033,473,974,497,911,510,849,513,792,511"/>
+<area shape="poly" title=" " alt="" coords="792,476,866,459,867,464,793,481"/>
+<area shape="rect" href="class_unit.html#a42777458d8e2ae32407212027719b6d2" title="This looks for a suitable direction to avoid walls when a direct path is blocked It tries various ang..." alt="" coords="850,534,1032,560"/>
+<area shape="poly" title=" " alt="" coords="793,512,863,527,862,532,792,517"/>
+<area shape="rect" href="class_unit.html#acabd56084730e0bb32811ab6b7be625a" title=" " alt="" coords="1080,584,1203,611"/>
+<area shape="poly" title=" " alt="" coords="787,516,803,528,814,540,821,553,826,578,833,601,840,611,851,621,880,634,912,642,945,645,978,643,1041,632,1094,614,1096,620,1043,637,979,649,945,650,911,647,879,639,848,625,836,615,828,603,821,579,816,555,810,543,800,531,784,520"/>
+<area shape="rect" href="class_unit.html#a2ee0326af0abc525deadf772e485f657" title=" " alt="" coords="904,584,978,611"/>
+<area shape="poly" title=" " alt="" coords="780,516,803,527,818,538,827,549,837,560,851,570,890,585,888,590,848,575,833,564,823,553,814,542,800,532,778,520"/>
+<area shape="poly" title=" " alt="" coords="999,531,1030,513,1066,473,1095,428,1116,383,1130,346,1135,347,1121,385,1099,431,1071,477,1034,517,1002,535"/>
+<area shape="poly" title=" " alt="" coords="998,558,1072,577,1070,582,996,563"/>
+</map>
 </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aaeeff8fb8372ac5e48bf760c060a5f4a" name="aaeeff8fb8372ac5e48bf760c060a5f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeeff8fb8372ac5e48bf760c060a5f4a">&#9670;&#160;</a></span>m_burstSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a> Firehawk::m_burstSize = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00037">37</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="ab0e1a855c3a1b2be9e7bd8346aacb1b5" name="ab0e1a855c3a1b2be9e7bd8346aacb1b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e1a855c3a1b2be9e7bd8346aacb1b5">&#9670;&#160;</a></span>m_currentOrbitAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_currentOrbitAngle = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00031">31</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a72ab1ee66ae09f050235950a09afa6dd" name="a72ab1ee66ae09f050235950a09afa6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ab1ee66ae09f050235950a09afa6dd">&#9670;&#160;</a></span>m_missilesFiredInBurst</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a> Firehawk::m_missilesFiredInBurst = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00036">36</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a3dd2823c53448089e9dc3912175bb817" name="a3dd2823c53448089e9dc3912175bb817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd2823c53448089e9dc3912175bb817">&#9670;&#160;</a></span>m_missileTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture Firehawk::m_missileTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00027">27</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a8167d00be5583abb167df2b04b3d200b" name="a8167d00be5583abb167df2b04b3d200b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8167d00be5583abb167df2b04b3d200b">&#9670;&#160;</a></span>m_orbitRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_orbitRadius = 150.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00029">29</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="ad084db06d7c84e66eea21194835b6418" name="ad084db06d7c84e66eea21194835b6418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad084db06d7c84e66eea21194835b6418">&#9670;&#160;</a></span>m_orbitSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_orbitSpeed = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00030">30</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e55157c02b4b3fe0c6adc72c94e4299" name="a2e55157c02b4b3fe0c6adc72c94e4299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e55157c02b4b3fe0c6adc72c94e4299">&#9670;&#160;</a></span>m_phase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">int</a> Firehawk::m_phase = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00038">38</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a93a891c617406186c88c164c270ca939" name="a93a891c617406186c88c164c270ca939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a891c617406186c88c164c270ca939">&#9670;&#160;</a></span>m_phaseDelay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_phaseDelay = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00040">40</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="a4982697edc8e054d0b4baff6e66d05a0" name="a4982697edc8e054d0b4baff6e66d05a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4982697edc8e054d0b4baff6e66d05a0">&#9670;&#160;</a></span>m_phaseTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_phaseTimer = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00039">39</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="aef6a9cd6671be9b743cd6c350d43baae" name="aef6a9cd6671be9b743cd6c350d43baae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6a9cd6671be9b743cd6c350d43baae">&#9670;&#160;</a></span>m_reloadCooldown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_reloadCooldown = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00034">34</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
+<a id="af92dc2abce3340db1e19142b277ea9fc" name="af92dc2abce3340db1e19142b277ea9fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92dc2abce3340db1e19142b277ea9fc">&#9670;&#160;</a></span>m_reloadCooldownTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Firehawk::m_reloadCooldownTime = 5.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_firehawk_8h_source.html#l00035">35</a> of file <a class="el" href="_firehawk_8h_source.html">Firehawk.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_firehawk_8h_source.html">Firehawk.h</a></li>
-<li>AI Behaviors/<a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_firehawk_8h_source.html">Firehawk.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_firehawk_8cpp_source.html">Firehawk.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

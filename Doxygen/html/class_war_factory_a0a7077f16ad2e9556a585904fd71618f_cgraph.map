@@ -1,5 +1,7 @@
 <map id="WarFactory::WarFactory" name="WarFactory::WarFactory">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,171,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,171,57"/>
 <area shape="rect" id="Node000002" href="$class_building.html#a3bf6b4a376aae64bbf1c310ed4ba345f" title="sets the placement radius" alt="" coords="219,5,440,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,16,203,16,203,21,171,21"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,33,203,29,203,35,171,38"/>
+<area shape="rect" id="Node000003" href="$class_war_factory.html#ab0e265026cbd8f98e195c2290412230a" title="initializes the war factory building" alt="" coords="248,56,411,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,50,232,56,232,62,171,55"/>
 </map>

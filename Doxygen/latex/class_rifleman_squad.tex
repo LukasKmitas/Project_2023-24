@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Rifleman\+Squad\+:\nopagebreak
+Inheritance diagram for Rifleman\+Squad\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_rifleman_squad__inherit__graph}
+\includegraphics[width=161pt]{class_rifleman_squad__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Rifleman\+Squad\+:\nopagebreak
+Collaboration diagram for Rifleman\+Squad\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_rifleman_squad__coll__graph}
+\includegraphics[width=268pt]{class_rifleman_squad__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -108,6 +110,52 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{check\+Affordability}} ()
 \item 
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{is\+Active}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_a89ee254b90eeb21758d020cc104f33bb}{init\+Rifleman}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the rifleman unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_aec9e4f9f68a5fad7659d6049b4e39f33}{movement}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em This units movement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_a7c3e8af94a164eb09eecf4e5a353b341}{update\+Formation}} ()
+\begin{DoxyCompactList}\small\item\em To updates the formation of this unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_abe893d665c59fa722e6032c353783eba}{take\+Damage\+Squad}} ()
+\begin{DoxyCompactList}\small\item\em when the unit takes damage the enities die \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_aa2571002b32803cd78e5e91066fc43ee}{squad\+Entity\+Removal}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{override}}
+\begin{DoxyCompactList}\small\item\em Removes the enities from the squad. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_af71cd490983e3f33b503c4af6f58911f}{squad\+Entity\+Regain}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{override}}
+\begin{DoxyCompactList}\small\item\em Ragains the squad members. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_rifleman_squad_afe03ca4ff7509dd205e6ba283541e532}{aim\+At}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\+\_\+enemy\+Units}})
+\begin{DoxyCompactList}\small\item\em Tries to aim and shoots at the target with the squad members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ sf\+::\+Sprite $>$ \mbox{\hyperlink{class_rifleman_squad_a7d913484f0e0e181dfbdc945935f279d}{m\+\_\+entities}}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_rifleman_squad_a19641156aa220dfb09a0cf3a8b4bf733}{m\+\_\+offsets}}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_rifleman_squad_a3c509cbb06dc31bc8b31d8f0bc998a04}{m\+\_\+target\+Positions}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_rifleman_squad_aeb92f55821a5079f7182f4ac99ea64f1}{m\+\_\+previous\+Position}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_rifleman_squad_a56de58c92040a44a36539f7067c82ab1}{m\+\_\+number\+Of\+Soldiers}} = 4
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_rifleman_squad_a49c6bc4911df1ca3713b831535cec9aa}{m\+\_\+scatter\+Radius}} = 30.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_rifleman_squad_a8ba182abc11aedbcb76667426c21dcfa}{m\+\_\+shots\+Fired}} = 0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_rifleman_squad_a8438a5efb51740c7e30088adcc55550b}{m\+\_\+clip\+Size}} = 4
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_rifleman_squad_a39e7ed58fdac28b7b9578e7a2fa6dbdc}{m\+\_\+reload\+Time}} = 2.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_rifleman_squad_a1719f7e8b09f5728439d3b5b6d9ba27f}{m\+\_\+fire\+Rate}} = 0.\+2\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_rifleman_squad_a512b97db446f9cda32447d7ab449735b}{m\+\_\+fire\+Timer}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_rifleman_squad_a00c449c44b4d3e327129eac35cc305a2}{m\+\_\+reload\+Timer}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_rifleman_squad_a0af871f103df2e4fc46f4a52ace8507c}{m\+\_\+is\+Reloading}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
@@ -257,7 +305,8 @@ Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00004}{4}} of fil
 
 Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,6 +326,41 @@ Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00017}{17}} of 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_rifleman_squad_afe03ca4ff7509dd205e6ba283541e532}\label{class_rifleman_squad_afe03ca4ff7509dd205e6ba283541e532} 
+\index{RiflemanSquad@{RiflemanSquad}!aimAt@{aimAt}}
+\index{aimAt@{aimAt}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{aimAt()}{aimAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::aim\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+enemy\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tries to aim and shoots at the target with the squad members. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+enemy\+Units} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_afe03ca4ff7509dd205e6ba283541e532_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_rifleman_squad_afe03ca4ff7509dd205e6ba283541e532_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_rifleman_squad_a2a26c952ec93d222bc6f2e3ba5420f17}\label{class_rifleman_squad_a2a26c952ec93d222bc6f2e3ba5420f17} 
 \index{RiflemanSquad@{RiflemanSquad}!getUnitType@{getUnitType}}
 \index{getUnitType@{getUnitType}!RiflemanSquad@{RiflemanSquad}}
@@ -291,6 +375,28 @@ Implements \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{Unit}}
 
 Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00016}{16}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
 
+\Hypertarget{class_rifleman_squad_a89ee254b90eeb21758d020cc104f33bb}\label{class_rifleman_squad_a89ee254b90eeb21758d020cc104f33bb} 
+\index{RiflemanSquad@{RiflemanSquad}!initRifleman@{initRifleman}}
+\index{initRifleman@{initRifleman}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{initRifleman()}{initRifleman()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::init\+Rifleman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the rifleman unit. 
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_a89ee254b90eeb21758d020cc104f33bb_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc}\label{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc} 
 \index{RiflemanSquad@{RiflemanSquad}!initSquad@{initSquad}}
 \index{initSquad@{initSquad}!RiflemanSquad@{RiflemanSquad}}
@@ -305,11 +411,47 @@ Initialize unit squad enities.
 
 Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_rifleman_squad_aeb84975bb73352fc2c903ffa9f4c67bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rifleman_squad_aec9e4f9f68a5fad7659d6049b4e39f33}\label{class_rifleman_squad_aec9e4f9f68a5fad7659d6049b4e39f33} 
+\index{RiflemanSquad@{RiflemanSquad}!movement@{movement}}
+\index{movement@{movement}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{movement()}{movement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This units movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_aec9e4f9f68a5fad7659d6049b4e39f33_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_aec9e4f9f68a5fad7659d6049b4e39f33_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c}\label{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c} 
@@ -335,13 +477,72 @@ Reimplemented from \mbox{\hyperlink{class_infantry_unit_aca40a05689745fe6a675009
 
 Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_rifleman_squad_a68f0295ba704a7db0cb475369e48c42c_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_rifleman_squad_af71cd490983e3f33b503c4af6f58911f}\label{class_rifleman_squad_af71cd490983e3f33b503c4af6f58911f} 
+\index{RiflemanSquad@{RiflemanSquad}!squadEntityRegain@{squadEntityRegain}}
+\index{squadEntityRegain@{squadEntityRegain}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{squadEntityRegain()}{squadEntityRegain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::squad\+Entity\+Regain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Ragains the squad members. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unit_af7a77a1a93ec9b047a84435989890e86}{Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+\Hypertarget{class_rifleman_squad_aa2571002b32803cd78e5e91066fc43ee}\label{class_rifleman_squad_aa2571002b32803cd78e5e91066fc43ee} 
+\index{RiflemanSquad@{RiflemanSquad}!squadEntityRemoval@{squadEntityRemoval}}
+\index{squadEntityRemoval@{squadEntityRemoval}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{squadEntityRemoval()}{squadEntityRemoval()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::squad\+Entity\+Removal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Removes the enities from the squad. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unit_a9404b2fd942b1ada3796dd00ab7855c1}{Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_aa2571002b32803cd78e5e91066fc43ee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_rifleman_squad_abe893d665c59fa722e6032c353783eba}\label{class_rifleman_squad_abe893d665c59fa722e6032c353783eba} 
+\index{RiflemanSquad@{RiflemanSquad}!takeDamageSquad@{takeDamageSquad}}
+\index{takeDamageSquad@{takeDamageSquad}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{takeDamageSquad()}{takeDamageSquad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::take\+Damage\+Squad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+when the unit takes damage the enities die 
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
 \Hypertarget{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34}\label{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34} 
 \index{RiflemanSquad@{RiflemanSquad}!update@{update}}
 \index{update@{update}!RiflemanSquad@{RiflemanSquad}}
@@ -356,16 +557,172 @@ Reimplemented from \mbox{\hyperlink{class_infantry_unit_aabd1427d781ff0e5ae2b21b
 
 Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_rifleman_squad_a4050724b94874b38c91944bbf319cc34_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_rifleman_squad_a7c3e8af94a164eb09eecf4e5a353b341}\label{class_rifleman_squad_a7c3e8af94a164eb09eecf4e5a353b341} 
+\index{RiflemanSquad@{RiflemanSquad}!updateFormation@{updateFormation}}
+\index{updateFormation@{updateFormation}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{updateFormation()}{updateFormation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Rifleman\+Squad\+::update\+Formation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+To updates the formation of this unit. 
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_rifleman_squad_8cpp_source}{Rifleman\+Squad.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rifleman_squad_a7c3e8af94a164eb09eecf4e5a353b341_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_rifleman_squad_a8438a5efb51740c7e30088adcc55550b}\label{class_rifleman_squad_a8438a5efb51740c7e30088adcc55550b} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_clipSize@{m\_clipSize}}
+\index{m\_clipSize@{m\_clipSize}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_clipSize}{m\_clipSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Rifleman\+Squad\+::m\+\_\+clip\+Size = 4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00042}{42}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a7d913484f0e0e181dfbdc945935f279d}\label{class_rifleman_squad_a7d913484f0e0e181dfbdc945935f279d} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_entities@{m\_entities}}
+\index{m\_entities@{m\_entities}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_entities}{m\_entities}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sprite$>$ Rifleman\+Squad\+::m\+\_\+entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00030}{30}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a1719f7e8b09f5728439d3b5b6d9ba27f}\label{class_rifleman_squad_a1719f7e8b09f5728439d3b5b6d9ba27f} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_fireRate@{m\_fireRate}}
+\index{m\_fireRate@{m\_fireRate}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_fireRate}{m\_fireRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Rifleman\+Squad\+::m\+\_\+fire\+Rate = 0.\+2\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{f}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00044}{44}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a512b97db446f9cda32447d7ab449735b}\label{class_rifleman_squad_a512b97db446f9cda32447d7ab449735b} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_fireTimer@{m\_fireTimer}}
+\index{m\_fireTimer@{m\_fireTimer}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_fireTimer}{m\_fireTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Rifleman\+Squad\+::m\+\_\+fire\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00045}{45}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a0af871f103df2e4fc46f4a52ace8507c}\label{class_rifleman_squad_a0af871f103df2e4fc46f4a52ace8507c} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_isReloading@{m\_isReloading}}
+\index{m\_isReloading@{m\_isReloading}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_isReloading}{m\_isReloading}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Rifleman\+Squad\+::m\+\_\+is\+Reloading = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00047}{47}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a56de58c92040a44a36539f7067c82ab1}\label{class_rifleman_squad_a56de58c92040a44a36539f7067c82ab1} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_numberOfSoldiers@{m\_numberOfSoldiers}}
+\index{m\_numberOfSoldiers@{m\_numberOfSoldiers}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_numberOfSoldiers}{m\_numberOfSoldiers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Rifleman\+Squad\+::m\+\_\+number\+Of\+Soldiers = 4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00037}{37}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a19641156aa220dfb09a0cf3a8b4bf733}\label{class_rifleman_squad_a19641156aa220dfb09a0cf3a8b4bf733} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_offsets@{m\_offsets}}
+\index{m\_offsets@{m\_offsets}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_offsets}{m\_offsets}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Vector2f$>$ Rifleman\+Squad\+::m\+\_\+offsets\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00031}{31}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_aeb92f55821a5079f7182f4ac99ea64f1}\label{class_rifleman_squad_aeb92f55821a5079f7182f4ac99ea64f1} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_previousPosition@{m\_previousPosition}}
+\index{m\_previousPosition@{m\_previousPosition}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_previousPosition}{m\_previousPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Rifleman\+Squad\+::m\+\_\+previous\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00035}{35}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a39e7ed58fdac28b7b9578e7a2fa6dbdc}\label{class_rifleman_squad_a39e7ed58fdac28b7b9578e7a2fa6dbdc} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_reloadTime@{m\_reloadTime}}
+\index{m\_reloadTime@{m\_reloadTime}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_reloadTime}{m\_reloadTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Rifleman\+Squad\+::m\+\_\+reload\+Time = 2.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00043}{43}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a00c449c44b4d3e327129eac35cc305a2}\label{class_rifleman_squad_a00c449c44b4d3e327129eac35cc305a2} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_reloadTimer@{m\_reloadTimer}}
+\index{m\_reloadTimer@{m\_reloadTimer}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_reloadTimer}{m\_reloadTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Rifleman\+Squad\+::m\+\_\+reload\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00046}{46}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a49c6bc4911df1ca3713b831535cec9aa}\label{class_rifleman_squad_a49c6bc4911df1ca3713b831535cec9aa} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_scatterRadius@{m\_scatterRadius}}
+\index{m\_scatterRadius@{m\_scatterRadius}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_scatterRadius}{m\_scatterRadius}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Rifleman\+Squad\+::m\+\_\+scatter\+Radius = 30.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00039}{39}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a8ba182abc11aedbcb76667426c21dcfa}\label{class_rifleman_squad_a8ba182abc11aedbcb76667426c21dcfa} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_shotsFired@{m\_shotsFired}}
+\index{m\_shotsFired@{m\_shotsFired}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_shotsFired}{m\_shotsFired}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Rifleman\+Squad\+::m\+\_\+shots\+Fired = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00041}{41}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
+\Hypertarget{class_rifleman_squad_a3c509cbb06dc31bc8b31d8f0bc998a04}\label{class_rifleman_squad_a3c509cbb06dc31bc8b31d8f0bc998a04} 
+\index{RiflemanSquad@{RiflemanSquad}!m\_targetPositions@{m\_targetPositions}}
+\index{m\_targetPositions@{m\_targetPositions}!RiflemanSquad@{RiflemanSquad}}
+\doxysubsubsection{\texorpdfstring{m\_targetPositions}{m\_targetPositions}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Vector2f$>$ Rifleman\+Squad\+::m\+\_\+target\+Positions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_rifleman_squad_8h_source_l00033}{33}} of file \mbox{\hyperlink{_rifleman_squad_8h_source}{Rifleman\+Squad.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_rifleman_squad_8h}{Rifleman\+Squad.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_rifleman_squad_8cpp}{Rifleman\+Squad.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_rifleman_squad_8h}{Rifleman\+Squad.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_rifleman_squad_8cpp}{Rifleman\+Squad.\+cpp}}\end{DoxyCompactItemize}

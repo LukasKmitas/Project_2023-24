@@ -1,5 +1,11 @@
 <map id="GUI::handleBuildingSelection" name="GUI::handleBuildingSelection">
-<area shape="rect" id="Node000001" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="211,5,400,32"/>
-<area shape="rect" id="Node000002" href="$class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="5,5,163,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,21,163,21,163,16,195,16"/>
+<area shape="rect" id="Node000001" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

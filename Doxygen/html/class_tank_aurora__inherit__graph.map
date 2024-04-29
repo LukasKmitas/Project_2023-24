@@ -1,7 +1,7 @@
 <map id="TankAurora" name="TankAurora">
-<area shape="rect" id="Node000001" title=" " alt="" coords="89,2288,549,2443"/>
-<area shape="rect" id="Node000002" href="$class_vehicle_unit.html" title=" " alt="" coords="86,2107,553,2240"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,2255,322,2288,317,2288,317,2255"/>
-<area shape="rect" id="Node000003" href="$class_unit.html" title=" " alt="" coords="5,5,633,2059"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,2074,322,2107,317,2107,317,2074"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,93,181"/>
+<area shape="rect" id="Node000002" href="$class_vehicle_unit.html" title=" " alt="" coords="5,80,93,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,122,52,154,46,154,46,122"/>
+<area shape="rect" id="Node000003" href="$class_unit.html" title=" " alt="" coords="27,5,71,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="52,48,52,80,46,80,46,48"/>
 </map>

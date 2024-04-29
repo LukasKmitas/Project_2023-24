@@ -1,5 +1,9 @@
 <map id="NeuralNetworks::drawNeuralPerceptron" name="NeuralNetworks::drawNeuralPerceptron">
-<area shape="rect" id="Node000001" title="Draws the Neural Perceptrons." alt="" coords="5,5,253,32"/>
-<area shape="rect" id="Node000002" href="$class_neural_networks.html#a9e7d65e2f7cf81bd065bf022ff3a70cc" title="Draws the text for the weight on each perceptron." alt="" coords="301,5,514,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,16,285,16,285,21,253,21"/>
+<area shape="rect" id="Node000001" title="Draws the Neural Perceptrons." alt="" coords="5,56,190,99"/>
+<area shape="rect" id="Node000002" href="$class_neural_networks.html#a9e7d65e2f7cf81bd065bf022ff3a70cc" title="Draws the text for the weight on each perceptron." alt="" coords="238,5,451,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,53,269,34,271,39,191,58"/>
+<area shape="rect" id="Node000003" href="$class_neural_networks.html#a850cd48ec50a90e6d66424194b872961" title=" " alt="" coords="275,56,414,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,75,260,75,260,80,190,80"/>
+<area shape="rect" id="Node000004" href="$class_neural_networks.html#a637911933853ff9586f60b1282a1e209" title=" " alt="" coords="275,123,414,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="180,97,261,119,259,124,178,102"/>
 </map>

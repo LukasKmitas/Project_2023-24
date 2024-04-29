@@ -1,11 +1,26 @@
 <map id="SoundManager::playMusic" name="SoundManager::playMusic">
-<area shape="rect" id="Node000001" title="plays music" alt="" coords="523,31,698,57"/>
-<area shape="rect" id="Node000002" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="301,5,450,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,36,450,29,451,24,508,30"/>
-<area shape="rect" id="Node000003" href="$class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="276,56,475,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="508,58,476,61,475,56,507,52"/>
-<area shape="rect" id="Node000004" href="$class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="19,31,214,57"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,61,214,56,214,51,260,55"/>
-<area shape="rect" id="Node000005" href="$class_sound_manager.html#a237964589201c404a015660fe601eff5" title="updates the track when the current one stops playing" alt="" coords="5,81,228,108"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="261,83,228,86,228,81,260,78"/>
+<area shape="rect" id="Node000001" title="plays music" alt="" coords="920,81,1095,108"/>
+<area shape="rect" id="Node000002" href="$class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="442,5,613,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="962,77,919,60,871,47,805,35,736,27,614,21,614,16,737,22,805,29,873,41,921,55,964,72"/>
+<area shape="rect" id="Node000006" href="$class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="679,56,866,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="904,86,866,82,866,77,905,81"/>
+<area shape="rect" id="Node000007" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="698,107,847,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="905,108,848,115,847,109,904,103"/>
+<area shape="rect" id="Node000008" href="$class_sound_manager.html#a4df606df9541a5513e5dcfd16f4b68b3" title="plays the next track for music if there is any" alt="" coords="673,157,872,184"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="959,117,873,148,833,159,831,154,871,143,957,112"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,81,382,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="470,40,431,53,348,83,346,78,429,48,469,35"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,111,185,137"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="218,113,186,119,185,114,217,108"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,111,55,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,127,55,127,55,121,87,121"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="664,78,383,93,383,88,663,73"/>
+<area shape="rect" id="Node000009" href="$class_main_menu.html#a21a5eef38283b271749a28bc954fbddd" title="handles the button presses" alt="" coords="430,107,625,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="689,156,595,137,596,131,690,151"/>
+<area shape="rect" id="Node000010" href="$class_sound_manager.html#a237964589201c404a015660fe601eff5" title="updates the track when the current one stops playing" alt="" coords="432,157,623,200"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="657,177,623,178,623,173,657,172"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="415,110,383,106,383,101,416,104"/>
+<area shape="rect" id="Node000011" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,136,359,163"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="417,167,359,159,360,154,418,161"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="240,142,185,133,186,128,241,136"/>
 </map>

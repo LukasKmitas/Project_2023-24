@@ -4,19 +4,10 @@
 
 {\ttfamily \#include $<$Missile.\+h$>$}
 
-
-
-Collaboration diagram for Missile\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_missile__coll__graph}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_missile_a25d8466b301870323b86fdc0e35c77d1}{Missile}} (const sf\+::\+Vector2f \&m\+\_\+start\+Position, const sf\+::\+Vector2f \&m\+\_\+target\+Direction, float m\+\_\+speed, const sf\+::\+Texture \&m\+\_\+texture)
+\mbox{\hyperlink{class_missile_a25d8466b301870323b86fdc0e35c77d1}{Missile}} (const sf\+::\+Vector2f \&m\+\_\+start\+Position, const sf\+::\+Vector2f \&m\+\_\+target\+Direction, float \mbox{\hyperlink{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}{m\+\_\+speed}}, const sf\+::\+Texture \&m\+\_\+texture)
 \item 
 void \mbox{\hyperlink{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
 \item 
@@ -34,6 +25,30 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_missile_aee138dea114b6d8f0aec3bb95ea71f5
 float \mbox{\hyperlink{class_missile_aafe7b25d0667b74143dbfdd07554a405}{m\+\_\+damage}} = 80.\+0f
 \item 
 bool \mbox{\hyperlink{class_missile_a5a76ffc8a6a752422cd49a278bcb410e}{m\+\_\+active}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_ab164b28b9ea28828cd2f95b2b171f57d}{normalize}} (const sf\+::\+Vector2f \&m\+\_\+source) const
+\item 
+void \mbox{\hyperlink{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311}{update\+Trail}} (sf\+::\+Time t\+\_\+delta\+Time)
+\item 
+sf\+::\+Color \mbox{\hyperlink{class_missile_ac379538d83d074fb53e5354ba7edb05a}{lerp\+Color}} (const sf\+::\+Color \&m\+\_\+start, const sf\+::\+Color \&m\+\_\+end, float m\+\_\+life\+Time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}{m\+\_\+velocity}}
+\item 
+float \mbox{\hyperlink{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}{m\+\_\+speed}}
+\item 
+float \mbox{\hyperlink{class_missile_a7bc5442b92cff6c9350b5496bfc2ae3e}{m\+\_\+lifetime}} = 3.\+0f
+\item 
+float \mbox{\hyperlink{class_missile_a6ccf607f9d2fe8044b86182c3c9710c9}{m\+\_\+trail\+Max\+Lifetime}} = 2.\+0f
+\item 
+float \mbox{\hyperlink{class_missile_a83edd34480c21b85b0003866e26b47f1}{m\+\_\+time\+Since\+Last\+Trail\+Part}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_missile_a970cb70efd57dfa44e3fc57e5d1ff035}{m\+\_\+add\+Trail\+Part\+Interval}} = 0.\+05f
 \end{DoxyCompactItemize}
 
 
@@ -55,9 +70,53 @@ Definition at line \mbox{\hyperlink{_missile_8h_source_l00014}{14}} of file \mbo
 
 Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_missile_a25d8466b301870323b86fdc0e35c77d1_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_missile_ac379538d83d074fb53e5354ba7edb05a}\label{class_missile_ac379538d83d074fb53e5354ba7edb05a} 
+\index{Missile@{Missile}!lerpColor@{lerpColor}}
+\index{lerpColor@{lerpColor}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{lerpColor()}{lerpColor()}}
+{\footnotesize\ttfamily sf\+::\+Color Missile\+::lerp\+Color (\begin{DoxyParamCaption}\item[{const sf\+::\+Color \&}]{m\+\_\+start,  }\item[{const sf\+::\+Color \&}]{m\+\_\+end,  }\item[{float}]{m\+\_\+life\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_missile_ac379538d83d074fb53e5354ba7edb05a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_missile_ab164b28b9ea28828cd2f95b2b171f57d}\label{class_missile_ab164b28b9ea28828cd2f95b2b171f57d} 
+\index{Missile@{Missile}!normalize@{normalize}}
+\index{normalize@{normalize}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::normalize (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+source }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_missile_ab164b28b9ea28828cd2f95b2b171f57d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_missile_a3cdc5856688cad7c20ca665d4c41fd95}\label{class_missile_a3cdc5856688cad7c20ca665d4c41fd95} 
 \index{Missile@{Missile}!render@{render}}
 \index{render@{render}!Missile@{Missile}}
@@ -78,6 +137,40 @@ Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00032}{32}} of file \m
 
 Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_missile_a8ea67bbd5665a9fa841e43990d2bd1fc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311}\label{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311} 
+\index{Missile@{Missile}!updateTrail@{updateTrail}}
+\index{updateTrail@{updateTrail}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{updateTrail()}{updateTrail()}}
+{\footnotesize\ttfamily void Missile\+::update\+Trail (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_missile_8cpp_source}{Missile.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_missile_a6a780e6e4661b6c9e40fc6d4b2335311_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -91,6 +184,16 @@ Definition at line \mbox{\hyperlink{_missile_8cpp_source_l00013}{13}} of file \m
 
 Definition at line \mbox{\hyperlink{_missile_8h_source_l00030}{30}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
 
+\Hypertarget{class_missile_a970cb70efd57dfa44e3fc57e5d1ff035}\label{class_missile_a970cb70efd57dfa44e3fc57e5d1ff035} 
+\index{Missile@{Missile}!m\_addTrailPartInterval@{m\_addTrailPartInterval}}
+\index{m\_addTrailPartInterval@{m\_addTrailPartInterval}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_addTrailPartInterval}{m\_addTrailPartInterval}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+add\+Trail\+Part\+Interval = 0.\+05f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00045}{45}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
 \Hypertarget{class_missile_aafe7b25d0667b74143dbfdd07554a405}\label{class_missile_aafe7b25d0667b74143dbfdd07554a405} 
 \index{Missile@{Missile}!m\_damage@{m\_damage}}
 \index{m\_damage@{m\_damage}!Missile@{Missile}}
@@ -100,6 +203,16 @@ Definition at line \mbox{\hyperlink{_missile_8h_source_l00030}{30}} of file \mbo
 
 
 Definition at line \mbox{\hyperlink{_missile_8h_source_l00028}{28}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_a7bc5442b92cff6c9350b5496bfc2ae3e}\label{class_missile_a7bc5442b92cff6c9350b5496bfc2ae3e} 
+\index{Missile@{Missile}!m\_lifetime@{m\_lifetime}}
+\index{m\_lifetime@{m\_lifetime}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_lifetime}{m\_lifetime}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+lifetime = 3.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00041}{41}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
 
 \Hypertarget{class_missile_abf5d5f4c81b664e09c50fe9f86a09af0}\label{class_missile_abf5d5f4c81b664e09c50fe9f86a09af0} 
 \index{Missile@{Missile}!m\_missileSprite@{m\_missileSprite}}
@@ -121,6 +234,26 @@ Definition at line \mbox{\hyperlink{_missile_8h_source_l00023}{23}} of file \mbo
 
 Definition at line \mbox{\hyperlink{_missile_8h_source_l00026}{26}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
 
+\Hypertarget{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd}\label{class_missile_ae3d54aa52663b42c2e0eb3360b62c8dd} 
+\index{Missile@{Missile}!m\_speed@{m\_speed}}
+\index{m\_speed@{m\_speed}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_speed}{m\_speed}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00040}{40}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_a83edd34480c21b85b0003866e26b47f1}\label{class_missile_a83edd34480c21b85b0003866e26b47f1} 
+\index{Missile@{Missile}!m\_timeSinceLastTrailPart@{m\_timeSinceLastTrailPart}}
+\index{m\_timeSinceLastTrailPart@{m\_timeSinceLastTrailPart}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_timeSinceLastTrailPart}{m\_timeSinceLastTrailPart}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+time\+Since\+Last\+Trail\+Part = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00044}{44}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
 \Hypertarget{class_missile_adf7d4afadcf566497356538cdbbd4efa}\label{class_missile_adf7d4afadcf566497356538cdbbd4efa} 
 \index{Missile@{Missile}!m\_trail@{m\_trail}}
 \index{m\_trail@{m\_trail}!Missile@{Missile}}
@@ -131,9 +264,29 @@ Definition at line \mbox{\hyperlink{_missile_8h_source_l00026}{26}} of file \mbo
 
 Definition at line \mbox{\hyperlink{_missile_8h_source_l00024}{24}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
 
+\Hypertarget{class_missile_a6ccf607f9d2fe8044b86182c3c9710c9}\label{class_missile_a6ccf607f9d2fe8044b86182c3c9710c9} 
+\index{Missile@{Missile}!m\_trailMaxLifetime@{m\_trailMaxLifetime}}
+\index{m\_trailMaxLifetime@{m\_trailMaxLifetime}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_trailMaxLifetime}{m\_trailMaxLifetime}}
+{\footnotesize\ttfamily float Missile\+::m\+\_\+trail\+Max\+Lifetime = 2.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00043}{43}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
+\Hypertarget{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}\label{class_missile_aa36d8d7569ae95104fed5ed1a0b90440} 
+\index{Missile@{Missile}!m\_velocity@{m\_velocity}}
+\index{m\_velocity@{m\_velocity}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{m\_velocity}{m\_velocity}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::m\+\_\+velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_missile_8h_source_l00039}{39}} of file \mbox{\hyperlink{_missile_8h_source}{Missile.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_missile_8h}{Missile.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_missile_8cpp}{Missile.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_missile_8h}{Missile.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_missile_8cpp}{Missile.\+cpp}}\end{DoxyCompactItemize}

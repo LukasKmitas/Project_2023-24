@@ -1,5 +1,7 @@
 <map id="Barracks::Barracks" name="Barracks::Barracks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,139,57"/>
 <area shape="rect" id="Node000002" href="$class_building.html#a3bf6b4a376aae64bbf1c310ed4ba345f" title="sets the placement radius" alt="" coords="187,5,408,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,34,171,30,171,36,139,39"/>
+<area shape="rect" id="Node000003" href="$class_barracks.html#a5e6a04612f180ebeaa095182ef19a217" title="initializes the barracks building" alt="" coords="224,56,371,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,49,208,57,208,62,139,54"/>
 </map>

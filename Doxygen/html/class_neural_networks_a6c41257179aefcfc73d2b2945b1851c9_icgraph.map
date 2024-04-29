@@ -1,5 +1,5 @@
 <map id="NeuralNetworks::getHiddenNeurons" name="NeuralNetworks::getHiddenNeurons">
-<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,379,32"/>
-<area shape="rect" id="Node000002" href="$class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,331,48"/>
+<area shape="rect" id="Node000002" href="$class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,13,105,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,29,105,29,105,24,137,24"/>
 </map>

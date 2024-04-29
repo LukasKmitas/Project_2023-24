@@ -1,5 +1,11 @@
 <map id="SideBar::update" name="SideBar::update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="144,5,258,32"/>
-<area shape="rect" id="Node000002" href="$class_g_u_i.html#af0c6878a7e490283c94e9d71c05ca479" title="updates GUi content" alt="" coords="5,5,96,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,21,96,21,96,16,128,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="523,5,637,32"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#af0c6878a7e490283c94e9d71c05ca479" title="updates GUi content" alt="" coords="384,5,475,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,21,475,21,475,16,507,16"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

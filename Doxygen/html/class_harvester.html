@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -96,6 +96,8 @@ $(function(){initNavTree('class_harvester.html',''); initResizable(); });
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_harvester-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Harvester Class Reference</div></div>
 </div><!--header-->
@@ -105,12 +107,35 @@ $(function(){initNavTree('class_harvester.html',''); initResizable(); });
 <div class="dynheader">
 Inheritance diagram for Harvester:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_harvester__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_harvester__inherit__graph.png" border="0" usemap="#a_harvester_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_harvester_inherit__map" id="a_harvester_inherit__map">
+<area shape="rect" title=" " alt="" coords="11,155,87,181"/>
+<area shape="rect" href="class_vehicle_unit.html" title=" " alt="" coords="5,80,93,107"/>
+<area shape="poly" title=" " alt="" coords="52,122,52,154,46,154,46,122"/>
+<area shape="rect" href="class_unit.html" title=" " alt="" coords="27,5,71,32"/>
+<area shape="poly" title=" " alt="" coords="52,48,52,80,46,80,46,48"/>
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Harvester:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_harvester__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_harvester__coll__graph.png" border="0" usemap="#a_harvester_coll__map" alt="Collaboration graph"/></div>
+<map name="a_harvester_coll__map" id="a_harvester_coll__map">
+<area shape="rect" title=" " alt="" coords="126,364,201,391"/>
+<area shape="rect" href="class_vehicle_unit.html" title=" " alt="" coords="68,288,155,315"/>
+<area shape="poly" title=" " alt="" coords="131,325,157,362,152,365,126,329"/>
+<area shape="rect" href="class_unit.html" title=" " alt="" coords="17,187,61,213"/>
+<area shape="poly" title=" " alt="" coords="59,225,105,286,100,289,55,228"/>
+<area shape="poly" title=" " alt="" coords="78,190,85,193,88,200,79,210,62,211,62,205,77,205,83,200,81,197,76,195"/>
+<area shape="rect" href="class_particle_system.html" title=" " alt="" coords="5,5,116,32"/>
+<area shape="poly" title=" " alt="" coords="60,48,43,187,38,186,55,47"/>
+<area shape="rect" href="class_building.html" title=" " alt="" coords="172,96,240,123"/>
+<area shape="poly" title=" " alt="" coords="95,38,186,93,184,98,93,43"/>
+<area shape="poly" title=" " alt="" coords="158,125,129,135,100,149,73,168,52,188,49,184,70,164,97,144,127,130,156,120"/>
+<area shape="rect" href="class_refinery.html" title=" " alt="" coords="186,237,255,264"/>
+<area shape="poly" title=" " alt="" coords="211,138,222,237,217,237,206,138"/>
+<area shape="poly" title=" " alt="" coords="211,279,171,364,167,362,206,277"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -242,6 +267,52 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a379a6747751f51625a437e939ffe8ea6 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35ac8605f1b8096de7d1aa72222b43c inherit pub_attribs_class_unit" id="r_ad35ac8605f1b8096de7d1aa72222b43c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ad35ac8605f1b8096de7d1aa72222b43c">m_isEnemy</a> = <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">false</a></td></tr>
 <tr class="separator:ad35ac8605f1b8096de7d1aa72222b43c inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a380cd21f372be1fef95855d46118b9c5" id="r_a380cd21f372be1fef95855d46118b9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a380cd21f372be1fef95855d46118b9c5">movement</a> (sf::Time <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">t_deltaTime</a>)</td></tr>
+<tr class="separator:a380cd21f372be1fef95855d46118b9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7a6421a668ae260ddc1e22288ec247" id="r_aad7a6421a668ae260ddc1e22288ec247"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad7a6421a668ae260ddc1e22288ec247">findNearestResourceTile</a> ()</td></tr>
+<tr class="memdesc:aad7a6421a668ae260ddc1e22288ec247"><td class="mdescLeft">&#160;</td><td class="mdescRight">To find the nearest resource tile.  <br /></td></tr>
+<tr class="separator:aad7a6421a668ae260ddc1e22288ec247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a629f240ea9ef21e216d12c0bd091de18" id="r_a629f240ea9ef21e216d12c0bd091de18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a629f240ea9ef21e216d12c0bd091de18">findNearestRefinery</a> ()</td></tr>
+<tr class="memdesc:a629f240ea9ef21e216d12c0bd091de18"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds the nearest refinery building  <br /></td></tr>
+<tr class="separator:a629f240ea9ef21e216d12c0bd091de18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c277310ee495801175d1ebad4885810" id="r_a0c277310ee495801175d1ebad4885810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c277310ee495801175d1ebad4885810">gettingResourcePosition</a> (<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;<a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_resourcePos</a>)</td></tr>
+<tr class="memdesc:a0c277310ee495801175d1ebad4885810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the resource position.  <br /></td></tr>
+<tr class="separator:a0c277310ee495801175d1ebad4885810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a51b5a6aa50fbb95ebf3938df6789b7" id="r_a5a51b5a6aa50fbb95ebf3938df6789b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a51b5a6aa50fbb95ebf3938df6789b7">moveToRefinery</a> (<a class="el" href="class_refinery.html">Refinery</a> *m_refinery)</td></tr>
+<tr class="memdesc:a5a51b5a6aa50fbb95ebf3938df6789b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves to the refinery position.  <br /></td></tr>
+<tr class="separator:a5a51b5a6aa50fbb95ebf3938df6789b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93a262fb071b1ba135856671932ba32" id="r_ae93a262fb071b1ba135856671932ba32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae93a262fb071b1ba135856671932ba32">unloadResources</a> (sf::Time <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">t_deltaTime</a>)</td></tr>
+<tr class="memdesc:ae93a262fb071b1ba135856671932ba32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads the resouceses it collected.  <br /></td></tr>
+<tr class="separator:ae93a262fb071b1ba135856671932ba32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abe99ee36568b600fbc3001f2f87c9f" id="r_a5abe99ee36568b600fbc3001f2f87c9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5abe99ee36568b600fbc3001f2f87c9f">isAtTargetPosition</a> ()</td></tr>
+<tr class="memdesc:a5abe99ee36568b600fbc3001f2f87c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if its at target  <br /></td></tr>
+<tr class="separator:a5abe99ee36568b600fbc3001f2f87c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00dff9d40d7ed37de424052e3dad5986" id="r_a00dff9d40d7ed37de424052e3dad5986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00dff9d40d7ed37de424052e3dad5986">isAtRefinery</a> ()</td></tr>
+<tr class="memdesc:a00dff9d40d7ed37de424052e3dad5986"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if its at the refinery building  <br /></td></tr>
+<tr class="separator:a00dff9d40d7ed37de424052e3dad5986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9695c5e1d4049502f2e2fc7fbb3dcea" id="r_aa9695c5e1d4049502f2e2fc7fbb3dcea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9695c5e1d4049502f2e2fc7fbb3dcea">initHarvester</a> ()</td></tr>
+<tr class="memdesc:aa9695c5e1d4049502f2e2fc7fbb3dcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the harvester unit  <br /></td></tr>
+<tr class="separator:aa9695c5e1d4049502f2e2fc7fbb3dcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9fac18dee40342e65bc2d27021599369" id="r_a9fac18dee40342e65bc2d27021599369"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_refinery.html">Refinery</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fac18dee40342e65bc2d27021599369">m_targetRefinery</a> = <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">nullptr</a></td></tr>
+<tr class="separator:a9fac18dee40342e65bc2d27021599369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f4888d9155e5ca09777afd56d6227a" id="r_ae4f4888d9155e5ca09777afd56d6227a"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4f4888d9155e5ca09777afd56d6227a">m_resourcePosition</a></td></tr>
+<tr class="separator:ae4f4888d9155e5ca09777afd56d6227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959220fcb14b566ae0eb11777f1b3b74" id="r_a959220fcb14b566ae0eb11777f1b3b74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> std::vector&lt; <a class="el" href="class_building.html">Building</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a959220fcb14b566ae0eb11777f1b3b74">m_allBuildings</a></td></tr>
+<tr class="separator:a959220fcb14b566ae0eb11777f1b3b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa273c47ab04e6138208d82f1a5df3f67" id="r_aa273c47ab04e6138208d82f1a5df3f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa273c47ab04e6138208d82f1a5df3f67">m_collectionRate</a> = 4.0f</td></tr>
+<tr class="separator:aa273c47ab04e6138208d82f1a5df3f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374b01d8571131ccc10f1fb843d3633a" id="r_a374b01d8571131ccc10f1fb843d3633a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a374b01d8571131ccc10f1fb843d3633a">m_maxResourceCapacity</a> = 100.0f</td></tr>
+<tr class="separator:a374b01d8571131ccc10f1fb843d3633a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717325c72165a0496eaf89c0d012584b" id="r_a717325c72165a0496eaf89c0d012584b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a717325c72165a0496eaf89c0d012584b">m_currentResourceLoad</a> = 0.0f</td></tr>
+<tr class="separator:a717325c72165a0496eaf89c0d012584b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0482babcd564b86b154ad3b5a4b189" id="r_a4c0482babcd564b86b154ad3b5a4b189"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c0482babcd564b86b154ad3b5a4b189">m_foundResource</a> = <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">false</a></td></tr>
+<tr class="separator:a4c0482babcd564b86b154ad3b5a4b189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -408,6 +479,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00003">3</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_aa28e963eb2df851da302a3ce7b352b42_cgraph.png" border="0" usemap="#aclass_harvester_aa28e963eb2df851da302a3ce7b352b42_cgraph" alt=""/></div>
+<map name="aclass_harvester_aa28e963eb2df851da302a3ce7b352b42_cgraph" id="aclass_harvester_aa28e963eb2df851da302a3ce7b352b42_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,143,32"/>
+<area shape="rect" href="class_harvester.html#aa9695c5e1d4049502f2e2fc7fbb3dcea" title="initializes the harvester unit" alt="" coords="191,5,345,32"/>
+<area shape="poly" title=" " alt="" coords="143,16,175,16,175,21,143,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -431,6 +512,163 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a629f240ea9ef21e216d12c0bd091de18" name="a629f240ea9ef21e216d12c0bd091de18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a629f240ea9ef21e216d12c0bd091de18">&#9670;&#160;</a></span>findNearestRefinery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::findNearestRefinery </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>finds the nearest refinery building </p>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00138">138</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a629f240ea9ef21e216d12c0bd091de18_cgraph.png" border="0" usemap="#aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_cgraph" alt=""/></div>
+<map name="aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_cgraph" id="aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_cgraph">
+<area shape="rect" title="finds the nearest refinery building" alt="" coords="5,56,201,83"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="285,5,387,32"/>
+<area shape="poly" title=" " alt="" coords="167,53,269,30,271,35,168,58"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="277,56,395,83"/>
+<area shape="poly" title=" " alt="" coords="201,67,262,67,262,72,201,72"/>
+<area shape="rect" href="class_harvester.html#a5a51b5a6aa50fbb95ebf3938df6789b7" title="Moves to the refinery position." alt="" coords="249,107,423,133"/>
+<area shape="poly" title=" " alt="" coords="168,81,257,100,256,105,167,86"/>
+<area shape="rect" href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df" title=" " alt="" coords="471,81,611,108"/>
+<area shape="poly" title=" " alt="" coords="423,107,456,103,456,108,423,112"/>
+<area shape="rect" href="class_unit.html#ad143c65e05fde4571ec2f10ab87f7539" title="Gives the target position." alt="" coords="493,132,589,159"/>
+<area shape="poly" title=" " alt="" coords="423,128,478,135,477,140,423,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a629f240ea9ef21e216d12c0bd091de18_icgraph.png" border="0" usemap="#aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_icgraph" alt=""/></div>
+<map name="aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_icgraph" id="aclass_harvester_a629f240ea9ef21e216d12c0bd091de18_icgraph">
+<area shape="rect" title="finds the nearest refinery building" alt="" coords="176,5,371,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad7a6421a668ae260ddc1e22288ec247" name="aad7a6421a668ae260ddc1e22288ec247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7a6421a668ae260ddc1e22288ec247">&#9670;&#160;</a></span>findNearestResourceTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::findNearestResourceTile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To find the nearest resource tile. </p>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00165">165</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_aad7a6421a668ae260ddc1e22288ec247_cgraph.png" border="0" usemap="#aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_cgraph" alt=""/></div>
+<map name="aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_cgraph" id="aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_cgraph">
+<area shape="rect" title="To find the nearest resource tile." alt="" coords="5,56,229,83"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="315,5,416,32"/>
+<area shape="poly" title=" " alt="" coords="186,53,299,29,300,35,187,58"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="307,56,424,83"/>
+<area shape="poly" title=" " alt="" coords="229,67,291,67,291,72,229,72"/>
+<area shape="rect" href="class_harvester.html#a0c277310ee495801175d1ebad4885810" title="Gets the resource position." alt="" coords="277,107,454,149"/>
+<area shape="poly" title=" " alt="" coords="177,81,262,101,261,106,176,86"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_aad7a6421a668ae260ddc1e22288ec247_icgraph.png" border="0" usemap="#aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_icgraph" alt=""/></div>
+<map name="aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_icgraph" id="aclass_harvester_aad7a6421a668ae260ddc1e22288ec247_icgraph">
+<area shape="rect" title="To find the nearest resource tile." alt="" coords="176,5,399,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="161,21,128,21,128,16,161,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c277310ee495801175d1ebad4885810" name="a0c277310ee495801175d1ebad4885810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c277310ee495801175d1ebad4885810">&#9670;&#160;</a></span>gettingResourcePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::gettingResourcePosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_resourcePos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the resource position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_resourcePos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00245">245</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a0c277310ee495801175d1ebad4885810_icgraph.png" border="0" usemap="#aclass_harvester_a0c277310ee495801175d1ebad4885810_icgraph" alt=""/></div>
+<map name="aclass_harvester_a0c277310ee495801175d1ebad4885810_icgraph" id="aclass_harvester_a0c277310ee495801175d1ebad4885810_icgraph">
+<area shape="rect" title="Gets the resource position." alt="" coords="447,5,624,48"/>
+<area shape="rect" href="class_harvester.html#aad7a6421a668ae260ddc1e22288ec247" title="To find the nearest resource tile." alt="" coords="176,13,399,40"/>
+<area shape="poly" title=" " alt="" coords="431,29,400,29,400,24,431,24"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,13,128,40"/>
+<area shape="poly" title=" " alt="" coords="161,29,128,29,128,24,161,24"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7a71f71834a3a8c7997cb0652aba60d9" name="a7a71f71834a3a8c7997cb0652aba60d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a71f71834a3a8c7997cb0652aba60d9">&#9670;&#160;</a></span>getUnitType()</h2>
 
@@ -460,6 +698,270 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="aa9695c5e1d4049502f2e2fc7fbb3dcea" name="aa9695c5e1d4049502f2e2fc7fbb3dcea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9695c5e1d4049502f2e2fc7fbb3dcea">&#9670;&#160;</a></span>initHarvester()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::initHarvester </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the harvester unit </p>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00121">121</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea_icgraph.png" border="0" usemap="#aclass_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea_icgraph" alt=""/></div>
+<map name="aclass_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea_icgraph" id="aclass_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea_icgraph">
+<area shape="rect" title="initializes the harvester unit" alt="" coords="191,5,345,32"/>
+<area shape="rect" href="class_harvester.html#aa28e963eb2df851da302a3ce7b352b42" title=" " alt="" coords="5,5,143,32"/>
+<area shape="poly" title=" " alt="" coords="175,21,143,21,143,16,175,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00dff9d40d7ed37de424052e3dad5986" name="a00dff9d40d7ed37de424052e3dad5986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00dff9d40d7ed37de424052e3dad5986">&#9670;&#160;</a></span>isAtRefinery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a> Harvester::isAtRefinery </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if its at the refinery building </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00267">267</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a00dff9d40d7ed37de424052e3dad5986_cgraph.png" border="0" usemap="#aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_cgraph" alt=""/></div>
+<map name="aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_cgraph" id="aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_cgraph">
+<area shape="rect" title="checks if its at the refinery building" alt="" coords="5,56,159,83"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="226,5,328,32"/>
+<area shape="poly" title=" " alt="" coords="136,53,211,33,212,38,137,58"/>
+<area shape="rect" href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df" title=" " alt="" coords="207,56,347,83"/>
+<area shape="poly" title=" " alt="" coords="159,67,191,67,191,72,159,72"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="218,107,336,133"/>
+<area shape="poly" title=" " alt="" coords="137,81,209,100,207,105,136,86"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a00dff9d40d7ed37de424052e3dad5986_icgraph.png" border="0" usemap="#aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_icgraph" alt=""/></div>
+<map name="aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_icgraph" id="aclass_harvester_a00dff9d40d7ed37de424052e3dad5986_icgraph">
+<area shape="rect" title="checks if its at the refinery building" alt="" coords="176,5,329,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5abe99ee36568b600fbc3001f2f87c9f" name="a5abe99ee36568b600fbc3001f2f87c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abe99ee36568b600fbc3001f2f87c9f">&#9670;&#160;</a></span>isAtTargetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a> Harvester::isAtTargetPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if its at target </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00256">256</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a5abe99ee36568b600fbc3001f2f87c9f_cgraph.png" border="0" usemap="#aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_cgraph" alt=""/></div>
+<map name="aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_cgraph" id="aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_cgraph">
+<area shape="rect" title="checks if its at target" alt="" coords="5,31,195,57"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="251,5,352,32"/>
+<area shape="poly" title=" " alt="" coords="195,29,235,24,235,30,195,35"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="243,56,360,83"/>
+<area shape="poly" title=" " alt="" coords="195,53,227,57,227,63,195,59"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a5abe99ee36568b600fbc3001f2f87c9f_icgraph.png" border="0" usemap="#aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_icgraph" alt=""/></div>
+<map name="aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_icgraph" id="aclass_harvester_a5abe99ee36568b600fbc3001f2f87c9f_icgraph">
+<area shape="rect" title="checks if its at target" alt="" coords="176,5,365,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a380cd21f372be1fef95855d46118b9c5" name="a380cd21f372be1fef95855d46118b9c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380cd21f372be1fef95855d46118b9c5">&#9670;&#160;</a></span>movement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::movement </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00059">59</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a380cd21f372be1fef95855d46118b9c5_cgraph.png" border="0" usemap="#aclass_harvester_a380cd21f372be1fef95855d46118b9c5_cgraph" alt=""/></div>
+<map name="aclass_harvester_a380cd21f372be1fef95855d46118b9c5_cgraph" id="aclass_harvester_a380cd21f372be1fef95855d46118b9c5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,148,159"/>
+<area shape="rect" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009" title=" " alt="" coords="196,5,347,32"/>
+<area shape="poly" title=" " alt="" coords="91,129,135,91,194,48,217,36,220,41,197,53,139,95,94,133"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="401,69,502,96"/>
+<area shape="poly" title=" " alt="" coords="102,129,144,109,195,92,244,83,294,78,385,77,385,82,295,84,245,89,196,97,146,114,104,134"/>
+<area shape="rect" href="class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="395,132,507,159"/>
+<area shape="poly" title=" " alt="" coords="148,143,380,143,380,148,148,148"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="397,183,505,209"/>
+<area shape="poly" title=" " alt="" coords="149,152,382,184,381,189,148,158"/>
+<area shape="rect" href="class_unit.html#a94f9c83e2b207b12547f651736fc7c22" title=" " alt="" coords="213,259,330,285"/>
+<area shape="poly" title=" " alt="" coords="94,157,139,196,197,238,220,250,217,254,194,242,135,200,91,161"/>
+<area shape="rect" href="class_unit.html#a717bca7d26b5632119fe20b9dfa24f75" title="Makes it slowly steer towards that direction." alt="" coords="207,107,336,133"/>
+<area shape="poly" title=" " alt="" coords="148,133,191,128,192,133,149,139"/>
+<area shape="poly" title=" " alt="" coords="336,104,385,94,386,99,337,109"/>
+<area shape="poly" title=" " alt="" coords="337,127,380,133,379,138,336,132"/>
+<area shape="poly" title=" " alt="" coords="306,131,405,174,403,179,304,136"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a380cd21f372be1fef95855d46118b9c5_icgraph.png" border="0" usemap="#aclass_harvester_a380cd21f372be1fef95855d46118b9c5_icgraph" alt=""/></div>
+<map name="aclass_harvester_a380cd21f372be1fef95855d46118b9c5_icgraph" id="aclass_harvester_a380cd21f372be1fef95855d46118b9c5_icgraph">
+<area shape="rect" title=" " alt="" coords="176,5,318,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a51b5a6aa50fbb95ebf3938df6789b7" name="a5a51b5a6aa50fbb95ebf3938df6789b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a51b5a6aa50fbb95ebf3938df6789b7">&#9670;&#160;</a></span>moveToRefinery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::moveToRefinery </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_refinery.html">Refinery</a> *</td>          <td class="paramname"><span class="paramname"><em>m_refinery</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves to the refinery position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_refinery</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00231">231</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_cgraph.png" border="0" usemap="#aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_cgraph" alt=""/></div>
+<map name="aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_cgraph" id="aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_cgraph">
+<area shape="rect" title="Moves to the refinery position." alt="" coords="5,31,180,57"/>
+<area shape="rect" href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df" title=" " alt="" coords="228,5,368,32"/>
+<area shape="poly" title=" " alt="" coords="179,31,212,27,213,32,180,36"/>
+<area shape="rect" href="class_unit.html#ad143c65e05fde4571ec2f10ab87f7539" title="Gives the target position." alt="" coords="250,56,346,83"/>
+<area shape="poly" title=" " alt="" coords="180,52,234,59,234,64,179,57"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_icgraph.png" border="0" usemap="#aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_icgraph" alt=""/></div>
+<map name="aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_icgraph" id="aclass_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_icgraph">
+<area shape="rect" title="Moves to the refinery position." alt="" coords="419,5,593,32"/>
+<area shape="rect" href="class_harvester.html#a629f240ea9ef21e216d12c0bd091de18" title="finds the nearest refinery building" alt="" coords="176,5,371,32"/>
+<area shape="poly" title=" " alt="" coords="403,21,372,21,372,16,403,16"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7a6a5b0826a1529970c24826f7cb0610" name="a7a6a5b0826a1529970c24826f7cb0610"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6a5b0826a1529970c24826f7cb0610">&#9670;&#160;</a></span>setBuildings()</h2>
 
@@ -484,6 +986,96 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00282">282</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_a7a6a5b0826a1529970c24826f7cb0610_icgraph.png" border="0" usemap="#aclass_harvester_a7a6a5b0826a1529970c24826f7cb0610_icgraph" alt=""/></div>
+<map name="aclass_harvester_a7a6a5b0826a1529970c24826f7cb0610_icgraph" id="aclass_harvester_a7a6a5b0826a1529970c24826f7cb0610_icgraph">
+<area shape="rect" title="sets the buildings to find the refinery buildings" alt="" coords="1400,121,1554,148"/>
+<area shape="rect" href="class_game.html#a551eddfce663b131aca0742a7eda4704" title="creates the buildings for players side" alt="" coords="414,70,561,97"/>
+<area shape="poly" title=" " alt="" coords="1384,122,1351,118,1126,102,902,92,561,86,561,81,903,87,1126,97,1352,113,1384,117"/>
+<area shape="rect" href="class_game.html#aeb52838d2be775c688f2e78a711ba696" title="This create the enemy harvester unit this goes along side with the refinery building." alt="" coords="1133,172,1352,198"/>
+<area shape="poly" title=" " alt="" coords="1397,154,1308,174,1307,169,1396,149"/>
+<area shape="rect" href="class_game.html#a13219852186fab2a37e618cac4acfbdb" title="Creates some buildings and units to give an advantage to the enemy a bit at the start of the game." alt="" coords="1137,222,1348,249"/>
+<area shape="poly" title=" " alt="" coords="1446,159,1403,187,1353,213,1318,224,1316,219,1351,208,1401,183,1444,155"/>
+<area shape="rect" href="class_game.html#aa99ac90edfa2abbca5ca6c25fd26a1c2" title="Creates the specific unit type on that buildings position." alt="" coords="912,121,1076,148"/>
+<area shape="poly" title=" " alt="" coords="1385,137,1077,137,1077,132,1385,132"/>
+<area shape="rect" href="class_game.html#a43e80c8c9022b911129bce8454bc5adb" title="Creates the unit for players side." alt="" coords="1181,20,1304,46"/>
+<area shape="poly" title=" " alt="" coords="1440,115,1398,91,1351,68,1299,50,1300,45,1353,63,1401,86,1443,110"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,100,336,126"/>
+<area shape="poly" title=" " alt="" coords="400,99,337,108,336,103,399,94"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,146,185,173"/>
+<area shape="poly" title=" " alt="" coords="229,134,186,149,185,144,227,129"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,146,55,173"/>
+<area shape="poly" title=" " alt="" coords="87,162,55,162,55,157,87,157"/>
+<area shape="rect" href="class_game.html#a75ab84e14d9648963239c50df2159f8a" title="Decides which building type to place." alt="" coords="903,172,1085,198"/>
+<area shape="poly" title=" " alt="" coords="1118,188,1086,188,1086,182,1118,182"/>
+<area shape="rect" href="class_game.html#ab1b4ee064ddb5c3c3935e6c152916629" title="This is to decie which building it should be placing." alt="" coords="639,172,855,198"/>
+<area shape="poly" title=" " alt="" coords="887,188,856,188,856,182,887,182"/>
+<area shape="rect" href="class_game.html#ab5fe3b4ac5c7adf0639405c6f83abb12" title="This function is to make the enemy decide to either create a building or a unit." alt="" coords="384,121,591,164"/>
+<area shape="poly" title=" " alt="" coords="646,171,591,162,591,157,647,166"/>
+<area shape="poly" title=" " alt="" coords="368,128,336,123,337,118,369,123"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="945,222,1044,249"/>
+<area shape="poly" title=" " alt="" coords="1122,238,1044,238,1044,233,1122,233"/>
+<area shape="rect" href="class_game.html#a9de86d1081ce3a5decd86a3c543598b6" title="To reset the game and undo all the properties for a new game." alt="" coords="929,273,1059,300"/>
+<area shape="poly" title=" " alt="" coords="1159,255,1060,276,1059,271,1158,250"/>
+<area shape="rect" href="class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="661,222,833,249"/>
+<area shape="poly" title=" " alt="" coords="913,273,815,252,816,247,914,267"/>
+<area shape="rect" href="class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="654,273,840,300"/>
+<area shape="poly" title=" " alt="" coords="914,289,841,289,841,284,914,284"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="413,222,562,249"/>
+<area shape="poly" title=" " alt="" coords="646,238,563,238,563,233,646,233"/>
+<area shape="poly" title=" " alt="" coords="408,221,185,171,186,166,409,216"/>
+<area shape="poly" title=" " alt="" coords="659,272,559,252,560,247,661,267"/>
+<area shape="poly" title=" " alt="" coords="897,139,591,143,591,138,897,133"/>
+<area shape="poly" title=" " alt="" coords="1165,26,1019,14,823,9,715,12,603,21,492,37,385,61,341,79,306,102,303,97,339,75,384,56,491,32,603,16,714,7,823,3,1019,9,1166,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae93a262fb071b1ba135856671932ba32" name="ae93a262fb071b1ba135856671932ba32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93a262fb071b1ba135856671932ba32">&#9670;&#160;</a></span>unloadResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">void</a> Harvester::unloadResources </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time</td>          <td class="paramname"><span class="paramname"><em>t_deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unloads the resouceses it collected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_deltaTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8cpp_source.html#l00208">208</a> of file <a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_harvester_ae93a262fb071b1ba135856671932ba32_icgraph.png" border="0" usemap="#aclass_harvester_ae93a262fb071b1ba135856671932ba32_icgraph" alt=""/></div>
+<map name="aclass_harvester_ae93a262fb071b1ba135856671932ba32_icgraph" id="aclass_harvester_ae93a262fb071b1ba135856671932ba32_icgraph">
+<area shape="rect" title="Unloads the resouceses it collected." alt="" coords="176,5,359,32"/>
+<area shape="rect" href="class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="5,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="160,21,128,21,128,16,160,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -520,12 +1112,155 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_harvester_ac6e106e888fc20099bba4f57f833c216_cgraph.svg" width="100%" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_harvester_ac6e106e888fc20099bba4f57f833c216_cgraph.png" border="0" usemap="#aclass_harvester_ac6e106e888fc20099bba4f57f833c216_cgraph" alt=""/></div>
+<map name="aclass_harvester_ac6e106e888fc20099bba4f57f833c216_cgraph" id="aclass_harvester_ac6e106e888fc20099bba4f57f833c216_cgraph">
+<area shape="rect" title=" " alt="" coords="5,256,128,283"/>
+<area shape="rect" href="class_harvester.html#a629f240ea9ef21e216d12c0bd091de18" title="finds the nearest refinery building" alt="" coords="407,187,602,213"/>
+<area shape="poly" title=" " alt="" coords="128,256,175,248,395,214,395,219,176,253,129,261"/>
+<area shape="rect" href="class_harvester.html#aad7a6421a668ae260ddc1e22288ec247" title="To find the nearest resource tile." alt="" coords="650,111,874,137"/>
+<area shape="poly" title=" " alt="" coords="92,253,130,234,175,216,295,183,417,159,534,142,635,131,635,136,534,147,418,164,296,188,177,221,132,239,94,258"/>
+<area shape="rect" href="class_harvester.html#a00dff9d40d7ed37de424052e3dad5986" title="checks if its at the refinery building" alt="" coords="685,60,839,87"/>
+<area shape="poly" title=" " alt="" coords="78,254,118,214,145,193,174,175,238,148,304,126,371,109,439,96,565,79,670,72,670,77,566,84,439,101,373,114,305,131,240,153,177,180,148,197,121,218,81,257"/>
+<area shape="rect" href="class_harvester.html#a5abe99ee36568b600fbc3001f2f87c9f" title="checks if its at target" alt="" coords="667,263,857,289"/>
+<area shape="poly" title=" " alt="" coords="128,267,652,272,652,278,128,273"/>
+<area shape="rect" href="class_harvester.html#a380cd21f372be1fef95855d46118b9c5" title=" " alt="" coords="434,415,576,441"/>
+<area shape="poly" title=" " alt="" coords="128,278,238,303,300,321,360,343,420,372,472,404,469,408,418,377,358,348,298,326,236,308,127,283"/>
+<area shape="rect" href="class_harvester.html#ae93a262fb071b1ba135856671932ba32" title="Unloads the resouceses it collected." alt="" coords="176,408,359,435"/>
+<area shape="poly" title=" " alt="" coords="78,282,116,336,144,367,177,394,186,399,184,404,174,398,141,371,112,340,73,285"/>
+<area shape="rect" href="class_vehicle_unit.html#a8509cb11b318348f4953dae4932ea071" title=" " alt="" coords="200,357,335,384"/>
+<area shape="poly" title=" " alt="" coords="88,281,128,308,177,336,207,349,205,354,174,341,125,313,85,285"/>
+<area shape="rect" href="class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="962,263,1064,289"/>
+<area shape="poly" title=" " alt="" coords="603,210,874,248,948,261,947,266,873,253,603,215"/>
+<area shape="rect" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="954,191,1072,217"/>
+<area shape="poly" title=" " alt="" coords="603,198,938,201,938,206,603,203"/>
+<area shape="rect" href="class_harvester.html#a5a51b5a6aa50fbb95ebf3938df6789b7" title="Moves to the refinery position." alt="" coords="675,9,849,36"/>
+<area shape="poly" title=" " alt="" coords="513,184,565,117,604,78,649,46,661,40,663,44,652,50,607,82,569,121,517,188"/>
+<area shape="rect" href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df" title=" " alt="" coords="943,56,1083,83"/>
+<area shape="poly" title=" " alt="" coords="838,34,928,51,927,56,837,39"/>
+<area shape="rect" href="class_unit.html#ad143c65e05fde4571ec2f10ab87f7539" title="Gives the target position." alt="" coords="965,5,1061,32"/>
+<area shape="poly" title=" " alt="" coords="850,19,949,17,949,22,850,24"/>
+<area shape="poly" title=" " alt="" coords="784,135,845,178,923,227,971,253,968,258,920,232,842,182,781,140"/>
+<area shape="poly" title=" " alt="" coords="814,135,874,153,960,182,958,187,873,159,813,140"/>
+<area shape="rect" href="class_harvester.html#a0c277310ee495801175d1ebad4885810" title="Gets the resource position." alt="" coords="924,107,1102,149"/>
+<area shape="poly" title=" " alt="" coords="874,123,908,124,908,129,874,128"/>
+<area shape="poly" title=" " alt="" coords="840,78,859,85,875,97,890,113,898,129,902,162,906,194,912,211,924,228,939,242,958,253,955,258,936,246,920,231,907,213,901,196,897,162,892,131,885,116,872,101,856,90,838,83"/>
+<area shape="poly" title=" " alt="" coords="840,81,875,96,892,112,901,128,909,143,923,159,960,182,957,186,920,163,905,146,896,130,888,115,872,101,838,86"/>
+<area shape="poly" title=" " alt="" coords="839,69,927,68,927,73,839,75"/>
+<area shape="poly" title=" " alt="" coords="857,273,947,273,947,279,857,279"/>
+<area shape="poly" title=" " alt="" coords="810,260,948,220,950,225,812,265"/>
+<area shape="poly" title=" " alt="" coords="526,412,581,381,649,349,772,321,946,286,947,291,773,326,651,355,583,385,529,416"/>
+<area shape="rect" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009" title=" " alt="" coords="686,364,838,391"/>
+<area shape="poly" title=" " alt="" coords="576,411,675,392,676,397,577,417"/>
+<area shape="rect" href="class_unit.html#a90612b354704a618a5647ec4742b427b" title=" " alt="" coords="957,583,1069,609"/>
+<area shape="poly" title=" " alt="" coords="517,440,537,469,568,505,607,540,652,568,687,582,725,592,803,604,877,606,941,602,941,608,877,611,802,609,724,597,686,587,649,573,603,545,564,508,533,472,513,443"/>
+<area shape="rect" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="1160,633,1268,660"/>
+<area shape="poly" title=" " alt="" coords="517,440,580,533,619,582,652,611,691,625,745,636,880,647,1023,649,1144,647,1144,652,1024,655,879,652,744,641,690,630,649,616,615,586,575,537,512,443"/>
+<area shape="rect" href="class_unit.html#a94f9c83e2b207b12547f651736fc7c22" title=" " alt="" coords="703,415,821,441"/>
+<area shape="poly" title=" " alt="" coords="576,425,688,425,688,431,576,431"/>
+<area shape="rect" href="class_unit.html#a717bca7d26b5632119fe20b9dfa24f75" title="Makes it slowly steer towards that direction." alt="" coords="697,532,827,559"/>
+<area shape="poly" title=" " alt="" coords="525,440,579,478,614,499,651,518,683,528,681,533,649,522,612,504,576,483,522,444"/>
+<area shape="poly" title=" " alt="" coords="827,537,851,530,872,518,898,495,921,468,959,409,985,351,1001,303,1006,305,990,353,963,412,925,472,902,499,875,522,853,535,828,542"/>
+<area shape="poly" title=" " alt="" coords="828,556,942,579,941,584,827,561"/>
+<area shape="poly" title=" " alt="" coords="827,538,887,536,957,539,1032,549,1105,568,1151,592,1189,621,1186,625,1148,597,1103,573,1031,554,957,544,887,542,827,543"/>
+<area shape="rect" href="class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="459,583,550,609"/>
+<area shape="poly" title=" " alt="" coords="336,381,361,394,383,419,418,467,488,568,484,571,414,470,379,423,357,398,333,386"/>
+<area shape="rect" href="class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="680,465,844,508"/>
+<area shape="poly" title=" " alt="" coords="528,580,582,549,649,518,666,511,668,516,651,522,585,554,530,585"/>
+<area shape="rect" href="class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="680,684,844,727"/>
+<area shape="poly" title=" " alt="" coords="534,607,651,663,683,676,682,681,649,668,532,612"/>
+<area shape="rect" href="class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="683,751,841,777"/>
+<area shape="poly" title=" " alt="" coords="518,608,570,671,608,706,652,736,670,745,667,749,649,741,605,711,566,674,514,612"/>
+<area shape="poly" title=" " alt="" coords="843,466,872,451,913,417,947,376,975,336,995,302,1000,304,980,339,951,380,916,420,875,456,846,471"/>
+<area shape="poly" title=" " alt="" coords="843,471,872,451,889,427,897,403,899,379,897,354,896,303,903,277,920,249,935,234,952,222,955,227,938,238,924,252,908,279,902,304,903,354,904,379,903,404,894,429,876,455,846,475"/>
+<area shape="poly" title=" " alt="" coords="845,481,904,484,971,492,1040,508,1105,534,1133,552,1159,574,1197,619,1193,622,1155,578,1130,556,1103,538,1038,513,970,498,904,489,845,487"/>
+<area shape="poly" title=" " alt="" coords="786,682,831,633,853,603,871,570,886,523,891,482,890,443,886,406,882,369,884,331,896,292,920,249,934,234,951,222,954,227,937,238,924,252,900,294,890,332,888,369,891,405,895,442,897,482,892,525,876,572,858,606,835,637,790,685"/>
+<area shape="poly" title=" " alt="" coords="844,694,1104,663,1144,656,1145,662,1104,668,845,700"/>
+<area shape="rect" href="class_unit.html#a42777458d8e2ae32407212027719b6d2" title="This looks for a suitable direction to avoid walls when a direct path is blocked It tries various ang..." alt="" coords="922,735,1104,761"/>
+<area shape="poly" title=" " alt="" coords="845,717,916,729,915,734,844,722"/>
+<area shape="rect" href="class_unit.html#acabd56084730e0bb32811ab6b7be625a" title=" " alt="" coords="1152,785,1275,812"/>
+<area shape="poly" title=" " alt="" coords="846,720,875,737,893,759,899,783,905,804,912,813,923,822,953,835,984,842,1017,845,1050,844,1113,832,1166,816,1167,821,1114,837,1050,849,1017,850,983,848,951,840,920,826,908,817,901,806,894,784,888,762,872,741,843,724"/>
+<area shape="rect" href="class_unit.html#a2ee0326af0abc525deadf772e485f657" title=" " alt="" coords="976,785,1050,812"/>
+<area shape="poly" title=" " alt="" coords="846,724,875,736,899,754,923,771,962,785,960,790,920,776,896,758,872,741,844,729"/>
+<area shape="poly" title=" " alt="" coords="1059,732,1103,714,1144,691,1180,667,1183,671,1147,695,1105,718,1061,736"/>
+<area shape="poly" title=" " alt="" coords="1070,759,1144,778,1142,784,1068,765"/>
+</map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a959220fcb14b566ae0eb11777f1b3b74" name="a959220fcb14b566ae0eb11777f1b3b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959220fcb14b566ae0eb11777f1b3b74">&#9670;&#160;</a></span>m_allBuildings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">const</a> std::vector&lt;<a class="el" href="class_building.html">Building</a>*&gt;* Harvester::m_allBuildings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00048">48</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
+<a id="aa273c47ab04e6138208d82f1a5df3f67" name="aa273c47ab04e6138208d82f1a5df3f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa273c47ab04e6138208d82f1a5df3f67">&#9670;&#160;</a></span>m_collectionRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Harvester::m_collectionRate = 4.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00050">50</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
+<a id="a717325c72165a0496eaf89c0d012584b" name="a717325c72165a0496eaf89c0d012584b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717325c72165a0496eaf89c0d012584b">&#9670;&#160;</a></span>m_currentResourceLoad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Harvester::m_currentResourceLoad = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00052">52</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
 <a id="a357e6b6ef4898526d948f1f59b6f0b9f" name="a357e6b6ef4898526d948f1f59b6f0b9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a357e6b6ef4898526d948f1f59b6f0b9f">&#9670;&#160;</a></span>m_currentState</h2>
 
@@ -542,9 +1277,105 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a4c0482babcd564b86b154ad3b5a4b189" name="a4c0482babcd564b86b154ad3b5a4b189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0482babcd564b86b154ad3b5a4b189">&#9670;&#160;</a></span>m_foundResource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bool</a> Harvester::m_foundResource = <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">false</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00054">54</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
+<a id="a374b01d8571131ccc10f1fb843d3633a" name="a374b01d8571131ccc10f1fb843d3633a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374b01d8571131ccc10f1fb843d3633a">&#9670;&#160;</a></span>m_maxResourceCapacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">float</a> Harvester::m_maxResourceCapacity = 100.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00051">51</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4f4888d9155e5ca09777afd56d6227a" name="ae4f4888d9155e5ca09777afd56d6227a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f4888d9155e5ca09777afd56d6227a">&#9670;&#160;</a></span>m_resourcePosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f Harvester::m_resourcePosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00046">46</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fac18dee40342e65bc2d27021599369" name="a9fac18dee40342e65bc2d27021599369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fac18dee40342e65bc2d27021599369">&#9670;&#160;</a></span>m_targetRefinery</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_refinery.html">Refinery</a>* Harvester::m_targetRefinery = <a class="el" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">nullptr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_harvester_8h_source.html#l00029">29</a> of file <a class="el" href="_harvester_8h_source.html">Harvester.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_harvester_8h_source.html">Harvester.h</a></li>
-<li>AI Behaviors/<a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_harvester_8h_source.html">Harvester.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_harvester_8cpp_source.html">Harvester.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

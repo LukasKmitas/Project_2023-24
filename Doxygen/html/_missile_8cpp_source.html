@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gills &amp; Glory: AI Behaviors/Missile.cpp Source File</title>
+<title>Gills &amp; Glory: E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/Missile.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -106,7 +106,7 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_missile.html#a25d8466b301870323b86fdc0e35c77d1">    3</a></span><a class="code hl_function" href="class_missile.html#a25d8466b301870323b86fdc0e35c77d1">Missile::Missile</a>(<span class="keyword">const</span> sf::Vector2f&amp; m_startPosition, <span class="keyword">const</span> sf::Vector2f&amp; m_targetDirection, <span class="keywordtype">float</span> m_speed, <span class="keyword">const</span> sf::Texture&amp; m_texture)</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    : m_position(m_startPosition), m_speed(m_speed)</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    m_velocity = normalize(m_targetDirection) * m_speed;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_variable" href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">m_velocity</a> = <a class="code hl_function" href="class_missile.html#ab164b28b9ea28828cd2f95b2b171f57d">normalize</a>(m_targetDirection) * <a class="code hl_variable" href="class_missile.html#ae3d54aa52663b42c2e0eb3360b62c8dd">m_speed</a>;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a>.setScale(0.2, 0.2);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a>.setTexture(m_texture);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_variable" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a>.setOrigin(m_texture.getSize().x / 2.0f, m_texture.getSize().y / 2.0f); <span class="comment">// Center the origin</span></div>
@@ -119,19 +119,19 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a>)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a> += m_velocity * t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a> += <a class="code hl_variable" href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">m_velocity</a> * t_deltaTime.asSeconds();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_variable" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a>.setPosition(<a class="code hl_variable" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">float</span> angle = atan2(m_velocity.y, m_velocity.x) * (180 / 3.14159265f);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">float</span> angle = atan2(<a class="code hl_variable" href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">m_velocity</a>.y, <a class="code hl_variable" href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">m_velocity</a>.x) * (180 / 3.14159265f);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_variable" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a>.setRotation(angle + 90);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        m_lifetime -= t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (m_lifetime &lt;= 0.0f)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="class_missile.html#a7bc5442b92cff6c9350b5496bfc2ae3e">m_lifetime</a> -= t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_missile.html#a7bc5442b92cff6c9350b5496bfc2ae3e">m_lifetime</a> &lt;= 0.0f)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_variable" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a> = <span class="keyword">false</span>; </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    updateTrail(t_deltaTime);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="class_missile.html#a6a780e6e4661b6c9e40fc6d4b2335311">updateTrail</a>(t_deltaTime);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
@@ -149,7 +149,8 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>sf::Vector2f Missile::normalize(<span class="keyword">const</span> sf::Vector2f&amp; m_source)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_missile.html#ab164b28b9ea28828cd2f95b2b171f57d">   44</a></span>sf::Vector2f <a class="code hl_function" href="class_missile.html#ab164b28b9ea28828cd2f95b2b171f57d">Missile::normalize</a>(<span class="keyword">const</span> sf::Vector2f&amp; m_source)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">float</span> length = std::sqrt(m_source.x * m_source.x + m_source.y * m_source.y);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (length != 0)</div>
@@ -161,31 +162,33 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> m_source;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> Missile::updateTrail(sf::Time t_deltaTime)</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_missile.html#a6a780e6e4661b6c9e40fc6d4b2335311">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_missile.html#a6a780e6e4661b6c9e40fc6d4b2335311">Missile::updateTrail</a>(sf::Time t_deltaTime)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    m_timeSinceLastTrailPart += t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="class_missile.html#a83edd34480c21b85b0003866e26b47f1">m_timeSinceLastTrailPart</a> += t_deltaTime.asSeconds();</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (m_timeSinceLastTrailPart &gt;= m_addTrailPartInterval &amp;&amp; <a class="code hl_variable" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_missile.html#a83edd34480c21b85b0003866e26b47f1">m_timeSinceLastTrailPart</a> &gt;= <a class="code hl_variable" href="class_missile.html#a970cb70efd57dfa44e3fc57e5d1ff035">m_addTrailPartInterval</a> &amp;&amp; <a class="code hl_variable" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a>)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_struct" href="struct_trail_part.html">TrailPart</a> newPart;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#af4122a7d38cc59c853def892d064fd6e">m_shape</a>.setRadius(3.0f);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#af4122a7d38cc59c853def892d064fd6e">m_shape</a>.setPosition(<a class="code hl_variable" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#afddb05c5e41408b89f3abac6fb5b930c">m_lifetime</a> = m_trailMaxLifetime;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#afddb05c5e41408b89f3abac6fb5b930c">m_lifetime</a> = <a class="code hl_variable" href="class_missile.html#a6ccf607f9d2fe8044b86182c3c9710c9">m_trailMaxLifetime</a>;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#a3dcbc69a6a7a9aef1d0031aebbab27bc">m_expansionRate</a> = 3.0f;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#a486e4d1250f358334d233fd8465724bb">m_startColor</a> = sf::Color(255, 140, 0);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#aedaeeab7ae8cb497ee16984ebee79e96">m_endColor</a> = sf::Color(50, 50, 50);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        newPart.<a class="code hl_variable" href="struct_trail_part.html#af4122a7d38cc59c853def892d064fd6e">m_shape</a>.setFillColor(newPart.<a class="code hl_variable" href="struct_trail_part.html#a486e4d1250f358334d233fd8465724bb">m_startColor</a>);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>.push_front(newPart);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        m_timeSinceLastTrailPart = 0.0f;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_variable" href="class_missile.html#a83edd34480c21b85b0003866e26b47f1">m_timeSinceLastTrailPart</a> = 0.0f;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; part : <a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        part.m_lifetime -= t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">float</span> lifeRatio = part.m_lifetime / m_trailMaxLifetime;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        sf::Color currentColor = lerpColor(part.m_startColor, part.m_endColor, 1.0f - lifeRatio);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">float</span> lifeRatio = part.m_lifetime / <a class="code hl_variable" href="class_missile.html#a6ccf607f9d2fe8044b86182c3c9710c9">m_trailMaxLifetime</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        sf::Color currentColor = <a class="code hl_function" href="class_missile.html#ac379538d83d074fb53e5354ba7edb05a">lerpColor</a>(part.m_startColor, part.m_endColor, 1.0f - lifeRatio);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (lifeRatio &lt; 0.2f) <span class="comment">// Last 20% of lifetime</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
@@ -198,8 +201,10 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>.erase(std::remove_if(<a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>.begin(), <a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>.end(),</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        [](<span class="keyword">const</span> <a class="code hl_struct" href="struct_trail_part.html">TrailPart</a>&amp; part) { <span class="keywordflow">return</span> part.m_lifetime &lt;= 0; }), <a class="code hl_variable" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a>.end());</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>sf::Color Missile::lerpColor(<span class="keyword">const</span> sf::Color&amp; m_start, <span class="keyword">const</span> sf::Color&amp; m_end, <span class="keywordtype">float</span> m_lifeTime)</div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_missile.html#ac379538d83d074fb53e5354ba7edb05a">   94</a></span>sf::Color <a class="code hl_function" href="class_missile.html#ac379538d83d074fb53e5354ba7edb05a">Missile::lerpColor</a>(<span class="keyword">const</span> sf::Color&amp; m_start, <span class="keyword">const</span> sf::Color&amp; m_end, <span class="keywordtype">float</span> m_lifeTime)</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> sf::Color</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    (</div>
@@ -209,13 +214,23 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(m_start.a + (m_end.a - m_start.a) * m_lifeTime)</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    );</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
 <div class="ttc" id="a_missile_8h_html"><div class="ttname"><a href="_missile_8h.html">Missile.h</a></div></div>
 <div class="ttc" id="aclass_missile_html_a25d8466b301870323b86fdc0e35c77d1"><div class="ttname"><a href="class_missile.html#a25d8466b301870323b86fdc0e35c77d1">Missile::Missile</a></div><div class="ttdeci">Missile(const sf::Vector2f &amp;m_startPosition, const sf::Vector2f &amp;m_targetDirection, float m_speed, const sf::Texture &amp;m_texture)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">Missile.cpp:3</a></div></div>
 <div class="ttc" id="aclass_missile_html_a3cdc5856688cad7c20ca665d4c41fd95"><div class="ttname"><a href="class_missile.html#a3cdc5856688cad7c20ca665d4c41fd95">Missile::render</a></div><div class="ttdeci">void render(sf::RenderWindow &amp;m_window) const</div><div class="ttdef"><b>Definition</b> <a href="#l00032">Missile.cpp:32</a></div></div>
 <div class="ttc" id="aclass_missile_html_a5a76ffc8a6a752422cd49a278bcb410e"><div class="ttname"><a href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">Missile::m_active</a></div><div class="ttdeci">bool m_active</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00030">Missile.h:30</a></div></div>
+<div class="ttc" id="aclass_missile_html_a6a780e6e4661b6c9e40fc6d4b2335311"><div class="ttname"><a href="class_missile.html#a6a780e6e4661b6c9e40fc6d4b2335311">Missile::updateTrail</a></div><div class="ttdeci">void updateTrail(sf::Time t_deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00057">Missile.cpp:57</a></div></div>
+<div class="ttc" id="aclass_missile_html_a6ccf607f9d2fe8044b86182c3c9710c9"><div class="ttname"><a href="class_missile.html#a6ccf607f9d2fe8044b86182c3c9710c9">Missile::m_trailMaxLifetime</a></div><div class="ttdeci">float m_trailMaxLifetime</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00043">Missile.h:43</a></div></div>
+<div class="ttc" id="aclass_missile_html_a7bc5442b92cff6c9350b5496bfc2ae3e"><div class="ttname"><a href="class_missile.html#a7bc5442b92cff6c9350b5496bfc2ae3e">Missile::m_lifetime</a></div><div class="ttdeci">float m_lifetime</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00041">Missile.h:41</a></div></div>
+<div class="ttc" id="aclass_missile_html_a83edd34480c21b85b0003866e26b47f1"><div class="ttname"><a href="class_missile.html#a83edd34480c21b85b0003866e26b47f1">Missile::m_timeSinceLastTrailPart</a></div><div class="ttdeci">float m_timeSinceLastTrailPart</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00044">Missile.h:44</a></div></div>
 <div class="ttc" id="aclass_missile_html_a8ea67bbd5665a9fa841e43990d2bd1fc"><div class="ttname"><a href="class_missile.html#a8ea67bbd5665a9fa841e43990d2bd1fc">Missile::update</a></div><div class="ttdeci">void update(sf::Time t_deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">Missile.cpp:13</a></div></div>
+<div class="ttc" id="aclass_missile_html_a970cb70efd57dfa44e3fc57e5d1ff035"><div class="ttname"><a href="class_missile.html#a970cb70efd57dfa44e3fc57e5d1ff035">Missile::m_addTrailPartInterval</a></div><div class="ttdeci">float m_addTrailPartInterval</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00045">Missile.h:45</a></div></div>
+<div class="ttc" id="aclass_missile_html_aa36d8d7569ae95104fed5ed1a0b90440"><div class="ttname"><a href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">Missile::m_velocity</a></div><div class="ttdeci">sf::Vector2f m_velocity</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00039">Missile.h:39</a></div></div>
+<div class="ttc" id="aclass_missile_html_ab164b28b9ea28828cd2f95b2b171f57d"><div class="ttname"><a href="class_missile.html#ab164b28b9ea28828cd2f95b2b171f57d">Missile::normalize</a></div><div class="ttdeci">sf::Vector2f normalize(const sf::Vector2f &amp;m_source) const</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Missile.cpp:44</a></div></div>
 <div class="ttc" id="aclass_missile_html_abf5d5f4c81b664e09c50fe9f86a09af0"><div class="ttname"><a href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">Missile::m_missileSprite</a></div><div class="ttdeci">sf::Sprite m_missileSprite</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00023">Missile.h:23</a></div></div>
+<div class="ttc" id="aclass_missile_html_ac379538d83d074fb53e5354ba7edb05a"><div class="ttname"><a href="class_missile.html#ac379538d83d074fb53e5354ba7edb05a">Missile::lerpColor</a></div><div class="ttdeci">sf::Color lerpColor(const sf::Color &amp;m_start, const sf::Color &amp;m_end, float m_lifeTime)</div><div class="ttdef"><b>Definition</b> <a href="#l00094">Missile.cpp:94</a></div></div>
 <div class="ttc" id="aclass_missile_html_adf7d4afadcf566497356538cdbbd4efa"><div class="ttname"><a href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">Missile::m_trail</a></div><div class="ttdeci">std::deque&lt; TrailPart &gt; m_trail</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00024">Missile.h:24</a></div></div>
+<div class="ttc" id="aclass_missile_html_ae3d54aa52663b42c2e0eb3360b62c8dd"><div class="ttname"><a href="class_missile.html#ae3d54aa52663b42c2e0eb3360b62c8dd">Missile::m_speed</a></div><div class="ttdeci">float m_speed</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00040">Missile.h:40</a></div></div>
 <div class="ttc" id="aclass_missile_html_aee138dea114b6d8f0aec3bb95ea71f50"><div class="ttname"><a href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">Missile::m_position</a></div><div class="ttdeci">sf::Vector2f m_position</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00026">Missile.h:26</a></div></div>
 <div class="ttc" id="astruct_trail_part_html"><div class="ttname"><a href="struct_trail_part.html">TrailPart</a></div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00005">Missile.h:6</a></div></div>
 <div class="ttc" id="astruct_trail_part_html_a3dcbc69a6a7a9aef1d0031aebbab27bc"><div class="ttname"><a href="struct_trail_part.html#a3dcbc69a6a7a9aef1d0031aebbab27bc">TrailPart::m_expansionRate</a></div><div class="ttdeci">float m_expansionRate</div><div class="ttdef"><b>Definition</b> <a href="_missile_8h_source.html#l00009">Missile.h:9</a></div></div>
@@ -228,7 +243,7 @@ $(function(){initNavTree('_missile_8cpp_source.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_33717ad4dff91f638445dba7568e7039.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_missile_8cpp.html">Missile.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_885cc87fac2d91e269af0a5a959fa5f6.html">E:</a></li><li class="navelem"><a class="el" href="dir_2cd24535ff6ed7a32c82ca94efcc6676.html">Program Files E</a></li><li class="navelem"><a class="el" href="dir_8133eb955d7181d927d4f19e94bdcaeb.html">Year 4</a></li><li class="navelem"><a class="el" href="dir_a4f2779e29224cb0f9f4eca3b25d67e7.html">Project</a></li><li class="navelem"><a class="el" href="dir_217157b70a1fef1b681d630434b82690.html">Project_2023-24</a></li><li class="navelem"><a class="el" href="dir_a75a1f3404be674e32d34e7eb4eac1dc.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="dir_6189a53f1b132c13fcae49b93e82a108.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_missile_8cpp.html">Missile.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

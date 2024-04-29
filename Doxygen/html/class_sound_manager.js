@@ -1,7 +1,10 @@
 var class_sound_manager =
 [
     [ "SoundManager", "class_sound_manager.html#aac4b48cfc4d394c547f5efec7d451165", null ],
+    [ "SoundManager", "class_sound_manager.html#abcc1fbf3488be5788a42c9a4fe56df35", null ],
+    [ "~SoundManager", "class_sound_manager.html#ad5dbf8eab22db48ff8f3db51b02f8938", null ],
     [ "addToPlaylist", "class_sound_manager.html#a19b821bab9d4c9e078a7ee68530fdeb5", null ],
+    [ "getInstance", "class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae", null ],
     [ "loadMusic", "class_sound_manager.html#afa1471a3f32972e3c5dc7529fdc1115e", null ],
     [ "loadSound", "class_sound_manager.html#a8dd42da84f176f55f385f923c1385987", null ],
     [ "operator=", "class_sound_manager.html#a5792dd09a6293846f738e7f9418d9085", null ],
@@ -15,5 +18,12 @@ var class_sound_manager =
     [ "stopAllMusic", "class_sound_manager.html#a23aa7cfec4a6801ba5da92cbfc1bfc39", null ],
     [ "stopMusic", "class_sound_manager.html#abc224f0e248785f6dcfc09e115996329", null ],
     [ "stopSound", "class_sound_manager.html#a424f8bbce87dfe6bb72a4b96e8f4eb2f", null ],
-    [ "updateMusicTrack", "class_sound_manager.html#a237964589201c404a015660fe601eff5", null ]
+    [ "updateMusicTrack", "class_sound_manager.html#a237964589201c404a015660fe601eff5", null ],
+    [ "currentTrack", "class_sound_manager.html#aab51048d5f9bd8cf1df7995ec25fe416", null ],
+    [ "globalMusicVolume", "class_sound_manager.html#a837af56f46e6062590d6c74d4ea31fae", null ],
+    [ "globalSoundVolume", "class_sound_manager.html#adcd7c02cf458cdd911a475fa7a4f6df0", null ],
+    [ "musics", "class_sound_manager.html#ac803877c4a733e920bc348bf5c7e2b4d", null ],
+    [ "playlist", "class_sound_manager.html#a0267b9d05552b093f91996e84b55d931", null ],
+    [ "soundBuffers", "class_sound_manager.html#aca164f0c4120c8aebca9ba6b2289a6ae", null ],
+    [ "sounds", "class_sound_manager.html#ac9b5619ac3af93344d3d830506c4d1ce", null ]
 ];

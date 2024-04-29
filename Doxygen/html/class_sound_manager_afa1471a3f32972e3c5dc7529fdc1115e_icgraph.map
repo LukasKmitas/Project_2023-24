@@ -1,5 +1,9 @@
 <map id="SoundManager::loadMusic" name="SoundManager::loadMusic">
-<area shape="rect" id="Node000001" title="Loads music." alt="" coords="203,5,378,32"/>
-<area shape="rect" id="Node000002" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="5,5,155,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,21,155,21,155,16,187,16"/>
+<area shape="rect" id="Node000001" title="Loads music." alt="" coords="403,31,578,57"/>
+<area shape="rect" id="Node000002" href="$class_game.html#ac70268e7febf34867b9181091ca03073" title="A playlist of songs that plays only in gameplay mode." alt="" coords="153,5,355,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,36,355,32,356,27,388,30"/>
+<area shape="rect" id="Node000004" href="$class_main_menu.html#a53eecf9d5ffd094f54ac4193e7e57eaf" title=" " alt="" coords="179,56,329,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="388,58,329,64,329,59,388,52"/>
+<area shape="rect" id="Node000003" href="$class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
 </map>

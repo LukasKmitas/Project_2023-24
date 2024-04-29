@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +95,8 @@ $(function(){initNavTree('class_g_u_i.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_g_u_i-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GUI Class Reference</div></div>
 </div><!--header-->
@@ -104,7 +106,63 @@ $(function(){initNavTree('class_g_u_i.html',''); initResizable(); });
 <div class="dynheader">
 Collaboration diagram for GUI:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_g_u_i__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_g_u_i__coll__graph.png" border="0" usemap="#a_g_u_i_coll__map" alt="Collaboration graph"/></div>
+<map name="a_g_u_i_coll__map" id="a_g_u_i_coll__map">
+<area shape="rect" title=" " alt="" coords="1218,407,1261,433"/>
+<area shape="rect" href="class_refinery.html" title=" " alt="" coords="715,280,783,307"/>
+<area shape="poly" title=" " alt="" coords="798,281,880,271,983,269,1039,274,1094,286,1146,304,1195,331,1212,348,1224,368,1238,405,1233,407,1220,370,1208,351,1192,335,1144,309,1092,291,1038,280,983,274,880,276,799,286"/>
+<area shape="rect" href="class_harvester.html" title=" " alt="" coords="974,433,1049,460"/>
+<area shape="poly" title=" " alt="" coords="785,313,863,363,959,419,981,430,979,435,956,424,860,368,782,318"/>
+<area shape="rect" href="class_building.html" title=" " alt="" coords="279,219,346,245"/>
+<area shape="poly" title=" " alt="" coords="362,226,485,220,660,217,862,225,965,234,1066,248,1136,257,1165,267,1196,290,1216,318,1229,351,1240,406,1235,407,1224,352,1211,321,1192,294,1163,272,1135,262,1065,253,965,239,862,230,660,223,485,225,362,231"/>
+<area shape="poly" title=" " alt="" coords="362,242,391,248,573,274,715,288,714,293,573,279,390,253,361,247"/>
+<area shape="rect" href="class_barracks.html" title=" " alt="" coords="593,56,666,83"/>
+<area shape="poly" title=" " alt="" coords="321,203,346,153,365,128,389,107,440,83,496,69,549,64,592,64,592,69,549,69,497,74,442,88,392,112,369,132,351,156,326,205"/>
+<area shape="rect" href="class_war_factory.html" title=" " alt="" coords="838,109,927,136"/>
+<area shape="poly" title=" " alt="" coords="343,208,390,184,451,165,514,150,640,131,752,122,837,119,837,125,753,127,640,136,515,155,452,170,392,189,346,213"/>
+<area shape="rect" href="class_air_craft.html" title=" " alt="" coords="598,165,662,192"/>
+<area shape="poly" title=" " alt="" coords="361,217,390,211,504,192,597,180,597,185,505,197,391,216,362,222"/>
+<area shape="rect" href="class_unit.html" title=" " alt="" coords="525,383,569,409"/>
+<area shape="poly" title=" " alt="" coords="333,256,359,288,392,319,420,337,445,347,502,370,525,382,523,387,500,374,443,352,418,342,389,323,355,292,329,260"/>
+<area shape="rect" href="class_particle_system.html" title=" " alt="" coords="5,356,116,383"/>
+<area shape="poly" title=" " alt="" coords="99,346,284,244,287,248,101,351"/>
+<area shape="poly" title=" " alt="" coords="131,370,524,392,524,397,131,376"/>
+<area shape="poly" title=" " alt="" coords="681,52,790,29,858,21,931,18,1004,24,1075,40,1109,54,1140,71,1169,92,1196,117,1209,140,1219,174,1233,258,1239,344,1241,406,1235,406,1234,345,1227,259,1214,175,1204,142,1192,120,1166,96,1137,75,1106,58,1073,45,1003,29,930,23,858,26,791,34,682,57"/>
+<area shape="poly" title=" " alt="" coords="942,109,1002,103,1069,106,1104,112,1137,123,1168,138,1196,160,1208,178,1218,206,1231,278,1238,352,1240,406,1235,406,1233,352,1226,279,1213,208,1203,181,1192,163,1165,143,1135,128,1103,117,1069,111,1002,109,943,114"/>
+<area shape="poly" title=" " alt="" coords="677,172,798,164,952,162,1029,166,1098,174,1155,189,1178,198,1196,210,1206,225,1215,247,1228,303,1240,406,1235,407,1223,304,1210,248,1202,227,1192,214,1175,203,1154,194,1097,180,1028,171,952,168,798,170,678,177"/>
+<area shape="rect" href="class_level_editor.html" title=" " alt="" coords="969,332,1054,359"/>
+<area shape="poly" title=" " alt="" coords="1070,348,1131,359,1195,382,1226,404,1223,408,1192,386,1130,365,1069,353"/>
+<area shape="rect" href="class_rifleman_squad.html" title=" " alt="" coords="957,383,1066,409"/>
+<area shape="poly" title=" " alt="" coords="1081,401,1218,415,1217,420,1081,406"/>
+<area shape="rect" href="class_infantry_unit.html" title=" " alt="" coords="706,383,792,409"/>
+<area shape="poly" title=" " alt="" coords="808,393,957,393,957,399,808,399"/>
+<area shape="poly" title=" " alt="" coords="585,393,705,393,705,399,585,399"/>
+<area shape="poly" title=" " alt="" coords="530,365,536,359,547,356,557,358,563,365,563,382,557,382,558,367,554,363,547,361,539,363,534,369"/>
+<area shape="rect" href="class_vehicle_unit.html" title=" " alt="" coords="705,459,793,485"/>
+<area shape="poly" title=" " alt="" coords="585,407,712,456,710,461,583,412"/>
+<area shape="rect" href="class_aircraft_unit.html" title=" " alt="" coords="706,585,792,612"/>
+<area shape="poly" title=" " alt="" coords="572,419,595,445,735,583,731,587,591,449,568,423"/>
+<area shape="poly" title=" " alt="" coords="1065,446,1127,444,1193,435,1216,427,1218,432,1194,440,1127,449,1065,451"/>
+<area shape="poly" title=" " alt="" coords="808,464,973,448,974,453,808,469"/>
+<area shape="rect" href="class_buggy.html" title=" " alt="" coords="982,535,1041,561"/>
+<area shape="poly" title=" " alt="" coords="808,486,983,537,981,542,807,491"/>
+<area shape="rect" href="class_tank_aurora.html" title=" " alt="" coords="968,484,1055,511"/>
+<area shape="poly" title=" " alt="" coords="808,475,967,490,967,496,808,480"/>
+<area shape="poly" title=" " alt="" coords="1056,550,1089,550,1125,545,1160,535,1192,518,1209,499,1221,476,1234,433,1239,435,1226,478,1214,502,1195,522,1162,540,1126,551,1089,555,1056,555"/>
+<area shape="poly" title=" " alt="" coords="1071,496,1132,489,1163,481,1192,468,1213,451,1228,432,1232,435,1217,455,1195,473,1165,486,1133,495,1071,501"/>
+<area shape="rect" href="class_hammer_head.html" title=" " alt="" coords="961,585,1062,612"/>
+<area shape="poly" title=" " alt="" coords="1077,603,1107,602,1137,598,1166,588,1192,571,1206,557,1216,539,1229,501,1235,463,1236,434,1241,434,1240,463,1235,502,1221,542,1210,560,1195,575,1169,592,1139,603,1107,608,1077,609"/>
+<area shape="poly" title=" " alt="" coords="807,596,961,596,961,601,807,601"/>
+<area shape="rect" href="class_firehawk.html" title=" " alt="" coords="975,636,1048,663"/>
+<area shape="poly" title=" " alt="" coords="807,607,975,640,974,645,806,612"/>
+<area shape="poly" title=" " alt="" coords="1064,655,1096,657,1130,654,1163,644,1192,626,1201,613,1210,592,1222,537,1234,434,1240,434,1228,537,1215,593,1206,615,1196,630,1166,649,1131,659,1096,662,1064,661"/>
+<area shape="rect" href="class_tile.html" title=" " alt="" coords="991,687,1032,713"/>
+<area shape="poly" title=" " alt="" coords="1048,705,1082,709,1121,708,1159,699,1176,691,1192,680,1204,662,1213,635,1226,563,1233,488,1235,434,1240,434,1238,489,1232,564,1218,636,1208,664,1196,683,1179,696,1161,704,1121,713,1082,714,1047,710"/>
+<area shape="rect" href="class_side_bar.html" title=" " alt="" coords="978,737,1045,764"/>
+<area shape="poly" title=" " alt="" coords="1061,758,1094,760,1129,758,1163,749,1192,730,1206,708,1216,675,1230,588,1235,498,1236,434,1241,434,1240,498,1235,588,1222,676,1210,711,1196,734,1165,754,1130,763,1094,765,1060,763"/>
+<area shape="rect" href="struct_button.html" title=" " alt="" coords="719,737,779,764"/>
+<area shape="poly" title=" " alt="" coords="794,748,978,748,978,753,794,753"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -177,6 +235,60 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a39c22a2361d3b62878e057195d4ead42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869f2765d4fae5fcf4e6b6af5d9c65fb" id="r_a869f2765d4fae5fcf4e6b6af5d9c65fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a869f2765d4fae5fcf4e6b6af5d9c65fb">m_unitConfirmed</a> = false</td></tr>
 <tr class="separator:a869f2765d4fae5fcf4e6b6af5d9c65fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad54d74d396b20df834565b29dc10cf89" id="r_ad54d74d396b20df834565b29dc10cf89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad54d74d396b20df834565b29dc10cf89">initTopBar</a> ()</td></tr>
+<tr class="memdesc:ad54d74d396b20df834565b29dc10cf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the top bar content for currency area.  <br /></td></tr>
+<tr class="separator:ad54d74d396b20df834565b29dc10cf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b2c07d39f2356cca83759d665431ab" id="r_a59b2c07d39f2356cca83759d665431ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59b2c07d39f2356cca83759d665431ab">updateCurrency</a> ()</td></tr>
+<tr class="memdesc:a59b2c07d39f2356cca83759d665431ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">updates the currency for player text  <br /></td></tr>
+<tr class="separator:a59b2c07d39f2356cca83759d665431ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a396a00f3bda5be64a2208d1f35bbb0f5" id="r_a396a00f3bda5be64a2208d1f35bbb0f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396a00f3bda5be64a2208d1f35bbb0f5">loadIcons</a> ()</td></tr>
+<tr class="memdesc:a396a00f3bda5be64a2208d1f35bbb0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all the icons for the buttons.  <br /></td></tr>
+<tr class="separator:a396a00f3bda5be64a2208d1f35bbb0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752ab2883141a8f72db193dec149cfd6" id="r_a752ab2883141a8f72db193dec149cfd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a752ab2883141a8f72db193dec149cfd6">sellBuilding</a> ()</td></tr>
+<tr class="memdesc:a752ab2883141a8f72db193dec149cfd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">sell the building off  <br /></td></tr>
+<tr class="separator:a752ab2883141a8f72db193dec149cfd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4dac37d932fcd8218e7f61f5e8bc5e67" id="r_a4dac37d932fcd8218e7f61f5e8bc5e67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tile.html">Tile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dac37d932fcd8218e7f61f5e8bc5e67">m_tile</a></td></tr>
+<tr class="separator:a4dac37d932fcd8218e7f61f5e8bc5e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7933debe7618db5cad7729490e03ab6c" id="r_a7933debe7618db5cad7729490e03ab6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_side_bar.html">SideBar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7933debe7618db5cad7729490e03ab6c">m_sideBar</a> {<a class="el" href="#a7a2c7132d960e86700ba5d5bcf411a06">m_selectedBuildingType</a>}</td></tr>
+<tr class="separator:a7933debe7618db5cad7729490e03ab6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add7a9ac5c3826c424b081f9af6366f4e" id="r_add7a9ac5c3826c424b081f9af6366f4e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="class_tile.html">Tile</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add7a9ac5c3826c424b081f9af6366f4e">m_tilesReference</a></td></tr>
+<tr class="separator:add7a9ac5c3826c424b081f9af6366f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4051b5a4cba53013546d87f33fd69349" id="r_a4051b5a4cba53013546d87f33fd69349"><td class="memItemLeft" align="right" valign="top">sf::View&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4051b5a4cba53013546d87f33fd69349">m_guiView</a></td></tr>
+<tr class="separator:a4051b5a4cba53013546d87f33fd69349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25eb8f093c70d1ca3438cb7313bc09e1" id="r_a25eb8f093c70d1ca3438cb7313bc09e1"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25eb8f093c70d1ca3438cb7313bc09e1">m_topBar</a></td></tr>
+<tr class="separator:a25eb8f093c70d1ca3438cb7313bc09e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6797643efdf0289f818e2127ffbd3cd5" id="r_a6797643efdf0289f818e2127ffbd3cd5"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6797643efdf0289f818e2127ffbd3cd5">m_topBarTexture</a></td></tr>
+<tr class="separator:a6797643efdf0289f818e2127ffbd3cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be7e068cf3619fd045f30e1bf9a0160" id="r_a9be7e068cf3619fd045f30e1bf9a0160"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be7e068cf3619fd045f30e1bf9a0160">m_currencyFont</a></td></tr>
+<tr class="separator:a9be7e068cf3619fd045f30e1bf9a0160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfd501128fed7ec6531846ba1b35896" id="r_aebfd501128fed7ec6531846ba1b35896"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebfd501128fed7ec6531846ba1b35896">m_currencyText</a></td></tr>
+<tr class="separator:aebfd501128fed7ec6531846ba1b35896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13e9fc16ab26e328aafc1919d3ddb00" id="r_ad13e9fc16ab26e328aafc1919d3ddb00"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad13e9fc16ab26e328aafc1919d3ddb00">m_BuildingTexture1</a></td></tr>
+<tr class="separator:ad13e9fc16ab26e328aafc1919d3ddb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e171d4a1e7044fd7659e2e58a834bf" id="r_a99e171d4a1e7044fd7659e2e58a834bf"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e171d4a1e7044fd7659e2e58a834bf">m_BuildingTexture2</a></td></tr>
+<tr class="separator:a99e171d4a1e7044fd7659e2e58a834bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185feaa0e760a907b29148189f5599a7" id="r_a185feaa0e760a907b29148189f5599a7"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a185feaa0e760a907b29148189f5599a7">m_unitInfantryTexture</a></td></tr>
+<tr class="separator:a185feaa0e760a907b29148189f5599a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c05bc0f6bf8f09dab1bbe758066d6f" id="r_ae6c05bc0f6bf8f09dab1bbe758066d6f"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6c05bc0f6bf8f09dab1bbe758066d6f">m_unitVehicleTexture</a></td></tr>
+<tr class="separator:ae6c05bc0f6bf8f09dab1bbe758066d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44907bc49f280b24509571600fb56b1a" id="r_a44907bc49f280b24509571600fb56b1a"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44907bc49f280b24509571600fb56b1a">m_unitAirCraftTexture</a></td></tr>
+<tr class="separator:a44907bc49f280b24509571600fb56b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0d7fed4608605625623cfa0dc43afb" id="r_a4f0d7fed4608605625623cfa0dc43afb"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f0d7fed4608605625623cfa0dc43afb">m_harvesterIconTexture</a></td></tr>
+<tr class="separator:a4f0d7fed4608605625623cfa0dc43afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa354ef17b794ee77efba18a905e29433" id="r_aa354ef17b794ee77efba18a905e29433"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa354ef17b794ee77efba18a905e29433">m_ghostBuildingSprite</a></td></tr>
+<tr class="separator:aa354ef17b794ee77efba18a905e29433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d47e4288e9e253525bc350f348566e4" id="r_a5d47e4288e9e253525bc350f348566e4"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d47e4288e9e253525bc350f348566e4">m_ghostBuildingTexture</a></td></tr>
+<tr class="separator:a5d47e4288e9e253525bc350f348566e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82281220156c473d6732552e28e5f30f" id="r_a82281220156c473d6732552e28e5f30f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82281220156c473d6732552e28e5f30f">m_showSlider</a> = false</td></tr>
+<tr class="separator:a82281220156c473d6732552e28e5f30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46dc80295cea92ae100843fab6c576fb" id="r_a46dc80295cea92ae100843fab6c576fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46dc80295cea92ae100843fab6c576fb">m_placementValid</a> = false</td></tr>
+<tr class="separator:a46dc80295cea92ae100843fab6c576fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -207,6 +319,18 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00003">3</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a617cbe16962f0fe4b74bd66f716a482b_cgraph.png" border="0" usemap="#aclass_g_u_i_a617cbe16962f0fe4b74bd66f716a482b_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a617cbe16962f0fe4b74bd66f716a482b_cgraph" id="aclass_g_u_i_a617cbe16962f0fe4b74bd66f716a482b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,79,57"/>
+<area shape="rect" href="class_g_u_i.html#ad54d74d396b20df834565b29dc10cf89" title="Initializes the top bar content for currency area." alt="" coords="127,5,236,32"/>
+<area shape="poly" title=" " alt="" coords="79,35,111,29,112,34,80,40"/>
+<area shape="rect" href="class_g_u_i.html#a396a00f3bda5be64a2208d1f35bbb0f5" title="Load all the icons for the buttons." alt="" coords="128,56,235,83"/>
+<area shape="poly" title=" " alt="" coords="80,48,113,54,112,59,79,53"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -262,7 +386,32 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph.svg" width="455" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph.png" border="0" usemap="#aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph" id="aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph">
+<area shape="rect" title="This is more for the ghost buildings and confirms placement." alt="" coords="5,81,203,108"/>
+<area shape="rect" href="class_building.html#a1d7272aa95009f1e624986f70b2d694e" title="checks if it can be bought" alt="" coords="251,5,428,32"/>
+<area shape="poly" title=" " alt="" coords="143,78,250,41,273,34,275,39,251,47,144,83"/>
+<area shape="rect" href="class_building.html#af8054c0e09c73c99e820073a203623be" title=" " alt="" coords="253,56,426,83"/>
+<area shape="poly" title=" " alt="" coords="203,81,237,78,237,83,204,87"/>
+<area shape="rect" href="class_g_u_i.html#a0ef418104a0dc3b331a7b3636b0c132a" title="checks if the placement is valid for buildings" alt="" coords="263,107,416,133"/>
+<area shape="poly" title=" " alt="" coords="204,103,248,108,248,113,203,108"/>
+<area shape="rect" href="class_g_u_i.html#aeefde1f8fd80fb00b225080ddb0d57c8" title="checks if the placement is valid for tiles" alt="" coords="254,157,425,200"/>
+<area shape="poly" title=" " alt="" coords="145,106,264,149,262,154,143,111"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a7878b88debc5991513f46ce2665f5f70_icgraph.png" border="0" usemap="#aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_icgraph" id="aclass_g_u_i_a7878b88debc5991513f46ce2665f5f70_icgraph">
+<area shape="rect" title="This is more for the ghost buildings and confirms placement." alt="" coords="384,5,582,32"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -294,12 +443,36 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph.svg" width="428" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph.png" border="0" usemap="#aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph" id="aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph">
+<area shape="rect" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="5,107,195,133"/>
+<area shape="rect" href="class_side_bar.html#a8bfd240baf0383a6fa11822cf1c5776f" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="244,5,422,32"/>
+<area shape="poly" title=" " alt="" coords="122,104,176,73,242,42,261,35,263,40,244,46,178,78,125,108"/>
+<area shape="rect" href="class_side_bar.html#a0a755f0ea7a46f3d6f0478b82f3d8ad5" title="Adds the building buttons for the sidebar." alt="" coords="243,56,423,83"/>
+<area shape="poly" title=" " alt="" coords="164,103,253,84,254,89,165,109"/>
+<area shape="rect" href="class_side_bar.html#a38a8e07a7b7fd8da23825dd193d659a3" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="245,107,421,133"/>
+<area shape="poly" title=" " alt="" coords="195,117,229,117,229,123,195,123"/>
+<area shape="rect" href="class_side_bar.html#a41846d720598c76c51371c790145a515" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="244,157,422,184"/>
+<area shape="poly" title=" " alt="" coords="165,131,254,151,253,156,164,137"/>
+<area shape="rect" href="class_side_bar.html#ad45013b35dc68cfc580bc8a35352dd63" title="Just to clear everything." alt="" coords="259,208,407,235"/>
+<area shape="poly" title=" " alt="" coords="125,132,178,162,244,194,263,200,261,205,242,198,176,167,122,136"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_icgraph.svg" width="406" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_icgraph.png" border="0" usemap="#aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_icgraph" id="aclass_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_icgraph">
+<area shape="rect" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="636,5,825,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -336,7 +509,105 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><img src="class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph.png" border="0" usemap="#aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph" id="aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph">
+<area shape="rect" title="handles the mouse clicks for GUI related stuff" alt="" coords="5,448,163,475"/>
+<area shape="rect" href="class_unit.html#a8ed00bb67423863eafa5a0e483fd2dd9" title=" " alt="" coords="237,5,392,32"/>
+<area shape="poly" title=" " alt="" coords="82,448,84,376,90,325,99,267,115,207,137,147,168,91,209,42,222,32,225,37,213,46,172,94,142,149,120,208,104,268,95,325,90,377,88,448"/>
+<area shape="rect" href="class_side_bar.html#a6fe150acbd921f8aab7080a5711d063b" title=" " alt="" coords="234,56,395,99"/>
+<area shape="poly" title=" " alt="" coords="83,447,90,387,109,296,125,246,146,196,174,150,209,109,219,100,223,104,213,113,178,153,151,199,130,248,114,297,95,387,89,448"/>
+<area shape="rect" href="class_side_bar.html#a784d3c48ee380edca17a40fd5bb34343" title=" " alt="" coords="230,123,399,165"/>
+<area shape="poly" title=" " alt="" coords="85,447,95,397,117,324,133,284,154,245,179,208,209,175,215,170,218,174,212,179,183,211,158,247,138,286,122,326,100,398,90,448"/>
+<area shape="rect" href="class_side_bar.html#ad1b03caf2f481402bd547db44173741d" title=" " alt="" coords="214,189,415,216"/>
+<area shape="poly" title=" " alt="" coords="86,447,99,404,122,344,158,280,182,251,209,226,215,221,219,226,212,230,186,255,163,283,127,346,104,406,91,449"/>
+<area shape="rect" href="class_side_bar.html#aba78ce197b2069026a62dd77bde88e14" title=" " alt="" coords="230,240,399,283"/>
+<area shape="poly" title=" " alt="" coords="90,446,133,373,167,330,209,293,216,288,219,293,212,297,171,334,137,376,94,449"/>
+<area shape="rect" href="class_side_bar.html#a122e9445ca95cb0a3fd1ace6c11416ab" title=" " alt="" coords="216,307,413,349"/>
+<area shape="poly" title=" " alt="" coords="97,445,145,403,176,380,209,359,221,353,223,358,212,364,179,384,148,408,101,449"/>
+<area shape="rect" href="class_side_bar.html#a1ecc06b775217732365fbad6f6bbbf62" title=" " alt="" coords="229,373,400,416"/>
+<area shape="poly" title=" " alt="" coords="132,445,223,418,224,423,134,450"/>
+<area shape="rect" href="class_side_bar.html#a8095fb8c494a0830365c243583496ca1" title=" " alt="" coords="232,440,397,483"/>
+<area shape="poly" title=" " alt="" coords="163,459,217,459,217,464,163,464"/>
+<area shape="rect" href="class_side_bar.html#a9559e88577ccabcd20cbb1c47a6cc1b5" title=" " alt="" coords="231,507,398,549"/>
+<area shape="poly" title=" " alt="" coords="134,473,224,499,223,504,132,478"/>
+<area shape="rect" href="class_side_bar.html#a8cadba8295bec933be8c224461d9d83c" title=" " alt="" coords="240,573,389,600"/>
+<area shape="poly" title=" " alt="" coords="100,473,147,516,178,539,212,559,227,565,225,570,209,564,175,544,144,520,97,477"/>
+<area shape="rect" href="class_side_bar.html#a1fbb645d9d6a779d07fb55a1cef56b4f" title=" " alt="" coords="231,624,398,651"/>
+<area shape="poly" title=" " alt="" coords="95,474,139,540,172,578,212,610,222,615,219,620,209,614,169,582,134,543,90,477"/>
+<area shape="rect" href="class_side_bar.html#aa20184b6fa227eedb85a17f5013b7868" title=" " alt="" coords="223,675,406,717"/>
+<area shape="poly" title=" " alt="" coords="92,474,107,511,132,561,167,615,189,639,212,661,218,664,215,669,209,665,185,643,163,618,128,564,102,513,88,476"/>
+<area shape="rect" href="class_side_bar.html#af2cf493e577385cc8e83bd5b02de4000" title=" " alt="" coords="211,741,418,768"/>
+<area shape="poly" title=" " alt="" coords="90,474,101,523,123,592,139,629,159,665,183,698,212,727,218,731,214,735,209,731,179,702,154,668,134,631,118,593,95,524,85,476"/>
+<area shape="rect" href="class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1" title="What &quot;Buttons&quot; suppose to appear when clicking on the building type in gameplay." alt="" coords="220,792,409,819"/>
+<area shape="poly" title=" " alt="" coords="89,475,97,531,116,613,132,658,153,702,180,743,212,778,217,782,214,786,209,782,175,746,149,705,127,660,111,615,91,532,84,475"/>
+<area shape="rect" href="class_g_u_i.html#a752ab2883141a8f72db193dec149cfd6" title="sell the building off" alt="" coords="256,868,373,895"/>
+<area shape="poly" title=" " alt="" coords="89,475,96,537,116,630,132,682,153,734,180,784,213,829,232,846,254,859,251,863,229,850,209,832,175,787,148,737,127,684,111,632,91,538,84,476"/>
+<area shape="rect" href="class_side_bar.html#a8bfd240baf0383a6fa11822cf1c5776f" title="Adds the buttons for the air units when the aircraft building is clicked on." alt="" coords="468,665,645,692"/>
+<area shape="poly" title=" " alt="" coords="396,789,416,778,432,760,440,741,447,721,464,702,472,697,475,701,468,706,452,724,445,743,437,763,420,782,398,794"/>
+<area shape="rect" href="class_side_bar.html#a0a755f0ea7a46f3d6f0478b82f3d8ad5" title="Adds the building buttons for the sidebar." alt="" coords="466,716,646,743"/>
+<area shape="poly" title=" " alt="" coords="381,789,417,778,441,765,465,752,484,745,486,750,467,757,443,770,419,782,383,794"/>
+<area shape="rect" href="class_side_bar.html#a38a8e07a7b7fd8da23825dd193d659a3" title="Adds the buttons for the infantry when barracks building is clicked on." alt="" coords="468,767,644,793"/>
+<area shape="poly" title=" " alt="" coords="409,793,452,788,453,794,410,798"/>
+<area shape="rect" href="class_side_bar.html#a41846d720598c76c51371c790145a515" title="Adds the buttons for vehicles when the warfactory building is clicked on." alt="" coords="468,817,645,844"/>
+<area shape="poly" title=" " alt="" coords="410,813,452,817,452,822,409,818"/>
+<area shape="rect" href="class_side_bar.html#ad45013b35dc68cfc580bc8a35352dd63" title="Just to clear everything." alt="" coords="482,868,630,895"/>
+<area shape="poly" title=" " alt="" coords="356,817,467,853,491,861,489,866,465,859,354,822"/>
+<area shape="rect" href="class_building.html#a1f7ac7c50ddf4e02fe8f36950f28d2c5" title=" " alt="" coords="496,919,616,945"/>
+<area shape="poly" title=" " alt="" coords="374,891,481,914,480,919,373,896"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_icgraph.png" border="0" usemap="#aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_icgraph" id="aclass_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_icgraph">
+<area shape="rect" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad54d74d396b20df834565b29dc10cf89" name="ad54d74d396b20df834565b29dc10cf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad54d74d396b20df834565b29dc10cf89">&#9670;&#160;</a></span>initTopBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI::initTopBar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the top bar content for currency area. </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00406">406</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_ad54d74d396b20df834565b29dc10cf89_icgraph.png" border="0" usemap="#aclass_g_u_i_ad54d74d396b20df834565b29dc10cf89_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_ad54d74d396b20df834565b29dc10cf89_icgraph" id="aclass_g_u_i_ad54d74d396b20df834565b29dc10cf89_icgraph">
+<area shape="rect" title="Initializes the top bar content for currency area." alt="" coords="127,5,236,32"/>
+<area shape="rect" href="class_g_u_i.html#a617cbe16962f0fe4b74bd66f716a482b" title=" " alt="" coords="5,5,79,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,79,21,79,16,111,16"/>
+</map>
 </div>
 
 </div>
@@ -374,7 +645,18 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a_icgraph.svg" width="408" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a_icgraph.png" border="0" usemap="#aclass_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a_icgraph" id="aclass_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a_icgraph">
+<area shape="rect" title="checks if the placement is valid for buildings" alt="" coords="630,5,782,32"/>
+<area shape="rect" href="class_g_u_i.html#a7878b88debc5991513f46ce2665f5f70" title="This is more for the ghost buildings and confirms placement." alt="" coords="384,5,582,32"/>
+<area shape="poly" title=" " alt="" coords="614,21,582,21,582,16,614,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -407,7 +689,57 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph.svg" width="455" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph.png" border="0" usemap="#aclass_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph" id="aclass_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph">
+<area shape="rect" title="checks if the placement is valid for tiles" alt="" coords="630,5,801,48"/>
+<area shape="rect" href="class_g_u_i.html#a7878b88debc5991513f46ce2665f5f70" title="This is more for the ghost buildings and confirms placement." alt="" coords="384,13,582,40"/>
+<area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,13,336,40"/>
+<area shape="poly" title=" " alt="" coords="369,29,337,29,337,24,369,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a396a00f3bda5be64a2208d1f35bbb0f5" name="a396a00f3bda5be64a2208d1f35bbb0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396a00f3bda5be64a2208d1f35bbb0f5">&#9670;&#160;</a></span>loadIcons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI::loadIcons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load all the icons for the buttons. </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00433">433</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5_icgraph.png" border="0" usemap="#aclass_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5_icgraph" id="aclass_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5_icgraph">
+<area shape="rect" title="Load all the icons for the buttons." alt="" coords="127,5,233,32"/>
+<area shape="rect" href="class_g_u_i.html#a617cbe16962f0fe4b74bd66f716a482b" title=" " alt="" coords="5,5,79,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,79,21,79,16,111,16"/>
+</map>
 </div>
 
 </div>
@@ -439,7 +771,83 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph.svg" width="258" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph.png" border="0" usemap="#aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph" id="aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph">
+<area shape="rect" title="Renders GUI." alt="" coords="5,5,93,32"/>
+<area shape="rect" href="class_side_bar.html#add5b055604b08b68d3cd8778c760d8b1" title="Renders the sideBar UI in gameplay." alt="" coords="141,5,252,32"/>
+<area shape="poly" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+<area shape="rect" href="class_side_bar.html#af27706211ab45d7a8b285ca44245e270" title="Draws the grid thats where the buttons are in the sidebar GUI." alt="" coords="300,5,426,32"/>
+<area shape="poly" title=" " alt="" coords="252,16,284,16,284,21,252,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_icgraph.png" border="0" usemap="#aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_icgraph" id="aclass_g_u_i_a76807a6a90963f9971d165eb3c77cc57_icgraph">
+<area shape="rect" title="Renders GUI." alt="" coords="381,5,469,32"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a752ab2883141a8f72db193dec149cfd6" name="a752ab2883141a8f72db193dec149cfd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752ab2883141a8f72db193dec149cfd6">&#9670;&#160;</a></span>sellBuilding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI::sellBuilding </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sell the building off </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00542">542</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a752ab2883141a8f72db193dec149cfd6_cgraph.png" border="0" usemap="#aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_cgraph" id="aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_cgraph">
+<area shape="rect" title="sell the building off" alt="" coords="5,5,123,32"/>
+<area shape="rect" href="class_building.html#a1f7ac7c50ddf4e02fe8f36950f28d2c5" title=" " alt="" coords="171,5,291,32"/>
+<area shape="poly" title=" " alt="" coords="123,16,155,16,155,21,123,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a752ab2883141a8f72db193dec149cfd6_icgraph.png" border="0" usemap="#aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_icgraph" id="aclass_g_u_i_a752ab2883141a8f72db193dec149cfd6_icgraph">
+<area shape="rect" title="sell the building off" alt="" coords="636,5,753,32"/>
+<area shape="rect" href="class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="620,21,588,21,588,16,620,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -471,7 +879,73 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph.svg" width="264" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph.png" border="0" usemap="#aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph" alt=""/></div>
+<map name="aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph" id="aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph">
+<area shape="rect" title="updates GUi content" alt="" coords="5,31,96,57"/>
+<area shape="rect" href="class_side_bar.html#a689859a607ae1f109e8ae619c26ada48" title=" " alt="" coords="158,5,272,32"/>
+<area shape="poly" title=" " alt="" coords="96,34,142,27,143,32,96,40"/>
+<area shape="rect" href="class_g_u_i.html#a59b2c07d39f2356cca83759d665431ab" title="updates the currency for player text" alt="" coords="144,56,286,83"/>
+<area shape="poly" title=" " alt="" coords="96,48,129,53,128,59,96,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_icgraph.png" border="0" usemap="#aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_icgraph" id="aclass_g_u_i_af0c6878a7e490283c94e9d71c05ca479_icgraph">
+<area shape="rect" title="updates GUi content" alt="" coords="384,5,475,32"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59b2c07d39f2356cca83759d665431ab" name="a59b2c07d39f2356cca83759d665431ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59b2c07d39f2356cca83759d665431ab">&#9670;&#160;</a></span>updateCurrency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI::updateCurrency </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>updates the currency for player text </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00397">397</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a59b2c07d39f2356cca83759d665431ab_icgraph.png" border="0" usemap="#aclass_g_u_i_a59b2c07d39f2356cca83759d665431ab_icgraph" alt=""/></div>
+<map name="aclass_g_u_i_a59b2c07d39f2356cca83759d665431ab_icgraph" id="aclass_g_u_i_a59b2c07d39f2356cca83759d665431ab_icgraph">
+<area shape="rect" title="updates the currency for player text" alt="" coords="523,5,665,32"/>
+<area shape="rect" href="class_g_u_i.html#af0c6878a7e490283c94e9d71c05ca479" title="updates GUi content" alt="" coords="384,5,475,32"/>
+<area shape="poly" title=" " alt="" coords="507,21,475,21,475,16,507,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
@@ -541,6 +1015,54 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="ad13e9fc16ab26e328aafc1919d3ddb00" name="ad13e9fc16ab26e328aafc1919d3ddb00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13e9fc16ab26e328aafc1919d3ddb00">&#9670;&#160;</a></span>m_BuildingTexture1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_BuildingTexture1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00086">86</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a99e171d4a1e7044fd7659e2e58a834bf" name="a99e171d4a1e7044fd7659e2e58a834bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e171d4a1e7044fd7659e2e58a834bf">&#9670;&#160;</a></span>m_BuildingTexture2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_BuildingTexture2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00087">87</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
 <a id="a9006edc3415b5485855957a3b15ffd8b" name="a9006edc3415b5485855957a3b15ffd8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9006edc3415b5485855957a3b15ffd8b">&#9670;&#160;</a></span>m_confirmBuildingPlacement</h2>
 
@@ -573,6 +1095,54 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a9be7e068cf3619fd045f30e1bf9a0160" name="a9be7e068cf3619fd045f30e1bf9a0160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be7e068cf3619fd045f30e1bf9a0160">&#9670;&#160;</a></span>m_currencyFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font GUI::m_currencyFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00083">83</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="aebfd501128fed7ec6531846ba1b35896" name="aebfd501128fed7ec6531846ba1b35896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebfd501128fed7ec6531846ba1b35896">&#9670;&#160;</a></span>m_currencyText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text GUI::m_currencyText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00084">84</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
 <a id="afd2e97394854d6fbf437fbfb29382b5b" name="afd2e97394854d6fbf437fbfb29382b5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd2e97394854d6fbf437fbfb29382b5b">&#9670;&#160;</a></span>m_firehawk</h2>
 
@@ -586,6 +1156,78 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00048">48</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="aa354ef17b794ee77efba18a905e29433" name="aa354ef17b794ee77efba18a905e29433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa354ef17b794ee77efba18a905e29433">&#9670;&#160;</a></span>m_ghostBuildingSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GUI::m_ghostBuildingSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00094">94</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a5d47e4288e9e253525bc350f348566e4" name="a5d47e4288e9e253525bc350f348566e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d47e4288e9e253525bc350f348566e4">&#9670;&#160;</a></span>m_ghostBuildingTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_ghostBuildingTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00095">95</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a4051b5a4cba53013546d87f33fd69349" name="a4051b5a4cba53013546d87f33fd69349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4051b5a4cba53013546d87f33fd69349">&#9670;&#160;</a></span>m_guiView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::View GUI::m_guiView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00078">78</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 
 </div>
 </div>
@@ -621,6 +1263,30 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a4f0d7fed4608605625623cfa0dc43afb" name="a4f0d7fed4608605625623cfa0dc43afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0d7fed4608605625623cfa0dc43afb">&#9670;&#160;</a></span>m_harvesterIconTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_harvesterIconTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00092">92</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
 <a id="ac4d43c86265d443c5e38f52b72eba619" name="ac4d43c86265d443c5e38f52b72eba619"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4d43c86265d443c5e38f52b72eba619">&#9670;&#160;</a></span>m_placedBuildings</h2>
 
@@ -634,6 +1300,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00036">36</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a46dc80295cea92ae100843fab6c576fb" name="a46dc80295cea92ae100843fab6c576fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46dc80295cea92ae100843fab6c576fb">&#9670;&#160;</a></span>m_placementValid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GUI::m_placementValid = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00098">98</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 
 </div>
 </div>
@@ -749,6 +1439,54 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a82281220156c473d6732552e28e5f30f" name="a82281220156c473d6732552e28e5f30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82281220156c473d6732552e28e5f30f">&#9670;&#160;</a></span>m_showSlider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GUI::m_showSlider = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00097">97</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a7933debe7618db5cad7729490e03ab6c" name="a7933debe7618db5cad7729490e03ab6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7933debe7618db5cad7729490e03ab6c">&#9670;&#160;</a></span>m_sideBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_side_bar.html">SideBar</a> GUI::m_sideBar {<a class="el" href="#a7a2c7132d960e86700ba5d5bcf411a06">m_selectedBuildingType</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00069">69</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
 <a id="a4f72a195c6a40bb6761dde6affa48c97" name="a4f72a195c6a40bb6761dde6affa48c97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f72a195c6a40bb6761dde6affa48c97">&#9670;&#160;</a></span>m_tankAurora</h2>
 
@@ -765,6 +1503,126 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a4dac37d932fcd8218e7f61f5e8bc5e67" name="a4dac37d932fcd8218e7f61f5e8bc5e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dac37d932fcd8218e7f61f5e8bc5e67">&#9670;&#160;</a></span>m_tile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_tile.html">Tile</a> GUI::m_tile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00068">68</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="add7a9ac5c3826c424b081f9af6366f4e" name="add7a9ac5c3826c424b081f9af6366f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7a9ac5c3826c424b081f9af6366f4e">&#9670;&#160;</a></span>m_tilesReference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="class_tile.html">Tile</a>&gt; &gt;&amp; GUI::m_tilesReference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00071">71</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a25eb8f093c70d1ca3438cb7313bc09e1" name="a25eb8f093c70d1ca3438cb7313bc09e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25eb8f093c70d1ca3438cb7313bc09e1">&#9670;&#160;</a></span>m_topBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape GUI::m_topBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00080">80</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a6797643efdf0289f818e2127ffbd3cd5" name="a6797643efdf0289f818e2127ffbd3cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6797643efdf0289f818e2127ffbd3cd5">&#9670;&#160;</a></span>m_topBarTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_topBarTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00081">81</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a44907bc49f280b24509571600fb56b1a" name="a44907bc49f280b24509571600fb56b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44907bc49f280b24509571600fb56b1a">&#9670;&#160;</a></span>m_unitAirCraftTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_unitAirCraftTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00090">90</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
 <a id="a869f2765d4fae5fcf4e6b6af5d9c65fb" name="a869f2765d4fae5fcf4e6b6af5d9c65fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a869f2765d4fae5fcf4e6b6af5d9c65fb">&#9670;&#160;</a></span>m_unitConfirmed</h2>
 
@@ -778,6 +1636,54 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00061">61</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a185feaa0e760a907b29148189f5599a7" name="a185feaa0e760a907b29148189f5599a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185feaa0e760a907b29148189f5599a7">&#9670;&#160;</a></span>m_unitInfantryTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_unitInfantryTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00088">88</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6c05bc0f6bf8f09dab1bbe758066d6f" name="ae6c05bc0f6bf8f09dab1bbe758066d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c05bc0f6bf8f09dab1bbe758066d6f">&#9670;&#160;</a></span>m_unitVehicleTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture GUI::m_unitVehicleTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00089">89</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 
 </div>
 </div>
@@ -798,8 +1704,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_g_u_i_8h_source.html">GUI.h</a></li>
-<li>AI Behaviors/<a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_g_u_i_8h_source.html">GUI.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

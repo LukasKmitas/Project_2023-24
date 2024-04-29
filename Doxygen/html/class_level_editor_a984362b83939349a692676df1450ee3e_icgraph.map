@@ -1,5 +1,18 @@
 <map id="LevelEditor::resetFogOfWar" name="LevelEditor::resetFogOfWar">
-<area shape="rect" id="Node000001" title="Resets the fog." alt="" coords="153,5,333,32"/>
-<area shape="rect" id="Node000002" href="$class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+<area shape="rect" id="Node000001" title="Resets the fog." alt="" coords="843,31,1023,57"/>
+<area shape="rect" id="Node000002" href="$class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="680,5,780,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="827,33,780,27,780,22,828,28"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a9de86d1081ce3a5decd86a3c543598b6" title="To reset the game and undo all the properties for a new game." alt="" coords="665,56,795,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="828,60,796,64,795,59,827,55"/>
+<area shape="rect" id="Node000004" href="$class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="438,31,609,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="649,62,609,57,610,52,649,57"/>
+<area shape="rect" id="Node000008" href="$class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="430,81,617,108"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="649,82,617,86,617,81,649,77"/>
+<area shape="rect" id="Node000005" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,56,382,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="423,59,383,63,383,58,422,53"/>
+<area shape="rect" id="Node000006" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,56,185,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="217,72,185,72,185,67,217,67"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="414,85,382,81,383,75,415,79"/>
 </map>

@@ -1,5 +1,17 @@
 <map id="Building::updateHealthBar" name="Building::updateHealthBar">
-<area shape="rect" id="Node000001" title="Updates the health bar when its set for loading the building." alt="" coords="184,5,355,32"/>
-<area shape="rect" id="Node000002" href="$class_building.html#ab91941f35d9a907fd1a065af75af0a18" title="Sets the health for laoding." alt="" coords="5,5,136,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,21,136,21,136,16,168,16"/>
+<area shape="rect" id="Node000001" title="Updates the health bar when its set for loading the building." alt="" coords="1150,5,1321,32"/>
+<area shape="rect" id="Node000002" href="$class_building.html#ab91941f35d9a907fd1a065af75af0a18" title="Sets the health for laoding." alt="" coords="971,5,1102,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1134,21,1102,21,1102,16,1134,16"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a21f04e66a512dabffb3ce58cbecea6bf" title="Loads the buildings for both sides." alt="" coords="782,5,923,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="955,21,924,21,924,16,955,16"/>
+<area shape="rect" id="Node000004" href="$class_game.html#ad5515b9b26ffd6c2cc89369f87cf9328" title="Loads the match where all the stats, units, buildings are suppose to be." alt="" coords="575,5,734,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="767,21,735,21,735,16,767,16"/>
+<area shape="rect" id="Node000005" href="$class_game.html#a5e57e588368a437cbe1a177b02e7175c" title="Loads the level." alt="" coords="384,5,527,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="559,21,527,21,527,16,559,16"/>
+<area shape="rect" id="Node000006" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="368,21,337,21,337,16,368,16"/>
+<area shape="rect" id="Node000007" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

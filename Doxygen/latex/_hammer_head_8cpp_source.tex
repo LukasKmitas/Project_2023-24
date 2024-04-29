@@ -1,12 +1,12 @@
 \doxysection{Hammer\+Head.\+cpp}
-\hypertarget{_hammer_head_8cpp_source}{}\label{_hammer_head_8cpp_source}\index{AI Behaviors/HammerHead.cpp@{AI Behaviors/HammerHead.cpp}}
+\hypertarget{_hammer_head_8cpp_source}{}\label{_hammer_head_8cpp_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/HammerHead.cpp@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/HammerHead.cpp}}
 \mbox{\hyperlink{_hammer_head_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hammer_head_8h}{HammerHead.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00003}\mbox{\hyperlink{class_hammer_head_a4cc10f20d33cd80da97491fdc43fc852}{00003}}\ \mbox{\hyperlink{class_hammer_head_a4cc10f20d33cd80da97491fdc43fc852}{HammerHead::HammerHead}}()}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00004}00004\ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00005}00005\ \ \ \ \ initHammerhead();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a999ac5cd62f14108f548d0ce2e796b17}{initHammerhead}}();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 1500;}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 100;}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 310;}
@@ -26,31 +26,31 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00022}00022\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_aircraft_unit_a383a50ac692f739ef21306ba9860c4e5}{AircraftUnit::update}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allyUnits}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00025}00025\ \ \ \ \ movement(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a8ccd0f5bcaa2455c02fc5334580ab961}{movement}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_unit_a9262163e015dca7a29a114798b7ede32}{orientSpriteToMovement}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fireTimer\ >\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hammer_head_a5afd07127592e79a7cb8c7ff850e4bfe}{m\_fireTimer}}\ >\ 0.0f)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00029}00029\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ m\_fireTimer\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a5afd07127592e79a7cb8c7ff850e4bfe}{m\_fireTimer}}\ -\/=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00031}00031\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00032}00032\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00034}00034\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ aimWeapons(*\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_abfc0a243da104f4fe34b5abc4e602669}{aimWeapons}}(*\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00036}00036\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00038}00038\ \ \ \ \ spawnParticleExhaustEffect();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a00adb09a2731a76f3701efdcfa3c03ab}{spawnParticleExhaustEffect}}();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00039}00039\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00040}00040\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00041}\mbox{\hyperlink{class_hammer_head_aa38a617a5666307ff1c02f52bf6fb8d9}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_aa38a617a5666307ff1c02f52bf6fb8d9}{HammerHead::render}}(sf::RenderWindow\&\ m\_window)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00042}00042\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_aircraft_unit_a021587d41ae653ddc0b0effafd353007}{AircraftUnit::render}}(m\_window);}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00045}00045\ \ \ \ \ m\_window.draw(m\_leftGunSprite);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00046}00046\ \ \ \ \ m\_window.draw(m\_rightGunSprite);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00045}00045\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00046}00046\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00047}00047\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00052}00052\ \textcolor{keywordtype}{void}\ HammerHead::initHammerhead()}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00052}\mbox{\hyperlink{class_hammer_head_a999ac5cd62f14108f548d0ce2e796b17}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_a999ac5cd62f14108f548d0ce2e796b17}{HammerHead::initHammerhead}}()}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00053}00053\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)HammerHead.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00055}00055\ \ \ \ \ \{}
@@ -65,16 +65,16 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00064}00064\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ Gun\ Texture\ for\ hammerhead\ unit"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00066}00066\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00067}00067\ \ \ \ \ m\_leftGunSprite.setTexture(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}});}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00068}00068\ \ \ \ \ m\_rightGunSprite.setTexture(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setTexture(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setTexture(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00070}00070\ \ \ \ \ m\_leftGunSprite.setOrigin(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().x\ /\ 2,\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().y\ /\ 2);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00071}00071\ \ \ \ \ m\_leftGunSprite.setScale(0.1,\ 0.1);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00072}00072\ \ \ \ \ m\_rightGunSprite.setOrigin(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().x\ /\ 2,\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().y\ /\ 2);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00073}00073\ \ \ \ \ m\_rightGunSprite.setScale(0.1,\ 0.1);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setOrigin(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().x\ /\ 2,\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setScale(0.1,\ 0.1);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setOrigin(\mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().x\ /\ 2,\ \mbox{\hyperlink{class_unit_a19c5eee06150c3d810d98ab918e61c88}{m\_weaponTexture}}.getSize().y\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setScale(0.1,\ 0.1);}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00074}00074\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00079}00079\ \textcolor{keywordtype}{void}\ HammerHead::spawnParticleExhaustEffect()}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00079}\mbox{\hyperlink{class_hammer_head_a00adb09a2731a76f3701efdcfa3c03ab}{00079}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_a00adb09a2731a76f3701efdcfa3c03ab}{HammerHead::spawnParticleExhaustEffect}}()}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00080}00080\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particlesPerUpdate}}\ =\ 3;}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particleOffset}}\ =\ 20.0f;}
@@ -96,7 +96,7 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00098}00098\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00099}00099\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00105}00105\ \textcolor{keywordtype}{void}\ HammerHead::movement(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00105}\mbox{\hyperlink{class_hammer_head_a8ccd0f5bcaa2455c02fc5334580ab961}{00105}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_a8ccd0f5bcaa2455c02fc5334580ab961}{HammerHead::movement}}(sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00106}00106\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{arrivalTolerance}}\ =\ 5.0f;}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
@@ -131,12 +131,12 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00137}00137\ \ \ \ \ \mbox{\hyperlink{class_unit_a94f9c83e2b207b12547f651736fc7c22}{setPosition}}(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00138}00138\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00144}00144\ \textcolor{keywordtype}{void}\ HammerHead::aimWeapons(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ m\_enemyUnits)}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00144}\mbox{\hyperlink{class_hammer_head_abfc0a243da104f4fe34b5abc4e602669}{00144}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_abfc0a243da104f4fe34b5abc4e602669}{HammerHead::aimWeapons}}(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ m\_enemyUnits)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00145}00145\ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}}.empty())}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00147}00147\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ m\_leftGunSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ m\_rightGunSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00151}00151\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00152}00152\ }
@@ -149,8 +149,8 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00159}00159\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{leftWeaponPosition}}\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ +\ sf::Vector2f(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}}\ -\/\ \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}})\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{weaponOffsetDistance}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}}\ -\/\ \mbox{\hyperlink{class_unit_a6ba7d6eecf7025a21319ffd47511e0b0}{PI}})\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{weaponOffsetDistance}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00160}00160\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rightWeaponPosition}}\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}}\ +\ sf::Vector2f(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cos}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}})\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{weaponOffsetDistance}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sin}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{radians}})\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{weaponOffsetDistance}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00162}00162\ \ \ \ \ m\_leftGunSprite.setPosition(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{leftWeaponPosition}});}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00163}00163\ \ \ \ \ m\_rightGunSprite.setPosition(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rightWeaponPosition}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00162}00162\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setPosition(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{leftWeaponPosition}});}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00163}00163\ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setPosition(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rightWeaponPosition}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00164}00164\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{comment}{//\ Initialize\ closest\ enemy\ data}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00166}00166\ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance}}\ =\ std::numeric\_limits<float>::max();}
@@ -198,30 +198,30 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aim\ at\ enemy}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_ac5d703e440ca13ebbde10c4edbaa0993}{m\_closestEnemy}}-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}()\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{this}}-\/>getPosition());}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ =\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}});}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ m\_leftGunSprite.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ m\_rightGunSprite.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ shootAtEnemy();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a15dac54664c12ac1e26bf51160cea5f2}{shootAtEnemy}}();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00214}00214\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}\ \&\&\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_closestDistance\ <=\ this-\/>}}\mbox{\hyperlink{class_unit_aeb9649177dd580377a03cbf4fa7f9056}{getViewRadius}}()\ -\/\ 30)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00216}00216\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_aa2422ec78ae9eecdf8e5f48e5f779a67}{m\_closestBuilding}}-\/>\mbox{\hyperlink{class_building_a8cc6ca1bae44a7414a8385b2a54ea3df}{getPosition}}()\ -\/\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{this}}-\/>getPosition());}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ =\ \mbox{\hyperlink{class_unit_ac7ff4a883b0326f9b1aaf1d27cac1009}{angleFromVector}}(\mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}});}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ m\_leftGunSprite.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ m\_rightGunSprite.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ shootAtEnemy();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleDegrees}}\ +\ 90);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a15dac54664c12ac1e26bf51160cea5f2}{shootAtEnemy}}();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00222}00222\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{else}\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00224}00224\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ m\_leftGunSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ m\_rightGunSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00227}00227\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00228}00228\ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00229}00229\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00233}00233\ \textcolor{keywordtype}{void}\ HammerHead::shootAtEnemy()}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00233}\mbox{\hyperlink{class_hammer_head_a15dac54664c12ac1e26bf51160cea5f2}{00233}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hammer_head_a15dac54664c12ac1e26bf51160cea5f2}{HammerHead::shootAtEnemy}}()}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00234}00234\ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fireTimer\ <=\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_hammer_head_a5afd07127592e79a7cb8c7ff850e4bfe}{m\_fireTimer}}\ <=\ 0.0f)}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00236}00236\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ m\_fireTimer\ =\ m\_fireRate;}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hammer_head_a5afd07127592e79a7cb8c7ff850e4bfe}{m\_fireTimer}}\ =\ \mbox{\hyperlink{class_hammer_head_aac6bc187068dbd4280b4878b77b88330}{m\_fireRate}};}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00238}00238\ }
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayAngle}}\ =\ (std::rand()\ \%\ 11\ -\/\ 5)\ *\ (3.14159265\ /\ 180);}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00240}00240\ }
@@ -233,12 +233,12 @@
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.x\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sinAngle}}\ +\ \mbox{\hyperlink{class_unit_a58dabe8ca107051cae574489c5ebab87}{m\_directionToEnemy}}.y\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{cosAngle}}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition1}}\ =\ m\_leftGunSprite.getPosition();}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition2}}\ =\ m\_rightGunSprite.getPosition();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition1}}\ =\ \mbox{\hyperlink{class_hammer_head_a7efedc037d2450851e37f3b822faf8fa}{m\_leftGunSprite}}.getPosition();}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition2}}\ =\ \mbox{\hyperlink{class_hammer_head_a0405b86c4abb4561bbe5b899c02669d1}{m\_rightGunSprite}}.getPosition();}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00251}00251\ }
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition1}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ m\_bulletSpeed);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition1}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ \mbox{\hyperlink{class_hammer_head_a7f36a4b280e5992dd83458fa9a1786e5}{m\_bulletSpeed}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}Laser2"{}});}
-\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition2}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ m\_bulletSpeed);}
+\DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_a6d8372bde352a5c06a27f7d285ae1e1c}{m\_bullets}}.emplace\_back(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bulletStartPosition2}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{sprayedDirection}},\ \mbox{\hyperlink{class_hammer_head_a7f36a4b280e5992dd83458fa9a1786e5}{m\_bulletSpeed}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}Laser2"{}});}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00256}00256\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_hammer_head_8cpp_source_l00257}00257\ \}}

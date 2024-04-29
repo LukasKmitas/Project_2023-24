@@ -1,27 +1,27 @@
 <map id="VehicleUnit::update" name="VehicleUnit::update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,171,140,197"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="188,171,279,197"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,181,172,181,172,187,140,187"/>
-<area shape="rect" id="Node000003" href="$class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="329,95,523,121"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,168,375,125,377,130,270,173"/>
-<area shape="rect" id="Node000007" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="327,171,524,197"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="280,181,311,181,311,187,280,187"/>
-<area shape="rect" id="Node000011" href="$class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="347,221,504,248"/>
-<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="280,194,328,207,356,214,355,219,326,212,279,199"/>
-<area shape="rect" id="Node000004" href="$class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="613,5,714,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="461,92,571,48,607,35,609,40,573,53,462,96"/>
-<area shape="rect" id="Node000005" href="$class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="605,107,722,133"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="523,110,590,114,589,119,523,116"/>
-<area shape="rect" id="Node000006" href="$class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="810,157,919,184"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="484,91,542,82,611,76,684,78,756,92,803,116,841,145,837,149,800,120,754,97,683,83,611,81,543,87,485,97"/>
-<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="477,168,596,135,597,140,479,173"/>
-<area shape="poly" id="edge12_Node000007_Node000006" title=" " alt="" coords="525,178,795,170,795,175,525,184"/>
-<area shape="rect" id="Node000008" href="$class_unit.html#a42777458d8e2ae32407212027719b6d2" title="This looks for a suitable direction to avoid walls when a direct path is blocked It tries various ang..." alt="" coords="572,208,755,235"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="515,195,559,202,558,208,514,201"/>
-<area shape="rect" id="Node000009" href="$class_unit.html#acabd56084730e0bb32811ab6b7be625a" title=" " alt="" coords="803,233,926,260"/>
-<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="496,196,526,207,540,217,550,227,559,237,573,244,627,257,683,262,738,262,787,257,787,263,738,267,683,268,626,262,571,249,556,241,546,231,537,221,523,212,494,200"/>
-<area shape="rect" id="Node000010" href="$class_unit.html#a2ee0326af0abc525deadf772e485f657" title=" " alt="" coords="627,309,700,336"/>
-<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="505,196,526,207,544,228,551,249,558,269,574,289,592,300,613,309,611,314,590,305,571,293,554,272,546,250,539,230,523,211,503,200"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="719,205,794,186,795,191,720,210"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="756,230,788,234,787,240,755,236"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,175,140,201"/>
+<area shape="rect" id="Node000002" href="$class_unit.html#a1170c0150d547432074d11e0a5896494" title=" " alt="" coords="188,175,279,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,185,172,185,172,191,140,191"/>
+<area shape="rect" id="Node000003" href="$class_unit.html#a5a0d56542c689f13276b9db77c1b36d8" title="its to avoid colliding with each other" alt="" coords="327,83,491,125"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,172,348,130,350,135,264,177"/>
+<area shape="rect" id="Node000007" href="$class_unit.html#ae5032b9bfa0290392ae1a33c2525a18f" title="To avoid walls for units." alt="" coords="327,167,491,209"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="279,185,311,185,311,191,279,191"/>
+<area shape="rect" id="Node000011" href="$class_particle_system.html#ad395c1ed8a4e35546ab040dc75955732" title=" " alt="" coords="331,233,488,260"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="273,199,328,219,349,226,347,231,326,224,271,205"/>
+<area shape="rect" id="Node000004" href="$class_unit.html#a7101070923fae272f484c94e6455312f" title=" " alt="" coords="580,5,681,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="461,80,538,48,574,35,575,40,540,53,463,85"/>
+<area shape="rect" id="Node000005" href="$class_unit.html#aa33e6fe8098210a9aeac019345f8a235" title=" " alt="" coords="572,107,689,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="492,107,556,112,556,117,492,113"/>
+<area shape="rect" id="Node000006" href="$class_unit.html#a829181674d469a36b7e0a6a975d9f66f" title=" " alt="" coords="777,157,886,184"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="491,85,544,78,603,76,663,79,723,92,770,116,808,145,804,149,767,120,721,97,663,85,602,81,544,83,492,90"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="480,164,569,136,571,141,482,169"/>
+<area shape="poly" id="edge12_Node000007_Node000006" title=" " alt="" coords="492,182,762,171,762,176,492,187"/>
+<area shape="rect" id="Node000008" href="$class_unit.html#a42777458d8e2ae32407212027719b6d2" title="This looks for a suitable direction to avoid walls when a direct path is blocked It tries various ang..." alt="" coords="539,208,722,235"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="492,198,524,203,523,208,492,203"/>
+<area shape="rect" id="Node000009" href="$class_unit.html#acabd56084730e0bb32811ab6b7be625a" title=" " alt="" coords="770,233,893,260"/>
+<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="467,207,493,219,516,233,540,244,595,254,651,258,754,254,755,259,651,263,594,259,539,249,514,238,490,224,465,212"/>
+<area shape="rect" id="Node000010" href="$class_unit.html#a2ee0326af0abc525deadf772e485f657" title=" " alt="" coords="594,309,667,336"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="475,208,493,219,509,237,518,255,526,272,541,289,580,309,578,313,538,293,521,275,513,257,505,240,490,223,472,212"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="686,205,761,186,762,191,687,210"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="723,230,755,234,754,240,722,236"/>
 </map>

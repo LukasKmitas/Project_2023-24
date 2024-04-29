@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['infantryunit_0',['InfantryUnit',['../class_infantry_unit.html#a218a3b83fdf0c479c4ce41faad716ae4',1,'InfantryUnit']]],
-  ['inithealthbar_1',['initHealthBar',['../class_unit.html#aa9c0487be6bedf93c5f79e068f215be6',1,'Unit']]],
-  ['initlevelselectionbuttons_2',['initLevelSelectionButtons',['../class_level_loader.html#ab79716edefc643bd943256d3a1b96d98',1,'LevelLoader']]],
-  ['initshader_3',['initShader',['../class_unit.html#a64e556f3bd178fcbfece63883b990153',1,'Unit']]],
-  ['initsmokeeffect_4',['initSmokeEffect',['../class_building.html#a488363634e023f16ea32ed6a605c98df',1,'Building']]],
-  ['initsquad_5',['initSquad',['../class_rifleman_squad.html#aeb84975bb73352fc2c903ffa9f4c67bc',1,'RiflemanSquad']]],
-  ['initview_6',['initView',['../class_unit.html#a6b409acedf32f53bb1c080cf29c8e999',1,'Unit']]],
-  ['isactive_7',['isActive',['../class_unit.html#ac092caf6ec920688a210b1d556633113',1,'Unit']]],
-  ['isplacementvalid_8',['IsPlacementValid',['../class_g_u_i.html#a0ef418104a0dc3b331a7b3636b0c132a',1,'GUI']]],
-  ['isplacementvalidfortiles_9',['IsPlacementValidForTiles',['../class_g_u_i.html#aeefde1f8fd80fb00b225080ddb0d57c8',1,'GUI']]]
+  ['hammerhead_0',['HammerHead',['../class_hammer_head.html#a4cc10f20d33cd80da97491fdc43fc852',1,'HammerHead']]],
+  ['handlebuildingplacement_1',['handleBuildingPlacement',['../class_g_u_i.html#a7878b88debc5991513f46ce2665f5f70',1,'GUI']]],
+  ['handlebuildingselection_2',['handleBuildingSelection',['../class_g_u_i.html#a1bcc3e44a9aa9708d761049d77ae97d1',1,'GUI']]],
+  ['handlebuttonclick_3',['handleButtonClick',['../class_main_menu.html#a21a5eef38283b271749a28bc954fbddd',1,'MainMenu']]],
+  ['handlelevelselectionmouseinput_4',['handleLevelSelectionMouseInput',['../class_level_loader.html#a99d2eaf66b8b70793e4eed64f134d23e',1,'LevelLoader']]],
+  ['handlemouseclick_5',['handleMouseClick',['../class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7',1,'GUI']]],
+  ['handlemouseinput_6',['handleMouseInput',['../class_level_editor.html#a26d8447a407783226ce313e52bb39798',1,'LevelEditor']]],
+  ['handlepausemenu_7',['handlePauseMenu',['../class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c',1,'Game']]],
+  ['handlerotationinput_8',['handleRotationInput',['../class_level_editor.html#a1d9a7410afc3b80d9e9dea6572fb0605',1,'LevelEditor']]],
+  ['handletilebuttons_9',['handleTileButtons',['../class_level_editor.html#ac4c0e1472ea2675e655dc581b0a52551',1,'LevelEditor']]],
+  ['handletileplacement_10',['handleTilePlacement',['../class_level_editor.html#a1cbf161dd69bcd7ba3b40406cd5f2b65',1,'LevelEditor']]],
+  ['handlewinlosepanel_11',['handleWinLosePanel',['../class_game.html#a4fef014d3c18632b507f6fdea0fa5c64',1,'Game']]],
+  ['harvester_12',['Harvester',['../class_harvester.html#aa28e963eb2df851da302a3ce7b352b42',1,'Harvester']]],
+  ['headquarters_13',['Headquarters',['../class_headquarters.html#a47ada4046d4b5feaadc63d64439420ab',1,'Headquarters']]]
 ];

@@ -1,5 +1,5 @@
 \doxysection{GUI.\+cpp}
-\hypertarget{_g_u_i_8cpp_source}{}\label{_g_u_i_8cpp_source}\index{AI Behaviors/GUI.cpp@{AI Behaviors/GUI.cpp}}
+\hypertarget{_g_u_i_8cpp_source}{}\label{_g_u_i_8cpp_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/GUI.cpp@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/GUI.cpp}}
 \mbox{\hyperlink{_g_u_i_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_g_u_i_8h}{GUI.h}}"{}}}
@@ -11,11 +11,11 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00007}00007\ \ \ \ \ m\_sideBar(m\_selectedBuildingType),}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00008}00008\ \ \ \ \ m\_tilesReference(m\_tiles)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00010}00010\ \ \ \ \ initTopBar();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00011}00011\ \ \ \ \ loadIcons();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_ad54d74d396b20df834565b29dc10cf89}{initTopBar}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5}{loadIcons}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00013}00013\ \ \ \ \ m\_guiView.setSize(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}},\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00014}00014\ \ \ \ \ m\_guiView.setCenter(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}}.setSize(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}},\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}}.setCenter(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ /\ 2,\ \mbox{\hyperlink{struct_global_aa47328c906980d2d7f08cdcc7087f662}{Global::S\_HEIGHT}}\ /\ 2);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_af9566fe6b02393397e69b1809867fdc2}{m\_refinery}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aa7a49e134b1aa7245707794ce21b7725}{Refinery}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_ab9f0fc18b5c02e2df080e9cbe2b24dba}{m\_barracks}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{Barracks}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a252e79751490fdb39319570ff384d0a4}{m\_warFactory}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{WarFactory}}();}
@@ -28,25 +28,25 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00024}00024\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00029}\mbox{\hyperlink{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479}{GUI::update}}(sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00030}00030\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00031}00031\ \ \ \ \ updateCurrency();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a59b2c07d39f2356cca83759d665431ab}{updateCurrency}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00033}00033\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{update}}(t\_deltaTime);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a689859a607ae1f109e8ae619c26ada48}{update}}(t\_deltaTime);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00035}00035\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00036}00036\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00042}\mbox{\hyperlink{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57}{GUI::render}}(sf::RenderWindow\&\ m\_window)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00043}00043\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00044}00044\ \ \ \ \ m\_window.setView(m\_guiView);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00045}00045\ \ \ \ \ m\_window.draw(m\_topBar);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00046}00046\ \ \ \ \ m\_window.draw(m\_currencyText);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00044}00044\ \ \ \ \ m\_window.setView(\mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00045}00045\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00046}00046\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00048}00048\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}{render}}(m\_window);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_add5b055604b08b68d3cd8778c760d8b1}{render}}(m\_window);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00050}00050\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ !=\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{BuildingType::None}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00052}00052\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ m\_window.draw(m\_ghostBuildingSprite);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00054}00054\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00055}00055\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00056}00056\ }
@@ -54,40 +54,40 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00063}00063\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Mouse\ position:\ ("{}\ <<\ mousePosition.x\ <<\ "{},\ "{}\ <<\ mousePosition.y\ <<\ "{})"{}\ <<\ std::endl;}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00065}00065\ \ \ \ \ sf::Vector2f\ worldMousePosition\ =\ m\_window.mapPixelToCoords(m\_mousePosition,\ m\_window.getView());}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00066}00066\ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ m\_window.mapPixelToCoords(m\_mousePosition,\ m\_guiView);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00066}00066\ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ m\_window.mapPixelToCoords(m\_mousePosition,\ \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00067}00067\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Selling\ the\ building}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_sideBar.\mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224461d9d83c}{getSellSprite}}().getGlobalBounds().contains(guiMousePosition))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a8cadba8295bec933be8c224461d9d83c}{getSellSprite}}().getGlobalBounds().contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00070}00070\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ !=\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aae65c7955ff0d21229618c1b8698a95d}{BuildingType::Headquarters}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sellBuilding();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a752ab2883141a8f72db193dec149cfd6}{sellBuilding}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{BuildingType::None}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ m\_showSlider\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00083}00083\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_sideBar.\mbox{\hyperlink{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}{getSideBarRect}}().getGlobalBounds().contains(guiMousePosition))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a1fbb645d9d6a779d07fb55a1cef56b4f}{getSideBarRect}}().getGlobalBounds().contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00086}00086\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{BuildingType::None}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ m\_showSlider\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00090}00090\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1}{handleBuildingSelection}}(worldMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00095}00095\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aae65c7955ff0d21229618c1b8698a95d}{BuildingType::Headquarters}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Refinery\ building}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ refineryIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a8095fb8c494a0830365c243583496ca1}{getRefineryIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ refineryIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a8095fb8c494a0830365c243583496ca1}{getRefineryIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ refineryIconBounds(refineryIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (refineryIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -96,7 +96,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Barracks\ building}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ barracksIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}{getBarracksIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ barracksIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a784d3c48ee380edca17a40fd5bb34343}{getBarracksIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ barrackIconBounds(barracksIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (barrackIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -105,7 +105,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vehicle\ building}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ vehicleIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}{getVehicleIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ vehicleIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_af2cf493e577385cc8e83bd5b02de4000}{getVehicleIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ vehicleIconBounds(vehicleIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vehicleIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -114,7 +114,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aircraft\ building}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ aircraftIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}{getAirCraftIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ aircraftIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a6fe150acbd921f8aab7080a5711d063b}{getAirCraftIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ aircraftIconBounds(aircraftIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aircraftIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -126,7 +126,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rifleman\ Squad\ unit}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ riflemanIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}{getRiflemanIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ riflemanIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a9559e88577ccabcd20cbb1c47a6cc1b5}{getRiflemanIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ riflemanIconBounds(riflemanIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (riflemanIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -141,7 +141,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Harvester\ }}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ harvesterIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}{getHarvesterIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ harvesterIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a1ecc06b775217732365fbad6f6bbbf62}{getHarvesterIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ harvesterIconBounds(harvesterIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (harvesterIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -153,7 +153,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buggy}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ buggyIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_ad1b03caf2f481402bd547db44173741d}{getBuggyIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ buggyIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_ad1b03caf2f481402bd547db44173741d}{getBuggyIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ buggyIconBounds(buggyIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buggyIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -165,7 +165,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tank\ Aurora}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ tankAuroraIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}{getTankAuroraIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ tankAuroraIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_aa20184b6fa227eedb85a17f5013b7868}{getTankAuroraIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ tankAuroraIconBounds(tankAuroraIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tankAuroraIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -180,7 +180,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4af2f7465fcea5658b1920529938b90681}{BuildingType::AirCraft}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HammerHead}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ hammerHeadIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}{getHammerHeadIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ hammerHeadIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a122e9445ca95cb0a3fd1ace6c11416ab}{getHammerHeadIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ hammerHeadIconBounds(hammerHeadIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hammerHeadIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -193,7 +193,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00203}00203\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Firehawk\ Unit}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ firehawkIconPosition\ =\ m\_sideBar.\mbox{\hyperlink{class_side_bar_aba78ce197b2069026a62dd77bde88e14}{getFirehawkIconPosition}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2f\ firehawkIconPosition\ =\ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_aba78ce197b2069026a62dd77bde88e14}{getFirehawkIconPosition}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ firehawkIconBounds(firehawkIconPosition,\ sf::Vector2f(98,\ 75));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (firehawkIconBounds.contains(guiMousePosition))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -205,7 +205,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(-\/2000,\ -\/2000);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(-\/2000,\ -\/2000);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00218}00218\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00219}00219\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00220}00220\ }
@@ -213,48 +213,48 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00227}00227\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00229}00229\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ window.mapPixelToCoords(m\_mousePosition,\ m\_guiView);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ window.mapPixelToCoords(m\_mousePosition,\ \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidPlacement\ =\ \mbox{\hyperlink{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}{IsPlacementValid}}(guiMousePosition,\ window);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidPlacementForTiles\ =\ \mbox{\hyperlink{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8}{IsPlacementValidForTiles}}(guiMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00233}00233\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aa7a49e134b1aa7245707794ce21b7725}{BuildingType::Refinery}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Sprite\&\ buildingSprite\ =\ \mbox{\hyperlink{class_g_u_i_af9566fe6b02393397e69b1809867fdc2}{m\_refinery}}-\/>\mbox{\hyperlink{class_building_af8054c0e09c73c99e820073a203623be}{getBuildingSprite}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite\ =\ buildingSprite;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(guiMousePosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}\ =\ buildingSprite;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(guiMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Sprite\&\ buildingSprite\ =\ \mbox{\hyperlink{class_g_u_i_ab9f0fc18b5c02e2df080e9cbe2b24dba}{m\_barracks}}-\/>\mbox{\hyperlink{class_building_af8054c0e09c73c99e820073a203623be}{getBuildingSprite}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite\ =\ buildingSprite;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(guiMousePosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}\ =\ buildingSprite;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(guiMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Sprite\&\ buildingSprite\ =\ \mbox{\hyperlink{class_g_u_i_a252e79751490fdb39319570ff384d0a4}{m\_warFactory}}-\/>\mbox{\hyperlink{class_building_af8054c0e09c73c99e820073a203623be}{getBuildingSprite}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite\ =\ buildingSprite;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(guiMousePosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}\ =\ buildingSprite;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(guiMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ ==\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4af2f7465fcea5658b1920529938b90681}{BuildingType::AirCraft}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Sprite\&\ buildingSprite\ =\ \mbox{\hyperlink{class_g_u_i_ad375dda792cca31e41fdecf8bd3fddc1}{m\_airCraft}}-\/>\mbox{\hyperlink{class_building_af8054c0e09c73c99e820073a203623be}{getBuildingSprite}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite\ =\ buildingSprite;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(guiMousePosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}\ =\ buildingSprite;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(guiMousePosition);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00258}00258\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValidPlacement\ \&\&\ isValidPlacementForTiles)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setColor(sf::Color(0,\ 255,\ 0,\ 200));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setColor(sf::Color(0,\ 255,\ 0,\ 200));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setColor(sf::Color(255,\ 0,\ 0,\ 200));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setColor(sf::Color(255,\ 0,\ 0,\ 200));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00267}00267\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00268}00268\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}{m\_confirmBuildingPlacement}}\ \&\&\ sf::Mouse::isButtonPressed(sf::Mouse::Right))\ \textcolor{comment}{//\ Place\ building}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00270}00270\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ window.mapPixelToCoords(m\_mousePosition,\ m\_guiView);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ sf::Vector2f\ guiMousePosition\ =\ window.mapPixelToCoords(m\_mousePosition,\ \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\_guiView}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidPlacement\ =\ \mbox{\hyperlink{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}{IsPlacementValid}}(guiMousePosition,\ window);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00273}00273\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValidPlacement\ \&\&\ \mbox{\hyperlink{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8}{IsPlacementValidForTiles}}(guiMousePosition))}
@@ -289,7 +289,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ m\_ghostBuildingSprite.setPosition(-\/2000,\ -\/2000);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(-\/2000,\ -\/2000);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00307}00307\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00308}00308\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00309}00309\ }
@@ -303,15 +303,15 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ have\ selected\ Headquarters\ "{}}\ \textcolor{comment}{/*<<\ building-\/>getBuildingCount()*/}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ building;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_showSlider\ =\ !m\_showSlider;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ !\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aae65c7955ff0d21229618c1b8698a95d}{BuildingType::Headquarters}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(m\_BuildingTexture1,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aa7a49e134b1aa7245707794ce21b7725}{BuildingType::Refinery}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(m\_BuildingTexture1,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(m\_BuildingTexture2,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}},\ 2,\ 0,\ \textcolor{stringliteral}{"{}WarFactory"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(m\_BuildingTexture1,\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4af2f7465fcea5658b1920529938b90681}{BuildingType::AirCraft}},\ 0,\ 1,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(\mbox{\hyperlink{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}{m\_BuildingTexture1}},\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aa7a49e134b1aa7245707794ce21b7725}{BuildingType::Refinery}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(\mbox{\hyperlink{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}{m\_BuildingTexture1}},\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(\mbox{\hyperlink{class_g_u_i_a99e171d4a1e7044fd7659e2e58a834bf}{m\_BuildingTexture2}},\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}},\ 2,\ 0,\ \textcolor{stringliteral}{"{}WarFactory"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a0a755f0ea7a46f3d6f0478b82f3d8ad5}{addBuildingButton}}(\mbox{\hyperlink{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}{m\_BuildingTexture1}},\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4af2f7465fcea5658b1920529938b90681}{BuildingType::AirCraft}},\ 0,\ 1,\ \textcolor{stringliteral}{"{}"{}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -322,12 +322,12 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ have\ selected\ Barracks\ "{}}\ \textcolor{comment}{/*<<\ building-\/>getBuildingCount()*/}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ building;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_showSlider\ =\ !m\_showSlider;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ !\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a5bef4b9467f4039984dbb3e68df9f0b0}{BuildingType::Barracks}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}{addInfantryButton}}(m\_unitInfantryTexture,\ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81a3d281904fdbe1b5750a0338431641bc9}{InfantryType::RifleSquad}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}Riflemen"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a38a8e07a7b7fd8da23825dd193d659a3}{addInfantryButton}}(\mbox{\hyperlink{class_g_u_i_a185feaa0e760a907b29148189f5599a7}{m\_unitInfantryTexture}},\ \mbox{\hyperlink{_infantry_type_8h_a3b1ed6acdc550e6dbf5bc2da9ef50e81a3d281904fdbe1b5750a0338431641bc9}{InfantryType::RifleSquad}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}Riflemen"{}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_sideBar.addInfantryButton(m\_unitInfantryTexture,\ InfantryType::GrenadeSquad,\ 1,\ 0,\ "{}Grenaders"{});}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_sideBar.addInfantryButton(m\_unitInfantryTexture,\ InfantryType::RocketSquad,\ 2,\ 0,\ "{}Rocketeers"{});}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_sideBar.addInfantryButton(m\_unitInfantryTexture,\ InfantryType::MedicUnit,\ 0,\ 1,\ "{}Medic"{});}}
@@ -341,14 +341,14 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ have\ selected\ Vehicle\ "{}}\ \textcolor{comment}{/*<<\ building-\/>getBuildingCount()*/}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ building;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_showSlider\ =\ !m\_showSlider;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ !\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4aad790d6af70a39583c3f67b55d978887}{BuildingType::WarFactory}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(m\_harvesterIconTexture,\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa7410e2846a61f309b4a1e0a57a6a1d48}{VehicleType::Harvester}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}Harvester"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(m\_unitVehicleTexture,\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa01e3a933906494de42d7a1d6a09bbb3a}{VehicleType::Buggy}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}Ranger"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(m\_unitVehicleTexture,\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa47673932bdc6d472a40ba3d390332b5b}{VehicleType::TankAurora}},\ 2,\ 0,\ \textcolor{stringliteral}{"{}TankAurora"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(\mbox{\hyperlink{class_g_u_i_a4f0d7fed4608605625623cfa0dc43afb}{m\_harvesterIconTexture}},\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa7410e2846a61f309b4a1e0a57a6a1d48}{VehicleType::Harvester}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}Harvester"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(\mbox{\hyperlink{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f}{m\_unitVehicleTexture}},\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa01e3a933906494de42d7a1d6a09bbb3a}{VehicleType::Buggy}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}Ranger"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a41846d720598c76c51371c790145a515}{addVehicleButton}}(\mbox{\hyperlink{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f}{m\_unitVehicleTexture}},\ \mbox{\hyperlink{_vehicle_type_8h_a0c05c42b98a847f971385c81c2a81afaa47673932bdc6d472a40ba3d390332b5b}{VehicleType::TankAurora}},\ 2,\ 0,\ \textcolor{stringliteral}{"{}TankAurora"{}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -359,13 +359,13 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ have\ selected\ Aircraft\ "{}}\ \textcolor{comment}{/*<<\ building-\/>getBuildingCount()*/}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}}\ =\ building;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_showSlider\ =\ !m\_showSlider;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_showSlider)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}}\ =\ !\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\_showSlider}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_ad45013b35dc68cfc580bc8a35352dd63}{clearButtons}}();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\_selectedBuildingType}}\ =\ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4af2f7465fcea5658b1920529938b90681}{BuildingType::AirCraft}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{addAirCraftButton}}(m\_unitAirCraftTexture,\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79af916dcf184c71fb5f4e071fd971c522a}{AirCraftType::HammerHead}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}HammerHead"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_sideBar.\mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{addAirCraftButton}}(m\_unitAirCraftTexture,\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79a6fa8c174318ad586a74af110d2704624}{AirCraftType::Firehawk}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}Firehawk"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{addAirCraftButton}}(\mbox{\hyperlink{class_g_u_i_a44907bc49f280b24509571600fb56b1a}{m\_unitAirCraftTexture}},\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79af916dcf184c71fb5f4e071fd971c522a}{AirCraftType::HammerHead}},\ 0,\ 0,\ \textcolor{stringliteral}{"{}HammerHead"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\_sideBar}}.\mbox{\hyperlink{class_side_bar_a8bfd240baf0383a6fa11822cf1c5776f}{addAirCraftButton}}(\mbox{\hyperlink{class_g_u_i_a44907bc49f280b24509571600fb56b1a}{m\_unitAirCraftTexture}},\ \mbox{\hyperlink{_air_craft_type_8h_a3c8dfc322768c0fdcd742b74b276ea79a6fa8c174318ad586a74af110d2704624}{AirCraftType::Firehawk}},\ 1,\ 0,\ \textcolor{stringliteral}{"{}Firehawk"{}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -373,59 +373,59 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00391}00391\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00392}00392\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00393}00393\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00397}00397\ \textcolor{keywordtype}{void}\ GUI::updateCurrency()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00397}\mbox{\hyperlink{class_g_u_i_a59b2c07d39f2356cca83759d665431ab}{00397}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a59b2c07d39f2356cca83759d665431ab}{GUI::updateCurrency}}()}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00398}00398\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00399}00399\ \ \ \ \ \mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}\ =\ std::min(\mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}},\ 5000);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00400}00400\ \ \ \ \ m\_currencyText.setString(\textcolor{stringliteral}{"{}Currency:\ \ \ "{}}\ +\ std::to\_string(\mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00400}00400\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setString(\textcolor{stringliteral}{"{}Currency:\ \ \ "{}}\ +\ std::to\_string(\mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}));}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00401}00401\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00402}00402\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00406}00406\ \textcolor{keywordtype}{void}\ GUI::initTopBar()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00406}\mbox{\hyperlink{class_g_u_i_ad54d74d396b20df834565b29dc10cf89}{00406}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_ad54d74d396b20df834565b29dc10cf89}{GUI::initTopBar}}()}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00407}00407\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_topBarTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Card\ X5.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a6797643efdf0289f818e2127ffbd3cd5}{m\_topBarTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Card\ X5.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00409}00409\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}problem\ loading\ font"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00411}00411\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00412}00412\ \ \ \ \ m\_topBar.setSize(sf::Vector2f(400,\ 50));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00413}00413\ \ \ \ \ m\_topBar.setOutlineColor(sf::Color(200,\ 100,\ 100,\ 200));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00414}00414\ \ \ \ \ m\_topBar.setOutlineThickness(2);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00415}00415\ \ \ \ \ m\_topBar.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 400,\ 0);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00416}00416\ \ \ \ \ m\_topBar.setTexture(\&m\_topBarTexture);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00412}00412\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}}.setSize(sf::Vector2f(400,\ 50));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00413}00413\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}}.setOutlineColor(sf::Color(200,\ 100,\ 100,\ 200));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00414}00414\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}}.setOutlineThickness(2);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00415}00415\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}}.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 400,\ 0);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00416}00416\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\_topBar}}.setTexture(\&\mbox{\hyperlink{class_g_u_i_a6797643efdf0289f818e2127ffbd3cd5}{m\_topBarTexture}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00417}00417\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00418}00418\ \ \ \ \ m\_currencyFont.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00419}00419\ \ \ \ \ m\_currencyText.setFont(m\_currencyFont);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00420}00420\ \ \ \ \ m\_currencyText.setCharacterSize(28);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00421}00421\ \ \ \ \ m\_currencyText.setFillColor(sf::Color(225,\ 245,\ 255));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00422}00422\ \ \ \ \ m\_currencyText.setOutlineColor(sf::Color::Blue);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00423}00423\ \ \ \ \ m\_currencyText.setOutlineThickness(0.3);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00424}00424\ \ \ \ \ m\_currencyText.setString(\textcolor{stringliteral}{"{}Currency:\ \ \ "{}}\ +\ std::to\_string(\mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00425}00425\ \ \ \ \ sf::FloatRect\ textBounds\ =\ m\_currencyText.getLocalBounds();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00426}00426\ \ \ \ \ m\_currencyText.setOrigin(textBounds.width\ /\ 2,\ 0);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00427}00427\ \ \ \ \ m\_currencyText.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 200,\ 5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00418}00418\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a9be7e068cf3619fd045f30e1bf9a0160}{m\_currencyFont}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Fonts\(\backslash\)\(\backslash\)ManicSea\_19.ttf"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00419}00419\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setFont(\mbox{\hyperlink{class_g_u_i_a9be7e068cf3619fd045f30e1bf9a0160}{m\_currencyFont}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00420}00420\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setCharacterSize(28);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00421}00421\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setFillColor(sf::Color(225,\ 245,\ 255));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00422}00422\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setOutlineColor(sf::Color::Blue);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00423}00423\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setOutlineThickness(0.3);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00424}00424\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setString(\textcolor{stringliteral}{"{}Currency:\ \ \ "{}}\ +\ std::to\_string(\mbox{\hyperlink{struct_global_a8f2121afa692aec38682db8c90285b82}{Global::playerCurrency}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00425}00425\ \ \ \ \ sf::FloatRect\ textBounds\ =\ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00426}00426\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setOrigin(textBounds.width\ /\ 2,\ 0);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00427}00427\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\_currencyText}}.setPosition(\mbox{\hyperlink{struct_global_a4187c3fa9aa792816911e6396366d81b}{Global::S\_WIDTH}}\ -\/\ 200,\ 5);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00428}00428\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00429}00429\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00433}00433\ \textcolor{keywordtype}{void}\ GUI::loadIcons()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00433}\mbox{\hyperlink{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5}{00433}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5}{GUI::loadIcons}}()}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00434}00434\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00435}00435\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_BuildingTexture1.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)BuildingIcons.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00435}00435\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}{m\_BuildingTexture1}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)BuildingIcons.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00436}00436\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Building\ 1\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00438}00438\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00439}00439\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_BuildingTexture2.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)VehicleIcon.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00439}00439\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a99e171d4a1e7044fd7659e2e58a834bf}{m\_BuildingTexture2}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)VehicleIcon.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00440}00440\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Building\ 2\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00442}00442\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00443}00443\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_unitInfantryTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)InfantryUnitIcons.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00443}00443\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a185feaa0e760a907b29148189f5599a7}{m\_unitInfantryTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)InfantryUnitIcons.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00444}00444\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Infantry\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00446}00446\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00447}00447\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_unitVehicleTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Vehicle\ Unit\ Icons.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00447}00447\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f}{m\_unitVehicleTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Vehicle\ Unit\ Icons.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00448}00448\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Infantry\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00450}00450\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00451}00451\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_unitAirCraftTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Aircraft\ Unit\ Icons.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00451}00451\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a44907bc49f280b24509571600fb56b1a}{m\_unitAirCraftTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)Aircraft\ Unit\ Icons.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00452}00452\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Infantry\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00454}00454\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00455}00455\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_harvesterIconTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)HarvesterLogo.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00455}00455\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_g_u_i_a4f0d7fed4608605625623cfa0dc43afb}{m\_harvesterIconTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)GUI\(\backslash\)\(\backslash\)HarvesterLogo.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00456}00456\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Problem\ Loading\ Infantry\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00458}00458\ \ \ \ \ \}}
@@ -434,9 +434,9 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00467}\mbox{\hyperlink{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}{00467}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}{GUI::IsPlacementValid}}(sf::Vector2f\&\ m\_position,\ sf::RenderWindow\&\ m\_window)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00468}00468\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00469}00469\ \ \ \ \ sf::Vector2f\ worldPosition\ =\ m\_window.mapPixelToCoords(sf::Vector2i(m\_position),\ m\_window.getView());}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00470}00470\ \ \ \ \ m\_ghostBuildingSprite.setPosition(worldPosition);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00471}00471\ \ \ \ \ sf::FloatRect\ newBuildingBounds\ =\ m\_ghostBuildingSprite.getGlobalBounds();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00472}00472\ \ \ \ \ m\_placementValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00470}00470\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.setPosition(worldPosition);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00471}00471\ \ \ \ \ sf::FloatRect\ newBuildingBounds\ =\ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.getGlobalBounds();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00472}00472\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a46dc80295cea92ae100843fab6c576fb}{m\_placementValid}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00473}00473\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00474}00474\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_building}{Building}}*\ building\ :\ \mbox{\hyperlink{class_g_u_i_ac4d43c86265d443c5e38f52b72eba619}{m\_placedBuildings}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00475}00475\ \ \ \ \ \{}
@@ -458,32 +458,32 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00491}00491\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00492}00492\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ radius)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ m\_placementValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a46dc80295cea92ae100843fab6c576fb}{m\_placementValid}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00496}00496\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00497}00497\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_placementValid;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00497}00497\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_g_u_i_a46dc80295cea92ae100843fab6c576fb}{m\_placementValid}};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00498}00498\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00499}00499\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00505}\mbox{\hyperlink{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8}{00505}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8}{GUI::IsPlacementValidForTiles}}(sf::Vector2f\&\ position)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00506}00506\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00507}00507\ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ GUI\ position\ to\ tile\ coordinates}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00508}00508\ \ \ \ \ \textcolor{keywordtype}{int}\ tileX\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(position.x)\ /\ m\_tile.\mbox{\hyperlink{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}{m\_tileSize}};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00509}00509\ \ \ \ \ \textcolor{keywordtype}{int}\ tileY\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(position.y)\ /\ m\_tile.\mbox{\hyperlink{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}{m\_tileSize}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00508}00508\ \ \ \ \ \textcolor{keywordtype}{int}\ tileX\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(position.x)\ /\ \mbox{\hyperlink{class_g_u_i_a4dac37d932fcd8218e7f61f5e8bc5e67}{m\_tile}}.\mbox{\hyperlink{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}{m\_tileSize}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00509}00509\ \ \ \ \ \textcolor{keywordtype}{int}\ tileY\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(position.y)\ /\ \mbox{\hyperlink{class_g_u_i_a4dac37d932fcd8218e7f61f5e8bc5e67}{m\_tile}}.\mbox{\hyperlink{class_tile_a831fdebf7692edc6d6d716fb1dd0dc1b}{m\_tileSize}};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00510}00510\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00511}00511\ \ \ \ \ \textcolor{keywordflow}{if}\ (tileX\ >=\ 0\ \&\&\ tileX\ <\ levelEditor.m\_numRows\ \&\&\ tileY\ >=\ 0\ \&\&\ tileY\ <\ \mbox{\hyperlink{class_g_u_i_a186755c6854c61c0834b83ed12c5cf5f}{levelEditor}}.\mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{m\_numCols}})}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00512}00512\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_tilesReference[tileY][tileX].m\_isWall)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_add7a9ac5c3826c424b081f9af6366f4e}{m\_tilesReference}}[tileY][tileX].m\_isWall)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00517}00517\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ for\ building\ intersections\ with\ the\ tiles}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ sf::FloatRect\ newBuildingBounds\ =\ m\_ghostBuildingSprite.getGlobalBounds();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ sf::FloatRect\ newBuildingBounds\ =\ \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\_ghostBuildingSprite}}.getGlobalBounds();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_g_u_i_a186755c6854c61c0834b83ed12c5cf5f}{levelEditor}}.\mbox{\hyperlink{class_level_editor_a453a26f399470a0fc0c20e7bf19e7d9c}{m\_numRows}};\ ++i)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_g_u_i_a186755c6854c61c0834b83ed12c5cf5f}{levelEditor}}.\mbox{\hyperlink{class_level_editor_abc0159c134c50f060cc23f78036a2615}{m\_numCols}};\ ++j)}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_tilesReference[i][j].m\_isWall)\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_add7a9ac5c3826c424b081f9af6366f4e}{m\_tilesReference}}[i][j].m\_isWall)\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ tileRect(j\ *\ 50,\ i\ *\ 50,\ 50,\ 50);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newBuildingBounds.intersects(tileRect))}
@@ -498,7 +498,7 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00536}00536\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00537}00537\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00538}00538\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00542}00542\ \textcolor{keywordtype}{void}\ GUI::sellBuilding()\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00542}\mbox{\hyperlink{class_g_u_i_a752ab2883141a8f72db193dec149cfd6}{00542}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a752ab2883141a8f72db193dec149cfd6}{GUI::sellBuilding}}()\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00543}00543\ \{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00544}00544\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_g_u_i_a878bc4ef5d28df982564ddf11a58745e}{m\_selectedBuilding}})\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00545}00545\ \ \ \ \ \{}

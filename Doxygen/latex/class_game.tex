@@ -6,11 +6,12 @@
 
 
 
-Collaboration diagram for Game\+:\nopagebreak
+Collaboration diagram for Game\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{class_game__coll__graph}
+\includegraphics[width=350pt]{class_game__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -22,6 +23,350 @@ Collaboration diagram for Game\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}} ()
 \begin{DoxyCompactList}\small\item\em main game loop update 60 times per second, process update as often as possible and at least 60 times per second \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{process\+Events}} ()
+\begin{DoxyCompactList}\small\item\em handle user and system events/ input get key presses/ mouse moves \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_adf2eb2e773dbad1322db8d6798705ea1}{process\+Keys}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em deal with key presses from the user \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a1d2aee62bac8e228344e1f44fab504e0}{update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the game world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render}} ()
+\begin{DoxyCompactList}\small\item\em Draws all the sprites, shapes and texts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a551eddfce663b131aca0742a7eda4704}{create\+Building}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}})
+\begin{DoxyCompactList}\small\item\em creates the buildings for players side \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a85b5a7a3f3f9e09446f30bd74e2d998e}{create\+Base}} ()
+\begin{DoxyCompactList}\small\item\em creates the players base \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab96b2f1df650ce4edf1b756d89fc7e7c}{update\+Player\+Assets}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the players buildings, units and the weapons for the unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a43e80c8c9022b911129bce8454bc5adb}{create\+Unit}} ()
+\begin{DoxyCompactList}\small\item\em Creates the unit for players side. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_af8ae7bbf0e4e57de940176604e34721e}{select\+Unit\+At}} (const sf\+::\+Vector2f \&m\+\_\+mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Selects the unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a69cddd3cbbeb88d4163ef16bde7d4b4b}{select\+Units\+In\+Box}} ()
+\begin{DoxyCompactList}\small\item\em To select all units within the box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab0c20f30c4992648b2740827f3f9d9df}{save\+Map\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Saves the level file name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a5e57e588368a437cbe1a177b02e7175c}{load\+Map\+Level}} (const std\+::string \&m\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em Loads the level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a4107bc7f3cf933a2e64cbc7586ac8140}{check\+Victory\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Checks the victory and lose conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a13219852186fab2a37e618cac4acfbdb}{create\+Enemy\+Starter\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Creates some buildings and units to give an advantage to the enemy a bit at the start of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab5fe3b4ac5c7adf0639405c6f83abb12}{update\+Enemy\+AIDecision\+On\+Creating}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em This function is to make the enemy decide to either create a building or a unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a839c56650c0c138d55b3723d6602e67d}{update\+Enemy\+AIUnit\+Decision\+State}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em This decides the enemy what to do Explore, group together and attack the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a37d3b5d22bb0643d8bf0da2c85e9c40e}{update\+Enemy\+Assets}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the enemies stuff like buildings, units to bullets and particle effects on them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aa99ac90edfa2abbca5ca6c25fd26a1c2}{create\+Enemy\+Unit}} (const std\+::string \&m\+\_\+unit\+Type)
+\begin{DoxyCompactList}\small\item\em Creates the specific unit type on that buildings position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aeb52838d2be775c688f2e78a711ba696}{create\+Enemy\+Harvester\+Unit}} ()
+\begin{DoxyCompactList}\small\item\em This create the enemy harvester unit this goes along side with the refinery building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_afbf9d366a52adee67b2baa80d9013904}{update\+Building\+Counts}} ()
+\begin{DoxyCompactList}\small\item\em Checks how many buildings it has. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab1b4ee064ddb5c3c3935e6c152916629}{decide\+Next\+Enemy\+Building}} ()
+\begin{DoxyCompactList}\small\item\em This is to decie which building it should be placing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a75ab84e14d9648963239c50df2159f8a}{place\+Enemy\+Building}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} m\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Decides which building type to place. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ad229521f71deffe42b62c073fc8197c5}{move\+Enemy\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Moves the enemies towards the player units or buildings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a0d560a61982bdc8684f8643bfeb8e73f}{enemy\+Exploring}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Makes the enemies explore the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a6754a603fdd1cc442d214c68c3b458a7}{enemy\+Group\+Units}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Makes a group of enemies come together. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aa7b687e26434179b94657751ff5c1b75}{enemy\+Attacking}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em orders the enemy to attack the player units/buildings \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_a59b7dab67956cd4c3cfec64e9b3038d5}{check\+Position\+Within\+Map}} (const sf\+::\+Vector2f \&m\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Just in case i wont get the runtime error if a building or a unit is outside the map so this function makes sure its within bounds. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_game_ac2138e0e6e655ba0310df41a450d83a9}{distance\+Between\+Points}} (const sf\+::\+Vector2f \&p1, const sf\+::\+Vector2f \&p2)
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_aaa51ffad72adb20f64b31e17b91f95b4}{find\+Nearest\+Player\+Object\+Position}} (const sf\+::\+Vector2f \&m\+\_\+enemy\+Position)
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_a5a6654ec056092bd336401bed6349b7e}{find\+Placement\+Position\+Near\+Existing\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Find a suitable place to create a building. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_game_a77bf4b17d62e8c117f0248514fcf1d14}{get\+Valid\+Exploration\+Targets}} ()
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_a5d8167d490c3d69c6c738a9714228ee7}{find\+Enemy\+Headquarters\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_game_a272632885432700f8d631671eb968854}{move\+Camera}} (sf\+::\+Vector2f m\+\_\+mouse\+Position)
+\item 
+void \mbox{\hyperlink{class_game_a4b3ea936654ff67fd555b18da7657764}{update\+View\+With\+Mouse}} ()
+\begin{DoxyCompactList}\small\item\em Update the screen view position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a96bbebea386baefbbc4d7401bbd7989b}{reset\+View}} ()
+\begin{DoxyCompactList}\small\item\em Resets the view back to normal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a857f366a4c617d2476c97a99d51dda68}{reset\+Zoom}} ()
+\begin{DoxyCompactList}\small\item\em Resets the view for zooming. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ad52aea4509062f4b5b71d209b5383ff5}{init\+Neural\+Network}} ()
+\begin{DoxyCompactList}\small\item\em initializes the neural networks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a5d94b00fbaee0de5284a72e3394d8a9b}{update\+Neural\+Network}} ()
+\begin{DoxyCompactList}\small\item\em Updates the nerual network. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a8f38d4b2a428ba07ac6c75665a199778}{draw\+Neural\+Network}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}})
+\begin{DoxyCompactList}\small\item\em Renders the neural networks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a919356aed223353ea89bde13d1997ae0}{update\+Fog\+Of\+War\+Based\+On\+Buildings}} (const std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+buildings)
+\begin{DoxyCompactList}\small\item\em Updates the fog for the buildings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ae520aacae22c065a9121755e92a4f7f0}{update\+Fog\+Of\+War\+Based\+On\+Units}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+units)
+\begin{DoxyCompactList}\small\item\em Updates the fog for units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac7ea590ba1d6b2bdccbcdf952ac7eee5}{init\+Particles}} ()
+\item 
+void \mbox{\hyperlink{class_game_a406b54ef964b145cdfe4d9cfc5714f8b}{spawn\+Bubble\+Particles}} ()
+\begin{DoxyCompactList}\small\item\em Spawns a bubble particle effect around the world to give the theme better look. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ae5829766d4ae7f7375f1c7e03ada48c9}{spawn\+Bullet\+Spark\+Particles}} (const sf\+::\+Vector2f \&m\+\_\+position)
+\begin{DoxyCompactList}\small\item\em spawns a spark particle effect \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ae6c617460af72815617f63fa92e2d2c4}{spawn\+Explosion\+Particle}} (const sf\+::\+Vector2f \&m\+\_\+position)
+\begin{DoxyCompactList}\small\item\em spawns an explosion particle effect \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a559719d47aec4db2655631d128397cae}{init\+Win\+Lose\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the win/lose panel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a244ea25cea43a193b2921d34e9ab7a9f}{render\+Win\+Lose\+Panel}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}})
+\begin{DoxyCompactList}\small\item\em Renders the win/lose panel with stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a4fef014d3c18632b507f6fdea0fa5c64}{handle\+Win\+Lose\+Panel}} (const sf\+::\+Vector2f \&m\+\_\+mouse\+Position)
+\begin{DoxyCompactList}\small\item\em handles the mouse input for the win/lose panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aaf1752ba5786c94e672f306dc75d85ac}{init\+Pause\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the pause menu stuff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac2846dd2ab02eb66aa95b2ba2d5c568c}{handle\+Pause\+Menu}} (const sf\+::\+Vector2f \&m\+\_\+mouse\+Position)
+\begin{DoxyCompactList}\small\item\em handles the mouse input for the buttons \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac7e941ab565a46d04914f8df2f839a68}{render\+Pause\+Menu}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}})
+\begin{DoxyCompactList}\small\item\em Renders all pause menu stuff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a70cc4b956596b5fb1d0a52fb98e7c590}{save\+Game\+Match}} ()
+\begin{DoxyCompactList}\small\item\em Saves the match level all the units/\+Buildings for player and enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ad5515b9b26ffd6c2cc89369f87cf9328}{load\+Game\+Match}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads the match where all the stats, units, buildings are suppose to be. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a21f04e66a512dabffb3ce58cbecea6bf}{load\+Buildings}} (std\+::ifstream \&load\+File, int building\+Count, std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&buildings)
+\begin{DoxyCompactList}\small\item\em Loads the buildings for both sides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a8a96c87a559944e60f75003d73c77110}{load\+Units}} (std\+::ifstream \&load\+File, int unit\+Count, std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units, std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ m\+\_\+set\+Enemy\+Units, std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ m\+\_\+set\+Placed\+Enemy\+Buildings)
+\begin{DoxyCompactList}\small\item\em Loads the units for player and enemy side. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_a607c2e37d79a38249020a88c2a3b7c7b}{create\+Building\+By\+Type}} (\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_abd4a46f70b51a04cbfb879653d984bcb}{create\+Unit\+By\+Type}} (\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Gets the type of unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a9de86d1081ce3a5decd86a3c543598b6}{game\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em To reset the game and undo all the properties for a new game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ab29015cd1a472a3642e655eb69d7b3a3}{clear\+Game\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Clears all game enities such as units and buildings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac70268e7febf34867b9181091ca03073}{init\+Playlist\+For\+Gameplay}} ()
+\begin{DoxyCompactList}\small\item\em A playlist of songs that plays only in gameplay mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aeb5d0d8c72297e1ea468facac9c8383d}{init\+Sound\+In\+Gameplay}} ()
+\item 
+void \mbox{\hyperlink{class_game_a71708c1b041fac0354fb736fdbda7da4}{spawn\+Enemy\+Near\+Base}} ()
+\item 
+void \mbox{\hyperlink{class_game_af41b28d69edbd23c2e998e8cf606ddaa}{get\+Money}} ()
+\item 
+int \mbox{\hyperlink{class_game_a3b02809eceee2f9a6847d0c4e6a1b9e6}{calculate\+Grid\+Size}} (int m\+\_\+number\+Of\+Units)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \mbox{\hyperlink{class_game_a2220b4e2dcef67ecc9ab500ed4d290c9}{m\+\_\+current\+State}} = \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{Game\+State\+::\+Main\+Menu}}
+\item 
+\mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549af}{Win\+Lose\+State}} \mbox{\hyperlink{class_game_a296c253074b84b864c7a00fd6588ebd4}{m\+\_\+game\+Win\+Lose}} = \mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549afab50339a10e1de285ac99d4c3990b8693}{Win\+Lose\+State\+::\+NONE}}
+\item 
+\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \mbox{\hyperlink{class_game_af65d97f03e45ca88d6d0099d198a4cb4}{m\+\_\+previous\+State}}
+\item 
+\mbox{\hyperlink{class_main_menu}{Main\+Menu}} \mbox{\hyperlink{class_game_a097830b5a08b5c8ca2e4fd9edcbcb711}{m\+\_\+menu}}
+\item 
+\mbox{\hyperlink{class_tile}{Tile}} \mbox{\hyperlink{class_game_a1f1d82d175091713de374a97e480a86f}{m\+\_\+tiles}}
+\item 
+\mbox{\hyperlink{class_level_editor}{Level\+Editor}} \mbox{\hyperlink{class_game_a98c990321eaae6b86f5bca66170dffef}{m\+\_\+level\+Editor}}
+\item 
+\mbox{\hyperlink{class_level_loader}{Level\+Loader}} \mbox{\hyperlink{class_game_acc6c7bf3bdb4c4fb69527f29ebcf9d96}{m\+\_\+level\+Loader}}
+\item 
+\mbox{\hyperlink{class_g_u_i}{GUI}} \mbox{\hyperlink{class_game_a814daa9414db5e86dc83831188b9470e}{m\+\_\+gui}} \{ \mbox{\hyperlink{class_game_a6f3e369cf696b33f2257f8fb3cd132a3}{m\+\_\+placed\+Player\+Buildings}}, \mbox{\hyperlink{class_game_a2838188b4d4f29c2ca4c87b62da3c6d2}{m\+\_\+selected\+Building\+Type}}, m\+\_\+level\+Editor.\+m\+\_\+tiles \}
+\item 
+\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} \mbox{\hyperlink{class_game_a2838188b4d4f29c2ca4c87b62da3c6d2}{m\+\_\+selected\+Building\+Type}} = \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{Building\+Type\+::\+None}}
+\item 
+\mbox{\hyperlink{class_particle_system}{Particle\+System}} \mbox{\hyperlink{class_game_a056c1f28f0be0d039501863344fe54e5}{m\+\_\+particle\+System}}
+\item 
+\mbox{\hyperlink{class_neural_networks}{Neural\+Networks}} \mbox{\hyperlink{class_game_aba193326e7bc1e236ea7a402ef026ef6}{m\+\_\+neural\+\_\+network}}
+\item 
+\mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_a91dad1e851558cfaa57cee589eaaa7ae}{m\+\_\+selected\+Unit}} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_a6f3e369cf696b33f2257f8fb3cd132a3}{m\+\_\+placed\+Player\+Buildings}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_a3bcfe3b45f9754e3920d0a10a05b8b3d}{m\+\_\+placed\+Enemy\+Buildings}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_a9ec136fd0565c58207d52f0dc0af8cf6}{m\+\_\+player\+Units}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_a1a456989f5ed74538c4bd01ef6ac7a28}{m\+\_\+enemy\+Units}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}, int $>$ \mbox{\hyperlink{class_game_a9d5ac0d4ecdd05495441d30da49612f1}{m\+\_\+enemy\+Building\+Counts}}
+\item 
+\mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fc}{Enemy\+AIState}} \mbox{\hyperlink{class_game_abb862983cd0a52dc3aadb116c14594fb}{m\+\_\+enemy\+AIState}} = \mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fca06a209c1f2f572d1ecfaf94e0a73d13b}{Enemy\+AIState\+::\+Exploring}}
+\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_a1a6b9024f98313c6b90f6a87172fdfec}{new\+Enemy\+Building}} = nullptr
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_a53cde3ff7cf03bdd32c82ca39edd2c2c}{enemy\+Refinery\+Building\+Position}}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_game_a321099825432d99ef32baed4c87a9ca5}{m\+\_\+valid\+Targets}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_game_a7925bb2252bc0f9137c282153fb76862}{m\+\_\+enemy\+State\+Timer}} = sf\+::seconds(0)
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}}
+\item 
+sf\+::\+View \mbox{\hyperlink{class_game_aa60495b949ad5f78ca20be2198629073}{m\+\_\+game\+View}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_game_af5c5c39d0eabe68c3bfff3509900a489}{m\+\_\+font}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_game_a6312cf83c18aad9effe72e63d0a5b660}{m\+\_\+normalfont}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_a9f02ef923207a659c4a3fc6c69fc4654}{m\+\_\+bubble\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_aad8fa35a74549c70e3a34f8c60bae124}{m\+\_\+bullet\+Sparks\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_ad4ece6eb1053a5078acaec7a6dd22349}{m\+\_\+cursor\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_game_ac8c3f2b3884b8637683a2cce429f64b3}{m\+\_\+cursor\+Sprite}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_a2a47e203f14563d8084d9daaafadc7c1}{m\+\_\+view\+Center}} = m\+\_\+game\+View.\+get\+Center()
+\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_game_a9040d9bd5077598c9660a31d927d9535}{m\+\_\+gui\+Mouse\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_af88eb2877022819ca08698a7fba39ee3}{m\+\_\+world\+Mouse\+Position}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_ab29c079cb46a1a3fbd47cf323816eb70}{m\+\_\+camera\+Velocity}}
+\item 
+const float \mbox{\hyperlink{class_game_ad56d98d4517cf9da155cad4b5b67c1c6}{m\+\_\+min\+Zoom\+Level}} = 0.\+5f
+\item 
+const float \mbox{\hyperlink{class_game_a13b5719fdea4c128dcc9e1f7f2e12251}{m\+\_\+max\+Zoom\+Level}} = 1.\+5f
+\item 
+float \mbox{\hyperlink{class_game_a1207e0305a6c9dd326209139dfaac08e}{m\+\_\+current\+Zoom\+Level}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_a9174a2829203818f3b9a16f86cd08491}{m\+\_\+view\+Move\+Speed}} = 5.\+0f
+\item 
+float \mbox{\hyperlink{class_game_a5f352aee6936522c68d8d25c4b5d08db}{m\+\_\+minX}} = 950
+\item 
+float \mbox{\hyperlink{class_game_af9589b0053e0990d05c3469ef0c462f9}{m\+\_\+minY}} = 530
+\item 
+float \mbox{\hyperlink{class_game_a01a3bdb0479566beabc36083a94453b4}{m\+\_\+maxX}} = 1550
+\item 
+float \mbox{\hyperlink{class_game_a07db7322073514e3c9a21a426bc55b4c}{m\+\_\+maxY}} = 1970
+\item 
+int \mbox{\hyperlink{class_game_a07a41d541612deb656e319435088b9e1}{m\+\_\+map\+Width}} = 2400
+\item 
+int \mbox{\hyperlink{class_game_afa8daa80622afdfbd2c90bb0677a8706}{m\+\_\+map\+Height}} = 2400
+\item 
+bool \mbox{\hyperlink{class_game_ad8379df4481e56cb10f48ac503bc845d}{m\+\_\+is\+Dragging}} = false
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_ae1a701fd1cab1f9d3d7144635296d324}{m\+\_\+drag\+Start}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_ae059e584aeaa7a1408dc2603981c5812}{m\+\_\+drag\+End}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_a28647cb97f2f3a2371d04708438fc570}{m\+\_\+selection\+Box}}
+\item 
+float \mbox{\hyperlink{class_game_ad0be56916a363b25898ddd6994439ae5}{m\+\_\+angle\+Particle}}
+\item 
+float \mbox{\hyperlink{class_game_aa555a30ac79c3aa90ef497ef6dc6e859}{m\+\_\+speed\+Particle}}
+\item 
+float \mbox{\hyperlink{class_game_a80c36e3987323734968ed8d19cf00381}{m\+\_\+lifetime\+Particle}}
+\item 
+float \mbox{\hyperlink{class_game_ac28c7f06b352319a1c12fd2200c54931}{m\+\_\+size\+Particle}}
+\item 
+sf\+::\+Color \mbox{\hyperlink{class_game_a11880c958460f476fea5b08812980ac0}{m\+\_\+color\+Particle}}
+\item 
+bool \mbox{\hyperlink{class_game_a9a3ec8524e77702797645bd2c93d8605}{m\+\_\+play\+Once}} = true
+\item 
+bool \mbox{\hyperlink{class_game_a7a9b15daeedaa23f98f2c3b79e9ba9c4}{m\+\_\+level\+Loaded}} = false
+\item 
+bool \mbox{\hyperlink{class_game_a5452d49a7b3f2d2ea3c7e2072fe8a828}{m\+\_\+exit\+Game}}
+\item 
+int \mbox{\hyperlink{class_game_a207c2d6b30ca71aede29230bb6d21aa9}{m\+\_\+mouse\+PosX}}
+\item 
+int \mbox{\hyperlink{class_game_ae875f50bf36fde583b4cb2e66a621180}{m\+\_\+mouse\+PosY}}
+\item 
+int \mbox{\hyperlink{class_game_ae2725cfa04383851454fce4a42d00984}{m\+\_\+output\+Height}} = 64
+\item 
+int \mbox{\hyperlink{class_game_a1057dae177f9158ae7ae6edd5a1ec3dc}{m\+\_\+output\+Width}} = 64
+\item 
+float \mbox{\hyperlink{class_game_a78a50d95cae623fb64835d803699924d}{m\+\_\+total\+Errors}} = 0
+\item 
+float \mbox{\hyperlink{class_game_aa9d984ef2862a2801bda38257a3f79ce}{m\+\_\+dotX}}
+\item 
+float \mbox{\hyperlink{class_game_aad86aef0126f2ab59c67b4021a7541dd}{m\+\_\+dotY}}
+\item 
+const int \mbox{\hyperlink{class_game_a38520cec2e6d3041e751f1796600857b}{TRAININGS\+\_\+\+PER\+\_\+\+FRAME}} = 1000
+\item 
+bool \mbox{\hyperlink{class_game_a2f47edf96e503eb5503456d9e24373ef}{m\+\_\+train}} = false
+\item 
+\mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\+\_\+2d}} \mbox{\hyperlink{class_game_a7ca3fcfd0786588d8efe8154f5a75dae}{m\+\_\+errors}}
+\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_game_a0aea82303836172155305cdaef0bac02}{m\+\_\+neural\+Network}}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ float $>$ $>$ $>$ \mbox{\hyperlink{class_game_a8f97b92bb0a81a4dadef1f0631a026e5}{m\+\_\+weights}}
+\item 
+std\+::array$<$ int, 2 $>$ \mbox{\hyperlink{class_game_a0c6489488039c80eb94fa74e17556a9e}{m\+\_\+hidden\+Neurons}} = m\+\_\+neural\+\_\+network.\+get\+Hidden\+Neurons()
+\item 
+std\+::array$<$ int, 3 $>$ \mbox{\hyperlink{class_game_a4257d050cc98364163c8e6c668e3f763}{m\+\_\+bias\+Neurons}} = m\+\_\+neural\+\_\+network.\+get\+Bias\+Neurons()
+\item 
+std\+::mt19937\+\_\+64 \mbox{\hyperlink{class_game_a2ff52b4c4bb4594476870a59c49b8161}{m\+\_\+random}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_aa6d6f390e91371054af340bc0a9c45cf}{m\+\_\+error\+Text}}
+\item 
+sf\+::\+Image \mbox{\hyperlink{class_game_a6598ff7b33eaf446e533a89747027b0f}{m\+\_\+output\+Image}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_game_a40d6cc7776d10565d8d2a524ca7aff0a}{m\+\_\+output\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_a7c62e9bcff447a3273c015e18547539a}{m\+\_\+output\+Texture}}
+\item 
+bool \mbox{\hyperlink{class_game_a8175b7702f2136c93eeaa3d4c2ccff8d}{m\+\_\+show\+Win\+Lose\+Panel}} = false
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_game_a267d57d32a61da207695cf11c235702e}{m\+\_\+panel\+Background\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_a7412b6979c0525184a86c1d9dc3e3ecb}{m\+\_\+panel\+Background\+Texture}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a4efc001eec72f01e48df716c74e341a7}{m\+\_\+win\+Lose\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_ac7012e8984184084aa1e3d2108d40af1}{m\+\_\+play\+Again\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a3fbe0c2c992653f955ba9b5eb928f007}{m\+\_\+exit\+Text}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_a95a1d20ec4cb6ad7d1137d27bcf0b198}{m\+\_\+play\+Again\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_ac8a589c12b442b9d5ddc20cf80928c17}{m\+\_\+exit\+Button}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a715ebff0d3920fc70ee221504c8e24cb}{m\+\_\+player\+Stats\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a89d56d333dd1665923bb9d1f84717fc4}{m\+\_\+enemy\+Stats\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a27ae1f02152bcef4edf2c930604c7e47}{m\+\_\+game\+Duration\+Text}}
+\item 
+int \mbox{\hyperlink{class_game_aa8c2d33ea06e6f58ae4f256da4dfd321}{m\+\_\+player\+Unit\+Stat\+Count}} = 0
+\item 
+int \mbox{\hyperlink{class_game_a36660adca4206c16559d63c99ea6ad13}{m\+\_\+player\+Building\+Stat\+Count}} = 0
+\item 
+int \mbox{\hyperlink{class_game_a200090fbaf3fe95beb7e7dc9d3db25c2}{m\+\_\+enemy\+Unit\+Stat\+Count}} = 0
+\item 
+int \mbox{\hyperlink{class_game_a5ceb45cbedb65810cbd61e7a55340095}{m\+\_\+enemy\+Building\+Stat\+Count}} = 0
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_game_a745edf60fb54340786f5e7441c3e2936}{m\+\_\+game\+Duration\+Clock}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_game_a52138faf7796806055ede6d19355d26b}{m\+\_\+game\+Duration\+Time}}
+\item 
+int \mbox{\hyperlink{class_game_a3e6f2d193560ca51cd918ea8bdc16d9b}{m\+\_\+minutes}} = 0
+\item 
+int \mbox{\hyperlink{class_game_a824f31e63ed4f5c8b2dfba26b932feac}{m\+\_\+seconds}} = 0
+\item 
+bool \mbox{\hyperlink{class_game_adc0ad308fd68b9d9dfdaa98fedd814c1}{m\+\_\+paused\+Game}} = false
+\item 
+bool \mbox{\hyperlink{class_game_a995c2a7b4b5639a5e3c721dd80526d10}{m\+\_\+friendly}} = true
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_game_aa60eb7bf3988d09c775d8418c56eb9fc}{m\+\_\+pause\+Background\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_game_a1ee8b9e6c2bbb144efef757fd96d7c13}{m\+\_\+pause\+Background\+Texture}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a853e3fa87fa23cf4131da2defc9daec8}{m\+\_\+pause\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a8fb4552e946f9967d1f571b78573d178}{m\+\_\+restart\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a0afa85be5abec815b5deb364e7060bd1}{m\+\_\+exit\+Game\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_a4734e3c34740aac52e99f42301aa07a0}{m\+\_\+save\+Game\+Text}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_aa989641bf7ff296c6480cb20979edfba}{m\+\_\+restart\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_a12bfd2a6665f8c004613aff8ff4e009c}{m\+\_\+exit\+Game\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_game_ac93daa771b798ae36d4f9b5937a52f7d}{m\+\_\+save\+Game\+Button}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -46,7 +391,8 @@ default constructor
 
 Definition at line \mbox{\hyperlink{_game_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,6 +416,1333 @@ Definition at line \mbox{\hyperlink{_game_8cpp_source_l00054}{54}} of file \mbox
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_a3b02809eceee2f9a6847d0c4e6a1b9e6}\label{class_game_a3b02809eceee2f9a6847d0c4e6a1b9e6} 
+\index{Game@{Game}!calculateGridSize@{calculateGridSize}}
+\index{calculateGridSize@{calculateGridSize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{calculateGridSize()}{calculateGridSize()}}
+{\footnotesize\ttfamily int Game\+::calculate\+Grid\+Size (\begin{DoxyParamCaption}\item[{int}]{m\+\_\+number\+Of\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01411}{1411}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a3b02809eceee2f9a6847d0c4e6a1b9e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a59b7dab67956cd4c3cfec64e9b3038d5}\label{class_game_a59b7dab67956cd4c3cfec64e9b3038d5} 
+\index{Game@{Game}!checkPositionWithinMap@{checkPositionWithinMap}}
+\index{checkPositionWithinMap@{checkPositionWithinMap}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{checkPositionWithinMap()}{checkPositionWithinMap()}}
+{\footnotesize\ttfamily bool Game\+::check\+Position\+Within\+Map (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Just in case i wont get the runtime error if a building or a unit is outside the map so this function makes sure its within bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02241}{2241}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a59b7dab67956cd4c3cfec64e9b3038d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a4107bc7f3cf933a2e64cbc7586ac8140}\label{class_game_a4107bc7f3cf933a2e64cbc7586ac8140} 
+\index{Game@{Game}!checkVictoryConditions@{checkVictoryConditions}}
+\index{checkVictoryConditions@{checkVictoryConditions}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{checkVictoryConditions()}{checkVictoryConditions()}}
+{\footnotesize\ttfamily void Game\+::check\+Victory\+Conditions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks the victory and lose conditions. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01433}{1433}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4107bc7f3cf933a2e64cbc7586ac8140_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4107bc7f3cf933a2e64cbc7586ac8140_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ab29015cd1a472a3642e655eb69d7b3a3}\label{class_game_ab29015cd1a472a3642e655eb69d7b3a3} 
+\index{Game@{Game}!clearGameEntities@{clearGameEntities}}
+\index{clearGameEntities@{clearGameEntities}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{clearGameEntities()}{clearGameEntities()}}
+{\footnotesize\ttfamily void Game\+::clear\+Game\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clears all game enities such as units and buildings. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02646}{2646}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab29015cd1a472a3642e655eb69d7b3a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a85b5a7a3f3f9e09446f30bd74e2d998e}\label{class_game_a85b5a7a3f3f9e09446f30bd74e2d998e} 
+\index{Game@{Game}!createBase@{createBase}}
+\index{createBase@{createBase}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createBase()}{createBase()}}
+{\footnotesize\ttfamily void Game\+::create\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+creates the players base 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00628}{628}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_game_a85b5a7a3f3f9e09446f30bd74e2d998e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a85b5a7a3f3f9e09446f30bd74e2d998e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a551eddfce663b131aca0742a7eda4704}\label{class_game_a551eddfce663b131aca0742a7eda4704} 
+\index{Game@{Game}!createBuilding@{createBuilding}}
+\index{createBuilding@{createBuilding}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createBuilding()}{createBuilding()}}
+{\footnotesize\ttfamily void Game\+::create\+Building (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+creates the buildings for players side 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00573}{573}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_game_a551eddfce663b131aca0742a7eda4704_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a551eddfce663b131aca0742a7eda4704_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a607c2e37d79a38249020a88c2a3b7c7b}\label{class_game_a607c2e37d79a38249020a88c2a3b7c7b} 
+\index{Game@{Game}!createBuildingByType@{createBuildingByType}}
+\index{createBuildingByType@{createBuildingByType}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createBuildingByType()}{createBuildingByType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Game\+::create\+Building\+By\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the type of building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02576}{2576}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a607c2e37d79a38249020a88c2a3b7c7b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aeb52838d2be775c688f2e78a711ba696}\label{class_game_aeb52838d2be775c688f2e78a711ba696} 
+\index{Game@{Game}!createEnemyHarvesterUnit@{createEnemyHarvesterUnit}}
+\index{createEnemyHarvesterUnit@{createEnemyHarvesterUnit}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createEnemyHarvesterUnit()}{createEnemyHarvesterUnit()}}
+{\footnotesize\ttfamily void Game\+::create\+Enemy\+Harvester\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This create the enemy harvester unit this goes along side with the refinery building. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01845}{1845}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aeb52838d2be775c688f2e78a711ba696_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aeb52838d2be775c688f2e78a711ba696_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a13219852186fab2a37e618cac4acfbdb}\label{class_game_a13219852186fab2a37e618cac4acfbdb} 
+\index{Game@{Game}!createEnemyStarterBase@{createEnemyStarterBase}}
+\index{createEnemyStarterBase@{createEnemyStarterBase}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createEnemyStarterBase()}{createEnemyStarterBase()}}
+{\footnotesize\ttfamily void Game\+::create\+Enemy\+Starter\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates some buildings and units to give an advantage to the enemy a bit at the start of the game. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01465}{1465}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a13219852186fab2a37e618cac4acfbdb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a13219852186fab2a37e618cac4acfbdb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aa99ac90edfa2abbca5ca6c25fd26a1c2}\label{class_game_aa99ac90edfa2abbca5ca6c25fd26a1c2} 
+\index{Game@{Game}!createEnemyUnit@{createEnemyUnit}}
+\index{createEnemyUnit@{createEnemyUnit}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createEnemyUnit()}{createEnemyUnit()}}
+{\footnotesize\ttfamily void Game\+::create\+Enemy\+Unit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m\+\_\+unit\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the specific unit type on that buildings position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01741}{1741}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aa99ac90edfa2abbca5ca6c25fd26a1c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aa99ac90edfa2abbca5ca6c25fd26a1c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a43e80c8c9022b911129bce8454bc5adb}\label{class_game_a43e80c8c9022b911129bce8454bc5adb} 
+\index{Game@{Game}!createUnit@{createUnit}}
+\index{createUnit@{createUnit}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createUnit()}{createUnit()}}
+{\footnotesize\ttfamily void Game\+::create\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the unit for players side. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00967}{967}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_game_a43e80c8c9022b911129bce8454bc5adb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a43e80c8c9022b911129bce8454bc5adb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_abd4a46f70b51a04cbfb879653d984bcb}\label{class_game_abd4a46f70b51a04cbfb879653d984bcb} 
+\index{Game@{Game}!createUnitByType@{createUnitByType}}
+\index{createUnitByType@{createUnitByType}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{createUnitByType()}{createUnitByType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} Game\+::create\+Unit\+By\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_unit_8h_a31cf478374cb056e841f841a3ba0f214}{Unit\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the type of unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02600}{2600}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_abd4a46f70b51a04cbfb879653d984bcb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ab1b4ee064ddb5c3c3935e6c152916629}\label{class_game_ab1b4ee064ddb5c3c3935e6c152916629} 
+\index{Game@{Game}!decideNextEnemyBuilding@{decideNextEnemyBuilding}}
+\index{decideNextEnemyBuilding@{decideNextEnemyBuilding}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{decideNextEnemyBuilding()}{decideNextEnemyBuilding()}}
+{\footnotesize\ttfamily void Game\+::decide\+Next\+Enemy\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is to decie which building it should be placing. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01908}{1908}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab1b4ee064ddb5c3c3935e6c152916629_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab1b4ee064ddb5c3c3935e6c152916629_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ac2138e0e6e655ba0310df41a450d83a9}\label{class_game_ac2138e0e6e655ba0310df41a450d83a9} 
+\index{Game@{Game}!distanceBetweenPoints@{distanceBetweenPoints}}
+\index{distanceBetweenPoints@{distanceBetweenPoints}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{distanceBetweenPoints()}{distanceBetweenPoints()}}
+{\footnotesize\ttfamily float Game\+::distance\+Between\+Points (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{p1,  }\item[{const sf\+::\+Vector2f \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02110}{2110}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ac2138e0e6e655ba0310df41a450d83a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a8f38d4b2a428ba07ac6c75665a199778}\label{class_game_a8f38d4b2a428ba07ac6c75665a199778} 
+\index{Game@{Game}!drawNeuralNetwork@{drawNeuralNetwork}}
+\index{drawNeuralNetwork@{drawNeuralNetwork}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{drawNeuralNetwork()}{drawNeuralNetwork()}}
+{\footnotesize\ttfamily void Game\+::draw\+Neural\+Network (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renders the neural networks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00865}{865}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a8f38d4b2a428ba07ac6c75665a199778_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a8f38d4b2a428ba07ac6c75665a199778_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aa7b687e26434179b94657751ff5c1b75}\label{class_game_aa7b687e26434179b94657751ff5c1b75} 
+\index{Game@{Game}!enemyAttacking@{enemyAttacking}}
+\index{enemyAttacking@{enemyAttacking}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{enemyAttacking()}{enemyAttacking()}}
+{\footnotesize\ttfamily void Game\+::enemy\+Attacking (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+orders the enemy to attack the player units/buildings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02191}{2191}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aa7b687e26434179b94657751ff5c1b75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aa7b687e26434179b94657751ff5c1b75_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a0d560a61982bdc8684f8643bfeb8e73f}\label{class_game_a0d560a61982bdc8684f8643bfeb8e73f} 
+\index{Game@{Game}!enemyExploring@{enemyExploring}}
+\index{enemyExploring@{enemyExploring}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{enemyExploring()}{enemyExploring()}}
+{\footnotesize\ttfamily void Game\+::enemy\+Exploring (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes the enemies explore the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02119}{2119}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a0d560a61982bdc8684f8643bfeb8e73f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a6754a603fdd1cc442d214c68c3b458a7}\label{class_game_a6754a603fdd1cc442d214c68c3b458a7} 
+\index{Game@{Game}!enemyGroupUnits@{enemyGroupUnits}}
+\index{enemyGroupUnits@{enemyGroupUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{enemyGroupUnits()}{enemyGroupUnits()}}
+{\footnotesize\ttfamily void Game\+::enemy\+Group\+Units (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes a group of enemies come together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02159}{2159}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a6754a603fdd1cc442d214c68c3b458a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a6754a603fdd1cc442d214c68c3b458a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a5d8167d490c3d69c6c738a9714228ee7}\label{class_game_a5d8167d490c3d69c6c738a9714228ee7} 
+\index{Game@{Game}!findEnemyHeadquartersPosition@{findEnemyHeadquartersPosition}}
+\index{findEnemyHeadquartersPosition@{findEnemyHeadquartersPosition}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{findEnemyHeadquartersPosition()}{findEnemyHeadquartersPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::find\+Enemy\+Headquarters\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02222}{2222}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5d8167d490c3d69c6c738a9714228ee7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aaa51ffad72adb20f64b31e17b91f95b4}\label{class_game_aaa51ffad72adb20f64b31e17b91f95b4} 
+\index{Game@{Game}!findNearestPlayerObjectPosition@{findNearestPlayerObjectPosition}}
+\index{findNearestPlayerObjectPosition@{findNearestPlayerObjectPosition}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{findNearestPlayerObjectPosition()}{findNearestPlayerObjectPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::find\+Nearest\+Player\+Object\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+enemy\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02082}{2082}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aaa51ffad72adb20f64b31e17b91f95b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aaa51ffad72adb20f64b31e17b91f95b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a5a6654ec056092bd336401bed6349b7e}\label{class_game_a5a6654ec056092bd336401bed6349b7e} 
+\index{Game@{Game}!findPlacementPositionNearExistingBuilding@{findPlacementPositionNearExistingBuilding}}
+\index{findPlacementPositionNearExistingBuilding@{findPlacementPositionNearExistingBuilding}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{findPlacementPositionNearExistingBuilding()}{findPlacementPositionNearExistingBuilding()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::find\+Placement\+Position\+Near\+Existing\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Find a suitable place to create a building. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01980}{1980}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5a6654ec056092bd336401bed6349b7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5a6654ec056092bd336401bed6349b7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a9de86d1081ce3a5decd86a3c543598b6}\label{class_game_a9de86d1081ce3a5decd86a3c543598b6} 
+\index{Game@{Game}!gameReset@{gameReset}}
+\index{gameReset@{gameReset}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{gameReset()}{gameReset()}}
+{\footnotesize\ttfamily void Game\+::game\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+To reset the game and undo all the properties for a new game. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02624}{2624}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a9de86d1081ce3a5decd86a3c543598b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a9de86d1081ce3a5decd86a3c543598b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_af41b28d69edbd23c2e998e8cf606ddaa}\label{class_game_af41b28d69edbd23c2e998e8cf606ddaa} 
+\index{Game@{Game}!getMoney@{getMoney}}
+\index{getMoney@{getMoney}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getMoney()}{getMoney()}}
+{\footnotesize\ttfamily void Game\+::get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01406}{1406}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_af41b28d69edbd23c2e998e8cf606ddaa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a77bf4b17d62e8c117f0248514fcf1d14}\label{class_game_a77bf4b17d62e8c117f0248514fcf1d14} 
+\index{Game@{Game}!getValidExplorationTargets@{getValidExplorationTargets}}
+\index{getValidExplorationTargets@{getValidExplorationTargets}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getValidExplorationTargets()}{getValidExplorationTargets()}}
+{\footnotesize\ttfamily std\+::vector$<$ sf\+::\+Vector2f $>$ Game\+::get\+Valid\+Exploration\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02205}{2205}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a77bf4b17d62e8c117f0248514fcf1d14_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ac2846dd2ab02eb66aa95b2ba2d5c568c}\label{class_game_ac2846dd2ab02eb66aa95b2ba2d5c568c} 
+\index{Game@{Game}!handlePauseMenu@{handlePauseMenu}}
+\index{handlePauseMenu@{handlePauseMenu}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{handlePauseMenu()}{handlePauseMenu()}}
+{\footnotesize\ttfamily void Game\+::handle\+Pause\+Menu (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+mouse\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the mouse input for the buttons 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mouse\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02320}{2320}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ac2846dd2ab02eb66aa95b2ba2d5c568c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ac2846dd2ab02eb66aa95b2ba2d5c568c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a4fef014d3c18632b507f6fdea0fa5c64}\label{class_game_a4fef014d3c18632b507f6fdea0fa5c64} 
+\index{Game@{Game}!handleWinLosePanel@{handleWinLosePanel}}
+\index{handleWinLosePanel@{handleWinLosePanel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{handleWinLosePanel()}{handleWinLosePanel()}}
+{\footnotesize\ttfamily void Game\+::handle\+Win\+Lose\+Panel (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+mouse\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the mouse input for the win/lose panel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mouse\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01318}{1318}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4fef014d3c18632b507f6fdea0fa5c64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4fef014d3c18632b507f6fdea0fa5c64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ad52aea4509062f4b5b71d209b5383ff5}\label{class_game_ad52aea4509062f4b5b71d209b5383ff5} 
+\index{Game@{Game}!initNeuralNetwork@{initNeuralNetwork}}
+\index{initNeuralNetwork@{initNeuralNetwork}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initNeuralNetwork()}{initNeuralNetwork()}}
+{\footnotesize\ttfamily void Game\+::init\+Neural\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the neural networks 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00776}{776}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_game_ad52aea4509062f4b5b71d209b5383ff5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ac7ea590ba1d6b2bdccbcdf952ac7eee5}\label{class_game_ac7ea590ba1d6b2bdccbcdf952ac7eee5} 
+\index{Game@{Game}!initParticles@{initParticles}}
+\index{initParticles@{initParticles}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initParticles()}{initParticles()}}
+{\footnotesize\ttfamily void Game\+::init\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00761}{761}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_game_ac7ea590ba1d6b2bdccbcdf952ac7eee5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aaf1752ba5786c94e672f306dc75d85ac}\label{class_game_aaf1752ba5786c94e672f306dc75d85ac} 
+\index{Game@{Game}!initPauseMenu@{initPauseMenu}}
+\index{initPauseMenu@{initPauseMenu}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initPauseMenu()}{initPauseMenu()}}
+{\footnotesize\ttfamily void Game\+::init\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the pause menu stuff. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02255}{2255}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_game_aaf1752ba5786c94e672f306dc75d85ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ac70268e7febf34867b9181091ca03073}\label{class_game_ac70268e7febf34867b9181091ca03073} 
+\index{Game@{Game}!initPlaylistForGameplay@{initPlaylistForGameplay}}
+\index{initPlaylistForGameplay@{initPlaylistForGameplay}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initPlaylistForGameplay()}{initPlaylistForGameplay()}}
+{\footnotesize\ttfamily void Game\+::init\+Playlist\+For\+Gameplay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A playlist of songs that plays only in gameplay mode. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01363}{1363}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ac70268e7febf34867b9181091ca03073_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_game_ac70268e7febf34867b9181091ca03073_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_aeb5d0d8c72297e1ea468facac9c8383d}\label{class_game_aeb5d0d8c72297e1ea468facac9c8383d} 
+\index{Game@{Game}!initSoundInGameplay@{initSoundInGameplay}}
+\index{initSoundInGameplay@{initSoundInGameplay}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initSoundInGameplay()}{initSoundInGameplay()}}
+{\footnotesize\ttfamily void Game\+::init\+Sound\+In\+Gameplay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01374}{1374}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_aeb5d0d8c72297e1ea468facac9c8383d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_game_aeb5d0d8c72297e1ea468facac9c8383d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a559719d47aec4db2655631d128397cae}\label{class_game_a559719d47aec4db2655631d128397cae} 
+\index{Game@{Game}!initWinLosePanel@{initWinLosePanel}}
+\index{initWinLosePanel@{initWinLosePanel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initWinLosePanel()}{initWinLosePanel()}}
+{\footnotesize\ttfamily void Game\+::init\+Win\+Lose\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the win/lose panel. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01214}{1214}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_game_a559719d47aec4db2655631d128397cae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a21f04e66a512dabffb3ce58cbecea6bf}\label{class_game_a21f04e66a512dabffb3ce58cbecea6bf} 
+\index{Game@{Game}!loadBuildings@{loadBuildings}}
+\index{loadBuildings@{loadBuildings}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadBuildings()}{loadBuildings()}}
+{\footnotesize\ttfamily void Game\+::load\+Buildings (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{load\+File,  }\item[{int}]{building\+Count,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&}]{buildings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the buildings for both sides. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em load\+File} & \\
+\hline
+{\em building\+Count} & \\
+\hline
+{\em buildings} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02513}{2513}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a21f04e66a512dabffb3ce58cbecea6bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a21f04e66a512dabffb3ce58cbecea6bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ad5515b9b26ffd6c2cc89369f87cf9328}\label{class_game_ad5515b9b26ffd6c2cc89369f87cf9328} 
+\index{Game@{Game}!loadGameMatch@{loadGameMatch}}
+\index{loadGameMatch@{loadGameMatch}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadGameMatch()}{loadGameMatch()}}
+{\footnotesize\ttfamily void Game\+::load\+Game\+Match (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the match where all the stats, units, buildings are suppose to be. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02433}{2433}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ad5515b9b26ffd6c2cc89369f87cf9328_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ad5515b9b26ffd6c2cc89369f87cf9328_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a5e57e588368a437cbe1a177b02e7175c}\label{class_game_a5e57e588368a437cbe1a177b02e7175c} 
+\index{Game@{Game}!loadMapLevel@{loadMapLevel}}
+\index{loadMapLevel@{loadMapLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadMapLevel()}{loadMapLevel()}}
+{\footnotesize\ttfamily void Game\+::load\+Map\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m\+\_\+filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01420}{1420}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5e57e588368a437cbe1a177b02e7175c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5e57e588368a437cbe1a177b02e7175c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a8a96c87a559944e60f75003d73c77110}\label{class_game_a8a96c87a559944e60f75003d73c77110} 
+\index{Game@{Game}!loadUnits@{loadUnits}}
+\index{loadUnits@{loadUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadUnits()}{loadUnits()}}
+{\footnotesize\ttfamily void Game\+::load\+Units (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{load\+File,  }\item[{int}]{unit\+Count,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{units,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$}]{m\+\_\+set\+Enemy\+Units,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$}]{m\+\_\+set\+Placed\+Enemy\+Buildings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the units for player and enemy side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em load\+File} & \\
+\hline
+{\em unit\+Count} & \\
+\hline
+{\em units} & \\
+\hline
+{\em m\+\_\+set\+Enemy\+Units} & \\
+\hline
+{\em m\+\_\+set\+Placed\+Enemy\+Buildings} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02540}{2540}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_game_a8a96c87a559944e60f75003d73c77110_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a8a96c87a559944e60f75003d73c77110_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a272632885432700f8d631671eb968854}\label{class_game_a272632885432700f8d631671eb968854} 
+\index{Game@{Game}!moveCamera@{moveCamera}}
+\index{moveCamera@{moveCamera}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{moveCamera()}{moveCamera()}}
+{\footnotesize\ttfamily void Game\+::move\+Camera (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{m\+\_\+mouse\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00549}{549}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a272632885432700f8d631671eb968854_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ad229521f71deffe42b62c073fc8197c5}\label{class_game_ad229521f71deffe42b62c073fc8197c5} 
+\index{Game@{Game}!moveEnemyUnits@{moveEnemyUnits}}
+\index{moveEnemyUnits@{moveEnemyUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{moveEnemyUnits()}{moveEnemyUnits()}}
+{\footnotesize\ttfamily void Game\+::move\+Enemy\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Moves the enemies towards the player units or buildings. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02063}{2063}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ad229521f71deffe42b62c073fc8197c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ad229521f71deffe42b62c073fc8197c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a75ab84e14d9648963239c50df2159f8a}\label{class_game_a75ab84e14d9648963239c50df2159f8a} 
+\index{Game@{Game}!placeEnemyBuilding@{placeEnemyBuilding}}
+\index{placeEnemyBuilding@{placeEnemyBuilding}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{placeEnemyBuilding()}{placeEnemyBuilding()}}
+{\footnotesize\ttfamily void Game\+::place\+Enemy\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}}]{m\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Decides which building type to place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01939}{1939}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a75ab84e14d9648963239c50df2159f8a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a75ab84e14d9648963239c50df2159f8a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a79f698dda206dd7a9bed28b3f88bdc38}\label{class_game_a79f698dda206dd7a9bed28b3f88bdc38} 
+\index{Game@{Game}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Game\+::process\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handle user and system events/ input get key presses/ mouse moves 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_game_a79f698dda206dd7a9bed28b3f88bdc38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a79f698dda206dd7a9bed28b3f88bdc38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_adf2eb2e773dbad1322db8d6798705ea1}\label{class_game_adf2eb2e773dbad1322db8d6798705ea1} 
+\index{Game@{Game}!processKeys@{processKeys}}
+\index{processKeys@{processKeys}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processKeys()}{processKeys()}}
+{\footnotesize\ttfamily void Game\+::process\+Keys (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+deal with key presses from the user 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & key press event\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00284}{284}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_adf2eb2e773dbad1322db8d6798705ea1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_adf2eb2e773dbad1322db8d6798705ea1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a15ddd769261d923827a3cdf41499c843}\label{class_game_a15ddd769261d923827a3cdf41499c843} 
+\index{Game@{Game}!render@{render}}
+\index{render@{render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws all the sprites, shapes and texts. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a15ddd769261d923827a3cdf41499c843_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_game_a15ddd769261d923827a3cdf41499c843_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ac7e941ab565a46d04914f8df2f839a68}\label{class_game_ac7e941ab565a46d04914f8df2f839a68} 
+\index{Game@{Game}!renderPauseMenu@{renderPauseMenu}}
+\index{renderPauseMenu@{renderPauseMenu}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{renderPauseMenu()}{renderPauseMenu()}}
+{\footnotesize\ttfamily void Game\+::render\+Pause\+Menu (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renders all pause menu stuff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02348}{2348}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ac7e941ab565a46d04914f8df2f839a68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a244ea25cea43a193b2921d34e9ab7a9f}\label{class_game_a244ea25cea43a193b2921d34e9ab7a9f} 
+\index{Game@{Game}!renderWinLosePanel@{renderWinLosePanel}}
+\index{renderWinLosePanel@{renderWinLosePanel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{renderWinLosePanel()}{renderWinLosePanel()}}
+{\footnotesize\ttfamily void Game\+::render\+Win\+Lose\+Panel (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renders the win/lose panel with stats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01294}{1294}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a244ea25cea43a193b2921d34e9ab7a9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a96bbebea386baefbbc4d7401bbd7989b}\label{class_game_a96bbebea386baefbbc4d7401bbd7989b} 
+\index{Game@{Game}!resetView@{resetView}}
+\index{resetView@{resetView}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{resetView()}{resetView()}}
+{\footnotesize\ttfamily void Game\+::reset\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resets the view back to normal. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01340}{1340}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a96bbebea386baefbbc4d7401bbd7989b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a96bbebea386baefbbc4d7401bbd7989b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a857f366a4c617d2476c97a99d51dda68}\label{class_game_a857f366a4c617d2476c97a99d51dda68} 
+\index{Game@{Game}!resetZoom@{resetZoom}}
+\index{resetZoom@{resetZoom}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{resetZoom()}{resetZoom()}}
+{\footnotesize\ttfamily void Game\+::reset\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resets the view for zooming. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01351}{1351}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a857f366a4c617d2476c97a99d51dda68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a857f366a4c617d2476c97a99d51dda68_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}\label{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa} 
 \index{Game@{Game}!run@{run}}
 \index{run@{run}!Game@{Game}}
@@ -84,16 +1757,1632 @@ main game loop update 60 times per second, process update as often as possible a
 
 Definition at line \mbox{\hyperlink{_game_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=215pt]{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_game_a70cc4b956596b5fb1d0a52fb98e7c590}\label{class_game_a70cc4b956596b5fb1d0a52fb98e7c590} 
+\index{Game@{Game}!saveGameMatch@{saveGameMatch}}
+\index{saveGameMatch@{saveGameMatch}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{saveGameMatch()}{saveGameMatch()}}
+{\footnotesize\ttfamily void Game\+::save\+Game\+Match (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Saves the match level all the units/\+Buildings for player and enemy. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l02363}{2363}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a70cc4b956596b5fb1d0a52fb98e7c590_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ab0c20f30c4992648b2740827f3f9d9df}\label{class_game_ab0c20f30c4992648b2740827f3f9d9df} 
+\index{Game@{Game}!saveMapLevel@{saveMapLevel}}
+\index{saveMapLevel@{saveMapLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{saveMapLevel()}{saveMapLevel()}}
+{\footnotesize\ttfamily void Game\+::save\+Map\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Saves the level file name. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00741}{741}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab0c20f30c4992648b2740827f3f9d9df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab0c20f30c4992648b2740827f3f9d9df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_af8ae7bbf0e4e57de940176604e34721e}\label{class_game_af8ae7bbf0e4e57de940176604e34721e} 
+\index{Game@{Game}!selectUnitAt@{selectUnitAt}}
+\index{selectUnitAt@{selectUnitAt}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{selectUnitAt()}{selectUnitAt()}}
+{\footnotesize\ttfamily void Game\+::select\+Unit\+At (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+mouse\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Selects the unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mouse\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01089}{1089}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_game_af8ae7bbf0e4e57de940176604e34721e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_af8ae7bbf0e4e57de940176604e34721e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a69cddd3cbbeb88d4163ef16bde7d4b4b}\label{class_game_a69cddd3cbbeb88d4163ef16bde7d4b4b} 
+\index{Game@{Game}!selectUnitsInBox@{selectUnitsInBox}}
+\index{selectUnitsInBox@{selectUnitsInBox}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{selectUnitsInBox()}{selectUnitsInBox()}}
+{\footnotesize\ttfamily void Game\+::select\+Units\+In\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+To select all units within the box. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01105}{1105}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_game_a69cddd3cbbeb88d4163ef16bde7d4b4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a69cddd3cbbeb88d4163ef16bde7d4b4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a406b54ef964b145cdfe4d9cfc5714f8b}\label{class_game_a406b54ef964b145cdfe4d9cfc5714f8b} 
+\index{Game@{Game}!spawnBubbleParticles@{spawnBubbleParticles}}
+\index{spawnBubbleParticles@{spawnBubbleParticles}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spawnBubbleParticles()}{spawnBubbleParticles()}}
+{\footnotesize\ttfamily void Game\+::spawn\+Bubble\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns a bubble particle effect around the world to give the theme better look. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01122}{1122}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a406b54ef964b145cdfe4d9cfc5714f8b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a406b54ef964b145cdfe4d9cfc5714f8b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ae5829766d4ae7f7375f1c7e03ada48c9}\label{class_game_ae5829766d4ae7f7375f1c7e03ada48c9} 
+\index{Game@{Game}!spawnBulletSparkParticles@{spawnBulletSparkParticles}}
+\index{spawnBulletSparkParticles@{spawnBulletSparkParticles}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spawnBulletSparkParticles()}{spawnBulletSparkParticles()}}
+{\footnotesize\ttfamily void Game\+::spawn\+Bullet\+Spark\+Particles (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+spawns a spark particle effect 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01160}{1160}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ae5829766d4ae7f7375f1c7e03ada48c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ae5829766d4ae7f7375f1c7e03ada48c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a71708c1b041fac0354fb736fdbda7da4}\label{class_game_a71708c1b041fac0354fb736fdbda7da4} 
+\index{Game@{Game}!spawnEnemyNearBase@{spawnEnemyNearBase}}
+\index{spawnEnemyNearBase@{spawnEnemyNearBase}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spawnEnemyNearBase()}{spawnEnemyNearBase()}}
+{\footnotesize\ttfamily void Game\+::spawn\+Enemy\+Near\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01394}{1394}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a71708c1b041fac0354fb736fdbda7da4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a71708c1b041fac0354fb736fdbda7da4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ae6c617460af72815617f63fa92e2d2c4}\label{class_game_ae6c617460af72815617f63fa92e2d2c4} 
+\index{Game@{Game}!spawnExplosionParticle@{spawnExplosionParticle}}
+\index{spawnExplosionParticle@{spawnExplosionParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spawnExplosionParticle()}{spawnExplosionParticle()}}
+{\footnotesize\ttfamily void Game\+::spawn\+Explosion\+Particle (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+spawns an explosion particle effect 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01182}{1182}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ae6c617460af72815617f63fa92e2d2c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ae6c617460af72815617f63fa92e2d2c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a1d2aee62bac8e228344e1f44fab504e0}\label{class_game_a1d2aee62bac8e228344e1f44fab504e0} 
+\index{Game@{Game}!update@{update}}
+\index{update@{update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the game world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & time interval per frame\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00356}{356}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a1d2aee62bac8e228344e1f44fab504e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_game_a1d2aee62bac8e228344e1f44fab504e0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_afbf9d366a52adee67b2baa80d9013904}\label{class_game_afbf9d366a52adee67b2baa80d9013904} 
+\index{Game@{Game}!updateBuildingCounts@{updateBuildingCounts}}
+\index{updateBuildingCounts@{updateBuildingCounts}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateBuildingCounts()}{updateBuildingCounts()}}
+{\footnotesize\ttfamily void Game\+::update\+Building\+Counts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks how many buildings it has. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01863}{1863}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_afbf9d366a52adee67b2baa80d9013904_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ab5fe3b4ac5c7adf0639405c6f83abb12}\label{class_game_ab5fe3b4ac5c7adf0639405c6f83abb12} 
+\index{Game@{Game}!updateEnemyAIDecisionOnCreating@{updateEnemyAIDecisionOnCreating}}
+\index{updateEnemyAIDecisionOnCreating@{updateEnemyAIDecisionOnCreating}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateEnemyAIDecisionOnCreating()}{updateEnemyAIDecisionOnCreating()}}
+{\footnotesize\ttfamily void Game\+::update\+Enemy\+AIDecision\+On\+Creating (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function is to make the enemy decide to either create a building or a unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01496}{1496}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab5fe3b4ac5c7adf0639405c6f83abb12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab5fe3b4ac5c7adf0639405c6f83abb12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a839c56650c0c138d55b3723d6602e67d}\label{class_game_a839c56650c0c138d55b3723d6602e67d} 
+\index{Game@{Game}!updateEnemyAIUnitDecisionState@{updateEnemyAIUnitDecisionState}}
+\index{updateEnemyAIUnitDecisionState@{updateEnemyAIUnitDecisionState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateEnemyAIUnitDecisionState()}{updateEnemyAIUnitDecisionState()}}
+{\footnotesize\ttfamily void Game\+::update\+Enemy\+AIUnit\+Decision\+State (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This decides the enemy what to do Explore, group together and attack the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01598}{1598}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a839c56650c0c138d55b3723d6602e67d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a839c56650c0c138d55b3723d6602e67d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a37d3b5d22bb0643d8bf0da2c85e9c40e}\label{class_game_a37d3b5d22bb0643d8bf0da2c85e9c40e} 
+\index{Game@{Game}!updateEnemyAssets@{updateEnemyAssets}}
+\index{updateEnemyAssets@{updateEnemyAssets}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateEnemyAssets()}{updateEnemyAssets()}}
+{\footnotesize\ttfamily void Game\+::update\+Enemy\+Assets (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the enemies stuff like buildings, units to bullets and particle effects on them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l01640}{1640}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a37d3b5d22bb0643d8bf0da2c85e9c40e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a37d3b5d22bb0643d8bf0da2c85e9c40e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a919356aed223353ea89bde13d1997ae0}\label{class_game_a919356aed223353ea89bde13d1997ae0} 
+\index{Game@{Game}!updateFogOfWarBasedOnBuildings@{updateFogOfWarBasedOnBuildings}}
+\index{updateFogOfWarBasedOnBuildings@{updateFogOfWarBasedOnBuildings}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateFogOfWarBasedOnBuildings()}{updateFogOfWarBasedOnBuildings()}}
+{\footnotesize\ttfamily void Game\+::update\+Fog\+Of\+War\+Based\+On\+Buildings (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+buildings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the fog for the buildings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+buildings} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00890}{890}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a919356aed223353ea89bde13d1997ae0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ae520aacae22c065a9121755e92a4f7f0}\label{class_game_ae520aacae22c065a9121755e92a4f7f0} 
+\index{Game@{Game}!updateFogOfWarBasedOnUnits@{updateFogOfWarBasedOnUnits}}
+\index{updateFogOfWarBasedOnUnits@{updateFogOfWarBasedOnUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateFogOfWarBasedOnUnits()}{updateFogOfWarBasedOnUnits()}}
+{\footnotesize\ttfamily void Game\+::update\+Fog\+Of\+War\+Based\+On\+Units (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the fog for units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+units} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00924}{924}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ae520aacae22c065a9121755e92a4f7f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a5d94b00fbaee0de5284a72e3394d8a9b}\label{class_game_a5d94b00fbaee0de5284a72e3394d8a9b} 
+\index{Game@{Game}!updateNeuralNetwork@{updateNeuralNetwork}}
+\index{updateNeuralNetwork@{updateNeuralNetwork}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateNeuralNetwork()}{updateNeuralNetwork()}}
+{\footnotesize\ttfamily void Game\+::update\+Neural\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the nerual network. 
+
+This is also how i train it, adjusting the weights and biases based on the error between the actual and predicted outputs, which IS a learning process. The network\textquotesingle{}s ability to improve its predictions over time as it processes more data is neural network learning 
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00834}{834}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5d94b00fbaee0de5284a72e3394d8a9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a5d94b00fbaee0de5284a72e3394d8a9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_ab96b2f1df650ce4edf1b756d89fc7e7c}\label{class_game_ab96b2f1df650ce4edf1b756d89fc7e7c} 
+\index{Game@{Game}!updatePlayerAssets@{updatePlayerAssets}}
+\index{updatePlayerAssets@{updatePlayerAssets}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updatePlayerAssets()}{updatePlayerAssets()}}
+{\footnotesize\ttfamily void Game\+::update\+Player\+Assets (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the players buildings, units and the weapons for the unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00640}{640}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab96b2f1df650ce4edf1b756d89fc7e7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_ab96b2f1df650ce4edf1b756d89fc7e7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_a4b3ea936654ff67fd555b18da7657764}\label{class_game_a4b3ea936654ff67fd555b18da7657764} 
+\index{Game@{Game}!updateViewWithMouse@{updateViewWithMouse}}
+\index{updateViewWithMouse@{updateViewWithMouse}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{updateViewWithMouse()}{updateViewWithMouse()}}
+{\footnotesize\ttfamily void Game\+::update\+View\+With\+Mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the screen view position. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00514}{514}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4b3ea936654ff67fd555b18da7657764_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_a4b3ea936654ff67fd555b18da7657764_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_a53cde3ff7cf03bdd32c82ca39edd2c2c}\label{class_game_a53cde3ff7cf03bdd32c82ca39edd2c2c} 
+\index{Game@{Game}!enemyRefineryBuildingPosition@{enemyRefineryBuildingPosition}}
+\index{enemyRefineryBuildingPosition@{enemyRefineryBuildingPosition}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{enemyRefineryBuildingPosition}{enemyRefineryBuildingPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::enemy\+Refinery\+Building\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00089}{89}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ad0be56916a363b25898ddd6994439ae5}\label{class_game_ad0be56916a363b25898ddd6994439ae5} 
+\index{Game@{Game}!m\_angleParticle@{m\_angleParticle}}
+\index{m\_angleParticle@{m\_angleParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_angleParticle}{m\_angleParticle}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+angle\+Particle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00176}{176}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a4257d050cc98364163c8e6c668e3f763}\label{class_game_a4257d050cc98364163c8e6c668e3f763} 
+\index{Game@{Game}!m\_biasNeurons@{m\_biasNeurons}}
+\index{m\_biasNeurons@{m\_biasNeurons}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_biasNeurons}{m\_biasNeurons}}
+{\footnotesize\ttfamily std\+::array$<$int, 3$>$ Game\+::m\+\_\+bias\+Neurons = m\+\_\+neural\+\_\+network.\+get\+Bias\+Neurons()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00200}{200}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9f02ef923207a659c4a3fc6c69fc4654}\label{class_game_a9f02ef923207a659c4a3fc6c69fc4654} 
+\index{Game@{Game}!m\_bubbleTexture@{m\_bubbleTexture}}
+\index{m\_bubbleTexture@{m\_bubbleTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_bubbleTexture}{m\_bubbleTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+bubble\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00149}{149}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aad8fa35a74549c70e3a34f8c60bae124}\label{class_game_aad8fa35a74549c70e3a34f8c60bae124} 
+\index{Game@{Game}!m\_bulletSparksTexture@{m\_bulletSparksTexture}}
+\index{m\_bulletSparksTexture@{m\_bulletSparksTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_bulletSparksTexture}{m\_bulletSparksTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+bullet\+Sparks\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00150}{150}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ab29c079cb46a1a3fbd47cf323816eb70}\label{class_game_ab29c079cb46a1a3fbd47cf323816eb70} 
+\index{Game@{Game}!m\_cameraVelocity@{m\_cameraVelocity}}
+\index{m\_cameraVelocity@{m\_cameraVelocity}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_cameraVelocity}{m\_cameraVelocity}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::m\+\_\+camera\+Velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00158}{158}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a11880c958460f476fea5b08812980ac0}\label{class_game_a11880c958460f476fea5b08812980ac0} 
+\index{Game@{Game}!m\_colorParticle@{m\_colorParticle}}
+\index{m\_colorParticle@{m\_colorParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_colorParticle}{m\_colorParticle}}
+{\footnotesize\ttfamily sf\+::\+Color Game\+::m\+\_\+color\+Particle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00180}{180}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a2220b4e2dcef67ecc9ab500ed4d290c9}\label{class_game_a2220b4e2dcef67ecc9ab500ed4d290c9} 
+\index{Game@{Game}!m\_currentState@{m\_currentState}}
+\index{m\_currentState@{m\_currentState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_currentState}{m\_currentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} Game\+::m\+\_\+current\+State = \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{Game\+State\+::\+Main\+Menu}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00032}{32}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1207e0305a6c9dd326209139dfaac08e}\label{class_game_a1207e0305a6c9dd326209139dfaac08e} 
+\index{Game@{Game}!m\_currentZoomLevel@{m\_currentZoomLevel}}
+\index{m\_currentZoomLevel@{m\_currentZoomLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_currentZoomLevel}{m\_currentZoomLevel}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+current\+Zoom\+Level = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00161}{161}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ac8c3f2b3884b8637683a2cce429f64b3}\label{class_game_ac8c3f2b3884b8637683a2cce429f64b3} 
+\index{Game@{Game}!m\_cursorSprite@{m\_cursorSprite}}
+\index{m\_cursorSprite@{m\_cursorSprite}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_cursorSprite}{m\_cursorSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Game\+::m\+\_\+cursor\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00153}{153}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ad4ece6eb1053a5078acaec7a6dd22349}\label{class_game_ad4ece6eb1053a5078acaec7a6dd22349} 
+\index{Game@{Game}!m\_cursorTexture@{m\_cursorTexture}}
+\index{m\_cursorTexture@{m\_cursorTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_cursorTexture}{m\_cursorTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+cursor\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00152}{152}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa9d984ef2862a2801bda38257a3f79ce}\label{class_game_aa9d984ef2862a2801bda38257a3f79ce} 
+\index{Game@{Game}!m\_dotX@{m\_dotX}}
+\index{m\_dotX@{m\_dotX}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_dotX}{m\_dotX}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+dotX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00192}{192}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aad86aef0126f2ab59c67b4021a7541dd}\label{class_game_aad86aef0126f2ab59c67b4021a7541dd} 
+\index{Game@{Game}!m\_dotY@{m\_dotY}}
+\index{m\_dotY@{m\_dotY}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_dotY}{m\_dotY}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+dotY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00193}{193}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ae059e584aeaa7a1408dc2603981c5812}\label{class_game_ae059e584aeaa7a1408dc2603981c5812} 
+\index{Game@{Game}!m\_dragEnd@{m\_dragEnd}}
+\index{m\_dragEnd@{m\_dragEnd}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_dragEnd}{m\_dragEnd}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::m\+\_\+drag\+End\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00172}{172}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ae1a701fd1cab1f9d3d7144635296d324}\label{class_game_ae1a701fd1cab1f9d3d7144635296d324} 
+\index{Game@{Game}!m\_dragStart@{m\_dragStart}}
+\index{m\_dragStart@{m\_dragStart}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_dragStart}{m\_dragStart}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::m\+\_\+drag\+Start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00171}{171}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_abb862983cd0a52dc3aadb116c14594fb}\label{class_game_abb862983cd0a52dc3aadb116c14594fb} 
+\index{Game@{Game}!m\_enemyAIState@{m\_enemyAIState}}
+\index{m\_enemyAIState@{m\_enemyAIState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyAIState}{m\_enemyAIState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fc}{Enemy\+AIState}} Game\+::m\+\_\+enemy\+AIState = \mbox{\hyperlink{_enemy_a_i_state_8h_a588700cbbd7d8e80b51ef81b140213fca06a209c1f2f572d1ecfaf94e0a73d13b}{Enemy\+AIState\+::\+Exploring}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00068}{68}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9d5ac0d4ecdd05495441d30da49612f1}\label{class_game_a9d5ac0d4ecdd05495441d30da49612f1} 
+\index{Game@{Game}!m\_enemyBuildingCounts@{m\_enemyBuildingCounts}}
+\index{m\_enemyBuildingCounts@{m\_enemyBuildingCounts}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyBuildingCounts}{m\_enemyBuildingCounts}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}}, int$>$ Game\+::m\+\_\+enemy\+Building\+Counts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00048}{48}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a5ceb45cbedb65810cbd61e7a55340095}\label{class_game_a5ceb45cbedb65810cbd61e7a55340095} 
+\index{Game@{Game}!m\_enemyBuildingStatCount@{m\_enemyBuildingStatCount}}
+\index{m\_enemyBuildingStatCount@{m\_enemyBuildingStatCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyBuildingStatCount}{m\_enemyBuildingStatCount}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+enemy\+Building\+Stat\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00222}{222}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a7925bb2252bc0f9137c282153fb76862}\label{class_game_a7925bb2252bc0f9137c282153fb76862} 
+\index{Game@{Game}!m\_enemyStateTimer@{m\_enemyStateTimer}}
+\index{m\_enemyStateTimer@{m\_enemyStateTimer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyStateTimer}{m\_enemyStateTimer}}
+{\footnotesize\ttfamily sf\+::\+Time Game\+::m\+\_\+enemy\+State\+Timer = sf\+::seconds(0)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00091}{91}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a89d56d333dd1665923bb9d1f84717fc4}\label{class_game_a89d56d333dd1665923bb9d1f84717fc4} 
+\index{Game@{Game}!m\_enemyStatsText@{m\_enemyStatsText}}
+\index{m\_enemyStatsText@{m\_enemyStatsText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyStatsText}{m\_enemyStatsText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+enemy\+Stats\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00217}{217}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1a456989f5ed74538c4bd01ef6ac7a28}\label{class_game_a1a456989f5ed74538c4bd01ef6ac7a28} 
+\index{Game@{Game}!m\_enemyUnits@{m\_enemyUnits}}
+\index{m\_enemyUnits@{m\_enemyUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyUnits}{m\_enemyUnits}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_unit}{Unit}}\texorpdfstring{$\ast$}{*}$>$ Game\+::m\+\_\+enemy\+Units\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00047}{47}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a200090fbaf3fe95beb7e7dc9d3db25c2}\label{class_game_a200090fbaf3fe95beb7e7dc9d3db25c2} 
+\index{Game@{Game}!m\_enemyUnitStatCount@{m\_enemyUnitStatCount}}
+\index{m\_enemyUnitStatCount@{m\_enemyUnitStatCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_enemyUnitStatCount}{m\_enemyUnitStatCount}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+enemy\+Unit\+Stat\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00221}{221}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a7ca3fcfd0786588d8efe8154f5a75dae}\label{class_game_a7ca3fcfd0786588d8efe8154f5a75dae} 
+\index{Game@{Game}!m\_errors@{m\_errors}}
+\index{m\_errors@{m\_errors}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_errors}{m\_errors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_global_8h_a9fcc7d868923469aa82d438d93df66e6}{vector\+\_\+2d}} Game\+::m\+\_\+errors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00196}{196}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa6d6f390e91371054af340bc0a9c45cf}\label{class_game_aa6d6f390e91371054af340bc0a9c45cf} 
+\index{Game@{Game}!m\_errorText@{m\_errorText}}
+\index{m\_errorText@{m\_errorText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_errorText}{m\_errorText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+error\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00202}{202}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ac8a589c12b442b9d5ddc20cf80928c17}\label{class_game_ac8a589c12b442b9d5ddc20cf80928c17} 
+\index{Game@{Game}!m\_exitButton@{m\_exitButton}}
+\index{m\_exitButton@{m\_exitButton}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_exitButton}{m\_exitButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+exit\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00215}{215}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a5452d49a7b3f2d2ea3c7e2072fe8a828}\label{class_game_a5452d49a7b3f2d2ea3c7e2072fe8a828} 
+\index{Game@{Game}!m\_exitGame@{m\_exitGame}}
+\index{m\_exitGame@{m\_exitGame}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_exitGame}{m\_exitGame}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+exit\+Game\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00184}{184}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a12bfd2a6665f8c004613aff8ff4e009c}\label{class_game_a12bfd2a6665f8c004613aff8ff4e009c} 
+\index{Game@{Game}!m\_exitGameButton@{m\_exitGameButton}}
+\index{m\_exitGameButton@{m\_exitGameButton}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_exitGameButton}{m\_exitGameButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+exit\+Game\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00239}{239}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a0afa85be5abec815b5deb364e7060bd1}\label{class_game_a0afa85be5abec815b5deb364e7060bd1} 
+\index{Game@{Game}!m\_exitGameText@{m\_exitGameText}}
+\index{m\_exitGameText@{m\_exitGameText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_exitGameText}{m\_exitGameText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+exit\+Game\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00236}{236}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a3fbe0c2c992653f955ba9b5eb928f007}\label{class_game_a3fbe0c2c992653f955ba9b5eb928f007} 
+\index{Game@{Game}!m\_exitText@{m\_exitText}}
+\index{m\_exitText@{m\_exitText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_exitText}{m\_exitText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+exit\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00213}{213}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_af5c5c39d0eabe68c3bfff3509900a489}\label{class_game_af5c5c39d0eabe68c3bfff3509900a489} 
+\index{Game@{Game}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font Game\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00146}{146}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a995c2a7b4b5639a5e3c721dd80526d10}\label{class_game_a995c2a7b4b5639a5e3c721dd80526d10} 
+\index{Game@{Game}!m\_friendly@{m\_friendly}}
+\index{m\_friendly@{m\_friendly}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_friendly}{m\_friendly}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+friendly = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00231}{231}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a745edf60fb54340786f5e7441c3e2936}\label{class_game_a745edf60fb54340786f5e7441c3e2936} 
+\index{Game@{Game}!m\_gameDurationClock@{m\_gameDurationClock}}
+\index{m\_gameDurationClock@{m\_gameDurationClock}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameDurationClock}{m\_gameDurationClock}}
+{\footnotesize\ttfamily sf\+::\+Clock Game\+::m\+\_\+game\+Duration\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00223}{223}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a27ae1f02152bcef4edf2c930604c7e47}\label{class_game_a27ae1f02152bcef4edf2c930604c7e47} 
+\index{Game@{Game}!m\_gameDurationText@{m\_gameDurationText}}
+\index{m\_gameDurationText@{m\_gameDurationText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameDurationText}{m\_gameDurationText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+game\+Duration\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00218}{218}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a52138faf7796806055ede6d19355d26b}\label{class_game_a52138faf7796806055ede6d19355d26b} 
+\index{Game@{Game}!m\_gameDurationTime@{m\_gameDurationTime}}
+\index{m\_gameDurationTime@{m\_gameDurationTime}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameDurationTime}{m\_gameDurationTime}}
+{\footnotesize\ttfamily sf\+::\+Time Game\+::m\+\_\+game\+Duration\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00224}{224}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa60495b949ad5f78ca20be2198629073}\label{class_game_aa60495b949ad5f78ca20be2198629073} 
+\index{Game@{Game}!m\_gameView@{m\_gameView}}
+\index{m\_gameView@{m\_gameView}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameView}{m\_gameView}}
+{\footnotesize\ttfamily sf\+::\+View Game\+::m\+\_\+game\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00145}{145}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a296c253074b84b864c7a00fd6588ebd4}\label{class_game_a296c253074b84b864c7a00fd6588ebd4} 
+\index{Game@{Game}!m\_gameWinLose@{m\_gameWinLose}}
+\index{m\_gameWinLose@{m\_gameWinLose}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameWinLose}{m\_gameWinLose}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549af}{Win\+Lose\+State}} Game\+::m\+\_\+game\+Win\+Lose = \mbox{\hyperlink{_win_lose_state_8h_a2058d27c16f7c05069f9fec8eab549afab50339a10e1de285ac99d4c3990b8693}{Win\+Lose\+State\+::\+NONE}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00033}{33}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a814daa9414db5e86dc83831188b9470e}\label{class_game_a814daa9414db5e86dc83831188b9470e} 
+\index{Game@{Game}!m\_gui@{m\_gui}}
+\index{m\_gui@{m\_gui}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gui}{m\_gui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_u_i}{GUI}} Game\+::m\+\_\+gui \{ \mbox{\hyperlink{class_game_a6f3e369cf696b33f2257f8fb3cd132a3}{m\+\_\+placed\+Player\+Buildings}}, \mbox{\hyperlink{class_game_a2838188b4d4f29c2ca4c87b62da3c6d2}{m\+\_\+selected\+Building\+Type}}, m\+\_\+level\+Editor.\+m\+\_\+tiles \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00039}{39}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9040d9bd5077598c9660a31d927d9535}\label{class_game_a9040d9bd5077598c9660a31d927d9535} 
+\index{Game@{Game}!m\_guiMousePosition@{m\_guiMousePosition}}
+\index{m\_guiMousePosition@{m\_guiMousePosition}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_guiMousePosition}{m\_guiMousePosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Game\+::m\+\_\+gui\+Mouse\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00156}{156}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a0c6489488039c80eb94fa74e17556a9e}\label{class_game_a0c6489488039c80eb94fa74e17556a9e} 
+\index{Game@{Game}!m\_hiddenNeurons@{m\_hiddenNeurons}}
+\index{m\_hiddenNeurons@{m\_hiddenNeurons}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_hiddenNeurons}{m\_hiddenNeurons}}
+{\footnotesize\ttfamily std\+::array$<$int, 2$>$ Game\+::m\+\_\+hidden\+Neurons = m\+\_\+neural\+\_\+network.\+get\+Hidden\+Neurons()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00199}{199}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ad8379df4481e56cb10f48ac503bc845d}\label{class_game_ad8379df4481e56cb10f48ac503bc845d} 
+\index{Game@{Game}!m\_isDragging@{m\_isDragging}}
+\index{m\_isDragging@{m\_isDragging}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_isDragging}{m\_isDragging}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+is\+Dragging = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00170}{170}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a98c990321eaae6b86f5bca66170dffef}\label{class_game_a98c990321eaae6b86f5bca66170dffef} 
+\index{Game@{Game}!m\_levelEditor@{m\_levelEditor}}
+\index{m\_levelEditor@{m\_levelEditor}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_levelEditor}{m\_levelEditor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_level_editor}{Level\+Editor}} Game\+::m\+\_\+level\+Editor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00037}{37}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a7a9b15daeedaa23f98f2c3b79e9ba9c4}\label{class_game_a7a9b15daeedaa23f98f2c3b79e9ba9c4} 
+\index{Game@{Game}!m\_levelLoaded@{m\_levelLoaded}}
+\index{m\_levelLoaded@{m\_levelLoaded}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_levelLoaded}{m\_levelLoaded}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+level\+Loaded = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00183}{183}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_acc6c7bf3bdb4c4fb69527f29ebcf9d96}\label{class_game_acc6c7bf3bdb4c4fb69527f29ebcf9d96} 
+\index{Game@{Game}!m\_levelLoader@{m\_levelLoader}}
+\index{m\_levelLoader@{m\_levelLoader}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_levelLoader}{m\_levelLoader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_level_loader}{Level\+Loader}} Game\+::m\+\_\+level\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00038}{38}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a80c36e3987323734968ed8d19cf00381}\label{class_game_a80c36e3987323734968ed8d19cf00381} 
+\index{Game@{Game}!m\_lifetimeParticle@{m\_lifetimeParticle}}
+\index{m\_lifetimeParticle@{m\_lifetimeParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_lifetimeParticle}{m\_lifetimeParticle}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+lifetime\+Particle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00178}{178}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_afa8daa80622afdfbd2c90bb0677a8706}\label{class_game_afa8daa80622afdfbd2c90bb0677a8706} 
+\index{Game@{Game}!m\_mapHeight@{m\_mapHeight}}
+\index{m\_mapHeight@{m\_mapHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_mapHeight}{m\_mapHeight}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+map\+Height = 2400\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00168}{168}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a07a41d541612deb656e319435088b9e1}\label{class_game_a07a41d541612deb656e319435088b9e1} 
+\index{Game@{Game}!m\_mapWidth@{m\_mapWidth}}
+\index{m\_mapWidth@{m\_mapWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_mapWidth}{m\_mapWidth}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+map\+Width = 2400\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00167}{167}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a01a3bdb0479566beabc36083a94453b4}\label{class_game_a01a3bdb0479566beabc36083a94453b4} 
+\index{Game@{Game}!m\_maxX@{m\_maxX}}
+\index{m\_maxX@{m\_maxX}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_maxX}{m\_maxX}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+maxX = 1550\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00165}{165}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a07db7322073514e3c9a21a426bc55b4c}\label{class_game_a07db7322073514e3c9a21a426bc55b4c} 
+\index{Game@{Game}!m\_maxY@{m\_maxY}}
+\index{m\_maxY@{m\_maxY}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_maxY}{m\_maxY}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+maxY = 1970\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00166}{166}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a13b5719fdea4c128dcc9e1f7f2e12251}\label{class_game_a13b5719fdea4c128dcc9e1f7f2e12251} 
+\index{Game@{Game}!m\_maxZoomLevel@{m\_maxZoomLevel}}
+\index{m\_maxZoomLevel@{m\_maxZoomLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_maxZoomLevel}{m\_maxZoomLevel}}
+{\footnotesize\ttfamily const float Game\+::m\+\_\+max\+Zoom\+Level = 1.\+5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00160}{160}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a097830b5a08b5c8ca2e4fd9edcbcb711}\label{class_game_a097830b5a08b5c8ca2e4fd9edcbcb711} 
+\index{Game@{Game}!m\_menu@{m\_menu}}
+\index{m\_menu@{m\_menu}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_menu}{m\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_menu}{Main\+Menu}} Game\+::m\+\_\+menu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00035}{35}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a3e6f2d193560ca51cd918ea8bdc16d9b}\label{class_game_a3e6f2d193560ca51cd918ea8bdc16d9b} 
+\index{Game@{Game}!m\_minutes@{m\_minutes}}
+\index{m\_minutes@{m\_minutes}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_minutes}{m\_minutes}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+minutes = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00225}{225}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a5f352aee6936522c68d8d25c4b5d08db}\label{class_game_a5f352aee6936522c68d8d25c4b5d08db} 
+\index{Game@{Game}!m\_minX@{m\_minX}}
+\index{m\_minX@{m\_minX}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_minX}{m\_minX}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+minX = 950\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00163}{163}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_af9589b0053e0990d05c3469ef0c462f9}\label{class_game_af9589b0053e0990d05c3469ef0c462f9} 
+\index{Game@{Game}!m\_minY@{m\_minY}}
+\index{m\_minY@{m\_minY}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_minY}{m\_minY}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+minY = 530\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00164}{164}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ad56d98d4517cf9da155cad4b5b67c1c6}\label{class_game_ad56d98d4517cf9da155cad4b5b67c1c6} 
+\index{Game@{Game}!m\_minZoomLevel@{m\_minZoomLevel}}
+\index{m\_minZoomLevel@{m\_minZoomLevel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_minZoomLevel}{m\_minZoomLevel}}
+{\footnotesize\ttfamily const float Game\+::m\+\_\+min\+Zoom\+Level = 0.\+5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00159}{159}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a207c2d6b30ca71aede29230bb6d21aa9}\label{class_game_a207c2d6b30ca71aede29230bb6d21aa9} 
+\index{Game@{Game}!m\_mousePosX@{m\_mousePosX}}
+\index{m\_mousePosX@{m\_mousePosX}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_mousePosX}{m\_mousePosX}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+mouse\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00187}{187}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ae875f50bf36fde583b4cb2e66a621180}\label{class_game_ae875f50bf36fde583b4cb2e66a621180} 
+\index{Game@{Game}!m\_mousePosY@{m\_mousePosY}}
+\index{m\_mousePosY@{m\_mousePosY}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_mousePosY}{m\_mousePosY}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+mouse\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00188}{188}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aba193326e7bc1e236ea7a402ef026ef6}\label{class_game_aba193326e7bc1e236ea7a402ef026ef6} 
+\index{Game@{Game}!m\_neural\_network@{m\_neural\_network}}
+\index{m\_neural\_network@{m\_neural\_network}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_neural\_network}{m\_neural\_network}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_neural_networks}{Neural\+Networks}} Game\+::m\+\_\+neural\+\_\+network\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00042}{42}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a0aea82303836172155305cdaef0bac02}\label{class_game_a0aea82303836172155305cdaef0bac02} 
+\index{Game@{Game}!m\_neuralNetwork@{m\_neuralNetwork}}
+\index{m\_neuralNetwork@{m\_neuralNetwork}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_neuralNetwork}{m\_neuralNetwork}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$float$>$ $>$ Game\+::m\+\_\+neural\+Network\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00197}{197}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a6312cf83c18aad9effe72e63d0a5b660}\label{class_game_a6312cf83c18aad9effe72e63d0a5b660} 
+\index{Game@{Game}!m\_normalfont@{m\_normalfont}}
+\index{m\_normalfont@{m\_normalfont}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_normalfont}{m\_normalfont}}
+{\footnotesize\ttfamily sf\+::\+Font Game\+::m\+\_\+normalfont\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00147}{147}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ae2725cfa04383851454fce4a42d00984}\label{class_game_ae2725cfa04383851454fce4a42d00984} 
+\index{Game@{Game}!m\_outputHeight@{m\_outputHeight}}
+\index{m\_outputHeight@{m\_outputHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_outputHeight}{m\_outputHeight}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+output\+Height = 64\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00189}{189}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a6598ff7b33eaf446e533a89747027b0f}\label{class_game_a6598ff7b33eaf446e533a89747027b0f} 
+\index{Game@{Game}!m\_outputImage@{m\_outputImage}}
+\index{m\_outputImage@{m\_outputImage}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_outputImage}{m\_outputImage}}
+{\footnotesize\ttfamily sf\+::\+Image Game\+::m\+\_\+output\+Image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00203}{203}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a40d6cc7776d10565d8d2a524ca7aff0a}\label{class_game_a40d6cc7776d10565d8d2a524ca7aff0a} 
+\index{Game@{Game}!m\_outputSprite@{m\_outputSprite}}
+\index{m\_outputSprite@{m\_outputSprite}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_outputSprite}{m\_outputSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Game\+::m\+\_\+output\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00204}{204}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a7c62e9bcff447a3273c015e18547539a}\label{class_game_a7c62e9bcff447a3273c015e18547539a} 
+\index{Game@{Game}!m\_outputTexture@{m\_outputTexture}}
+\index{m\_outputTexture@{m\_outputTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_outputTexture}{m\_outputTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+output\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00205}{205}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1057dae177f9158ae7ae6edd5a1ec3dc}\label{class_game_a1057dae177f9158ae7ae6edd5a1ec3dc} 
+\index{Game@{Game}!m\_outputWidth@{m\_outputWidth}}
+\index{m\_outputWidth@{m\_outputWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_outputWidth}{m\_outputWidth}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+output\+Width = 64\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00190}{190}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a267d57d32a61da207695cf11c235702e}\label{class_game_a267d57d32a61da207695cf11c235702e} 
+\index{Game@{Game}!m\_panelBackgroundSprite@{m\_panelBackgroundSprite}}
+\index{m\_panelBackgroundSprite@{m\_panelBackgroundSprite}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_panelBackgroundSprite}{m\_panelBackgroundSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Game\+::m\+\_\+panel\+Background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00209}{209}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a7412b6979c0525184a86c1d9dc3e3ecb}\label{class_game_a7412b6979c0525184a86c1d9dc3e3ecb} 
+\index{Game@{Game}!m\_panelBackgroundTexture@{m\_panelBackgroundTexture}}
+\index{m\_panelBackgroundTexture@{m\_panelBackgroundTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_panelBackgroundTexture}{m\_panelBackgroundTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+panel\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00210}{210}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a056c1f28f0be0d039501863344fe54e5}\label{class_game_a056c1f28f0be0d039501863344fe54e5} 
+\index{Game@{Game}!m\_particleSystem@{m\_particleSystem}}
+\index{m\_particleSystem@{m\_particleSystem}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_particleSystem}{m\_particleSystem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_particle_system}{Particle\+System}} Game\+::m\+\_\+particle\+System\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00041}{41}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa60eb7bf3988d09c775d8418c56eb9fc}\label{class_game_aa60eb7bf3988d09c775d8418c56eb9fc} 
+\index{Game@{Game}!m\_pauseBackgroundSprite@{m\_pauseBackgroundSprite}}
+\index{m\_pauseBackgroundSprite@{m\_pauseBackgroundSprite}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_pauseBackgroundSprite}{m\_pauseBackgroundSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Game\+::m\+\_\+pause\+Background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00232}{232}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1ee8b9e6c2bbb144efef757fd96d7c13}\label{class_game_a1ee8b9e6c2bbb144efef757fd96d7c13} 
+\index{Game@{Game}!m\_pauseBackgroundTexture@{m\_pauseBackgroundTexture}}
+\index{m\_pauseBackgroundTexture@{m\_pauseBackgroundTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_pauseBackgroundTexture}{m\_pauseBackgroundTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Game\+::m\+\_\+pause\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00233}{233}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_adc0ad308fd68b9d9dfdaa98fedd814c1}\label{class_game_adc0ad308fd68b9d9dfdaa98fedd814c1} 
+\index{Game@{Game}!m\_pausedGame@{m\_pausedGame}}
+\index{m\_pausedGame@{m\_pausedGame}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_pausedGame}{m\_pausedGame}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+paused\+Game = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00230}{230}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a853e3fa87fa23cf4131da2defc9daec8}\label{class_game_a853e3fa87fa23cf4131da2defc9daec8} 
+\index{Game@{Game}!m\_pauseText@{m\_pauseText}}
+\index{m\_pauseText@{m\_pauseText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_pauseText}{m\_pauseText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+pause\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00234}{234}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a3bcfe3b45f9754e3920d0a10a05b8b3d}\label{class_game_a3bcfe3b45f9754e3920d0a10a05b8b3d} 
+\index{Game@{Game}!m\_placedEnemyBuildings@{m\_placedEnemyBuildings}}
+\index{m\_placedEnemyBuildings@{m\_placedEnemyBuildings}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_placedEnemyBuildings}{m\_placedEnemyBuildings}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*}$>$ Game\+::m\+\_\+placed\+Enemy\+Buildings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00045}{45}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a6f3e369cf696b33f2257f8fb3cd132a3}\label{class_game_a6f3e369cf696b33f2257f8fb3cd132a3} 
+\index{Game@{Game}!m\_placedPlayerBuildings@{m\_placedPlayerBuildings}}
+\index{m\_placedPlayerBuildings@{m\_placedPlayerBuildings}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_placedPlayerBuildings}{m\_placedPlayerBuildings}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*}$>$ Game\+::m\+\_\+placed\+Player\+Buildings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00044}{44}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a95a1d20ec4cb6ad7d1137d27bcf0b198}\label{class_game_a95a1d20ec4cb6ad7d1137d27bcf0b198} 
+\index{Game@{Game}!m\_playAgainButton@{m\_playAgainButton}}
+\index{m\_playAgainButton@{m\_playAgainButton}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playAgainButton}{m\_playAgainButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+play\+Again\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00214}{214}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ac7012e8984184084aa1e3d2108d40af1}\label{class_game_ac7012e8984184084aa1e3d2108d40af1} 
+\index{Game@{Game}!m\_playAgainText@{m\_playAgainText}}
+\index{m\_playAgainText@{m\_playAgainText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playAgainText}{m\_playAgainText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+play\+Again\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00212}{212}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a36660adca4206c16559d63c99ea6ad13}\label{class_game_a36660adca4206c16559d63c99ea6ad13} 
+\index{Game@{Game}!m\_playerBuildingStatCount@{m\_playerBuildingStatCount}}
+\index{m\_playerBuildingStatCount@{m\_playerBuildingStatCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playerBuildingStatCount}{m\_playerBuildingStatCount}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+player\+Building\+Stat\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00220}{220}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a715ebff0d3920fc70ee221504c8e24cb}\label{class_game_a715ebff0d3920fc70ee221504c8e24cb} 
+\index{Game@{Game}!m\_playerStatsText@{m\_playerStatsText}}
+\index{m\_playerStatsText@{m\_playerStatsText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playerStatsText}{m\_playerStatsText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+player\+Stats\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00216}{216}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9ec136fd0565c58207d52f0dc0af8cf6}\label{class_game_a9ec136fd0565c58207d52f0dc0af8cf6} 
+\index{Game@{Game}!m\_playerUnits@{m\_playerUnits}}
+\index{m\_playerUnits@{m\_playerUnits}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playerUnits}{m\_playerUnits}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_unit}{Unit}}\texorpdfstring{$\ast$}{*}$>$ Game\+::m\+\_\+player\+Units\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00046}{46}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa8c2d33ea06e6f58ae4f256da4dfd321}\label{class_game_aa8c2d33ea06e6f58ae4f256da4dfd321} 
+\index{Game@{Game}!m\_playerUnitStatCount@{m\_playerUnitStatCount}}
+\index{m\_playerUnitStatCount@{m\_playerUnitStatCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playerUnitStatCount}{m\_playerUnitStatCount}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+player\+Unit\+Stat\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00219}{219}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9a3ec8524e77702797645bd2c93d8605}\label{class_game_a9a3ec8524e77702797645bd2c93d8605} 
+\index{Game@{Game}!m\_playOnce@{m\_playOnce}}
+\index{m\_playOnce@{m\_playOnce}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_playOnce}{m\_playOnce}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+play\+Once = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00182}{182}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_af65d97f03e45ca88d6d0099d198a4cb4}\label{class_game_af65d97f03e45ca88d6d0099d198a4cb4} 
+\index{Game@{Game}!m\_previousState@{m\_previousState}}
+\index{m\_previousState@{m\_previousState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_previousState}{m\_previousState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} Game\+::m\+\_\+previous\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00034}{34}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a2ff52b4c4bb4594476870a59c49b8161}\label{class_game_a2ff52b4c4bb4594476870a59c49b8161} 
+\index{Game@{Game}!m\_random@{m\_random}}
+\index{m\_random@{m\_random}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_random}{m\_random}}
+{\footnotesize\ttfamily std\+::mt19937\+\_\+64 Game\+::m\+\_\+random\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00201}{201}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa989641bf7ff296c6480cb20979edfba}\label{class_game_aa989641bf7ff296c6480cb20979edfba} 
+\index{Game@{Game}!m\_restartButton@{m\_restartButton}}
+\index{m\_restartButton@{m\_restartButton}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_restartButton}{m\_restartButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+restart\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00238}{238}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a8fb4552e946f9967d1f571b78573d178}\label{class_game_a8fb4552e946f9967d1f571b78573d178} 
+\index{Game@{Game}!m\_restartText@{m\_restartText}}
+\index{m\_restartText@{m\_restartText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_restartText}{m\_restartText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+restart\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00235}{235}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ac93daa771b798ae36d4f9b5937a52f7d}\label{class_game_ac93daa771b798ae36d4f9b5937a52f7d} 
+\index{Game@{Game}!m\_saveGameButton@{m\_saveGameButton}}
+\index{m\_saveGameButton@{m\_saveGameButton}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_saveGameButton}{m\_saveGameButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+save\+Game\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00240}{240}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a4734e3c34740aac52e99f42301aa07a0}\label{class_game_a4734e3c34740aac52e99f42301aa07a0} 
+\index{Game@{Game}!m\_saveGameText@{m\_saveGameText}}
+\index{m\_saveGameText@{m\_saveGameText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_saveGameText}{m\_saveGameText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+save\+Game\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00237}{237}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a824f31e63ed4f5c8b2dfba26b932feac}\label{class_game_a824f31e63ed4f5c8b2dfba26b932feac} 
+\index{Game@{Game}!m\_seconds@{m\_seconds}}
+\index{m\_seconds@{m\_seconds}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_seconds}{m\_seconds}}
+{\footnotesize\ttfamily int Game\+::m\+\_\+seconds = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00226}{226}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a2838188b4d4f29c2ca4c87b62da3c6d2}\label{class_game_a2838188b4d4f29c2ca4c87b62da3c6d2} 
+\index{Game@{Game}!m\_selectedBuildingType@{m\_selectedBuildingType}}
+\index{m\_selectedBuildingType@{m\_selectedBuildingType}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_selectedBuildingType}{m\_selectedBuildingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4}{Building\+Type}} Game\+::m\+\_\+selected\+Building\+Type = \mbox{\hyperlink{_building_type_8h_aba2b45f536f3c9719aea96bb472784a4a6adf97f83acf6453d4a6a4b1070f3754}{Building\+Type\+::\+None}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00040}{40}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a91dad1e851558cfaa57cee589eaaa7ae}\label{class_game_a91dad1e851558cfaa57cee589eaaa7ae} 
+\index{Game@{Game}!m\_selectedUnit@{m\_selectedUnit}}
+\index{m\_selectedUnit@{m\_selectedUnit}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_selectedUnit}{m\_selectedUnit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit}{Unit}}\texorpdfstring{$\ast$}{*} Game\+::m\+\_\+selected\+Unit = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00043}{43}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a28647cb97f2f3a2371d04708438fc570}\label{class_game_a28647cb97f2f3a2371d04708438fc570} 
+\index{Game@{Game}!m\_selectionBox@{m\_selectionBox}}
+\index{m\_selectionBox@{m\_selectionBox}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_selectionBox}{m\_selectionBox}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Game\+::m\+\_\+selection\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00173}{173}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a8175b7702f2136c93eeaa3d4c2ccff8d}\label{class_game_a8175b7702f2136c93eeaa3d4c2ccff8d} 
+\index{Game@{Game}!m\_showWinLosePanel@{m\_showWinLosePanel}}
+\index{m\_showWinLosePanel@{m\_showWinLosePanel}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_showWinLosePanel}{m\_showWinLosePanel}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+show\+Win\+Lose\+Panel = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00208}{208}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_ac28c7f06b352319a1c12fd2200c54931}\label{class_game_ac28c7f06b352319a1c12fd2200c54931} 
+\index{Game@{Game}!m\_sizeParticle@{m\_sizeParticle}}
+\index{m\_sizeParticle@{m\_sizeParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_sizeParticle}{m\_sizeParticle}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+size\+Particle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00179}{179}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_aa555a30ac79c3aa90ef497ef6dc6e859}\label{class_game_aa555a30ac79c3aa90ef497ef6dc6e859} 
+\index{Game@{Game}!m\_speedParticle@{m\_speedParticle}}
+\index{m\_speedParticle@{m\_speedParticle}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_speedParticle}{m\_speedParticle}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+speed\+Particle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00177}{177}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1f1d82d175091713de374a97e480a86f}\label{class_game_a1f1d82d175091713de374a97e480a86f} 
+\index{Game@{Game}!m\_tiles@{m\_tiles}}
+\index{m\_tiles@{m\_tiles}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_tiles}{m\_tiles}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} Game\+::m\+\_\+tiles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00036}{36}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a78a50d95cae623fb64835d803699924d}\label{class_game_a78a50d95cae623fb64835d803699924d} 
+\index{Game@{Game}!m\_totalErrors@{m\_totalErrors}}
+\index{m\_totalErrors@{m\_totalErrors}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_totalErrors}{m\_totalErrors}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+total\+Errors = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00191}{191}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a2f47edf96e503eb5503456d9e24373ef}\label{class_game_a2f47edf96e503eb5503456d9e24373ef} 
+\index{Game@{Game}!m\_train@{m\_train}}
+\index{m\_train@{m\_train}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_train}{m\_train}}
+{\footnotesize\ttfamily bool Game\+::m\+\_\+train = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00195}{195}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a321099825432d99ef32baed4c87a9ca5}\label{class_game_a321099825432d99ef32baed4c87a9ca5} 
+\index{Game@{Game}!m\_validTargets@{m\_validTargets}}
+\index{m\_validTargets@{m\_validTargets}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_validTargets}{m\_validTargets}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Vector2f$>$ Game\+::m\+\_\+valid\+Targets\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00090}{90}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a2a47e203f14563d8084d9daaafadc7c1}\label{class_game_a2a47e203f14563d8084d9daaafadc7c1} 
+\index{Game@{Game}!m\_viewCenter@{m\_viewCenter}}
+\index{m\_viewCenter@{m\_viewCenter}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_viewCenter}{m\_viewCenter}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::m\+\_\+view\+Center = m\+\_\+game\+View.\+get\+Center()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00155}{155}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a9174a2829203818f3b9a16f86cd08491}\label{class_game_a9174a2829203818f3b9a16f86cd08491} 
+\index{Game@{Game}!m\_viewMoveSpeed@{m\_viewMoveSpeed}}
+\index{m\_viewMoveSpeed@{m\_viewMoveSpeed}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_viewMoveSpeed}{m\_viewMoveSpeed}}
+{\footnotesize\ttfamily float Game\+::m\+\_\+view\+Move\+Speed = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00162}{162}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a8f97b92bb0a81a4dadef1f0631a026e5}\label{class_game_a8f97b92bb0a81a4dadef1f0631a026e5} 
+\index{Game@{Game}!m\_weights@{m\_weights}}
+\index{m\_weights@{m\_weights}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_weights}{m\_weights}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$std\+::vector$<$float$>$ $>$ $>$ Game\+::m\+\_\+weights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00198}{198}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}\label{class_game_a22a61b5ea27c609be8cf2724c33d7ae5} 
+\index{Game@{Game}!m\_window@{m\_window}}
+\index{m\_window@{m\_window}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_window}{m\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Game\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00144}{144}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a4efc001eec72f01e48df716c74e341a7}\label{class_game_a4efc001eec72f01e48df716c74e341a7} 
+\index{Game@{Game}!m\_winLoseText@{m\_winLoseText}}
+\index{m\_winLoseText@{m\_winLoseText}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_winLoseText}{m\_winLoseText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+::m\+\_\+win\+Lose\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00211}{211}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_af88eb2877022819ca08698a7fba39ee3}\label{class_game_af88eb2877022819ca08698a7fba39ee3} 
+\index{Game@{Game}!m\_worldMousePosition@{m\_worldMousePosition}}
+\index{m\_worldMousePosition@{m\_worldMousePosition}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_worldMousePosition}{m\_worldMousePosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Game\+::m\+\_\+world\+Mouse\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00157}{157}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a1a6b9024f98313c6b90f6a87172fdfec}\label{class_game_a1a6b9024f98313c6b90f6a87172fdfec} 
+\index{Game@{Game}!newEnemyBuilding@{newEnemyBuilding}}
+\index{newEnemyBuilding@{newEnemyBuilding}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{newEnemyBuilding}{newEnemyBuilding}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*} Game\+::new\+Enemy\+Building = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00088}{88}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
+\Hypertarget{class_game_a38520cec2e6d3041e751f1796600857b}\label{class_game_a38520cec2e6d3041e751f1796600857b} 
+\index{Game@{Game}!TRAININGS\_PER\_FRAME@{TRAININGS\_PER\_FRAME}}
+\index{TRAININGS\_PER\_FRAME@{TRAININGS\_PER\_FRAME}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{TRAININGS\_PER\_FRAME}{TRAININGS\_PER\_FRAME}}
+{\footnotesize\ttfamily const int Game\+::\+TRAININGS\+\_\+\+PER\+\_\+\+FRAME = 1000\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00194}{194}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

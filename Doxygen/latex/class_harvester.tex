@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Harvester\+:\nopagebreak
+Inheritance diagram for Harvester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_harvester__inherit__graph}
+\includegraphics[width=146pt]{class_harvester__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Harvester\+:\nopagebreak
+Collaboration diagram for Harvester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_harvester__coll__graph}
+\includegraphics[width=305pt]{class_harvester__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Types}
@@ -142,6 +144,44 @@ std\+::vector$<$ \mbox{\hyperlink{class_missile}{Missile}} $>$ \mbox{\hyperlink{
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a379a6747751f51625a437e939ffe8ea6}{m\+\_\+active}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{true}}
 \item 
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ad35ac8605f1b8096de7d1aa72222b43c}{m\+\_\+is\+Enemy}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_a380cd21f372be1fef95855d46118b9c5}{movement}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_aad7a6421a668ae260ddc1e22288ec247}{find\+Nearest\+Resource\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em To find the nearest resource tile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_a629f240ea9ef21e216d12c0bd091de18}{find\+Nearest\+Refinery}} ()
+\begin{DoxyCompactList}\small\item\em finds the nearest refinery building \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_a0c277310ee495801175d1ebad4885810}{getting\+Resource\+Position}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+resource\+Pos}})
+\begin{DoxyCompactList}\small\item\em Gets the resource position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7}{move\+To\+Refinery}} (\mbox{\hyperlink{class_refinery}{Refinery}} \texorpdfstring{$\ast$}{*}m\+\_\+refinery)
+\begin{DoxyCompactList}\small\item\em Moves to the refinery position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_ae93a262fb071b1ba135856671932ba32}{unload\+Resources}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em Unloads the resouceses it collected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_harvester_a5abe99ee36568b600fbc3001f2f87c9f}{is\+At\+Target\+Position}} ()
+\begin{DoxyCompactList}\small\item\em checks if its at target \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_harvester_a00dff9d40d7ed37de424052e3dad5986}{is\+At\+Refinery}} ()
+\begin{DoxyCompactList}\small\item\em checks if its at the refinery building \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea}{init\+Harvester}} ()
+\begin{DoxyCompactList}\small\item\em initializes the harvester unit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_refinery}{Refinery}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_harvester_a9fac18dee40342e65bc2d27021599369}{m\+\_\+target\+Refinery}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_harvester_ae4f4888d9155e5ca09777afd56d6227a}{m\+\_\+resource\+Position}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$ \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_harvester_a959220fcb14b566ae0eb11777f1b3b74}{m\+\_\+all\+Buildings}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_harvester_aa273c47ab04e6138208d82f1a5df3f67}{m\+\_\+collection\+Rate}} = 4.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_harvester_a374b01d8571131ccc10f1fb843d3633a}{m\+\_\+max\+Resource\+Capacity}} = 100.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_harvester_a717325c72165a0496eaf89c0d012584b}{m\+\_\+current\+Resource\+Load}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_harvester_a4c0482babcd564b86b154ad3b5a4b189}{m\+\_\+found\+Resource}} = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_unit}{Unit}}}
@@ -315,6 +355,14 @@ Definition at line \mbox{\hyperlink{_harvester_8h_source_l00008}{8}} of file \mb
 
 Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_harvester_aa28e963eb2df851da302a3ce7b352b42_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_harvester_ae43faf60d0235e05f9d682d5cd135b67}\label{class_harvester_ae43faf60d0235e05f9d682d5cd135b67} 
 \index{Harvester@{Harvester}!````~Harvester@{\texorpdfstring{$\sim$}{\string~}Harvester}}
 \index{````~Harvester@{\texorpdfstring{$\sim$}{\string~}Harvester}!Harvester@{Harvester}}
@@ -328,6 +376,93 @@ Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00013}{13}} of file 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_harvester_a629f240ea9ef21e216d12c0bd091de18}\label{class_harvester_a629f240ea9ef21e216d12c0bd091de18} 
+\index{Harvester@{Harvester}!findNearestRefinery@{findNearestRefinery}}
+\index{findNearestRefinery@{findNearestRefinery}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{findNearestRefinery()}{findNearestRefinery()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::find\+Nearest\+Refinery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+finds the nearest refinery building 
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a629f240ea9ef21e216d12c0bd091de18_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a629f240ea9ef21e216d12c0bd091de18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_aad7a6421a668ae260ddc1e22288ec247}\label{class_harvester_aad7a6421a668ae260ddc1e22288ec247} 
+\index{Harvester@{Harvester}!findNearestResourceTile@{findNearestResourceTile}}
+\index{findNearestResourceTile@{findNearestResourceTile}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{findNearestResourceTile()}{findNearestResourceTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::find\+Nearest\+Resource\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+To find the nearest resource tile. 
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_aad7a6421a668ae260ddc1e22288ec247_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_aad7a6421a668ae260ddc1e22288ec247_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_a0c277310ee495801175d1ebad4885810}\label{class_harvester_a0c277310ee495801175d1ebad4885810} 
+\index{Harvester@{Harvester}!gettingResourcePosition@{gettingResourcePosition}}
+\index{gettingResourcePosition@{gettingResourcePosition}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{gettingResourcePosition()}{gettingResourcePosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::getting\+Resource\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+resource\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the resource position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+resource\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a0c277310ee495801175d1ebad4885810_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_harvester_a7a71f71834a3a8c7997cb0652aba60d9}\label{class_harvester_a7a71f71834a3a8c7997cb0652aba60d9} 
 \index{Harvester@{Harvester}!getUnitType@{getUnitType}}
 \index{getUnitType@{getUnitType}!Harvester@{Harvester}}
@@ -342,6 +477,155 @@ Implements \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{Unit}}
 
 Definition at line \mbox{\hyperlink{_harvester_8h_source_l00025}{25}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
 
+\Hypertarget{class_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea}\label{class_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea} 
+\index{Harvester@{Harvester}!initHarvester@{initHarvester}}
+\index{initHarvester@{initHarvester}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{initHarvester()}{initHarvester()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::init\+Harvester (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes the harvester unit 
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_harvester_aa9695c5e1d4049502f2e2fc7fbb3dcea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_a00dff9d40d7ed37de424052e3dad5986}\label{class_harvester_a00dff9d40d7ed37de424052e3dad5986} 
+\index{Harvester@{Harvester}!isAtRefinery@{isAtRefinery}}
+\index{isAtRefinery@{isAtRefinery}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{isAtRefinery()}{isAtRefinery()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Harvester\+::is\+At\+Refinery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if its at the refinery building 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_harvester_a00dff9d40d7ed37de424052e3dad5986_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_harvester_a00dff9d40d7ed37de424052e3dad5986_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_a5abe99ee36568b600fbc3001f2f87c9f}\label{class_harvester_a5abe99ee36568b600fbc3001f2f87c9f} 
+\index{Harvester@{Harvester}!isAtTargetPosition@{isAtTargetPosition}}
+\index{isAtTargetPosition@{isAtTargetPosition}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{isAtTargetPosition()}{isAtTargetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Harvester\+::is\+At\+Target\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if its at target 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00256}{256}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_harvester_a5abe99ee36568b600fbc3001f2f87c9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a5abe99ee36568b600fbc3001f2f87c9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_a380cd21f372be1fef95855d46118b9c5}\label{class_harvester_a380cd21f372be1fef95855d46118b9c5} 
+\index{Harvester@{Harvester}!movement@{movement}}
+\index{movement@{movement}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{movement()}{movement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a380cd21f372be1fef95855d46118b9c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_harvester_a380cd21f372be1fef95855d46118b9c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7}\label{class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7} 
+\index{Harvester@{Harvester}!moveToRefinery@{moveToRefinery}}
+\index{moveToRefinery@{moveToRefinery}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{moveToRefinery()}{moveToRefinery()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::move\+To\+Refinery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_refinery}{Refinery}} \texorpdfstring{$\ast$}{*}}]{m\+\_\+refinery }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Moves to the refinery position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+refinery} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a5a51b5a6aa50fbb95ebf3938df6789b7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_harvester_a7a6a5b0826a1529970c24826f7cb0610}\label{class_harvester_a7a6a5b0826a1529970c24826f7cb0610} 
 \index{Harvester@{Harvester}!setBuildings@{setBuildings}}
 \index{setBuildings@{setBuildings}!Harvester@{Harvester}}
@@ -361,6 +645,41 @@ sets the buildings to find the refinery buildings
 
 Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00282}{282}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_harvester_a7a6a5b0826a1529970c24826f7cb0610_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_harvester_ae93a262fb071b1ba135856671932ba32}\label{class_harvester_ae93a262fb071b1ba135856671932ba32} 
+\index{Harvester@{Harvester}!unloadResources@{unloadResources}}
+\index{unloadResources@{unloadResources}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{unloadResources()}{unloadResources()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Harvester\+::unload\+Resources (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unloads the resouceses it collected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_harvester_ae93a262fb071b1ba135856671932ba32_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_harvester_ac6e106e888fc20099bba4f57f833c216}\label{class_harvester_ac6e106e888fc20099bba4f57f833c216} 
 \index{Harvester@{Harvester}!update@{update}}
 \index{update@{update}!Harvester@{Harvester}}
@@ -375,7 +694,8 @@ Reimplemented from \mbox{\hyperlink{class_unit_a1170c0150d547432074d11e0a5896494
 
 Definition at line \mbox{\hyperlink{_harvester_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_harvester_8cpp_source}{Harvester.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -385,6 +705,36 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_harvester_a959220fcb14b566ae0eb11777f1b3b74}\label{class_harvester_a959220fcb14b566ae0eb11777f1b3b74} 
+\index{Harvester@{Harvester}!m\_allBuildings@{m\_allBuildings}}
+\index{m\_allBuildings@{m\_allBuildings}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_allBuildings}{m\_allBuildings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} std\+::vector$<$\mbox{\hyperlink{class_building}{Building}}\texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} Harvester\+::m\+\_\+all\+Buildings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00048}{48}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
+\Hypertarget{class_harvester_aa273c47ab04e6138208d82f1a5df3f67}\label{class_harvester_aa273c47ab04e6138208d82f1a5df3f67} 
+\index{Harvester@{Harvester}!m\_collectionRate@{m\_collectionRate}}
+\index{m\_collectionRate@{m\_collectionRate}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_collectionRate}{m\_collectionRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Harvester\+::m\+\_\+collection\+Rate = 4.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00050}{50}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
+\Hypertarget{class_harvester_a717325c72165a0496eaf89c0d012584b}\label{class_harvester_a717325c72165a0496eaf89c0d012584b} 
+\index{Harvester@{Harvester}!m\_currentResourceLoad@{m\_currentResourceLoad}}
+\index{m\_currentResourceLoad@{m\_currentResourceLoad}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_currentResourceLoad}{m\_currentResourceLoad}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Harvester\+::m\+\_\+current\+Resource\+Load = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00052}{52}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
 \Hypertarget{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f}\label{class_harvester_a357e6b6ef4898526d948f1f59b6f0b9f} 
 \index{Harvester@{Harvester}!m\_currentState@{m\_currentState}}
 \index{m\_currentState@{m\_currentState}!Harvester@{Harvester}}
@@ -395,9 +745,49 @@ Here is the call graph for this function\+:\nopagebreak
 
 Definition at line \mbox{\hyperlink{_harvester_8h_source_l00024}{24}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
 
+\Hypertarget{class_harvester_a4c0482babcd564b86b154ad3b5a4b189}\label{class_harvester_a4c0482babcd564b86b154ad3b5a4b189} 
+\index{Harvester@{Harvester}!m\_foundResource@{m\_foundResource}}
+\index{m\_foundResource@{m\_foundResource}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_foundResource}{m\_foundResource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Harvester\+::m\+\_\+found\+Resource = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{false}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00054}{54}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
+\Hypertarget{class_harvester_a374b01d8571131ccc10f1fb843d3633a}\label{class_harvester_a374b01d8571131ccc10f1fb843d3633a} 
+\index{Harvester@{Harvester}!m\_maxResourceCapacity@{m\_maxResourceCapacity}}
+\index{m\_maxResourceCapacity@{m\_maxResourceCapacity}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_maxResourceCapacity}{m\_maxResourceCapacity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Harvester\+::m\+\_\+max\+Resource\+Capacity = 100.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00051}{51}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
+\Hypertarget{class_harvester_ae4f4888d9155e5ca09777afd56d6227a}\label{class_harvester_ae4f4888d9155e5ca09777afd56d6227a} 
+\index{Harvester@{Harvester}!m\_resourcePosition@{m\_resourcePosition}}
+\index{m\_resourcePosition@{m\_resourcePosition}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_resourcePosition}{m\_resourcePosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Harvester\+::m\+\_\+resource\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00046}{46}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
+\Hypertarget{class_harvester_a9fac18dee40342e65bc2d27021599369}\label{class_harvester_a9fac18dee40342e65bc2d27021599369} 
+\index{Harvester@{Harvester}!m\_targetRefinery@{m\_targetRefinery}}
+\index{m\_targetRefinery@{m\_targetRefinery}!Harvester@{Harvester}}
+\doxysubsubsection{\texorpdfstring{m\_targetRefinery}{m\_targetRefinery}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_refinery}{Refinery}}\texorpdfstring{$\ast$}{*} Harvester\+::m\+\_\+target\+Refinery = \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{nullptr}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_harvester_8h_source_l00029}{29}} of file \mbox{\hyperlink{_harvester_8h_source}{Harvester.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_harvester_8h}{Harvester.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_harvester_8cpp}{Harvester.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_harvester_8h}{Harvester.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_harvester_8cpp}{Harvester.\+cpp}}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 <map id="Building" name="Building">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,333,891"/>
-<area shape="rect" id="Node000002" href="$class_particle_system.html" title=" " alt="" coords="31,5,307,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,117,172,165,167,165,167,117"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,96,94,123"/>
+<area shape="rect" id="Node000002" href="$class_particle_system.html" title=" " alt="" coords="5,5,116,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,48,63,95,58,95,58,48"/>
 </map>

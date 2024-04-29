@@ -1,5 +1,25 @@
 <map id="LevelEditor::loadLevelFromFile" name="LevelEditor::loadLevelFromFile">
-<area shape="rect" id="Node000001" title="Loads the level with the correct m_tile properties." alt="" coords="281,5,477,32"/>
-<area shape="rect" id="Node000002" href="$class_level_editor.html#a6de4bbbbe376fb12fb3fb0dd104a42bc" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="5,5,233,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="265,21,233,21,233,16,265,16"/>
+<area shape="rect" id="Node000001" title="Loads the level with the correct m_tile properties." alt="" coords="855,120,1051,147"/>
+<area shape="rect" id="Node000002" href="$class_level_loader.html#aa6c5402832b1ed33275002a7c2fba529" title="Loads the level." alt="" coords="650,61,800,88"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="883,118,779,91,780,86,884,113"/>
+<area shape="rect" id="Node000008" href="$class_level_editor.html#a6de4bbbbe376fb12fb3fb0dd104a42bc" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="643,112,807,155"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="840,136,808,136,808,131,840,131"/>
+<area shape="rect" id="Node000010" href="$class_game.html#a5e57e588368a437cbe1a177b02e7175c" title="Loads the level." alt="" coords="654,179,796,205"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="884,154,780,181,779,176,883,149"/>
+<area shape="rect" id="Node000003" href="$class_level_loader.html#a99d2eaf66b8b70793e4eed64f134d23e" title="handles the mouse press for the buttons to load the level" alt="" coords="430,5,595,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="647,60,594,48,596,43,649,55"/>
+<area shape="rect" id="Node000007" href="$class_level_loader.html#aaa7dcd75aee8d103054a546ede7cbf33" title="Updates the level loader to load the level." alt="" coords="444,72,581,99"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="635,82,581,85,581,79,635,77"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,123,382,149"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,57,432,62,376,94,330,124,328,120,373,90,429,58,440,52"/>
+<area shape="rect" id="Node000005" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,149,185,176"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="218,153,186,159,185,153,217,148"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,149,55,176"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,165,55,165,55,160,87,160"/>
+<area shape="rect" id="Node000009" href="$class_game.html#adf2eb2e773dbad1322db8d6798705ea1" title="deal with key presses from the user" alt="" coords="442,123,583,149"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="627,137,583,138,583,132,627,132"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="427,139,383,139,383,133,427,133"/>
+<area shape="rect" id="Node000011" href="$class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,175,359,201"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="638,194,359,191,359,186,638,189"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="240,180,185,172,186,166,241,175"/>
 </map>

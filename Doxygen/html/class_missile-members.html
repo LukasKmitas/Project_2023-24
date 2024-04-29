@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -98,14 +98,23 @@ $(function(){initNavTree('class_missile.html',''); initResizable(); });
 
 <p>This is the complete list of members for <a class="el" href="class_missile.html">Missile</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#ac379538d83d074fb53e5354ba7edb05a">lerpColor</a>(const sf::Color &amp;m_start, const sf::Color &amp;m_end, float m_lifeTime)</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#a5a76ffc8a6a752422cd49a278bcb410e">m_active</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a970cb70efd57dfa44e3fc57e5d1ff035">m_addTrailPartInterval</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#aafe7b25d0667b74143dbfdd07554a405">m_damage</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#a25d8466b301870323b86fdc0e35c77d1">Missile</a>(const sf::Vector2f &amp;m_startPosition, const sf::Vector2f &amp;m_targetDirection, float m_speed, const sf::Texture &amp;m_texture)</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a7bc5442b92cff6c9350b5496bfc2ae3e">m_lifetime</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#abf5d5f4c81b664e09c50fe9f86a09af0">m_missileSprite</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#aee138dea114b6d8f0aec3bb95ea71f50">m_position</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#ae3d54aa52663b42c2e0eb3360b62c8dd">m_speed</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a83edd34480c21b85b0003866e26b47f1">m_timeSinceLastTrailPart</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#adf7d4afadcf566497356538cdbbd4efa">m_trail</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a6ccf607f9d2fe8044b86182c3c9710c9">m_trailMaxLifetime</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#aa36d8d7569ae95104fed5ed1a0b90440">m_velocity</a></td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a25d8466b301870323b86fdc0e35c77d1">Missile</a>(const sf::Vector2f &amp;m_startPosition, const sf::Vector2f &amp;m_targetDirection, float m_speed, const sf::Texture &amp;m_texture)</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#ab164b28b9ea28828cd2f95b2b171f57d">normalize</a>(const sf::Vector2f &amp;m_source) const</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a3cdc5856688cad7c20ca665d4c41fd95">render</a>(sf::RenderWindow &amp;m_window) const</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_missile.html#a8ea67bbd5665a9fa841e43990d2bd1fc">update</a>(sf::Time t_deltaTime)</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_missile.html#a6a780e6e4661b6c9e40fc6d4b2335311">updateTrail</a>(sf::Time t_deltaTime)</td><td class="entry"><a class="el" href="class_missile.html">Missile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

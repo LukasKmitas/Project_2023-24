@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Firehawk\+:\nopagebreak
+Inheritance diagram for Firehawk\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_firehawk__inherit__graph}
+\includegraphics[width=144pt]{class_firehawk__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Firehawk\+:\nopagebreak
+Collaboration diagram for Firehawk\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{class_firehawk__coll__graph}
+\includegraphics[width=268pt]{class_firehawk__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -106,6 +108,46 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a42777458d8e2ae32407212027719b6d2}{
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_a8ed00bb67423863eafa5a0e483fd2dd9}{check\+Affordability}} ()
 \item 
 \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_unit_ac092caf6ec920688a210b1d556633113}{is\+Active}} () \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_firehawk_a244c37330dde83d34e4ca60a244c6910}{approach\+Target}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}}, sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em makes the unit move \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e}{orbit\+Target}} (sf\+::\+Time \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\+\_\+delta\+Time}})
+\begin{DoxyCompactList}\small\item\em Makes the unit orbit around an area. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_firehawk_a3ca243ce35364951f45c99330956e03b}{init\+Firehawk}} ()
+\begin{DoxyCompactList}\small\item\em initializes firehawk unit \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}{fire\+Missile\+At\+Target}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}})
+\begin{DoxyCompactList}\small\item\em shoots missles in a 2 phases 2 rockets and then 2 more after a while \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} \mbox{\hyperlink{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}{is\+Target\+Within\+Range}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}})
+\begin{DoxyCompactList}\small\item\em The target needs to be in line of sight to be able to shoot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} \mbox{\hyperlink{class_firehawk_a9508b9506242d3292ec9f213019d84a3}{launch\+Missile}} (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\+\_\+target\+Pos}})
+\begin{DoxyCompactList}\small\item\em shoots out the missles \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_firehawk_a3dd2823c53448089e9dc3912175bb817}{m\+\_\+missile\+Texture}}
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_a8167d00be5583abb167df2b04b3d200b}{m\+\_\+orbit\+Radius}} = 150.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_ad084db06d7c84e66eea21194835b6418}{m\+\_\+orbit\+Speed}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}{m\+\_\+current\+Orbit\+Angle}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}{m\+\_\+reload\+Cooldown}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_af92dc2abce3340db1e19142b277ea9fc}{m\+\_\+reload\+Cooldown\+Time}} = 5.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}{m\+\_\+missiles\+Fired\+In\+Burst}} = 0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_firehawk_aaeeff8fb8372ac5e48bf760c060a5f4a}{m\+\_\+burst\+Size}} = 4
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} \mbox{\hyperlink{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}{m\+\_\+phase}} = 0
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}{m\+\_\+phase\+Timer}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} \mbox{\hyperlink{class_firehawk_a93a891c617406186c88c164c270ca939}{m\+\_\+phase\+Delay}} = 1.\+0f
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
@@ -259,6 +301,14 @@ Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00004}{4}} of file \mbo
 
 Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_firehawk_ad406c6d04de228c7e8c5fd19e69b85ac_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_firehawk_a9f192fe98d64f833adc6c7cd5f8ab14a}\label{class_firehawk_a9f192fe98d64f833adc6c7cd5f8ab14a} 
 \index{Firehawk@{Firehawk}!````~Firehawk@{\texorpdfstring{$\sim$}{\string~}Firehawk}}
 \index{````~Firehawk@{\texorpdfstring{$\sim$}{\string~}Firehawk}!Firehawk@{Firehawk}}
@@ -272,6 +322,78 @@ Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00015}{15}} of file \
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_firehawk_a244c37330dde83d34e4ca60a244c6910}\label{class_firehawk_a244c37330dde83d34e4ca60a244c6910} 
+\index{Firehawk@{Firehawk}!approachTarget@{approachTarget}}
+\index{approachTarget@{approachTarget}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{approachTarget()}{approachTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Firehawk\+::approach\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos,  }\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+makes the unit move 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target\+Pos} & \\
+\hline
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_firehawk_a244c37330dde83d34e4ca60a244c6910_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_firehawk_a244c37330dde83d34e4ca60a244c6910_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_firehawk_a695f22839d141aba8fecabbe5b14fce7}\label{class_firehawk_a695f22839d141aba8fecabbe5b14fce7} 
+\index{Firehawk@{Firehawk}!fireMissileAtTarget@{fireMissileAtTarget}}
+\index{fireMissileAtTarget@{fireMissileAtTarget}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{fireMissileAtTarget()}{fireMissileAtTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Firehawk\+::fire\+Missile\+At\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+shoots missles in a 2 phases 2 rockets and then 2 more after a while 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_firehawk_a695f22839d141aba8fecabbe5b14fce7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_firehawk_a695f22839d141aba8fecabbe5b14fce7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_firehawk_aef0eaabeee939997fb8cfa9debf0b9e4}\label{class_firehawk_aef0eaabeee939997fb8cfa9debf0b9e4} 
 \index{Firehawk@{Firehawk}!getUnitType@{getUnitType}}
 \index{getUnitType@{getUnitType}!Firehawk@{Firehawk}}
@@ -286,6 +408,128 @@ Implements \mbox{\hyperlink{class_unit_a6ac8b67a7364fcfc0f3b2a0b4a43ce2c}{Unit}}
 
 Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00012}{12}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
 
+\Hypertarget{class_firehawk_a3ca243ce35364951f45c99330956e03b}\label{class_firehawk_a3ca243ce35364951f45c99330956e03b} 
+\index{Firehawk@{Firehawk}!initFirehawk@{initFirehawk}}
+\index{initFirehawk@{initFirehawk}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{initFirehawk()}{initFirehawk()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Firehawk\+::init\+Firehawk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initializes firehawk unit 
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_firehawk_a3ca243ce35364951f45c99330956e03b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445}\label{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445} 
+\index{Firehawk@{Firehawk}!isTargetWithinRange@{isTargetWithinRange}}
+\index{isTargetWithinRange@{isTargetWithinRange}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{isTargetWithinRange()}{isTargetWithinRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{bool}} Firehawk\+::is\+Target\+Within\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The target needs to be in line of sight to be able to shoot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+target\+Pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_firehawk_aa7f4ce8bd6242264918c8910e92e5445_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_firehawk_a9508b9506242d3292ec9f213019d84a3}\label{class_firehawk_a9508b9506242d3292ec9f213019d84a3} 
+\index{Firehawk@{Firehawk}!launchMissile@{launchMissile}}
+\index{launchMissile@{launchMissile}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{launchMissile()}{launchMissile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Firehawk\+::launch\+Missile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} sf\+::\+Vector2f \&}]{m\+\_\+target\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+shoots out the missles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_firehawk_a9508b9506242d3292ec9f213019d84a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_firehawk_a9508b9506242d3292ec9f213019d84a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e}\label{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e} 
+\index{Firehawk@{Firehawk}!orbitTarget@{orbitTarget}}
+\index{orbitTarget@{orbitTarget}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{orbitTarget()}{orbitTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{void}} Firehawk\+::orbit\+Target (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes the unit orbit around an area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_firehawk_a72737c3583aa14ea71fdc737c1d0a83e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a}\label{class_firehawk_a39f1f9ed23fa4203edf940c9057b8b2a} 
 \index{Firehawk@{Firehawk}!update@{update}}
 \index{update@{update}!Firehawk@{Firehawk}}
@@ -300,7 +544,8 @@ Reimplemented from \mbox{\hyperlink{class_aircraft_unit_a383a50ac692f739ef21306b
 
 Definition at line \mbox{\hyperlink{_firehawk_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_firehawk_8cpp_source}{Firehawk.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -309,7 +554,120 @@ Here is the call graph for this function\+:\nopagebreak
 \end{figure}
 
 
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_firehawk_aaeeff8fb8372ac5e48bf760c060a5f4a}\label{class_firehawk_aaeeff8fb8372ac5e48bf760c060a5f4a} 
+\index{Firehawk@{Firehawk}!m\_burstSize@{m\_burstSize}}
+\index{m\_burstSize@{m\_burstSize}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_burstSize}{m\_burstSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Firehawk\+::m\+\_\+burst\+Size = 4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00037}{37}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5}\label{class_firehawk_ab0e1a855c3a1b2be9e7bd8346aacb1b5} 
+\index{Firehawk@{Firehawk}!m\_currentOrbitAngle@{m\_currentOrbitAngle}}
+\index{m\_currentOrbitAngle@{m\_currentOrbitAngle}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_currentOrbitAngle}{m\_currentOrbitAngle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+current\+Orbit\+Angle = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00031}{31}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd}\label{class_firehawk_a72ab1ee66ae09f050235950a09afa6dd} 
+\index{Firehawk@{Firehawk}!m\_missilesFiredInBurst@{m\_missilesFiredInBurst}}
+\index{m\_missilesFiredInBurst@{m\_missilesFiredInBurst}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_missilesFiredInBurst}{m\_missilesFiredInBurst}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Firehawk\+::m\+\_\+missiles\+Fired\+In\+Burst = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00036}{36}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a3dd2823c53448089e9dc3912175bb817}\label{class_firehawk_a3dd2823c53448089e9dc3912175bb817} 
+\index{Firehawk@{Firehawk}!m\_missileTexture@{m\_missileTexture}}
+\index{m\_missileTexture@{m\_missileTexture}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_missileTexture}{m\_missileTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Firehawk\+::m\+\_\+missile\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00027}{27}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a8167d00be5583abb167df2b04b3d200b}\label{class_firehawk_a8167d00be5583abb167df2b04b3d200b} 
+\index{Firehawk@{Firehawk}!m\_orbitRadius@{m\_orbitRadius}}
+\index{m\_orbitRadius@{m\_orbitRadius}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_orbitRadius}{m\_orbitRadius}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+orbit\+Radius = 150.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00029}{29}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_ad084db06d7c84e66eea21194835b6418}\label{class_firehawk_ad084db06d7c84e66eea21194835b6418} 
+\index{Firehawk@{Firehawk}!m\_orbitSpeed@{m\_orbitSpeed}}
+\index{m\_orbitSpeed@{m\_orbitSpeed}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_orbitSpeed}{m\_orbitSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+orbit\+Speed = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00030}{30}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299}\label{class_firehawk_a2e55157c02b4b3fe0c6adc72c94e4299} 
+\index{Firehawk@{Firehawk}!m\_phase@{m\_phase}}
+\index{m\_phase@{m\_phase}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_phase}{m\_phase}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{int}} Firehawk\+::m\+\_\+phase = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00038}{38}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a93a891c617406186c88c164c270ca939}\label{class_firehawk_a93a891c617406186c88c164c270ca939} 
+\index{Firehawk@{Firehawk}!m\_phaseDelay@{m\_phaseDelay}}
+\index{m\_phaseDelay@{m\_phaseDelay}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_phaseDelay}{m\_phaseDelay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+phase\+Delay = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00040}{40}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0}\label{class_firehawk_a4982697edc8e054d0b4baff6e66d05a0} 
+\index{Firehawk@{Firehawk}!m\_phaseTimer@{m\_phaseTimer}}
+\index{m\_phaseTimer@{m\_phaseTimer}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_phaseTimer}{m\_phaseTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+phase\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00039}{39}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae}\label{class_firehawk_aef6a9cd6671be9b743cd6c350d43baae} 
+\index{Firehawk@{Firehawk}!m\_reloadCooldown@{m\_reloadCooldown}}
+\index{m\_reloadCooldown@{m\_reloadCooldown}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_reloadCooldown}{m\_reloadCooldown}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+reload\+Cooldown = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00034}{34}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+\Hypertarget{class_firehawk_af92dc2abce3340db1e19142b277ea9fc}\label{class_firehawk_af92dc2abce3340db1e19142b277ea9fc} 
+\index{Firehawk@{Firehawk}!m\_reloadCooldownTime@{m\_reloadCooldownTime}}
+\index{m\_reloadCooldownTime@{m\_reloadCooldownTime}!Firehawk@{Firehawk}}
+\doxysubsubsection{\texorpdfstring{m\_reloadCooldownTime}{m\_reloadCooldownTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{const}} \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{float}} Firehawk\+::m\+\_\+reload\+Cooldown\+Time = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_firehawk_8h_source_l00035}{35}} of file \mbox{\hyperlink{_firehawk_8h_source}{Firehawk.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_firehawk_8h}{Firehawk.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_firehawk_8cpp}{Firehawk.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_firehawk_8h}{Firehawk.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_firehawk_8cpp}{Firehawk.\+cpp}}\end{DoxyCompactItemize}

@@ -4,15 +4,6 @@
 
 {\ttfamily \#include $<$Main\+Menu.\+h$>$}
 
-
-
-Collaboration diagram for Main\+Menu\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_main_menu__coll__graph}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,6 +15,72 @@ void \mbox{\hyperlink{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b}{render}
 \begin{DoxyCompactList}\small\item\em renders main menu content \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_menu_a21a5eef38283b271749a28bc954fbddd}{handle\+Button\+Click}} (const sf\+::\+Vector2f \&m\+\_\+mouse\+Position, \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \&m\+\_\+game\+State)
 \begin{DoxyCompactList}\small\item\em handles the button presses \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e}{init\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the buttons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_a5631843fc7d98f4ffeb15e0a807c9120}{init\+Background\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Initializes background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_aaea8765b45e061943f556a5b6580a1be}{button\+Tab\+Animation}} (sf\+::\+Render\+Window \&m\+\_\+window, sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Makes an animation when mouse is over the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_a6df431176833e3c362867b3c1e822f02}{title\+Animation}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Animates the title to make it more fancy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \mbox{\hyperlink{class_main_menu_a65fa2cf63a86a1434222299c12f1c74b}{m\+\_\+current\+State}} = \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{Game\+State\+::\+Main\+Menu}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_main_menu_a4004e88b914219c4f05229453a468713}{m\+\_\+font}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_a3952a634ba96a2d9f0062e2a7a17384c}{m\+\_\+title\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_ab578412f76ef8d2f0066499b486ff20e}{m\+\_\+outline\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_aa2a24b0ee0629bd1092a0dd030fa3631}{m\+\_\+play\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_a21900005da51f204e782704f1211c4d1}{m\+\_\+editor\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_a165557a1b636e7948d287804de7d3ec0}{m\+\_\+load\+Level\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_a90bef9ee3bf6fe7f7ac95916f66ca93b}{m\+\_\+neural\+Network\+Text}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_main_menu_a01233b4c6f777cad26488c5d4cb9056f}{m\+\_\+exit\+Text}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_main_menu_a7581ab8f5f4b9dcc36be52326c3238b4}{m\+\_\+play\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_main_menu_a38737b0b7ec4b61f41b5c1e8ade614bb}{m\+\_\+editor\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_main_menu_a69b568eaef7f0df5ce984e786e98f228}{m\+\_\+load\+Level\+Button}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_main_menu_a56b24573ed79f502b8e33a2f93172585}{m\+\_\+exit\+Button}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_ab38264070cb55554eae625f49956f8c7}{m\+\_\+button\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_main_menu_a3733c47ebff6e59dd4f302cbab381067}{m\+\_\+button\+Tab\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_a6491d7f35293a67833a0868bf83d3f05}{m\+\_\+button\+Tab\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_a7a97c1dd0e9eaa1d2f969f136bf4060c}{m\+\_\+background\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_main_menu_aa9d8f9a8dbed7e77d318ca283d05abce}{m\+\_\+background\+Sprite}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_main_menu_aebf78187fe399d86a74f25265bf9fde1}{m\+\_\+title\+Shader}}
+\item 
+sf\+::\+Shader \mbox{\hyperlink{class_main_menu_ad422e4025a32840e17ec6cc2b27016ad}{m\+\_\+background\+Shader}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_main_menu_a52a1e2e6f0f3def48905303a9f54d533}{m\+\_\+mouse\+Pos}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_main_menu_a184e3ef3f4581385d80e7ee6627e7885}{m\+\_\+delta\+Time}}
+\item 
+float \mbox{\hyperlink{class_main_menu_a00808ca7f88bc7df7a1d47cd6f104001}{m\+\_\+title\+Animation\+Time}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_main_menu_a59459d58f30727d28d5d55122884367a}{m\+\_\+title\+Max\+Scale}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_main_menu_aa6b87c2d3c5ec4fba7b9dec151068124}{m\+\_\+title\+Min\+Scale}} = 0.\+8f
+\item 
+float \mbox{\hyperlink{class_main_menu_a1e294bddd073ab3bb519004f336d639e}{m\+\_\+title\+Animation\+Speed}} = 1.\+0f
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,7 +101,8 @@ Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00008}{8}} of file \mb
 
 Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -54,6 +112,35 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_menu_aaea8765b45e061943f556a5b6580a1be}\label{class_main_menu_aaea8765b45e061943f556a5b6580a1be} 
+\index{MainMenu@{MainMenu}!buttonTabAnimation@{buttonTabAnimation}}
+\index{buttonTabAnimation@{buttonTabAnimation}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{buttonTabAnimation()}{buttonTabAnimation()}}
+{\footnotesize\ttfamily void Main\+Menu\+::button\+Tab\+Animation (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window,  }\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes an animation when mouse is over the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+window} & \\
+\hline
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00220}{220}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_aaea8765b45e061943f556a5b6580a1be_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_main_menu_a21a5eef38283b271749a28bc954fbddd}\label{class_main_menu_a21a5eef38283b271749a28bc954fbddd} 
 \index{MainMenu@{MainMenu}!handleButtonClick@{handleButtonClick}}
 \index{handleButtonClick@{handleButtonClick}!MainMenu@{MainMenu}}
@@ -75,11 +162,64 @@ handles the button presses
 
 Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_main_menu_a21a5eef38283b271749a28bc954fbddd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_a21a5eef38283b271749a28bc954fbddd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_main_menu_a5631843fc7d98f4ffeb15e0a807c9120}\label{class_main_menu_a5631843fc7d98f4ffeb15e0a807c9120} 
+\index{MainMenu@{MainMenu}!initBackgroundImage@{initBackgroundImage}}
+\index{initBackgroundImage@{initBackgroundImage}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{initBackgroundImage()}{initBackgroundImage()}}
+{\footnotesize\ttfamily void Main\+Menu\+::init\+Background\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes background. 
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_a5631843fc7d98f4ffeb15e0a807c9120_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e}\label{class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e} 
+\index{MainMenu@{MainMenu}!initButtons@{initButtons}}
+\index{initButtons@{initButtons}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{initButtons()}{initButtons()}}
+{\footnotesize\ttfamily void Main\+Menu\+::init\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the buttons. 
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b}\label{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b} 
@@ -101,6 +241,49 @@ renders main menu content
 
 Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_a86efa09cf7c689299b4f65016ac86a2b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_main_menu_a6df431176833e3c362867b3c1e822f02}\label{class_main_menu_a6df431176833e3c362867b3c1e822f02} 
+\index{MainMenu@{MainMenu}!titleAnimation@{titleAnimation}}
+\index{titleAnimation@{titleAnimation}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{titleAnimation()}{titleAnimation()}}
+{\footnotesize\ttfamily void Main\+Menu\+::title\+Animation (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Animates the title to make it more fancy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_a6df431176833e3c362867b3c1e822f02_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6}\label{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6} 
 \index{MainMenu@{MainMenu}!update@{update}}
 \index{update@{update}!MainMenu@{MainMenu}}
@@ -120,9 +303,288 @@ Updates main menu.
 
 Definition at line \mbox{\hyperlink{_main_menu_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_main_menu_8cpp_source}{Main\+Menu.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_afd2d5fff22a91bd8deb42683ab3e04a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_menu_ad422e4025a32840e17ec6cc2b27016ad}\label{class_main_menu_ad422e4025a32840e17ec6cc2b27016ad} 
+\index{MainMenu@{MainMenu}!m\_backgroundShader@{m\_backgroundShader}}
+\index{m\_backgroundShader@{m\_backgroundShader}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundShader}{m\_backgroundShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Main\+Menu\+::m\+\_\+background\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00050}{50}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_aa9d8f9a8dbed7e77d318ca283d05abce}\label{class_main_menu_aa9d8f9a8dbed7e77d318ca283d05abce} 
+\index{MainMenu@{MainMenu}!m\_backgroundSprite@{m\_backgroundSprite}}
+\index{m\_backgroundSprite@{m\_backgroundSprite}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundSprite}{m\_backgroundSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Main\+Menu\+::m\+\_\+background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00047}{47}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a7a97c1dd0e9eaa1d2f969f136bf4060c}\label{class_main_menu_a7a97c1dd0e9eaa1d2f969f136bf4060c} 
+\index{MainMenu@{MainMenu}!m\_backgroundTexture@{m\_backgroundTexture}}
+\index{m\_backgroundTexture@{m\_backgroundTexture}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundTexture}{m\_backgroundTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+::m\+\_\+background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00046}{46}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a3733c47ebff6e59dd4f302cbab381067}\label{class_main_menu_a3733c47ebff6e59dd4f302cbab381067} 
+\index{MainMenu@{MainMenu}!m\_buttonTabSprite@{m\_buttonTabSprite}}
+\index{m\_buttonTabSprite@{m\_buttonTabSprite}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTabSprite}{m\_buttonTabSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Main\+Menu\+::m\+\_\+button\+Tab\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00043}{43}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a6491d7f35293a67833a0868bf83d3f05}\label{class_main_menu_a6491d7f35293a67833a0868bf83d3f05} 
+\index{MainMenu@{MainMenu}!m\_buttonTabTexture@{m\_buttonTabTexture}}
+\index{m\_buttonTabTexture@{m\_buttonTabTexture}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTabTexture}{m\_buttonTabTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+::m\+\_\+button\+Tab\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00044}{44}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_ab38264070cb55554eae625f49956f8c7}\label{class_main_menu_ab38264070cb55554eae625f49956f8c7} 
+\index{MainMenu@{MainMenu}!m\_buttonTexture@{m\_buttonTexture}}
+\index{m\_buttonTexture@{m\_buttonTexture}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTexture}{m\_buttonTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+::m\+\_\+button\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00042}{42}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a65fa2cf63a86a1434222299c12f1c74b}\label{class_main_menu_a65fa2cf63a86a1434222299c12f1c74b} 
+\index{MainMenu@{MainMenu}!m\_currentState@{m\_currentState}}
+\index{m\_currentState@{m\_currentState}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_currentState}{m\_currentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} Main\+Menu\+::m\+\_\+current\+State = \mbox{\hyperlink{_game_state_8h_a7899b65f1ea0f655e4bbf8d2a5714285aad1111b48f98329333237912fc3b371b}{Game\+State\+::\+Main\+Menu}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00025}{25}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a184e3ef3f4581385d80e7ee6627e7885}\label{class_main_menu_a184e3ef3f4581385d80e7ee6627e7885} 
+\index{MainMenu@{MainMenu}!m\_deltaTime@{m\_deltaTime}}
+\index{m\_deltaTime@{m\_deltaTime}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_deltaTime}{m\_deltaTime}}
+{\footnotesize\ttfamily sf\+::\+Time Main\+Menu\+::m\+\_\+delta\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00053}{53}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a38737b0b7ec4b61f41b5c1e8ade614bb}\label{class_main_menu_a38737b0b7ec4b61f41b5c1e8ade614bb} 
+\index{MainMenu@{MainMenu}!m\_editorButton@{m\_editorButton}}
+\index{m\_editorButton@{m\_editorButton}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_editorButton}{m\_editorButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Main\+Menu\+::m\+\_\+editor\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00038}{38}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a21900005da51f204e782704f1211c4d1}\label{class_main_menu_a21900005da51f204e782704f1211c4d1} 
+\index{MainMenu@{MainMenu}!m\_editorText@{m\_editorText}}
+\index{m\_editorText@{m\_editorText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_editorText}{m\_editorText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+editor\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00032}{32}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a56b24573ed79f502b8e33a2f93172585}\label{class_main_menu_a56b24573ed79f502b8e33a2f93172585} 
+\index{MainMenu@{MainMenu}!m\_exitButton@{m\_exitButton}}
+\index{m\_exitButton@{m\_exitButton}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_exitButton}{m\_exitButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Main\+Menu\+::m\+\_\+exit\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00041}{41}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a01233b4c6f777cad26488c5d4cb9056f}\label{class_main_menu_a01233b4c6f777cad26488c5d4cb9056f} 
+\index{MainMenu@{MainMenu}!m\_exitText@{m\_exitText}}
+\index{m\_exitText@{m\_exitText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_exitText}{m\_exitText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+exit\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00035}{35}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a4004e88b914219c4f05229453a468713}\label{class_main_menu_a4004e88b914219c4f05229453a468713} 
+\index{MainMenu@{MainMenu}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font Main\+Menu\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00027}{27}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a69b568eaef7f0df5ce984e786e98f228}\label{class_main_menu_a69b568eaef7f0df5ce984e786e98f228} 
+\index{MainMenu@{MainMenu}!m\_loadLevelButton@{m\_loadLevelButton}}
+\index{m\_loadLevelButton@{m\_loadLevelButton}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_loadLevelButton}{m\_loadLevelButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Main\+Menu\+::m\+\_\+load\+Level\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00039}{39}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a165557a1b636e7948d287804de7d3ec0}\label{class_main_menu_a165557a1b636e7948d287804de7d3ec0} 
+\index{MainMenu@{MainMenu}!m\_loadLevelText@{m\_loadLevelText}}
+\index{m\_loadLevelText@{m\_loadLevelText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_loadLevelText}{m\_loadLevelText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+load\+Level\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00033}{33}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a52a1e2e6f0f3def48905303a9f54d533}\label{class_main_menu_a52a1e2e6f0f3def48905303a9f54d533} 
+\index{MainMenu@{MainMenu}!m\_mousePos@{m\_mousePos}}
+\index{m\_mousePos@{m\_mousePos}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_mousePos}{m\_mousePos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Main\+Menu\+::m\+\_\+mouse\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00052}{52}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a90bef9ee3bf6fe7f7ac95916f66ca93b}\label{class_main_menu_a90bef9ee3bf6fe7f7ac95916f66ca93b} 
+\index{MainMenu@{MainMenu}!m\_neuralNetworkText@{m\_neuralNetworkText}}
+\index{m\_neuralNetworkText@{m\_neuralNetworkText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_neuralNetworkText}{m\_neuralNetworkText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+neural\+Network\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00034}{34}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_ab578412f76ef8d2f0066499b486ff20e}\label{class_main_menu_ab578412f76ef8d2f0066499b486ff20e} 
+\index{MainMenu@{MainMenu}!m\_outlineText@{m\_outlineText}}
+\index{m\_outlineText@{m\_outlineText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_outlineText}{m\_outlineText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+outline\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00030}{30}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a7581ab8f5f4b9dcc36be52326c3238b4}\label{class_main_menu_a7581ab8f5f4b9dcc36be52326c3238b4} 
+\index{MainMenu@{MainMenu}!m\_playButton@{m\_playButton}}
+\index{m\_playButton@{m\_playButton}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_playButton}{m\_playButton}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Main\+Menu\+::m\+\_\+play\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00037}{37}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_aa2a24b0ee0629bd1092a0dd030fa3631}\label{class_main_menu_aa2a24b0ee0629bd1092a0dd030fa3631} 
+\index{MainMenu@{MainMenu}!m\_playText@{m\_playText}}
+\index{m\_playText@{m\_playText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_playText}{m\_playText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+play\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00031}{31}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a1e294bddd073ab3bb519004f336d639e}\label{class_main_menu_a1e294bddd073ab3bb519004f336d639e} 
+\index{MainMenu@{MainMenu}!m\_titleAnimationSpeed@{m\_titleAnimationSpeed}}
+\index{m\_titleAnimationSpeed@{m\_titleAnimationSpeed}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleAnimationSpeed}{m\_titleAnimationSpeed}}
+{\footnotesize\ttfamily float Main\+Menu\+::m\+\_\+title\+Animation\+Speed = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00058}{58}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a00808ca7f88bc7df7a1d47cd6f104001}\label{class_main_menu_a00808ca7f88bc7df7a1d47cd6f104001} 
+\index{MainMenu@{MainMenu}!m\_titleAnimationTime@{m\_titleAnimationTime}}
+\index{m\_titleAnimationTime@{m\_titleAnimationTime}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleAnimationTime}{m\_titleAnimationTime}}
+{\footnotesize\ttfamily float Main\+Menu\+::m\+\_\+title\+Animation\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00055}{55}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a59459d58f30727d28d5d55122884367a}\label{class_main_menu_a59459d58f30727d28d5d55122884367a} 
+\index{MainMenu@{MainMenu}!m\_titleMaxScale@{m\_titleMaxScale}}
+\index{m\_titleMaxScale@{m\_titleMaxScale}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleMaxScale}{m\_titleMaxScale}}
+{\footnotesize\ttfamily float Main\+Menu\+::m\+\_\+title\+Max\+Scale = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00056}{56}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_aa6b87c2d3c5ec4fba7b9dec151068124}\label{class_main_menu_aa6b87c2d3c5ec4fba7b9dec151068124} 
+\index{MainMenu@{MainMenu}!m\_titleMinScale@{m\_titleMinScale}}
+\index{m\_titleMinScale@{m\_titleMinScale}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleMinScale}{m\_titleMinScale}}
+{\footnotesize\ttfamily float Main\+Menu\+::m\+\_\+title\+Min\+Scale = 0.\+8f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00057}{57}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_aebf78187fe399d86a74f25265bf9fde1}\label{class_main_menu_aebf78187fe399d86a74f25265bf9fde1} 
+\index{MainMenu@{MainMenu}!m\_titleShader@{m\_titleShader}}
+\index{m\_titleShader@{m\_titleShader}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleShader}{m\_titleShader}}
+{\footnotesize\ttfamily sf\+::\+Shader Main\+Menu\+::m\+\_\+title\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00049}{49}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
+\Hypertarget{class_main_menu_a3952a634ba96a2d9f0062e2a7a17384c}\label{class_main_menu_a3952a634ba96a2d9f0062e2a7a17384c} 
+\index{MainMenu@{MainMenu}!m\_titleText@{m\_titleText}}
+\index{m\_titleText@{m\_titleText}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_titleText}{m\_titleText}}
+{\footnotesize\ttfamily sf\+::\+Text Main\+Menu\+::m\+\_\+title\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_8h_source_l00029}{29}} of file \mbox{\hyperlink{_main_menu_8h_source}{Main\+Menu.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_main_menu_8h}{Main\+Menu.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_main_menu_8cpp}{Main\+Menu.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_main_menu_8h}{Main\+Menu.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_main_menu_8cpp}{Main\+Menu.\+cpp}}\end{DoxyCompactItemize}

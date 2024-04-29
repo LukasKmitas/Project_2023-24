@@ -1,9 +1,51 @@
 <map id="Game::Game" name="Game::Game">
-<area shape="rect" id="Node000001" title="default constructor" alt="" coords="5,56,105,83"/>
-<area shape="rect" id="Node000002" href="$class_neural_networks.html#a01571f5a037af8e439e6fe32abe78ccc" title=" " alt="" coords="160,5,372,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,54,152,41,186,33,187,39,153,47,106,59"/>
-<area shape="rect" id="Node000003" href="$class_neural_networks.html#a6c41257179aefcfc73d2b2945b1851c9" title=" " alt="" coords="153,56,379,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,67,137,67,137,72,105,72"/>
-<area shape="rect" id="Node000004" href="$class_level_editor.html#a984362b83939349a692676df1450ee3e" title="Resets the fog." alt="" coords="176,107,356,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,80,153,92,187,100,186,105,152,97,105,85"/>
+<area shape="rect" id="Node000001" title="default constructor" alt="" coords="5,325,105,352"/>
+<area shape="rect" id="Node000002" href="$class_game.html#a85b5a7a3f3f9e09446f30bd74e2d998e" title="creates the players base" alt="" coords="194,31,324,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,325,64,282,81,220,109,154,128,122,151,93,172,75,196,62,198,66,175,79,155,97,132,125,114,156,86,222,69,283,61,326"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a13219852186fab2a37e618cac4acfbdb" title="Creates some buildings and units to give an advantage to the enemy a bit at the start of the game." alt="" coords="154,107,364,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="56,324,66,288,84,239,111,187,130,164,151,143,157,139,160,143,154,147,134,167,116,190,88,241,71,289,62,326"/>
+<area shape="rect" id="Node000010" href="$class_neural_networks.html#a01571f5a037af8e439e6fe32abe78ccc" title=" " alt="" coords="153,157,365,184"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="59,324,91,261,118,224,151,194,159,189,162,193,154,198,122,228,96,264,64,326"/>
+<area shape="rect" id="Node000011" href="$class_neural_networks.html#a6c41257179aefcfc73d2b2945b1851c9" title=" " alt="" coords="170,208,348,251"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="68,323,104,292,151,260,163,255,165,260,154,265,108,296,72,327"/>
+<area shape="rect" id="Node000012" href="$class_game.html#ad52aea4509062f4b5b71d209b5383ff5" title="initializes the neural networks" alt="" coords="176,275,342,301"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="105,323,152,311,183,303,185,308,153,316,106,328"/>
+<area shape="rect" id="Node000013" href="$class_game.html#ac7ea590ba1d6b2bdccbcdf952ac7eee5" title=" " alt="" coords="193,325,325,352"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="105,336,177,336,177,341,105,341"/>
+<area shape="rect" id="Node000014" href="$class_game.html#aaf1752ba5786c94e672f306dc75d85ac" title="Initializes the pause menu stuff." alt="" coords="184,376,334,403"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="106,349,153,361,185,369,183,374,152,367,105,354"/>
+<area shape="rect" id="Node000015" href="$class_game.html#ac70268e7febf34867b9181091ca03073" title="A playlist of songs that plays only in gameplay mode." alt="" coords="158,427,360,453"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="71,350,107,382,154,412,169,419,167,424,151,417,103,386,68,354"/>
+<area shape="rect" id="Node000019" href="$class_game.html#aeb5d0d8c72297e1ea468facac9c8383d" title=" " alt="" coords="165,477,353,504"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="65,351,98,406,124,437,154,463,163,468,160,473,151,468,120,441,94,409,61,354"/>
+<area shape="rect" id="Node000023" href="$class_game.html#a559719d47aec4db2655631d128397cae" title="Initializes the win/lose panel." alt="" coords="176,528,342,555"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="62,351,72,385,91,429,118,475,135,496,154,514,164,520,161,525,151,518,131,500,113,478,86,432,67,387,57,353"/>
+<area shape="rect" id="Node000024" href="$class_level_editor.html#a984362b83939349a692676df1450ee3e" title="Resets the fog." alt="" coords="169,579,349,605"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="61,352,68,394,84,452,112,513,131,541,154,565,160,569,156,573,151,569,127,544,107,515,79,453,63,395,55,353"/>
+<area shape="rect" id="Node000003" href="$class_building.html#ae4822e73026457c2831c0cb0b5a25434" title="sets position of the building" alt="" coords="447,5,587,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,35,431,24,432,30,324,40"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="289,104,364,67,387,53,412,42,434,34,436,39,414,46,390,58,366,72,291,108"/>
+<area shape="rect" id="Node000005" href="$class_harvester.html#a7a6a5b0826a1529970c24826f7cb0610" title="sets the buildings to find the refinery buildings" alt="" coords="440,56,594,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="330,103,430,84,431,89,331,109"/>
+<area shape="rect" id="Node000006" href="$class_unit.html#a94f9c83e2b207b12547f651736fc7c22" title=" " alt="" coords="459,107,576,133"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="365,117,443,117,443,123,365,123"/>
+<area shape="rect" id="Node000007" href="$class_unit.html#a3912a4c04f4c43bd1e10567ff4bafec8" title="sets target position for the start of being created" alt="" coords="441,157,594,184"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="331,131,431,151,430,156,330,137"/>
+<area shape="rect" id="Node000008" href="$class_unit.html#a613905487b9c2ec26620fcc820da81e9" title="Sets the tiles." alt="" coords="469,208,566,235"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="340,131,366,143,382,156,391,169,400,182,414,194,454,209,452,214,412,198,396,185,387,172,378,159,364,148,338,136"/>
+<area shape="rect" id="Node000009" href="$class_game.html#afbf9d366a52adee67b2baa80d9013904" title="Checks how many buildings it has." alt="" coords="422,259,612,285"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="348,132,367,143,379,156,386,169,392,195,397,221,404,233,415,245,420,249,417,253,411,249,399,236,392,223,386,197,381,171,374,159,363,147,345,136"/>
+<area shape="rect" id="Node000016" href="$class_sound_manager.html#a19b821bab9d4c9e078a7ee68530fdeb5" title="adds music to playlist" alt="" coords="420,325,614,352"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="338,424,364,412,378,401,387,388,396,375,412,362,423,356,426,360,414,366,400,378,391,391,382,404,366,417,340,429"/>
+<area shape="rect" id="Node000017" href="$class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae" title=" " alt="" coords="426,427,609,453"/>
+<area shape="poly" id="edge17_Node000015_Node000017" title=" " alt="" coords="360,437,410,437,410,443,360,443"/>
+<area shape="rect" id="Node000018" href="$class_sound_manager.html#afa1471a3f32972e3c5dc7529fdc1115e" title="Loads music." alt="" coords="430,376,605,403"/>
+<area shape="poly" id="edge18_Node000015_Node000018" title=" " alt="" coords="330,423,430,404,431,409,331,429"/>
+<area shape="poly" id="edge20_Node000019_Node000017" title=" " alt="" coords="330,474,430,454,431,460,331,479"/>
+<area shape="rect" id="Node000020" href="$class_sound_manager.html#a8dd42da84f176f55f385f923c1385987" title="Loads the sound." alt="" coords="429,477,606,504"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="353,488,413,488,413,493,353,493"/>
+<area shape="rect" id="Node000021" href="$class_sound_manager.html#a72e2018710caaa14b4b3b7d821121655" title="sets all music volume" alt="" coords="414,528,620,571"/>
+<area shape="poly" id="edge22_Node000019_Node000021" title=" " alt="" coords="321,502,406,521,405,527,320,507"/>
+<area shape="rect" id="Node000022" href="$class_sound_manager.html#a04cc55fe14afbad98dbad4cba8e02e20" title="stes all sounds volume" alt="" coords="413,595,621,637"/>
+<area shape="poly" id="edge23_Node000019_Node000022" title=" " alt="" coords="344,502,367,514,383,530,392,548,400,565,415,581,421,585,418,589,411,585,395,568,387,550,379,534,363,518,341,507"/>
 </map>

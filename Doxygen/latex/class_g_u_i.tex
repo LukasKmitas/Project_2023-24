@@ -6,7 +6,8 @@
 
 
 
-Collaboration diagram for GUI\+:\nopagebreak
+Collaboration diagram for GUI\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -77,6 +78,56 @@ bool \mbox{\hyperlink{class_g_u_i_a39c22a2361d3b62878e057195d4ead42}{m\+\_\+conf
 \item 
 bool \mbox{\hyperlink{class_g_u_i_a869f2765d4fae5fcf4e6b6af5d9c65fb}{m\+\_\+unit\+Confirmed}} = false
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_g_u_i_ad54d74d396b20df834565b29dc10cf89}{init\+Top\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the top bar content for currency area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_u_i_a59b2c07d39f2356cca83759d665431ab}{update\+Currency}} ()
+\begin{DoxyCompactList}\small\item\em updates the currency for player text \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5}{load\+Icons}} ()
+\begin{DoxyCompactList}\small\item\em Load all the icons for the buttons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_u_i_a752ab2883141a8f72db193dec149cfd6}{sell\+Building}} ()
+\begin{DoxyCompactList}\small\item\em sell the building off \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile}{Tile}} \mbox{\hyperlink{class_g_u_i_a4dac37d932fcd8218e7f61f5e8bc5e67}{m\+\_\+tile}}
+\item 
+\mbox{\hyperlink{class_side_bar}{Side\+Bar}} \mbox{\hyperlink{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}{m\+\_\+side\+Bar}} \{\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\+\_\+selected\+Building\+Type}}\}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_tile}{Tile}} $>$ $>$ \& \mbox{\hyperlink{class_g_u_i_add7a9ac5c3826c424b081f9af6366f4e}{m\+\_\+tiles\+Reference}}
+\item 
+sf\+::\+View \mbox{\hyperlink{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}{m\+\_\+gui\+View}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}{m\+\_\+top\+Bar}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a6797643efdf0289f818e2127ffbd3cd5}{m\+\_\+top\+Bar\+Texture}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_g_u_i_a9be7e068cf3619fd045f30e1bf9a0160}{m\+\_\+currency\+Font}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}{m\+\_\+currency\+Text}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}{m\+\_\+\+Building\+Texture1}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a99e171d4a1e7044fd7659e2e58a834bf}{m\+\_\+\+Building\+Texture2}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a185feaa0e760a907b29148189f5599a7}{m\+\_\+unit\+Infantry\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f}{m\+\_\+unit\+Vehicle\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a44907bc49f280b24509571600fb56b1a}{m\+\_\+unit\+Air\+Craft\+Texture}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a4f0d7fed4608605625623cfa0dc43afb}{m\+\_\+harvester\+Icon\+Texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_g_u_i_aa354ef17b794ee77efba18a905e29433}{m\+\_\+ghost\+Building\+Sprite}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_g_u_i_a5d47e4288e9e253525bc350f348566e4}{m\+\_\+ghost\+Building\+Texture}}
+\item 
+bool \mbox{\hyperlink{class_g_u_i_a82281220156c473d6732552e28e5f30f}{m\+\_\+show\+Slider}} = false
+\item 
+bool \mbox{\hyperlink{class_g_u_i_a46dc80295cea92ae100843fab6c576fb}{m\+\_\+placement\+Valid}} = false
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -97,6 +148,14 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00026}{26}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_g_u_i_a617cbe16962f0fe4b74bd66f716a482b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}\label{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695} 
 \index{GUI@{GUI}!````~GUI@{\texorpdfstring{$\sim$}{\string~}GUI}}
 \index{````~GUI@{\texorpdfstring{$\sim$}{\string~}GUI}!GUI@{GUI}}
@@ -131,11 +190,20 @@ This is more for the ghost buildings and confirms placement.
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_g_u_i_a7878b88debc5991513f46ce2665f5f70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_a7878b88debc5991513f46ce2665f5f70_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1}\label{class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1} 
@@ -157,14 +225,16 @@ What "{}\+Buttons"{} suppose to appear when clicking on the building type in gam
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00314}{314}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_g_u_i_a1bcc3e44a9aa9708d761049d77ae97d1_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -192,11 +262,42 @@ handles the mouse clicks for \doxylink{class_g_u_i}{GUI} related stuff
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_a55b453ffb65fc7861cce79d5fea554e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_u_i_ad54d74d396b20df834565b29dc10cf89}\label{class_g_u_i_ad54d74d396b20df834565b29dc10cf89} 
+\index{GUI@{GUI}!initTopBar@{initTopBar}}
+\index{initTopBar@{initTopBar}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{initTopBar()}{initTopBar()}}
+{\footnotesize\ttfamily void GUI\+::init\+Top\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the top bar content for currency area. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00406}{406}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_g_u_i_ad54d74d396b20df834565b29dc10cf89_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a}\label{class_g_u_i_a0ef418104a0dc3b331a7b3636b0c132a} 
@@ -223,7 +324,8 @@ checks if the placement is valid for buildings
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00467}{467}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,11 +354,34 @@ checks if the placement is valid for tiles
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00505}{505}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_g_u_i_aeefde1f8fd80fb00b225080ddb0d57c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5}\label{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5} 
+\index{GUI@{GUI}!loadIcons@{loadIcons}}
+\index{loadIcons@{loadIcons}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{loadIcons()}{loadIcons()}}
+{\footnotesize\ttfamily void GUI\+::load\+Icons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Load all the icons for the buttons. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00433}{433}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{class_g_u_i_a396a00f3bda5be64a2208d1f35bbb0f5_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57}\label{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57} 
@@ -278,11 +403,50 @@ Renders \doxylink{class_g_u_i}{GUI}.
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=265pt]{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph}
+\includegraphics[width=350pt]{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_a76807a6a90963f9971d165eb3c77cc57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_u_i_a752ab2883141a8f72db193dec149cfd6}\label{class_g_u_i_a752ab2883141a8f72db193dec149cfd6} 
+\index{GUI@{GUI}!sellBuilding@{sellBuilding}}
+\index{sellBuilding@{sellBuilding}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{sellBuilding()}{sellBuilding()}}
+{\footnotesize\ttfamily void GUI\+::sell\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sell the building off 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00542}{542}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_g_u_i_a752ab2883141a8f72db193dec149cfd6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_a752ab2883141a8f72db193dec149cfd6_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479}\label{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479} 
@@ -304,11 +468,42 @@ updates GUi content
 
 Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph}
+\includegraphics[width=291pt]{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_af0c6878a7e490283c94e9d71c05ca479_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_u_i_a59b2c07d39f2356cca83759d665431ab}\label{class_g_u_i_a59b2c07d39f2356cca83759d665431ab} 
+\index{GUI@{GUI}!updateCurrency@{updateCurrency}}
+\index{updateCurrency@{updateCurrency}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{updateCurrency()}{updateCurrency()}}
+{\footnotesize\ttfamily void GUI\+::update\+Currency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the currency for player text 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_u_i_a59b2c07d39f2356cca83759d665431ab_icgraph}
 \end{center}
 \end{figure}
 
@@ -354,6 +549,26 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00031}{31}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00045}{45}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
+\Hypertarget{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00}\label{class_g_u_i_ad13e9fc16ab26e328aafc1919d3ddb00} 
+\index{GUI@{GUI}!m\_BuildingTexture1@{m\_BuildingTexture1}}
+\index{m\_BuildingTexture1@{m\_BuildingTexture1}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_BuildingTexture1}{m\_BuildingTexture1}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+\+Building\+Texture1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00086}{86}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a99e171d4a1e7044fd7659e2e58a834bf}\label{class_g_u_i_a99e171d4a1e7044fd7659e2e58a834bf} 
+\index{GUI@{GUI}!m\_BuildingTexture2@{m\_BuildingTexture2}}
+\index{m\_BuildingTexture2@{m\_BuildingTexture2}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_BuildingTexture2}{m\_BuildingTexture2}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+\+Building\+Texture2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00087}{87}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
 \Hypertarget{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b}\label{class_g_u_i_a9006edc3415b5485855957a3b15ffd8b} 
 \index{GUI@{GUI}!m\_confirmBuildingPlacement@{m\_confirmBuildingPlacement}}
 \index{m\_confirmBuildingPlacement@{m\_confirmBuildingPlacement}!GUI@{GUI}}
@@ -374,6 +589,26 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00059}{59}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00060}{60}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
+\Hypertarget{class_g_u_i_a9be7e068cf3619fd045f30e1bf9a0160}\label{class_g_u_i_a9be7e068cf3619fd045f30e1bf9a0160} 
+\index{GUI@{GUI}!m\_currencyFont@{m\_currencyFont}}
+\index{m\_currencyFont@{m\_currencyFont}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_currencyFont}{m\_currencyFont}}
+{\footnotesize\ttfamily sf\+::\+Font GUI\+::m\+\_\+currency\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00083}{83}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_aebfd501128fed7ec6531846ba1b35896}\label{class_g_u_i_aebfd501128fed7ec6531846ba1b35896} 
+\index{GUI@{GUI}!m\_currencyText@{m\_currencyText}}
+\index{m\_currencyText@{m\_currencyText}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_currencyText}{m\_currencyText}}
+{\footnotesize\ttfamily sf\+::\+Text GUI\+::m\+\_\+currency\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00084}{84}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
 \Hypertarget{class_g_u_i_afd2e97394854d6fbf437fbfb29382b5b}\label{class_g_u_i_afd2e97394854d6fbf437fbfb29382b5b} 
 \index{GUI@{GUI}!m\_firehawk@{m\_firehawk}}
 \index{m\_firehawk@{m\_firehawk}!GUI@{GUI}}
@@ -383,6 +618,36 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00060}{60}} of file \mbox{
 
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00048}{48}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_aa354ef17b794ee77efba18a905e29433}\label{class_g_u_i_aa354ef17b794ee77efba18a905e29433} 
+\index{GUI@{GUI}!m\_ghostBuildingSprite@{m\_ghostBuildingSprite}}
+\index{m\_ghostBuildingSprite@{m\_ghostBuildingSprite}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_ghostBuildingSprite}{m\_ghostBuildingSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite GUI\+::m\+\_\+ghost\+Building\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00094}{94}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a5d47e4288e9e253525bc350f348566e4}\label{class_g_u_i_a5d47e4288e9e253525bc350f348566e4} 
+\index{GUI@{GUI}!m\_ghostBuildingTexture@{m\_ghostBuildingTexture}}
+\index{m\_ghostBuildingTexture@{m\_ghostBuildingTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_ghostBuildingTexture}{m\_ghostBuildingTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+ghost\+Building\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00095}{95}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a4051b5a4cba53013546d87f33fd69349}\label{class_g_u_i_a4051b5a4cba53013546d87f33fd69349} 
+\index{GUI@{GUI}!m\_guiView@{m\_guiView}}
+\index{m\_guiView@{m\_guiView}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_guiView}{m\_guiView}}
+{\footnotesize\ttfamily sf\+::\+View GUI\+::m\+\_\+gui\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00078}{78}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{class_g_u_i_a1abc744668d9ab7b4dbbc1f4278a8baf}\label{class_g_u_i_a1abc744668d9ab7b4dbbc1f4278a8baf} 
 \index{GUI@{GUI}!m\_hammerHead@{m\_hammerHead}}
@@ -404,6 +669,16 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00047}{47}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00044}{44}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
+\Hypertarget{class_g_u_i_a4f0d7fed4608605625623cfa0dc43afb}\label{class_g_u_i_a4f0d7fed4608605625623cfa0dc43afb} 
+\index{GUI@{GUI}!m\_harvesterIconTexture@{m\_harvesterIconTexture}}
+\index{m\_harvesterIconTexture@{m\_harvesterIconTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_harvesterIconTexture}{m\_harvesterIconTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+harvester\+Icon\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00092}{92}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
 \Hypertarget{class_g_u_i_ac4d43c86265d443c5e38f52b72eba619}\label{class_g_u_i_ac4d43c86265d443c5e38f52b72eba619} 
 \index{GUI@{GUI}!m\_placedBuildings@{m\_placedBuildings}}
 \index{m\_placedBuildings@{m\_placedBuildings}!GUI@{GUI}}
@@ -413,6 +688,16 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00044}{44}} of file \mbox{
 
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00036}{36}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a46dc80295cea92ae100843fab6c576fb}\label{class_g_u_i_a46dc80295cea92ae100843fab6c576fb} 
+\index{GUI@{GUI}!m\_placementValid@{m\_placementValid}}
+\index{m\_placementValid@{m\_placementValid}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_placementValid}{m\_placementValid}}
+{\footnotesize\ttfamily bool GUI\+::m\+\_\+placement\+Valid = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00098}{98}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{class_g_u_i_af9566fe6b02393397e69b1809867fdc2}\label{class_g_u_i_af9566fe6b02393397e69b1809867fdc2} 
 \index{GUI@{GUI}!m\_refinery@{m\_refinery}}
@@ -484,6 +769,26 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00039}{39}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00040}{40}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
+\Hypertarget{class_g_u_i_a82281220156c473d6732552e28e5f30f}\label{class_g_u_i_a82281220156c473d6732552e28e5f30f} 
+\index{GUI@{GUI}!m\_showSlider@{m\_showSlider}}
+\index{m\_showSlider@{m\_showSlider}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_showSlider}{m\_showSlider}}
+{\footnotesize\ttfamily bool GUI\+::m\+\_\+show\+Slider = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00097}{97}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a7933debe7618db5cad7729490e03ab6c}\label{class_g_u_i_a7933debe7618db5cad7729490e03ab6c} 
+\index{GUI@{GUI}!m\_sideBar@{m\_sideBar}}
+\index{m\_sideBar@{m\_sideBar}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_sideBar}{m\_sideBar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_side_bar}{Side\+Bar}} GUI\+::m\+\_\+side\+Bar \{\mbox{\hyperlink{class_g_u_i_a7a2c7132d960e86700ba5d5bcf411a06}{m\+\_\+selected\+Building\+Type}}\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00069}{69}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
 \Hypertarget{class_g_u_i_a4f72a195c6a40bb6761dde6affa48c97}\label{class_g_u_i_a4f72a195c6a40bb6761dde6affa48c97} 
 \index{GUI@{GUI}!m\_tankAurora@{m\_tankAurora}}
 \index{m\_tankAurora@{m\_tankAurora}!GUI@{GUI}}
@@ -494,6 +799,56 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00040}{40}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00046}{46}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
+\Hypertarget{class_g_u_i_a4dac37d932fcd8218e7f61f5e8bc5e67}\label{class_g_u_i_a4dac37d932fcd8218e7f61f5e8bc5e67} 
+\index{GUI@{GUI}!m\_tile@{m\_tile}}
+\index{m\_tile@{m\_tile}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_tile}{m\_tile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} GUI\+::m\+\_\+tile\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00068}{68}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_add7a9ac5c3826c424b081f9af6366f4e}\label{class_g_u_i_add7a9ac5c3826c424b081f9af6366f4e} 
+\index{GUI@{GUI}!m\_tilesReference@{m\_tilesReference}}
+\index{m\_tilesReference@{m\_tilesReference}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_tilesReference}{m\_tilesReference}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{class_tile}{Tile}}$>$ $>$\& GUI\+::m\+\_\+tiles\+Reference\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00071}{71}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1}\label{class_g_u_i_a25eb8f093c70d1ca3438cb7313bc09e1} 
+\index{GUI@{GUI}!m\_topBar@{m\_topBar}}
+\index{m\_topBar@{m\_topBar}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_topBar}{m\_topBar}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape GUI\+::m\+\_\+top\+Bar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00080}{80}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a6797643efdf0289f818e2127ffbd3cd5}\label{class_g_u_i_a6797643efdf0289f818e2127ffbd3cd5} 
+\index{GUI@{GUI}!m\_topBarTexture@{m\_topBarTexture}}
+\index{m\_topBarTexture@{m\_topBarTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_topBarTexture}{m\_topBarTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+top\+Bar\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00081}{81}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a44907bc49f280b24509571600fb56b1a}\label{class_g_u_i_a44907bc49f280b24509571600fb56b1a} 
+\index{GUI@{GUI}!m\_unitAirCraftTexture@{m\_unitAirCraftTexture}}
+\index{m\_unitAirCraftTexture@{m\_unitAirCraftTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_unitAirCraftTexture}{m\_unitAirCraftTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+unit\+Air\+Craft\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00090}{90}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
 \Hypertarget{class_g_u_i_a869f2765d4fae5fcf4e6b6af5d9c65fb}\label{class_g_u_i_a869f2765d4fae5fcf4e6b6af5d9c65fb} 
 \index{GUI@{GUI}!m\_unitConfirmed@{m\_unitConfirmed}}
 \index{m\_unitConfirmed@{m\_unitConfirmed}!GUI@{GUI}}
@@ -503,6 +858,26 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00046}{46}} of file \mbox{
 
 
 Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00061}{61}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_a185feaa0e760a907b29148189f5599a7}\label{class_g_u_i_a185feaa0e760a907b29148189f5599a7} 
+\index{GUI@{GUI}!m\_unitInfantryTexture@{m\_unitInfantryTexture}}
+\index{m\_unitInfantryTexture@{m\_unitInfantryTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_unitInfantryTexture}{m\_unitInfantryTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+unit\+Infantry\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00088}{88}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f}\label{class_g_u_i_ae6c05bc0f6bf8f09dab1bbe758066d6f} 
+\index{GUI@{GUI}!m\_unitVehicleTexture@{m\_unitVehicleTexture}}
+\index{m\_unitVehicleTexture@{m\_unitVehicleTexture}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{m\_unitVehicleTexture}{m\_unitVehicleTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture GUI\+::m\+\_\+unit\+Vehicle\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00089}{89}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{class_g_u_i_a252e79751490fdb39319570ff384d0a4}\label{class_g_u_i_a252e79751490fdb39319570ff384d0a4} 
 \index{GUI@{GUI}!m\_warFactory@{m\_warFactory}}
@@ -518,5 +893,5 @@ Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00032}{32}} of file \mbox{
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_g_u_i_8h}{GUI.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_g_u_i_8cpp}{GUI.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_g_u_i_8h}{GUI.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_g_u_i_8cpp}{GUI.\+cpp}}\end{DoxyCompactItemize}

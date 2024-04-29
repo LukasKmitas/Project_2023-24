@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gills &amp; Glory: AI Behaviors/Buggy.cpp Source File</title>
+<title>Gills &amp; Glory: E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/Buggy.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -105,7 +105,7 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_buggy.html#ae2101e9bcfab75ec4faa2cb2a8000bdb">    3</a></span><a class="code hl_function" href="class_buggy.html#ae2101e9bcfab75ec4faa2cb2a8000bdb">Buggy::Buggy</a>()</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    setupBuggy();</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_function" href="class_buggy.html#ad59fb07eb85ead43eaea25c1dc9add50">setupBuggy</a>();</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_variable" href="class_unit.html#a15fdafad6c0aca6ca7df7c14b465e3f7">m_cost</a> = 700;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="class_unit.html#a2fb910438e195e536fa971f09d0636df">m_health</a> = 100;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="class_unit.html#abb14fe0d6712ae4eb9622953660733a3">m_viewRadius</a> = 300;</div>
@@ -130,19 +130,19 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_vehicle_unit.html#a8509cb11b318348f4953dae4932ea071">VehicleUnit::update</a>(t_deltaTime, m_allyUnits);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    movement(t_deltaTime);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b">movement</a>(t_deltaTime);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setPosition(<a class="code hl_variable" href="class_unit.html#ad71f1c3eddf2505597ca1292170afacb">m_unitSprite</a>.getPosition());</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (m_fireTimer &gt; 0.0f)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_buggy.html#a4d2306f46fbf9f675417d29c79345dca">m_fireTimer</a> &gt; 0.0f)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        m_fireTimer -= t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_variable" href="class_buggy.html#a4d2306f46fbf9f675417d29c79345dca">m_fireTimer</a> -= t_deltaTime.asSeconds();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Handle reloading</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit.html#a61e8ee3346479fcec34afde9d8b15836">isReloading</a>) </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        m_reloadTimer -= t_deltaTime.asSeconds();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (m_reloadTimer &lt;= 0.0f) </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_buggy.html#a92682aa62ccab18a91f692717f9705f5">m_reloadTimer</a> -= t_deltaTime.asSeconds();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_buggy.html#a92682aa62ccab18a91f692717f9705f5">m_reloadTimer</a> &lt;= 0.0f) </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_variable" href="class_unit.html#a61e8ee3346479fcec34afde9d8b15836">isReloading</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
@@ -150,12 +150,13 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit.html#acdb9e12bef013e48d11020ef1813c9d1">m_enemyUnits</a>) </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        aimWeapon(*<a class="code hl_variable" href="class_unit.html#acdb9e12bef013e48d11020ef1813c9d1">m_enemyUnits</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4">aimWeapon</a>(*<a class="code hl_variable" href="class_unit.html#acdb9e12bef013e48d11020ef1813c9d1">m_enemyUnits</a>);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> Buggy::setupBuggy()</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_buggy.html#ad59fb07eb85ead43eaea25c1dc9add50">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_buggy.html#ad59fb07eb85ead43eaea25c1dc9add50">Buggy::setupBuggy</a>()</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_unit.html#adbfcfd4b305a4ed9bafd5dc8430b45a3">m_unitTexture</a>.loadFromFile(<span class="stringliteral">&quot;Assets\\Images\\Units\\buggy.png&quot;</span>))</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
@@ -175,8 +176,10 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setOrigin(<a class="code hl_variable" href="class_unit.html#a19c5eee06150c3d810d98ab918e61c88">m_weaponTexture</a>.getSize().x / 2, <a class="code hl_variable" href="class_unit.html#a19c5eee06150c3d810d98ab918e61c88">m_weaponTexture</a>.getSize().y / 2);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setScale(0.1, 0.1);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> Buggy::movement(sf::Time t_deltaTime)</div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b">Buggy::movement</a>(sf::Time t_deltaTime)</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_unit.html#a7101070923fae272f484c94e6455312f">distance</a> = <a class="code hl_function" href="class_unit.html#a90612b354704a618a5647ec4742b427b">magnitude</a>(<a class="code hl_variable" href="class_unit.html#a1f49ad61bd0bd9387118f91403fdd131">m_targetPosition</a> - <a class="code hl_variable" href="class_unit.html#ab164c16d57455e049dcc135764ba04a8">m_position</a>);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_unit.html#a7101070923fae272f484c94e6455312f">distance</a> &lt; <a class="code hl_variable" href="class_unit.html#a9e915880914d55051f833c2754127825">m_arrivalTolerance</a>)</div>
@@ -212,8 +215,10 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// Orient the sprite towards the direction of movement</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_function" href="class_unit.html#a9262163e015dca7a29a114798b7ede32">orientSpriteToMovement</a>(t_deltaTime);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> Buggy::aimWeapon(<span class="keyword">const</span> std::vector&lt;Unit*&gt;&amp; m_enemyUnits)</div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4">Buggy::aimWeapon</a>(<span class="keyword">const</span> std::vector&lt;Unit*&gt;&amp; m_enemyUnits)</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit.html#acdb9e12bef013e48d11020ef1813c9d1">m_enemyUnits</a>.empty())</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    {</div>
@@ -253,24 +258,26 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_variable" href="class_unit.html#a58dabe8ca107051cae574489c5ebab87">m_directionToEnemy</a> = <a class="code hl_function" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f">normalize</a>(<a class="code hl_variable" href="class_unit.html#ac5d703e440ca13ebbde10c4edbaa0993">m_closestEnemy</a>-&gt;<a class="code hl_function" href="class_unit.html#aa33e6fe8098210a9aeac019345f8a235">getPosition</a>() - <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">this</a>-&gt;getPosition());</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">angleDegrees</a> = <a class="code hl_function" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009">angleFromVector</a>(<a class="code hl_variable" href="class_unit.html#a58dabe8ca107051cae574489c5ebab87">m_directionToEnemy</a>);</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setRotation(<a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">angleDegrees</a> + 90);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        shootAtEnemy();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_function" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b">shootAtEnemy</a>();</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit.html#aa2422ec78ae9eecdf8e5f48e5f779a67">m_closestBuilding</a> &amp;&amp; <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">m_closestBuildingDistance &lt;= this-&gt;</a><a class="code hl_function" href="class_unit.html#aeb9649177dd580377a03cbf4fa7f9056">getViewRadius</a>() - 50)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    {</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_variable" href="class_unit.html#a58dabe8ca107051cae574489c5ebab87">m_directionToEnemy</a> = <a class="code hl_function" href="class_unit.html#a829181674d469a36b7e0a6a975d9f66f">normalize</a>(<a class="code hl_variable" href="class_unit.html#aa2422ec78ae9eecdf8e5f48e5f779a67">m_closestBuilding</a>-&gt;<a class="code hl_function" href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df">getPosition</a>() - <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">this</a>-&gt;getPosition());</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">angleDegrees</a> = <a class="code hl_function" href="class_unit.html#ac7ff4a883b0326f9b1aaf1d27cac1009">angleFromVector</a>(<a class="code hl_variable" href="class_unit.html#a58dabe8ca107051cae574489c5ebab87">m_directionToEnemy</a>);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setRotation(<a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">angleDegrees</a> + 90);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        shootAtEnemy();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_function" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b">shootAtEnemy</a>();</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.setRotation(<a class="code hl_variable" href="class_unit.html#ad71f1c3eddf2505597ca1292170afacb">m_unitSprite</a>.getRotation());</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keywordtype">void</span> Buggy::shootAtEnemy()</div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b">  177</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b">Buggy::shootAtEnemy</a>()</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>{</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_unit.html#a61e8ee3346479fcec34afde9d8b15836">isReloading</a> &amp;&amp; m_fireTimer &lt;= 0.0f) </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_unit.html#a61e8ee3346479fcec34afde9d8b15836">isReloading</a> &amp;&amp; <a class="code hl_variable" href="class_buggy.html#a4d2306f46fbf9f675417d29c79345dca">m_fireTimer</a> &lt;= 0.0f) </div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="comment">// create a random spray between -2.5 to 2.5 degrees</span></div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">sprayAngle</a> = (std::rand() % 6 - 2.5) * (3.14159265 / 180);</div>
@@ -285,22 +292,33 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        sf::Vector2f <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bulletStartPosition</a> = <a class="code hl_variable" href="class_unit.html#a3ae23f50fe7abcd86ef677f99158ae02">m_weaponSprite</a>.getPosition();</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <a class="code hl_variable" href="class_unit.html#a6d8372bde352a5c06a27f7d285ae1e1c">m_bullets</a>.emplace_back(<a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">bulletStartPosition</a>, <a class="code hl_variable" href="class_unit.html#acd26d74df16d66f42c4f2752b58ef88c">sprayedDirection</a>, <a class="code hl_variable" href="class_unit.html#a477a61ed668a849b71539ae279eb2228">m_bulletSpeed</a>);</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        m_shotsFired++;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        m_fireTimer = m_fireRate;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_variable" href="class_buggy.html#a007612bf45813c55ebd6ccf90a700c39">m_shotsFired</a>++;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_variable" href="class_buggy.html#a4d2306f46fbf9f675417d29c79345dca">m_fireTimer</a> = <a class="code hl_variable" href="class_buggy.html#a0b296c7ff4b6012a6bfacd4f80275a28">m_fireRate</a>;</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_function" href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae">SoundManager::getInstance</a>().<a class="code hl_function" href="class_sound_manager.html#a92e1d1ffad59deceff7e77e4bd032351">playSound</a>(<span class="stringliteral">&quot;Laser1&quot;</span>);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">if</span> (m_shotsFired &gt;= m_clip)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_buggy.html#a007612bf45813c55ebd6ccf90a700c39">m_shotsFired</a> &gt;= <a class="code hl_variable" href="class_buggy.html#aecda1b511f27d58507a9310d31902dde">m_clip</a>)</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        {</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <a class="code hl_variable" href="class_unit.html#a61e8ee3346479fcec34afde9d8b15836">isReloading</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            m_shotsFired = 0;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            m_reloadTimer = m_reloadTime;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <a class="code hl_variable" href="class_buggy.html#a007612bf45813c55ebd6ccf90a700c39">m_shotsFired</a> = 0;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <a class="code hl_variable" href="class_buggy.html#a92682aa62ccab18a91f692717f9705f5">m_reloadTimer</a> = <a class="code hl_variable" href="class_buggy.html#a091de9f541096266e5759fd0cd63c46c">m_reloadTime</a>;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+</div>
 <div class="ttc" id="a_buggy_8h_html"><div class="ttname"><a href="_buggy_8h.html">Buggy.h</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a007612bf45813c55ebd6ccf90a700c39"><div class="ttname"><a href="class_buggy.html#a007612bf45813c55ebd6ccf90a700c39">Buggy::m_shotsFired</a></div><div class="ttdeci">int m_shotsFired</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00023">Buggy.h:23</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a091de9f541096266e5759fd0cd63c46c"><div class="ttname"><a href="class_buggy.html#a091de9f541096266e5759fd0cd63c46c">Buggy::m_reloadTime</a></div><div class="ttdeci">float m_reloadTime</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00025">Buggy.h:25</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a0b296c7ff4b6012a6bfacd4f80275a28"><div class="ttname"><a href="class_buggy.html#a0b296c7ff4b6012a6bfacd4f80275a28">Buggy::m_fireRate</a></div><div class="ttdeci">float m_fireRate</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00027">Buggy.h:27</a></div></div>
 <div class="ttc" id="aclass_buggy_html_a14e9377226ef591039712bc6f0cfa061"><div class="ttname"><a href="class_buggy.html#a14e9377226ef591039712bc6f0cfa061">Buggy::update</a></div><div class="ttdeci">void update(sf::Time t_deltaTime, std::vector&lt; Unit * &gt; &amp;m_allyUnits) override</div><div class="ttdef"><b>Definition</b> <a href="#l00022">Buggy.cpp:22</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a4d2306f46fbf9f675417d29c79345dca"><div class="ttname"><a href="class_buggy.html#a4d2306f46fbf9f675417d29c79345dca">Buggy::m_fireTimer</a></div><div class="ttdeci">float m_fireTimer</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00028">Buggy.h:28</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a85aa75b1681264a3389346cfd4fcfa0b"><div class="ttname"><a href="class_buggy.html#a85aa75b1681264a3389346cfd4fcfa0b">Buggy::shootAtEnemy</a></div><div class="ttdeci">void shootAtEnemy()</div><div class="ttdoc">shoots the bullet</div><div class="ttdef"><b>Definition</b> <a href="#l00177">Buggy.cpp:177</a></div></div>
 <div class="ttc" id="aclass_buggy_html_a8e5f35948fc3111929fb1de860aae868"><div class="ttname"><a href="class_buggy.html#a8e5f35948fc3111929fb1de860aae868">Buggy::~Buggy</a></div><div class="ttdeci">~Buggy()</div><div class="ttdef"><b>Definition</b> <a href="#l00018">Buggy.cpp:18</a></div></div>
+<div class="ttc" id="aclass_buggy_html_a92682aa62ccab18a91f692717f9705f5"><div class="ttname"><a href="class_buggy.html#a92682aa62ccab18a91f692717f9705f5">Buggy::m_reloadTimer</a></div><div class="ttdeci">float m_reloadTimer</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00026">Buggy.h:26</a></div></div>
+<div class="ttc" id="aclass_buggy_html_aa66a23404f5ac841651c4618e6dfe8b4"><div class="ttname"><a href="class_buggy.html#aa66a23404f5ac841651c4618e6dfe8b4">Buggy::aimWeapon</a></div><div class="ttdeci">void aimWeapon(const std::vector&lt; Unit * &gt; &amp;m_enemyUnits)</div><div class="ttdoc">Aims the weapon towards enemy.</div><div class="ttdef"><b>Definition</b> <a href="#l00119">Buggy.cpp:119</a></div></div>
+<div class="ttc" id="aclass_buggy_html_ad59fb07eb85ead43eaea25c1dc9add50"><div class="ttname"><a href="class_buggy.html#ad59fb07eb85ead43eaea25c1dc9add50">Buggy::setupBuggy</a></div><div class="ttdeci">void setupBuggy()</div><div class="ttdoc">Initializes buggy unit.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Buggy.cpp:53</a></div></div>
 <div class="ttc" id="aclass_buggy_html_ae2101e9bcfab75ec4faa2cb2a8000bdb"><div class="ttname"><a href="class_buggy.html#ae2101e9bcfab75ec4faa2cb2a8000bdb">Buggy::Buggy</a></div><div class="ttdeci">Buggy()</div><div class="ttdef"><b>Definition</b> <a href="#l00003">Buggy.cpp:3</a></div></div>
+<div class="ttc" id="aclass_buggy_html_ae2adb67675ce96a31ee4a0a35f71946b"><div class="ttname"><a href="class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b">Buggy::movement</a></div><div class="ttdeci">void movement(sf::Time t_deltaTime)</div><div class="ttdoc">movement for this unit</div><div class="ttdef"><b>Definition</b> <a href="#l00078">Buggy.cpp:78</a></div></div>
+<div class="ttc" id="aclass_buggy_html_aecda1b511f27d58507a9310d31902dde"><div class="ttname"><a href="class_buggy.html#aecda1b511f27d58507a9310d31902dde">Buggy::m_clip</a></div><div class="ttdeci">int m_clip</div><div class="ttdef"><b>Definition</b> <a href="_buggy_8h_source.html#l00024">Buggy.h:24</a></div></div>
 <div class="ttc" id="aclass_building_html"><div class="ttname"><a href="class_building.html">Building</a></div><div class="ttdef"><b>Definition</b> <a href="_building_8h_source.html#l00008">Building.h:9</a></div></div>
 <div class="ttc" id="aclass_building_html_a8cc6ca1bae44a7414a8385b2a54ea3df"><div class="ttname"><a href="class_building.html#a8cc6ca1bae44a7414a8385b2a54ea3df">Building::getPosition</a></div><div class="ttdeci">sf::Vector2f getPosition()</div><div class="ttdef"><b>Definition</b> <a href="_building_8cpp_source.html#l00072">Building.cpp:72</a></div></div>
 <div class="ttc" id="aclass_sound_manager_html_a45d4742f2cc9a5caf0fab51cd05919ae"><div class="ttname"><a href="class_sound_manager.html#a45d4742f2cc9a5caf0fab51cd05919ae">SoundManager::getInstance</a></div><div class="ttdeci">static SoundManager &amp; getInstance()</div><div class="ttdef"><b>Definition</b> <a href="_sound_manager_8h_source.html#l00010">SoundManager.h:10</a></div></div>
@@ -347,7 +365,7 @@ $(function(){initNavTree('_buggy_8cpp_source.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_33717ad4dff91f638445dba7568e7039.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_buggy_8cpp.html">Buggy.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_885cc87fac2d91e269af0a5a959fa5f6.html">E:</a></li><li class="navelem"><a class="el" href="dir_2cd24535ff6ed7a32c82ca94efcc6676.html">Program Files E</a></li><li class="navelem"><a class="el" href="dir_8133eb955d7181d927d4f19e94bdcaeb.html">Year 4</a></li><li class="navelem"><a class="el" href="dir_a4f2779e29224cb0f9f4eca3b25d67e7.html">Project</a></li><li class="navelem"><a class="el" href="dir_217157b70a1fef1b681d630434b82690.html">Project_2023-24</a></li><li class="navelem"><a class="el" href="dir_a75a1f3404be674e32d34e7eb4eac1dc.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="dir_6189a53f1b132c13fcae49b93e82a108.html">AI Behaviors</a></li><li class="navelem"><a class="el" href="_buggy_8cpp.html">Buggy.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -93,20 +93,23 @@ $(function(){initNavTree('class_bullet.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_bullet-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Bullet Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_bullet_8h_source.html">Bullet.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for Bullet:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_bullet__coll__graph.svg" width="595" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bullet_1_1_trail_part.html">TrailPart</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2168d6be98781a6bee3f6d0317064144" id="r_a2168d6be98781a6bee3f6d0317064144"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2168d6be98781a6bee3f6d0317064144">Bullet</a> (const sf::Vector2f &amp;m_startPosition, const sf::Vector2f &amp;m_targetDirection, float m_speed)</td></tr>
@@ -124,6 +127,26 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a68d311a87ea5a50966fbfa6ace4cbb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab21ea0edf0bd34fc1eae2945b5a7223c" id="r_ab21ea0edf0bd34fc1eae2945b5a7223c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab21ea0edf0bd34fc1eae2945b5a7223c">m_active</a> = true</td></tr>
 <tr class="separator:ab21ea0edf0bd34fc1eae2945b5a7223c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aaa2b76eb249f2350ad11efc3ced06845" id="r_aaa2b76eb249f2350ad11efc3ced06845"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa2b76eb249f2350ad11efc3ced06845">normalize</a> (const sf::Vector2f &amp;m_source)</td></tr>
+<tr class="separator:aaa2b76eb249f2350ad11efc3ced06845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8d45e22de1c6ee3e729aa968ed2c7963" id="r_a8d45e22de1c6ee3e729aa968ed2c7963"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="struct_bullet_1_1_trail_part.html">TrailPart</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d45e22de1c6ee3e729aa968ed2c7963">m_trail</a></td></tr>
+<tr class="separator:a8d45e22de1c6ee3e729aa968ed2c7963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff781b721a87eba76e76f51c808a405" id="r_a5ff781b721a87eba76e76f51c808a405"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff781b721a87eba76e76f51c808a405">m_velocity</a></td></tr>
+<tr class="separator:a5ff781b721a87eba76e76f51c808a405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a92fe3123f4c7b1b175eadcaf33f17" id="r_a35a92fe3123f4c7b1b175eadcaf33f17"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35a92fe3123f4c7b1b175eadcaf33f17">m_lifetime</a> = 1.0f</td></tr>
+<tr class="separator:a35a92fe3123f4c7b1b175eadcaf33f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1206ca5013fe8c054aa97e551857550b" id="r_a1206ca5013fe8c054aa97e551857550b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1206ca5013fe8c054aa97e551857550b">m_trailMaxLifetime</a> = 0.3f</td></tr>
+<tr class="separator:a1206ca5013fe8c054aa97e551857550b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9feefdf2acadc0067620c05ac9ceb214" id="r_a9feefdf2acadc0067620c05ac9ceb214"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9feefdf2acadc0067620c05ac9ceb214">m_timeSinceLastTrailPart</a> = 0.0f</td></tr>
+<tr class="separator:a9feefdf2acadc0067620c05ac9ceb214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ab02666d7fe828d679d31040545d6a" id="r_a74ab02666d7fe828d679d31040545d6a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ab02666d7fe828d679d31040545d6a">m_addTrailPartInterval</a> = 0.03f</td></tr>
+<tr class="separator:a74ab02666d7fe828d679d31040545d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -154,10 +177,57 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_bullet_8cpp_source.html#l00003">3</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_bullet_a2168d6be98781a6bee3f6d0317064144_cgraph.png" border="0" usemap="#aclass_bullet_a2168d6be98781a6bee3f6d0317064144_cgraph" alt=""/></div>
+<map name="aclass_bullet_a2168d6be98781a6bee3f6d0317064144_cgraph" id="aclass_bullet_a2168d6be98781a6bee3f6d0317064144_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,101,32"/>
+<area shape="rect" href="class_bullet.html#aaa2b76eb249f2350ad11efc3ced06845" title=" " alt="" coords="149,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
+</map>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaa2b76eb249f2350ad11efc3ced06845" name="aaa2b76eb249f2350ad11efc3ced06845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2b76eb249f2350ad11efc3ced06845">&#9670;&#160;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f Bullet::normalize </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;</td>          <td class="paramname"><span class="paramname"><em>m_source</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8cpp_source.html#l00053">53</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_bullet_aaa2b76eb249f2350ad11efc3ced06845_icgraph.png" border="0" usemap="#aclass_bullet_aaa2b76eb249f2350ad11efc3ced06845_icgraph" alt=""/></div>
+<map name="aclass_bullet_aaa2b76eb249f2350ad11efc3ced06845_icgraph" id="aclass_bullet_aaa2b76eb249f2350ad11efc3ced06845_icgraph">
+<area shape="rect" title=" " alt="" coords="149,5,267,32"/>
+<area shape="rect" href="class_bullet.html#a2168d6be98781a6bee3f6d0317064144" title=" " alt="" coords="5,5,101,32"/>
+<area shape="poly" title=" " alt="" coords="133,21,101,21,101,16,133,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a811074fd46bf95b7a7e75a75ac5df188" name="a811074fd46bf95b7a7e75a75ac5df188"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a811074fd46bf95b7a7e75a75ac5df188">&#9670;&#160;</a></span>render()</h2>
 
@@ -217,6 +287,30 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a74ab02666d7fe828d679d31040545d6a" name="a74ab02666d7fe828d679d31040545d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ab02666d7fe828d679d31040545d6a">&#9670;&#160;</a></span>m_addTrailPartInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Bullet::m_addTrailPartInterval = 0.03f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00037">37</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
 <a id="a2826b566024cc17fe2fbb1937615c4c7" name="a2826b566024cc17fe2fbb1937615c4c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2826b566024cc17fe2fbb1937615c4c7">&#9670;&#160;</a></span>m_bulletShape</h2>
 
@@ -230,6 +324,30 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00014">14</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
+<a id="a35a92fe3123f4c7b1b175eadcaf33f17" name="a35a92fe3123f4c7b1b175eadcaf33f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a92fe3123f4c7b1b175eadcaf33f17">&#9670;&#160;</a></span>m_lifetime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Bullet::m_lifetime = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00034">34</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
 
 </div>
 </div>
@@ -249,9 +367,105 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9feefdf2acadc0067620c05ac9ceb214" name="a9feefdf2acadc0067620c05ac9ceb214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9feefdf2acadc0067620c05ac9ceb214">&#9670;&#160;</a></span>m_timeSinceLastTrailPart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Bullet::m_timeSinceLastTrailPart = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00036">36</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d45e22de1c6ee3e729aa968ed2c7963" name="a8d45e22de1c6ee3e729aa968ed2c7963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d45e22de1c6ee3e729aa968ed2c7963">&#9670;&#160;</a></span>m_trail</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="struct_bullet_1_1_trail_part.html">TrailPart</a>&gt; Bullet::m_trail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00030">30</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
+<a id="a1206ca5013fe8c054aa97e551857550b" name="a1206ca5013fe8c054aa97e551857550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1206ca5013fe8c054aa97e551857550b">&#9670;&#160;</a></span>m_trailMaxLifetime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Bullet::m_trailMaxLifetime = 0.3f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00035">35</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ff781b721a87eba76e76f51c808a405" name="a5ff781b721a87eba76e76f51c808a405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff781b721a87eba76e76f51c808a405">&#9670;&#160;</a></span>m_velocity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f Bullet::m_velocity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_bullet_8h_source.html#l00032">32</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_bullet_8h_source.html">Bullet.h</a></li>
-<li>AI Behaviors/<a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_bullet_8h_source.html">Bullet.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,17 @@
 <map id="Unit::orientSpriteToMovement" name="Unit::orientSpriteToMovement">
-<area shape="rect" id="Node000001" title="it just orientates the sprite a bit" alt="" coords="201,5,392,32"/>
-<area shape="rect" id="Node000002" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="5,5,153,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+<area shape="rect" id="Node000001" title="it just orientates the sprite a bit" alt="" coords="432,81,623,108"/>
+<area shape="rect" id="Node000002" href="$class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b" title="movement for this unit" alt="" coords="234,5,359,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="474,78,383,47,346,35,348,30,385,41,476,73"/>
+<area shape="rect" id="Node000004" href="$class_rifleman_squad.html#aec9e4f9f68a5fad7659d6049b4e39f33" title="This units movement." alt="" coords="209,56,384,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="416,85,384,82,385,76,417,80"/>
+<area shape="rect" id="Node000006" href="$class_tank_aurora.html#a15dfe8060d32688eb525146954e1cbfb" title="Makes this unit move." alt="" coords="219,107,374,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="417,109,374,114,374,109,416,104"/>
+<area shape="rect" id="Node000008" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="223,157,370,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="476,116,385,148,348,159,346,154,383,143,474,111"/>
+<area shape="rect" id="Node000003" href="$class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="30,5,136,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,21,136,21,136,16,218,16"/>
+<area shape="rect" id="Node000005" href="$class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="5,56,161,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,72,161,72,161,67,193,67"/>
+<area shape="rect" id="Node000007" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="16,107,150,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="204,123,151,123,151,117,204,117"/>
 </map>

@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -95,17 +95,15 @@ $(function(){initNavTree('class_level_editor.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_level_editor-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LevelEditor Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for LevelEditor:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_level_editor__coll__graph.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -157,6 +155,127 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a453a26f399470a0fc0c20e7bf19e7d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0159c134c50f060cc23f78036a2615" id="r_abc0159c134c50f060cc23f78036a2615"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc0159c134c50f060cc23f78036a2615">m_numCols</a> = 50</td></tr>
 <tr class="separator:abc0159c134c50f060cc23f78036a2615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a41cbfc818ddec9659e204d98bd731812" id="r_a41cbfc818ddec9659e204d98bd731812"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41cbfc818ddec9659e204d98bd731812">initGrid</a> ()</td></tr>
+<tr class="memdesc:a41cbfc818ddec9659e204d98bd731812"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the grid m_tiles  <br /></td></tr>
+<tr class="separator:a41cbfc818ddec9659e204d98bd731812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d5ca755f0a13efe9c2ed5dd6cdda50" id="r_af0d5ca755f0a13efe9c2ed5dd6cdda50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0d5ca755f0a13efe9c2ed5dd6cdda50">randomGenerateLevel</a> ()</td></tr>
+<tr class="memdesc:af0d5ca755f0a13efe9c2ed5dd6cdda50"><td class="mdescLeft">&#160;</td><td class="mdescRight">to randomise the map  <br /></td></tr>
+<tr class="separator:af0d5ca755f0a13efe9c2ed5dd6cdda50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a24316253fb3bc52e5b7cf30ab7ccb4" id="r_a2a24316253fb3bc52e5b7cf30ab7ccb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a24316253fb3bc52e5b7cf30ab7ccb4">initBar</a> ()</td></tr>
+<tr class="memdesc:a2a24316253fb3bc52e5b7cf30ab7ccb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the UI bar  <br /></td></tr>
+<tr class="separator:a2a24316253fb3bc52e5b7cf30ab7ccb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402203d6bc51c4c093c640ef3aa3f847" id="r_a402203d6bc51c4c093c640ef3aa3f847"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a402203d6bc51c4c093c640ef3aa3f847">initbuttonsForToolEditor</a> ()</td></tr>
+<tr class="memdesc:a402203d6bc51c4c093c640ef3aa3f847"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the tool editor  <br /></td></tr>
+<tr class="separator:a402203d6bc51c4c093c640ef3aa3f847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc22938f0ff0d43f50cff4a22ad9cd0" id="r_a9cc22938f0ff0d43f50cff4a22ad9cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cc22938f0ff0d43f50cff4a22ad9cd0">initButtonsForToolSet</a> ()</td></tr>
+<tr class="memdesc:a9cc22938f0ff0d43f50cff4a22ad9cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the buttons for the UI  <br /></td></tr>
+<tr class="separator:a9cc22938f0ff0d43f50cff4a22ad9cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7a873bfacdf71daae80f742989ce36" id="r_a3c7a873bfacdf71daae80f742989ce36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c7a873bfacdf71daae80f742989ce36">initBackButton</a> ()</td></tr>
+<tr class="memdesc:a3c7a873bfacdf71daae80f742989ce36"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the back button  <br /></td></tr>
+<tr class="separator:a3c7a873bfacdf71daae80f742989ce36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818107a288e6e742c83cf456e93ffb41" id="r_a818107a288e6e742c83cf456e93ffb41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818107a288e6e742c83cf456e93ffb41">initDragRectangle</a> ()</td></tr>
+<tr class="memdesc:a818107a288e6e742c83cf456e93ffb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the dragRectangle shape  <br /></td></tr>
+<tr class="separator:a818107a288e6e742c83cf456e93ffb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c0e1472ea2675e655dc581b0a52551" id="r_ac4c0e1472ea2675e655dc581b0a52551"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4c0e1472ea2675e655dc581b0a52551">handleTileButtons</a> (sf::Vector2f m_guiMousePosition, sf::Vector2f m_worldMousePosition, sf::Sprite <a class="el" href="#ad3a1a28ad10d0ef179860d701c99dabf">m_buttons</a>[], int &amp;m_lastClickedIndex, int &amp;m_selectedIndex)</td></tr>
+<tr class="memdesc:ac4c0e1472ea2675e655dc581b0a52551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the selection of button presses for the bottom UI.  <br /></td></tr>
+<tr class="separator:ac4c0e1472ea2675e655dc581b0a52551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cbf161dd69bcd7ba3b40406cd5f2b65" id="r_a1cbf161dd69bcd7ba3b40406cd5f2b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbf161dd69bcd7ba3b40406cd5f2b65">handleTilePlacement</a> (sf::Vector2f m_worldMousePosition, int m_selectedIndex)</td></tr>
+<tr class="memdesc:a1cbf161dd69bcd7ba3b40406cd5f2b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">handles the placement for the tiles  <br /></td></tr>
+<tr class="separator:a1cbf161dd69bcd7ba3b40406cd5f2b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754e4fae529e8da045512acb5fb561c0" id="r_a754e4fae529e8da045512acb5fb561c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a754e4fae529e8da045512acb5fb561c0">placeTilesInDragRectangle</a> ()</td></tr>
+<tr class="memdesc:a754e4fae529e8da045512acb5fb561c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds all the texture inside the dragRectangle shape.  <br /></td></tr>
+<tr class="separator:a754e4fae529e8da045512acb5fb561c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a37285179793c1fa6cd10af4a123672c7" id="r_a37285179793c1fa6cd10af4a123672c7"><td class="memItemLeft" align="right" valign="top">sf::View&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37285179793c1fa6cd10af4a123672c7">m_levelEditorView</a></td></tr>
+<tr class="separator:a37285179793c1fa6cd10af4a123672c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3982066b345a27ca026d142f1ee59464" id="r_a3982066b345a27ca026d142f1ee59464"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3982066b345a27ca026d142f1ee59464">m_selectedButtonIndex</a> = -1</td></tr>
+<tr class="separator:a3982066b345a27ca026d142f1ee59464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b3bd14d50a7a407d98e5c7bff67606" id="r_a90b3bd14d50a7a407d98e5c7bff67606"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90b3bd14d50a7a407d98e5c7bff67606">m_lastClickedButtonIndex</a> = -1</td></tr>
+<tr class="separator:a90b3bd14d50a7a407d98e5c7bff67606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5808c8e2aface2e269eb44b2e58648db" id="r_a5808c8e2aface2e269eb44b2e58648db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5808c8e2aface2e269eb44b2e58648db">m_selectedTileX</a></td></tr>
+<tr class="separator:a5808c8e2aface2e269eb44b2e58648db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2167eab4cc2cf52b90a5b7ddbc625011" id="r_a2167eab4cc2cf52b90a5b7ddbc625011"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2167eab4cc2cf52b90a5b7ddbc625011">m_selectedTileY</a></td></tr>
+<tr class="separator:a2167eab4cc2cf52b90a5b7ddbc625011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c13f312bc0f3148990bc5463322174" id="r_ab5c13f312bc0f3148990bc5463322174"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5c13f312bc0f3148990bc5463322174">m_offset</a> = 25.0f</td></tr>
+<tr class="separator:ab5c13f312bc0f3148990bc5463322174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade5a96a3ed8ad102e1bb44032ce2d657" id="r_ade5a96a3ed8ad102e1bb44032ce2d657"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade5a96a3ed8ad102e1bb44032ce2d657">m_isTileSelected</a> = false</td></tr>
+<tr class="separator:ade5a96a3ed8ad102e1bb44032ce2d657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2576b5aa813b23e16f0cf81016327ed" id="r_ab2576b5aa813b23e16f0cf81016327ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2576b5aa813b23e16f0cf81016327ed">m_isButtonClicked</a> = false</td></tr>
+<tr class="separator:ab2576b5aa813b23e16f0cf81016327ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1281d2bb2b9bf7c5fa9d91a154bd317c" id="r_a1281d2bb2b9bf7c5fa9d91a154bd317c"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1281d2bb2b9bf7c5fa9d91a154bd317c">m_newMousePos</a></td></tr>
+<tr class="separator:a1281d2bb2b9bf7c5fa9d91a154bd317c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf9e5606d7546c5ea4d5c69baf0657e" id="r_aecf9e5606d7546c5ea4d5c69baf0657e"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecf9e5606d7546c5ea4d5c69baf0657e">m_startMousePos</a></td></tr>
+<tr class="separator:aecf9e5606d7546c5ea4d5c69baf0657e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae330dfb4a66587b831a8878e99a4ba90" id="r_ae330dfb4a66587b831a8878e99a4ba90"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae330dfb4a66587b831a8878e99a4ba90">m_backgroundForTilesTools</a></td></tr>
+<tr class="separator:ae330dfb4a66587b831a8878e99a4ba90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d17b896a412396c9826510a7edf549" id="r_a64d17b896a412396c9826510a7edf549"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64d17b896a412396c9826510a7edf549">m_toGoBackButton</a></td></tr>
+<tr class="separator:a64d17b896a412396c9826510a7edf549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274a8fa0ed93cdf9e125357b56191984" id="r_a274a8fa0ed93cdf9e125357b56191984"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274a8fa0ed93cdf9e125357b56191984">m_backgroundForBTF</a> [4]</td></tr>
+<tr class="separator:a274a8fa0ed93cdf9e125357b56191984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e2d116469a6f3df0f18f92fa322144" id="r_a05e2d116469a6f3df0f18f92fa322144"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e2d116469a6f3df0f18f92fa322144">m_dragRectangle</a></td></tr>
+<tr class="separator:a05e2d116469a6f3df0f18f92fa322144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a1a28ad10d0ef179860d701c99dabf" id="r_ad3a1a28ad10d0ef179860d701c99dabf"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3a1a28ad10d0ef179860d701c99dabf">m_buttons</a> [<a class="el" href="#ac37421833184d77bf267f966b42eff2d">m_numButtons</a>]</td></tr>
+<tr class="separator:ad3a1a28ad10d0ef179860d701c99dabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5089e21b53c88af04f9e1390bce76557" id="r_a5089e21b53c88af04f9e1390bce76557"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5089e21b53c88af04f9e1390bce76557">m_font</a></td></tr>
+<tr class="separator:a5089e21b53c88af04f9e1390bce76557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca8d33e1106aff9d9119297daff76e4" id="r_a4ca8d33e1106aff9d9119297daff76e4"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ca8d33e1106aff9d9119297daff76e4">m_toGoBackText</a></td></tr>
+<tr class="separator:a4ca8d33e1106aff9d9119297daff76e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30602f7d740cddeb595b645aee491ee" id="r_aa30602f7d740cddeb595b645aee491ee"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa30602f7d740cddeb595b645aee491ee">m_walkableText</a></td></tr>
+<tr class="separator:aa30602f7d740cddeb595b645aee491ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319e99575ad1bde444d6014cf466d44f" id="r_a319e99575ad1bde444d6014cf466d44f"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a319e99575ad1bde444d6014cf466d44f">m_WallText</a></td></tr>
+<tr class="separator:a319e99575ad1bde444d6014cf466d44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74159781418598a4997c83397f49efbd" id="r_a74159781418598a4997c83397f49efbd"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74159781418598a4997c83397f49efbd">m_ResourceText</a></td></tr>
+<tr class="separator:a74159781418598a4997c83397f49efbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a17b3b530d71d546d9ea46086e0617" id="r_a38a17b3b530d71d546d9ea46086e0617"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a17b3b530d71d546d9ea46086e0617">m_MiscText</a></td></tr>
+<tr class="separator:a38a17b3b530d71d546d9ea46086e0617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062089f81afa20931d8cee5a659ee5f2" id="r_a062089f81afa20931d8cee5a659ee5f2"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a062089f81afa20931d8cee5a659ee5f2">m_underWaterTexture</a></td></tr>
+<tr class="separator:a062089f81afa20931d8cee5a659ee5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfb2406587c63752946035e532ebbb2" id="r_abdfb2406587c63752946035e532ebbb2"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdfb2406587c63752946035e532ebbb2">m_buttonTexture</a></td></tr>
+<tr class="separator:abdfb2406587c63752946035e532ebbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8bae31638e17b511df20f0132e1ba1" id="r_a5b8bae31638e17b511df20f0132e1ba1"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b8bae31638e17b511df20f0132e1ba1">m_buttonTexture1</a></td></tr>
+<tr class="separator:a5b8bae31638e17b511df20f0132e1ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0403b51d2703cce90e4f85971367433a" id="r_a0403b51d2703cce90e4f85971367433a"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0403b51d2703cce90e4f85971367433a">m_buttonAreaForWalkable</a> [4]</td></tr>
+<tr class="separator:a0403b51d2703cce90e4f85971367433a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a458fad0627b34e47befe9a2959506a81" id="r_a458fad0627b34e47befe9a2959506a81"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a458fad0627b34e47befe9a2959506a81">m_buttonAreaForWalls</a> [5]</td></tr>
+<tr class="separator:a458fad0627b34e47befe9a2959506a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec02fb8b067d411a83ab2e242c068af" id="r_adec02fb8b067d411a83ab2e242c068af"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec02fb8b067d411a83ab2e242c068af">m_buttonAreaForResources</a> = { 971, 1798, 16, 16 }</td></tr>
+<tr class="separator:adec02fb8b067d411a83ab2e242c068af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ebed9c51da047f6974c3009653e94e" id="r_a54ebed9c51da047f6974c3009653e94e"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ebed9c51da047f6974c3009653e94e">m_buttonAreaForMiscs</a> [2]</td></tr>
+<tr class="separator:a54ebed9c51da047f6974c3009653e94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d82a5e38031cf92152a1b6c32074915" id="r_a8d82a5e38031cf92152a1b6c32074915"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d82a5e38031cf92152a1b6c32074915">m_numTileFrames</a> = 4</td></tr>
+<tr class="separator:a8d82a5e38031cf92152a1b6c32074915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2741ae6160ca40ed532cf405c72a6a4" id="r_ae2741ae6160ca40ed532cf405c72a6a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2741ae6160ca40ed532cf405c72a6a4">m_currentResourceTileAnimationFrame</a> = 0</td></tr>
+<tr class="separator:ae2741ae6160ca40ed532cf405c72a6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0392e50e00fe0c6722432e3da30dd5a1" id="r_a0392e50e00fe0c6722432e3da30dd5a1"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0392e50e00fe0c6722432e3da30dd5a1">m_tileResourceAnimationClock</a></td></tr>
+<tr class="separator:a0392e50e00fe0c6722432e3da30dd5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadef1c42c40da81086f3e9592b7d4f7" id="r_afadef1c42c40da81086f3e9592b7d4f7"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afadef1c42c40da81086f3e9592b7d4f7">m_tileResourceAnimationFrames</a> [4]</td></tr>
+<tr class="separator:afadef1c42c40da81086f3e9592b7d4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e35c60a48b8340b50a210fb26d9d1d1" id="r_a5e35c60a48b8340b50a210fb26d9d1d1"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e35c60a48b8340b50a210fb26d9d1d1">m_tileAnimationClock</a></td></tr>
+<tr class="separator:a5e35c60a48b8340b50a210fb26d9d1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc97347d1da15bad0dabb9864281eb9" id="r_abfc97347d1da15bad0dabb9864281eb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfc97347d1da15bad0dabb9864281eb9">m_currentTileWeedAnimationFrame</a> = 0</td></tr>
+<tr class="separator:abfc97347d1da15bad0dabb9864281eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05301269e2632e68513fa9bf341b8e67" id="r_a05301269e2632e68513fa9bf341b8e67"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05301269e2632e68513fa9bf341b8e67">m_tileWeedAnimationFrames</a> [4]</td></tr>
+<tr class="separator:a05301269e2632e68513fa9bf341b8e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac426fc0083cf273e090bea39a163af6b" id="r_ac426fc0083cf273e090bea39a163af6b"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac426fc0083cf273e090bea39a163af6b">m_buttonSelectedSprite</a></td></tr>
+<tr class="separator:ac426fc0083cf273e090bea39a163af6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288c30a58a61d26c22f6bcf181668785" id="r_a288c30a58a61d26c22f6bcf181668785"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a288c30a58a61d26c22f6bcf181668785">m_buttonSelectedTexture</a></td></tr>
+<tr class="separator:a288c30a58a61d26c22f6bcf181668785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0b001e78f05df6a6f852e569afaf2c" id="r_a1e0b001e78f05df6a6f852e569afaf2c"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0b001e78f05df6a6f852e569afaf2c">m_buttonSelectedAnimationClock</a></td></tr>
+<tr class="separator:a1e0b001e78f05df6a6f852e569afaf2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9e2b4b28f445e25c93e0eb2b4f83b9" id="r_afe9e2b4b28f445e25c93e0eb2b4f83b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9e2b4b28f445e25c93e0eb2b4f83b9">m_currentAnimationFrame</a> = 0</td></tr>
+<tr class="separator:afe9e2b4b28f445e25c93e0eb2b4f83b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ead590768e9c76f9ab0443004f1668c" id="r_a0ead590768e9c76f9ab0443004f1668c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ead590768e9c76f9ab0443004f1668c">m_animationSpeed</a> = 0.2f</td></tr>
+<tr class="separator:a0ead590768e9c76f9ab0443004f1668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ac37421833184d77bf267f966b42eff2d" id="r_ac37421833184d77bf267f966b42eff2d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac37421833184d77bf267f966b42eff2d">m_numButtons</a> = 12</td></tr>
+<tr class="separator:ac37421833184d77bf267f966b42eff2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -178,6 +297,26 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00003">3</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c_cgraph.png" border="0" usemap="#aclass_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c_cgraph" id="aclass_level_editor_a6810fe926bdb4d23c947b39ebfc0f84c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,115,161,141"/>
+<area shape="rect" href="class_level_editor.html#a3c7a873bfacdf71daae80f742989ce36" title="initializes the back button" alt="" coords="217,5,395,32"/>
+<area shape="poly" title=" " alt="" coords="99,112,146,77,207,42,224,35,226,40,210,46,149,81,103,116"/>
+<area shape="rect" href="class_level_editor.html#a2a24316253fb3bc52e5b7cf30ab7ccb4" title="initializes the UI bar" alt="" coords="241,56,371,83"/>
+<area shape="poly" title=" " alt="" coords="136,111,208,92,236,85,238,90,209,97,137,117"/>
+<area shape="rect" href="class_level_editor.html#a402203d6bc51c4c093c640ef3aa3f847" title="initializes the tool editor" alt="" coords="230,107,382,149"/>
+<area shape="poly" title=" " alt="" coords="161,125,214,125,214,131,161,131"/>
+<area shape="rect" href="class_level_editor.html#a818107a288e6e742c83cf456e93ffb41" title="initializes the dragRectangle shape" alt="" coords="209,173,403,200"/>
+<area shape="poly" title=" " alt="" coords="137,139,209,159,238,166,236,171,208,164,136,145"/>
+<area shape="rect" href="class_level_editor.html#a41cbfc818ddec9659e204d98bd731812" title="initializes the grid m_tiles" alt="" coords="239,224,373,251"/>
+<area shape="poly" title=" " alt="" coords="103,140,149,175,210,210,226,216,224,221,207,214,146,179,99,144"/>
+<area shape="rect" href="class_level_editor.html#a9cc22938f0ff0d43f50cff4a22ad9cd0" title="initializes the buttons for the UI" alt="" coords="451,107,605,149"/>
+<area shape="poly" title=" " alt="" coords="382,125,435,125,435,131,382,131"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -203,7 +342,19 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_acb7bd789273b991637241051ab0161b9_icgraph.svg" width="420" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_acb7bd789273b991637241051ab0161b9_icgraph.png" border="0" usemap="#aclass_level_editor_acb7bd789273b991637241051ab0161b9_icgraph" alt=""/></div>
+<map name="aclass_level_editor_acb7bd789273b991637241051ab0161b9_icgraph" id="aclass_level_editor_acb7bd789273b991637241051ab0161b9_icgraph">
+<area shape="rect" title="animates the resources tiles" alt="" coords="564,5,731,48"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,13,336,40"/>
+<area shape="poly" title=" " alt="" coords="548,29,337,29,337,24,548,24"/>
+<area shape="rect" href="class_level_editor.html#a75a95293d67fba7fcb0b547992c3ad6e" title="Updates the level editor content changes." alt="" coords="384,39,516,65"/>
+<area shape="poly" title=" " alt="" coords="549,42,517,46,516,41,548,37"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+<area shape="poly" title=" " alt="" coords="369,42,336,37,337,32,369,37"/>
+</map>
 </div>
 
 </div>
@@ -229,7 +380,19 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph.svg" width="392" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph.png" border="0" usemap="#aclass_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph" id="aclass_level_editor_a1926deb0a57ce800e6ab2e78be150f28_icgraph">
+<area shape="rect" title="Animates the weed tiles." alt="" coords="564,5,765,32"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="548,21,337,21,337,16,548,16"/>
+<area shape="rect" href="class_level_editor.html#a75a95293d67fba7fcb0b547992c3ad6e" title="Updates the level editor content changes." alt="" coords="384,31,516,57"/>
+<area shape="poly" title=" " alt="" coords="549,35,516,39,516,34,548,30"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="poly" title=" " alt="" coords="369,34,336,29,337,24,369,29"/>
+</map>
 </div>
 
 </div>
@@ -269,6 +432,32 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00149">149</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a26d8447a407783226ce313e52bb39798_cgraph.png" border="0" usemap="#aclass_level_editor_a26d8447a407783226ce313e52bb39798_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a26d8447a407783226ce313e52bb39798_cgraph" id="aclass_level_editor_a26d8447a407783226ce313e52bb39798_cgraph">
+<area shape="rect" title="handles the mouse input inside the level editor" alt="" coords="5,5,175,48"/>
+<area shape="rect" href="class_level_editor.html#ac4c0e1472ea2675e655dc581b0a52551" title="Handles the selection of button presses for the bottom UI." alt="" coords="223,13,418,40"/>
+<area shape="poly" title=" " alt="" coords="175,24,207,24,207,29,175,29"/>
+<area shape="rect" href="class_level_editor.html#a1cbf161dd69bcd7ba3b40406cd5f2b65" title="handles the placement for the tiles" alt="" coords="466,13,678,40"/>
+<area shape="poly" title=" " alt="" coords="418,24,450,24,450,29,418,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a26d8447a407783226ce313e52bb39798_icgraph.png" border="0" usemap="#aclass_level_editor_a26d8447a407783226ce313e52bb39798_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a26d8447a407783226ce313e52bb39798_icgraph" id="aclass_level_editor_a26d8447a407783226ce313e52bb39798_icgraph">
+<area shape="rect" title="handles the mouse input inside the level editor" alt="" coords="430,5,600,48"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -296,6 +485,410 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00302">302</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605_icgraph.png" border="0" usemap="#aclass_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605_icgraph" id="aclass_level_editor_a1d9a7410afc3b80d9e9dea6572fb0605_icgraph">
+<area shape="rect" title="able to rotate the first tile you place" alt="" coords="619,5,797,48"/>
+<area shape="rect" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1" title="deal with key presses from the user" alt="" coords="430,13,571,40"/>
+<area shape="poly" title=" " alt="" coords="603,29,571,29,571,24,603,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac4c0e1472ea2675e655dc581b0a52551" name="ac4c0e1472ea2675e655dc581b0a52551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c0e1472ea2675e655dc581b0a52551">&#9670;&#160;</a></span>handleTileButtons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::handleTileButtons </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f</td>          <td class="paramname"><span class="paramname"><em>m_guiMousePosition</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f</td>          <td class="paramname"><span class="paramname"><em>m_worldMousePosition</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Sprite</td>          <td class="paramname"><span class="paramname"><em>m_buttons</em>[], </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>m_lastClickedIndex</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>m_selectedIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the selection of button presses for the bottom UI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guiMousePosition</td><td></td></tr>
+    <tr><td class="paramname">worldMousePosition</td><td></td></tr>
+    <tr><td class="paramname">buttons</td><td></td></tr>
+    <tr><td class="paramname">lastClickedIndex</td><td></td></tr>
+    <tr><td class="paramname">selectedIndex</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00180">180</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_ac4c0e1472ea2675e655dc581b0a52551_cgraph.png" border="0" usemap="#aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_cgraph" alt=""/></div>
+<map name="aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_cgraph" id="aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_cgraph">
+<area shape="rect" title="Handles the selection of button presses for the bottom UI." alt="" coords="5,5,201,32"/>
+<area shape="rect" href="class_level_editor.html#a1cbf161dd69bcd7ba3b40406cd5f2b65" title="handles the placement for the tiles" alt="" coords="249,5,461,32"/>
+<area shape="poly" title=" " alt="" coords="201,16,233,16,233,21,201,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_ac4c0e1472ea2675e655dc581b0a52551_icgraph.png" border="0" usemap="#aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_icgraph" alt=""/></div>
+<map name="aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_icgraph" id="aclass_level_editor_ac4c0e1472ea2675e655dc581b0a52551_icgraph">
+<area shape="rect" title="Handles the selection of button presses for the bottom UI." alt="" coords="648,13,843,40"/>
+<area shape="rect" href="class_level_editor.html#a26d8447a407783226ce313e52bb39798" title="handles the mouse input inside the level editor" alt="" coords="430,5,600,48"/>
+<area shape="poly" title=" " alt="" coords="632,29,600,29,600,24,632,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cbf161dd69bcd7ba3b40406cd5f2b65" name="a1cbf161dd69bcd7ba3b40406cd5f2b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbf161dd69bcd7ba3b40406cd5f2b65">&#9670;&#160;</a></span>handleTilePlacement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::handleTilePlacement </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f</td>          <td class="paramname"><span class="paramname"><em>m_worldMousePosition</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>m_selectedIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>handles the placement for the tiles </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_worldMousePosition</td><td></td></tr>
+    <tr><td class="paramname">m_selectedIndex</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00211">211</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65_icgraph.png" border="0" usemap="#aclass_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65_icgraph" id="aclass_level_editor_a1cbf161dd69bcd7ba3b40406cd5f2b65_icgraph">
+<area shape="rect" title="handles the placement for the tiles" alt="" coords="891,13,1103,40"/>
+<area shape="rect" href="class_level_editor.html#ac4c0e1472ea2675e655dc581b0a52551" title="Handles the selection of button presses for the bottom UI." alt="" coords="648,13,843,40"/>
+<area shape="poly" title=" " alt="" coords="875,29,843,29,843,24,875,24"/>
+<area shape="rect" href="class_level_editor.html#a26d8447a407783226ce313e52bb39798" title="handles the mouse input inside the level editor" alt="" coords="430,5,600,48"/>
+<area shape="poly" title=" " alt="" coords="632,29,600,29,600,24,632,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c7a873bfacdf71daae80f742989ce36" name="a3c7a873bfacdf71daae80f742989ce36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c7a873bfacdf71daae80f742989ce36">&#9670;&#160;</a></span>initBackButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initBackButton </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the back button </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00542">542</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a3c7a873bfacdf71daae80f742989ce36_icgraph.png" border="0" usemap="#aclass_level_editor_a3c7a873bfacdf71daae80f742989ce36_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a3c7a873bfacdf71daae80f742989ce36_icgraph" id="aclass_level_editor_a3c7a873bfacdf71daae80f742989ce36_icgraph">
+<area shape="rect" title="initializes the back button" alt="" coords="209,5,386,32"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,5,161,32"/>
+<area shape="poly" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a24316253fb3bc52e5b7cf30ab7ccb4" name="a2a24316253fb3bc52e5b7cf30ab7ccb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a24316253fb3bc52e5b7cf30ab7ccb4">&#9670;&#160;</a></span>initBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initBar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the UI bar </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00363">363</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4_icgraph.png" border="0" usemap="#aclass_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4_icgraph" id="aclass_level_editor_a2a24316253fb3bc52e5b7cf30ab7ccb4_icgraph">
+<area shape="rect" title="initializes the UI bar" alt="" coords="209,5,338,32"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,5,161,32"/>
+<area shape="poly" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a402203d6bc51c4c093c640ef3aa3f847" name="a402203d6bc51c4c093c640ef3aa3f847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402203d6bc51c4c093c640ef3aa3f847">&#9670;&#160;</a></span>initbuttonsForToolEditor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initbuttonsForToolEditor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the tool editor </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00421">421</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a402203d6bc51c4c093c640ef3aa3f847_cgraph.png" border="0" usemap="#aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_cgraph" id="aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_cgraph">
+<area shape="rect" title="initializes the tool editor" alt="" coords="5,5,158,48"/>
+<area shape="rect" href="class_level_editor.html#a9cc22938f0ff0d43f50cff4a22ad9cd0" title="initializes the buttons for the UI" alt="" coords="206,5,360,48"/>
+<area shape="poly" title=" " alt="" coords="158,24,190,24,190,29,158,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a402203d6bc51c4c093c640ef3aa3f847_icgraph.png" border="0" usemap="#aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_icgraph" id="aclass_level_editor_a402203d6bc51c4c093c640ef3aa3f847_icgraph">
+<area shape="rect" title="initializes the tool editor" alt="" coords="209,5,361,48"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,13,161,40"/>
+<area shape="poly" title=" " alt="" coords="193,29,161,29,161,24,193,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9cc22938f0ff0d43f50cff4a22ad9cd0" name="a9cc22938f0ff0d43f50cff4a22ad9cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc22938f0ff0d43f50cff4a22ad9cd0">&#9670;&#160;</a></span>initButtonsForToolSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initButtonsForToolSet </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the buttons for the UI </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00441">441</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0_icgraph.png" border="0" usemap="#aclass_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0_icgraph" id="aclass_level_editor_a9cc22938f0ff0d43f50cff4a22ad9cd0_icgraph">
+<area shape="rect" title="initializes the buttons for the UI" alt="" coords="409,5,563,48"/>
+<area shape="rect" href="class_level_editor.html#a402203d6bc51c4c093c640ef3aa3f847" title="initializes the tool editor" alt="" coords="209,5,361,48"/>
+<area shape="poly" title=" " alt="" coords="393,29,361,29,361,24,393,24"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,13,161,40"/>
+<area shape="poly" title=" " alt="" coords="193,29,161,29,161,24,193,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a818107a288e6e742c83cf456e93ffb41" name="a818107a288e6e742c83cf456e93ffb41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818107a288e6e742c83cf456e93ffb41">&#9670;&#160;</a></span>initDragRectangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initDragRectangle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the dragRectangle shape </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00742">742</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a818107a288e6e742c83cf456e93ffb41_icgraph.png" border="0" usemap="#aclass_level_editor_a818107a288e6e742c83cf456e93ffb41_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a818107a288e6e742c83cf456e93ffb41_icgraph" id="aclass_level_editor_a818107a288e6e742c83cf456e93ffb41_icgraph">
+<area shape="rect" title="initializes the dragRectangle shape" alt="" coords="209,5,403,32"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,5,161,32"/>
+<area shape="poly" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41cbfc818ddec9659e204d98bd731812" name="a41cbfc818ddec9659e204d98bd731812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41cbfc818ddec9659e204d98bd731812">&#9670;&#160;</a></span>initGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::initGrid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializes the grid m_tiles </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00322">322</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a41cbfc818ddec9659e204d98bd731812_icgraph.png" border="0" usemap="#aclass_level_editor_a41cbfc818ddec9659e204d98bd731812_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a41cbfc818ddec9659e204d98bd731812_icgraph" id="aclass_level_editor_a41cbfc818ddec9659e204d98bd731812_icgraph">
+<area shape="rect" title="initializes the grid m_tiles" alt="" coords="209,5,342,32"/>
+<area shape="rect" href="class_level_editor.html#a6810fe926bdb4d23c947b39ebfc0f84c" title=" " alt="" coords="5,5,161,32"/>
+<area shape="poly" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -321,7 +914,28 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph.svg" width="483" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph.png" border="0" usemap="#aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph" id="aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_cgraph">
+<area shape="rect" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="5,5,170,48"/>
+<area shape="rect" href="class_level_editor.html#a50af4550cd28b70941afa18ca2e79147" title="Loads the level with the correct m_tile properties." alt="" coords="218,13,414,40"/>
+<area shape="poly" title=" " alt="" coords="170,24,202,24,202,29,170,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_icgraph.png" border="0" usemap="#aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_icgraph" id="aclass_level_editor_a6de4bbbbe376fb12fb3fb0dd104a42bc_icgraph">
+<area shape="rect" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="619,5,783,48"/>
+<area shape="rect" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1" title="deal with key presses from the user" alt="" coords="430,13,571,40"/>
+<area shape="poly" title=" " alt="" coords="603,29,571,29,571,24,603,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -353,8 +967,107 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph.svg" width="483" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph.png" border="0" usemap="#aclass_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph" id="aclass_level_editor_a50af4550cd28b70941afa18ca2e79147_icgraph">
+<area shape="rect" title="Loads the level with the correct m_tile properties." alt="" coords="855,120,1051,147"/>
+<area shape="rect" href="class_level_loader.html#aa6c5402832b1ed33275002a7c2fba529" title="Loads the level." alt="" coords="650,61,800,88"/>
+<area shape="poly" title=" " alt="" coords="883,118,779,91,780,86,884,113"/>
+<area shape="rect" href="class_level_editor.html#a6de4bbbbe376fb12fb3fb0dd104a42bc" title="Loads the level in the &quot;selection level&quot; state" alt="" coords="643,112,807,155"/>
+<area shape="poly" title=" " alt="" coords="840,136,808,136,808,131,840,131"/>
+<area shape="rect" href="class_game.html#a5e57e588368a437cbe1a177b02e7175c" title="Loads the level." alt="" coords="654,179,796,205"/>
+<area shape="poly" title=" " alt="" coords="884,154,780,181,779,176,883,149"/>
+<area shape="rect" href="class_level_loader.html#a99d2eaf66b8b70793e4eed64f134d23e" title="handles the mouse press for the buttons to load the level" alt="" coords="430,5,595,48"/>
+<area shape="poly" title=" " alt="" coords="647,60,594,48,596,43,649,55"/>
+<area shape="rect" href="class_level_loader.html#aaa7dcd75aee8d103054a546ede7cbf33" title="Updates the level loader to load the level." alt="" coords="444,72,581,99"/>
+<area shape="poly" title=" " alt="" coords="635,82,581,85,581,79,635,77"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,123,382,149"/>
+<area shape="poly" title=" " alt="" coords="442,57,432,62,376,94,330,124,328,120,373,90,429,58,440,52"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,149,185,176"/>
+<area shape="poly" title=" " alt="" coords="218,153,186,159,185,153,217,148"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,149,55,176"/>
+<area shape="poly" title=" " alt="" coords="87,165,55,165,55,160,87,160"/>
+<area shape="rect" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1" title="deal with key presses from the user" alt="" coords="442,123,583,149"/>
+<area shape="poly" title=" " alt="" coords="627,137,583,138,583,132,627,132"/>
+<area shape="poly" title=" " alt="" coords="427,139,383,139,383,133,427,133"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="256,175,359,201"/>
+<area shape="poly" title=" " alt="" coords="638,194,359,191,359,186,638,189"/>
+<area shape="poly" title=" " alt="" coords="240,180,185,172,186,166,241,175"/>
+</map>
 </div>
+
+</div>
+</div>
+<a id="a754e4fae529e8da045512acb5fb561c0" name="a754e4fae529e8da045512acb5fb561c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754e4fae529e8da045512acb5fb561c0">&#9670;&#160;</a></span>placeTilesInDragRectangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::placeTilesInDragRectangle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds all the texture inside the dragRectangle shape. </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00262">262</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a754e4fae529e8da045512acb5fb561c0_icgraph.png" border="0" usemap="#aclass_level_editor_a754e4fae529e8da045512acb5fb561c0_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a754e4fae529e8da045512acb5fb561c0_icgraph" id="aclass_level_editor_a754e4fae529e8da045512acb5fb561c0_icgraph">
+<area shape="rect" title="Adds all the texture inside the dragRectangle shape." alt="" coords="667,5,827,48"/>
+<area shape="rect" href="class_level_editor.html#a840bd660617f00ca6733bf3a52fe1055" title="reset the stuff for dragRectangle" alt="" coords="430,13,619,40"/>
+<area shape="poly" title=" " alt="" coords="651,29,619,29,619,24,651,24"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af0d5ca755f0a13efe9c2ed5dd6cdda50" name="af0d5ca755f0a13efe9c2ed5dd6cdda50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d5ca755f0a13efe9c2ed5dd6cdda50">&#9670;&#160;</a></span>randomGenerateLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LevelEditor::randomGenerateLevel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>to randomise the map </p>
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00337">337</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,6 +1089,30 @@ Here is the caller graph for this function:</div>
 <p>reset the stuff for dragRectangle </p>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00728">728</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a840bd660617f00ca6733bf3a52fe1055_cgraph.png" border="0" usemap="#aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_cgraph" id="aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_cgraph">
+<area shape="rect" title="reset the stuff for dragRectangle" alt="" coords="5,13,194,40"/>
+<area shape="rect" href="class_level_editor.html#a754e4fae529e8da045512acb5fb561c0" title="Adds all the texture inside the dragRectangle shape." alt="" coords="242,5,402,48"/>
+<area shape="poly" title=" " alt="" coords="194,24,226,24,226,29,194,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a840bd660617f00ca6733bf3a52fe1055_icgraph.png" border="0" usemap="#aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_icgraph" id="aclass_level_editor_a840bd660617f00ca6733bf3a52fe1055_icgraph">
+<area shape="rect" title="reset the stuff for dragRectangle" alt="" coords="430,5,619,32"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -403,6 +1140,20 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00057">57</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a84b2c6a11bc0c29a15ffc855262a9060_icgraph.png" border="0" usemap="#aclass_level_editor_a84b2c6a11bc0c29a15ffc855262a9060_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a84b2c6a11bc0c29a15ffc855262a9060_icgraph" id="aclass_level_editor_a84b2c6a11bc0c29a15ffc855262a9060_icgraph">
+<area shape="rect" title="Draws everything in the level editor mode." alt="" coords="381,5,510,32"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -430,6 +1181,20 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00119">119</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d_icgraph.png" border="0" usemap="#aclass_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d_icgraph" alt=""/></div>
+<map name="aclass_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d_icgraph" id="aclass_level_editor_aa45cb732d95d48dfc31e7d2ad3a6f62d_icgraph">
+<area shape="rect" title="Draws the level &#45; used in gameplay." alt="" coords="381,5,552,48"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -454,7 +1219,25 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_a984362b83939349a692676df1450ee3e_icgraph.svg" width="339" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_a984362b83939349a692676df1450ee3e_icgraph.png" border="0" usemap="#aclass_level_editor_a984362b83939349a692676df1450ee3e_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a984362b83939349a692676df1450ee3e_icgraph" id="aclass_level_editor_a984362b83939349a692676df1450ee3e_icgraph">
+<area shape="rect" title="Resets the fog." alt="" coords="843,31,1023,57"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="680,5,780,32"/>
+<area shape="poly" title=" " alt="" coords="827,33,780,27,780,22,828,28"/>
+<area shape="rect" href="class_game.html#a9de86d1081ce3a5decd86a3c543598b6" title="To reset the game and undo all the properties for a new game." alt="" coords="665,56,795,83"/>
+<area shape="poly" title=" " alt="" coords="828,60,796,64,795,59,827,55"/>
+<area shape="rect" href="class_game.html#ac2846dd2ab02eb66aa95b2ba2d5c568c" title="handles the mouse input for the buttons" alt="" coords="438,31,609,57"/>
+<area shape="poly" title=" " alt="" coords="649,62,609,57,610,52,649,57"/>
+<area shape="rect" href="class_game.html#a4fef014d3c18632b507f6fdea0fa5c64" title="handles the mouse input for the win/lose panel" alt="" coords="430,81,617,108"/>
+<area shape="poly" title=" " alt="" coords="649,82,617,86,617,81,649,77"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,56,382,83"/>
+<area shape="poly" title=" " alt="" coords="423,59,383,63,383,58,422,53"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,56,185,83"/>
+<area shape="poly" title=" " alt="" coords="217,72,185,72,185,67,217,67"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,56,55,83"/>
+<area shape="poly" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+<area shape="poly" title=" " alt="" coords="414,85,382,81,383,75,415,79"/>
+</map>
 </div>
 
 </div>
@@ -483,6 +1266,24 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_level_editor_8cpp_source.html#l00563">563</a> of file <a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a135f4c3f19ae9026da25adcaf1b2876d_icgraph.png" border="0" usemap="#aclass_level_editor_a135f4c3f19ae9026da25adcaf1b2876d_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a135f4c3f19ae9026da25adcaf1b2876d_icgraph" id="aclass_level_editor_a135f4c3f19ae9026da25adcaf1b2876d_icgraph">
+<area shape="rect" title="Saves the level with the correct m_tiles properties." alt="" coords="811,5,993,32"/>
+<area shape="rect" href="class_game.html#ab0c20f30c4992648b2740827f3f9d9df" title="Saves the level file name." alt="" coords="619,5,763,32"/>
+<area shape="poly" title=" " alt="" coords="795,21,763,21,763,16,795,16"/>
+<area shape="rect" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1" title="deal with key presses from the user" alt="" coords="430,5,571,32"/>
+<area shape="poly" title=" " alt="" coords="603,21,571,21,571,16,603,16"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -518,12 +1319,653 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph.svg" width="420" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph.png" border="0" usemap="#aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph" alt=""/></div>
+<map name="aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph" id="aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_cgraph">
+<area shape="rect" title="Updates the level editor content changes." alt="" coords="5,43,137,69"/>
+<area shape="rect" href="class_level_editor.html#acb7bd789273b991637241051ab0161b9" title="animates the resources tiles" alt="" coords="202,5,369,48"/>
+<area shape="poly" title=" " alt="" coords="137,44,186,38,187,43,137,50"/>
+<area shape="rect" href="class_level_editor.html#a1926deb0a57ce800e6ab2e78be150f28" title="Animates the weed tiles." alt="" coords="185,72,386,99"/>
+<area shape="poly" title=" " alt="" coords="137,62,170,67,169,72,137,68"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_icgraph.png" border="0" usemap="#aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_icgraph" alt=""/></div>
+<map name="aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_icgraph" id="aclass_level_editor_a75a95293d67fba7fcb0b547992c3ad6e_icgraph">
+<area shape="rect" title="Updates the level editor content changes." alt="" coords="384,5,516,32"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0ead590768e9c76f9ab0443004f1668c" name="a0ead590768e9c76f9ab0443004f1668c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ead590768e9c76f9ab0443004f1668c">&#9670;&#160;</a></span>m_animationSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float LevelEditor::m_animationSpeed = 0.2f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00133">133</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a274a8fa0ed93cdf9e125357b56191984" name="a274a8fa0ed93cdf9e125357b56191984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274a8fa0ed93cdf9e125357b56191984">&#9670;&#160;</a></span>m_backgroundForBTF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape LevelEditor::m_backgroundForBTF[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00069">69</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ae330dfb4a66587b831a8878e99a4ba90" name="ae330dfb4a66587b831a8878e99a4ba90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae330dfb4a66587b831a8878e99a4ba90">&#9670;&#160;</a></span>m_backgroundForTilesTools</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape LevelEditor::m_backgroundForTilesTools</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00067">67</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a54ebed9c51da047f6974c3009653e94e" name="a54ebed9c51da047f6974c3009653e94e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ebed9c51da047f6974c3009653e94e">&#9670;&#160;</a></span>m_buttonAreaForMiscs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_buttonAreaForMiscs[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    {</div>
+<div class="line">        {971, 1764, 16, 16},</div>
+<div class="line">        {854, 1776, 16, 16}</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00102">102</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="adec02fb8b067d411a83ab2e242c068af" name="adec02fb8b067d411a83ab2e242c068af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec02fb8b067d411a83ab2e242c068af">&#9670;&#160;</a></span>m_buttonAreaForResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_buttonAreaForResources = { 971, 1798, 16, 16 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00101">101</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a0403b51d2703cce90e4f85971367433a" name="a0403b51d2703cce90e4f85971367433a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0403b51d2703cce90e4f85971367433a">&#9670;&#160;</a></span>m_buttonAreaForWalkable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_buttonAreaForWalkable[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">    {</div>
+<div class="line">        {17, 1808, 16, 16},</div>
+<div class="line">        {33, 1808, 16, 16},</div>
+<div class="line">        {49, 1808, 16, 16},</div>
+<div class="line">        {49, 1792, 16, 16}</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00086">86</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a458fad0627b34e47befe9a2959506a81" name="a458fad0627b34e47befe9a2959506a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458fad0627b34e47befe9a2959506a81">&#9670;&#160;</a></span>m_buttonAreaForWalls</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_buttonAreaForWalls[5]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">    {</div>
+<div class="line">        {49, 1695, 16, 16},</div>
+<div class="line">        {242, 1808, 16, 16},</div>
+<div class="line">        {257, 1808, 16, 16},</div>
+<div class="line">        {226, 1776, 16, 16},</div>
+<div class="line">        {258, 1792, 16, 16}</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00093">93</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3a1a28ad10d0ef179860d701c99dabf" name="ad3a1a28ad10d0ef179860d701c99dabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a1a28ad10d0ef179860d701c99dabf">&#9670;&#160;</a></span>m_buttons</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite LevelEditor::m_buttons[<a class="el" href="#ac37421833184d77bf267f966b42eff2d">m_numButtons</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00072">72</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e0b001e78f05df6a6f852e569afaf2c" name="a1e0b001e78f05df6a6f852e569afaf2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0b001e78f05df6a6f852e569afaf2c">&#9670;&#160;</a></span>m_buttonSelectedAnimationClock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock LevelEditor::m_buttonSelectedAnimationClock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00131">131</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ac426fc0083cf273e090bea39a163af6b" name="ac426fc0083cf273e090bea39a163af6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac426fc0083cf273e090bea39a163af6b">&#9670;&#160;</a></span>m_buttonSelectedSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite LevelEditor::m_buttonSelectedSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00129">129</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a288c30a58a61d26c22f6bcf181668785" name="a288c30a58a61d26c22f6bcf181668785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288c30a58a61d26c22f6bcf181668785">&#9670;&#160;</a></span>m_buttonSelectedTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture LevelEditor::m_buttonSelectedTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00130">130</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="abdfb2406587c63752946035e532ebbb2" name="abdfb2406587c63752946035e532ebbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfb2406587c63752946035e532ebbb2">&#9670;&#160;</a></span>m_buttonTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture LevelEditor::m_buttonTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00083">83</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b8bae31638e17b511df20f0132e1ba1" name="a5b8bae31638e17b511df20f0132e1ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8bae31638e17b511df20f0132e1ba1">&#9670;&#160;</a></span>m_buttonTexture1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture LevelEditor::m_buttonTexture1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00084">84</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="afe9e2b4b28f445e25c93e0eb2b4f83b9" name="afe9e2b4b28f445e25c93e0eb2b4f83b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9e2b4b28f445e25c93e0eb2b4f83b9">&#9670;&#160;</a></span>m_currentAnimationFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_currentAnimationFrame = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00132">132</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2741ae6160ca40ed532cf405c72a6a4" name="ae2741ae6160ca40ed532cf405c72a6a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2741ae6160ca40ed532cf405c72a6a4">&#9670;&#160;</a></span>m_currentResourceTileAnimationFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_currentResourceTileAnimationFrame = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00110">110</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="abfc97347d1da15bad0dabb9864281eb9" name="abfc97347d1da15bad0dabb9864281eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc97347d1da15bad0dabb9864281eb9">&#9670;&#160;</a></span>m_currentTileWeedAnimationFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_currentTileWeedAnimationFrame = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00120">120</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a05e2d116469a6f3df0f18f92fa322144" name="a05e2d116469a6f3df0f18f92fa322144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e2d116469a6f3df0f18f92fa322144">&#9670;&#160;</a></span>m_dragRectangle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape LevelEditor::m_dragRectangle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00070">70</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5089e21b53c88af04f9e1390bce76557" name="a5089e21b53c88af04f9e1390bce76557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5089e21b53c88af04f9e1390bce76557">&#9670;&#160;</a></span>m_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font LevelEditor::m_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00074">74</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2576b5aa813b23e16f0cf81016327ed" name="ab2576b5aa813b23e16f0cf81016327ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2576b5aa813b23e16f0cf81016327ed">&#9670;&#160;</a></span>m_isButtonClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LevelEditor::m_isButtonClicked = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00062">62</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ade5a96a3ed8ad102e1bb44032ce2d657" name="ade5a96a3ed8ad102e1bb44032ce2d657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5a96a3ed8ad102e1bb44032ce2d657">&#9670;&#160;</a></span>m_isTileSelected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LevelEditor::m_isTileSelected = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00061">61</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a90b3bd14d50a7a407d98e5c7bff67606" name="a90b3bd14d50a7a407d98e5c7bff67606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b3bd14d50a7a407d98e5c7bff67606">&#9670;&#160;</a></span>m_lastClickedButtonIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_lastClickedButtonIndex = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00057">57</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a37285179793c1fa6cd10af4a123672c7" name="a37285179793c1fa6cd10af4a123672c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37285179793c1fa6cd10af4a123672c7">&#9670;&#160;</a></span>m_levelEditorView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::View LevelEditor::m_levelEditorView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00039">39</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a38a17b3b530d71d546d9ea46086e0617" name="a38a17b3b530d71d546d9ea46086e0617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a17b3b530d71d546d9ea46086e0617">&#9670;&#160;</a></span>m_MiscText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text LevelEditor::m_MiscText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00080">80</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a1281d2bb2b9bf7c5fa9d91a154bd317c" name="a1281d2bb2b9bf7c5fa9d91a154bd317c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1281d2bb2b9bf7c5fa9d91a154bd317c">&#9670;&#160;</a></span>m_newMousePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f LevelEditor::m_newMousePos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00064">64</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ac37421833184d77bf267f966b42eff2d" name="ac37421833184d77bf267f966b42eff2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37421833184d77bf267f966b42eff2d">&#9670;&#160;</a></span>m_numButtons</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int LevelEditor::m_numButtons = 12</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00054">54</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
 <a id="abc0159c134c50f060cc23f78036a2615" name="abc0159c134c50f060cc23f78036a2615"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc0159c134c50f060cc23f78036a2615">&#9670;&#160;</a></span>m_numCols</h2>
 
@@ -556,6 +1998,253 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a8d82a5e38031cf92152a1b6c32074915" name="a8d82a5e38031cf92152a1b6c32074915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d82a5e38031cf92152a1b6c32074915">&#9670;&#160;</a></span>m_numTileFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int LevelEditor::m_numTileFrames = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00109">109</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5c13f312bc0f3148990bc5463322174" name="ab5c13f312bc0f3148990bc5463322174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c13f312bc0f3148990bc5463322174">&#9670;&#160;</a></span>m_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float LevelEditor::m_offset = 25.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00060">60</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a74159781418598a4997c83397f49efbd" name="a74159781418598a4997c83397f49efbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74159781418598a4997c83397f49efbd">&#9670;&#160;</a></span>m_ResourceText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text LevelEditor::m_ResourceText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00079">79</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a3982066b345a27ca026d142f1ee59464" name="a3982066b345a27ca026d142f1ee59464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3982066b345a27ca026d142f1ee59464">&#9670;&#160;</a></span>m_selectedButtonIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_selectedButtonIndex = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00056">56</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5808c8e2aface2e269eb44b2e58648db" name="a5808c8e2aface2e269eb44b2e58648db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5808c8e2aface2e269eb44b2e58648db">&#9670;&#160;</a></span>m_selectedTileX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_selectedTileX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00058">58</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a2167eab4cc2cf52b90a5b7ddbc625011" name="a2167eab4cc2cf52b90a5b7ddbc625011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2167eab4cc2cf52b90a5b7ddbc625011">&#9670;&#160;</a></span>m_selectedTileY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LevelEditor::m_selectedTileY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00059">59</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="aecf9e5606d7546c5ea4d5c69baf0657e" name="aecf9e5606d7546c5ea4d5c69baf0657e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf9e5606d7546c5ea4d5c69baf0657e">&#9670;&#160;</a></span>m_startMousePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f LevelEditor::m_startMousePos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00065">65</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e35c60a48b8340b50a210fb26d9d1d1" name="a5e35c60a48b8340b50a210fb26d9d1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e35c60a48b8340b50a210fb26d9d1d1">&#9670;&#160;</a></span>m_tileAnimationClock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock LevelEditor::m_tileAnimationClock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00119">119</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a0392e50e00fe0c6722432e3da30dd5a1" name="a0392e50e00fe0c6722432e3da30dd5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0392e50e00fe0c6722432e3da30dd5a1">&#9670;&#160;</a></span>m_tileResourceAnimationClock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock LevelEditor::m_tileResourceAnimationClock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00111">111</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="afadef1c42c40da81086f3e9592b7d4f7" name="afadef1c42c40da81086f3e9592b7d4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afadef1c42c40da81086f3e9592b7d4f7">&#9670;&#160;</a></span>m_tileResourceAnimationFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_tileResourceAnimationFrames[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">    {</div>
+<div class="line">        {971, 1798, 16, 16},</div>
+<div class="line">        {988, 1798, 16, 16},</div>
+<div class="line">        {1005, 1798, 16, 16},</div>
+<div class="line">        {1022, 1798, 16, 16}</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00112">112</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
 <a id="a14eb3a75162c0543bd9483495fddb421" name="a14eb3a75162c0543bd9483495fddb421"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14eb3a75162c0543bd9483495fddb421">&#9670;&#160;</a></span>m_tiles</h2>
 
@@ -572,9 +2261,160 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a05301269e2632e68513fa9bf341b8e67" name="a05301269e2632e68513fa9bf341b8e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05301269e2632e68513fa9bf341b8e67">&#9670;&#160;</a></span>m_tileWeedAnimationFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect LevelEditor::m_tileWeedAnimationFrames[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    {</div>
+<div class="line">        {971, 1764, 16, 16},</div>
+<div class="line">        {988, 1764, 16, 16},</div>
+<div class="line">        {1005, 1764, 16, 16},</div>
+<div class="line">        {1022, 1764, 16, 16}</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00121">121</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a64d17b896a412396c9826510a7edf549" name="a64d17b896a412396c9826510a7edf549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d17b896a412396c9826510a7edf549">&#9670;&#160;</a></span>m_toGoBackButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape LevelEditor::m_toGoBackButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00068">68</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ca8d33e1106aff9d9119297daff76e4" name="a4ca8d33e1106aff9d9119297daff76e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca8d33e1106aff9d9119297daff76e4">&#9670;&#160;</a></span>m_toGoBackText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text LevelEditor::m_toGoBackText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00076">76</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a062089f81afa20931d8cee5a659ee5f2" name="a062089f81afa20931d8cee5a659ee5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062089f81afa20931d8cee5a659ee5f2">&#9670;&#160;</a></span>m_underWaterTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture LevelEditor::m_underWaterTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00082">82</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="aa30602f7d740cddeb595b645aee491ee" name="aa30602f7d740cddeb595b645aee491ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30602f7d740cddeb595b645aee491ee">&#9670;&#160;</a></span>m_walkableText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text LevelEditor::m_walkableText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00077">77</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
+<a id="a319e99575ad1bde444d6014cf466d44f" name="a319e99575ad1bde444d6014cf466d44f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319e99575ad1bde444d6014cf466d44f">&#9670;&#160;</a></span>m_WallText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text LevelEditor::m_WallText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_level_editor_8h_source.html#l00078">78</a> of file <a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a></li>
-<li>AI Behaviors/<a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_level_editor_8h_source.html">LevelEditor.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_level_editor_8cpp_source.html">LevelEditor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

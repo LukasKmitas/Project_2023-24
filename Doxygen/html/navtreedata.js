@@ -32,7 +32,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ]
       ] ]
@@ -53,8 +53,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_air_craft_8cpp.html",
-"class_g_u_i.html#a1abc744668d9ab7b4dbbc1f4278a8baf",
-"class_unit.html#a90612b354704a618a5647ec4742b427b"
+"class_bullet.html#a2826b566024cc17fe2fbb1937615c4c7",
+"class_game.html#af41b28d69edbd23c2e998e8cf606ddaa",
+"class_particle_system.html",
+"class_unit.html#ad143c65e05fde4571ec2f10ab87f7539"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

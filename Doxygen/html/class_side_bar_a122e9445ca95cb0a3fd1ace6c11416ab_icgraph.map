@@ -1,5 +1,11 @@
 <map id="SideBar::getHammerHeadIconPosition" name="SideBar::getHammerHeadIconPosition">
-<area shape="rect" id="Node000001" title=" " alt="" coords="211,5,454,32"/>
-<area shape="rect" id="Node000002" href="$class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="5,5,163,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,21,163,21,163,16,195,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="636,5,832,48"/>
+<area shape="rect" id="Node000002" href="$class_g_u_i.html#a55b453ffb65fc7861cce79d5fea554e7" title="handles the mouse clicks for GUI related stuff" alt="" coords="430,13,588,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="620,29,588,29,588,24,620,24"/>
+<area shape="rect" id="Node000003" href="$class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" id="Node000004" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>

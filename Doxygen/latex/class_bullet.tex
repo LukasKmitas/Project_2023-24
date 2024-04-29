@@ -4,15 +4,11 @@
 
 {\ttfamily \#include $<$Bullet.\+h$>$}
 
-
-
-Collaboration diagram for Bullet\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_bullet__coll__graph}
-\end{center}
-\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_bullet_1_1_trail_part}{Trail\+Part}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +26,26 @@ sf\+::\+Circle\+Shape \mbox{\hyperlink{class_bullet_a2826b566024cc17fe2fbb193761
 sf\+::\+Vector2f \mbox{\hyperlink{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}{m\+\_\+position}}
 \item 
 bool \mbox{\hyperlink{class_bullet_ab21ea0edf0bd34fc1eae2945b5a7223c}{m\+\_\+active}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_bullet_aaa2b76eb249f2350ad11efc3ced06845}{normalize}} (const sf\+::\+Vector2f \&m\+\_\+source)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{struct_bullet_1_1_trail_part}{Trail\+Part}} $>$ \mbox{\hyperlink{class_bullet_a8d45e22de1c6ee3e729aa968ed2c7963}{m\+\_\+trail}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_bullet_a5ff781b721a87eba76e76f51c808a405}{m\+\_\+velocity}}
+\item 
+float \mbox{\hyperlink{class_bullet_a35a92fe3123f4c7b1b175eadcaf33f17}{m\+\_\+lifetime}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_bullet_a1206ca5013fe8c054aa97e551857550b}{m\+\_\+trail\+Max\+Lifetime}} = 0.\+3f
+\item 
+float \mbox{\hyperlink{class_bullet_a9feefdf2acadc0067620c05ac9ceb214}{m\+\_\+time\+Since\+Last\+Trail\+Part}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_bullet_a74ab02666d7fe828d679d31040545d6a}{m\+\_\+add\+Trail\+Part\+Interval}} = 0.\+03f
 \end{DoxyCompactItemize}
 
 
@@ -51,9 +67,35 @@ Definition at line \mbox{\hyperlink{_bullet_8h_source_l00005}{5}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_bullet_8cpp_source}{Bullet.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_bullet_a2168d6be98781a6bee3f6d0317064144_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_bullet_aaa2b76eb249f2350ad11efc3ced06845}\label{class_bullet_aaa2b76eb249f2350ad11efc3ced06845} 
+\index{Bullet@{Bullet}!normalize@{normalize}}
+\index{normalize@{normalize}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Bullet\+::normalize (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{m\+\_\+source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_bullet_8cpp_source}{Bullet.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_bullet_aaa2b76eb249f2350ad11efc3ced06845_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_bullet_a811074fd46bf95b7a7e75a75ac5df188}\label{class_bullet_a811074fd46bf95b7a7e75a75ac5df188} 
 \index{Bullet@{Bullet}!render@{render}}
 \index{render@{render}!Bullet@{Bullet}}
@@ -87,6 +129,16 @@ Definition at line \mbox{\hyperlink{_bullet_8cpp_source_l00013}{13}} of file \mb
 
 Definition at line \mbox{\hyperlink{_bullet_8h_source_l00018}{18}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
 
+\Hypertarget{class_bullet_a74ab02666d7fe828d679d31040545d6a}\label{class_bullet_a74ab02666d7fe828d679d31040545d6a} 
+\index{Bullet@{Bullet}!m\_addTrailPartInterval@{m\_addTrailPartInterval}}
+\index{m\_addTrailPartInterval@{m\_addTrailPartInterval}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_addTrailPartInterval}{m\_addTrailPartInterval}}
+{\footnotesize\ttfamily float Bullet\+::m\+\_\+add\+Trail\+Part\+Interval = 0.\+03f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00037}{37}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
 \Hypertarget{class_bullet_a2826b566024cc17fe2fbb1937615c4c7}\label{class_bullet_a2826b566024cc17fe2fbb1937615c4c7} 
 \index{Bullet@{Bullet}!m\_bulletShape@{m\_bulletShape}}
 \index{m\_bulletShape@{m\_bulletShape}!Bullet@{Bullet}}
@@ -96,6 +148,16 @@ Definition at line \mbox{\hyperlink{_bullet_8h_source_l00018}{18}} of file \mbox
 
 
 Definition at line \mbox{\hyperlink{_bullet_8h_source_l00014}{14}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a35a92fe3123f4c7b1b175eadcaf33f17}\label{class_bullet_a35a92fe3123f4c7b1b175eadcaf33f17} 
+\index{Bullet@{Bullet}!m\_lifetime@{m\_lifetime}}
+\index{m\_lifetime@{m\_lifetime}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_lifetime}{m\_lifetime}}
+{\footnotesize\ttfamily float Bullet\+::m\+\_\+lifetime = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00034}{34}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
 
 \Hypertarget{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21}\label{class_bullet_a68d311a87ea5a50966fbfa6ace4cbb21} 
 \index{Bullet@{Bullet}!m\_position@{m\_position}}
@@ -107,9 +169,49 @@ Definition at line \mbox{\hyperlink{_bullet_8h_source_l00014}{14}} of file \mbox
 
 Definition at line \mbox{\hyperlink{_bullet_8h_source_l00016}{16}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
 
+\Hypertarget{class_bullet_a9feefdf2acadc0067620c05ac9ceb214}\label{class_bullet_a9feefdf2acadc0067620c05ac9ceb214} 
+\index{Bullet@{Bullet}!m\_timeSinceLastTrailPart@{m\_timeSinceLastTrailPart}}
+\index{m\_timeSinceLastTrailPart@{m\_timeSinceLastTrailPart}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_timeSinceLastTrailPart}{m\_timeSinceLastTrailPart}}
+{\footnotesize\ttfamily float Bullet\+::m\+\_\+time\+Since\+Last\+Trail\+Part = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00036}{36}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a8d45e22de1c6ee3e729aa968ed2c7963}\label{class_bullet_a8d45e22de1c6ee3e729aa968ed2c7963} 
+\index{Bullet@{Bullet}!m\_trail@{m\_trail}}
+\index{m\_trail@{m\_trail}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_trail}{m\_trail}}
+{\footnotesize\ttfamily std\+::deque$<$\mbox{\hyperlink{struct_bullet_1_1_trail_part}{Trail\+Part}}$>$ Bullet\+::m\+\_\+trail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00030}{30}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a1206ca5013fe8c054aa97e551857550b}\label{class_bullet_a1206ca5013fe8c054aa97e551857550b} 
+\index{Bullet@{Bullet}!m\_trailMaxLifetime@{m\_trailMaxLifetime}}
+\index{m\_trailMaxLifetime@{m\_trailMaxLifetime}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_trailMaxLifetime}{m\_trailMaxLifetime}}
+{\footnotesize\ttfamily float Bullet\+::m\+\_\+trail\+Max\+Lifetime = 0.\+3f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00035}{35}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
+\Hypertarget{class_bullet_a5ff781b721a87eba76e76f51c808a405}\label{class_bullet_a5ff781b721a87eba76e76f51c808a405} 
+\index{Bullet@{Bullet}!m\_velocity@{m\_velocity}}
+\index{m\_velocity@{m\_velocity}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_velocity}{m\_velocity}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Bullet\+::m\+\_\+velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8h_source_l00032}{32}} of file \mbox{\hyperlink{_bullet_8h_source}{Bullet.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-AI Behaviors/\mbox{\hyperlink{_bullet_8h}{Bullet.\+h}}\item 
-AI Behaviors/\mbox{\hyperlink{_bullet_8cpp}{Bullet.\+cpp}}\end{DoxyCompactItemize}
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_bullet_8h}{Bullet.\+h}}\item 
+E\+:/\+Program Files E/\+Year 4/\+Project/\+Project\+\_\+2023-\/24/\+AI Behaviors/\+AI Behaviors/\mbox{\hyperlink{_bullet_8cpp}{Bullet.\+cpp}}\end{DoxyCompactItemize}

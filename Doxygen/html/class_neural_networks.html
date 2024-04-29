@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">Gills &amp; Glory<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Doxygen for Gills &amp; Glory Project</div>
+   <div id="projectbrief">An RTS (Real Time Strategy) Game</div>
   </td>
  </tr>
  </tbody>
@@ -95,17 +95,14 @@ $(function(){initNavTree('class_neural_networks.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_neural_networks-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">NeuralNetworks Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for NeuralNetworks:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_neural_networks__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -127,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb3351a7f806c8702b7441bf597d89d5" id="r_abb3351a7f806c8702b7441bf597d89d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb3351a7f806c8702b7441bf597d89d5">backPropagation</a> (const std::vector&lt; float &gt; &amp;m_target, std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_errors, const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_neuralNetwork, std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;m_weights)</td></tr>
 <tr class="memdesc:abb3351a7f806c8702b7441bf597d89d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a method used for training the neural network, where the error between the predicted output and the actual output is computed and propagated back through the network. This process adjusts the weights and biases to minimize the error, effectively "learning" from the data  <br /></td></tr>
 <tr class="separator:abb3351a7f806c8702b7441bf597d89d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9abc0b8a4c01d84f3be7eeeba0bf21c" id="r_ab9abc0b8a4c01d84f3be7eeeba0bf21c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9abc0b8a4c01d84f3be7eeeba0bf21c">forwardPropagation</a> (bool m_state, const std::vector&lt; float &gt; &amp;m_inputs, std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_neuralNetwork, const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;m_weights)</td></tr>
+<tr class="memitem:ab9abc0b8a4c01d84f3be7eeeba0bf21c" id="r_ab9abc0b8a4c01d84f3be7eeeba0bf21c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9abc0b8a4c01d84f3be7eeeba0bf21c">forwardPropagation</a> (bool m_state, const std::vector&lt; float &gt; &amp;<a class="el" href="#a914d8e145c40640da169708a5bf669d0">m_inputs</a>, std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_neuralNetwork, const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;m_weights)</td></tr>
 <tr class="memdesc:ab9abc0b8a4c01d84f3be7eeeba0bf21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a process where input data is passed through the network, layer by layer, until it reaches the output layer. Each neuron in the network processes the input by performing a weighted sum followed by an "activation function", which that introduces non-linearity.  <br /></td></tr>
 <tr class="separator:ab9abc0b8a4c01d84f3be7eeeba0bf21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7932bac035bfde3145908e05ee54b912" id="r_a7932bac035bfde3145908e05ee54b912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7932bac035bfde3145908e05ee54b912">addInput</a> (float m_dot_x, float m_dot_y)</td></tr>
@@ -154,6 +151,60 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5182e3363e6c68d414b19285465db947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d507402fd96fcd5177194d901976f1" id="r_aa4d507402fd96fcd5177194d901976f1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4d507402fd96fcd5177194d901976f1">OUTPUT_NEURONS</a> = 3</td></tr>
 <tr class="separator:aa4d507402fd96fcd5177194d901976f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a621a18fa11f622e72f5ef1b37747701d" id="r_a621a18fa11f622e72f5ef1b37747701d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a621a18fa11f622e72f5ef1b37747701d">initNeuralCircle</a> ()</td></tr>
+<tr class="memdesc:a621a18fa11f622e72f5ef1b37747701d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes neural circles.  <br /></td></tr>
+<tr class="separator:a621a18fa11f622e72f5ef1b37747701d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9786241b8d6cee9da23e83e8dfae5e" id="r_add9786241b8d6cee9da23e83e8dfae5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add9786241b8d6cee9da23e83e8dfae5e">initBackButton</a> ()</td></tr>
+<tr class="memdesc:add9786241b8d6cee9da23e83e8dfae5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes back button.  <br /></td></tr>
+<tr class="separator:add9786241b8d6cee9da23e83e8dfae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450ac620775925afd70928a0fe40979d" id="r_a450ac620775925afd70928a0fe40979d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a450ac620775925afd70928a0fe40979d">initMouseDotCircle</a> ()</td></tr>
+<tr class="memdesc:a450ac620775925afd70928a0fe40979d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the mouse Dot circle.  <br /></td></tr>
+<tr class="separator:a450ac620775925afd70928a0fe40979d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6561d45eb152e484d3fb5a5186d8046" id="r_af6561d45eb152e484d3fb5a5186d8046"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6561d45eb152e484d3fb5a5186d8046">activationFunctionSigmoid</a> (bool m_derivative, float m_input)</td></tr>
+<tr class="memdesc:af6561d45eb152e484d3fb5a5186d8046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the sigmoid activation function.  <br /></td></tr>
+<tr class="separator:af6561d45eb152e484d3fb5a5186d8046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637911933853ff9586f60b1282a1e209" id="r_a637911933853ff9586f60b1282a1e209"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a637911933853ff9586f60b1282a1e209">get_min_element</a> (const std::vector&lt; float &gt; &amp;m_vector)</td></tr>
+<tr class="separator:a637911933853ff9586f60b1282a1e209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf01fbefad24721d648d162207d7a834" id="r_aaf01fbefad24721d648d162207d7a834"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf01fbefad24721d648d162207d7a834">get_min_element</a> (const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_vector)</td></tr>
+<tr class="separator:aaf01fbefad24721d648d162207d7a834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f84c21c3a682707327bb9675095210b" id="r_a5f84c21c3a682707327bb9675095210b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f84c21c3a682707327bb9675095210b">get_min_element</a> (const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;m_vector)</td></tr>
+<tr class="separator:a5f84c21c3a682707327bb9675095210b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850cd48ec50a90e6d66424194b872961" id="r_a850cd48ec50a90e6d66424194b872961"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a850cd48ec50a90e6d66424194b872961">get_max_element</a> (const std::vector&lt; float &gt; &amp;m_vector)</td></tr>
+<tr class="separator:a850cd48ec50a90e6d66424194b872961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2daf5fcae2b88d026743141b371dbb0" id="r_ab2daf5fcae2b88d026743141b371dbb0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2daf5fcae2b88d026743141b371dbb0">get_max_element</a> (const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;m_vector)</td></tr>
+<tr class="separator:ab2daf5fcae2b88d026743141b371dbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1925b69e0182801d9368e85aae02caec" id="r_a1925b69e0182801d9368e85aae02caec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1925b69e0182801d9368e85aae02caec">get_max_element</a> (const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;m_vector)</td></tr>
+<tr class="separator:a1925b69e0182801d9368e85aae02caec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8b29c939b8974c989a8a732e6becc3c7" id="r_a8b29c939b8974c989a8a732e6becc3c7"><td class="memItemLeft" align="right" valign="top">sf::CircleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b29c939b8974c989a8a732e6becc3c7">m_neuronCircle</a></td></tr>
+<tr class="separator:a8b29c939b8974c989a8a732e6becc3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a208ff7f69e54d4adabc71614cf1cda" id="r_a3a208ff7f69e54d4adabc71614cf1cda"><td class="memItemLeft" align="right" valign="top">sf::CircleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a208ff7f69e54d4adabc71614cf1cda">m_mouseDotCircle</a></td></tr>
+<tr class="separator:a3a208ff7f69e54d4adabc71614cf1cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0468e924ea15eb34a8cd4ae0ce83f66b" id="r_a0468e924ea15eb34a8cd4ae0ce83f66b"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0468e924ea15eb34a8cd4ae0ce83f66b">m_toGoBackButton</a></td></tr>
+<tr class="separator:a0468e924ea15eb34a8cd4ae0ce83f66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cd456cd5626a079cd897e24a9fac722" id="r_a1cd456cd5626a079cd897e24a9fac722"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cd456cd5626a079cd897e24a9fac722">m_buttonTexture</a></td></tr>
+<tr class="separator:a1cd456cd5626a079cd897e24a9fac722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba1c3f420038adc6a5737734ac5e3559" id="r_aba1c3f420038adc6a5737734ac5e3559"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba1c3f420038adc6a5737734ac5e3559">m_font</a></td></tr>
+<tr class="separator:aba1c3f420038adc6a5737734ac5e3559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b534213940800776bbc5fb1569d6576" id="r_a1b534213940800776bbc5fb1569d6576"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b534213940800776bbc5fb1569d6576">m_toGoBackText</a></td></tr>
+<tr class="separator:a1b534213940800776bbc5fb1569d6576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2119b8e368f8b99e77b227b81e9b3e3d" id="r_a2119b8e368f8b99e77b227b81e9b3e3d"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2119b8e368f8b99e77b227b81e9b3e3d">m_neuralWeightText</a></td></tr>
+<tr class="separator:a2119b8e368f8b99e77b227b81e9b3e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5108efb457aa61473532f43cc050b2d8" id="r_a5108efb457aa61473532f43cc050b2d8"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5108efb457aa61473532f43cc050b2d8">LEARNING_RATE</a> = 0.03f</td></tr>
+<tr class="separator:a5108efb457aa61473532f43cc050b2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914d8e145c40640da169708a5bf669d0" id="r_a914d8e145c40640da169708a5bf669d0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a914d8e145c40640da169708a5bf669d0">m_inputs</a></td></tr>
+<tr class="separator:a914d8e145c40640da169708a5bf669d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480b49150071ce38b7aa052ba557273d" id="r_a480b49150071ce38b7aa052ba557273d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a480b49150071ce38b7aa052ba557273d">m_target_outputs</a></td></tr>
+<tr class="separator:a480b49150071ce38b7aa052ba557273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8fd2cf96453247030ef6286c0ebc5be" id="r_af8fd2cf96453247030ef6286c0ebc5be"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8fd2cf96453247030ef6286c0ebc5be">HIDDEN_NEURONS</a></td></tr>
+<tr class="separator:af8fd2cf96453247030ef6286c0ebc5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebef9faa8584aa742b0115922ad5edce" id="r_aebef9faa8584aa742b0115922ad5edce"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebef9faa8584aa742b0115922ad5edce">BIAS_NEURONS</a></td></tr>
+<tr class="separator:aebef9faa8584aa742b0115922ad5edce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -175,6 +226,20 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00003">3</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9_cgraph.png" border="0" usemap="#aclass_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9_cgraph" id="aclass_neural_networks_afa8c961ced752f92ffef57cd03c2b9d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,217,107"/>
+<area shape="rect" href="class_neural_networks.html#add9786241b8d6cee9da23e83e8dfae5e" title="Initializes back button." alt="" coords="269,5,437,48"/>
+<area shape="poly" title=" " alt="" coords="162,77,257,50,259,55,163,82"/>
+<area shape="rect" href="class_neural_networks.html#a450ac620775925afd70928a0fe40979d" title="Initializes the mouse Dot circle." alt="" coords="265,72,441,115"/>
+<area shape="poly" title=" " alt="" coords="217,91,249,91,249,96,217,96"/>
+<area shape="rect" href="class_neural_networks.html#a621a18fa11f622e72f5ef1b37747701d" title="Initializes neural circles." alt="" coords="266,139,440,181"/>
+<area shape="poly" title=" " alt="" coords="163,105,259,131,257,137,162,110"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -198,6 +263,74 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af6561d45eb152e484d3fb5a5186d8046" name="af6561d45eb152e484d3fb5a5186d8046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6561d45eb152e484d3fb5a5186d8046">&#9670;&#160;</a></span>activationFunctionSigmoid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::activationFunctionSigmoid </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>m_derivative</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>m_input</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Using the sigmoid activation function. </p>
+<p>Sigmoid function: f(x) = 1 / (1 + exp(-x)) Derivative of sigmoid: f'(x) = f(x) * (1 - f(x))</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m_derivative</td><td></td></tr>
+    <tr><td class="paramname">m_input</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00416">416</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_af6561d45eb152e484d3fb5a5186d8046_icgraph.png" border="0" usemap="#aclass_neural_networks_af6561d45eb152e484d3fb5a5186d8046_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_af6561d45eb152e484d3fb5a5186d8046_icgraph" id="aclass_neural_networks_af6561d45eb152e484d3fb5a5186d8046_icgraph">
+<area shape="rect" title="Using the sigmoid activation function." alt="" coords="898,23,1072,65"/>
+<area shape="rect" href="class_neural_networks.html#abb3351a7f806c8702b7441bf597d89d5" title="this is a method used for training the neural network, where the error between the predicted output a..." alt="" coords="626,5,844,32"/>
+<area shape="poly" title=" " alt="" coords="882,36,844,32,844,27,883,31"/>
+<area shape="rect" href="class_neural_networks.html#ab9abc0b8a4c01d84f3be7eeeba0bf21c" title="This is a process where input data is passed through the network, layer by layer, until it reaches th..." alt="" coords="620,56,850,83"/>
+<area shape="poly" title=" " alt="" coords="883,57,851,60,850,55,882,52"/>
+<area shape="rect" href="class_game.html#a5d94b00fbaee0de5284a72e3394d8a9b" title="Updates the nerual network." alt="" coords="384,5,572,32"/>
+<area shape="poly" title=" " alt="" coords="611,21,572,21,572,16,611,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,31,185,57"/>
+<area shape="poly" title=" " alt="" coords="218,33,186,39,185,34,217,28"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="poly" title=" " alt="" coords="648,55,549,35,550,30,649,50"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="390,56,566,83"/>
+<area shape="poly" title=" " alt="" coords="604,72,566,72,566,67,604,67"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="235,56,335,83"/>
+<area shape="poly" title=" " alt="" coords="374,72,335,72,335,67,374,67"/>
+<area shape="poly" title=" " alt="" coords="218,60,185,54,186,49,219,55"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7932bac035bfde3145908e05ee54b912" name="a7932bac035bfde3145908e05ee54b912"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7932bac035bfde3145908e05ee54b912">&#9670;&#160;</a></span>addInput()</h2>
 
@@ -227,6 +360,20 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00305">305</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a7932bac035bfde3145908e05ee54b912_icgraph.png" border="0" usemap="#aclass_neural_networks_a7932bac035bfde3145908e05ee54b912_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a7932bac035bfde3145908e05ee54b912_icgraph" id="aclass_neural_networks_a7932bac035bfde3145908e05ee54b912_icgraph">
+<area shape="rect" title="adds the input" alt="" coords="430,5,600,32"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -265,6 +412,20 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00316">316</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc_icgraph.png" border="0" usemap="#aclass_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc_icgraph" id="aclass_neural_networks_a74630538f0dd1a24209a1b6f4541fbdc_icgraph">
+<area shape="rect" title="adds the targetOutput thats the circle things for visualization" alt="" coords="430,5,608,48"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,13,382,40"/>
+<area shape="poly" title=" " alt="" coords="415,29,383,29,383,24,415,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -309,6 +470,32 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00155">155</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_abb3351a7f806c8702b7441bf597d89d5_cgraph.png" border="0" usemap="#aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_cgraph" id="aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_cgraph">
+<area shape="rect" title="this is a method used for training the neural network, where the error between the predicted output a..." alt="" coords="5,13,223,40"/>
+<area shape="rect" href="class_neural_networks.html#af6561d45eb152e484d3fb5a5186d8046" title="Using the sigmoid activation function." alt="" coords="271,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="223,24,255,24,255,29,223,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_abb3351a7f806c8702b7441bf597d89d5_icgraph.png" border="0" usemap="#aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_icgraph" id="aclass_neural_networks_abb3351a7f806c8702b7441bf597d89d5_icgraph">
+<area shape="rect" title="this is a method used for training the neural network, where the error between the predicted output a..." alt="" coords="620,5,837,32"/>
+<area shape="rect" href="class_game.html#a5d94b00fbaee0de5284a72e3394d8a9b" title="Updates the nerual network." alt="" coords="384,5,572,32"/>
+<area shape="poly" title=" " alt="" coords="604,21,572,21,572,16,604,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -350,7 +537,32 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph.svg" width="520" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph.png" border="0" usemap="#aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph" id="aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_cgraph">
+<area shape="rect" title="Draws the Neural Perceptrons." alt="" coords="5,56,190,99"/>
+<area shape="rect" href="class_neural_networks.html#a9e7d65e2f7cf81bd065bf022ff3a70cc" title="Draws the text for the weight on each perceptron." alt="" coords="238,5,451,32"/>
+<area shape="poly" title=" " alt="" coords="189,53,269,34,271,39,191,58"/>
+<area shape="rect" href="class_neural_networks.html#a850cd48ec50a90e6d66424194b872961" title=" " alt="" coords="275,56,414,99"/>
+<area shape="poly" title=" " alt="" coords="190,75,260,75,260,80,190,80"/>
+<area shape="rect" href="class_neural_networks.html#a637911933853ff9586f60b1282a1e209" title=" " alt="" coords="275,123,414,165"/>
+<area shape="poly" title=" " alt="" coords="180,97,261,119,259,124,178,102"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_icgraph.png" border="0" usemap="#aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_icgraph" id="aclass_neural_networks_a58ff18a7bc4cb97fa44ab5873bbc486b_icgraph">
+<area shape="rect" title="Draws the Neural Perceptrons." alt="" coords="605,5,789,48"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="381,13,557,40"/>
+<area shape="poly" title=" " alt="" coords="589,29,557,29,557,24,589,24"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -405,7 +617,20 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph.svg" width="520" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph.png" border="0" usemap="#aclass_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph" id="aclass_neural_networks_a9e7d65e2f7cf81bd065bf022ff3a70cc_icgraph">
+<area shape="rect" title="Draws the text for the weight on each perceptron." alt="" coords="837,13,1050,40"/>
+<area shape="rect" href="class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="605,5,789,48"/>
+<area shape="poly" title=" " alt="" coords="821,29,789,29,789,24,821,24"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="381,13,557,40"/>
+<area shape="poly" title=" " alt="" coords="589,29,557,29,557,24,589,24"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
 </div>
 
 </div>
@@ -452,6 +677,283 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00214">214</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_cgraph.png" border="0" usemap="#aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_cgraph" id="aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_cgraph">
+<area shape="rect" title="This is a process where input data is passed through the network, layer by layer, until it reaches th..." alt="" coords="5,13,236,40"/>
+<area shape="rect" href="class_neural_networks.html#af6561d45eb152e484d3fb5a5186d8046" title="Using the sigmoid activation function." alt="" coords="284,5,458,48"/>
+<area shape="poly" title=" " alt="" coords="236,24,268,24,268,29,236,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_icgraph.png" border="0" usemap="#aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_icgraph" id="aclass_neural_networks_ab9abc0b8a4c01d84f3be7eeeba0bf21c_icgraph">
+<area shape="rect" title="This is a process where input data is passed through the network, layer by layer, until it reaches th..." alt="" coords="620,31,850,57"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="390,5,566,32"/>
+<area shape="poly" title=" " alt="" coords="604,34,566,30,566,25,604,28"/>
+<area shape="rect" href="class_game.html#a5d94b00fbaee0de5284a72e3394d8a9b" title="Updates the nerual network." alt="" coords="384,56,572,83"/>
+<area shape="poly" title=" " alt="" coords="604,60,572,63,572,57,604,54"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="235,5,335,32"/>
+<area shape="poly" title=" " alt="" coords="374,21,335,21,335,16,374,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,31,185,57"/>
+<area shape="poly" title=" " alt="" coords="219,33,186,39,185,34,218,28"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,56,336,83"/>
+<area shape="poly" title=" " alt="" coords="369,72,337,72,337,67,369,67"/>
+<area shape="poly" title=" " alt="" coords="217,60,185,54,186,49,218,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a850cd48ec50a90e6d66424194b872961" name="a850cd48ec50a90e6d66424194b872961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a850cd48ec50a90e6d66424194b872961">&#9670;&#160;</a></span>get_max_element() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_max_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00462">462</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a850cd48ec50a90e6d66424194b872961_icgraph.png" border="0" usemap="#aclass_neural_networks_a850cd48ec50a90e6d66424194b872961_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a850cd48ec50a90e6d66424194b872961_icgraph" id="aclass_neural_networks_a850cd48ec50a90e6d66424194b872961_icgraph">
+<area shape="rect" title=" " alt="" coords="837,72,975,115"/>
+<area shape="rect" href="class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="605,5,789,48"/>
+<area shape="poly" title=" " alt="" coords="822,69,766,51,767,46,824,64"/>
+<area shape="rect" href="class_neural_networks.html#ab2daf5fcae2b88d026743141b371dbb0" title=" " alt="" coords="628,72,766,115"/>
+<area shape="poly" title=" " alt="" coords="821,96,766,96,766,91,821,91"/>
+<area shape="rect" href="class_neural_networks.html#a1925b69e0182801d9368e85aae02caec" title=" " alt="" coords="628,139,766,181"/>
+<area shape="poly" title=" " alt="" coords="824,122,767,141,766,135,822,117"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="381,13,557,40"/>
+<area shape="poly" title=" " alt="" coords="589,29,557,29,557,24,589,24"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab2daf5fcae2b88d026743141b371dbb0" name="ab2daf5fcae2b88d026743141b371dbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2daf5fcae2b88d026743141b371dbb0">&#9670;&#160;</a></span>get_max_element() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_max_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00467">467</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_ab2daf5fcae2b88d026743141b371dbb0_cgraph.png" border="0" usemap="#aclass_neural_networks_ab2daf5fcae2b88d026743141b371dbb0_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_ab2daf5fcae2b88d026743141b371dbb0_cgraph" id="aclass_neural_networks_ab2daf5fcae2b88d026743141b371dbb0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,48"/>
+<area shape="rect" href="class_neural_networks.html#a850cd48ec50a90e6d66424194b872961" title=" " alt="" coords="192,5,330,48"/>
+<area shape="poly" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1925b69e0182801d9368e85aae02caec" name="a1925b69e0182801d9368e85aae02caec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1925b69e0182801d9368e85aae02caec">&#9670;&#160;</a></span>get_max_element() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_max_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00481">481</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a1925b69e0182801d9368e85aae02caec_cgraph.png" border="0" usemap="#aclass_neural_networks_a1925b69e0182801d9368e85aae02caec_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_a1925b69e0182801d9368e85aae02caec_cgraph" id="aclass_neural_networks_a1925b69e0182801d9368e85aae02caec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,48"/>
+<area shape="rect" href="class_neural_networks.html#a850cd48ec50a90e6d66424194b872961" title=" " alt="" coords="192,5,330,48"/>
+<area shape="poly" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a637911933853ff9586f60b1282a1e209" name="a637911933853ff9586f60b1282a1e209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637911933853ff9586f60b1282a1e209">&#9670;&#160;</a></span>get_min_element() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_min_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00429">429</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a637911933853ff9586f60b1282a1e209_icgraph.png" border="0" usemap="#aclass_neural_networks_a637911933853ff9586f60b1282a1e209_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a637911933853ff9586f60b1282a1e209_icgraph" id="aclass_neural_networks_a637911933853ff9586f60b1282a1e209_icgraph">
+<area shape="rect" title=" " alt="" coords="837,72,975,115"/>
+<area shape="rect" href="class_neural_networks.html#a58ff18a7bc4cb97fa44ab5873bbc486b" title="Draws the Neural Perceptrons." alt="" coords="605,5,789,48"/>
+<area shape="poly" title=" " alt="" coords="822,69,766,51,767,46,824,64"/>
+<area shape="rect" href="class_neural_networks.html#aaf01fbefad24721d648d162207d7a834" title=" " alt="" coords="628,72,766,115"/>
+<area shape="poly" title=" " alt="" coords="821,96,766,96,766,91,821,91"/>
+<area shape="rect" href="class_neural_networks.html#a5f84c21c3a682707327bb9675095210b" title=" " alt="" coords="628,139,766,181"/>
+<area shape="poly" title=" " alt="" coords="824,122,767,141,766,135,822,117"/>
+<area shape="rect" href="class_game.html#a8f38d4b2a428ba07ac6c75665a199778" title="Renders the neural networks." alt="" coords="381,13,557,40"/>
+<area shape="poly" title=" " alt="" coords="589,29,557,29,557,24,589,24"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,13,333,40"/>
+<area shape="poly" title=" " alt="" coords="366,29,334,29,334,24,366,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf01fbefad24721d648d162207d7a834" name="aaf01fbefad24721d648d162207d7a834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf01fbefad24721d648d162207d7a834">&#9670;&#160;</a></span>get_min_element() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_min_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00434">434</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_aaf01fbefad24721d648d162207d7a834_cgraph.png" border="0" usemap="#aclass_neural_networks_aaf01fbefad24721d648d162207d7a834_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_aaf01fbefad24721d648d162207d7a834_cgraph" id="aclass_neural_networks_aaf01fbefad24721d648d162207d7a834_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,48"/>
+<area shape="rect" href="class_neural_networks.html#a637911933853ff9586f60b1282a1e209" title=" " alt="" coords="192,5,330,48"/>
+<area shape="poly" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f84c21c3a682707327bb9675095210b" name="a5f84c21c3a682707327bb9675095210b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f84c21c3a682707327bb9675095210b">&#9670;&#160;</a></span>get_min_element() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float NeuralNetworks::get_min_element </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m_vector</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00448">448</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a5f84c21c3a682707327bb9675095210b_cgraph.png" border="0" usemap="#aclass_neural_networks_a5f84c21c3a682707327bb9675095210b_cgraph" alt=""/></div>
+<map name="aclass_neural_networks_a5f84c21c3a682707327bb9675095210b_cgraph" id="aclass_neural_networks_a5f84c21c3a682707327bb9675095210b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,48"/>
+<area shape="rect" href="class_neural_networks.html#a637911933853ff9586f60b1282a1e209" title=" " alt="" coords="192,5,330,48"/>
+<area shape="poly" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -474,7 +976,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph.svg" width="371" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph.png" border="0" usemap="#aclass_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph" id="aclass_neural_networks_a01571f5a037af8e439e6fe32abe78ccc_icgraph">
+<area shape="rect" title=" " alt="" coords="153,5,365,32"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
 </div>
 
 </div>
@@ -498,7 +1005,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph.svg" width="384" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><img src="class_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph.png" border="0" usemap="#aclass_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph" id="aclass_neural_networks_a6c41257179aefcfc73d2b2945b1851c9_icgraph">
+<area shape="rect" title=" " alt="" coords="153,5,331,48"/>
+<area shape="rect" href="class_game.html#ad59df6562a58a614fda24622d3715b65" title="default constructor" alt="" coords="5,13,105,40"/>
+<area shape="poly" title=" " alt="" coords="137,29,105,29,105,24,137,24"/>
+</map>
 </div>
 
 </div>
@@ -519,6 +1031,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00344">344</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_acaa870434f86c76dba132996cbb98c09_icgraph.png" border="0" usemap="#aclass_neural_networks_acaa870434f86c76dba132996cbb98c09_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_acaa870434f86c76dba132996cbb98c09_icgraph" id="aclass_neural_networks_acaa870434f86c76dba132996cbb98c09_icgraph">
+<area shape="rect" title=" " alt="" coords="620,5,793,32"/>
+<area shape="rect" href="class_game.html#a5d94b00fbaee0de5284a72e3394d8a9b" title="Updates the nerual network." alt="" coords="384,5,572,32"/>
+<area shape="poly" title=" " alt="" coords="604,21,572,21,572,16,604,16"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="369,21,337,21,337,16,369,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -538,6 +1066,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00349">349</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_ae3de6a3086535fcf73609b4fea83c434_icgraph.png" border="0" usemap="#aclass_neural_networks_ae3de6a3086535fcf73609b4fea83c434_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_ae3de6a3086535fcf73609b4fea83c434_icgraph" id="aclass_neural_networks_ae3de6a3086535fcf73609b4fea83c434_icgraph">
+<area shape="rect" title=" " alt="" coords="620,5,794,48"/>
+<area shape="rect" href="class_game.html#a5d94b00fbaee0de5284a72e3394d8a9b" title="Updates the nerual network." alt="" coords="384,13,572,40"/>
+<area shape="poly" title=" " alt="" coords="604,29,572,29,572,24,604,24"/>
+<area shape="rect" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0" title="Update the game world." alt="" coords="233,13,336,40"/>
+<area shape="poly" title=" " alt="" coords="369,29,337,29,337,24,369,24"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,13,185,40"/>
+<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -570,6 +1114,137 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00326">326</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a45fe05f3c7c2c973e0c8a69893572959_icgraph.png" border="0" usemap="#aclass_neural_networks_a45fe05f3c7c2c973e0c8a69893572959_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a45fe05f3c7c2c973e0c8a69893572959_icgraph" id="aclass_neural_networks_a45fe05f3c7c2c973e0c8a69893572959_icgraph">
+<area shape="rect" title="To go back to main menu screen." alt="" coords="430,5,639,32"/>
+<area shape="rect" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38" title="handle user and system events/ input get key presses/ mouse moves" alt="" coords="233,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="415,21,383,21,383,16,415,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="add9786241b8d6cee9da23e83e8dfae5e" name="add9786241b8d6cee9da23e83e8dfae5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9786241b8d6cee9da23e83e8dfae5e">&#9670;&#160;</a></span>initBackButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetworks::initBackButton </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes back button. </p>
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00372">372</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_add9786241b8d6cee9da23e83e8dfae5e_icgraph.png" border="0" usemap="#aclass_neural_networks_add9786241b8d6cee9da23e83e8dfae5e_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_add9786241b8d6cee9da23e83e8dfae5e_icgraph" id="aclass_neural_networks_add9786241b8d6cee9da23e83e8dfae5e_icgraph">
+<area shape="rect" title="Initializes back button." alt="" coords="265,5,432,48"/>
+<area shape="rect" href="class_neural_networks.html#afa8c961ced752f92ffef57cd03c2b9d9" title=" " alt="" coords="5,13,217,40"/>
+<area shape="poly" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a450ac620775925afd70928a0fe40979d" name="a450ac620775925afd70928a0fe40979d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a450ac620775925afd70928a0fe40979d">&#9670;&#160;</a></span>initMouseDotCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetworks::initMouseDotCircle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the mouse Dot circle. </p>
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00397">397</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a450ac620775925afd70928a0fe40979d_icgraph.png" border="0" usemap="#aclass_neural_networks_a450ac620775925afd70928a0fe40979d_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a450ac620775925afd70928a0fe40979d_icgraph" id="aclass_neural_networks_a450ac620775925afd70928a0fe40979d_icgraph">
+<area shape="rect" title="Initializes the mouse Dot circle." alt="" coords="265,5,441,48"/>
+<area shape="rect" href="class_neural_networks.html#afa8c961ced752f92ffef57cd03c2b9d9" title=" " alt="" coords="5,13,217,40"/>
+<area shape="poly" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a621a18fa11f622e72f5ef1b37747701d" name="a621a18fa11f622e72f5ef1b37747701d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a621a18fa11f622e72f5ef1b37747701d">&#9670;&#160;</a></span>initNeuralCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetworks::initNeuralCircle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes neural circles. </p>
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00357">357</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_a621a18fa11f622e72f5ef1b37747701d_icgraph.png" border="0" usemap="#aclass_neural_networks_a621a18fa11f622e72f5ef1b37747701d_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_a621a18fa11f622e72f5ef1b37747701d_icgraph" id="aclass_neural_networks_a621a18fa11f622e72f5ef1b37747701d_icgraph">
+<area shape="rect" title="Initializes neural circles." alt="" coords="265,5,439,48"/>
+<area shape="rect" href="class_neural_networks.html#afa8c961ced752f92ffef57cd03c2b9d9" title=" " alt="" coords="5,13,217,40"/>
+<area shape="poly" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -597,6 +1272,20 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8cpp_source.html#l00027">27</a> of file <a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_networks_ac980e791320e7b15937e40f13162a702_icgraph.png" border="0" usemap="#aclass_neural_networks_ac980e791320e7b15937e40f13162a702_icgraph" alt=""/></div>
+<map name="aclass_neural_networks_ac980e791320e7b15937e40f13162a702_icgraph" id="aclass_neural_networks_ac980e791320e7b15937e40f13162a702_icgraph">
+<area shape="rect" title="renders neural networks stuff" alt="" coords="381,5,538,32"/>
+<area shape="rect" href="class_game.html#a15ddd769261d923827a3cdf41499c843" title="Draws all the sprites, shapes and texts." alt="" coords="233,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="366,21,334,21,334,16,366,16"/>
+<area shape="rect" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="main game loop update 60 times per second, process update as often as possible and at least 60 times ..." alt="" coords="103,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Using SFML 2.6.0." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -620,6 +1309,54 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aebef9faa8584aa742b0115922ad5edce" name="aebef9faa8584aa742b0115922ad5edce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebef9faa8584aa742b0115922ad5edce">&#9670;&#160;</a></span>BIAS_NEURONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, 3&gt; NeuralNetworks::BIAS_NEURONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00069">69</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="af8fd2cf96453247030ef6286c0ebc5be" name="af8fd2cf96453247030ef6286c0ebc5be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8fd2cf96453247030ef6286c0ebc5be">&#9670;&#160;</a></span>HIDDEN_NEURONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, 2&gt; NeuralNetworks::HIDDEN_NEURONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00068">68</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
 <a id="a5182e3363e6c68d414b19285465db947" name="a5182e3363e6c68d414b19285465db947"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5182e3363e6c68d414b19285465db947">&#9670;&#160;</a></span>INPUT_NEURONS</h2>
 
@@ -633,6 +1370,246 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00034">34</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a5108efb457aa61473532f43cc050b2d8" name="a5108efb457aa61473532f43cc050b2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5108efb457aa61473532f43cc050b2d8">&#9670;&#160;</a></span>LEARNING_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float NeuralNetworks::LEARNING_RATE = 0.03f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00063">63</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a1cd456cd5626a079cd897e24a9fac722" name="a1cd456cd5626a079cd897e24a9fac722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cd456cd5626a079cd897e24a9fac722">&#9670;&#160;</a></span>m_buttonTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture NeuralNetworks::m_buttonTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00057">57</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="aba1c3f420038adc6a5737734ac5e3559" name="aba1c3f420038adc6a5737734ac5e3559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba1c3f420038adc6a5737734ac5e3559">&#9670;&#160;</a></span>m_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font NeuralNetworks::m_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00059">59</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a914d8e145c40640da169708a5bf669d0" name="a914d8e145c40640da169708a5bf669d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914d8e145c40640da169708a5bf669d0">&#9670;&#160;</a></span>m_inputs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;float&gt; &gt; NeuralNetworks::m_inputs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00065">65</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a208ff7f69e54d4adabc71614cf1cda" name="a3a208ff7f69e54d4adabc71614cf1cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a208ff7f69e54d4adabc71614cf1cda">&#9670;&#160;</a></span>m_mouseDotCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::CircleShape NeuralNetworks::m_mouseDotCircle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00054">54</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a2119b8e368f8b99e77b227b81e9b3e3d" name="a2119b8e368f8b99e77b227b81e9b3e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2119b8e368f8b99e77b227b81e9b3e3d">&#9670;&#160;</a></span>m_neuralWeightText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text NeuralNetworks::m_neuralWeightText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00061">61</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b29c939b8974c989a8a732e6becc3c7" name="a8b29c939b8974c989a8a732e6becc3c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b29c939b8974c989a8a732e6becc3c7">&#9670;&#160;</a></span>m_neuronCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::CircleShape NeuralNetworks::m_neuronCircle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00053">53</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a480b49150071ce38b7aa052ba557273d" name="a480b49150071ce38b7aa052ba557273d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a480b49150071ce38b7aa052ba557273d">&#9670;&#160;</a></span>m_target_outputs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;float&gt; &gt; NeuralNetworks::m_target_outputs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00066">66</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a0468e924ea15eb34a8cd4ae0ce83f66b" name="a0468e924ea15eb34a8cd4ae0ce83f66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0468e924ea15eb34a8cd4ae0ce83f66b">&#9670;&#160;</a></span>m_toGoBackButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape NeuralNetworks::m_toGoBackButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00056">56</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b534213940800776bbc5fb1569d6576" name="a1b534213940800776bbc5fb1569d6576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b534213940800776bbc5fb1569d6576">&#9670;&#160;</a></span>m_toGoBackText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text NeuralNetworks::m_toGoBackText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_networks_8h_source.html#l00060">60</a> of file <a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a>.</p>
 
 </div>
 </div>
@@ -653,8 +1630,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AI Behaviors/<a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a></li>
-<li>AI Behaviors/<a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_neural_networks_8h_source.html">NeuralNetworks.h</a></li>
+<li>E:/Program Files E/Year 4/Project/Project_2023-24/AI Behaviors/AI Behaviors/<a class="el" href="_neural_networks_8cpp_source.html">NeuralNetworks.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

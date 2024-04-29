@@ -1,11 +1,46 @@
 <map id="Unit::magnitude" name="Unit::magnitude">
-<area shape="rect" id="Node000001" title=" " alt="" coords="440,56,552,83"/>
-<area shape="rect" id="Node000002" href="$class_unit.html#a9262163e015dca7a29a114798b7ede32" title="it just orientates the sprite a bit" alt="" coords="201,5,392,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="425,54,351,35,353,30,426,49"/>
-<area shape="rect" id="Node000004" href="$class_unit.html#a717bca7d26b5632119fe20b9dfa24f75" title="Makes it slowly steer towards that direction." alt="" coords="232,56,361,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,72,361,72,361,67,424,67"/>
-<area shape="rect" id="Node000005" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="229,107,364,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="426,90,353,109,351,103,425,85"/>
-<area shape="rect" id="Node000003" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="5,5,153,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="671,284,784,311"/>
+<area shape="rect" id="Node000002" href="$class_rifleman_squad.html#afe03ca4ff7509dd205e6ba283541e532" title="Tries to aim and shoots at the target with the squad members." alt="" coords="221,5,372,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="720,269,710,224,692,169,663,114,644,90,622,69,593,51,563,37,497,19,431,13,372,13,372,8,431,7,498,14,565,32,596,46,625,65,648,86,668,111,697,167,715,223,725,268"/>
+<area shape="rect" id="Node000004" href="$class_firehawk.html#a244c37330dde83d34e4ca60a244c6910" title="makes the unit move" alt="" coords="443,411,613,437"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="709,325,673,364,650,384,625,401,599,413,597,408,622,396,646,380,669,360,705,321"/>
+<area shape="rect" id="Node000006" href="$class_tank_aurora.html#ae91336895cbe9bb067a991215fd9cd75" title="After charging the emp it shoots out the energy wave to slow down enemies." alt="" coords="453,360,602,387"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="683,320,624,344,573,362,572,357,622,339,681,315"/>
+<area shape="rect" id="Node000007" href="$class_tank_aurora.html#a929635e820b74db6381f9ea239b57178" title=" " alt="" coords="16,309,150,336"/>
+<area shape="poly" id="edge26_Node000001_Node000007" title=" " alt="" coords="656,303,151,323,151,317,656,297"/>
+<area shape="rect" id="Node000008" href="$class_firehawk.html#aa7f4ce8bd6242264918c8910e92e5445" title="The target needs to be in line of sight to be able to shoot." alt="" coords="446,461,610,504"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="716,326,681,389,656,422,625,451,606,463,604,459,622,447,652,419,677,386,712,324"/>
+<area shape="rect" id="Node000009" href="$class_buggy.html#ae2adb67675ce96a31ee4a0a35f71946b" title="movement for this unit" alt="" coords="234,120,359,147"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="714,271,700,240,681,206,655,173,622,148,590,133,557,123,486,114,419,115,360,122,359,117,418,110,487,108,558,118,592,128,625,143,658,169,685,203,705,238,719,268"/>
+<area shape="rect" id="Node000011" href="$class_hammer_head.html#a8ccd0f5bcaa2455c02fc5334580ab961" title="makes the unit move" alt="" coords="444,208,611,235"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="681,280,622,256,572,238,573,233,624,251,683,275"/>
+<area shape="rect" id="Node000013" href="$class_harvester.html#a380cd21f372be1fef95855d46118b9c5" title=" " alt="" coords="225,553,368,580"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="724,326,714,369,695,422,666,474,647,498,625,518,606,529,579,538,513,551,368,566,368,561,512,546,578,533,603,524,622,514,643,494,662,472,690,420,709,368,719,325"/>
+<area shape="rect" id="Node000015" href="$class_rifleman_squad.html#aec9e4f9f68a5fad7659d6049b4e39f33" title="This units movement." alt="" coords="209,56,384,83"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="717,270,705,232,686,189,658,146,641,127,622,112,595,96,565,84,503,68,441,62,384,62,384,57,442,56,504,63,567,78,597,91,625,107,645,123,662,143,690,186,710,230,722,268"/>
+<area shape="rect" id="Node000016" href="$class_tank_aurora.html#a15dfe8060d32688eb525146954e1cbfb" title="Makes this unit move." alt="" coords="219,259,374,285"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="656,296,374,279,374,274,656,291"/>
+<area shape="rect" id="Node000017" href="$class_unit.html#a9262163e015dca7a29a114798b7ede32" title="it just orientates the sprite a bit" alt="" coords="432,157,623,184"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="705,274,669,235,646,215,622,198,597,187,599,182,625,194,650,211,673,231,709,270"/>
+<area shape="rect" id="Node000018" href="$class_unit.html#a717bca7d26b5632119fe20b9dfa24f75" title="Makes it slowly steer towards that direction." alt="" coords="463,579,592,605"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="725,327,716,377,698,440,669,505,649,535,625,562,594,581,591,577,622,558,645,532,664,502,693,438,711,375,720,326"/>
+<area shape="rect" id="Node000003" href="$class_rifleman_squad.html#a4050724b94874b38c91944bbf319cc34" title=" " alt="" coords="5,31,161,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,32,161,37,161,32,205,27"/>
+<area shape="rect" id="Node000005" href="$class_firehawk.html#a39f1f9ed23fa4203edf940c9057b8b2a" title=" " alt="" coords="236,440,357,467"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="427,439,357,448,357,443,426,434"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="437,368,208,344,150,336,151,331,209,339,437,363"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="430,473,357,464,357,458,430,468"/>
+<area shape="rect" id="Node000010" href="$class_buggy.html#a14e9377226ef591039712bc6f0cfa061" title=" " alt="" coords="30,120,136,147"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="218,136,136,136,136,131,218,131"/>
+<area shape="rect" id="Node000012" href="$class_hammer_head.html#a57c18e3d80cb32b40aa995bf76f59949" title=" " alt="" coords="223,183,370,209"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="429,213,370,207,371,201,429,208"/>
+<area shape="rect" id="Node000014" href="$class_harvester.html#ac6e106e888fc20099bba4f57f833c216" title=" " alt="" coords="22,553,144,580"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="210,569,145,569,145,564,210,564"/>
+<area shape="poly" id="edge16_Node000015_Node000003" title=" " alt="" coords="193,60,161,56,161,51,193,54"/>
+<area shape="poly" id="edge18_Node000016_Node000007" title=" " alt="" coords="223,292,143,311,142,306,222,287"/>
+<area shape="poly" id="edge20_Node000017_Node000009" title=" " alt="" coords="426,157,359,146,360,141,427,152"/>
+<area shape="poly" id="edge23_Node000017_Node000012" title=" " alt="" coords="417,185,371,191,370,185,416,180"/>
+<area shape="poly" id="edge21_Node000017_Node000015" title=" " alt="" coords="480,153,328,86,330,81,482,148"/>
+<area shape="poly" id="edge22_Node000017_Node000016" title=" " alt="" coords="452,192,433,198,323,260,320,256,431,194,450,187"/>
+<area shape="poly" id="edge25_Node000018_Node000013" title=" " alt="" coords="447,586,368,577,368,572,448,581"/>
 </map>

@@ -1,14 +1,14 @@
 \doxysection{Tank\+Aurora.\+cpp}
-\hypertarget{_tank_aurora_8cpp_source}{}\label{_tank_aurora_8cpp_source}\index{AI Behaviors/TankAurora.cpp@{AI Behaviors/TankAurora.cpp}}
+\hypertarget{_tank_aurora_8cpp_source}{}\label{_tank_aurora_8cpp_source}\index{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/TankAurora.cpp@{E:/Program Files E/Year 4/Project/Project\_2023-\/24/AI Behaviors/AI Behaviors/TankAurora.cpp}}
 \mbox{\hyperlink{_tank_aurora_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tank_aurora_8h}{TankAurora.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00003}\mbox{\hyperlink{class_tank_aurora_a4dba6b620a77200fd848d7125ec1969b}{00003}}\ \mbox{\hyperlink{class_tank_aurora_a4dba6b620a77200fd848d7125ec1969b}{TankAurora::TankAurora}}()}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00004}00004\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00005}00005\ \ \ \ \ setupTankAurora();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00006}00006\ \ \ \ \ setupHealingAura();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00007}00007\ \ \ \ \ setupEnergyWave();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c}{setupTankAurora}}();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_af312708da025ff43ee484aadd8e235bc}{setupHealingAura}}();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8}{setupEnergyWave}}();}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_unit_a15fdafad6c0aca6ca7df7c14b465e3f7}{m\_cost}}\ =\ 100;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_unit_a2fb910438e195e536fa971f09d0636df}{m\_health}}\ =\ 200;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ =\ 350;}
@@ -24,14 +24,14 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00020}00020\ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_vehicle_unit_a8509cb11b318348f4953dae4932ea071}{VehicleUnit::update}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allUnits}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00023}00023\ \ \ \ \ movement(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb}{movement}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00025}00025\ \ \ \ \ m\_healingAura.setPosition(\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}());}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setPosition(\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}());}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00026}00026\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentTime}}\ =\ m\_shaderClock.getElapsedTime().asSeconds();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00028}00028\ \ \ \ \ m\_healingAuraShader.setUniform(\textcolor{stringliteral}{"{}time"{}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentTime}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentTime}}\ =\ \mbox{\hyperlink{class_tank_aurora_abc79e2beb2ad320a8023249ac7f735c6}{m\_shaderClock}}.getElapsedTime().asSeconds();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}{m\_healingAuraShader}}.setUniform(\textcolor{stringliteral}{"{}time"{}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{currentTime}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00029}00029\ \ \ \ \ sf::Glsl::Vec4\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{outlineColor}}(0,\ 1,\ 0,\ 0.3);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00030}00030\ \ \ \ \ m\_healingAuraShader.setUniform(\textcolor{stringliteral}{"{}outlineColor"{}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{outlineColor}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}{m\_healingAuraShader}}.setUniform(\textcolor{stringliteral}{"{}outlineColor"{}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{outlineColor}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_unit}{Unit}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unit}}\ :\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{m\_allUnits}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00033}00033\ \ \ \ \ \{}
@@ -39,41 +39,41 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToAlly}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unit}}-\/>getPosition()\ -\/\ \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}());}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToAlly}}\ <=\ m\_healingRange)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{distanceToAlly}}\ <=\ \mbox{\hyperlink{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}{m\_healingRange}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{unit}}-\/>addHealth(10.0f\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds());}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00043}00043\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isChargingEMPWave)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3}{m\_isChargingEMPWave}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00046}00046\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ spawnElectricalParticleEffect(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ m\_currentChargeTime\ +=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_currentChargeTime\ >=\ m\_empChargeTime)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d}{spawnElectricalParticleEffect}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\_currentChargeTime}}\ +=\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\_currentChargeTime}}\ >=\ \mbox{\hyperlink{class_tank_aurora_a1fdb7abbbc93e96f9f9b622c937c9dbc}{m\_empChargeTime}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ emitEMP();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75}{emitEMP}}();}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00053}00053\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00054}00054\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isFiringEnergyWave)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}{m\_isFiringEnergyWave}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00056}00056\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ m\_energyWavePosition\ +=\ m\_directionToEnemy\ *\ m\_energyWaveSpeed\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ m\_energyWaveSprite.setPosition(m\_energyWavePosition);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ m\_energyWaveSize\ +=\ m\_energyWaveGrowthRate\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}{m\_energyWavePosition}}\ +=\ \mbox{\hyperlink{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2}{m\_directionToEnemy}}\ *\ \mbox{\hyperlink{class_tank_aurora_a444dec7ee172501d701a0703fd017591}{m\_energyWaveSpeed}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setPosition(\mbox{\hyperlink{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}{m\_energyWavePosition}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}}\ +=\ \mbox{\hyperlink{class_tank_aurora_a3f8d97cda0e2e40b6baa42162d14d960}{m\_energyWaveGrowthRate}}\ *\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{t\_deltaTime}}.asSeconds();}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_energyWaveSize\ >=\ m\_energyWaveMaxSize)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}}\ >=\ \mbox{\hyperlink{class_tank_aurora_ac424d733660a9ab34cfd322ccf9bc4ef}{m\_energyWaveMaxSize}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ resetEnergyWave();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de}{resetEnergyWave}}();}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ m\_energyWaveSprite.setScale(m\_energyWaveSize,\ m\_energyWaveSize);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setScale(\mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}},\ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00069}00069\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_unit}{Unit}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}\ :\ *\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_energyWaveSprite.getGlobalBounds().intersects(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}-\/>getSprite().getGlobalBounds()))}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.getGlobalBounds().intersects(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}-\/>getSprite().getGlobalBounds()))}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}-\/>applySlowEffect(0.0f,\ 3.0f,\ 3.0f);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -83,21 +83,21 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00080}\mbox{\hyperlink{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17}{00080}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_ae64a175ca2527c56289658bc29ae3c17}{TankAurora::render}}(sf::RenderWindow\&\ m\_window)}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00081}00081\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00082}00082\ \ \ \ \ m\_window.draw(m\_healingAura,\ \&m\_healingAuraShader);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00082}00082\ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}},\ \&\mbox{\hyperlink{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}{m\_healingAuraShader}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00083}00083\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{class_vehicle_unit_ae308c42a1dde64acaa2a7d18d8333c90}{VehicleUnit::render}}(m\_window);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00085}00085\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}{m\_particleSystem}}.\mbox{\hyperlink{class_particle_system_a12f342988eeb7d9ac023e279b8b9dd8c}{render}}(m\_window);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00088}00088\ \ \ \ \ m\_waveShader.setUniform(\textcolor{stringliteral}{"{}time"{}},\ m\_clock.getElapsedTime().asSeconds());}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea}{m\_waveShader}}.setUniform(\textcolor{stringliteral}{"{}time"{}},\ \mbox{\hyperlink{class_tank_aurora_a1139a518f19bd2f9c070214d1ff6e62c}{m\_clock}}.getElapsedTime().asSeconds());}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isFiringEnergyWave)\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}{m\_isFiringEnergyWave}})\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00091}00091\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ m\_window.draw(m\_energyWaveSprite,\ \&m\_waveShader);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ m\_window.draw(\mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}},\ \&\mbox{\hyperlink{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea}{m\_waveShader}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00093}00093\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00094}00094\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00099}00099\ \textcolor{keywordtype}{void}\ TankAurora::setupTankAurora()}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00099}\mbox{\hyperlink{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c}{00099}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_a22d3bf2716ee5f29e7f2eb5523762f7c}{TankAurora::setupTankAurora}}()}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00100}00100\ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_unit_adbfcfd4b305a4ed9bafd5dc8430b45a3}{m\_unitTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)TankAurora.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00102}00102\ \ \ \ \ \{}
@@ -109,44 +109,44 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setOrigin(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getLocalBounds().height\ /\ 2);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.setScale(0.2,\ 0.2);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_lightningTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Particles\(\backslash\)\(\backslash\)OneLightning.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_tank_aurora_a666472b393de7406abda991e76849092}{m\_lightningTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Particles\(\backslash\)\(\backslash\)OneLightning.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00112}00112\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ Lightning\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00114}00114\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00115}00115\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00120}00120\ \textcolor{keywordtype}{void}\ TankAurora::setupHealingAura()\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00120}\mbox{\hyperlink{class_tank_aurora_af312708da025ff43ee484aadd8e235bc}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_af312708da025ff43ee484aadd8e235bc}{TankAurora::setupHealingAura}}()\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00121}00121\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00122}00122\ \ \ \ \ m\_healingAura.setRadius(m\_healingRange);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00123}00123\ \ \ \ \ m\_healingAura.setOrigin(m\_healingRange,\ m\_healingRange);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00124}00124\ \ \ \ \ m\_healingAura.setFillColor(sf::Color::Transparent);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00125}00125\ \ \ \ \ m\_healingAura.setOutlineColor(sf::Color(0,\ 255,\ 0,\ 128));}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00126}00126\ \ \ \ \ m\_healingAura.setOutlineThickness(1.0f);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setRadius(\mbox{\hyperlink{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}{m\_healingRange}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setOrigin(\mbox{\hyperlink{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}{m\_healingRange}},\ \mbox{\hyperlink{class_tank_aurora_a5d92b89267ff22b1da323cdd6740d431}{m\_healingRange}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setOutlineColor(sf::Color(0,\ 255,\ 0,\ 128));}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a6d15ca38474cc72eb4bf3aad30f01e8a}{m\_healingAura}}.setOutlineThickness(1.0f);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_healingAuraShader.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)healingAura.frag"{}},\ sf::Shader::Fragment))\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_tank_aurora_a4388901029e4ebb0ae1181475db4c69f}{m\_healingAuraShader}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)healingAura.frag"{}},\ sf::Shader::Fragment))\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00129}00129\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ loading\ shader"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00131}00131\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00132}00132\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00137}00137\ \textcolor{keywordtype}{void}\ TankAurora::setupEnergyWave()}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00137}\mbox{\hyperlink{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8}{00137}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_ae84133b2f148e8b9dfa35c96dfe554a8}{TankAurora::setupEnergyWave}}()}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00138}00138\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_energyWaveTexture.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)EnergyWave.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_tank_aurora_acdf5f78ad923541541c3ea09e7f6c6d2}{m\_energyWaveTexture}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Images\(\backslash\)\(\backslash\)Units\(\backslash\)\(\backslash\)EnergyWave.png"{}}))}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00140}00140\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ -\/\ Loading\ Energy\ wave\ Texture"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00142}00142\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_waveShader.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)vertexShader2.vert"{}},\ \textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)EnergyWave.frag"{}}))\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_tank_aurora_a9c76f42af844032395de305b31e5f2ea}{m\_waveShader}}.loadFromFile(\textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)vertexShader2.vert"{}},\ \textcolor{stringliteral}{"{}Assets\(\backslash\)\(\backslash\)Shaders\(\backslash\)\(\backslash\)EnergyWave.frag"{}}))\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00144}00144\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ load\ shader"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00146}00146\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00147}00147\ \ \ \ \ m\_energyWaveSprite.setTexture(m\_energyWaveTexture);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00148}00148\ \ \ \ \ m\_energyWaveSprite.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00149}00149\ \ \ \ \ m\_energyWaveSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation()\ -\/\ 90);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00150}00150\ \ \ \ \ m\_energyWaveSprite.setOrigin(m\_energyWaveSprite.getGlobalBounds().width\ /\ 2,\ m\_energyWaveSprite.getGlobalBounds().height\ /\ 2);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00151}00151\ \ \ \ \ m\_energyWaveSprite.setScale(m\_energyWaveSize,\ m\_energyWaveSize);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setTexture(\mbox{\hyperlink{class_tank_aurora_acdf5f78ad923541541c3ea09e7f6c6d2}{m\_energyWaveTexture}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setPosition(\mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation()\ -\/\ 90);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setOrigin(\mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.getGlobalBounds().width\ /\ 2,\ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.getGlobalBounds().height\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setScale(\mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}},\ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00152}00152\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00158}00158\ \textcolor{keywordtype}{void}\ TankAurora::movement(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00158}\mbox{\hyperlink{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb}{00158}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_a15dfe8060d32688eb525146954e1cbfb}{TankAurora::movement}}(sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00159}00159\ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_a1f49ad61bd0bd9387118f91403fdd131}{m\_targetPosition}}\ -\/\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00161}00161\ }
@@ -183,10 +183,10 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00192}00192\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00193}00193\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00194}00194\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00199}00199\ \textcolor{keywordtype}{void}\ TankAurora::spawnElectricalParticleEffect(sf::Time\ t\_deltaTime)}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00199}\mbox{\hyperlink{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d}{00199}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_a10ed27c4d0564d555209a3fc1efccd4d}{TankAurora::spawnElectricalParticleEffect}}(sf::Time\ t\_deltaTime)}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00200}00200\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{chargeRatio}}\ =\ m\_currentChargeTime\ /\ m\_empChargeTime;}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{size}}\ =\ std::min(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{chargeRatio}}\ *\ m\_empExpandArea,\ m\_empExpandArea);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{chargeRatio}}\ =\ \mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\_currentChargeTime}}\ /\ \mbox{\hyperlink{class_tank_aurora_a1fdb7abbbc93e96f9f9b622c937c9dbc}{m\_empChargeTime}};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{size}}\ =\ std::min(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{chargeRatio}}\ *\ \mbox{\hyperlink{class_tank_aurora_a1b09454d7528bd1c8c08c0d7ce76f362}{m\_empExpandArea}},\ \mbox{\hyperlink{class_tank_aurora_a1b09454d7528bd1c8c08c0d7ce76f362}{m\_empExpandArea}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00203}00203\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{numParticles}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{chargeRatio}}\ *\ 3);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ =\ 0;\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}}\ <\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{numParticles}};\ ++\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{i}})}
@@ -202,43 +202,43 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{lifetime}}\ =\ 0.2f;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particleSize}}\ =\ 1.0f\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{rand}}())\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{RAND\_MAX}})\ *\ 5.0f;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00217}00217\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_particle}{Particle}}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particle}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particlePos}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{velocity}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{color}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{lifetime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particleSize}},\ \&m\_lightningTexture);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_particle}{Particle}}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particle}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particlePos}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{velocity}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{color}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{lifetime}},\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particleSize}},\ \&\mbox{\hyperlink{class_tank_aurora_a666472b393de7406abda991e76849092}{m\_lightningTexture}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_unit_ab1547c3b8da47d795c05d67b0c0e6b46}{m\_particleSystem}}.\mbox{\hyperlink{class_particle_system_a5a3f496f17c45823c1afb465f903c531}{addParticle}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{particle}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00220}00220\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00221}00221\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00222}00222\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00226}00226\ \textcolor{keywordtype}{void}\ TankAurora::startEMPCharge()}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00226}\mbox{\hyperlink{class_tank_aurora_a11461db52d4c53a679968b628d1732a4}{00226}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_a11461db52d4c53a679968b628d1732a4}{TankAurora::startEMPCharge}}()}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00227}00227\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00228}00228\ \ \ \ \ m\_isChargingEMPWave\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00229}00229\ \ \ \ \ m\_currentChargeTime\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00228}00228\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3}{m\_isChargingEMPWave}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\_currentChargeTime}}\ =\ 0.0f;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00230}00230\ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}EMPCharge"{}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00231}00231\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00236}00236\ \textcolor{keywordtype}{void}\ TankAurora::emitEMP()\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00236}\mbox{\hyperlink{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75}{00236}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_ae91336895cbe9bb067a991215fd9cd75}{TankAurora::emitEMP}}()\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00237}00237\ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00238}00238\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}}\ =\ \mbox{\hyperlink{class_unit_acabd56084730e0bb32811ab6b7be625a}{rotateVector}}(sf::Vector2f(0,\ -\/1),\ \mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation());}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00239}00239\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_unit}{Unit}}*\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}\ :\ *\mbox{\hyperlink{class_unit_acdb9e12bef013e48d11020ef1813c9d1}{m\_enemyUnits}})}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00241}00241\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toEnemy}}\ =\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{enemy}}-\/>getPosition()\ -\/\ this-\/>\mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{getPosition}}();}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toEnemy}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ =\ \mbox{\hyperlink{class_unit_a90612b354704a618a5647ec4742b427b}{magnitude}}(toEnemy);}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00244}00244\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_unit_a7101070923fae272f484c94e6455312f}{distance}}\ <=\ \mbox{\hyperlink{class_unit_abb14fe0d6712ae4eb9622953660733a3}{m\_viewRadius}}\ -\/\ 20)}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ m\_directionToEnemy\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toEnemy}});}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleToEnemy}}\ =\ \mbox{\hyperlink{class_unit_afd48ec71b5e55bb537244ff2c38dc570}{angleBetweenVectors}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}},\ m\_directionToEnemy);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2}{m\_directionToEnemy}}\ =\ \mbox{\hyperlink{class_unit_a829181674d469a36b7e0a6a975d9f66f}{normalize}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{toEnemy}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleToEnemy}}\ =\ \mbox{\hyperlink{class_unit_afd48ec71b5e55bb537244ff2c38dc570}{angleBetweenVectors}}(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{forwardDirection}},\ \mbox{\hyperlink{class_tank_aurora_a7ce3ec70d1f4aae7b163cf669f356cb2}{m\_directionToEnemy}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00249}00249\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(\mbox{\hyperlink{class_unit_acd26d74df16d66f42c4f2752b58ef88c}{angleToEnemy}})\ <=\ 45)}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_isChargingEMPWave\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_currentChargeTime\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a56d2e7b00b2b66bad27679a51cd329a3}{m\_isChargingEMPWave}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_abdf6b29780c1487e8ca26a33b7818619}{m\_currentChargeTime}}\ =\ 0.0f;}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_isFiringEnergyWave\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_energyWavePosition\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}{m\_isFiringEnergyWave}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}{m\_energyWavePosition}}\ =\ \mbox{\hyperlink{class_unit_ab164c16d57455e049dcc135764ba04a8}{m\_position}};}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00257}00257\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_energyWaveSprite.setPosition(m\_energyWavePosition);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_energyWaveSprite.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation()\ -\/\ 90);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_energyWaveSprite.setScale(m\_energyWaveSize,\ m\_energyWaveSize);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setPosition(\mbox{\hyperlink{class_tank_aurora_a4c7197cb9c179fbf225a17f46fe9c00e}{m\_energyWavePosition}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setRotation(\mbox{\hyperlink{class_unit_ad71f1c3eddf2505597ca1292170afacb}{m\_unitSprite}}.getRotation()\ -\/\ 90);}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setScale(\mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}},\ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00261}00261\ }
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_manager_a45d4742f2cc9a5caf0fab51cd05919ae}{SoundManager::getInstance}}().\mbox{\hyperlink{class_sound_manager_a92e1d1ffad59deceff7e77e4bd032351}{playSound}}(\textcolor{stringliteral}{"{}EnergyWave"{}});}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ }
@@ -247,12 +247,12 @@
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00266}00266\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00267}00267\ \}}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00268}00268\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00272}00272\ \textcolor{keywordtype}{void}\ TankAurora::resetEnergyWave()}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00272}\mbox{\hyperlink{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de}{00272}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tank_aurora_aac051b243c0cf10ff00e9b8af42d50de}{TankAurora::resetEnergyWave}}()}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00273}00273\ \{}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00274}00274\ \ \ \ \ m\_isFiringEnergyWave\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00275}00275\ \ \ \ \ m\_energyWaveSize\ =\ 0.4f;\ }
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00276}00276\ \ \ \ \ m\_energyWaveSprite.setScale(m\_energyWaveSize,\ m\_energyWaveSize);}
-\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00277}00277\ \ \ \ \ startEMPCharge();}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00274}00274\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a99ff9d56d1b17316d3053db687690756}{m\_isFiringEnergyWave}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00275}00275\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}}\ =\ 0.4f;\ }
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00276}00276\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a9e00435cd4f0d9d2e04bdec752c17838}{m\_energyWaveSprite}}.setScale(\mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}},\ \mbox{\hyperlink{class_tank_aurora_a92c588a0fa20c7921d6b1efa8af61826}{m\_energyWaveSize}});}
+\DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00277}00277\ \ \ \ \ \mbox{\hyperlink{class_tank_aurora_a11461db52d4c53a679968b628d1732a4}{startEMPCharge}}();}
 \DoxyCodeLine{\Hypertarget{_tank_aurora_8cpp_source_l00278}00278\ \}}
 
 \end{DoxyCode}
