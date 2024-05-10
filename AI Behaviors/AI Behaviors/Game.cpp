@@ -5,8 +5,7 @@
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ Global::S_WIDTH, Global::S_HEIGHT, 32U }, "Gills & Glory" },
-	m_exitGame{ false },
-	m_neural_network(NeuralNetworks())
+	m_exitGame{ false }
 {
 	m_gameView.setSize(sf::Vector2f(Global::S_WIDTH, Global::S_HEIGHT));
 	m_gameView.setCenter(Global::S_WIDTH / 2, Global::S_HEIGHT / 2);
@@ -43,9 +42,6 @@ Game::Game() :
 	m_selectionBox.setOutlineColor(sf::Color(0, 255, 0));
 	m_selectionBox.setOutlineThickness(1.0f);
 
-	m_hiddenNeurons = m_neural_network.getHiddenNeurons();
-	m_biasNeurons = m_neural_network.getBiasNeurons();
-	initNeuralNetwork();
 }
 
 /// <summary>
@@ -92,10 +88,6 @@ void Game::processEvents()
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
-			if (newEvent.key.code == sf::Keyboard::Enter)
-			{
-				m_train = !m_train;
-			}
 		}
 		if (m_showWinLosePanel && newEvent.type == sf::Event::MouseButtonPressed && newEvent.mouseButton.button == sf::Mouse::Left)
 		{
@@ -229,43 +221,6 @@ void Game::processEvents()
 				{
 					m_levelLoader.goToMainMenu(m_guiMousePosition, m_currentState);
 					m_levelLoader.handleLevelSelectionMouseInput(m_guiMousePosition);
-				}
-			}
-			break;
-		case GameState::NeuralNetworks:
-			if (sf::Event::MouseButtonPressed == newEvent.type)
-			{
-				if (newEvent.mouseButton.button == sf::Mouse::Left)
-				{
-					m_neural_network.goToMainMenu(m_guiMousePosition, m_currentState);
-
-					int mouse_x = sf::Mouse::getPosition(m_window).x;
-					int mouse_y = sf::Mouse::getPosition(m_window).y;
-
-					if (mouse_x >= Global::S_WIDTH / 2 + 120 && mouse_x < m_window.getSize().x)
-					{
-						if (0 <= mouse_y && mouse_y < m_window.getSize().y)
-						{
-							float dot_x = (mouse_x - SCREEN_HEIGHT) / static_cast<float>(SCREEN_HEIGHT);
-							float dot_y = mouse_y / static_cast<float>(SCREEN_WITDH);
-
-							if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-							{
-								m_neural_network.addInput(dot_x, dot_y);
-								m_neural_network.addTargetOutput(1, 0, 0);
-							}
-							else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-							{
-								m_neural_network.addInput(dot_x, dot_y);
-								m_neural_network.addTargetOutput(0, 1, 0);
-							}
-							else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
-							{
-								m_neural_network.addInput(dot_x, dot_y);
-								m_neural_network.addTargetOutput(0, 0, 1);
-							}
-						}
-					}
 				}
 			}
 			break;
@@ -407,10 +362,6 @@ void Game::update(sf::Time t_deltaTime)
 	case GameState::LevelLoad:
 		loadMapLevel(m_levelLoader.m_levelFilenames[m_levelLoader.m_selectedButtonIndex]);
 		break;
-	case GameState::NeuralNetworks:
-		updateNeuralNetwork();
-		m_errorText.setString("Total Error: " + std::to_string(m_totalErrors));
-		break;
 	case GameState::Exit:
 		m_exitGame = true;
 		break;
@@ -493,11 +444,6 @@ void Game::render()
 		break;
 	case GameState::LevelLoad:
 		m_levelLoader.render(m_window);
-		break;
-	case GameState::NeuralNetworks:
-		drawNeuralNetwork(m_window);
-		m_neural_network.render(m_window);
-		m_window.draw(m_errorText);
 		break;
 	case GameState::Exit:
 		break;
@@ -768,119 +714,6 @@ void Game::initParticles()
 	{
 		std::cout << "Error - loading bubble texture" << std::endl;
 	}
-}
-
-/// <summary>
-/// initializes the neural networks
-/// </summary>
-void Game::initNeuralNetwork()
-{
-	m_errorText.setFont(m_normalfont);
-	m_errorText.setCharacterSize(20);
-	m_errorText.setFillColor(sf::Color::White);
-	m_errorText.setPosition(400, 10);
-
-	m_neuralNetwork.resize(2 + m_hiddenNeurons.size());
-	m_neuralNetwork[0].resize(m_neural_network.INPUT_NEURONS + m_biasNeurons[0], 0);
-	m_neuralNetwork.back().resize(m_neural_network.OUTPUT_NEURONS, 0);
-
-	m_random.seed(std::chrono::system_clock::now().time_since_epoch().count());
-	std::uniform_real_distribution<float> m_distribution(-1, 1); // its to distribute random weights
-
-	m_weights.resize(m_neuralNetwork.size() - 1);
-
-	m_outputImage.create(m_outputWidth, m_outputHeight);
-	m_outputTexture.loadFromImage(m_outputImage);
-	m_outputSprite.setPosition(SCREEN_HEIGHT, 0);
-	//outputs_sprite.setScale(15, 17);
-	m_outputSprite.setScale(SCREEN_HEIGHT / m_outputWidth, SCREEN_WITDH / m_outputHeight);
-	m_outputSprite.setOrigin(m_outputSprite.getGlobalBounds().width / 2, m_outputSprite.getGlobalBounds().height / 2);
-	m_outputSprite.setTexture(m_outputTexture);
-
-	for (int i = 1; i < m_neuralNetwork.size() - 1; ++i)
-	{
-		m_neuralNetwork[i].resize(m_biasNeurons[i] + m_hiddenNeurons[i - 1], 0);
-	}
-
-	for (int i = 0; i < m_weights.size(); ++i)
-	{
-		int m_layerSize = m_neuralNetwork[i + 1].size() - (i < m_weights.size() - 1 ? m_biasNeurons[i + 1] : 0);
-		m_weights[i].resize(m_layerSize, vector_1d(m_neuralNetwork[i].size()));
-
-		for (auto& m_weightLayer : m_weights[i])
-		{
-			for (float& m_weight : m_weightLayer)
-			{
-				m_weight = m_distribution(m_random); // Gives random weights at the beginning
-			}
-		}
-	}
-
-	m_errors.resize(m_weights.size());
-
-	for (int i = 0; i < m_errors.size(); ++i)
-	{
-		m_errors[i].resize(m_weights[i].size(), 0);
-	}
-}
-
-/// <summary>
-/// Updates the nerual network
-/// 
-/// This is also how i train it, adjusting the weights and biases based on the error between the actual and predicted outputs,
-/// which IS a learning process. 
-/// The network's ability to improve its predictions over time as it processes more data is neural network learning
-/// </summary>
-void Game::updateNeuralNetwork()
-{
-	if (m_train) // Training the neural network
-	{
-		m_totalErrors = 0;
-
-		for (int i = 0; i < TRAININGS_PER_FRAME; i++)
-		{
-			int m_inputIndex = rand() % m_neural_network.getInputs().size();
-
-			m_neural_network.forwardPropagation(true, m_neural_network.getInputs()[m_inputIndex], m_neuralNetwork, m_weights);
-			m_neural_network.backPropagation(m_neural_network.getTargetOutputs()[m_inputIndex], m_errors, m_neuralNetwork, m_weights);
-		}
-
-		for (int i = 0; i < m_neural_network.getInputs().size(); i++)
-		{
-			vector_1d m_outputs = m_neural_network.forwardPropagation(false, m_neural_network.getInputs()[i], m_neuralNetwork, m_weights);
-
-			for (int j = 0; j < m_outputs.size(); j++)
-			{
-				m_totalErrors += std::abs(m_outputs[j] - m_neural_network.getTargetOutputs()[i][j]);
-			}
-		}
-	}
-	m_outputTexture.update(m_outputImage);
-}
-
-/// <summary>
-/// Renders the neural networks 
-/// </summary>
-/// <param name="m_window"></param>
-void Game::drawNeuralNetwork(sf::RenderWindow& m_window)
-{
-	m_neural_network.drawNeuralPerceptron(m_window, m_neuralNetwork, m_weights); // draws the perceptrons
-
-	// For visualization to see it working on the image sprite
-	for (int i = 0; i < m_outputWidth; i++)
-	{
-		for (int j = 0; j < m_outputHeight; j++)
-		{
-			float m_inputOne = i / static_cast<float>(m_outputWidth);
-			float m_inputTwo = j / static_cast<float>(m_outputHeight);
-
-			std::vector m_outputColor = m_neural_network.forwardPropagation(0, { m_inputOne, m_inputTwo }, m_neuralNetwork, m_weights);
-
-			m_outputImage.setPixel(i, j, sf::Color(round(255 * m_outputColor[0]), round(255 * m_outputColor[1]), round(255 * m_outputColor[2])));
-		}
-	}
-
-	m_window.draw(m_outputSprite);
 }
 
 /// <summary>

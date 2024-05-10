@@ -37,7 +37,6 @@ private:
     sf::RectangleShape m_playButton;
     sf::RectangleShape m_editorButton;
     sf::RectangleShape m_loadLevelButton;
-    //sf::RectangleShape m_NeuralNetworkButton;
     sf::RectangleShape m_exitButton;
     sf::Texture m_buttonTexture;
     sf::Sprite m_buttonTabSprite;

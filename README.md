@@ -28,12 +28,6 @@ Walls -> units cant go across, except air units they are special
 Resource -> resource tiles, this is how the player gets money
 Misc -> these are more decorations such as weed (plant) behave same as Walkables
 
-Neural networks:
-
-something at a side of the project, 
-this just shows my ability to understand and implement something with neural networks,
-the purpose of this is to create a neural perceptrons and have some kind of visual aid showing the training in action
-
 ### License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE 

@@ -13,7 +13,6 @@
 #include "BuildingType.h"
 #include "Tile.h"
 #include "ParticleSystem.h"
-#include "NeuralNetworks.h"
 #include "EnemyAIState.h"
 #include "WinLoseState.h"
 
@@ -39,7 +38,6 @@ private:
 	GUI m_gui{ m_placedPlayerBuildings, m_selectedBuildingType, m_levelEditor.m_tiles };
 	BuildingType m_selectedBuildingType = BuildingType::None;
 	ParticleSystem m_particleSystem;
-	NeuralNetworks m_neural_network;
 	Unit* m_selectedUnit = nullptr;
 	std::vector<Building*> m_placedPlayerBuildings;
 	std::vector<Building*> m_placedEnemyBuildings;
@@ -95,11 +93,6 @@ private:
 	void updateViewWithMouse();
 	void resetView();
 	void resetZoom();
-
-	//Neural networks stuff
-	void initNeuralNetwork();
-	void updateNeuralNetwork();
-	void drawNeuralNetwork(sf::RenderWindow& m_window);
 
 	// Updates the fog of war 
 	void updateFogOfWarBasedOnBuildings(const std::vector<Building*>& m_buildings);
@@ -182,27 +175,6 @@ private:
 	bool m_playOnce = true;
 	bool m_levelLoaded = false;
 	bool m_exitGame;
-
-	// Neural Network stuff
-	int m_mousePosX;
-	int m_mousePosY;
-	int m_outputHeight = 64;
-	int m_outputWidth = 64;
-	float m_totalErrors = 0;
-	float m_dotX;
-	float m_dotY;
-	const int TRAININGS_PER_FRAME = 1000;
-	bool m_train = false;
-	vector_2d m_errors;
-	std::vector<std::vector<float>> m_neuralNetwork;
-	std::vector<std::vector<std::vector<float>>> m_weights;
-	std::array<int, 2> m_hiddenNeurons = m_neural_network.getHiddenNeurons();
-	std::array<int, 3> m_biasNeurons = m_neural_network.getBiasNeurons();
-	std::mt19937_64 m_random;
-	sf::Text m_errorText;
-	sf::Image m_outputImage;
-	sf::Sprite m_outputSprite;
-	sf::Texture m_outputTexture;
 
 	// Win/Lose stuff
 	bool m_showWinLosePanel = false;

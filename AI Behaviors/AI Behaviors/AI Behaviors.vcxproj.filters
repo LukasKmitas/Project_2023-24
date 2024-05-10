@@ -67,12 +67,6 @@
     <Filter Include="Source Files\LevelLoader">
       <UniqueIdentifier>{a719fbfd-28d2-42fb-8f2f-e2b71a7c3775}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\NerualNetworks">
-      <UniqueIdentifier>{5f331a92-0ef2-485d-aa27-c47ebed3aa52}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\NeuralNetworks">
-      <UniqueIdentifier>{6589290a-f31a-4230-8f81-d77ebc4444dc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Weapons">
       <UniqueIdentifier>{3b4c4ac1-221d-4b70-91b3-c433479943a9}</UniqueIdentifier>
     </Filter>
@@ -152,9 +146,6 @@
     </ClCompile>
     <ClCompile Include="LevelLoader.cpp">
       <Filter>Source Files\LevelLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="NeuralNetworks.cpp">
-      <Filter>Source Files\NeuralNetworks</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>Source Files\Weapons</Filter>
@@ -256,9 +247,6 @@
     </ClInclude>
     <ClInclude Include="LevelLoader.h">
       <Filter>Header Files\LevelLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="NeuralNetworks.h">
-      <Filter>Header Files\NerualNetworks</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Header Files\Weapons</Filter>

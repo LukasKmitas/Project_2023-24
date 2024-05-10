@@ -6,6 +6,5 @@ enum class GameState
     PlayGame,
     LevelEditor,
     LevelLoad,
-    NeuralNetworks,
     Exit
 };
